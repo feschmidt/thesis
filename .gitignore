@@ -1,8 +1,10 @@
 *.bbl
 *.fls
+dissertation.fls
 *.blg
 *.log
 *.fdb_latexmk
+dissertation.fdb_latexmk
 *.toc
 *.gz
 *.aux
