@@ -1,5 +1,5 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{dissertation_edit}[2013/07/08 v1.0 TU Delft dissertation class]
+\ProvidesClass{dissertation-edit}[2013/07/08 v1.0 TU Delft dissertation class]
 
 \newif\if@nativefonts
 \DeclareOption{nativefonts}{\@nativefontstrue}
