@@ -1,0 +1,71 @@
+\chapter{Mathematical derivations}
+\label{app:eqs}
+
+\section{Andreev bound states}
+
+\dropcap{W}{e} here derive equation \ref{eq:ABS-stop} by starting from eq. \ref{eq:ABS-start}. We have
+
+\begin{align}
+0 = &-4(\tau-2)\cos(\delta) +\tau(3+\cos(2\delta)) \\
+= &(8-4\tau)\cos(\delta)+3\tau+\tau(2\cos^2(\delta)-1) \\
+= &\cos^2(\delta)(2\tau)+\cos(\delta)(8-4\tau)+2\tau
+\end{align}
+
+Let $\cos(\delta)=x$:
+
+\begin{eqnarray}
+0=x^2(2\tau)+x(8-4\tau)+2\tau \\
+\Rightarrow x_{\pm}=\frac{\tau-2\pm2\sqrt{1-\tau}}{\tau} \in [-1,1]
+\end{eqnarray}
+and $\tau\in [0,1]$. We can readily convince ourselves, that the $x_{-}$ solution results in $x<0$ (e.g. for $\tau=0.5$), hence the only possible solution is $x_{+}$. Therefore\footnote{Here we made use of $\tau-2+2\sqrt{\tau-1}=-(2-\tau-2\sqrt{1-\tau})=-((1-\tau)-2\sqrt{1-\tau}+1)=-(\sqrt{1-\tau}-1)^2$.}
+
+\begin{eqnarray}
+\delta=\arccos\left[ - \frac{(\sqrt{1-\tau}-1)^2}{\tau} \right].
+\label{eq:app:delta}
+\end{eqnarray}
+
+We can now reinsert eq.\ref{eq:app:delta} into \ref{eq:CPR-full} to find the maximum possible current value as a function of the transmission:\footnote{Here we use $\cos(\arccos(x))=x$, $\sin^2( \frac{x}{2} )=\frac{1}{2}(1-\cos(x))$ and $\sin(\arccos(x))=\sqrt{1-x^2}$.}
+
+\begin{eqnarray}
+\frac{I}{\Delta/(4\Phi_0)} = \frac{\tau\sin(\delta(\tau))}{\sqrt{1-\tau\sin^2(\delta(\tau)/2)}} = \frac{\tau\sqrt{1-x_{+}^2}}{\sqrt{1-\tau/2(1-x_{+})}}
+\end{eqnarray}
+
+From now on, it's a matter of plugging in variables and avoiding calculation mistakes by minimizing the need to expand all brackets:
+
+\begin{eqnarray}
+\frac{\tau\sqrt{1-x_{+}^2}}{\sqrt{1-\tau/2(1-x_{+})}} \\
+= \frac{ \tau\sqrt{1-(\sqrt{1-\tau}-1)^4/\tau^2} }{ \sqrt{1-\tau/2+\tau/2(-(\sqrt{1-\tau}-1)^2/\tau)} } \\
+	= \sqrt{ \frac{ \tau^2-(\sqrt{1-\tau}-1)^4 }{ 1-\frac{1}{2} \left( \tau+(\sqrt{1-\tau}-1)^2 \right) } } \\
+	= \sqrt{ \frac{ \left\lbrack \tau+(\sqrt{1-\tau}-1)^2 \right\rbrack \left\lbrack \tau-(\sqrt{1-\tau}-1)^2 \right\rbrack }{ 1-\frac{1}{2} \left( \tau+(\sqrt{1-\tau}-1)^2 \right) } } \\
+	= \sqrt{\frac{(a+b)(a-b)}{1-\frac{1}{2}(a+b)}} \\ 
+	= \sqrt{\frac{2(a+b)(a-b)}{2-(a+b)}},
+\end{eqnarray}
+
+where we defined\footnote{There is no deeper reason for doing this, other than avoiding to explicitly calculate the fourth order bracket.}
+
+\begin{eqnarray}
+a =& \tau \\
+b =& (\sqrt{1-\tau}-1)^2 \\
+a+b =& 2(1-\sqrt{1-\tau}) \\
+a-b =& 2(\tau-1+\sqrt{1-\tau}).
+\end{eqnarray}
+
+Plugging this back in, we arrive at
+
+\begin{eqnarray}
+\frac{4\Phi_0I}{\Delta} =& \sqrt{ \frac{ 2\cdot2(1-\sqrt{1-\tau}) \cdot 2(\tau-1+\sqrt{1-\tau}) }{ 2-2(1-\sqrt{1-\tau}) } } \\
+\frac{1}{4}\left( \frac{4\Phi_0I}{\Delta} \right)^2 =& \frac{ (1-\sqrt{1-\tau})(\tau-1+\sqrt{1-\tau}) }{ 1-1+\sqrt{1-\tau} } \\
+=& \frac{\tau-1+\sqrt{1-\tau}-\tau\sqrt{1-\tau}+\sqrt{1-\tau}-(1-\tau)}{\sqrt{1-\tau}} \\
+=& \frac{2(1-\tau)+(1-\tau)\sqrt{1-\tau}+\sqrt{1-\tau}}{\sqrt{1-\tau}} \\
+=& (1-\tau)-2\sqrt{1-\tau}+1 \\
+=& (\sqrt{1-\tau}-1)^2.
+\end{eqnarray}
+
+We finally arrive at the expression for the maximum current supported by a single Andreev mode of transmission $\tau$, eq.\ref{eq:ABS-stop}\footnote{We neglect the solution $I_c<0$.}:
+
+\begin{equation}
+I_c=\frac{\Delta}{2\Phi_0} \left( 1-\sqrt{1-\tau} \right).
+\end{equation}
+
+\references{dissertation}
+

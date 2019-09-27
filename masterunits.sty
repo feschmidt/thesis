@@ -1,0 +1,130 @@
+\ProvidesPackage{masterunits}
+
+%%--- Unit commands
+%\newcommand{\ang}{\,\mbox{\AA}}
+%\newcommand{\pim}{\mathrm{ \,pm}}
+%\newcommand{\nm}{\mathrm{ \,nm}}
+%\newcommand{\mum}{\mathrm{ \,\upmu m}}
+%\newcommand{\mumsq}{\mathrm{ \,\upmu m}^2}
+%\newcommand{\mm}{\mathrm{ \,mm}}
+%\newcommand{\mmsq}{\mathrm{ \,mm}^2}
+%\newcommand{\mmcub}{\mathrm{ \,mm}^3}
+%\newcommand{\cm}{\mathrm{ \,cm}}
+%\newcommand{\cmsq}{\mathrm{ \,cm}^2}
+%\newcommand{\meter}{\mathrm{ \,m}}
+%\newcommand{\adhesion}{\mathrm{ \,g/ 20\,mm}}
+%\newcommand{\strength}{\mathrm{ \, kg/ 20\,mm}}
+%\newcommand{\sccm}{\mathrm{ \,sccm}}
+%\newcommand{\grad}{\mathrm{ ^{\circ}}}
+%\newcommand{\degC}{\mathrm{ \,^{\circ}C}}
+%\newcommand{\kelvin}{\mathrm{ \,K}}
+%\newcommand{\mkelvin}{\mathrm{ \,mK}}
+%\newcommand{\ev}{\mathrm{ \,eV}}
+%\newcommand{\mev}{\mathrm{ \,meV}}
+%\newcommand{\kev}{\mathrm{ \,keV}}
+%\newcommand{\mV}{\mathrm{ \,mV}}
+%\newcommand{\muv}{\mathrm{ \,\upmu V}}
+%\newcommand{\volt}{\mathrm{ \,V}}
+%\newcommand{\kvolt}{\mathrm{ \,kV}}
+%\newcommand{\coulomb}{\mathrm{ \,C}}
+%\newcommand{\amp}{\mathrm{ \,A}}
+%\newcommand{\mamp}{\mathrm{ \,mA}}
+%\newcommand{\muamp}{\mathrm{ \,\upmu A}}
+%\newcommand{\namp}{\mathrm{ \,nA}}
+%\newcommand{\pamp}{\mathrm{ \,pA}}
+%\newcommand{\watt}{\mathrm{ \,W}}
+%\newcommand{\musec}{\mathrm{ \,\upmu s}}
+%\newcommand{\second}{\mathrm{ \,s}}
+%\newcommand{\ms}{\mathrm{ \,ms}}
+%\newcommand{\ns}{\mathrm{ \,ns}}
+%\newcommand{\ps}{\mathrm{ \,ps}}
+%\newcommand{\minute}{\mathrm{ \,min}}
+%\newcommand{\std}{\mathrm{ \,h}}
+%\newcommand{\ohm}{\mathrm{ \,\Omega}}
+%\newcommand{\kOhm}{\mathrm{ \,k\Omega}}
+%\newcommand{\mohm}{\mathrm{ \,m\Omega}}
+%\newcommand{\Mohm}{\mathrm{ \,M\Omega}}
+%\newcommand{\hz}{\mathrm{ \,Hz}}
+%\newcommand{\khz}{\mathrm{ \,kHz}}
+%\newcommand{\Mhz}{\mathrm{ \,MHz}}
+%\newcommand{\proz}{\mathrm{ \,\%}}
+%\newcommand{\mubar}{\mathrm{ \,\upmu bar}}
+%\newcommand{\mbar}{\mathrm{ \,mbar}}
+%\newcommand{\mT}{\mathrm{ \,mT}}
+%\newcommand{\T}{\mathrm{ \,T}}
+%\newcommand{\dose}{\mathrm{ \,\upmu C/cm^2}}
+%\newcommand{\rate}{\mathrm{ \, nm/s}}
+%\newcommand{\dens}{\mathrm{ \, cm^{-2}}}
+%\newcommand{\mob}{\mathrm{ \, cm^{2}/Vs}}
+%\newcommand{\velo}{\mathrm{ \, m/s}}
+%\newcommand{\rpm}{\mathrm{ \, rpm}}
+%\newcommand{\contres}{\mathrm{ \, \Omega\upmu m}}
+
+%--- Chemical Formulae
+\newcommand{\alox}{\text{Al\textsubscript{2}O\textsubscript{3}}}
+\newcommand{\tiox}{\text{TiO\textsubscript{2}}}
+\newcommand{\siox}{\text{SiO\textsubscript{2}}}
+\newcommand{\mgox}{\text{MgO}}
+\newcommand{\oxygen}{\text{O\textsubscript{2}}}
+\newcommand{\chf}{\text{CHF\textsubscript{3}}}
+\newcommand{\nitrogen}{\text{N\textsubscript{2}}}
+
+%--- Physical Formulae
+\newcommand{\lmfp}{l_\text{mfp}}
+\newcommand{\me}{\mathrm{e}}
+\newcommand{\mi}{\mathrm{i}\,}
+
+%%%%%%%Eigendefinitionen
+\newcommand\tab{0.4em}
+\newcommand\Tab{1em}
+%\newcommand\abs[1]{\vert #1\vert}
+\newcommand\norm[1]{\left\vert\vert #1\vert\right\vert}
+\newcommand\cI{\mathrm{i}}
+\newcommand\cR{\mathbb{R}}
+\newcommand\cC{\mathbb{C}}
+\newcommand\cN{\mathbb{N}}
+\newcommand\pp[1]{{\frac{\partial}{\partial #1}}}
+\newcommand\dd[1]{{\frac{\mathrm{d}}{\mathrm{d} #1}}}
+\newcommand\PP[2]{{\frac{\partial #1}{\partial #2}}}
+\newcommand\DD[2]{{\frac{\mathrm{d} #1}{\mathrm{d} #2}}}
+\newcommand\bpm{\begin{pmatrix}}
+\newcommand\epm{\end{pmatrix}}
+\newcommand\bbm{\begin{bmatrix}}
+\newcommand\ebm{\end{bmatrix}}
+\usepackage{braket}
+\newcommand\ketbra[2]{\ket{#1}\!\!\bra{#2}}
+%\newcommand\msp[1][1]{\mspace{#1mu}}
+%\newcommand\ann[1]{{\scriptstyle #1}}
+%%%%%%%%%%%%%%%%%%%%%
+\newcommand\mf[1]{\boldsymbol{#1}}
+\newcommand\mn[1]{\text{#1}}
+\newcommand\Rxx{\ensuremath{R_{xx}}\xspace}
+\newcommand\Rxy{\ensuremath{R_{xy}}\xspace}
+\newcommand\anfr{\grqq\xspace}
+\newcommand\anfl{\glqq}
+\newcommand\anf[1]{\anfl#1\anfr}
+\newcommand\s{\ss\xspace}
+\newcommand\mc[1]{\mathcal{#1}}
+\newcommand\ttt[1]{\texttt{#1}}
+
+\newcommand\nk[1]{{\left( #1 \right)}} %Normale Klammer
+\newcommand\ek[1]{{\left[ #1 \right]}} %Eckige Klammer
+\newcommand\gk[1]{{\left\lbrace #1 \right\rbrace}} %Geschweifte Klammer
+\newcommand\dk[1]{{\left\langle #1 \right\rangle}} %Dirac Klammer
+\newcommand\kk{{}}
+
+\newcommand\nnk[1]{$\left( \textrm{#1} \right)$}
+\newcommand\nek[1]{$\left[ \textrm{#1} \right]$}
+\newcommand\ngk[1]{$\left\lbrace \textrm{#1} \right\rbrace$}
+
+\newcommand\zb{z.\,B.\xspace}
+\newcommand\ra{\rightarrow}
+\newcommand\Ra{\Rightarrow}
+\newcommand\la{\lefttarrow}
+\newcommand\La{\Lefttarrow}
+
+%Ersetzungen:
+%\renewcommand\vec[1]{\mathbf{#1}}
+%\renewcommand\propto{\sim}
+
+\providecommand{\abs}[1]{\lvert#1\rvert}

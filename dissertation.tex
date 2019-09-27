@@ -1,0 +1,77 @@
+\documentclass{dissertation}
+%\documentclass{dissertation_edit}
+
+%%% My own packages
+\usepackage{graphicx}% Include figure files
+\usepackage{dcolumn}% Align table columns on decimal point
+\usepackage{bm}% bold math
+\usepackage{hyperref}% add hypertext capabilities
+%\usepackage[mathlines]{lineno}% Enable numbering of text and display math
+%\linenumbers\relax % Commence numbering lines
+\usepackage{xcolor}
+\usepackage{textcomp}
+\usepackage{siunitx}
+\usepackage{float}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{mathtools}
+\DeclarePairedDelimiter\abs{\lvert}{\rvert}
+\usepackage{listings}
+\usepackage{masterunits}
+%%% My own packages
+\usepackage{esdiff}
+
+\begin{document}
+
+%% Specify the title and author of the thesis. This information will be used on
+%% the title page (in title/title.tex) and in the metadata of the final PDF.
+\title[Optional Subtitle]{Title}
+\author{Felix Erik}{Schmidt}
+
+%% Use Roman numerals for the page numbers of the title pages and table of
+%% contents.
+\frontmatter
+
+\include{title/title}
+
+%% The (optional) dedication can be used to thank someone or display a
+%% significant quotation.
+\dedication{\epigraph{Science is a wonderful thing \\ if one does not have to earn one's living at it.}{Albert Einstein}}
+
+\tableofcontents
+
+\include{summary/summary}
+\include{preface/preface}
+
+%% Use Arabic numerals for the page numbers of the chapters.
+\mainmatter
+
+%% Turn on thumb indices.
+\thumbtrue
+
+\include{chapter-introduction/introduction}
+\include{chapter-theory/theory}
+\include{chapter-fabrication/fabrication}
+\include{chapter-gJJ/gJJ}
+\include{chapter-AlJJ/AlJJ}
+\include{chapter-currentdetection/currentdetection}
+%\include{chapter-jfet/jfet}
+\include{conclusion/conclusion}
+\include{epilogue/epilogue}
+\include{acks/acks}
+
+%% Use letters for the chapter numbers of the appendices.
+\appendix
+\include{appendix/app-ebeam}
+\include{appendix/app-equations}
+
+
+%% Turn off thumb indices for unnumbered chapters.
+\thumbfalse
+
+\include{cv/cv}
+\include{publications/publications}
+
+\end{document}
+

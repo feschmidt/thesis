@@ -1,0 +1,59 @@
+\section{Induced superconductivity in graphene}
+\subsection{Current phase relation in gJJ}
+Papers for theoretical predictions on non-sinusoidal CPR in Graphene include \cite{titov_josephson_2006,black-schaffer_self-consistent_2008,girit_currentphase_2009,black-schaffer_strongly_2010,hagymasi_josephson_2010} .
+
+
+One 
+
+Measurements of the CPR of gJJs have consistently shown nonsinusoidal and forward-skewed behaviour \cite{chialvo_current-phase_2010,lee_ultimately_2015,english_observation_2016,nanda_current-phase_2017}. The most common way of measuring a CPR is to use a SQUID with two highly asymmetric junctions, with respect to critical current. Assuming a left and right junction, the total SQUID current is
+\begin{eqnarray}
+I_c(\Phi)=I_{cl}\sin\phi_l + I_{cr}\sin\phi_r \,\mathrm{,\,where\,}\; \phi_l - \phi_r = \frac{2\pi\Phi}{\Phi_0} \\%
+I_{cl} \ll I_{cr} \rightarrow I_c(\Phi) \approx I_{cl}\sin\phi_l + I_{cr} = I_{cl}(\Phi) + I_{cr}
+\end{eqnarray}
+This technique has been successfully used by both Lee et al. and Nanda et al., where the first used asymeetric graphene junctions, and the latter an aluminum oxide SIS junction with much larger $I_c$ as reference \cite{lee_ultimately_2015,nanda_current-phase_2017}. Alternatively, Chialvo et al. and English et al. used just one gJJ and a flux pickup loop to confirm this behavior \cite{chialvo_current-phase_2010,english_observation_2016}.
+
+\subsubsection{Short ballistic gJJ}
+When graphene is used as a vertical tunnel barrier, the system can be described as being in the short ballistic limit \cite{lee_ultimately_2015}. In that case, the CPR is given by
+\begin{eqnarray}
+I(\phi)=\frac{I_c\sin\phi}{\sqrt{1-\tau\sin^2\phi/2}}
+\end{eqnarray}
+
+\subsubsection{Intermediate ballistic gJJ}
+Encapsulating graphene in hBN can lead to a junction in an intermediate regime, i.e. $L\approx\xi$ (or, for very short channels, even the short regime). As Nanda et al. pointed out, in addition to ABS, the current is then also carried by "states in the continuum" \cite{nanda_current-phase_2017}. Nonetheless, significant forward skewing is expected. These authors however point out an important factor to take into account: Skewness can quite significantly depend on the S-N interface, i.e. transparency, and the ratio $L/\xi$. Temperature additionally suppresses skewness, since this leads to a higher number of quasiparticles, and increases the amount of continuum states contributing to the supercurrent.
+
+There is one report claiming to perform measurements on the crossover from the ballistic to diffusive regime in gJJ, but unfortunately it has not been published yet \cite{kratz_ballistic_2016}.
+
+We remind the reader of our findings illustrated in fig. \ref{fig:inductance-short-ballistic}, where we showed that for a short (or intermediate) ballistic SNS system, the SIS model can only be used as an approximation for small enough phases and transparencies.
+
+\subsection{Subgap structure}
+Due to the advanced research on induced superconductivity in graphene, a manifold of high-quality devices has been measured. Graphene JJs have reached beyond the diffusive regime and already ballistc devices have been analyzed. Typically, gJJ show a rich sub-gap structure originating from ABS and MAR as described in the previous section. However, as far as we know there has been to prediction or experiment on determining the subgap resistance of a gJJ whatsoever. The concept of modelling an SNS system via the RCSJ model using a linear resistor is even questionable in general, since there is no reason that the manifold of Andreev interactions could in any way be described by such a simple concept. A more correct way of interpretation would be to assign this $R$ all types of dissipation in the system, but not in the junction only.
+
+\subsection{Critical current and suppression mechanisms}
+A general first approximation of the critical current of a junction is its normal state resistance. The $I_c R_n$ product is in general assumed as a material-specific constant\footnote{Tinkham "Introduction to superconductivity"}. For a short SIS junction, Ambegaokar and Baratoff calculated the exact result for this product:
+\begin{eqnarray}
+I_c R_n = \frac{\pi\Delta}{2e}\tanh\left(\frac{\Delta}{2k_BT}\right)
+\end{eqnarray}
+For the case of a ballistic gJJ, Titov and Beenakker showed that due to enhancement of the suspercurrent by ABS, the relation should yield $I_cR_n=2.08\Delta/e$ and $2.44\Delta/e$ around and away from the CNP, as compared to $\pi/2\approx1.57$ for the SIS case. However, throughout the entire literature, experimental values have been usually saturating below $0.5\Delta/e$. Several papers have addressed this mismatch between theory and experiment. While this discrepancy remains unsolved, we list here several mechanisms that could explain the observed deviations\footnote{We base this discussion on \cite{choi_complete_2013}} .
+
+It is important to note that the measured switching current $I_s$ will not be exactly the critical current $I_c$, but can be reduced by 7\%, even in the case of very high transparency and in the true ballistic short junction regime \cite{lee_ultimately_2015}. For diffusive junctions, this discrepancy can even be as large as 20\% \cite{ke_critical_2016}. This value could in principle be much higher for lower transparencies.
+
+\subsubsection{Selective transmission of carriers in Klein tunneling}
+Although Klein tunneling in graphene allows charge carriers to pass a pn-junction, Cheianov and Fal'ko showed that particles approaching such a barrier at high angles will be reflected with a high probability.\cite{chialvo_current-phase_2010} This could filter out one part of the quasiparticle, especially in a wider junction, thus reducing the critical current.\cite{ben_shalom_quantum_2015}
+
+\subsubsection{Specular reflection at the interface}
+This effect should only be relevant close to the CNP, as there is no specular Andreev reflection (SAR) for high p- or n-doping. This effect would lead to a dephasing between the quasiparticle pair. However, most graphene devices remain limited by conductance fluctuations around zero doping, so that SAR does not occur.
+
+\subsubsection{Charge puddles around the CNP}
+Charge puddles enhance scattering, possibly leading to additional reduction of $I_c$. We observe a strong suppression of both $I_s$ and $I_s R_n$ close to the CNP, indicating such an effect.
+
+\subsubsection{Pseudomagnetic fields}
+Any scattering source, e.g. ripples or inhomogeneities, can create random pseuomagnetic fields. This could lead to dephasing of the electron and hole quasiparticle pair passing such a scatterer. Moreover, such a magnetic field would alter the paths of the quasiparticles, possibly increasing the distance between them and resulting in pair-breaking and dissipation.
+
+
+\subsection{Effect of temperature}
+We cite from Nanda and coauthors \cite{nanda_current-phase_2017}:
+\begin{quotation}
+	\textit{"The reduction in skewness with temperature is a consequence of the fact that the higher frequency terms in the CPR arise due to the phase coherent transfer of multiple Cooper pairs and involve longer quasiparticle paths \cite{heikkila_supercurrent-carrying_2002}, thereby making them more sensitive to temperature. As a result, their amplitude decreases quickly with increasing temperature \cite{hagymasi_josephson_2010,black-schaffer_strongly_2010,rakyta_magnetic_2016,english_observation_2016}."}
+\end{quotation}
+
+(However (?),) We observe the following effect for increased temperature: For $\SI{15}{mK}\rightarrow\SI{1}{K}$, the critical current decreases especially for large doping, while it seems to stay rather constant for $V_g\approx V_{CNP}$. However, the induced gap of $2\Delta_{ind}\approx\SI{1}{meV}$ stays constant over this voltage range/ Note, however, that the reduced gap we measure (on the order of \SI{100}{\micro eV}) decreases. Thus we conclude that both the reduction in $I_c$ and $Q_{int}$ of our device is due to coherence loss among the ABS below the induced gap.

@@ -1,0 +1,126 @@
+This is BibTeX, Version 0.99d (TeX Live 2017/Debian)
+Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
+The top-level auxiliary file: final_arxiv.aux
+Illegal, another \bibdata command---line 218 of file final_arxiv.aux
+ : \bibdata
+ :         {final_arxivNotes}
+I'm skipping whatever remains of this command
+The style file: aipnum4-1.bst
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
+Database file #1: final_arxivNotes.bib
+Warning--I didn't find a database entry for "calado_ballistic_2015a"
+Warning--I didn't find a database entry for "benshalom_quantum_2015"
+Warning--I didn't find a database entry for "lee_ultimately_2015"
+Warning--I didn't find a database entry for "novoselov_roadmap_2012"
+Warning--I didn't find a database entry for "walsh_graphenebased_2017"
+Warning--I didn't find a database entry for "martinis_course_2004"
+Warning--I didn't find a database entry for "castellanos-beltran_development_2010"
+Warning--I didn't find a database entry for "dolan_offset_1977a"
+Warning--I didn't find a database entry for "zeng_direct_2015"
+Warning--I didn't find a database entry for "zeng_atomic_2016a"
+Warning--I didn't find a database entry for "larsen_semiconductornanowirebased_2015"
+Warning--I didn't find a database entry for "delange_realization_2015"
+Warning--I didn't find a database entry for "schreier_suppressing_2008a"
+Warning--I didn't find a database entry for "sandberg_tuning_2008"
+Warning--I didn't find a database entry for "bosman_broadband_2015"
+Warning--I didn't find a database entry for "singh_molybdenumrhenium_2014"
+Warning--I didn't find a database entry for "pizzocchero_hot_2016"
+Warning--I didn't find a database entry for "wang_onedimensional_2013"
+Warning--I didn't find a database entry for "liang_fabry_2001"
+Warning--I didn't find a database entry for "miao_phasecoherent_2007"
+Warning--I didn't find a database entry for "young_quantum_2009"
+Warning--I didn't find a database entry for "cho_massless_2011"
+Warning--I didn't find a database entry for "wu_quantum_2012"
+Warning--I didn't find a database entry for "campos_quantum_2012"
+Warning--I didn't find a database entry for "rickhaus_ballistic_2013"
+Warning--I didn't find a database entry for "amet_supercurrent_2016a"
+Warning--I didn't find a database entry for "borzenets_ballistic_2016a"
+Warning--I didn't find a database entry for "allen_observation_2017"
+Warning--I didn't find a database entry for "zhu_supercurrent_2018"
+Warning--I didn't find a database entry for "nanda_currentphase_2017"
+Warning--I didn't find a database entry for "english_observation_2016"
+Warning--I didn't find a database entry for "paik_observation_2011a"
+Warning--I didn't find a database entry for "iosad_characterization_2002a"
+Warning--I didn't find a database entry for "tolpygo_subgap_2013"
+Warning--I didn't find a database entry for "liu_phenomenology_2017a"
+Warning--I didn't find a database entry for "bretheau_tunnelling_2017a"
+Warning--I didn't find a database entry for "chang_hard_2015"
+Warning--I didn't find a database entry for "kjaergaard_quantized_2016"
+Warning--I didn't find a database entry for "rosdahl_andreev_2018"
+Warning--I didn't find a database entry for "koch_chargeinsensitive_2007"
+Warning--I didn't find a database entry for "taniguchi_synthesis_2007"
+Warning--I didn't find a database entry for "hunter_matplotlib_2007"
+Warning--I didn't find a database entry for "zenodo1"
+Warning--I didn't find a database entry for "zenodo2"
+Warning--I didn't find a database entry for "tinkham_introduction_1996"
+Warning--I didn't find a database entry for "titov_josephson_2006"
+Warning--I didn't find a database entry for "cuevas_subharmonic_2006"
+Warning--I didn't find a database entry for "mizuno_ballisticlike_2013"
+Warning--I didn't find a database entry for "dubos_josephson_2001"
+Warning--I didn't find a database entry for "pozar_microwave_2012"
+Warning--I didn't find a database entry for "vanduzer_principles_1999"
+Warning--I didn't find a database entry for "nigg_blackbox_2012"
+Warning--I didn't find a database entry for "courtois_origin_2008"
+Warning--I didn't find a database entry for "borzenets_phonon_2013"
+Warning--I didn't find a database entry for "groth_kwant_2014"
+Warning--I didn't find a database entry for "pillet_andreev_2010a"
+control{REVTEX41Control}, control.key{N/A}, control.author{N/A}, control.editor{N/A}, control.title{N/A}, control.pages{N/A}, control.year{N/A}, control.eprint{N/A}, 
+control{aip41Control}, control.key{N/A}, control.author{N/A}, control.editor{N/A}, control.title{}, control.pages{0}, control.year{N/A}, control.eprint{N/A}, 
+Warning--jnrlst (dependency: not reversed) set 1
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+merlin.mbs aipnum4-1.bst 2010-07-25 4.21a (PWD, AO, DPC) hacked
+Control: key (0) 
+Control: author (8) initials jnrlst
+Control: editor formatted (1) identically to author
+Control: production of article title (-1) disabled
+Control: page (0) single
+Control: year (1) truncated
+Control: production of eprint (0) enabled
+You've used 2 entries,
+            5918 wiz_defined-function locations,
+            1661 strings with 15868 characters,
+and the built_in function-call counts, 813 in all, are:
+= -- 12
+> -- 5
+< -- 25
++ -- 2
+- -- 15
+* -- 131
+:= -- 50
+add.period$ -- 0
+call.type$ -- 2
+change.case$ -- 0
+chr.to.int$ -- 2
+cite$ -- 2
+duplicate$ -- 103
+empty$ -- 5
+format.name$ -- 0
+if$ -- 94
+int.to.chr$ -- 1
+int.to.str$ -- 9
+missing$ -- 28
+newline$ -- 52
+num.names$ -- 0
+pop$ -- 73
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 0
+skip$ -- 26
+stack$ -- 0
+substring$ -- 2
+swap$ -- 96
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 10
+type$ -- 12
+warning$ -- 1
+while$ -- 2
+width$ -- 0
+write$ -- 52
+(There was 1 error message)
