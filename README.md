@@ -2,7 +2,7 @@
 
 ## Instructions
 
-What's the best engine to compile with? `pdflatex` works fine; I'm having trouble with `xelatex` on mac. Does `lualatex` work?
+To compile: Use vscode and "run all build tasks". Preview can be done internally. Compilation using `pdflatex`is fine; I don't think I need either  `xelatex` or `lualatex`.
 
 ### Layout
 
