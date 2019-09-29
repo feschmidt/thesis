@@ -179,16 +179,16 @@
 %%% font-size is 75% of the size of thumb height.
 \newif\ifthumb
 \newlength\thumbheight
-\setlength\thumbheight{45pt}
+\setlength\thumbheight{45pt} % fontsize
 \newlength\thumbedge
-\setlength\thumbedge{4pt}
+\setlength\thumbedge{4pt} % shifts thumb number from inside out
 \newlength\thumbhspace
-\setlength\thumbhspace{36pt}
+\setlength\thumbhspace{30pt} % total shift outwards
 \newlength\thumbvspace
 \setlength\thumbvspace{2\thumbheight}
 
 \newlength\thumbwidth
-\setlength\thumbwidth{36pt}
+\setlength\thumbwidth{10pt}
 \newlength\thumbspacing
 \setlength\thumbspacing{2\thumbheight}
 
@@ -214,7 +214,7 @@
 	%% Print the chapter number at the center right in the thumb index.
 	\coordinate (center right) at ($(bottom right)+(0pt,0.5\thumbheight)$);
 	\node at (center right)[anchor=east,inner sep=2\thumbedge]{
-		\titlefont\bfseries\color{tudelft-white}
+		\titlefont\sfseries\color{mLightBrown}
 		\fontsize{0.75\thumbheight}{0.75\thumbheight}\selectfont
 		\thechapter
 	};
@@ -239,7 +239,7 @@
 	%% Print the chapter number at the center right in the thumb index.
 	\coordinate (center left) at ($(bottom left)+(0pt,0.5\thumbheight)$);
 	\node at (center left)[anchor=west,inner sep=2\thumbedge]{
-		\titlefont\bfseries\color{tudelft-white}
+		\titlefont\sfseries\color{mLightBrown}
 		\fontsize{0.75\thumbheight}{0.75\thumbheight}\selectfont
 		\thechapter
 	};
@@ -308,9 +308,9 @@
 %% right, followed by the part name on the next line in the title color.
 \titleformat{\part}[display]
 {\flushright\titlestyle}
-{\fontsize{200pt}{150pt}\selectfont\bfseries\thepart}
+{\fontsize{200pt}{150pt}\selectfont\bfseries\color{title}\thepart}
 {0pt}
-{\Huge\color{title}}
+{\Huge\color{mLightBrown}}
 %% Separate the title from the text by two empty lines.
 \titlespacing{\part}{0pt}{0pt}{2\baselineskip}
 %% In the table of contents, the part name is preceded by an empty line, printed
@@ -320,9 +320,9 @@
 %% Chapter titles have the same layout as parts.
 \titleformat{\chapter}[display]
 {\flushright\titlestyle}
-{\fontsize{200pt}{150pt}\selectfont\bfseries\thechapter}
+{\fontsize{200pt}{150pt}\selectfont\bfseries\color{title}\thechapter}
 {0pt}
-{\Huge\color{title}}
+{\Huge\color{mLightBrown}}
 \titlespacing{\chapter}{0pt}{0pt}{2\baselineskip}
 %% In the table of contents, a chapter is similar to a part, except that it is
 %% preceded by half an empty line.
