@@ -1,7 +1,36 @@
-\section{Coplanar waveguide resonators}
+\section{Microwave engineering for experiments with superconducting resonators}
 
-\dropcap{S}{ince} a dissertation is a substantial document, it is convenient to break it up into smaller pieces.
-In this template we therefore give every chapter its own file. The chapters (and appendices) are gathered together in \texttt{dissertation.tex}, which is the master file describing the overall structure of the document. \texttt{dissertation.tex} starts with the line
+
+\subsection{Coplanar waveguides}
+To confine and guide electromagnetic waves on chips, we make use of coplanar waveguides.
+These consist of thin metal film of thickness $t$ on a dielectric substrate (thickness $H$).
+The metal film is patterned into a center conductor of width $w$ and is separated by the ground planes by a distance $s$ (see Fig. \ref{fig:cpw-coplanar-waveguide}).
+The characteristic impedance of such a CPW is given by
+\begin{equation}
+Z_0 = \sqrt{\frac{L'}{C'}}
+\end{equation}
+The electromagnetic waves in such a line are traveling with the wave velocity \begin{equation}
+v=\frac{1}{\sqrt{L'C'}}=\frac{c_\mathrm{vac}}{\sqrt{\epsilon_\mathrm{eff}}}.
+\end{equation}
+If we assume a very thin film with large gaps, i.e. $t \ll s \ll H \rightarrow \infty$, and by defining the effective dielectric constant $\epsilon_\mathrm{eff} = \frac{1+\epsilon_r}{2}$, the transmission line parameters can all be reduced to the following expressions:
+\begin{align}
+C' &= 2\epsilon_0(\epsilon_r+1)\frac{K(K_0)}{K(k'_0)} \\%
+L' &= \frac{\mu_0}{4}\frac{K(k'_0)}{K(k_0)} \\%
+Z_0 &= \frac{c\mu_0}{\sqrt{8(\epsilon_r+1)}}\frac{K(k'_0)}{K(k_0)}\approx \frac{30\pi}{\sqrt{(\epsilon_r+1)/2}}\frac{K(k'_0)}{K(k_0)} \\%
+v &= \frac{c}{\sqrt{(\epsilon_r+1)/2}}
+\end{align}
+\begin{figure}
+	\centering
+	\includegraphics[width=0.3\linewidth]{chapter-theory/figs-RF/CPW-Coplanar-Waveguide.jpg}
+	\caption{Cross section of a coplanar waveguide on a dielectric substrate.}
+	\label{fig:cpw-coplanar-waveguide}
+\end{figure}
+where $K(q) = \frac{\pi}{2}\sum_{n=0}^{\infty}\left(\frac{(2n-1)!!}{(2n)!!}\right)^2 q^{2n}$ is the complete elliptic integral of the first kind, and
+\begin{align}
+k_0 = \frac{w}{w+2s} \hspace{2cm} k'_0 = \sqrt{1-k_0^2}.
+\end{align}
+Thus, it is obvious that all line parameters depend only on geometric factors, primarily on the ratio of center conductor width $w$ to gap separation $s$.
+
 
 \subsection{Lumped-element transmission line theory}
 \begin{figure}
@@ -39,7 +68,7 @@ The solutions to these are traveling waves of the form
 V(z) = V_0^+e^{-\gamma z} + V_0^-e^{\gamma z} \hspace{2cm} I(z) = I_0^+e^{-\gamma z} + I_0^-e^{\gamma z}
 \label{eq:telegraph:solution}
 \end{equation}
-Plugging these solutions into the telegrapher equations, we get for the current on the line $I(z)=\gamma/(R+j\omega L) * V(z)$.
+Plugging these solutions into the telegrapher equations, we get for the current on the line $I(z)=\gamma/(R+j\omega L) \times V(z)$.
 We can immediately see that the characteristic impedance of our transmission line is given by
 \begin{align}
 Z_0 \equiv \frac{V_0^+}{I_0^+}\equiv \frac{V_0^-}{I_0^-}= \frac{R+j\omega L}{\gamma} = \sqrt{\frac{R+j\omega L}{G + j\omega C}}
@@ -82,55 +111,6 @@ Z_L=\frac{V(0)}{I(0)}=Z_0\frac{V_0^++V_0^-}{V_0^+-V_0^-} \hspace{1cm} \rightarro
 \Gamma = \frac{Z_L-Z_0}{Z_L+Z_0}
 \end{align} 
 where we defined $\Gamma$ as the voltage reflection coefficient.
-
-\section{Coplanar waveguides}
-To confine and guide electromagnetic waves on chips, we make use of coplanar waveguides.
-These consist of thin metal film of thickness $t$ on a dielectric substrate (thickness $H$).
-The metal film is patterned into a center conductor of width $w$ and is separated by the ground planes by a distance $s$ (see Fig. \ref{fig:cpw-coplanar-waveguide}).
-The characteristic impedance of such a CPW is given by
-\begin{equation}
-Z_0 = \sqrt{\frac{L'}{C'}}
-\end{equation}
-The electromagnetic waves in such a line are traveling with the wave velocity \begin{equation}
-v=\frac{1}{\sqrt{L'C'}}=\frac{c_\mathrm{vac}}{\sqrt{\epsilon_\mathrm{eff}}}.
-\end{equation}
-If we assume a very thin film with large gaps, i.e. $t \ll s \ll H \rightarrow \infty$, and by defining the effective dielectric constant $\epsilon_\mathrm{eff} = \frac{1+\epsilon_r}{2}$, the transmission line parameters can all be reduced to the following expressions:
-\begin{align}
-C' &= 2\epsilon_0(\epsilon_r+1)\frac{K(K_0)}{K(k'_0)} \\%
-L' &= \frac{\mu_0}{4}\frac{K(k'_0)}{K(k_0)} \\%
-Z_0 &= \frac{c\mu_0}{\sqrt{8(\epsilon_r+1)}}\frac{K(k'_0)}{K(k_0)}\approx \frac{30\pi}{\sqrt{(\epsilon_r+1)/2}}\frac{K(k'_0)}{K(k_0)} \\%
-v &= \frac{c}{\sqrt{(\epsilon_r+1)/2}}
-\end{align}
-\begin{figure}
-	\centering
-	\includegraphics[width=0.3\linewidth]{chapter-theory/figs-RF/CPW-Coplanar-Waveguide.jpg}
-	\caption{Cross section of a coplanar waveguide on a dielectric substrate.}
-	\label{fig:cpw-coplanar-waveguide}
-\end{figure}
-where $K(q) = \frac{\pi}{2}\sum_{n=0}^{\infty}\left(\frac{(2n-1)!!}{(2n)!!}\right)^2 q^{2n}$ is the complete elliptic integral of the first kind, and
-\begin{align}
-k_0 = \frac{w}{w+2s} \hspace{2cm} k'_0 = \sqrt{1-k_0^2}.
-\end{align}
-Thus, it is obvious that all line parameters depend only on geometric factors, primarily on the ratio of center conductor width $w$ to gap separation $s$.
-
-
-\section{Kinetic inductance}
-For highly disordered superconductors, such as MoRe or NbTiN, there is an additional effect to be taken into account when analysing or designing a circuit: The so-called \textit{kinetic inductance} $L_k$. It arises naturally from the Drude model, when considering electron relaxation times comparable to the excitation frequency. This then leads to an additional inductance term from the kinetic energy of the electrons that are "lagging behind" the excitation signal. For a superconducting wire with length $l$ and crossection $A$, it is given by
-\begin{eqnarray}
-L_k = \frac{m}{2n_s e^2}\frac{l}{A}
-\end{eqnarray}
-with $n_s$ the Cooper pair density. For a CPW, $L_k$ reads
-\begin{eqnarray}
-L_k = g L_s = g\mu_0\lambda_m\coth\left(\frac{t}{\lambda_m}\right)
-\end{eqnarray}
-where $L_s$ denotes the surface inductance, $t$ the film thickness, $g=g(S,W,t)$ the geometry factor of the CPW, $\Delta_0\approx1.764\,k_BT_c$ the superconducting gap at \SI{0}{K} and $\lambda_m$ the London penetration depth at $T\rightarrow0$ as
-\begin{eqnarray}
-\lambda_m=\sqrt{\frac{\hbar\rho}{\pi\mu_0\Delta_0}}\approx\SI{105}{(nm)}\cdot\sqrt{\frac{\rho\si{\,(\micro\ohm\,\centi\metre)}}{T_c \si{\,(K)}}}
-\end{eqnarray}
-This length changes as a function of temperature according to
-\begin{eqnarray}
-\lambda_m(T) = \frac{\lambda_m(0)}{\sqrt{1-\left(\frac{T}{T_c}\right)^4}}
-\end{eqnarray}
 
 \subsection{Current bias cavities, or series RLC circuit capacitively coupled to one side of a transmission line}
 \begin{figure}[!h]
@@ -180,3 +160,21 @@ With this, we get for the reflection parameter
 \begin{equation}
 \Gamma = \frac{Z_\mathrm{in}-Z_0}{Z_\mathrm{in}+Z_0}\approx\frac{\kappa_\mathrm{ext}-\kappa_\mathrm{int}-2i\Delta\omega}{\kappa_\mathrm{ext}+\kappa_\mathrm{int}+2i\Delta\omega}.
 \end{equation}
+
+\section{Kinetic inductance}
+For highly disordered superconductors, such as MoRe or NbTiN, there is an additional effect to be taken into account when analysing or designing a circuit: The so-called \textit{kinetic inductance} $L_k$. It arises naturally from the Drude model, when considering electron relaxation times comparable to the excitation frequency. This then leads to an additional inductance term from the kinetic energy of the electrons that are "lagging behind" the excitation signal. For a superconducting wire with length $l$ and crossection $A$, it is given by
+\begin{eqnarray}
+L_k = \frac{m}{2n_s e^2}\frac{l}{A}
+\end{eqnarray}
+with $n_s$ the Cooper pair density. For a CPW, $L_k$ reads
+\begin{eqnarray}
+L_k = g L_s = g\mu_0\lambda_m\coth\left(\frac{t}{\lambda_m}\right)
+\end{eqnarray}
+where $L_s$ denotes the surface inductance, $t$ the film thickness, $g=g(S,W,t)$ the geometry factor of the CPW, $\Delta_0\approx1.764\,k_BT_c$ the superconducting gap at \SI{0}{K} and $\lambda_m$ the London penetration depth at $T\rightarrow0$ as
+\begin{eqnarray}
+\lambda_m=\sqrt{\frac{\hbar\rho}{\pi\mu_0\Delta_0}}\approx\SI{105}{(nm)}\cdot\sqrt{\frac{\rho\si{\,(\micro\ohm\,\centi\metre)}}{T_c \si{\,(K)}}}
+\end{eqnarray}
+This length changes as a function of temperature according to
+\begin{eqnarray}
+\lambda_m(T) = \frac{\lambda_m(0)}{\sqrt{1-\left(\frac{T}{T_c}\right)^4}}
+\end{eqnarray}
