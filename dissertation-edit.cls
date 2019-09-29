@@ -118,8 +118,8 @@
 	layoutsize = {170mm,240mm},
 	layoutoffset = {2mm,2mm},
 	bindingoffset = 5mm,
-	inner = 20mm, outer = 20mm, top=25mm, bottom=20mm
-	% showframe,showcrop % enable only for testing
+	inner = 20mm, outer = 20mm, top=25mm, bottom=20mm,
+	% showframe = true % enable only for testing
 	}
 \fi
 %% We decrease the margins slightly from the default (scale = 0.7).
@@ -179,7 +179,7 @@
 %%% font-size is 75% of the size of thumb height.
 \newif\ifthumb
 \newlength\thumbheight
-\setlength\thumbheight{24pt}
+\setlength\thumbheight{45pt}
 \newlength\thumbedge
 \setlength\thumbedge{4pt}
 \newlength\thumbhspace
@@ -308,7 +308,7 @@
 %% right, followed by the part name on the next line in the title color.
 \titleformat{\part}[display]
 {\flushright\titlestyle}
-{\fontsize{96pt}{96pt}\selectfont\bfseries\thepart}
+{\fontsize{200pt}{150pt}\selectfont\bfseries\thepart}
 {0pt}
 {\Huge\color{title}}
 %% Separate the title from the text by two empty lines.
