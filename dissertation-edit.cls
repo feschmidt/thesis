@@ -15,7 +15,7 @@
 %% English is the default language, but Dutch is used for some sections.
 \RequirePackage[dutch,english]{babel}
 \RequirePackage{calc}
-\RequirePackage[nooneline,footnotesize,font=sf]{caption}
+\RequirePackage[nooneline,footnotesize,font=sf,font=small,labelfont=bf]{caption}
 \RequirePackage{chapterbib}
 \RequirePackage{etaremune}
 \RequirePackage{fancyhdr}
@@ -113,7 +113,14 @@
 	bindingoffset = -3mm
 }
 \else
-\geometry{papersize={170mm,240mm}}%,inner=25mm,outer=20mm,top=25mm,bottom=20mm}
+\geometry{
+	papersize={174mm,244mm},
+	layoutsize = {170mm,240mm},
+	layoutoffset = {2mm,2mm},
+	bindingoffset = 5mm,
+	inner = 20mm, outer = 20mm, top=25mm, bottom=20mm
+	% showframe,showcrop % enable only for testing
+	}
 \fi
 %% We decrease the margins slightly from the default (scale = 0.7).
 \geometry{hscale=0.75,vscale=0.8}
@@ -313,7 +320,7 @@
 %% Chapter titles have the same layout as parts.
 \titleformat{\chapter}[display]
 {\flushright\titlestyle}
-{\fontsize{96pt}{96pt}\selectfont\bfseries\thechapter}
+{\fontsize{200pt}{150pt}\selectfont\bfseries\thechapter}
 {0pt}
 {\Huge\color{title}}
 \titlespacing{\chapter}{0pt}{0pt}{2\baselineskip}
