@@ -15,7 +15,7 @@
 %% English is the default language, but Dutch is used for some sections.
 \RequirePackage[dutch,english]{babel}
 \RequirePackage{calc}
-\RequirePackage[nooneline,footnotesize]{caption}
+\RequirePackage[nooneline,footnotesize,font=sf]{caption}
 \RequirePackage{chapterbib}
 \RequirePackage{etaremune}
 \RequirePackage{fancyhdr}
@@ -51,74 +51,22 @@
 \RequirePackage[nottoc]{tocbibind}
 \RequirePackage{xcolor}
 
-%% If the document is not compiled with XeLaTeX, we need to use the native
-%% fonts.
-\ifxetex\else
-\@nativefontstrue
-\fi
-
-\if@nativefonts
-	%% The native font is Utopia Regular with Fourier math. We use Latin Modern
-	%% as a fallback, since Utopia lacks support for sans-serif and monospace.
-	\RequirePackage[T1]{fontenc}
-	\RequirePackage[utf8]{inputenc}
-	\RequirePackage{lmodern} % editoff
-	\RequirePackage{fourier} % editoff
-%	\RequirePackage{mathpazo,euler} % editon
-	%% The style for titles is small caps.
-	\def\titlefont{\rmfamily}
-	\def\titleshape{\scshape}
-	\def\titlestyle{\titlefont\titleshape\bfseries}
-	\if@print
-	\def\headerstyle{\titlefont\titleshape\bfseries}
-	\else
-	\def\headerstyle{\titlefont\titleshape}
-\fi
+%% Fonts
+%%% Either Libertine + Biolinum
+% \usepackage{libertine}
+% \usepackage{libertinust1math}
+% \usepackage{biolinum}
+%%% Or Fira Sans
+\usepackage[sfdefault,scaled=.85]{FiraSans}
+\usepackage{newtxsf}
+%% The style for titles is small caps.
+\def\titlefont{\sffamily}
+\def\titleshape{\scshape}
+\def\titlestyle{\titlefont\titleshape\bfseries}
+\if@print
+\def\headerstyle{\titlefont\titleshape\bfseries}
 \else
-	%% The TU Delft house style fonts are Bookman Old Style (serif) for titles
-	%% and Tahoma (sans-serif) for text. Apart from these, we use Courier New
-	%% for monospace and Cambria for math.
-	\RequirePackage{unicode-math}
-	\setmainfont[
-		Path = fonts/,
-		Extension = .ttf,
-		BoldFont = *-Bold,
-		ItalicFont = *-Italic,
-		BoldItalicFont = *-BoldItalic
-		]{BookmanOldStyle}
-	\setsansfont[
-		Path = fonts/,
-		Extension = .ttf,
-		BoldFont = *-Bold,
-		ItalicFont = *,
-		ItalicFeatures = FakeSlant,
-		BoldItalicFont = *-Bold,
-		BoldItalicFeatures = FakeSlant
-		]{Tahoma}
-	\setmonofont[
-		Path = fonts/,
-		Extension = .ttf,
-		UprightFont = *MT,
-		BoldFont = *-BoldMT,
-		ItalicFont = *-ItalicMT,
-		BoldItalicFont = *-BoldItalicMT
-		]{CourierNewPS}
-		\setmathfont[
-		Path = fonts/,
-		Extension = .ttf
-		]{CambriaMath}
-	%% The default style for text is Tahoma (sans-serif).
-	\renewcommand*\familydefault{\sfdefault}
-	%% The default style for titles is Bookman Old Style (serif).
-	\def\titlefont{\rmfamily}
-	\def\titleshape{}
-		\if@print
-		\def\titlestyle{\titlefont\titleshape\bfseries}
-		\else
-		\def\titlestyle{\titlefont\titleshape}
-		\fi
-	\def\headerstyle{\titlestyle}
-\fi
+\def\headerstyle{\titlefont\titleshape}
 
 %% Define the TU Delft house style colors.
 \definecolor{tudelft-cyan}{cmyk}{1,0,0,0}
@@ -436,7 +384,7 @@
 %% a chapter.
 \newcommand\epigraph[3][2\baselineskip]{%
 	\begin{flushright}%
-		{\rmfamily\itshape #2}%
+		{\sffamily\itshape #2}%
 		\vskip 0.5\baselineskip%
 		#3%
 	\end{flushright}%
@@ -448,7 +396,7 @@
 	\list{}{\leftmargin\rightmargin}%
 	\item%
 	\relax%
-	\rmfamily\itshape%
+	\sffamily\itshape%
 }{%
 	\endlist%
 }

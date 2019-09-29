@@ -12,8 +12,9 @@ What's the best engine to compile with? `pdflatex` works fine; I'm having troubl
 
 * I don't like the TUDelft font choice.
 * Potentially better suited alternatives are
-  * _Myriad Pro + Minion Pro_ (Adobe fonts, but can be extracted since they come with Adobe Acrobat Reader)
-  * _Linux Biolinum + Libertine_ (poen source fonts and much less used supposedly). Links on this:
+  * _Linux Biolinum + Libertine_: open source fonts and much less used supposedly.
+  * _Fira Sans_: Matches with my preferred presentation style. Drawback: It's an all-sans serif font...
+  * Links on this:
   * Noto Sans + Noto Serif. Open question math?
   * alternative sans serif: Roboto, Noto Sans, PT Sans
   * https://wissenschafts-thurm.de/wp-content/uploads/2016/05/Fontsbeispiele.pdf
