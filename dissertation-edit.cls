@@ -85,16 +85,23 @@
 \definecolor{tudelft-bright-green}{cmyk}{0.36,0,1,0}
 \definecolor{tudelft-yellow}{cmyk}{0.02,0,0.54,0}
 
+%% Define metropolis theme colors
+\definecolor{mDarkBrown}{HTML}{604c38}
+\definecolor{mDarkTeal}{HTML}{23373b}
+\definecolor{mLightBrown}{HTML}{EB811B}
+\definecolor{mLightGreen}{HTML}{14B03D}
+
 %% Use TU Delft cyan as the color for titles, unless the 'print' option is
 %% specified, in which case we use anthracite, a dark gray, which is also used
 %% for the thumb indices.
 \definecolor{anthracite}{cmyk}{0,0,0,0.8}
 \if@print
 \colorlet{title}{anthracite}
-\else
-\colorlet{title}{tudelft-green}
-\fi
 \colorlet{thumb}{anthracite}
+\else
+\colorlet{title}{mDarkTeal}
+\colorlet{thumb}{mDarkTeal}
+\fi
 
 %% Set the paper size to 17 by 24 cm, approximately halfway between A4 and A5.
 \if@print
@@ -106,7 +113,7 @@
 	bindingoffset = -3mm
 }
 \else
-\geometry{papersize={170mm,240mm}}
+\geometry{papersize={170mm,240mm}}%,inner=25mm,outer=20mm,top=25mm,bottom=20mm}
 \fi
 %% We decrease the margins slightly from the default (scale = 0.7).
 \geometry{hscale=0.75,vscale=0.8}
