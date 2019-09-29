@@ -1,0 +1,114 @@
+%merlin.mbs apsrev4-1.bst 2010-07-25 4.21a (PWD, AO, DPC) hacked
+%Control: key (0)
+%Control: author (72) initials jnrlst
+%Control: editor formatted (1) identically to author
+%Control: production of article title (0) allowed
+%Control: page (0) single
+%Control: year (1) truncated
+%Control: production of eprint (0) enabled
+\begin{thebibliography}{4}%
+\makeatletter
+\providecommand \@ifxundefined [1]{%
+ \@ifx{#1\undefined}
+}%
+\providecommand \@ifnum [1]{%
+ \ifnum #1\expandafter \@firstoftwo
+ \else \expandafter \@secondoftwo
+ \fi
+}%
+\providecommand \@ifx [1]{%
+ \ifx #1\expandafter \@firstoftwo
+ \else \expandafter \@secondoftwo
+ \fi
+}%
+\providecommand \natexlab [1]{#1}%
+\providecommand \textit  [1]{``#1''}%
+\providecommand \bibnamefont  [1]{#1}%
+\providecommand \bibfnamefont [1]{#1}%
+\providecommand \citenamefont [1]{#1}%
+\providecommand \href@noop [0]{\@secondoftwo}%
+\providecommand \href [0]{\begingroup \@sanitize@url \@href}%
+\providecommand \@href[1]{\@@startlink{#1}\@@href}%
+\providecommand \@@href[1]{\endgroup#1\@@endlink}%
+\providecommand \@sanitize@url [0]{\catcode `\\12\catcode `\$12\catcode
+  `\&12\catcode `\#12\catcode `\^12\catcode `\_12\catcode `\%12\relax}%
+\providecommand \@@startlink[1]{}%
+\providecommand \@@endlink[0]{}%
+\providecommand \url  [0]{\begingroup\@sanitize@url \@url }%
+\providecommand \@url [1]{\endgroup\@href {#1}{\urlprefix }}%
+\providecommand \urlprefix  [0]{URL }%
+\providecommand \Eprint [0]{\href }%
+\providecommand \doibase [0]{http://dx.doi.org/}%
+\providecommand \selectlanguage [0]{\@gobble}%
+\providecommand \bibinfo  [0]{\@secondoftwo}%
+\providecommand \bibfield  [0]{\@secondoftwo}%
+\providecommand \translation [1]{[#1]}%
+\providecommand \BibitemOpen [0]{}%
+\providecommand \bibitemStop [0]{}%
+\providecommand \bibitemNoStop [0]{.\EOS\space}%
+\providecommand \EOS [0]{\spacefactor3000\relax}%
+\providecommand \BibitemShut  [1]{\csname bibitem#1\endcsname}%
+\let\auto@bib@innerbib\@empty
+%</preamble>
+\bibitem [{\citenamefont {Titov}\ and\ \citenamefont
+  {Beenakker}(2006)}]{titov_josephson_2006}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {M.}~\bibnamefont
+  {Titov}}\ and\ \bibinfo {author} {\bibfnamefont {C.~W.~J.}\ \bibnamefont
+  {Beenakker}},\ }\bibfield  {title} {{\selectlanguage {en}\textit {\bibinfo
+  {title} {Josephson effect in ballistic graphene},}\ }}\href {\doibase
+  10.1103/PhysRevB.74.041401} {\bibfield  {journal} {\bibinfo  {journal}
+  {Physical Review B}\ }\textbf {\bibinfo {volume} {74}} (\bibinfo {year}
+  {2006}),\ 10.1103/PhysRevB.74.041401}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Lee}\ \emph {et~al.}(2015)\citenamefont {Lee},
+  \citenamefont {Kim}, \citenamefont {Jhi},\ and\ \citenamefont
+  {Lee}}]{lee_ultimately_2015}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {G.-H.}\ \bibnamefont
+  {Lee}}, \bibinfo {author} {\bibfnamefont {S.}~\bibnamefont {Kim}}, \bibinfo
+  {author} {\bibfnamefont {S.-H.}\ \bibnamefont {Jhi}}, \ and\ \bibinfo
+  {author} {\bibfnamefont {H.-J.}\ \bibnamefont {Lee}},\ }\bibfield  {title}
+  {\textit {\bibinfo {title} {Ultimately short ballistic vertical graphene
+  {{Josephson}} junctions},}\ }\href {\doibase 10.1038/ncomms7181} {\bibfield
+  {journal} {\bibinfo  {journal} {Nature Communications}\ }\textbf {\bibinfo
+  {volume} {6}},\ \bibinfo {pages} {6181} (\bibinfo {year} {2015})}\BibitemShut
+  {NoStop}%
+\bibitem [{\citenamefont {English}\ \emph {et~al.}(2016)\citenamefont
+  {English}, \citenamefont {Hamilton}, \citenamefont {Chialvo}, \citenamefont
+  {Moraru}, \citenamefont {Mason},\ and\ \citenamefont
+  {Van~Harlingen}}]{english_observation_2016}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {C.~D.}\ \bibnamefont
+  {English}}, \bibinfo {author} {\bibfnamefont {D.~R.}\ \bibnamefont
+  {Hamilton}}, \bibinfo {author} {\bibfnamefont {C.}~\bibnamefont {Chialvo}},
+  \bibinfo {author} {\bibfnamefont {I.~C.}\ \bibnamefont {Moraru}}, \bibinfo
+  {author} {\bibfnamefont {N.}~\bibnamefont {Mason}}, \ and\ \bibinfo {author}
+  {\bibfnamefont {D.~J.}\ \bibnamefont {Van~Harlingen}},\ }\bibfield  {title}
+  {{\selectlanguage {en}\textit {\bibinfo {title} {Observation of nonsinusoidal
+  current-phase relation in graphene {{Josephson}} junctions},}\ }}\href
+  {\doibase 10.1103/PhysRevB.94.115435} {\bibfield  {journal} {\bibinfo
+  {journal} {Physical Review B}\ }\textbf {\bibinfo {volume} {94}} (\bibinfo
+  {year} {2016}),\ 10.1103/PhysRevB.94.115435}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Ke}\ \emph {et~al.}(2016)\citenamefont {Ke},
+  \citenamefont {Borzenets}, \citenamefont {Draelos}, \citenamefont {Amet},
+  \citenamefont {Bomze}, \citenamefont {Jones}, \citenamefont {Craciun},
+  \citenamefont {Russo}, \citenamefont {Yamamoto}, \citenamefont {Tarucha},\
+  and\ \citenamefont {Finkelstein}}]{ke_critical_2016}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {C.~T.}\ \bibnamefont
+  {Ke}}, \bibinfo {author} {\bibfnamefont {I.~V.}\ \bibnamefont {Borzenets}},
+  \bibinfo {author} {\bibfnamefont {A.~W.}\ \bibnamefont {Draelos}}, \bibinfo
+  {author} {\bibfnamefont {F.}~\bibnamefont {Amet}}, \bibinfo {author}
+  {\bibfnamefont {Y.}~\bibnamefont {Bomze}}, \bibinfo {author} {\bibfnamefont
+  {G.}~\bibnamefont {Jones}}, \bibinfo {author} {\bibfnamefont
+  {M.}~\bibnamefont {Craciun}}, \bibinfo {author} {\bibfnamefont
+  {S.}~\bibnamefont {Russo}}, \bibinfo {author} {\bibfnamefont
+  {M.}~\bibnamefont {Yamamoto}}, \bibinfo {author} {\bibfnamefont
+  {S.}~\bibnamefont {Tarucha}}, \ and\ \bibinfo {author} {\bibfnamefont
+  {G.}~\bibnamefont {Finkelstein}},\ }\bibfield  {title} {{\selectlanguage
+  {en}\textit {\bibinfo {title} {Critical {{Current Scaling}} in {{Long
+  Diffusive Graphene}}-{{Based Josephson Junctions}}},}\ }}\href {\doibase
+  10.1021/acs.nanolett.6b00738} {\bibfield  {journal} {\bibinfo  {journal}
+  {Nano Letters}\ }\textbf {\bibinfo {volume} {16}},\ \bibinfo {pages} {4788}
+  (\bibinfo {year} {2016})}\BibitemShut {NoStop}%
+\end{thebibliography}%

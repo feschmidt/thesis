@@ -1,6 +1,10 @@
-\section{Josephson junction types}
+\section{Induced superconductivity and Josephson junctions}
 
-\dropcap{T}{he} process of Andreev reflection at the interface between superconductors and normal metals lays the fundament for understanding how a Josephson junction works. The process is sketched in Fig. \ref{fig:kdtmk}: An electron impinging onto the super-normal interface from inside the normal region can only enter the superconductor in the form of a Cooper pair by being reflected as a hole with opposite spin and momentum. Vice versa, a Cooper pair travelling towards the normal region will decay into an electron travelling forward, and annihilate a hole travelling backwards with spin opposite to that of the electron. Inside the normal region, this will result in the formation of the so-called Andreev bound states (ABS).
+\dropcap{T}{he} process of Andreev reflection at the interface between superconductors and normal metals lays the fundament for understanding how a Josephson junction works.
+The process is sketched in Fig. \ref{fig:kdtmk}:
+An electron impinging onto the super-normal interface from inside the normal region can only enter the superconductor in the form of a Cooper pair by being reflected as a hole with opposite spin and momentum.
+Vice versa, a Cooper pair travelling towards the normal region will decay into an electron travelling forward, and annihilate a hole travelling backwards with spin opposite to that of the electron.
+Inside the normal region, this will result in the formation of the so-called Andreev bound states (ABS).
 
 \begin{figure}
 	\centering
@@ -25,7 +29,8 @@ I_{\pm}(\delta)=\frac{1}{\Phi_0}\frac{\partial E_{\pm}}{\partial\delta}=\mp\frac
 \label{eq:CPR-full}
 \end{eqnarray}
 
-For temperature $T\rightarrow0$, all states with $E<\epsilon_F$ are unoccupied, so only the lower-lying Andreev state $E_{-}(\delta)$ carries current. The critical current of the junction is given by the maximum current possible being carried by the state. Mathematically, this equals
+For temperature $T\rightarrow0$, all states with $E<\epsilon_F$ are unoccupied, so only the lower-lying Andreev state $E_{-}(\delta)$ carries current.
+The critical current of the junction is given by the maximum current possible being carried by the state. Mathematically, this equals
 
 \begin{eqnarray}
 I_c=\max_\delta I_{-}(\delta) \Rightarrow \frac{{\rm d}I_{-}(\delta)}{{\rm d}\delta}\equiv0=-\Delta\tau\frac{-4(\tau-2)\cos(\delta)+\tau(3+\cos(2\delta))}{8\sqrt{2}\Phi_0(2-\tau+\tau\cos(\delta))^{3/2}}
@@ -51,10 +56,11 @@ for each Andreev channel. The overall junction critical current for $N$ channels
 	I_c=\frac{\Delta}{4\Phi_0}\sum_{i}^{N_i}\tau_i
 \end{eqnarray}
 
-\textcolor{red}{\textbf{Note:} I think it might be more useful to do a short recap of Golubov, Kupriyanov and Il'ichev 2004. They start from the general cases of current-phase relations and develop from there. Relevant cases for us are KO-1, point-contact, tunnel junctions and clean and dirty SNS ones.}
+\textcolor{red}{\textbf{Note:} I think it might be more useful to do a short recap of Golubov, Kupriyanov and Il'ichev 2004. 
+They start from the general cases of current-phase relations and develop from there.
+Relevant cases for us are KO-1, point-contact, tunnel junctions and clean and dirty SNS ones.}
 
 \subsection{ScS}
-
 
 
 \subsection{SNS}
@@ -62,3 +68,8 @@ for each Andreev channel. The overall junction critical current for $N$ channels
 \subsection{Voltage bias}
 Voltage biasing a Josephson junction leads to a process called Multiple Andreev reflection (MAR).
 We did measurements on this of our graphene Josephson junctions.
+It is important to note, that the voltage measured across a DC current-biased Josephson junction is not a pure DC voltage, but rather the time-averaged value of the oscillating $V=d\phi/dt$.
+This effectively leads to the emission of Josephson radiation from the junction, with the frequency being tuned via the bias voltage.
+This phenomenon can be controlled so precise, that it serves as the definition of the voltage standard nowadays.
+A plethora of potential applications of Josephson radiation in cicruit electrodynamics have been proposed and realized (such as the Josephson laser).
+However, the realization of such devices needs to be engineered quite precise, as reaching oscillation frequencies in the GHz regime requires bias voltages in the microvolt range, often requiring small shunt resistors which pull the Josephson junction far into the overdamped regime.

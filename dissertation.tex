@@ -18,8 +18,8 @@
 \DeclarePairedDelimiter\abs{\lvert}{\rvert}
 \usepackage{listings}
 \usepackage{masterunits}
-%%% My own packages
 \usepackage{esdiff}
+\usepackage[version=4]{mhchem}
 
 \begin{document}
 
@@ -32,7 +32,7 @@
 %% contents.
 \frontmatter
 
-\include{title/title}
+\include{title/title-en}
 
 %% The (optional) dedication can be used to thank someone or display a
 %% significant quotation.
@@ -41,7 +41,7 @@
 \tableofcontents
 
 \include{summary/summary}
-\include{preface/preface}
+% \include{preface/preface}
 
 %% Use Arabic numerals for the page numbers of the chapters.
 \mainmatter
@@ -51,17 +51,17 @@
 
 \include{chapter-introduction/introduction}
 \include{chapter-theory/theory}
-% \include{chapter-fabrication/fabrication}
+\include{chapter-experimental-methods/experiment}
 % \include{chapter-gJJ/gJJ}
 % \include{chapter-AlJJ/AlJJ}
 % \include{chapter-currentdetection/currentdetection}
-% %\include{chapter-jfet/jfet}
 % \include{conclusion/conclusion}
 % \include{epilogue/epilogue}
 % \include{acks/acks}
 
 % %% Use letters for the chapter numbers of the appendices.
 % \appendix
+% \include{appendix/app-moredna}
 % \include{appendix/app-ebeam}
 % \include{appendix/app-equations}
 
