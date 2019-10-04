@@ -1,9 +1,26 @@
 \section{Measurement setup}
 
-\dropcap{S}{ince} a dissertation is a substantial document, it is convenient to break it up into smaller pieces. In this template we therefore give every chapter its own file. The chapters (and appendices) are gathered together in \texttt{dissertation.tex}, which is the master file describing the overall structure of the document. \texttt{dissertation.tex} starts with the line
+\dropcap{O}{nce} the experimentalist has deemed their sample worthy of measuring, there are a few battles to be fought outside the cleanroom and in the measurement laboratory.
 
 \subsection{Electronic noise}
 
+
+\begin{figure}
+	\centering
+	\includegraphics[]{{chapter-experimental-methods/figs-fabrication/placeholder.svg}.png}
+	\caption{
+		\textbf{Electronic noise reduction using low-pass filters.}
+		\textbf{A,} Measured transfer function of individual homemade copper powder and two-stage RC filters.
+		The cut-off frequency for the RC filters is approximately \SI{30}{kHz}, while high-frequency noise leaks through above \SI{1}{MHz}.
+		The copper powder filters significantly suppress frequencies above \SI{1}{GHz} and above.
+		\textbf{B,} Photograph of a two-stage RC filter of SMD 0812 elements.
+		\textbf{C,} Photograph of the individual components of a copper powder filter, and a fully assembled one.
+	}
+	\label{fig:receiver}
+\end{figure}
+
 \subsection{Fridge wiring}
+
+
 
 All measurements presented in this thesis were performed in dry dilution refridgerators from \textit{Oxford Instruments} or \textit{Bluefors Oy} at millikelvin temperatures.
