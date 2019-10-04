@@ -183,7 +183,7 @@
 \newlength\thumbedge
 \setlength\thumbedge{4pt} % shifts thumb number from inside out
 \newlength\thumbhspace
-\setlength\thumbhspace{30pt} % total shift outwards
+\setlength\thumbhspace{25pt} % total shift outwards
 \newlength\thumbvspace
 \setlength\thumbvspace{2\thumbheight}
 
