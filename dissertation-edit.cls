@@ -86,8 +86,10 @@
 
 %% Define metropolis theme colors
 \definecolor{mDarkBrown}{HTML}{604c38}
-\definecolor{mDarkTeal}{HTML}{23373b}
-\definecolor{mLightBrown}{HTML}{EB811B}
+%\definecolor{mDarkTeal}{HTML}{23373b}
+%\definecolor{mLightBrown}{HTML}{EB811B}
+\definecolor{mDarkTeal}{cmyk}{0.4068,0.0678,0.0000,0.7686}
+\definecolor{mLightBrown}{cmyk}{0.0000,0.4511,0.8851,0.0784}
 \definecolor{mLightGreen}{HTML}{14B03D}
 
 %% Use TU Delft cyan as the color for titles, unless the 'print' option is
@@ -213,7 +215,7 @@
 	%% Print the chapter number at the center right in the thumb index.
 	\coordinate (center right) at ($(bottom right)+(0pt,0.5\thumbheight)$);
 	\node at (center right)[anchor=east,inner sep=2\thumbedge]{
-		\titlefont\color{tudelft-white} %\sfseries % for seriffonts
+		\titlefont\color{mLightBrown} %\sfseries % for seriffonts
 		\fontsize{0.75\thumbheight}{0.75\thumbheight}\selectfont
 		\thechapter
 	};
@@ -238,7 +240,7 @@
 	%% Print the chapter number at the center right in the thumb index.
 	\coordinate (center left) at ($(bottom left)+(0pt,0.5\thumbheight)$);
 	\node at (center left)[anchor=west,inner sep=2\thumbedge]{
-		\titlefont\color{tudelft-white} %\sfseries % for seriffonts
+		\titlefont\color{mLightBrown} %\sfseries % for seriffonts
 		\fontsize{0.75\thumbheight}{0.75\thumbheight}\selectfont
 		\thechapter
 	};
