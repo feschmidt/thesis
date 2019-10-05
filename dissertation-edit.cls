@@ -85,12 +85,12 @@
 \definecolor{tudelft-yellow}{cmyk}{0.02,0,0.54,0}
 
 %% Define metropolis theme colors
-\definecolor{mDarkBrown}{HTML}{604c38}
+%\definecolor{mDarkBrown}{HTML}{604c38}
 %\definecolor{mDarkTeal}{HTML}{23373b}
 %\definecolor{mLightBrown}{HTML}{EB811B}
 \definecolor{mDarkTeal}{cmyk}{0.4068,0.0678,0.0000,0.7686}
 \definecolor{mLightBrown}{cmyk}{0.0000,0.4511,0.8851,0.0784}
-\definecolor{mLightGreen}{HTML}{14B03D}
+%\definecolor{mLightGreen}{HTML}{14B03D}
 
 %% Use TU Delft cyan as the color for titles, unless the 'print' option is
 %% specified, in which case we use anthracite, a dark gray, which is also used
