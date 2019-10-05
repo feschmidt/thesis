@@ -7,17 +7,18 @@
 \usepackage{hyperref}% add hypertext capabilities
 %\usepackage[mathlines]{lineno}% Enable numbering of text and display math
 %\linenumbers\relax % Commence numbering lines
-\usepackage{xcolor}
+\usepackage{xcolor} % colored text
 \usepackage{textcomp}
-\usepackage{siunitx}
+\usepackage{siunitx} %
+\sisetup{
+	detect-all}%, % tell siunitx to use standard font, not math font
+%	math-ohm = \ensuremath{\upOmega}, 
+%	text-ohm = \ensuremath{\upOmega}} 
 \usepackage{float}
 \usepackage{amsthm}
-\usepackage{amssymb}
-\usepackage{amsmath}
 \usepackage{mathtools}
 \DeclarePairedDelimiter\abs{\lvert}{\rvert}
 \usepackage{listings}
-\usepackage{masterunits}
 \usepackage{esdiff}
 \usepackage[version=4]{mhchem}
 
@@ -50,9 +51,9 @@
 \thumbtrue
 
 \include{chapter-introduction/introduction}
-\include{chapter-theory/theory}
+%\include{chapter-theory/theory}
 \include{chapter-experimental-methods/experiment}
-% \include{chapter-gJJ/gJJ}
+ \include{chapter-gJJ/gJJ}
 % \include{chapter-AlJJ/AlJJ}
 % \include{chapter-currentdetection/currentdetection}
 % \include{conclusion/conclusion}
@@ -60,11 +61,11 @@
 % \include{acks/acks}
 
 % %% Use letters for the chapter numbers of the appendices.
-\appendix
+%\appendix
 % \include{appendix/app-moredna}
 % \include{appendix/app-ebeam}
 % \include{appendix/app-equations}
-\include{appendix/app-notes}
+%\include{appendix/app-notes}
 
 % %% Turn off thumb indices for unnumbered chapters.
 % \thumbfalse

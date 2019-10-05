@@ -230,7 +230,7 @@ The RF currents applied in our experiment, however, are well below $I_\textrm{c}
 In this regime, the correct shunt resistance for the RCSJ model is not the normal state resistance $R_\textrm{n}$ but instead given by the zero-bias sub-gap resistance $R_\textrm{j} = R_{\rm sg}$.
 This quantity, which ultimately determines the junction performance in microwave circuits, has not been observed before in graphene as it is only accessible through sub-microvolt excitations, which are difficult to achieve in DC measurements.
 
-As shown in Fig. \ref{fig:figure4}a, the zero-bias sub-gap resistance is of the order of 1-\SI{2}{\kilo\Omega} and remains relatively flat on the range of applied gate voltages.
+As shown in Fig. \ref{fig:figure4}a, the zero-bias sub-gap resistance is of the order of 1-2\si{\kilo\ohm} and remains relatively flat on the range of applied gate voltages.
 We find that the ratio $R_{\rm sg}/R_\textrm{n}$ has values around 10-40, depending on gate voltage, with higher values in the n-doped regime.
 This ratio is often taken as figure of merit in SIS literature, as lower values of $R_{\rm sg}$ are detrimental to most applications since they imply higher leakage currents in DC and more dissipation in RF.
 
@@ -308,7 +308,7 @@ During all RF measurements, the bias current is set to zero.
 
 The DC lines consist of looms with twelve twisted wire pairs, of which four single wires are used in the measurements presented here.
 The lines are filtered with $\pi$-filters inside the in-house built measurement rack at room-temperature, and two-stage RC and copper-powder filters, thermally anchored to the mK plate.
-To reduce the maximum possible current on the gate line, a \SI{100}{k\Omega} resistor is added at room-temperature.
+To reduce the maximum possible current on the gate line, a \SI{100}{k\ohm} resistor is added at room-temperature.
 For the DC measurements presented, we turn the output power of the VNA off and current-bias the gJJ, while measuring the voltage drop across the device with respect to a cold ground on the mK plate.
 
 \subsection*{Data visualization}
@@ -509,7 +509,7 @@ All raw and processed data as well as supporting code for processing and figure 
 	\caption{{\bf Critical temperature of MoRe and NbTiN.}
 		Resistance versus temperature of the gJJ sample, measured during the initial cooldown, for a current bias of \SI{1}{\micro A} without any gate voltage applied.
 		The two jumps at \SI{10.5}{K} and \SI{13.2}{K} correspond to the critical temperature of MoRe and NbTiN, respectively.
-		Below $T_\mathrm{c,MoRe}$, we measure a residual resistance of \SI{250}{\Omega}, which corresponds to the graphene sheet resistance for $V_{\rm g}=\SI{0}{V}$.}
+		Below $T_\mathrm{c,MoRe}$, we measure a residual resistance of \SI{250}{\ohm}, which corresponds to the graphene sheet resistance for $V_{\rm g}=\SI{0}{V}$.}
 	\label{fig:critical_temp}
 \end{figure*}
 
@@ -698,7 +698,7 @@ In principle, for example in DC measurements, even a portion of the wires going 
 We here discuss several estimates of possible relevant capacitances that could enter into $\beta_{\rm C}$, where we assume a typical $R=\SI{50}{\Omega}$ and $I_{\rm s}=\SI{5}{\micro A}$.
 First, we note that the ``geometric'' capacitance of a parallel plate capacitor formed between the superconducting leads across the BN/G/BN stack yields a negligible value on the order of a few tens of atto Farads.
 More important is the ``local'' stray capacitance of the junction which we have simulated in \textit{COMSOL} v5.3 (COMSOL Inc., 2017) and \textit{Sonnet} v16.54 (Sonnet Software Inc., 2017).
-If we include the leads up to a distance of \SI{5}{\mu m} from the junction, the relevant $C=\SI{2}{fF}$ and $\beta_{\rm C}=0.08$.
+If we include the leads up to a distance of \SI{5}{\micro m} from the junction, the relevant $C=\SI{2}{fF}$ and $\beta_{\rm C}=0.08$.
 We also simulated the capacitance of the leads that go from the junction to the surrounding ground plane and to the CPW cavity, giving $C=\SI{6.7}{fF}$ and $\beta_{\rm C}=0.25$.
 Of course, there is also likely a relevant capacitance contribution from the center conductor of the CPW to ground.
 For this, we can make a rough estimate of the total CPW center conductor capacitance of \SI{909}{fF} and a resulting $\beta_{\rm C}=35$, reaching far into the underdamped regime.

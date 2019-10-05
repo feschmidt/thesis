@@ -1,8 +1,6 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{dissertation-edit}[2013/07/08 v1.0 TU Delft dissertation class]
 
-\newif\if@nativefonts
-\DeclareOption{nativefonts}{\@nativefontstrue}
 \newif\if@print
 \DeclareOption{print}{\@printtrue}
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{book}}
@@ -15,7 +13,7 @@
 %% English is the default language, but Dutch is used for some sections.
 \RequirePackage[dutch,ngerman,english]{babel}
 \RequirePackage{calc}
-\RequirePackage[nooneline,footnotesize,font=sf,font=small,labelfont=bf]{caption}
+\RequirePackage[nooneline,footnotesize,font={sf,small},labelfont={sf,bf}]{caption}
 \RequirePackage{chapterbib}
 \RequirePackage{etaremune}
 \RequirePackage{fancyhdr}
@@ -59,6 +57,7 @@
 %%% Or Fira Sans
 \usepackage[sfdefault,scaled=.85]{FiraSans}
 \usepackage{newtxsf}
+%\usepackage{eulervm} % experimental
 %% The style for titles is small caps.
 \def\titlefont{\sffamily}
 \def\titleshape{\scshape}
