@@ -396,9 +396,9 @@ All raw and processed data as well as supporting code for processing and figure 
 	\includegraphics[width=.9\linewidth]{chapter-gJJ/figs/supp_anharmonicity_2.pdf}
 	\caption{{\bf Anharmonicity and internal linewidth for design scenario A, as described in \ref{sec:scenA}.}
 		\textbf{a,} We calculate the performance of the measured junction in a circuit shuch as the one shown in the inset.
-		Setting the resonant frequency to $\omega_0 = 2\pi\cdot\SI{6}{GHz}$, we then calculate the anharmonicity and linewidth of this hypothetical device.
+		Setting the resonant frequency to $\omega_0 = 2\pi\times\SI{6}{GHz}$, we then calculate the anharmonicity and linewidth of this hypothetical device.
 		Also in this case we find that calculated values of anharmonicity are always smaller than the linewidth.
-		\textbf{b,} Required value of capacitance $C_{\rm q}$ to maintain a resonant frequency of $\omega_0 = 2\pi\cdot\SI{6}{GHz}$ as a function of $V_{\rm g}$}
+		\textbf{b,} Required value of capacitance $C_{\rm q}$ to maintain a resonant frequency of $\omega_0 = 2\pi\times\SI{6}{GHz}$ as a function of $V_{\rm g}$}
 	\label{fig:anharm2}
 \end{figure*}
 
@@ -406,8 +406,8 @@ All raw and processed data as well as supporting code for processing and figure 
 	\centering
 	\includegraphics[width=.9\linewidth]{chapter-gJJ/figs/supp_anharmonicity_3.pdf}
 	\caption{{\bf Anharmonicity and internal linewidth for design scenario B, as described in \ref{sec:scenB}.}
-		\textbf{a,} We calculate the performance of a device whose capacitance and inductance are set by the requirement $\alpha = \SI{100}{MHz}$ and $\omega_0 = 2\pi\cdot\SI{6}{GHz}$.  This means scaling the junction width as a function of $V_{\rm g}$.  The expected linewidth $\Gamma$ is shown along with the designed anharmonicity.
-		\textbf{b,} Required junction width to maintain a resonant frequency of $\omega_0 = 2\pi\cdot\SI{6}{GHz}$ and $\alpha = \SI{100}{MHz}$ as a function of $V_{\rm g}$.}
+		\textbf{a,} We calculate the performance of a device whose capacitance and inductance are set by the requirement $\alpha = \SI{100}{MHz}$ and $\omega_0 = 2\pi\times\SI{6}{GHz}$.  This means scaling the junction width as a function of $V_{\rm g}$.  The expected linewidth $\Gamma$ is shown along with the designed anharmonicity.
+		\textbf{b,} Required junction width to maintain a resonant frequency of $\omega_0 = 2\pi\times\SI{6}{GHz}$ and $\alpha = \SI{100}{MHz}$ as a function of $V_{\rm g}$.}
 	\label{fig:anharm3}
 \end{figure*}
 
@@ -526,13 +526,13 @@ All raw and processed data as well as supporting code for processing and figure 
 			\hline 
 			$L'$ (Total inductance per unit length) & \SI{0.619838}{\micro\henry/m} \\ 
 			\hline
-			$C_{\rm s}$ (Shunt coupler capacitance) & $\sim\SI{27}{pF}$ \\ 
+			$C_{\rm s}$ (Shunt coupler capacitance) & $\sim$\SI{27}{pF} \\ 
 			\hline 
 			$Z_0$ (TL Characteristic impedance) & \SI{64.611}{\ohm} \\
 			\hline 
 			$Z'_0$ (Reference impedance) & \SI{50}{\ohm} \\
 			\hline 
-			$v_{\rm ph}$ (Phase velocity in TL) & $\SI{1.04238e8}{m/s} = 0.3477\,c$ \\ 
+			$v_{\rm ph}$ (Phase velocity in TL) & \SI{1.04238e8}{m/s} = 0.3477 $c_0$ \\ 
 			\hline
 			$L'_{\rm g} = \frac{\mu_0}{4}\frac{K({k'_0}^2)}{K({k_0}^2)}$ (Geometric inductance per unit length) & \SI{0.4277}{\micro\henry/m} \\ 
 			\hline
@@ -638,10 +638,10 @@ We first consider the device as presented in the main text.
 To calculate the anharmonicity of this device we use techniques from the black box quantization method \cite{nigg_blackbox_2012}.
 According to this method, the value of the anharmonicity $\alpha$ is then given by
 \begin{equation}
-\alpha = \frac{2e^2}{L_{\rm j}\omega_0^2(\textrm{Im}(Y'(\omega_0)))},
+\alpha = \frac{2e^2}{L_{\rm j}\omega_0^2(\Im [Y'(\omega_0)])},
 \end{equation}
 where $L_{\rm j}$ is the Josephson inductance of the junction, $\omega_0$ is the resonant frequency of the circuit, $Y$ is the admittance of the circuit seen from the junction terminals (including its own admittance) and $Y'$ its derivative with respect to frequency.
-The resonance frequency $\omega_0$ then corresponds to the condition $\textrm{Im}Y(\omega_0) = 0$ and the derivative at this point $Y'(\omega_0)$ can be computed.
+The resonance frequency $\omega_0$ then corresponds to the condition $\Im [Y(\omega_0)] = 0$ and the derivative at this point $Y'(\omega_0)$ can be computed.
 
 As can be seen in Supplementary Figure \ref{fig:anharm1}, the calculated anharmonicity for our main device is always smaller than the measured linewidth.
 Therefore it does not qualify as a qubit in its current state.
@@ -654,7 +654,7 @@ While our device is not immediately a qubit, some improvements are possible.
 Most notably, the junction inductance is diluted by the cavity inductance, resulting in a low participation ratio in the total circuit inductance.
 We can therefore pose the question of what would the performance of a transmon be that contained only our graphene Josephson junction as its inductive element.
 This circuit is shown in the inset in Supplementary Figure \ref{fig:anharm2}a and consists of the junction in parallel with a shunt capacitor $C_{\rm q}$.
-The value of this capacitance is set by the requirement that the frequency of the transmon be $\omega_0 = 2\pi\cdot\SI{6}{GHz}$.
+The value of this capacitance is set by the requirement that the frequency of the transmon be $\omega_0 = 2\pi\times\SI{6}{GHz}$.
 Given the measured values of $L_{\rm j}$ as a function of applied gate voltage, we can then obtain the anharmonicity as:
 \begin{equation}
 \alpha = \frac{e^2}{2C_{\rm q}}.
@@ -662,7 +662,7 @@ Given the measured values of $L_{\rm j}$ as a function of applied gate voltage, 
 The result is shown in Supplementary Figure \ref{fig:anharm2}a along with the projected linewidth of the device $\Gamma = (R_{\rm sg}C_{\rm q})^{-1}$.
 Although the situation is improved in this case, the anharmonicity is still substantially lower than the calculated linewidth.
 This is due to the fact that we are using a rather wide junction with a somewhat high critical current value and, therefore, a low inductance value.
-To keep the frequency at the chosen $\omega_0 = 2\pi\cdot\SI{6}{GHz}$, the necessary capacitance is then too large to make a qubit.
+To keep the frequency at the chosen $\omega_0 = 2\pi\times\SI{6}{GHz}$, the necessary capacitance is then too large to make a qubit.
 This could be resolved by making our junction narrower, hence increasing its inductance, as we shall see below.
 
 
@@ -672,7 +672,7 @@ This could be resolved by making our junction narrower, hence increasing its ind
 In this case we consider the same circuit as in the previous case.
 Now, however, we fix the capacitance so that the anharmonicity $\alpha = \SI{100}{MHz}$.
 This sets the value of our capacitance $C_{\rm q}\simeq\SI{0.2}{pF}$.
-Since we also keep the requirement that $\omega_0 = 2\pi\cdot\SI{6}{GHz}$, our junction inductance is fixed to a value of $L_{\rm j} = (\omega_0^2C_{\rm q})^{-1} \simeq \SI{3.5}{nH}$.  
+Since we also keep the requirement that $\omega_0 = 2\pi\times\SI{6}{GHz}$, our junction inductance is fixed to a value of $L_{\rm j} = (\omega_0^2C_{\rm q})^{-1} \simeq \SI{3.5}{nH}$.  
 Given these requirements and the measured values of inductance for our device, we can deduce what junction width would be necessary at each gate voltage $V_{\rm g}$ to produce the required inductance.
 
 Here we make the assumption that both $L_{\rm j}$ and $R_{\rm sg}$ scale with the inverse of the junction width, i.e., approximately as $\propto W^{-1}$.

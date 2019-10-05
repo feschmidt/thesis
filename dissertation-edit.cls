@@ -213,7 +213,7 @@
 	%% Print the chapter number at the center right in the thumb index.
 	\coordinate (center right) at ($(bottom right)+(0pt,0.5\thumbheight)$);
 	\node at (center right)[anchor=east,inner sep=2\thumbedge]{
-		\titlefont\color{mLightBrown} %\sfseries % for seriffonts
+		\titlefont\color{tudelft-white} %\sfseries % for seriffonts
 		\fontsize{0.75\thumbheight}{0.75\thumbheight}\selectfont
 		\thechapter
 	};
@@ -238,7 +238,7 @@
 	%% Print the chapter number at the center right in the thumb index.
 	\coordinate (center left) at ($(bottom left)+(0pt,0.5\thumbheight)$);
 	\node at (center left)[anchor=west,inner sep=2\thumbedge]{
-		\titlefont\color{mLightBrown} %\sfseries % for seriffonts
+		\titlefont\color{tudelft-white} %\sfseries % for seriffonts
 		\fontsize{0.75\thumbheight}{0.75\thumbheight}\selectfont
 		\thechapter
 	};
