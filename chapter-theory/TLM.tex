@@ -10,9 +10,9 @@ The characteristic impedance of such a CPW is given by
 Z_0 = \sqrt{\frac{L'}{C'}}
 \end{equation}
 The electromagnetic waves in such a line are traveling with the wave velocity \begin{equation}
-v=\frac{1}{\sqrt{L'C'}}=\frac{c_\mathrm{vac}}{\sqrt{\epsilon_\mathrm{eff}}}.
+v=\frac{1}{\sqrt{L'C'}}=\frac{c_\text{vac}}{\sqrt{\epsilon_\text{eff}}}.
 \end{equation}
-If we assume a very thin film with large gaps, i.e. $t \ll s \ll H \rightarrow \infty$, and by defining the effective dielectric constant $\epsilon_\mathrm{eff} = \frac{1+\epsilon_r}{2}$, the transmission line parameters can all be reduced to the following expressions:
+If we assume a very thin film with large gaps, i.e. $t \ll s \ll H \rightarrow \infty$, and by defining the effective dielectric constant $\epsilon_\text{eff} = \frac{1+\epsilon_r}{2}$, the transmission line parameters can all be reduced to the following expressions:
 \begin{align}
 C' &= 2\epsilon_0(\epsilon_r+1)\frac{K(K_0)}{K(k'_0)} \\%
 L' &= \frac{\mu_0}{4}\frac{K(k'_0)}{K(k_0)} \\%
@@ -44,13 +44,13 @@ This circuit can be split into infinitesimal small elements, depicted in figure 
 In the following, we apply Kirchoff's laws to the circuit.
 The voltage and current of this network are given by
 \begin{align}
-v(z,t) - r\Delta z i(z,t) - l\Delta z\frac{\partial i(z,t)}{\partial t}-v(z+\Delta z,t) &=0 \\%
-i(z,t) - g\Delta z v(z+\Delta z, t) - c\Delta z\frac{\partial v(z+\Delta z,t)}{\partial t} - i(z+\Delta z,t) &=0
+v(z,t) - r\Delta z i(z,t) - l\Delta z \diffp{i(z,t)}{t}-v(z+\Delta z,t) &=0 \\%
+i(z,t) - g\Delta z v(z+\Delta z, t) - c\Delta z \diffp{v(z+\Delta z,t)}{t} - i(z+\Delta z,t) &=0
 \end{align}
 For the limit $\Delta z\rightarrow0$ these equations transform into 
 \begin{align}
-\frac{\partial v(z,t)}{\partial t} &= -ri(z,t)-l\frac{\partial i(z,t)}{\partial t} \\%
-\frac{\partial i(z,t)}{\partial t} &= -gi(z,t)-c\frac{\partial v(z,t)}{\partial t}
+\diffp{v(z,t)}{t} &= -ri(z,t)-l\diffp{i(z,t)}{t} \\%
+\diffp{i(z,t)}{t} &= -gi(z,t)-c\diffp{v(z,t)}{t}
 \end{align}
 Rewriting these equations for sinusoidal steady-state conditions and cosine-based phasors, i.e. $x(z,t) \rightarrow X(z)e^{i\omega t}$ results in the \textit{Telegrapher equations:}
 \begin{align}
@@ -85,7 +85,7 @@ Hence it is clear that the wavelength on the line is $\lambda=2\pi/\beta$, and t
 In general, the propagation constant of electromagnetic waves on a transmission line is given by the propagation constant in equation \ref{eq:gamma}.
 For the lossless case $R=0$ and $G=0$ and the resulting propagation constant
 \begin{align}
-\gamma_\mathrm{lossless} &= j\omega\sqrt{LC} \\%
+\gamma_\text{lossless} &= j\omega\sqrt{LC} \\%
 &\rightarrow \alpha=0, \; \beta=\omega\sqrt{LC}
 \end{align}
 For this case, we have no attenuation ($\alpha=0$) and the line impedance $Z_0=\sqrt{L/C}$ is real.
@@ -125,44 +125,44 @@ We analyze the circuit depicted in Fig. \ref{fig:resonatordaniel}. Typically we 
 Z_e = \left(\frac{1}{Z_0}+i\omega C_s\right)^{-1} = \frac{Z_0}{1+i\omega C_s} &= \frac{Z_0}{1+(\omega C_s Z_0)^2} + \frac{1}{i\omega}\frac{\omega^2 C_s Z_0^2}{1+(\omega C_s Z_0)^2} \\%
 &= R^* + \frac{1}{i\omega}\frac{1}{C^*}
 \end{align}
-Hence we can transform the shunt capacitor and transmision line impedance into a series system together with the $RLC$-resonator. For this type of coupling, usually $\omega C_s Z_0\gg1$ aournd the resonance $\omega\approx\omega_0$. Hence, we can define these lumped elements as
+Hence we can transform the shunt capacitor and transmission line impedance into a series system together with the $RLC$-resonator. For this type of coupling, usually $\omega C_s Z_0\gg1$ around the resonance $\omega\approx\omega_0$. Hence, we can define these lumped elements as
 \begin{align}
 R^* \approx \frac{1}{\omega_0^2 C_s^2 Z_0}, \hspace{2cm}C^*\approx C_s
 \end{align}
 Then, for the total capacitance and resistance, we get 
 \begin{align}
-R_\mathrm{tot} = R+R^*, \hspace{2cm} C_\mathrm{tot}=\frac{C C_s}{C + C_s}
+R_\text{tot} = R+R^*, \hspace{2cm} C_\text{tot}=\frac{C C_s}{C + C_s}
 \end{align}
 
 This lumped element circuit has the resonance frequency
 \begin{align}
-\omega_0 = \frac{1}{\sqrt{LC_\mathrm{tot}}} = \sqrt{\frac{C+C_s}{L C C_s}}
+\omega_0 = \frac{1}{\sqrt{LC_\text{tot}}} = \sqrt{\frac{C+C_s}{L C C_s}}
 \end{align}
 We can see that the coupling capacitor $C_s$ shifts the resonance frequency upwards, compared to the bare resonance frequency.
 The total quality factor,
 \begin{equation}
-Q_L = \frac{1}{\omega_0 R_\mathrm{tot}C_\mathrm{tot}} = \left(\frac{1}{Q_\mathrm{int}} + \frac{1}{Q_\mathrm{ext}}\right)^{-1}
+Q_L = \frac{1}{\omega_0 R_\text{tot}C_\text{tot}} = \left(\frac{1}{Q_\text{int}} + \frac{1}{Q_\text{ext}}\right)^{-1}
 \end{equation}
 can be separated into its internal and external components
 \begin{align}
-Q_\mathrm{int} &= \frac{C+C_s}{\omega_0 R C C_s}, \hspace{2cm} Q_\mathrm{ext} = \frac{C+C_s}{\omega_0 R^* C C_s} = \frac{\omega_0 Z_0 C_S (C+C_s)}{C} \\%
-\kappa_\mathrm{ext} &= \frac{\omega_0}{Q_\mathrm{ext}} = \frac{\omega_0 R C C_s}{C+C_s}, \hspace{2cm} \kappa_\mathrm{ext} = \frac{\omega_0}{Q_\mathrm{ext}} = \frac{C}{Z_0 C_s (C+C_s)}
+Q_\text{int} &= \frac{C+C_s}{\omega_0 R C C_s}, \hspace{2cm} Q_\text{ext} = \frac{C+C_s}{\omega_0 R^* C C_s} = \frac{\omega_0 Z_0 C_S (C+C_s)}{C} \\%
+\kappa_\text{ext} &= \frac{\omega_0}{Q_\text{ext}} = \frac{\omega_0 R C C_s}{C+C_s}, \hspace{2cm} \kappa_\text{ext} = \frac{\omega_0}{Q_\text{ext}} = \frac{C}{Z_0 C_s (C+C_s)}
 \end{align}
 We can now calculate the complete input impedance of this circuit for the lossless case, i.e. $R=0$:
 \begin{align}
-\frac{1}{Z_\mathrm{in}}&=\left(i\omega L + \frac{1}{i\omega C}\right)^{-1} + i\omega C_s = i\frac{\omega(C+C_s)-\omega^3LCC_s}{1-\omega^2LC} \\%
-&=i\omega\frac{C+C_s}{1-\omega^2LC}\left(1-\frac{\omega^2}{\omega_0^2}\right), \hspace{2cm} \omega_0=\frac{C+C_s}{LCC_s} \\%
-&\approx2i\frac{C_s(C+C_s)}{C}\Delta\omega \\%
-&\longrightarrow Z_\mathrm{in} \approx \frac{C}{C_s (C+C_s)}\frac{1}{\kappa_\mathrm{int}+2i\Delta\omega}.
+\frac{1}{Z_\text{in}}&=\left(i\omega L + \frac{1}{i\omega C}\right)^{-1} + i\omega C_s = i\frac{\omega(C+C_s)-\omega^3LCC_s}{1-\omega^2LC} \\%
+&=i\omega\frac{C+C_s}{1-\omega^2LC}\left(1-\frac{\omega^2}{\omega_0^2}\right) \\%
+&\approx2i\frac{C_s(C+C_s)}{C}\Delta \\%
+&\longrightarrow Z_\text{in} \approx \frac{C}{C_s (C+C_s)}\frac{1}{\kappa_\text{int}+2i\Delta},
 \end{align}
 
-With this, we get for the reflection parameter
+where $\Delta=\omega_0-\omega$ and $\omega_0=\frac{C+C_s}{LCC_s}$. With this, we get for the reflection parameter
 \begin{equation}
-\Gamma = \frac{Z_\mathrm{in}-Z_0}{Z_\mathrm{in}+Z_0}\approx\frac{\kappa_\mathrm{ext}-\kappa_\mathrm{int}-2i\Delta\omega}{\kappa_\mathrm{ext}+\kappa_\mathrm{int}+2i\Delta\omega}.
+\Gamma = \frac{Z_\text{in}-Z_0}{Z_\text{in}+Z_0}\approx\frac{\kappa_\text{ext}-\kappa_\text{int}-2i\Delta}{\kappa_\text{ext}+\kappa_\text{int}+2i\Delta}.
 \end{equation}
 
 \section{Kinetic inductance}
-For highly disordered superconductors, such as MoRe or NbTiN, there is an additional effect to be taken into account when analysing or designing a circuit: The so-called \textit{kinetic inductance} $L_k$. It arises naturally from the Drude model, when considering electron relaxation times comparable to the excitation frequency. This then leads to an additional inductance term from the kinetic energy of the electrons that are "lagging behind" the excitation signal. For a superconducting wire with length $l$ and crossection $A$, it is given by
+For highly disordered superconductors, such as MoRe or NbTiN, but also for thin films of aluminum, there is an additional effect to be taken into account when designing a circuit: The so-called \textit{kinetic inductance} $L_k$. It arises naturally from the Drude model, when considering electron relaxation times comparable to the excitation frequency. This then leads to an additional inductance term from the kinetic energy of the electrons that are "lagging behind" the excitation signal. For a superconducting wire with length $l$ and crossection $A$, it is given by
 \begin{eqnarray}
 L_k = \frac{m}{2n_s e^2}\frac{l}{A}
 \end{eqnarray}
@@ -170,9 +170,9 @@ with $n_s$ the Cooper pair density. For a CPW, $L_k$ reads
 \begin{eqnarray}
 L_k = g L_s = g\mu_0\lambda_m\coth\left(\frac{t}{\lambda_m}\right)
 \end{eqnarray}
-where $L_s$ denotes the surface inductance, $t$ the film thickness, $g=g(S,W,t)$ the geometry factor of the CPW, $\Delta_0\approx1.764\,k_BT_c$ the superconducting gap at \SI{0}{K} and $\lambda_m$ the London penetration depth at $T\rightarrow0$ as
+where $L_s$ denotes the surface inductance, $t$ the film thickness, $g=g(S,W,t)$ the geometry factor of the CPW, $\Delta_0\approx1.764\,k_\text{B}T_\text{c}$ the superconducting gap at \SI{0}{K} and $\lambda_m$ the London penetration depth at $T\rightarrow0$ as
 \begin{eqnarray}
-\lambda_m=\sqrt{\frac{\hbar\rho}{\pi\mu_0\Delta_0}}\approx\SI{105}{(nm)}\times\sqrt{\frac{\rho\si{\,(\micro\ohm\,\centi\metre)}}{T_c \si{\,(K)}}}
+\lambda_m=\sqrt{\frac{\hbar\rho}{\pi\mu_0\Delta_0}}\approx\SI{105}{(nm)}\times\sqrt{\frac{\rho\si{\,(\micro\ohm\,\centi\metre)}}{T_\text{c} \si{\,(K)}}}
 \end{eqnarray}
 This length changes as a function of temperature according to
 \begin{eqnarray}
