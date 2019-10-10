@@ -11,7 +11,7 @@
 \RequirePackage{amsmath}
 \RequirePackage{amssymb}
 %% English is the default language, but Dutch is used for some sections.
-\RequirePackage[dutch,ngerman,english]{babel}
+\RequirePackage[dutch,english]{babel}
 \RequirePackage{calc}
 \RequirePackage[nooneline,footnotesize,font={sf,small},labelfont={sf,bf}]{caption}
 \RequirePackage{chapterbib}
