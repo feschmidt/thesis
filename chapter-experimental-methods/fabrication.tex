@@ -72,6 +72,7 @@ Figure 3: Step-by step optical images of exposure, dry-etching, liftoff, shaping
 
 Figure 4, if possible: Cross-sectional TEM of one of our devices (courtesy Sonia's lab)
 
+\pagebreak
 \subsection{Fabrication of current bias cavities}
 
 In order to improve the adhesion between the electron beam resist and substrate, we coated the substrate with a monolayer of HMDS (hexamethyldisilazane, \ce{[(CH3)3Si]2NH}) from \textit{MicroChemicals}.
@@ -98,16 +99,35 @@ Figure 1: Step by step optical images of MoRe cavities. (a) base layer after etc
 
 Figure 2: Al cavities, including Al-ScS fab.
 
+\pagebreak
+\subsection{Device packaging}
+
+After the device fabrication is finished, the sample has to be mounted on a chip carrier and contacted, so we can connect it to our measurement electronics.
+Our microwave PCBs are made for \SI{10x10}{\milli\meter} chips; however in order to grab the chips during fabrication easier and to enhance the fabrication yield, samples are usually fabricated on larger substrates:
+The current bias cavities for the graphene devices presented in this thesis were processed on a \SI{2}{inch} wafer, and the cavities based on aluminum on \SI{15x15}{\milli\meter} chips.
+We dice the chips into the correct dimensions as the very last step, using the \textit{Disco dicer} DAD 3220 from \textit{Disco Hi-Tec Europe GmbH}.
+To protect the chip from dust during sawing, we spincoat photoresist\footnote{HPR504, \SI{4000}{rpm}, bake \SI{60}{\second} at \SI{100}{\celsius}, approximately \SI{1.2}{\micro\meter} thick} on the chip before dicing.
+The silicon chips were diced using a standard NBC blade at \SI{3000}{rpm} and a feed speed of \SI{5}{\milli\meter\per\second}, while for dicing sapphire we used a special diamond blade at \SI{2000}{rpm} and \SI{2}{\milli\meter\per\second}.
+Removing the protective resist after dicing can depend on the device materials.
+For the devices presented in this thesis, we placed the diced chips in teflon holders inside beakers filled with PRS3000, heated the solution to \SI{80}{\celsius} and subsequently put the beaker into an ultrasound bath at maximum power.
+After \SI{5}{\minute}, the resist has then come off the sample, and we passed the chip through a series of PRS3000 and IPA baths to wash off any remains, and blow-dried using nitrogen.
+
+The chips are finally glued to the rails of our copper boxes using GE low temperature varnish.
+Wirebonding is done using a \textit{Westbond 4000 "E"} system from \textit{West•Bond Inc.} with bond wires from an AlSi alloy (\SI{99}{\percent}-\SI{1}{\percent}).
+To ensure good thermalization and electrical contact, we usually used three to four bonds for each bond pad, and as many bonds as would fit on the ground planes.
+An example of one of our devices that is mounted and wirebonded in a PCB, ready for measurement can be seen in Fig.\ref{fig:packaging}.
 
 \begin{figure}
 	\centering
-	\includegraphics{{chapter-experimental-methods/figs-fabrication/placeholder.svg}.png}
+	\includegraphics{{chapter-experimental-methods/figs-packaging/packaging.svg}.png}
 	\caption{
 		\textbf{Device packaging for electrical measurements.}
-		\textbf{A,} Photograph of a wire-bonded chip mounted in a copper sample holder.
+		\textbf{A,} A \SI{10x10}{\milli\meter} mounted and wirebonded to a PCB, that is screwed onto a copper base.
+		\textbf{B,} Close-up of the bottom-right chip area.
+		The substrate is sapphire, hence the chip transparency.
 	}
-	\label{fig:placeholder}
+	\label{fig:packaging}
 \end{figure}
 
-Figure 3: Wirebonding, packaging
+
 
