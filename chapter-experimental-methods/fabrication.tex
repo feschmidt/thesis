@@ -79,6 +79,8 @@ In order to improve the adhesion between the electron beam resist and substrate,
 We found that this immensely helped against under-etching of dielectrics with BOE, or even cracks in the resist after development of PMMA or CSAR, regardless of whether the substrate was metallic or dielectric.
 For this we used the hotplate with integrated HMDS deposition system of a \textit{Suss MicroTec Delta 80 RC}, with prebaking at \SI{150}{\celsius} for \SI{6}{\minute}.
 
+Fabrication pictures: The only ones are from October 2016. Charlie + Delta \url{https://nas-steelelab.tnw.tudelft.nl:5001/d/f/509411795578955027}. Bad adhesion during BHF, but I think that is ok. Otherwise NbTiN cavities that never worked...
+
 \begin{figure}
 	\centering
 	\includegraphics{{chapter-experimental-methods/figs-fabrication/placeholder-six.svg}.png}
@@ -92,7 +94,7 @@ For this we used the hotplate with integrated HMDS deposition system of a \texti
 		\textbf{E,} SEM image of an aluminum constriction junction.
 		Scale bar \SI{100}{\nano\meter}.
 	}
-	\label{fig:placeholder}
+	\label{fig:biascavityfab}
 \end{figure}
 
 Figure 1: Step by step optical images of MoRe cavities. (a) base layer after etching, (b) dielectric layer finished, (c) top metal finished.
@@ -102,11 +104,30 @@ Figure 2: Al cavities, including Al-ScS fab.
 \pagebreak
 \subsection{Device packaging}
 
+\begin{figure}
+	\centering
+	\includegraphics{{chapter-experimental-methods/figs-packaging/packaging.svg}.png}
+	\caption{
+		\textbf{Device packaging for electrical measurements.}
+		\textbf{A,} A \SI{10x10}{\milli\meter} mounted and wirebonded to a PCB, that is screwed onto a copper base.
+		The four small holes around the chip are used to screw on a small copper lid, covering the chip.
+		The four big holes at the edge of the copper based are used for mounting the chip in a cryostat, and to hold the top cover in place.
+		Connectors for connecting the PCB to the outside world are surface mount SMP plugs.
+		\textbf{B,} Close-up of the bottom-right chip area, taken with ring illumination.
+		The substrate is sapphire, hence the chip transparency.
+		In the bottom right corner, one of the copper rails on which the chip sits is visible.
+	}
+	\label{fig:packaging}
+\end{figure}
+
+
 After the device fabrication is finished, the sample has to be mounted on a chip carrier and contacted, so we can connect it to our measurement electronics.
 Our microwave PCBs are made for \SI{10x10}{\milli\meter} chips; however in order to grab the chips during fabrication easier and to enhance the fabrication yield, samples are usually fabricated on larger substrates:
 The current bias cavities for the graphene devices presented in this thesis were processed on a \SI{2}{inch} wafer, and the cavities based on aluminum on \SI{15x15}{\milli\meter} chips.
 We dice the chips into the correct dimensions as the very last step, using the \textit{Disco dicer} DAD 3220 from \textit{Disco Hi-Tec Europe GmbH}.
 To protect the chip from dust during sawing, we spincoat photoresist\footnote{HPR504, \SI{4000}{rpm}, bake \SI{60}{\second} at \SI{100}{\celsius}, approximately \SI{1.2}{\micro\meter} thick} on the chip before dicing.
+Good resist-substrate adhesion is important during dicing because the water jet used to cool the blade can wash off the resist during dicing otherwise, potentially ruining weeks of delicate work in the cleanroom.
+Use of HMDS, or letting the resist sit on the chip to be diced for \SI{1}{\minute} prior to spinning is highly recommended.
 The silicon chips were diced using a standard NBC blade at \SI{3000}{rpm} and a feed speed of \SI{5}{\milli\meter\per\second}, while for dicing sapphire we used a special diamond blade at \SI{2000}{rpm} and \SI{2}{\milli\meter\per\second}.
 Removing the protective resist after dicing can depend on the device materials.
 For the devices presented in this thesis, we placed the diced chips in teflon holders inside beakers filled with PRS3000, heated the solution to \SI{80}{\celsius} and subsequently put the beaker into an ultrasound bath at maximum power.
@@ -116,18 +137,8 @@ The chips are finally glued to the rails of our copper boxes using GE low temper
 Wirebonding is done using a \textit{Westbond 4000 "E"} system from \textit{West•Bond Inc.} with bond wires from an AlSi alloy (\SI{99}{\percent}-\SI{1}{\percent}).
 To ensure good thermalization and electrical contact, we usually used three to four bonds for each bond pad, and as many bonds as would fit on the ground planes.
 An example of one of our devices that is mounted and wirebonded in a PCB, ready for measurement can be seen in Fig.\ref{fig:packaging}.
+The connectors to go from the PCB to the outside world are straight plug semi-detent SMP connectors\footnote{19S102-40ML5 straight plug PCB, from \textit{Rosenberger Hochfrequenztechnik GmbH \& Co. KG}}.
 
-\begin{figure}
-	\centering
-	\includegraphics{{chapter-experimental-methods/figs-packaging/packaging.svg}.png}
-	\caption{
-		\textbf{Device packaging for electrical measurements.}
-		\textbf{A,} A \SI{10x10}{\milli\meter} mounted and wirebonded to a PCB, that is screwed onto a copper base.
-		\textbf{B,} Close-up of the bottom-right chip area.
-		The substrate is sapphire, hence the chip transparency.
-	}
-	\label{fig:packaging}
-\end{figure}
 
 
 
