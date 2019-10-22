@@ -89,8 +89,9 @@
 %\definecolor{mDarkTeal}{HTML}{23373b}
 %\definecolor{mLightBrown}{HTML}{EB811B}
 \definecolor{mDarkTeal}{cmyk}{0.4068,0.0678,0.0000,0.7686}
-\definecolor{mLightBrown}{cmyk}{0.0000,0.4511,0.8851,0.0784}
+\definecolor{mLightBrown}{cmyk}{0.00,0.27,0.74,0.13}%{0.0000,0.4511,0.8851,0.0784}
 %\definecolor{mLightGreen}{HTML}{14B03D}
+%\defincecolor{mLightBrown}{cmyk}{0.00,0.00,0.88,0.15} % gold
 
 %% Use TU Delft cyan as the color for titles, unless the 'print' option is
 %% specified, in which case we use anthracite, a dark gray, which is also used
@@ -262,7 +263,7 @@
 	\renewcommand*\headrulewidth{0pt}
 	\renewcommand*\footrulewidth{0pt}
 	\fancyhead{\cropmarks}
-	\fancyfoot[C]{\titlefont\thepage}
+	\fancyfoot[C]{\color{mLightBrown}\titlefont\thepage}
 }
 
 %% Fancy style for the main matter.
@@ -320,8 +321,8 @@
 
 %% Chapter titles have the same layout as parts.
 \titleformat{\chapter}[display]
-{\flushright\titlestyle}
-{\fontsize{200pt}{150pt}\selectfont\bfseries\color{title}\thechapter}
+{\flushright\titlestyle\pagecolor{mDarkTeal}\afterpage{\nopagecolor}}
+{\fontsize{200pt}{150pt}\selectfont\bfseries\color{mLightBrown}\thechapter}
 {0pt}
 {\Huge\color{mLightBrown}}
 \titlespacing{\chapter}{0pt}{0pt}{2\baselineskip}
@@ -390,7 +391,7 @@
 %% significantly to the chapter.
 \newcommand*\authors[1]{%
 	\begin{center}%
-		{\Large\bfseries #1}%
+		{\color{mLightBrown}\Large\bfseries #1}%
 	\end{center}%
 	\vspace{2\baselineskip}%
 }
@@ -399,6 +400,7 @@
 %% a chapter.
 \newcommand\epigraph[3][2\baselineskip]{%
 	\begin{flushright}%
+		\color{mLightBrown}
 		{\sffamily\itshape #2}%
 		\vskip 0.5\baselineskip%
 		#3%
@@ -408,6 +410,7 @@
 
 %% The abstract environment is used for the abstract of a chapter.
 \newenvironment{abstract}{%
+	\color{mLightBrown}
 	\list{}{\leftmargin\rightmargin}%
 	\item%
 	\relax%
