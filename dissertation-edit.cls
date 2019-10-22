@@ -101,7 +101,7 @@
 \colorlet{title}{anthracite}
 \colorlet{thumb}{anthracite}
 \else
-\colorlet{title}{mDarkTeal}
+\colorlet{title}{mLightBrown}
 \colorlet{thumb}{mDarkTeal}
 \fi
 
@@ -309,15 +309,15 @@
 %% A part title starts with a huge (96pt) bold black number, flushed to the
 %% right, followed by the part name on the next line in the title color.
 \titleformat{\part}[display]
-{\flushright\titlestyle}
-{\fontsize{200pt}{150pt}\selectfont\bfseries\color{title}\thepart}
+{\flushright\titlestyle\pagecolor{mDarkTeal}\afterpage{\nopagecolor}}
+{\fontsize{200pt}{150pt}\selectfont\bfseries\color{mLightBrown}\thechapter}
 {0pt}
 {\Huge\color{mLightBrown}}
 %% Separate the title from the text by two empty lines.
 \titlespacing{\part}{0pt}{0pt}{2\baselineskip}
 %% In the table of contents, the part name is preceded by an empty line, printed
 %% in bold, and not followed by a line of dots.
-\dottedcontents{part}[0em]{\vspace{\baselineskip}\titlefont\bfseries}{1.5em}{0pc}
+\dottedcontents{part}[0em]{\vspace{\baselineskip}\titlefont\bfseries\color{mLightBrown}}{1.5em}{0pc}
 
 %% Chapter titles have the same layout as parts.
 \titleformat{\chapter}[display]
@@ -328,7 +328,7 @@
 \titlespacing{\chapter}{0pt}{0pt}{2\baselineskip}
 %% In the table of contents, a chapter is similar to a part, except that it is
 %% preceded by half an empty line.
-\dottedcontents{chapter}[1.5em]{\vspace{0.5\baselineskip}\titlefont\bfseries}{1.5em}{0pc}
+\dottedcontents{chapter}[1.5em]{\vspace{0.5\baselineskip}\titlefont\bfseries\color{mLightBrown}}{1.5em}{0pc}
 
 %% Section titles start with the number in bold, followed by the name printed
 %% in the title color.
@@ -341,7 +341,7 @@
 \titlespacing{\section}{0pt}{\baselineskip}{0pt}
 %% In the table of contents, section names are followed by a line of dots 8pt
 %% apart.
-\dottedcontents{section}[3.8em]{\titlefont}{2.3em}{8pt}
+\dottedcontents{section}[3.8em]{\titlefont\color{mLightBrown}}{2.3em}{8pt}
 
 %% Subsection titles have the same layout as section titles, except in a smaller
 %% font.
@@ -351,7 +351,7 @@
 {0pt}
 {\color{title}}
 \titlespacing{\subsection}{0pt}{\baselineskip}{0pt}
-\dottedcontents{subsection}[7em]{\titlefont}{3.2em}{8pt}
+\dottedcontents{subsection}[7em]{\titlefont\color{mLightBrown}}{3.2em}{8pt}
 
 %% Subsubsections have the same font and color as sections and subsections, but
 %% are not preceded by a number.
