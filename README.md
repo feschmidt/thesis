@@ -2,7 +2,7 @@
 
 ## Instructions
 
-To compile: Use vscode and "run all build tasks". Preview can be done internally. Compilation using `pdflatex`is fine; I don't think I need either  `xelatex` or `lualatex`.
+To compile: run `bash compile.sh`. This compiles the file using `pdflatex`. I suppose `xelatex` produces nicer fonts, but it seems to mess a bit with the colors of the title pages. TODO: Investigate this.
 
 ### Layout
 
