@@ -1,3 +1,4 @@
+#!/bin/bash
 pdflatex --interaction=batchmode dissertation
 bibtex dissertation
 bibtex chapter-introduction/introduction
