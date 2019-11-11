@@ -54,33 +54,28 @@ It is important to note that the measured switching current $I_s$ will not be ex
 For diffusive junctions, this discrepancy can even be as large as 20\% \cite{ke_critical_2016}.
 This value could in principle be much higher for lower transparencies.
 
-\subsubsection{Selective transmission of carriers in Klein tunneling}
-Although Klein tunneling in graphene allows charge carriers to pass a pn-junction, Cheianov and Fal'ko showed that particles approaching such a barrier at high angles will be reflected with a high probability.\cite{chialvoCurrentphaseRelationGraphene2010}
-This could filter out one part of the quasiparticle, especially in a wider junction, thus reducing the critical current.\cite{benshalom_quantum_2015}
+Other possible suppression mechanisms are of various origin:
+\begin{description}
+	\item[Selective transmission of carriers in Klein tunneling] Although Klein tunneling in graphene allows charge carriers to pass a pn-junction, Cheianov and Fal'ko showed that particles approaching such a barrier at high angles will be reflected with a high probability.\cite{chialvoCurrentphaseRelationGraphene2010}
+	This could filter out one part of the quasiparticle, especially in a wider junction, thus reducing the critical current.\cite{benshalom_quantum_2015}
+	\item[Specular reflection at the interface] This effect should only be relevant close to the CNP, as there is no specular Andreev reflection (SAR) for high p- or n-doping.
+	This effect would lead to a dephasing between the quasiparticle pair.
+	However, most graphene devices remain limited by conductance fluctuations around zero doping, so that SAR does not occur.
+	\item[Charge puddles around the CNP] Charge puddles enhance scattering, possibly leading to additional reduction of $I_c$.
+	We observe a strong suppression of both $I_s$ and $I_s R_n$ close to the CNP, indicating such an effect.
+	\item[Pseudomagnetic fields] Any scattering source, e.g. ripples or inhomogeneities, can create random pseuomagnetic fields.
+	This could lead to dephasing of the electron and hole quasiparticle pair passing such a scatterer.
+	Moreover, such a magnetic field would alter the paths of the quasiparticles, possibly increasing the distance between them and resulting in pair-breaking and dissipation.
+	\item[Finite temperature] We cite from Nanda and coauthors \cite{nanda_currentphase_2017}:
+	\begin{quotation}
+		\textit{"The reduction in skewness with temperature is a consequence of the fact that the higher frequency terms in the CPR arise due to the phase coherent transfer of multiple Cooper pairs and involve longer quasiparticle paths \cite{heikkilaSupercurrentcarryingDensityStates2002}, thereby making them more sensitive to temperature.
+			As a result, their amplitude decreases quickly with increasing temperature \cite{hagymasiJosephsonCurrentBallistic2010,black-schafferStronglyAnharmonicCurrentphase2010,rakytaMagneticFieldOscillations2016,english_observation_2016}."}
+	\end{quotation}
+	
+	(However (?),) We observe the following effect for increased temperature:
+	For $\SI{15}{mK}\rightarrow\SI{1}{K}$, the critical current decreases especially for large doping, while it seems to stay rather constant for $V_g\approx V_{CNP}$.
+	However, the induced gap of $2\Delta_{ind}\approx\SI{1}{meV}$ stays constant over this voltage range/ Note, however, that the reduced gap we measure (on the order of \SI{100}{\micro eV}) decreases.
+	Thus we conclude that both the reduction in $I_c$ and $Q_{int}$ of our device is due to coherence loss among the ABS below the induced gap.
+	\item[Electronic noise] Premature switching due to random washboard-potential tilts.
+\end{description}
 
-\subsubsection{Specular reflection at the interface}
-This effect should only be relevant close to the CNP, as there is no specular Andreev reflection (SAR) for high p- or n-doping.
-This effect would lead to a dephasing between the quasiparticle pair.
-However, most graphene devices remain limited by conductance fluctuations around zero doping, so that SAR does not occur.
-
-\subsubsection{Charge puddles around the CNP}
-Charge puddles enhance scattering, possibly leading to additional reduction of $I_c$.
-We observe a strong suppression of both $I_s$ and $I_s R_n$ close to the CNP, indicating such an effect.
-
-\subsubsection{Pseudomagnetic fields}
-Any scattering source, e.g. ripples or inhomogeneities, can create random pseuomagnetic fields.
-This could lead to dephasing of the electron and hole quasiparticle pair passing such a scatterer.
-Moreover, such a magnetic field would alter the paths of the quasiparticles, possibly increasing the distance between them and resulting in pair-breaking and dissipation.
-
-
-\subsection{Effect of temperature}
-We cite from Nanda and coauthors \cite{nanda_currentphase_2017}:
-\begin{quotation}
-	\textit{"The reduction in skewness with temperature is a consequence of the fact that the higher frequency terms in the CPR arise due to the phase coherent transfer of multiple Cooper pairs and involve longer quasiparticle paths \cite{heikkilaSupercurrentcarryingDensityStates2002}, thereby making them more sensitive to temperature.
-	As a result, their amplitude decreases quickly with increasing temperature \cite{hagymasiJosephsonCurrentBallistic2010,black-schafferStronglyAnharmonicCurrentphase2010,rakytaMagneticFieldOscillations2016,english_observation_2016}."}
-\end{quotation}
-
-(However (?),) We observe the following effect for increased temperature:
-For $\SI{15}{mK}\rightarrow\SI{1}{K}$, the critical current decreases especially for large doping, while it seems to stay rather constant for $V_g\approx V_{CNP}$.
-However, the induced gap of $2\Delta_{ind}\approx\SI{1}{meV}$ stays constant over this voltage range/ Note, however, that the reduced gap we measure (on the order of \SI{100}{\micro eV}) decreases.
-Thus we conclude that both the reduction in $I_c$ and $Q_{int}$ of our device is due to coherence loss among the ABS below the induced gap.

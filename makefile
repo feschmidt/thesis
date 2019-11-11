@@ -1,5 +1,7 @@
 .PHONY: all
 
+SHELL=/bin/bash
+
 all: 
 	bash src/compile.sh
 	bash src/compress.sh
