@@ -12,3 +12,4 @@ dissertation.fdb_latexmk
 dissertation.pdf
 propositions.pdf
 *.ppm
+*.out.pdf
