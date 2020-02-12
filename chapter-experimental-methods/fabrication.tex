@@ -109,12 +109,22 @@ We prepared the PPC solution by dissolving PPC at a \SI{15}{\percent} weight rat
 % 
 Our assembly using PPC is based on Ref.~\cite{pizzoccheroHotPickupTechnique2016} with minor modifications adjusted to our transfer setup.
 % 
+For every pick-and-place step, we fixed the substrate from or to which to transfer the flakes with vacuum, and used a single glass slide with a bubble of PDMS covered with PPC.
+%
+Both glass slide and chip could be individually moved with micrometer screws.
+%
+The following steps describe our typical working process:
 
-\begin{itemize}
-	\item Place the top hBN flake under the Navitar system and put the glass slide with the PDMS/PPC on top.
-	\item Touch with the PPC the substrate and increase the temperature. The PPC will start expanding and covering the flake.
-	\item Warm up, above \SI{55}{\celsius}.
-	\item Then cool down below \SI{40}{\celsius} and lift-up. the flake along with others should be on the PPC. Tip: If you didnt lift the flake repeat the process but this time heat to \SIrange{80}{90}{\celsius} and then cool down.
+\begin{enumerate}
+	\item Align the top BN flake with the center area of the PDMS/PPC template.
+	\item Lower the glass slide such that the PPC touches the substrate.
+	Take care that the PPC does not yet cover the flake, but touches down less than \SI{100}{\micro\meter} away from it.
+	\item Increase the stage temperature above \SI{55}{\celsius}.
+	The PDMS/PPC will expand and cover the flake, and adhesion between BN and PPC increase significantly.
+	\item Turn off the stage heater and wait for the stage to cool below \SI{40}{\celsius} (possibly with the help of a nitrogen gun).
+	At this stage, the adhesion between BN and PPC should exceed that of BN and substrate.
+	Now lifting the glass slide should rip the flake off the substrate.
+	If at this stage the intended flake did not get picked up, repeating the process by heating to \SIrange{80}{90}{\celsius} and then cooling down should result in a much higher yield, at cost of longer waiting times for the stage to cool down.
 	\item Place the graphene below now. Ok you go down and before you touch the h-Bn to the graphene you raise the temperature at \SI{110}{\celsius}. The hot air and the deflected slide will make it difficult to align them. Then touch and go down slowly. Once the interface passes the GR/hBN you should let it expand a bit more. Now the interface of Gr/hBN should be without bubbles and blisters.
 	\item Go to \SI{120}{\celsius} and then retract. The hBN should stay on top of the graphene.
 	\item Anneal the GR/hBN stack at \SI{170}{\celsius} for \SI{15}{\minute}.
@@ -123,7 +133,7 @@ Our assembly using PPC is based on Ref.~\cite{pizzoccheroHotPickupTechnique2016}
 	\item Put the bottom h-BN under the Navutar and align the stack.
 	\item Go down, thouch warm-up above \SI{50}{\celsius} and then cool down to pick-up as in step 3. Tip: for no bubbles again maybe repeat step 4, folowed by step 6.
 	\item Place the whole stack on the desired substrate.
-\end{itemize}
+\end{enumerate}
 
 Figure 1: Exfoliation of single flakes and sandwich assembly using the dry transfer method.
 In the main text, also describe the PC+Chloroform method.
