@@ -1,8 +1,6 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{dissertation-edit}[2013/07/08 v1.0 TU Delft dissertation class]
 
-\newif\if@nativefonts
-\DeclareOption{nativefonts}{\@nativefontstrue}
 \newif\if@print
 \DeclareOption{print}{\@printtrue}
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{book}}
@@ -15,7 +13,7 @@
 %% English is the default language, but Dutch is used for some sections.
 \RequirePackage[dutch,english]{babel}
 \RequirePackage{calc}
-\RequirePackage[nooneline,footnotesize,font=sf,font=small,labelfont=bf]{caption}
+\RequirePackage[nooneline,footnotesize,font={sf,small},labelfont={sf,bf}]{caption}
 \RequirePackage{chapterbib}
 \RequirePackage{etaremune}
 \RequirePackage{fancyhdr}
@@ -59,6 +57,7 @@
 %%% Or Fira Sans
 \usepackage[sfdefault,scaled=.85]{FiraSans}
 \usepackage{newtxsf}
+%\usepackage{eulervm} % experimental
 %% The style for titles is small caps.
 \def\titlefont{\sffamily}
 \def\titleshape{\scshape}
@@ -86,10 +85,13 @@
 \definecolor{tudelft-yellow}{cmyk}{0.02,0,0.54,0}
 
 %% Define metropolis theme colors
-\definecolor{mDarkBrown}{HTML}{604c38}
-\definecolor{mDarkTeal}{HTML}{23373b}
-\definecolor{mLightBrown}{HTML}{EB811B}
-\definecolor{mLightGreen}{HTML}{14B03D}
+%\definecolor{mDarkBrown}{HTML}{604c38}
+%\definecolor{mDarkTeal}{HTML}{23373b}
+%\definecolor{mLightBrown}{HTML}{EB811B}
+\definecolor{mDarkTeal}{cmyk}{0.4068,0.0678,0.0000,0.7686}
+\definecolor{mLightBrown}{cmyk}{0.00,0.27,0.74,0.13}%{0.0000,0.4511,0.8851,0.0784}
+%\definecolor{mLightGreen}{HTML}{14B03D}
+%\defincecolor{mLightBrown}{cmyk}{0.00,0.00,0.88,0.15} % gold
 
 %% Use TU Delft cyan as the color for titles, unless the 'print' option is
 %% specified, in which case we use anthracite, a dark gray, which is also used
@@ -99,7 +101,7 @@
 \colorlet{title}{anthracite}
 \colorlet{thumb}{anthracite}
 \else
-\colorlet{title}{mDarkTeal}
+\colorlet{title}{mLightBrown}
 \colorlet{thumb}{mDarkTeal}
 \fi
 
@@ -183,7 +185,7 @@
 \newlength\thumbedge
 \setlength\thumbedge{4pt} % shifts thumb number from inside out
 \newlength\thumbhspace
-\setlength\thumbhspace{30pt} % total shift outwards
+\setlength\thumbhspace{25pt} % total shift outwards
 \newlength\thumbvspace
 \setlength\thumbvspace{2\thumbheight}
 
@@ -261,7 +263,7 @@
 	\renewcommand*\headrulewidth{0pt}
 	\renewcommand*\footrulewidth{0pt}
 	\fancyhead{\cropmarks}
-	\fancyfoot[C]{\titlefont\thepage}
+	\fancyfoot[C]{\color{mLightBrown}\titlefont\thepage}
 }
 
 %% Fancy style for the main matter.
@@ -307,26 +309,26 @@
 %% A part title starts with a huge (96pt) bold black number, flushed to the
 %% right, followed by the part name on the next line in the title color.
 \titleformat{\part}[display]
-{\flushright\titlestyle}
-{\fontsize{200pt}{150pt}\selectfont\bfseries\color{title}\thepart}
+{\flushright\titlestyle\pagecolor{mDarkTeal}\afterpage{\nopagecolor}}
+{\fontsize{200pt}{150pt}\selectfont\bfseries\color{mLightBrown}\thechapter}
 {0pt}
 {\Huge\color{mLightBrown}}
 %% Separate the title from the text by two empty lines.
 \titlespacing{\part}{0pt}{0pt}{2\baselineskip}
 %% In the table of contents, the part name is preceded by an empty line, printed
 %% in bold, and not followed by a line of dots.
-\dottedcontents{part}[0em]{\vspace{\baselineskip}\titlefont\bfseries}{1.5em}{0pc}
+\dottedcontents{part}[0em]{\vspace{\baselineskip}\titlefont\bfseries\color{mLightBrown}}{1.5em}{0pc}
 
 %% Chapter titles have the same layout as parts.
 \titleformat{\chapter}[display]
-{\flushright\titlestyle}
-{\fontsize{200pt}{150pt}\selectfont\bfseries\color{title}\thechapter}
+{\flushright\titlestyle\pagecolor{mDarkTeal}\afterpage{\nopagecolor}}
+{\fontsize{200pt}{150pt}\selectfont\bfseries\color{mLightBrown}\thechapter}
 {0pt}
 {\Huge\color{mLightBrown}}
 \titlespacing{\chapter}{0pt}{0pt}{2\baselineskip}
 %% In the table of contents, a chapter is similar to a part, except that it is
 %% preceded by half an empty line.
-\dottedcontents{chapter}[1.5em]{\vspace{0.5\baselineskip}\titlefont\bfseries}{1.5em}{0pc}
+\dottedcontents{chapter}[1.5em]{\vspace{0.5\baselineskip}\titlefont\bfseries\color{mLightBrown}}{1.5em}{0pc}
 
 %% Section titles start with the number in bold, followed by the name printed
 %% in the title color.
@@ -339,7 +341,7 @@
 \titlespacing{\section}{0pt}{\baselineskip}{0pt}
 %% In the table of contents, section names are followed by a line of dots 8pt
 %% apart.
-\dottedcontents{section}[3.8em]{\titlefont}{2.3em}{8pt}
+\dottedcontents{section}[3.8em]{\titlefont\color{mLightBrown}}{2.3em}{8pt}
 
 %% Subsection titles have the same layout as section titles, except in a smaller
 %% font.
@@ -349,7 +351,7 @@
 {0pt}
 {\color{title}}
 \titlespacing{\subsection}{0pt}{\baselineskip}{0pt}
-\dottedcontents{subsection}[7em]{\titlefont}{3.2em}{8pt}
+\dottedcontents{subsection}[7em]{\titlefont\color{mLightBrown}}{3.2em}{8pt}
 
 %% Subsubsections have the same font and color as sections and subsections, but
 %% are not preceded by a number.
@@ -389,7 +391,7 @@
 %% significantly to the chapter.
 \newcommand*\authors[1]{%
 	\begin{center}%
-		{\Large\bfseries #1}%
+		{\color{mLightBrown}\Large\bfseries #1}%
 	\end{center}%
 	\vspace{2\baselineskip}%
 }
@@ -398,6 +400,7 @@
 %% a chapter.
 \newcommand\epigraph[3][2\baselineskip]{%
 	\begin{flushright}%
+		\color{mLightBrown}
 		{\sffamily\itshape #2}%
 		\vskip 0.5\baselineskip%
 		#3%
@@ -407,6 +410,7 @@
 
 %% The abstract environment is used for the abstract of a chapter.
 \newenvironment{abstract}{%
+	\color{mLightBrown}
 	\list{}{\leftmargin\rightmargin}%
 	\item%
 	\relax%

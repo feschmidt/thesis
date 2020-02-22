@@ -1,3 +1,13 @@
+\section{SQUIDs}
+
+\begin{figure}
+	\centering
+	\includegraphics[width=0.5\linewidth]{./chapter-theory/figs-JJ/SQUID_betaL}
+	\includegraphics[width=0.4\linewidth]{./chapter-theory/figs-JJ/SQUID_betaL_I}
+	\caption{Critical current modulation of SQUID for various screening factors $\beta_L$.}
+	\label{fig:betaL}
+\end{figure}
+
 \section{Induced superconductivity and Josephson junctions}
 
 \dropcap{T}{he} process of Andreev reflection at the interface between superconductors and normal metals lays the fundament for understanding how a Josephson junction works.
@@ -25,7 +35,7 @@ E_{\pm}(\delta)=\pm\Delta\sqrt{1-\tau\sin^2(\delta/2)},
 with each Andreev state ($\pm$) carrying a supercurrent
 
 \begin{eqnarray}
-I_{\pm}(\delta)=\frac{1}{\Phi_0}\frac{\partial E_{\pm}}{\partial\delta}=\mp\frac{\Delta}{4\Phi_0}\frac{\tau\sin(\delta)}{\sqrt{1-\tau\sin^2(\delta/2)}}
+I_{\pm}(\delta)=\frac{1}{\Phi_0}\diffp{ E_{\pm}}{\delta}=\mp\frac{\Delta}{4\Phi_0}\frac{\tau\sin(\delta)}{\sqrt{1-\tau\sin^2(\delta/2)}}
 \label{eq:CPR-full}
 \end{eqnarray}
 
@@ -33,7 +43,7 @@ For temperature $T\rightarrow0$, all states with $E<\epsilon_F$ are unoccupied, 
 The critical current of the junction is given by the maximum current possible being carried by the state. Mathematically, this equals
 
 \begin{eqnarray}
-I_c=\max_\delta I_{-}(\delta) \Rightarrow \frac{{\rm d}I_{-}(\delta)}{{\rm d}\delta}\equiv0=-\Delta\tau\frac{-4(\tau-2)\cos(\delta)+\tau(3+\cos(2\delta))}{8\sqrt{2}\Phi_0(2-\tau+\tau\cos(\delta))^{3/2}}
+I_c=\max_\delta I_{-}(\delta) \Rightarrow \diff{I_{-}(\delta)}{\delta}\equiv0=-\Delta\tau\frac{-4(\tau-2)\cos(\delta)+\tau(3+\cos(2\delta))}{8\sqrt{2}\Phi_0(2-\tau+\tau\cos(\delta))^{3/2}}
 \label{eq:ABS-start}
 \end{eqnarray}
 
@@ -68,7 +78,7 @@ Relevant cases for us are KO-1, point-contact, tunnel junctions and clean and di
 \subsection{Voltage bias}
 Voltage biasing a Josephson junction leads to a process called Multiple Andreev reflection (MAR).
 We did measurements on this of our graphene Josephson junctions.
-It is important to note, that the voltage measured across a DC current-biased Josephson junction is not a pure DC voltage, but rather the time-averaged value of the oscillating $V=d\phi/dt$.
+It is important to note, that the voltage measured across a DC current-biased Josephson junction is not a pure DC voltage, but rather the time-averaged value of the oscillating $V=\diff{\phi}{t}$.
 This effectively leads to the emission of Josephson radiation from the junction, with the frequency being tuned via the bias voltage.
 This phenomenon can be controlled so precise, that it serves as the definition of the voltage standard nowadays.
 A plethora of potential applications of Josephson radiation in cicruit electrodynamics have been proposed and realized (such as the Josephson laser).

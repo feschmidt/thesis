@@ -1858,18 +1858,7 @@ FUNCTION {format.note}
 {
  note empty$
     { "" }
-    { note #1 #1 substring$
-      duplicate$ "{" =
-        'skip$
-        {
-          output.state after.word = output.state after.punctuation = or
-            { "l" }
-            { "u" }
-          if$ change.case$
-        }
-      if$
-      note #2 global.max$ substring$ * "note" bibinfo.check
-    }
+    { "" }
   if$
 }
 

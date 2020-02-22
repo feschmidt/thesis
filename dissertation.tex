@@ -7,40 +7,55 @@
 \usepackage{hyperref}% add hypertext capabilities
 %\usepackage[mathlines]{lineno}% Enable numbering of text and display math
 %\linenumbers\relax % Commence numbering lines
-\usepackage{xcolor}
+\usepackage{xcolor} % colored text
 \usepackage{textcomp}
-\usepackage{siunitx}
-\usepackage{float}
-\usepackage{amsthm}
-\usepackage{amssymb}
-\usepackage{amsmath}
-\usepackage{mathtools}
+\usepackage{siunitx} %
+\sisetup{detect-all} % tell siunitx to use standard font, not math font
+%\usepackage{float} % force figure placement
+\usepackage{mathtools} % for defining my own math commands
 \DeclarePairedDelimiter\abs{\lvert}{\rvert}
-\usepackage{listings}
-\usepackage{masterunits}
-\usepackage{esdiff}
+\usepackage{listings} % for code blocks
+\usepackage{esdiff} % for easier typing out derivatives
 \usepackage[version=4]{mhchem}
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+\lstset{frame=single,
+	language=C,
+	aboveskip=3mm,
+	belowskip=3mm,
+	showstringspaces=false,
+	columns=flexible,
+	basicstyle={\small\ttfamily},
+	numbers=none,
+	numberstyle=\tiny\color{gray},
+	keywordstyle=\color{blue},
+	commentstyle=\color{dkgreen},
+	stringstyle=\color{mauve},
+	breaklines=true,
+	breakatwhitespace=true,
+	tabsize=3
+}
+\usepackage{afterpage}
 
 \begin{document}
 
-%% Specify the title and author of the thesis. This information will be used on
-%% the title page (in title/title.tex) and in the metadata of the final PDF.
+%% Specify the title and author of the thesis. This information will be used on the title page (in title/title.tex) and in the metadata of the final PDF.
 \title[Optional Subtitle]{Title}
 \author{Felix Erik}{Schmidt}
 
-%% Use Roman numerals for the page numbers of the title pages and table of
-%% contents.
+%% Use Roman numerals for the page numbers of the title pages and table of contents.
 \frontmatter
 
 \include{title/title-en}
 
-%% The (optional) dedication can be used to thank someone or display a
-%% significant quotation.
-\dedication{\epigraph{Science is a wonderful thing \\ if one does not have to earn one's living at it.}{Albert Einstein}}
-
+%% The (optional) dedication can be used to thank someone or display a significant quotation.
+\dedication{Für Katrin und Felicitas}
 \tableofcontents
 
-\include{summary/summary}
+
+% \include{summary/summary}
 % \include{preface/preface}
 
 %% Use Arabic numerals for the page numbers of the chapters.
@@ -49,28 +64,30 @@
 %% Turn on thumb indices.
 \thumbtrue
 
-\include{chapter-introduction/introduction}
-\include{chapter-theory/theory}
+% \include{chapter-introduction/introduction}
+%\include{chapter-theory/theory}
 \include{chapter-experimental-methods/experiment}
 % \include{chapter-gJJ/gJJ}
-% \include{chapter-AlJJ/AlJJ}
+% \include{chapter-MoRe/moredna}
+% \include{chapter-gJJ-power/gJJ-power}
+% \include{chapter-gSQUID-oscillations/gSQUID-oscillations}
 % \include{chapter-currentdetection/currentdetection}
 % \include{conclusion/conclusion}
 % \include{epilogue/epilogue}
 % \include{acks/acks}
 
-% %% Use letters for the chapter numbers of the appendices.
+%% Use letters for the chapter numbers of the appendices.
 % \appendix
-% \include{appendix/app-moredna}
-% \include{appendix/app-ebeam}
 % \include{appendix/app-equations}
+% \include{appendix/app-code}
+% \include{appendix/app-ebeam}
+% \include{appendix/app-copperpowder}
+% \include{appendix/app-notes}
 
-
-% %% Turn off thumb indices for unnumbered chapters.
+%% Turn off thumb indices for unnumbered chapters.
 % \thumbfalse
 
 % \include{cv/cv}
 % \include{publications/publications}
-
 \end{document}
 
