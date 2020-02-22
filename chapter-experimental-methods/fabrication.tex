@@ -1,12 +1,14 @@
 \section{Device fabrication}
 \label{sec:fabrication}
 
+The following recipes and procedures are based on extensive prior work of the group of Dr.~Srijit Goswami at QuTech, TU Delft, and were further developed in close collaboration with Dr.~Nikos Papadopoulos.
+
 \subsection{The art of making encapsulated graphene devices}
 
 Fabrication of graphene Josephson junctions is a tedious process:
 % 
 In contrast to integrated circuits, where the active materials are homogeneously deposited over an entire substrate, the best graphene devices to date are not fabricated using scalable techniques, but rather each device is manually assembled and crafted, thus requiring significant efforts, since no two devices have the same exact shape.
-% 
+
 Wafer-scale graphene fabrication is usually achieved by chemical vapour deposition of single layer graphene on copper foils.
 % 
 However, only until recently did the thus deposited films exhibit sufficiently low defect densities, which would otherwise result in inferior device quality.
@@ -14,7 +16,7 @@ However, only until recently did the thus deposited films exhibit sufficiently l
 Transferring the graphene layer from its growth to the final substrate often contaminates both graphene and final substrate, which typically result in low device quality.
 % 
 Finally, even in the cases where transferred graphene results in low defect and residue densities, patterning into the final device shape always results in contaminations, most often due to organic resist residues.
-% 
+
 Since graphene is really only a single atom thick and thus all electronic transport takes place at its surface, contaminations on either side will result in charge carrier scattering and degrade the device performance.
 % 
 Till this day, the devices with highest electronic quality, exhibiting phenomena such as ballistic transport, hydrodynamics, or superconductivity, rely on single layer graphene manually exfoliated from bulk graphite crystals~\cite{???,???,???}.
@@ -25,19 +27,19 @@ Additionally, it is often required to change the carrier density in the graphene
 Because of the single-layer nature of graphene, it conforms very well to any surface roughness and is very sensitive to trapped charges in the dielectric layers, which called for an ideal gate dielectric.
 % 
 In 2010, Dean \textit{et al.}~\cite{dean_boron_2010} realized the use of hexagonal Boron Nitride (BN) as the (until now) best dielectric and capping layer for graphene devices, showing vast improvements with respect to device mobility.
-% 
+
 Like graphene, BN has a hexagonal lattice, albeit consisting of two sub-lattices of boron and nitride atoms, and with a lattice mismatch of \SI{1}{\percent} to graphene.
 % 
 BN can be exfoliated from bulk crystals to thin insulating films of arbitrary layer number and signifcantly lower surface roughness than any other dielectric, making it a perfect match for graphene encapsulation.
 % 
 The highest quality BN crystals, i.e. the ones exhibiting the lowest charge defect density, are the ones made by ultra-high pressure ??? by Kenji Watanabe and Takashi Taniguchi at NIMS, Japan.
-% 
-As confirmed by atomic force and scanning tunnelling microscopy, SLG on BN exhibits a significantly lower roughness compared to samples on \ce{SiO2}, until then the standard dielectric for graphene devices.
+
+As confirmed by atomic force and scanning tunneling microscopy, SLG on BN exhibits a significantly lower roughness compared to samples on \ce{SiO2}, until then the standard dielectric for graphene devices.
 % 
 In addition, variations in the local density of states of SLG on BN can thus be reduced by a factor ten, while charge fluctuations are suppressed by a factor 100, as compared to SLG directly on \ce{SiO2}~\cite{xueScanningTunnellingMicroscopy2011,deckerLocalElectronicProperties2011}.
 % 
 Complete screening of any trapped charges in the dielectric layer can finally be achieved with gate electrodes out of graphite instead of conventional metals~\cite{ponomarenkoTunableMetalInsulator2011,ametNovelPhenomenaDriven2014}.
-% 
+
 However, assembling a heterostructure of BN-G-BN, with subsequent patterning, and deposition of gate metals and dielectrics results in an extensive and long process, with processes varying between most research groups.
 % 
 In the following, we will detail the fabrication procedure used in the course of this thesis that resulted in the best measured devices.
@@ -51,7 +53,7 @@ Identifying flakes of suitable thickness is done by estimation the layer number 
 For optimal contrast, we used silicon substrates with \SI{285}{\nano\meter} of thermal \ce{SiO2}~\cite{blakeMakingGrapheneVisible2007}, diced into \SI{6x6}{\milli\meter} pieces from \SI{4}{inch} wafers from ???.
 % 
 Details on dicing parameters are given in Sec.~\ref{sec:fab-packaging}.
-% 
+
 As mentioned earlier, any organic residues that come in contact with graphene will very likely lead to inferior device performance.
 % 
 Specifically, after dicing the chips, they need to be cleaned extensively in order to remove any leftovers from the dicing resist.
@@ -72,7 +74,7 @@ The author estimates that there are as many different ways of flake exfoliation 
 The procedure that worked best for us concerning BN exfoliation consists of placing individual BN crystallites (approximately a few $(\SI{100}{\micro\meter})^3$ in volume) on a piece of \textit{Scotch} tape \textit{"Magic"} or \textit{Nitto} tape, and subsequently folding over said piece of tape numerous times, such that one acquires a closed layer of thin BN crystallites.
 % 
 In the case of graphene, we would peel off a preferably closed film of graphite from a single \SI{1x1}{\centi\meter} HOPG crystal with a piece of tape, followed by subsequent folding of the piece of tape until we acquired a homogeneous, yet closed film of thin graphite.
-% 
+
 Once we were satisfied with the tape template, we would use pre-cut \SI{8x8}{\milli\meter} pieces of clean tape to peel off crystals from the template, the press the side with crystals on the small piece of tape onto a previously cleaned substrate, keep pressure applied using our index finger or thumb for approximately \SI{30}{\second}, then transfer the substrate with the tape still on to a hot plate and leave the substrate sit on the hot plate for \SIrange{2}{5}{\minute}.
 % 
 We found highest flake densities for temperatures of \SI{50}{\celsius} for \textit{Nitto} and \SI{100}{\celsius} for \textit{Magic} tape.
@@ -84,7 +86,7 @@ During this process, no further pressure should be applied to the tape as this u
 
 The process of exfoliation turns out to be a tradeoff between getting as many flakes as possible, and getting the lowest tape residues possibles.
 % 
-\textit{Magic} tape has a higher adhesive strength, thus resulting in a higher flake density and predominantly large flakes (i.e. $>(\SI{20}{\micro\meter})^2$) than \textit{Nitto} tape.
+\textit{Magic} tape has a higher adhesive strength, thus resulting in a higher flake density and predominantly large flakes (i.e. $>\SI{20x20}{\micro\meter}$) than \textit{Nitto} tape.
 % 
 On the other hand, this comes at the cost of more tape residues on both the substrate and the individual flakes.
 % 
@@ -103,7 +105,7 @@ It is thus advisable to omit thermal annealing until the first lithography step.
 \subsubsection{Heterostructure assembly}
 
 %TODO: check for accuracy
-Our transfer setup is the same as in Ref.~\cite{castellanos-gomezDeterministicTransferTwodimensional2014}, but upgraded with a heater stage capable of fast heating and cooling cycles between room temperature and \SI{150}{celsius}.???
+Our transfer setup is the same as in Ref.~\cite{castellanos-gomezDeterministicTransferTwodimensional2014}, but upgraded with a heater stage capable of fast heating and cooling cycles between room temperature and \SI{150}{celsius}.
 % 
 We prepared the PPC solution by dissolving PPC at a \SI{15}{\percent} weight ratio in anisole at \SI{50}{\celsius}, while stirring with a fish magnet until everything was properly dissolved.
 % 
@@ -113,53 +115,69 @@ For every pick-and-place step, we fixed the substrate from or to which to transf
 %
 Both glass slide and chip could be individually moved with micrometer screws.
 %
-The following steps describe our typical working process:
+The following steps describe our typical working process for achieving high-quality interfaces:
 
 \begin{enumerate}
 	\item Align the top BN flake with the center area of the PDMS/PPC template.
+	%
 	\item Lower the glass slide such that the PPC touches the substrate.
+	%
 	Take care that the PPC does not yet cover the flake, but touches down less than \SI{100}{\micro\meter} away from it.
+	%
 	\item Increase the stage temperature above \SI{55}{\celsius}.
+	%
 	The PDMS/PPC will expand and cover the flake, and adhesion between BN and PPC increase significantly.
+	%
 	\item Turn off the stage heater and wait for the stage to cool below \SI{40}{\celsius} (possibly with the help of a nitrogen gun).
+	%
 	At this stage, the adhesion between BN and PPC should exceed that of BN and substrate.
+	%
 	Now lifting the glass slide should rip the flake off the substrate.
+	%
 	If at this stage the intended flake did not get picked up, repeating the process by heating to \SIrange{80}{90}{\celsius} and then cooling down should result in a much higher yield, at cost of longer waiting times for the stage to cool down.
-	\item Place the graphene below now. Ok you go down and before you touch the h-Bn to the graphene you raise the temperature at \SI{110}{\celsius}. The hot air and the deflected slide will make it difficult to align them. Then touch and go down slowly. Once the interface passes the GR/hBN you should let it expand a bit more. Now the interface of Gr/hBN should be without bubbles and blisters.
-	\item Go to \SI{120}{\celsius} and then retract. The hBN should stay on top of the graphene.
-	\item Anneal the GR/hBN stack at \SI{170}{\celsius} for \SI{15}{\minute}.
-	\item place PPC again on top. Cool down and once you are below \SIrange{70}{80}{\celsius} you can touch and let the meniscus expand. 
-	\item Cool down below \SI{40}{\celsius} and then pick-up. The Gr/hBn stack in on the PPC.
-	\item Put the bottom h-BN under the Navutar and align the stack.
-	\item Go down, thouch warm-up above \SI{50}{\celsius} and then cool down to pick-up as in step 3. Tip: for no bubbles again maybe repeat step 4, folowed by step 6.
-	\item Place the whole stack on the desired substrate.
+	%
+	\item Place the chip with the graphene flake on the stage and align the flake with the BN on the glass slide below now.
+	%
+	Slowly lower the glass slide and set the stage temperature to \SI{110}{\celsius}. 
+	%
+	The hot air and deflected slide will make it difficult to align the two flakes, so extra care has to be taken at this step.
+	%
+	Once the stage has reached \SI{110}{\celsius}, bring stage and glass slide in contact as slowly as possible until the interface passes the Gr and BN, preferably letting the expanding PDMS do the work.
+	%
+	\label{assembly-start}
+	%
+	\item Increase the stage temperature to \SI{120}{\celsius} and then retract the glass slide, thus delaminating the top BN on the graphene flake.
+	%
+	\label{flake-delam}
+	\item Anneal the Gr/hBN stack at \SI{170}{\celsius} for \SI{15}{\minute}.
+	%
+	\item Place PPC/PDMS glass slide above the chip, turn off the stage heater and bring the polymer in contact once the temperature is below \SIrange{70}{80}{\celsius}.
+	% 
+	\item Once the temperature drops below \SI{40}{\celsius}, retract the glass slide.
+	%
+	The Gr/hBn stack should get lifted off the substrate.
+	%
+	\label{assembly-stop}
+	%
+	\item For assembling the BN-G-BN sandwich, repeat steps \ref{assembly-start} - \ref{assembly-stop}.
+	%
+	If needed, transfer the sandwich to another substrate.
 \end{enumerate}
 
-Figure 1: Exfoliation of single flakes and sandwich assembly using the dry transfer method.
-In the main text, also describe the PC+Chloroform method.
-Huge hurdles during this project: Bad flake adhesion on sapphire, very good adhesion between metal ground planes and PPC.
+Another polymer commonly used for heterostructure assembly is PC.
+%
+Its advantage over PPC is that it is a much stronger adhesive, so the intermediate flake delamination (step \ref{flake-delam}) can be skipped.
+%
+However, it needs to be kept in a fridge in order to not degrade, and cannot be spin-coated on the PDMS layer.
+%
+Instead, a droplet of PC is placed on a \SI{20x20}{\milli\meter} glass coverslip.
+%
+A second coverslip is dropped on the first one, thus spreading the droplet in between.
+%
+With care, but in a swift motion, we pull the top glass piece off, thus leaving behind a thin film of PC on the bottom glass slide, which can be peeled off using a piece of tape and placed on the PDMS stamp.
+%
+For flake transfer, we follow the above steps, except that the transfer takes place at a base temperature of \SI{110}{\celsius} instead of \SI{40}{\celsius}, and to activate the adhesion to PC, heating to \SIrange{130}{140}{\celsius} instead of \SIrange{80}{90}{\celsius} is required.
 
-Recipe on the wiki: \url{https://nas-steelelab.tnw.tudelft.nl/SteeleLabWiki/index.php?title=Nikos_and_Felix_recipes_for_making_stacks}
-
-PC is in the fridge.
-2. You use the 2 glass-slide technique. Then place it on a bubble or slide.
-3. Keep temp at \SI{110}{\celsius}.
-4. When in touch go to \SIrange{130}{140}{\celsius} and cool down to \SI{110}{\celsius} again. Exactly like the ppc but higher working
-   
-temp.
-5. As you cool down to \SIrange{100}{110}{\celsius} the pc retracts and pick everything!
-
-\subsubsection{Device patterning}
-
-Figure 2: (a) AFM and optical images of sandwiches, illustrating bubbles. (b) overlay with CAD (c) cross-section of final devices.
-
-Recipes for etching on the wiki: \url{https://nas-steelelab.tnw.tudelft.nl/SteeleLabWiki/index.php?title=Reactive_Ion_Etcher}
-
-Recipes for resists on the wiki: \url{https://nas-steelelab.tnw.tudelft.nl/SteeleLabWiki/index.php?title=E-beam_resist_recipes}
-
-Figure 3: Step-by step optical images of exposure, dry-etching, liftoff, shaping, top gate dielectric, top gate metals
-
-Figure 4, if possible: Cross-sectional TEM of one of our devices (courtesy Sonia's lab)
 
 \begin{figure}
 	\centering
@@ -200,10 +218,15 @@ Figure 4, if possible: Cross-sectional TEM of one of our devices (courtesy Sonia
 	\label{fig:placeholder-large}
 \end{figure}
 
+\subsubsection{Challenges of heterostructure assembly}
+
+We found that BN-G-BN stacks would often get washed away due to unsufficient adhesion to the sapphire substrate during processing.
+As in our paper, the polymer used for transfer (PC, PPC) has very strong adhesion to the metal areas of the shunts, ground planes and center conductors.
+A long soak in NMP was able to remove the polymer at least visibly, but residual flakes had to be etched away in a separate step.
 
 \begin{figure}
 	\centering
-	\includegraphics{{chapter-experimental-methods/figs-fabrication/placeholder-large.svg}.png}
+	\includegraphics[]{{chapter-experimental-methods/figs-fabrication/fab-hetero-challenge.svg}.png}
 	\caption{
 		\textbf{Fabrication issues associated with van der Waals assembly.}
 		% 
@@ -211,7 +234,7 @@ Figure 4, if possible: Cross-sectional TEM of one of our devices (courtesy Sonia
 		% 
 		\textbf{B,} Due to the low adhesion of BN to sapphire and silicon nitride, many stacks were washed off the final substrates during solving the polymer.
 		% 
-		We did not observe this behaviour on silicon substrates, but had a yield of less than \SI{50}{\percent} on sapphire and \SI{0}{\percent} on silicon nitride films.
+		We did not observe this behaviour on silicon substrates, as depicted here, but had a yield of less than \SI{50}{\percent} on sapphire and \SI{0}{\percent} on silicon nitride films.
 		% 
 		\textbf{C,} Atomic force microscope image of a BN-G-BN sandwich assembled via the dry PPC transfer method.
 		% 
@@ -223,8 +246,20 @@ Figure 4, if possible: Cross-sectional TEM of one of our devices (courtesy Sonia
 		% 
 		\textbf{E,} CAD overlay on the AFM image to determine the position of the metal layers with respect to the flake position.
 	}
-	\label{fig:placeholder-large}
+	\label{fig:fab-hetero-challenge}
 \end{figure}
+
+\subsubsection{Device patterning}
+
+See also sample database Felix
+
+Recipes for etching on the wiki: \url{https://nas-steelelab.tnw.tudelft.nl/SteeleLabWiki/index.php?title=Reactive_Ion_Etcher}
+
+Recipes for resists on the wiki: \url{https://nas-steelelab.tnw.tudelft.nl/SteeleLabWiki/index.php?title=E-beam_resist_recipes}
+
+
+Figure 4, if possible: Cross-sectional TEM of one of our devices (courtesy Sonia's lab)
+
 
 \begin{figure}
 	\centering
@@ -252,6 +287,8 @@ Figure 4, if possible: Cross-sectional TEM of one of our devices (courtesy Sonia
 
 \pagebreak
 \subsection{Fabrication of current bias cavities}
+
+See also sample database Felix
 
 Recipe on the wiki: \url{https://nas-steelelab.tnw.tudelft.nl/SteeleLabWiki/index.php?title=Shunt_capacitor_fabrication}. Note that this one is from Mark, so there might be some changes necessary.
 
@@ -300,7 +337,7 @@ After the device fabrication is finished, the sample has to be mounted on a chip
 Our microwave PCBs are made for \SI{10x10}{\milli\meter} chips; however in order to grab the chips during fabrication easier and to enhance the fabrication yield, samples are usually fabricated on larger substrates:
 % 
 The current bias cavities for the graphene devices presented in this thesis were processed on a \SI{2}{inch} wafer, and the cavities based on aluminum on \SI{15x15}{\milli\meter} chips.
-% 
+
 We dice the chips into the correct dimensions as the very last step, using the \textit{Disco dicer} DAD 3220 from \textit{Disco Hi-Tec Europe GmbH}.
 % 
 To protect the chip from dust during sawing, we spincoat photoresist\footnote{HPR504, \SI{4000}{rpm}, bake \SI{60}{\second} at \SI{100}{\celsius}, approximately \SI{1.2}{\micro\meter} thick} on the chip before dicing.
@@ -308,7 +345,7 @@ To protect the chip from dust during sawing, we spincoat photoresist\footnote{HP
 Good resist-substrate adhesion is important during dicing because the water jet used to cool the blade can wash off the resist during dicing otherwise, potentially ruining weeks of delicate work in the cleanroom.
 % 
 Use of HMDS, or letting the resist sit on the chip to be diced for \SI{1}{\minute} prior to spinning is highly recommended.
-% 
+
 The silicon chips were diced using a standard NBC blade at \SI{3000}{rpm} and a feed speed of \SI{5}{\milli\meter\per\second}, while for dicing sapphire we used a special diamond blade at \SI{2000}{rpm} and \SI{2}{\milli\meter\per\second}.
 % 
 Removing the protective resist after dicing can depend on the device materials.
