@@ -221,6 +221,9 @@ For flake transfer, we follow the above steps, except that the transfer takes pl
 \subsubsection{Challenges of heterostructure assembly}
 
 We found that BN-G-BN stacks would often get washed away due to unsufficient adhesion to the sapphire substrate during processing.
+Due to the low adhesion of BN to sapphire and silicon nitride, many stacks were washed off the final substrates during solving the polymer.
+We did not observe this behaviour on silicon substrates, (cf. Fig.~\ref{fig:fab-hetero-challenge} (B) ), but had a yield of less than \SI{50}{\percent} on sapphire and \SI{0}{\percent} on silicon nitride films.
+
 As in our paper, the polymer used for transfer (PC, PPC) has very strong adhesion to the metal areas of the shunts, ground planes and center conductors.
 A long soak in NMP was able to remove the polymer at least visibly, but residual flakes had to be etched away in a separate step.
 
@@ -230,26 +233,120 @@ A long soak in NMP was able to remove the polymer at least visibly, but residual
 	\caption{
 		\textbf{Fabrication issues associated with van der Waals assembly.}
 		% 
-		\textbf{A,} Due to the good adhesion of the polymer to metal surfaces, after flake deposition the polymer often gets delaminated and the chip needs to be thoroughly cleaned using wet chemistry solvents.
+		\textbf{A,} Due to the good adhesion of the polymer to metal surfaces, after flake deposition the polymer would often get delaminated and the chip needs to be thoroughly cleaned using wet chemistry solvents.
 		% 
-		\textbf{B,} Due to the low adhesion of BN to sapphire and silicon nitride, many stacks were washed off the final substrates during solving the polymer.
+		\textbf{B,} Due to the high adhesive strength of the PC and PPC, residual flakes around the assembled heterostructure are delaminated on the chip, requiring additional etching steps to clean the chip of these dielectrics.
 		% 
-		We did not observe this behaviour on silicon substrates, as depicted here, but had a yield of less than \SI{50}{\percent} on sapphire and \SI{0}{\percent} on silicon nitride films.
-		% 
-		\textbf{C,} Atomic force microscope image of a BN-G-BN sandwich assembled via the dry PPC transfer method.
-		% 
-		Many small bubbles are visible
-		% 
-		\textbf{D,} AFM image of a heterostructure assembled via the PC method.
+		\textbf{C,} AFM image (greyscale) of a heterostructure assembled via the PC method.
 		% 
 		Due to the significantly slower expansion of the polymer, gas and water molecules at the interfaces between the flakes are pushed towards the edges and fewer, but larger pockets are formed.
 		% 
-		\textbf{E,} CAD overlay on the AFM image to determine the position of the metal layers with respect to the flake position.
+		Overlaid with the AFM image is the CAD file with contacts in green and top-gt in red to design the metal layers with respect to the flake position.
 	}
 	\label{fig:fab-hetero-challenge}
 \end{figure}
 
 \subsubsection{Device patterning}
+
+The graphene devices presented in this thesis consist of the BN-G-BN sandwich and G-Josephson junction, and the surrounding RF circuitry.
+%
+The RF circuits are patterned first on either large silicon chips, or \SI{2}{in} sapphire wafers.
+%
+In a second process flow, the vdW heterostructures are delaminated and contacts and top gates to the Josephson junctions are made.
+
+The RF circuits are fabricated as follows:
+\begin{itemize}
+	%
+	\item \textbf{Deposit and pattern MoRe base layer}
+	\begin{enumerate}
+		\item DC magnetron sputter \SI{60}{\nano\meter} MoRe with \SI{100}{\watt} power and \SI{60}{sccm} Argon flow.
+		%
+		\item AR-P 6200.13, spin-coat @ \SI{4000}{rpm}, bake \SI{3}{\minute} at \SI{155}{\celsius}.
+		%
+		\item Expose using EBPG with \SI{300}{\micro\coulomb\per\centi\meter\squared}.
+		%
+		\item Develop using Pentylacetate for \SI{60}{\second}, MIBK:IPA (1:1) for \SI{30}{\second}, IPA for \SI{15}{\second}.
+		%
+		\item Etch using \ce{SF6}+\ce{He} \SI{12.5}{sccm}+\SI{10}{sccm} @ \SI{50}{\watt}, \SI{10}{\micro\bar}.
+		%
+		\item Strip resist in hot PRS~3000 @ \SI{88}{\celsius} for a few hours.
+	\end{enumerate}
+	%
+	\item \textbf{Deposit and pattern dielectric layer for shunt capacitor}
+	\begin{enumerate}
+		\item PECVD \SI{70}{\nano\meter} of \ce{Si3N4} @ \SI{300}{\celsius}.
+		%
+		\item AR-N 7700.18, spin-coat @ \SI{3000}{rpm}, bake \SI{1}{\minute} at \SI{90}{\celsius}.
+		%
+		\item Expose using EBPG with \SI{210}{\micro\coulomb\per\centi\meter\squared}.
+		%
+		\item Develop using MF321 for \SI{60}{\second}, MF320:\ce{H2O} (1:10) for \SI{15}{\second} (twice), \ce{H2O} for \SI{15}{\second}.
+		%
+		\item Etch using BOE (approximate etch rate \SI{65}{\nano\meter\per\minute}).
+		%
+		\item Strip resist in hot PRS~3000 @ \SI{88}{\celsius} for a few hours.
+	\end{enumerate}
+	%
+	\item \textbf{Deposit top metal plate of shunt capacitor}
+	\begin{enumerate}
+		\item PMMA 495 A4, spin-coat @ \SI{4000}{rpm}, bake \SI{10}{\minute} at \SI{185}{\celsius}.
+		%
+		\item PMMA 950 A3, spin-coat @ \SI{4000}{rpm}, bake \SI{10}{\minute} at \SI{185}{\celsius}.
+		%
+		\item Expose using EBPG with \SI{1000}{\micro\coulomb\per\centi\meter\squared} + PEC.
+		%
+		\item Develop using MIBK:IPA (1:3) for \SI{90}{\second}+ IPA \SI{30}{\second}.
+		%
+		\item Sputter-deposit \SI{60}{\nano\meter} MoRe as described above.
+		%
+		\item Lift-off in hot PRS~3000 @ \SI{88}{\celsius} for a few hours.
+	\end{enumerate}
+\end{itemize}
+
+We fabricate the graphene Josephson junctions in the following fashion:
+%
+\begin{itemize}
+	%
+	\item \textbf{Making NbTiN contacts using etch-fill}
+	\begin{enumerate}
+		\item PMMA 495 A4, spin-coat @ \SI{4000}{rpm}, bake \SI{10}{\minute} at \SI{185}{\celsius}.
+		\label{etch-fill-start}
+		%
+		\item PMMA 950 A3, spin-coat @ \SI{4000}{rpm}, bake \SI{10}{\minute} at \SI{185}{\celsius}.
+		%
+		\item Expose using EBPG with \SI{1000}{\micro\coulomb\per\centi\meter\squared} + PEC.
+		%
+		\item Develop using MIBK:IPA (1:3) for \SI{90}{\second}+ IPA \SI{30}{\second}.
+		\label{etch-fill-stop}
+		%
+		\item Etch using \ce{CHF3}+\ce{O2} \SI{40}{sccm}+\SI{4}{sccm} @ \SI{60}{\watt}, \SI{80}{\micro\bar} for \SI{1}{\minute} (etch rate roughly \SI{60}{\nano\meter\per\minute}).
+		%
+		\item Sputter-deposit \SI{5}{\nano\meter} NbTi and \SIrange{60}{70}{\nano\meter} NbTiN.
+		%
+		\item Lift-off in hot PRS~3000 @ \SI{88}{\celsius} for a few hours.
+	\end{enumerate}
+	%
+	\item \textbf{Shaping the device}
+	\begin{enumerate}
+		\item Same as for making the contacts, but with lower etch pressure (\SI{50}{\micro\bar}) and without the metal deposition.
+	\end{enumerate}
+	%
+	\item \textbf{Top-gate dielectric}
+	\begin{enumerate}
+		\item HSQ (concentrated), spin-coat @ \SI{5000}{rpm}, bake \SI{10}{\minute} at \SI{90}{\celsius} in an oven.
+		%
+		\item Expose using EBPG with \SI{500}{\micro\coulomb\per\centi\meter\squared}.
+		%
+		\item Develop using MF322 for \SI{1}{\minute} + MF322:\ce{H2O} (1:9) for \SI{15}{\second} + \ce{H2O} for \SI{15}{\second}.
+		%
+		\item Repeat the last three steps with \SI{4000}{rpm} spin speed.
+	\end{enumerate}
+	%
+	\item \textbf{Top-gate metal}
+	\begin{enumerate}
+		\item Same as for making the contacts, but without etching.
+	\end{enumerate}
+\end{itemize}
 
 See also sample database Felix
 
