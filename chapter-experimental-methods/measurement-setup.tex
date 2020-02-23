@@ -1,7 +1,67 @@
 %\pagebreak
 \section{Measurement setup}
 
-\dropcap{O}{nce} the experimentalist has deemed their sample worthy of measuring, there are a few battles to be fought outside the cleanroom and in the measurement laboratory.
+\dropcap{O}{nce} the experimentalist has deemed their sample worthy of measuring, there are a few battles to be fought to connect the sample fabricated in the cleanroom and to the electric equipment in the measurement laboratory.
+
+\subsection{Device packaging}\label{sec:fab-packaging}
+
+% 
+After the device fabrication is finished, the sample has to be mounted on a chip carrier and contacted, so we can connect it to our measurement electronics.
+% 
+Our microwave PCBs are made for \SI{10x10}{\milli\meter} chips; however in order to grab the chips during fabrication easier and to enhance the fabrication yield, samples are usually fabricated on larger substrates:
+% 
+The current bias cavities for the graphene devices presented in this thesis were processed on a \SI{2}{inch} wafer, and the cavities based on aluminum on \SI{15x15}{\milli\meter} chips.
+
+We dice the chips into the correct dimensions as the very last step, using the \textit{Disco dicer} DAD 3220 from \textit{Disco Hi-Tec Europe GmbH}.
+% 
+To protect the chip from dust during sawing, we spincoat photoresist\footnote{HPR504, \SI{4000}{rpm}, bake \SI{60}{\second} at \SI{100}{\celsius}, approximately \SI{1.2}{\micro\meter} thick} on the chip before dicing.
+% 
+Good resist-substrate adhesion is important during dicing because the water jet used to cool the blade can wash off the resist during dicing otherwise, potentially ruining weeks of delicate work in the cleanroom.
+% 
+Use of HMDS, or letting the resist sit on the chip to be diced for \SI{1}{\minute} prior to spinning is highly recommended.
+
+The silicon chips were diced using a standard NBC blade at \SI{3000}{rpm} and a feed speed of \SI{5}{\milli\meter\per\second}, while for dicing sapphire we used a special diamond blade at \SI{2000}{rpm} and \SI{2}{\milli\meter\per\second}.
+% 
+Removing the protective resist after dicing can depend on the device materials.
+% 
+For the devices presented in this thesis, we placed the diced chips in teflon holders inside beakers filled with PRS3000, heated the solution to \SI{80}{\celsius} and subsequently put the beaker into an ultrasound bath at maximum power.
+% 
+After \SI{5}{\minute}, the resist has then come off the sample, and we passed the chip through a series of PRS3000 and IPA baths to wash off any remains, and blow-dried using nitrogen.
+
+% 
+The chips are finally glued to the rails of our copper boxes using GE low temperature varnish.
+% 
+Wirebonding is done using a \textit{Westbond 4000 "E"} system from \textit{West•Bond Inc.} with bond wires from an AlSi alloy (\SI{99}{\percent}-\SI{1}{\percent}).
+% 
+To ensure good thermalization and electrical contact, we usually used three to four bonds for each bond pad, and as many bonds as would fit on the ground planes.
+% 
+An example of one of our devices that is mounted and wirebonded in a PCB, ready for measurement can be seen in Fig.~\ref{fig:packaging}.
+% 
+The connectors to go from the PCB to the outside world are straight plug semi-detent SMP connectors\footnote{19S102-40ML5 straight plug PCB, from \textit{Rosenberger Hochfrequenztechnik GmbH \& Co. KG}}.
+
+
+\begin{figure}
+	\centering
+	\includegraphics{{chapter-experimental-methods/figs-packaging/packaging.svg}.png}
+	\caption{
+		\textbf{Device packaging for electrical measurements.}
+		% 
+		\textbf{A,} A \SI{10x10}{\milli\meter} mounted and wirebonded to a PCB, that is screwed onto a copper base.
+		% 
+		The four small holes around the chip are used to screw on a small copper lid, covering the chip.
+		% 
+		The four big holes at the edge of the copper based are used for mounting the chip in a cryostat, and to hold the top cover in place.
+		% 
+		Connectors for connecting the PCB to the outside world are surface mount SMP plugs.
+		% 
+		\textbf{B,} Close-up of the bottom-right chip area, taken with ring illumination.
+		% 
+		The substrate is sapphire, hence the chip transparency.
+		% 
+		In the bottom right corner, one of the copper rails on which the chip sits is visible.
+	}
+	\label{fig:packaging}
+\end{figure}
 
 \subsection{Thermal energy and noise}
 

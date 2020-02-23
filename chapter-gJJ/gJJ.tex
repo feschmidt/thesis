@@ -305,9 +305,48 @@ All figures representing data are plotted using \textit{matplotlib} v2 \cite{hun
 \section*{Data Availability}
 All raw and processed data as well as supporting code for processing and figure generation is available in Zenodo with the identifiers \verb|doi:10.5281/zenodo.1296129|\cite{schmidtDataCodeBallistic2018} and \verb|10.5281/zenodo.1408933|\cite{jenkinsMeasurementAnalysisScripts2018}.
 
-\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Insert main.bbl contents here
 
-\section{Supplementary Information}
+%\input{main.bbl}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Insert SM.tex contents here
+
+%\pagebreak
+%\clearpage
+%\widetext
+
+%\setcounter{equation}{0}
+%\setcounter{figure}{0}
+%\setcounter{table}{0}
+%\setcounter{page}{1}
+%\setcounter{section}{0}
+
+%\renewcommand{\thepage}{S\arabic{page}}
+\renewcommand{\thesection}{S\Roman{section}}
+\renewcommand{\thetable}{S\Roman{table}}
+\renewcommand{\thefigure}{S\arabic{figure}}
+\renewcommand{\theequation}{S\arabic{equation}}
+%\renewcommand{\bibnumfmt}[1]{[S#1]}
+%\renewcommand{\citenumfont}[1]{S#1}
+
+\begin{figure*}[]
+	{\centering
+		\includegraphics[width=.8\linewidth]{chapter-gJJ/figs/full_setup_cmyk}}
+	\caption{{\bf Sketched measurement setup.}
+		Dashed red box at the bottom marks device outline.
+	}
+	\label{fig:setup_full}
+\end{figure*}
+
+\clearpage
+\textbf{\centering\large Supplementary Material:\\}
+\textbf{\centering\large A ballistic graphene superconducting microwave circuit\\}
+
+%\vspace{1em}
+
 %\makeatletter
 %\renewcommand*{\fnum@figure}{{\normalfont Supplementary Figure~\thefigure}}
 %\renewcommand*{\fnum@table}{{\normalfont Supplementary Table~\thetable}}
@@ -318,14 +357,189 @@ All raw and processed data as well as supporting code for processing and figure 
 %\setcounter{section}{0}
 %\setcounter{figure}{0}
 
-\begin{figure*}[]
-	{\centering
-		\includegraphics[width=.8\linewidth]{chapter-gJJ/figs/full_setup_cmyk}}
-	\caption{{\bf Sketched measurement setup.}
-		Dashed red box at the bottom marks device outline.
-	}
-	\label{fig:setup_full}
-\end{figure*}
+\subsection{Fitting routine for extracting the resonance frequency}\label{sec:fitting}
+\noindent The microwave response function of a capacitively shunted resonator in reflection geometry is given by \cite{pozar_microwave_2012}
+\begin{eqnarray}
+\Gamma(\omega) = \frac{\kappa_\mathrm{ext}-\kappa_\mathrm{int}-2i\Delta\omega}{\kappa_\mathrm{ext}+\kappa_\mathrm{int}+2i\Delta\omega},
+\end{eqnarray}
+where $\kappa_\mathrm{ext,int}=\omega_0/Q_\mathrm{ext,int}$ are the internal and external loss rates and $Q_\mathrm{ext,int}$ are the respective quality factors.
+$\Delta\omega=\omega-\omega_0$ is the frequency detuning from the resonance frequency $\omega_0$.
+
+The measured reflection coefficient must also include the effect of the connecting wires and devices between the network analyser and the device under test.
+The reflection coefficient is accordingly modified to incorporate this background:
+\begin{eqnarray}
+S_{11} = B(\omega)\left(-1 + \frac{2\kappa_\mathrm{ext}e^{i\theta}}{\kappa_\mathrm{ext}+\kappa_\mathrm{int}+2i\Delta\omega}\right)
+\end{eqnarray}
+The complex background $B(\omega)$ has the form:
+\begin{equation}
+B(\omega) = (a+b\omega+c\omega^2)e^{i(a'+b'\omega)},
+\end{equation}
+where $a,b,c,a',b'$ are real parameters.  We use this function to fit the measurement data and extract $\omega_0$ and $\kappa_\mathrm{ext,int}$.
+
+\subsection{Extraction of parameters from microwave measurements}\label{sec:extraction}
+\noindent The schematic for the gJJ and cavity model can be seen in Supplementary Figure \ref{fig:rfmodel}.
+A segment of a coplanar waveguide forms a cavity coupled on one side to an input line through a shunt capacitor.
+The far end of the transmission line (TL) segment has the gJJ modelled using an RCSJ model with an extra inductance and capacitance associated to the junction lead wires.
+
+The parameters needed to characterize the system are described below, listed in Supplementary Table \ref{tab:tlpars} and labelled in Supplementary Figure \ref{fig:rfmodel}:
+\begin{itemize}
+	\item The transmission line (TL) segment has a length $l$ as well as a capacitance per unit length $C'$ and inductance per unit length $L'$.
+	TL losses are characterized by the attenuation parameter $\alpha$.
+	It is worth noting that $L' = L'_\text{g} + L'_\text{k}$ includes a geometric contribution, $L'_\text{g}$, and kinetic inductance contribution\cite{vanduzer_principles_1999}, $L'_\text{k}$.
+	\item The effective value of the shunt capacitance $C_\text{s}$.
+	Since $C_\text{s}$ parametrizes the external cavity coupling, this includes contributions from both the shunt capacitor and the external circuit.
+	The different connectors, wires, and other microwave components introduce impedance mismatches and cable resonances in the input/output lines, changing the external coupling.
+	We use $C_\text{s}$ to reabsorb most of these effects, hence making it frequency dependent.
+	\item The characteristic impedance of the input line $Z'_0$ taken as \SI{50}{\ohm}, i.e., the VNA reference impedance.
+	\item The gJJ is characterized by a junction inductance $L_\text{j}$, a junction capacitance $C_\text{j}$ and subgap resistance $R_\text{sg}$.
+	\item The junction leads also add a series inductance $L_\text{g}$ and a shunt capacitance $C_\text{g}$.
+\end{itemize}
+
+With these inputs, the reflection response of the circuit can be calculated analytically and compared to the measured data.
+However, most of these parameters need to be calibrated and calculated first in order to deduce the junction parameters from the measurements.
+The different parameters and calibrations are set as follows:
+\begin{itemize}
+	\item The cavity length is set by the design geometry of the cavity $l=\SI{6119}{\micro\meter}$ and verified through microscope inspection.
+	\item To determine the cavity $L'$ and $C'$ as well as the internal losses (related to $\alpha$), several cavity measurements from the same batch as the final device were used.
+	From fitting the fundamental mode resonances of these calibration samples we extracted values for $L'$, $C'$, $\alpha$ that we use for the final device.
+	The samples used were:
+	\begin{itemize}
+		\item A cavity with no junction at the end (Supplementary Figure \ref{fig:calcavities}a).
+		This means that the fundamental mode frequency is approximately half that of the final device ($\lambda/4$ vs $\lambda/2$ boundary conditions).
+		From this measurement and the physical geometry of the cavity, we deduce values for $C'$, $L'$.
+		\item A cavity with a short at the end with the same shape as the final junction leads (Supplementary Figure \ref{fig:calcavities}b).
+		This cavity was used to calibrate the loss parameter $\alpha$ associated to resistive and dielectric losses of the transmission line cavity.
+		In principle, the losses are frequency dependent with higher losses at higher frequencies.
+		Since this loss rate was obtained at the high end of the frequency range and is used for all our frequencies, the extracted loss rates are expected to overestimate the actual losses.
+	\end{itemize}
+	\item The leads series inductance $L_\text{g}$ and shunt capacitance $C_\text{g}$ as well as the junction capacitance $C_\text{j}$ were calculated using numerical simulation of the geometry (\textit{COMSOL} v5.3 (COMSOL Inc., 2017) and \textit{Sonnet} v16.54 (Sonnet Software Inc., 2017)).
+	The contribution of the capacitances $C_\text{j}$ and $C_\text{g}$ are expected to be small compared to $C_\text{s}$.
+	The impedances of these (parallel) capacitances are much larger than the typical impedances of the other circuit elements ($L_\text{j}$ or $R_\text{sg}$ for example).
+	\item Additionally, $L_\text{g}$ is swept between two extreme values given by our simulations representing a range of possible kinetic inductance values for NbTiN, the superconductor used in our leads.
+	This gives the error band shown in Supplementary Figures \ref{fig:figure3_bands} and \ref{fig:figure4_bands}.
+\end{itemize}
+
+
+
+
+
+
+With this, we are left with three free parameters: $L_\text{j}$, $R_\text{sg}$, $C_\text{s}$.
+These are determined from fitting the model to the microwave response of the final device as a function of applied gate voltage $V_\text{g}$.
+In broad terms, $L_\text{j}$ sets the device resonance frequency, $R_\text{sg}$ sets the internal quality factor (or loss rate) while $C_\text{s}$ sets the external quality factor (or coupling).
+We note also that points around $V_\text{g} = V_\text{CNP}$ fall into a very undercoupled cavity regime, making the resonance peak visibility very low in some cases.
+This results in some of our fits not converging to the measured curve and producing absurd results.
+Since some of these peaks are not clearly fittable given the measured background, we have opted to reject these few low visibility traces from the final fitted parameter plots.
+
+\subsection{Feasibility of a Graphene JJ transmon qubit}\label{sec:feasability}
+\noindent In this section we provide an additional discussion on the feasibility of a graphene based transmon qubit.
+
+We first consider the device as presented in the main text.
+To calculate the anharmonicity of this device we use techniques from the black box quantization method \cite{niggBlackBoxSuperconductingCircuit2012}.
+According to this method, the value of the anharmonicity $\alpha$ is then given by
+\begin{equation}
+\alpha = \frac{2e^2}{L_\text{j}\omega_0^2(\Im [Y'(\omega_0)])},
+\end{equation}
+where $L_\text{j}$ is the Josephson inductance of the junction, $\omega_0$ is the resonant frequency of the circuit, $Y$ is the admittance of the circuit seen from the junction terminals (including its own admittance) and $Y'$ its derivative with respect to frequency.
+The resonance frequency $\omega_0$ then corresponds to the condition $\Im [Y(\omega_0)] = 0$ and the derivative at this point $Y'(\omega_0)$ can be computed.
+
+As can be seen in Supplementary Figure \ref{fig:anharm1}, the calculated anharmonicity for our main device is always smaller than the measured linewidth.
+Therefore it does not qualify as a qubit in its current state.
+
+
+
+\subsection{Design scenario A -- Measured graphene junction in fixed frequency transmon}\label{sec:scenA}
+
+While our device is not immediately a qubit, some improvements are possible.
+Most notably, the junction inductance is diluted by the cavity inductance, resulting in a low participation ratio in the total circuit inductance.
+We can therefore pose the question of what would the performance of a transmon be that contained only our graphene Josephson junction as its inductive element.
+This circuit is shown in the inset in Supplementary Figure \ref{fig:anharm2}a and consists of the junction in parallel with a shunt capacitor $C_\text{q}$.
+The value of this capacitance is set by the requirement that the frequency of the transmon be $\omega_0 = 2\pi\times\SI{6}{GHz}$.
+Given the measured values of $L_\text{j}$ as a function of applied gate voltage, we can then obtain the anharmonicity as:
+\begin{equation}
+\alpha = \frac{e^2}{2C_\text{q}}.
+\end{equation}
+The result is shown in Supplementary Figure \ref{fig:anharm2}a along with the projected linewidth of the device $\Gamma = (R_\text{sg}C_\text{q})^{-1}$.
+Although the situation is improved in this case, the anharmonicity is still substantially lower than the calculated linewidth.
+This is due to the fact that we are using a rather wide junction with a somewhat high critical current value and, therefore, a low inductance value.
+To keep the frequency at the chosen $\omega_0 = 2\pi\times\SI{6}{GHz}$, the necessary capacitance is then too large to make a qubit.
+This could be resolved by making our junction narrower, hence increasing its inductance, as we shall see below.
+
+
+
+\subsection{Design Scenario B -- Adjusted width graphene junction in fixed frequency and anharmonicity transmon}\label{sec:scenB}
+
+In this case we consider the same circuit as in the previous case.
+Now, however, we fix the capacitance so that the anharmonicity $\alpha = \SI{100}{MHz}$.
+This sets the value of our capacitance $C_\text{q}\simeq\SI{0.2}{pF}$.
+Since we also keep the requirement that $\omega_0 = 2\pi\times\SI{6}{GHz}$, our junction inductance is fixed to a value of $L_\text{j} = (\omega_0^2C_\text{q})^{-1} \simeq \SI{3.5}{nH}$.  
+Given these requirements and the measured values of inductance for our device, we can deduce what junction width would be necessary at each gate voltage $V_\text{g}$ to produce the required inductance.
+
+Here we make the assumption that both $L_\text{j}$ and $R_\text{sg}$ scale with the inverse of the junction width, i.e., approximately as $W^{-1}$.
+This should be the case for $L_\text{j}$ since $L_\text{j} \propto I_\text{c}^{-1} \propto R_\text{n} \propto W^{-1}$ since the $I_\text{c}R_\text{n}$ product in a ballistic junction is constant \cite{titov_josephson_2006}.
+$R_\text{sg}$ does not necessarily have to scale as $R_\text{n}$.
+It does, however, depend on the number of conduction channels available and on the graphene proximity gap.
+The number of channels should scale linearly with the width of the junction while the proximity gap should increase as high transverse momentum channels are suppressed.
+It is therefore reasonable to assume that $R_\text{sg}$ scales at least as fast as $L_\text{j}$.
+
+With these assumptions we can then calculate the required width and expected linewidth shown in Supplementary Figure \ref{fig:anharm3}.
+In this case there is an ample range of gate voltages that comply with the condition $\Gamma<\alpha$.
+The required junction widths are always above \SI{100}{nm}, a limit that is within reach of state of the art fabrication techniques.
+It is on this basis that we propose that it is feasible to construct a graphene based transmon qubit.
+
+
+
+
+\subsection{Hysteresis of the junction switching current}\label{sec:hysteresis}
+\noindent The observed hysteresis in the switching current of our devices (see Figure 2a of main text, and Supplementary Figure \ref{fig:repeatdev}a) could have various origins.
+A valid estimation of the relevant Stewart-McCumber parameter\cite{tinkham_introduction_1996}, $\beta_\text{C}=2\pi I_\text{c}R^2C/\Phi_0$, is not straightforward because there is always the question of how much capacitance of the leads going to the junction should be included.
+In principle, for example in DC measurements, even a portion of the wires going up the cryostat could be arguably relevant, up to a point where the inductance of these wires ``chokes'' the capacitance contribution.
+
+We here discuss several estimates of possible relevant capacitances that could enter into $\beta_\text{C}$, where we assume a typical $R=\SI{50}{\ohm}$ and $I_\text{s}=\SI{5}{\micro A}$.
+First, we note that the ``geometric'' capacitance of a parallel plate capacitor formed between the superconducting leads across the BN/G/BN stack yields a negligible value on the order of a few tens of atto Farads.
+More important is the ``local'' stray capacitance of the junction which we have simulated in \textit{COMSOL} v5.3 (COMSOL Inc., 2017) and \textit{Sonnet} v16.54 (Sonnet Software Inc., 2017).
+If we include the leads up to a distance of \SI{5}{\micro m} from the junction, the relevant $C=\SI{2}{fF}$ and $\beta_\text{C}=0.08$.
+We also simulated the capacitance of the leads that go from the junction to the surrounding ground plane and to the CPW cavity, giving $C=\SI{6.7}{\femto\farad}$ and $\beta_\text{C}=0.25$.
+Of course, there is also likely a relevant capacitance contribution from the center conductor of the CPW to ground.
+For this, we can make a rough estimate of the total CPW center conductor capacitance of \SI{909}{fF} and a resulting $\beta_\text{C}=35$, reaching far into the underdamped regime.
+Finally, one could also include the shunt capacitor of \SI{27}{pF}, which would give $\beta_\text{C}>1000$. 
+The last two are likely not completely relevant, since at the Josephson frequency associatated with the finite bias state of the junction ($\omega_\text{P}=\sqrt{2\pi I_\text{c}/(\Phi_0 C)}=\SI{24}{GHz}$), the shunt capacitor will not charge through the inductance of the center wire of the cavity. 
+More likely, the relevant $\beta_\text{C}$ includes some reasonable contribution of the CPW capacitance: for example, assuming $C = C_\text{CPW} / 10 = \SI{90}{fF}$ would give a $\beta_\text{C} = 3.4$
+In addition to these damping effects, self-heating effects inside the SNS junction could further contribute to a hysteretic IVC \cite{courtois_origin_2008,borzenets_phonon_2013}.
+
+
+
+
+\subsection{Simulation of sub-gap density of states}\label{sec:subgap}
+\noindent To gain further insight into the underlying mechanisms of our junction, we model the density of states (DOS) of a gJJ similar to our device with the software package \textit{Kwant} v1.3 \cite{groth_kwant_2014}.
+The relevant energies to consider are the bulk superconducting pairing potential $\Delta$ and the effective round-trip time of the Cooper pairs inside the junction, the Thouless energy $E_\text{th}=\hbar v_\text{F}/L$.
+From the critical temperature of our NbTiN leads (see Supplementary Figure \ref{fig:critical_temp}) we estimate\cite{tinkham_introduction_1996} $\Delta=1.764k_\text{B} T_\text{c}\approx\SI{2}{meV}$.
+Our device is then placed in the intermediate to long regime, $\Delta/E_\text{th}\approx1.52>1$.
+
+The modelled system consists of a discretized 2D honeycomb lattice with infinite boundary conditions in y-direction.
+The superconducting areas are implemented by setting the pairing potential of these regions to a finite value, effectively making the graphene itself superconducting.
+For the simulation shown we assume full SN coupling, corresponding to a contact transparency $Tr=1$.
+The simulated system size was $L_\text{N}=60$ and $L_\text{SC}=300$ (both in units of the graphene lattice constant $a=\SI{0.214}{nm}$), while we adjusted the pairing potential such that the junction is in the intermediate regime, i.e. $L_\text{N}/\xi=\Delta/E_\text{th} = 1.52$.
+The dispersion is obtained by solving the eigenvalue problem of the Hamiltonian discretized onto the implemented system and plotting the energy values as a function of transverse momentum $k_\parallel$ (see Supplementary Figure \ref{fig:subgap_dos}).
+
+As expected, there are several Andreev Bound States (ABS) hosted below the bulk gap, significantly reducing $\Delta_\text{ind}<\Delta_\text{bulk}$ and opening possible dissipation channels for RF excitations.
+As the chemical potential $\mu\gg\Delta$, the subgap states do not change much with doping, in agreement with the relatively flat $R_\text{sg}$ in Figure 4b of the main text.
+In two-dimensional JJs, the aspect ratio can also play a non-negligible role, as there can be a second effective Thouless energy related to the transverse length, or width of the junction, $E_\text{th}^\parallel=\hbar v_\text{F}/W_\text{N}$.
+Hence, as the aspect ratio increases, the DOS below the bulk gap can rise significantly.
+Alternatively, one can understand this via the subgap dispersion:
+ABS with lowest energies are those exhibiting large transverse momentum because their effective path length is longer.
+The wider the junction, the longer the maximum direct paths across it become, thus the increase in subgap DOS.
+With $W_\text{N}/L_\text{N}\approx10$, this is a contributing factor in our device.
+
+Note that this discussion gets more complicated when considering the contact interfaces between the normal and superconducting parts, as for reduced contact transparencies the subgap states are even further pushed towards zero energy.
+
+We confirm the validity of our simulation by calculating the energies of both infinite and finite systems for various scaling factors.
+The infinite system is the limit of the finite system with aspect ratio $L_\text{N} \ll W_\text{N}$.
+For a very narrow gJJ (lateral extension comparable or equal to distance between superconducting contacts), the DOS is much lower below the bulk gap compared to a very wide junction.
+The reason for this is the much higher level spacing for a narrow system that pushes additional states above the gap.
+Hence, to obtain a SNS system with hard and large induced gap, the normal part should be as narrow and short as possible.
+
+We note that these peaks are not directly visible in our measurements, since instead of measuring the voltage drop across a current-biased JJ they require spectroscopy of the DOS via a tunnel probe, such as in Pillet \emph{et al.} or Bretheau \emph{et al.} \cite{pillet_andreev_2010a,bretheau_tunnelling_2017a}.
 
 \begin{figure*}[]
 	\centering
@@ -544,189 +758,7 @@ All raw and processed data as well as supporting code for processing and figure 
 \clearpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\subsection{Fitting routine for extracting the resonance frequency}\label{sec:fitting}
-\noindent The microwave response function of a capacitively shunted resonator in reflection geometry is given by \cite{pozar_microwave_2012}
-\begin{eqnarray}
-\Gamma(\omega) = \frac{\kappa_\mathrm{ext}-\kappa_\mathrm{int}-2i\Delta\omega}{\kappa_\mathrm{ext}+\kappa_\mathrm{int}+2i\Delta\omega},
-\end{eqnarray}
-where $\kappa_\mathrm{ext,int}=\omega_0/Q_\mathrm{ext,int}$ are the internal and external loss rates and $Q_\mathrm{ext,int}$ are the respective quality factors.
-$\Delta\omega=\omega-\omega_0$ is the frequency detuning from the resonance frequency $\omega_0$.
 
-The measured reflection coefficient must also include the effect of the connecting wires and devices between the network analyser and the device under test.
-The reflection coefficient is accordingly modified to incorporate this background:
-\begin{eqnarray}
-S_{11} = B(\omega)\left(-1 + \frac{2\kappa_\mathrm{ext}e^{i\theta}}{\kappa_\mathrm{ext}+\kappa_\mathrm{int}+2i\Delta\omega}\right)
-\end{eqnarray}
-The complex background $B(\omega)$ has the form:
-\begin{equation}
-B(\omega) = (a+b\omega+c\omega^2)e^{i(a'+b'\omega)},
-\end{equation}
-where $a,b,c,a',b'$ are real parameters.  We use this function to fit the measurement data and extract $\omega_0$ and $\kappa_\mathrm{ext,int}$.
-
-\subsection{Extraction of parameters from microwave measurements}\label{sec:extraction}
-\noindent The schematic for the gJJ and cavity model can be seen in Supplementary Figure \ref{fig:rfmodel}.
-A segment of a coplanar waveguide forms a cavity coupled on one side to an input line through a shunt capacitor.
-The far end of the transmission line (TL) segment has the gJJ modelled using an RCSJ model with an extra inductance and capacitance associated to the junction lead wires.
-
-The parameters needed to characterize the system are described below, listed in Supplementary Table \ref{tab:tlpars} and labelled in Supplementary Figure \ref{fig:rfmodel}:
-\begin{itemize}
-	\item The transmission line (TL) segment has a length $l$ as well as a capacitance per unit length $C'$ and inductance per unit length $L'$.
-	TL losses are characterized by the attenuation parameter $\alpha$.
-	It is worth noting that $L' = L'_\text{g} + L'_\text{k}$ includes a geometric contribution, $L'_\text{g}$, and kinetic inductance contribution\cite{vanduzer_principles_1999}, $L'_\text{k}$.
-	\item The effective value of the shunt capacitance $C_\text{s}$.
-	Since $C_\text{s}$ parametrizes the external cavity coupling, this includes contributions from both the shunt capacitor and the external circuit.
-	The different connectors, wires, and other microwave components introduce impedance mismatches and cable resonances in the input/output lines, changing the external coupling.
-	We use $C_\text{s}$ to reabsorb most of these effects, hence making it frequency dependent.
-	\item The characteristic impedance of the input line $Z'_0$ taken as \SI{50}{\ohm}, i.e., the VNA reference impedance.
-	\item The gJJ is characterized by a junction inductance $L_\text{j}$, a junction capacitance $C_\text{j}$ and subgap resistance $R_\text{sg}$.
-	\item The junction leads also add a series inductance $L_\text{g}$ and a shunt capacitance $C_\text{g}$.
-\end{itemize}
-
-With these inputs, the reflection response of the circuit can be calculated analytically and compared to the measured data.
-However, most of these parameters need to be calibrated and calculated first in order to deduce the junction parameters from the measurements.
-The different parameters and calibrations are set as follows:
-\begin{itemize}
-	\item The cavity length is set by the design geometry of the cavity $l=\SI{6119}{\micro\meter}$ and verified through microscope inspection.
-	\item To determine the cavity $L'$ and $C'$ as well as the internal losses (related to $\alpha$), several cavity measurements from the same batch as the final device were used.
-	From fitting the fundamental mode resonances of these calibration samples we extracted values for $L'$, $C'$, $\alpha$ that we use for the final device.
-	The samples used were:
-	\begin{itemize}
-		\item A cavity with no junction at the end (Supplementary Figure \ref{fig:calcavities}a).
-		This means that the fundamental mode frequency is approximately half that of the final device ($\lambda/4$ vs $\lambda/2$ boundary conditions).
-		From this measurement and the physical geometry of the cavity, we deduce values for $C'$, $L'$.
-		\item A cavity with a short at the end with the same shape as the final junction leads (Supplementary Figure \ref{fig:calcavities}b).
-		This cavity was used to calibrate the loss parameter $\alpha$ associated to resistive and dielectric losses of the transmission line cavity.
-		In principle, the losses are frequency dependent with higher losses at higher frequencies.
-		Since this loss rate was obtained at the high end of the frequency range and is used for all our frequencies, the extracted loss rates are expected to overestimate the actual losses.
-	\end{itemize}
-	\item The leads series inductance $L_\text{g}$ and shunt capacitance $C_\text{g}$ as well as the junction capacitance $C_\text{j}$ were calculated using numerical simulation of the geometry (\textit{COMSOL} v5.3 (COMSOL Inc., 2017) and \textit{Sonnet} v16.54 (Sonnet Software Inc., 2017)).
-	The contribution of the capacitances $C_\text{j}$ and $C_\text{g}$ are expected to be small compared to $C_\text{s}$.
-	The impedances of these (parallel) capacitances are much larger than the typical impedances of the other circuit elements ($L_\text{j}$ or $R_\text{sg}$ for example).
-	\item Additionally, $L_\text{g}$ is swept between two extreme values given by our simulations representing a range of possible kinetic inductance values for NbTiN, the superconductor used in our leads.
-	This gives the error band shown in Supplementary Figures \ref{fig:figure3_bands} and \ref{fig:figure4_bands}.
-\end{itemize}
-
-
-
-
-
-
-With this, we are left with three free parameters: $L_\text{j}$, $R_\text{sg}$, $C_\text{s}$.
-These are determined from fitting the model to the microwave response of the final device as a function of applied gate voltage $V_\text{g}$.
-In broad terms, $L_\text{j}$ sets the device resonance frequency, $R_\text{sg}$ sets the internal quality factor (or loss rate) while $C_\text{s}$ sets the external quality factor (or coupling).
-We note also that points around $V_\text{g} = V_\text{CNP}$ fall into a very undercoupled cavity regime, making the resonance peak visibility very low in some cases.
-This results in some of our fits not converging to the measured curve and producing absurd results.
-Since some of these peaks are not clearly fittable given the measured background, we have opted to reject these few low visibility traces from the final fitted parameter plots.
-
-\subsection{Feasibility of a Graphene JJ transmon qubit}\label{sec:feasability}
-\noindent In this section we provide an additional discussion on the feasibility of a graphene based transmon qubit.
-
-We first consider the device as presented in the main text.
-To calculate the anharmonicity of this device we use techniques from the black box quantization method \cite{niggBlackBoxSuperconductingCircuit2012}.
-According to this method, the value of the anharmonicity $\alpha$ is then given by
-\begin{equation}
-\alpha = \frac{2e^2}{L_\text{j}\omega_0^2(\Im [Y'(\omega_0)])},
-\end{equation}
-where $L_\text{j}$ is the Josephson inductance of the junction, $\omega_0$ is the resonant frequency of the circuit, $Y$ is the admittance of the circuit seen from the junction terminals (including its own admittance) and $Y'$ its derivative with respect to frequency.
-The resonance frequency $\omega_0$ then corresponds to the condition $\Im [Y(\omega_0)] = 0$ and the derivative at this point $Y'(\omega_0)$ can be computed.
-
-As can be seen in Supplementary Figure \ref{fig:anharm1}, the calculated anharmonicity for our main device is always smaller than the measured linewidth.
-Therefore it does not qualify as a qubit in its current state.
-
-
-
-\subsection{Design scenario A -- Measured graphene junction in fixed frequency transmon}\label{sec:scenA}
-
-While our device is not immediately a qubit, some improvements are possible.
-Most notably, the junction inductance is diluted by the cavity inductance, resulting in a low participation ratio in the total circuit inductance.
-We can therefore pose the question of what would the performance of a transmon be that contained only our graphene Josephson junction as its inductive element.
-This circuit is shown in the inset in Supplementary Figure \ref{fig:anharm2}a and consists of the junction in parallel with a shunt capacitor $C_\text{q}$.
-The value of this capacitance is set by the requirement that the frequency of the transmon be $\omega_0 = 2\pi\times\SI{6}{GHz}$.
-Given the measured values of $L_\text{j}$ as a function of applied gate voltage, we can then obtain the anharmonicity as:
-\begin{equation}
-\alpha = \frac{e^2}{2C_\text{q}}.
-\end{equation}
-The result is shown in Supplementary Figure \ref{fig:anharm2}a along with the projected linewidth of the device $\Gamma = (R_\text{sg}C_\text{q})^{-1}$.
-Although the situation is improved in this case, the anharmonicity is still substantially lower than the calculated linewidth.
-This is due to the fact that we are using a rather wide junction with a somewhat high critical current value and, therefore, a low inductance value.
-To keep the frequency at the chosen $\omega_0 = 2\pi\times\SI{6}{GHz}$, the necessary capacitance is then too large to make a qubit.
-This could be resolved by making our junction narrower, hence increasing its inductance, as we shall see below.
-
-
-
-\subsection{Design Scenario B -- Adjusted width graphene junction in fixed frequency and anharmonicity transmon}\label{sec:scenB}
-
-In this case we consider the same circuit as in the previous case.
-Now, however, we fix the capacitance so that the anharmonicity $\alpha = \SI{100}{MHz}$.
-This sets the value of our capacitance $C_\text{q}\simeq\SI{0.2}{pF}$.
-Since we also keep the requirement that $\omega_0 = 2\pi\times\SI{6}{GHz}$, our junction inductance is fixed to a value of $L_\text{j} = (\omega_0^2C_\text{q})^{-1} \simeq \SI{3.5}{nH}$.  
-Given these requirements and the measured values of inductance for our device, we can deduce what junction width would be necessary at each gate voltage $V_\text{g}$ to produce the required inductance.
-
-Here we make the assumption that both $L_\text{j}$ and $R_\text{sg}$ scale with the inverse of the junction width, i.e., approximately as $W^{-1}$.
-This should be the case for $L_\text{j}$ since $L_\text{j} \propto I_\text{c}^{-1} \propto R_\text{n} \propto W^{-1}$ since the $I_\text{c}R_\text{n}$ product in a ballistic junction is constant \cite{titov_josephson_2006}.
-$R_\text{sg}$ does not necessarily have to scale as $R_\text{n}$.
-It does, however, depend on the number of conduction channels available and on the graphene proximity gap.
-The number of channels should scale linearly with the width of the junction while the proximity gap should increase as high transverse momentum channels are suppressed.
-It is therefore reasonable to assume that $R_\text{sg}$ scales at least as fast as $L_\text{j}$.
-
-With these assumptions we can then calculate the required width and expected linewidth shown in Supplementary Figure \ref{fig:anharm3}.
-In this case there is an ample range of gate voltages that comply with the condition $\Gamma<\alpha$.
-The required junction widths are always above \SI{100}{nm}, a limit that is within reach of state of the art fabrication techniques.
-It is on this basis that we propose that it is feasible to construct a graphene based transmon qubit.
-
-
-
-
-\subsection{Hysteresis of the junction switching current}\label{sec:hysteresis}
-\noindent The observed hysteresis in the switching current of our devices (see Figure 2a of main text, and Supplementary Figure \ref{fig:repeatdev}a) could have various origins.
-A valid estimation of the relevant Stewart-McCumber parameter\cite{tinkham_introduction_1996}, $\beta_\text{C}=2\pi I_\text{c}R^2C/\Phi_0$, is not straightforward because there is always the question of how much capacitance of the leads going to the junction should be included.
-In principle, for example in DC measurements, even a portion of the wires going up the cryostat could be arguably relevant, up to a point where the inductance of these wires ``chokes'' the capacitance contribution.
-
-We here discuss several estimates of possible relevant capacitances that could enter into $\beta_\text{C}$, where we assume a typical $R=\SI{50}{\ohm}$ and $I_\text{s}=\SI{5}{\micro A}$.
-First, we note that the ``geometric'' capacitance of a parallel plate capacitor formed between the superconducting leads across the BN/G/BN stack yields a negligible value on the order of a few tens of atto Farads.
-More important is the ``local'' stray capacitance of the junction which we have simulated in \textit{COMSOL} v5.3 (COMSOL Inc., 2017) and \textit{Sonnet} v16.54 (Sonnet Software Inc., 2017).
-If we include the leads up to a distance of \SI{5}{\micro m} from the junction, the relevant $C=\SI{2}{fF}$ and $\beta_\text{C}=0.08$.
-We also simulated the capacitance of the leads that go from the junction to the surrounding ground plane and to the CPW cavity, giving $C=\SI{6.7}{\femto\farad}$ and $\beta_\text{C}=0.25$.
-Of course, there is also likely a relevant capacitance contribution from the center conductor of the CPW to ground.
-For this, we can make a rough estimate of the total CPW center conductor capacitance of \SI{909}{fF} and a resulting $\beta_\text{C}=35$, reaching far into the underdamped regime.
-Finally, one could also include the shunt capacitor of \SI{27}{pF}, which would give $\beta_\text{C}>1000$. 
-The last two are likely not completely relevant, since at the Josephson frequency associatated with the finite bias state of the junction ($\omega_\text{P}=\sqrt{2\pi I_\text{c}/(\Phi_0 C)}=\SI{24}{GHz}$), the shunt capacitor will not charge through the inductance of the center wire of the cavity. 
-More likely, the relevant $\beta_\text{C}$ includes some reasonable contribution of the CPW capacitance: for example, assuming $C = C_\text{CPW} / 10 = \SI{90}{fF}$ would give a $\beta_\text{C} = 3.4$
-In addition to these damping effects, self-heating effects inside the SNS junction could further contribute to a hysteretic IVC \cite{courtois_origin_2008,borzenets_phonon_2013}.
-
-
-
-
-\subsection{Simulation of sub-gap density of states}\label{sec:subgap}
-\noindent To gain further insight into the underlying mechanisms of our junction, we model the density of states (DOS) of a gJJ similar to our device with the software package \textit{Kwant} v1.3 \cite{groth_kwant_2014}.
-The relevant energies to consider are the bulk superconducting pairing potential $\Delta$ and the effective round-trip time of the Cooper pairs inside the junction, the Thouless energy $E_\text{th}=\hbar v_\text{F}/L$.
-From the critical temperature of our NbTiN leads (see Supplementary Figure \ref{fig:critical_temp}) we estimate\cite{tinkham_introduction_1996} $\Delta=1.764k_\text{B} T_\text{c}\approx\SI{2}{meV}$.
-Our device is then placed in the intermediate to long regime, $\Delta/E_\text{th}\approx1.52>1$.
-
-The modelled system consists of a discretized 2D honeycomb lattice with infinite boundary conditions in y-direction.
-The superconducting areas are implemented by setting the pairing potential of these regions to a finite value, effectively making the graphene itself superconducting.
-For the simulation shown we assume full SN coupling, corresponding to a contact transparency $Tr=1$.
-The simulated system size was $L_\text{N}=60$ and $L_\text{SC}=300$ (both in units of the graphene lattice constant $a=\SI{0.214}{nm}$), while we adjusted the pairing potential such that the junction is in the intermediate regime, i.e. $L_\text{N}/\xi=\Delta/E_\text{th} = 1.52$.
-The dispersion is obtained by solving the eigenvalue problem of the Hamiltonian discretized onto the implemented system and plotting the energy values as a function of transverse momentum $k_\parallel$ (see Supplementary Figure \ref{fig:subgap_dos}).
-
-As expected, there are several Andreev Bound States (ABS) hosted below the bulk gap, significantly reducing $\Delta_\text{ind}<\Delta_\text{bulk}$ and opening possible dissipation channels for RF excitations.
-As the chemical potential $\mu\gg\Delta$, the subgap states do not change much with doping, in agreement with the relatively flat $R_\text{sg}$ in Figure 4b of the main text.
-In two-dimensional JJs, the aspect ratio can also play a non-negligible role, as there can be a second effective Thouless energy related to the transverse length, or width of the junction, $E_\text{th}^\parallel=\hbar v_\text{F}/W_\text{N}$.
-Hence, as the aspect ratio increases, the DOS below the bulk gap can rise significantly.
-Alternatively, one can understand this via the subgap dispersion:
-ABS with lowest energies are those exhibiting large transverse momentum because their effective path length is longer.
-The wider the junction, the longer the maximum direct paths across it become, thus the increase in subgap DOS.
-With $W_\text{N}/L_\text{N}\approx10$, this is a contributing factor in our device.
-
-Note that this discussion gets more complicated when considering the contact interfaces between the normal and superconducting parts, as for reduced contact transparencies the subgap states are even further pushed towards zero energy.
-
-We confirm the validity of our simulation by calculating the energies of both infinite and finite systems for various scaling factors.
-The infinite system is the limit of the finite system with aspect ratio $L_\text{N} \ll W_\text{N}$.
-For a very narrow gJJ (lateral extension comparable or equal to distance between superconducting contacts), the DOS is much lower below the bulk gap compared to a very wide junction.
-The reason for this is the much higher level spacing for a narrow system that pushes additional states above the gap.
-Hence, to obtain a SNS system with hard and large induced gap, the normal part should be as narrow and short as possible.
-
-We note that these peaks are not directly visible in our measurements, since instead of measuring the voltage drop across a current-biased JJ they require spectroscopy of the DOS via a tunnel probe, such as in Pillet \emph{et al.} or Bretheau \emph{et al.} \cite{pillet_andreev_2010a,bretheau_tunnelling_2017a}.
 
 \references{dissertation}
 

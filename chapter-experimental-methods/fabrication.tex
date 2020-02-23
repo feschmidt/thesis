@@ -32,7 +32,7 @@ Like graphene, BN has a hexagonal lattice, albeit consisting of two sub-lattices
 % 
 BN can be exfoliated from bulk crystals to thin insulating films of arbitrary layer number and signifcantly lower surface roughness than any other dielectric, making it a perfect match for graphene encapsulation.
 % 
-The highest quality BN crystals, i.e. the ones exhibiting the lowest charge defect density, are the ones made by ultra-high pressure ??? by Kenji Watanabe and Takashi Taniguchi at NIMS, Japan.
+The highest quality BN crystals, i.e. the ones exhibiting the lowest charge defect density, are the ones made by high pressure by Kenji Watanabe and Takashi Taniguchi at NIMS, Japan~\cite{taniguchi_synthesis_2007}.
 
 As confirmed by atomic force and scanning tunneling microscopy, SLG on BN exhibits a significantly lower roughness compared to samples on \ce{SiO2}, until then the standard dielectric for graphene devices.
 % 
@@ -261,7 +261,7 @@ We fabricate the graphene Josephson junctions in the following fashion:
 	\item \textbf{Making NbTiN contacts using etch-fill}
 	
 	\begin{tabular}{cc}
-		\hline
+		\hline \hline
 		Ebeam resist (1/2) & PMMA 495 A4, \SI{4000}{rpm}, bake \SI{10}{\minute} at \SI{185}{\celsius} \\
 		Ebeam resist (2/2) & PMMA 950 A3, \SI{4000}{rpm}, bake \SI{10}{\minute} at \SI{185}{\celsius}. \\
 		%\hline
@@ -274,14 +274,14 @@ We fabricate the graphene Josephson junctions in the following fashion:
 		Metal deposition & \SI{5}{\nano\meter} NbTi and \SIrange{60}{70}{\nano\meter} NbTiN \\
 		%\hline
 		Liftoff & hot PRS~3000 @ \SI{88}{\celsius} for a few hours \\
-		\hline
+		\hline \hline
 	\end{tabular}
 	\item \textbf{Shaping the device:} Same as for making the contacts, but with lower etch pressure (\SI{50}{\micro\bar}) and without the metal deposition.
 	%
 	\item \textbf{Top-gate dielectric}
 	
 	\begin{tabular}{cc}
-		\hline
+		\hline \hline
 		Ebeam resist & conc. HSQ, \SI{5000}{rpm}, bake \SI{10}{\minute} at \SI{90}{\celsius} in an oven. \\
 		%\hline
 		Ebeam patterning & \SI{500}{\micro\coulomb\per\centi\meter\squared}. \\
@@ -289,7 +289,7 @@ We fabricate the graphene Josephson junctions in the following fashion:
 		Development & MF322 for \SI{1}{\minute}, MF322:\ce{H2O} (1:9) for \SI{15}{\second}, \ce{H2O} for \SI{15}{\second}. \\
 		%\hline
 		& Repeat this process once with \SI{4000}{rpm} spin speed. \\
-		\hline
+		\hline \hline
 	\end{tabular}
 	%
 	\item \textbf{Top-gate metal: } Same as for making the contacts, but without etching.
@@ -324,16 +324,16 @@ Figure 4, if possible: Cross-sectional TEM of one of our devices (courtesy Sonia
 \end{figure}
 
 \pagebreak
-\subsection{Fabrication of current bias cavities}
+\subsection{Fabrication of DC bias cavities}
 
 The RF circuits in Chapters~\ref{chap:gJJ} and \ref{chap:gJJ-power} are fabricated as follows, while the one in Chapter~\ref{chap:current-detection} used Al:Si as superconducting layer and silicon as base layer.
 
 \begin{itemize}
 	%
-	\item \textbf{Deposit and pattern MoRe base layer}
-	
+	\item 
 	\begin{tabular}{cc}
-		\hline
+		\textbf{1.} & \textbf{Deposit and pattern MoRe base layer} \\
+		\hline \hline
 		Metal deposition & \SI{60}{\nano\meter} MoRe, \SI{100}{\watt}, \SI{60}{sccm} Argon flow. \\
 		%\hline
 		Ebeam resist & AR-P 6200.13 (CSAR), \SI{4000}{rpm}, bake \SI{3}{\minute} at \SI{155}{\celsius}. \\
@@ -345,13 +345,13 @@ The RF circuits in Chapters~\ref{chap:gJJ} and \ref{chap:gJJ-power} are fabricat
 		Dry etching & \ce{SF6}+\ce{He} \SI{12.5}{sccm}+\SI{10}{sccm} @ \SI{50}{\watt}, \SI{10}{\micro\bar} \\
 		%\hline
 		Liftoff & hot PRS~3000 @ \SI{88}{\celsius} for a few hours \\
-		\hline
+		\hline\hline
 	\end{tabular}
 	%
-	\item \textbf{Deposit and pattern dielectric layer for shunt capacitor}
-	
+	\item 	
 	\begin{tabular}{cc}
-		\hline
+		\textbf{2.} & \textbf{Deposit and pattern dielectric layer for shunt capacitor} \\
+		\hline \hline
 		Dielectric deposition & PECVD \SI{70}{\nano\meter} of \ce{Si3N4} @ \SI{300}{\celsius}. \\
 		%\hline
 		Ebeam resist & AR-N 7700.18, \SI{3000}{rpm}, bake \SI{1}{\minute} at \SI{90}{\celsius}. \\
@@ -366,10 +366,10 @@ The RF circuits in Chapters~\ref{chap:gJJ} and \ref{chap:gJJ-power} are fabricat
 		\hline
 	\end{tabular}
 	%
-	\item \textbf{Deposit top metal plate of shunt capacitor}
-	
+	\item 	
 	\begin{tabular}{cc}
-		\hline
+		\textbf{3.} & \textbf{Deposit top metal plate of shunt capacitor} \\
+		\hline \hline
 		Ebeam resist (1/2) & PMMA 495 A4, \SI{4000}{rpm}, bake \SI{10}{\minute} at \SI{185}{\celsius}. \\
 		%\hline
 		Ebeam resist (2/2) & PMMA 950 A3, \SI{4000}{rpm}, bake \SI{10}{\minute} at \SI{185}{\celsius}. \\
@@ -393,79 +393,16 @@ We found that this immensely helped against under-etching of dielectrics with BO
 
 \begin{figure}
 	\centering
-	\includegraphics{{chapter-experimental-methods/figs-fabrication/placeholder-six.svg}.png}
+	\includegraphics{{chapter-experimental-methods/figs-fabrication/fab-shunt-bias.svg}.png}
 	\caption{
 		\textbf{Fabrication of current-bias microwave cavities.}
 		% 
-		\textbf{A,} MoRe base layer after patterning via \ce{SF6}+\ce{He} dry-etching.
-		% 
-		\textbf{B,} Shunt capacitor dielectric covering parts of the superconducting base layer, after patterning via \ce{CHF3}+\ce{O2} dry-etching.
-		% 
-		\textbf{C,} Finished cavity after lift-off deposition of top-plate of the shunt capacitor.
+		DC bias cavity on sapphire with MoRe base and top layer and \ce{Si3N4} capacitor dielectric (\textbf{A,}), and device on silicon (\textbf{B}) with NbTiN base and top layer.
 		%
-		All scale bars \SI{100}{\nano\meter}.
+		The dark areas are holes in the ground plane for flux trapping.
+		%
+		All scale bars \SI{100}{\micro\meter}.
 	}
 	\label{fig:biascavityfab}
-\end{figure}
-
-\pagebreak
-\subsection{Device packaging}\label{sec:fab-packaging}
-
-% 
-After the device fabrication is finished, the sample has to be mounted on a chip carrier and contacted, so we can connect it to our measurement electronics.
-% 
-Our microwave PCBs are made for \SI{10x10}{\milli\meter} chips; however in order to grab the chips during fabrication easier and to enhance the fabrication yield, samples are usually fabricated on larger substrates:
-% 
-The current bias cavities for the graphene devices presented in this thesis were processed on a \SI{2}{inch} wafer, and the cavities based on aluminum on \SI{15x15}{\milli\meter} chips.
-
-We dice the chips into the correct dimensions as the very last step, using the \textit{Disco dicer} DAD 3220 from \textit{Disco Hi-Tec Europe GmbH}.
-% 
-To protect the chip from dust during sawing, we spincoat photoresist\footnote{HPR504, \SI{4000}{rpm}, bake \SI{60}{\second} at \SI{100}{\celsius}, approximately \SI{1.2}{\micro\meter} thick} on the chip before dicing.
-% 
-Good resist-substrate adhesion is important during dicing because the water jet used to cool the blade can wash off the resist during dicing otherwise, potentially ruining weeks of delicate work in the cleanroom.
-% 
-Use of HMDS, or letting the resist sit on the chip to be diced for \SI{1}{\minute} prior to spinning is highly recommended.
-
-The silicon chips were diced using a standard NBC blade at \SI{3000}{rpm} and a feed speed of \SI{5}{\milli\meter\per\second}, while for dicing sapphire we used a special diamond blade at \SI{2000}{rpm} and \SI{2}{\milli\meter\per\second}.
-% 
-Removing the protective resist after dicing can depend on the device materials.
-% 
-For the devices presented in this thesis, we placed the diced chips in teflon holders inside beakers filled with PRS3000, heated the solution to \SI{80}{\celsius} and subsequently put the beaker into an ultrasound bath at maximum power.
-% 
-After \SI{5}{\minute}, the resist has then come off the sample, and we passed the chip through a series of PRS3000 and IPA baths to wash off any remains, and blow-dried using nitrogen.
-
-% 
-The chips are finally glued to the rails of our copper boxes using GE low temperature varnish.
-% 
-Wirebonding is done using a \textit{Westbond 4000 "E"} system from \textit{West•Bond Inc.} with bond wires from an AlSi alloy (\SI{99}{\percent}-\SI{1}{\percent}).
-% 
-To ensure good thermalization and electrical contact, we usually used three to four bonds for each bond pad, and as many bonds as would fit on the ground planes.
-% 
-An example of one of our devices that is mounted and wirebonded in a PCB, ready for measurement can be seen in Fig.~\ref{fig:packaging}.
-% 
-The connectors to go from the PCB to the outside world are straight plug semi-detent SMP connectors\footnote{19S102-40ML5 straight plug PCB, from \textit{Rosenberger Hochfrequenztechnik GmbH \& Co. KG}}.
-
-
-\begin{figure}
-	\centering
-	\includegraphics{{chapter-experimental-methods/figs-packaging/packaging.svg}.png}
-	\caption{
-		\textbf{Device packaging for electrical measurements.}
-		% 
-		\textbf{A,} A \SI{10x10}{\milli\meter} mounted and wirebonded to a PCB, that is screwed onto a copper base.
-		% 
-		The four small holes around the chip are used to screw on a small copper lid, covering the chip.
-		% 
-		The four big holes at the edge of the copper based are used for mounting the chip in a cryostat, and to hold the top cover in place.
-		% 
-		Connectors for connecting the PCB to the outside world are surface mount SMP plugs.
-		% 
-		\textbf{B,} Close-up of the bottom-right chip area, taken with ring illumination.
-		% 
-		The substrate is sapphire, hence the chip transparency.
-		% 
-		In the bottom right corner, one of the copper rails on which the chip sits is visible.
-	}
-	\label{fig:packaging}
 \end{figure}
 
