@@ -445,3 +445,26 @@
 	urlcolor = title
 }
 
+%% Auxiliary commands
+
+% start on even page
+\newcommand*{\cleartoleftpage}{%
+	\clearpage
+	\if@twoside
+	\ifodd\c@page
+	\hbox{}\newpage
+	\if@twocolumn
+	\hbox{}\newpage
+	\fi
+	\fi
+	\fi
+}
+
+% make empty color page before new chapter
+\newcommand*{\newchapstyle}{%
+	\cleartoleftpage
+	\thispagestyle{empty}
+	\pagecolor{mDarkTeal}
+	\mbox{}
+	\newpage
+}

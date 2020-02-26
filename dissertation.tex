@@ -17,7 +17,7 @@
 \usepackage{listings} % for code blocks
 \usepackage{esdiff} % for easier typing out derivatives
 \usepackage[version=4]{mhchem}
-%\usepackage{tabularx} % linebreak tables
+
 
 \definecolor{dkgreen}{rgb}{0,0.6,0}
 \definecolor{gray}{rgb}{0.5,0.5,0.5}
@@ -40,6 +40,7 @@
 }
 \usepackage{afterpage}
 
+
 \begin{document}
 
 %% Specify the title and author of the thesis. This information will be used on the title page (in title/title.tex) and in the metadata of the final PDF.
@@ -53,11 +54,12 @@
 
 %% The (optional) dedication can be used to thank someone or display a significant quotation.
 \dedication{Für Katrin und Felicitas}
+\newchapstyle
 \tableofcontents
 
 
-%\include{summary/summary}
-% \include{preface/preface}
+\include{summary/summary}
+%\include{preface/preface}
 
 %% Use Arabic numerals for the page numbers of the chapters.
 \mainmatter
@@ -65,29 +67,29 @@
 %% Turn on thumb indices.
 \thumbtrue
 
-%\include{chapter-introduction/introduction}
-%\include{chapter-theory/theory}
+\include{chapter-introduction/introduction}
+\include{chapter-theory/theory}
 \include{chapter-experimental-methods/experiment}
-%\include{chapter-gJJ/gJJ}
-%\include{chapter-gJJ-power/gJJ-power}
+\include{chapter-gJJ/gJJ}
+\include{chapter-gJJ-power/gJJ-power}
 % \include{chapter-gSQUID-oscillations/gSQUID-oscillations}
-%\include{chapter-currentdetection/currentdetection}
-%\include{conclusion/conclusion}
-% \include{epilogue/epilogue}
-%\include{acks/acks}
+\include{chapter-currentdetection/currentdetection}
+\include{conclusion/conclusion}
+%% \include{epilogue/epilogue}
+\include{acks/acks}
 
 %% Use letters for the chapter numbers of the appendices.
-%\appendix
-%\include{appendix/app-equations}
-%\include{appendix/app-code}
-%\include{appendix/app-ebeam}
-%\include{appendix/app-copperpowder}
-%\include{appendix/app-notes}
+\appendix
+\include{appendix/app-equations}
+\include{appendix/app-code}
+\include{appendix/app-ebeam}
+\include{appendix/app-copperpowder}
+\include{appendix/app-notes}
 
 %% Turn off thumb indices for unnumbered chapters.
 \thumbfalse
 
-%\include{cv/cv}
-%\include{publications/publications}
+\include{cv/cv}
+\include{publications/publications}
 \end{document}
 
