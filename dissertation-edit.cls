@@ -310,6 +310,8 @@
 %% right, followed by the part name on the next line in the title color.
 \titleformat{\part}[display]
 {\flushright\titlestyle\pagecolor{mDarkTeal}\afterpage{\nopagecolor}}
+%{\cleartoevenpage\pagecolor{mDarkTeal}\afterpage{\nopagecolor}}
+%{\flushright\titlestyle}
 {\fontsize{200pt}{150pt}\selectfont\bfseries\color{mLightBrown}\thechapter}
 {0pt}
 {\Huge\color{mLightBrown}}
@@ -322,6 +324,8 @@
 %% Chapter titles have the same layout as parts.
 \titleformat{\chapter}[display]
 {\flushright\titlestyle\pagecolor{mDarkTeal}\afterpage{\nopagecolor}}
+%{\cleartoevenpage\pagecolor{mDarkTeal}\afterpage{\nopagecolor}}
+%{\flushright\titlestyle}
 {\fontsize{200pt}{150pt}\selectfont\bfseries\color{mLightBrown}\thechapter}
 {0pt}
 {\Huge\color{mLightBrown}}

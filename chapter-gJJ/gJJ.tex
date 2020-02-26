@@ -256,8 +256,8 @@ From the microwave losses of the resonance, we have extracted the junction sub-g
 From the physics of the proximity junctions, we have suggested a route towards improving the coherence potentially towards the current state-of-the-art, enabling a new generation of gate-tunable quantum circuit technology. 
 
 
-\section*{Methods}
-\subsection*{Fabrication of the microwave circuit}
+\section{Methods}
+\subsection{Fabrication of the microwave circuit}
 We closely follow a recipe published earlier \cite{bosman_broadband_2015,singh_molybdenumrhenium_2014}.
 In short, a \SI{50}{nm} film of MoRe is first sputtered onto a 2" sapphire wafer (\SI{430}{\micro m}, c-plane, SSP from \textit{University Wafers}).
 The coplanar waveguide (CPW) resonator is defined using positive e-beam lithography and dry-etching with an $\mathrm{SF_6 + He}$ plasma.
@@ -267,7 +267,7 @@ An additional shunt capacitor, identical to the one on the main input, is built 
 This will filter RF noise on the gate line and suppress microwave losses through this lead.
 Finally, we dice the wafer into $\SI{10}{mm}\times\SI{10}{mm}$ pieces, onto which the BN/G/BN stacks can be deposited.
 
-\subsection*{Fabrication of the gJJ}
+\subsection{Fabrication of the gJJ}
 We exfoliate graphene and BN from thick crystals (HOPG from \textit{HQ Graphene} and BN from \textit{NIMS}\cite{taniguchi_synthesis_2007}) onto cleaned Si/$\mathrm{SiO_2}$ pieces using wafer adhesive tape.
 After identifying suitable flakes with an optical microscope, we build a BN/G/BN heterostructure using a PPC/PDMS stamp on a glass slide \cite{pizzocchero_hot_2016,wang_onedimensional_2013}.
 The assembled stack is then transferred onto the chip with the finished microwave cavity.
@@ -276,7 +276,7 @@ Clean interfaces between the NbTiN junction leads and the MoRe resonator body ar
 The resistance measured from the resonator center line to ground is therefore due entirely to the gJJ.
 After shaping the device ($\ce{CHF3} + \ce{O2}$ plasma), we cover it with two layers of HSQ \cite{nanda_currentphase_2017} and add the top-gate with a final lift-off step.
 
-\subsection*{Measurement setup}\label{sec:setup}
+\subsection{Measurement setup}\label{sec:setup}
 \noindent A sketch of the complete measurement setup is given in Supplementary Fig. 1.
 The chip is glued and wire-bonded to a printed circuit board, that is in turn enclosed by a copper box for radiation shielding and subsequently mounted to the mK plate of our dry dilution refrigerator.
 All measurements are performed at the base temperature of \SI{15}{mK}.
@@ -298,11 +298,11 @@ The lines are filtered with $\pi$-filters inside the in-house built measurement 
 To reduce the maximum possible current on the gate line, a \SI{100}{k\ohm} resistor is added at room-temperature.
 For the DC measurements presented, we turn the output power of the VNA off and current-bias the gJJ, while measuring the voltage drop across the device with respect to a cold ground on the mK plate.
 
-\subsection*{Data visualization}
+\subsection{Data visualization}
 To remove gate-voltage-independent features such as cable resonances, we subtracted the mean of each line for constant frequency with outlier rejection (\SI{40}{\percent} low, \SI{40}{\percent} high) from the original data, resulting in Fig. \ref{fig:figure2}(c).
 All figures representing data are plotted using \textit{matplotlib} v2 \cite{hunter_matplotlib_2007}.
 
-\section*{Data Availability}
+\subsection{Data Availability}
 All raw and processed data as well as supporting code for processing and figure generation is available in Zenodo with the identifiers \verb|doi:10.5281/zenodo.1296129|\cite{schmidtDataCodeBallistic2018} and \verb|10.5281/zenodo.1408933|\cite{jenkinsMeasurementAnalysisScripts2018}.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -325,16 +325,16 @@ All raw and processed data as well as supporting code for processing and figure 
 %\setcounter{section}{0}
 
 %\renewcommand{\thepage}{S\arabic{page}}
-\renewcommand{\thesection}{S\Roman{section}}
-\renewcommand{\thetable}{S\Roman{table}}
-\renewcommand{\thefigure}{S\arabic{figure}}
-\renewcommand{\theequation}{S\arabic{equation}}
+%\renewcommand{\thesection}{S\Roman{section}}
+%\renewcommand{\thetable}{S\Roman{table}}
+%\renewcommand{\thefigure}{S\arabic{figure}}
+%\renewcommand{\theequation}{S\arabic{equation}}
 %\renewcommand{\bibnumfmt}[1]{[S#1]}
 %\renewcommand{\citenumfont}[1]{S#1}
 
 \begin{figure*}[]
 	{\centering
-		\includegraphics[width=.8\linewidth]{chapter-gJJ/figs/full_setup_cmyk}}
+		\includegraphics[width=\linewidth]{chapter-gJJ/figs/full_setup_cmyk}}
 	\caption{{\bf Sketched measurement setup.}
 		Dashed red box at the bottom marks device outline.
 	}
@@ -342,8 +342,7 @@ All raw and processed data as well as supporting code for processing and figure 
 \end{figure*}
 
 \clearpage
-\textbf{\centering\large Supplementary Material:\\}
-\textbf{\centering\large A ballistic graphene superconducting microwave circuit\\}
+\section{Supplementary Material: A ballistic graphene superconducting microwave circuit}
 
 %\vspace{1em}
 

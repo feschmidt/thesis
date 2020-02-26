@@ -1,7 +1,7 @@
 \section{Device fabrication}
 \label{sec:fabrication}
 
-The following recipes and procedures are based on extensive prior work of the group of Dr.~Srijit Goswami at QuTech, TU Delft, and were further developed in close collaboration with Dr.~Nikos Papadopoulos.
+
 
 \subsection{The art of making encapsulated graphene devices}
 
@@ -120,7 +120,7 @@ The following steps describe our typical working process for achieving high-qual
 \begin{enumerate}
 	\item Align the top BN flake with the center area of the PDMS/PPC template.
 	%
-	\item Lower the glass slide such that the PPC touches the substrate.
+	Lower the glass slide such that the PPC touches the substrate.
 	%
 	Take care that the PPC does not yet cover the flake, but touches down less than \SI{100}{\micro\meter} away from it.
 	%
@@ -220,12 +220,19 @@ For flake transfer, we follow the above steps, except that the transfer takes pl
 
 \subsubsection{Challenges of heterostructure assembly}
 
-We found that BN-G-BN stacks would often get washed away due to unsufficient adhesion to the sapphire substrate during processing.
-Due to the low adhesion of BN to sapphire and silicon nitride, many stacks were washed off the final substrates during solving the polymer.
-We did not observe this behaviour on silicon substrates, (cf. Fig.~\ref{fig:fab-hetero-challenge} (B)), but had a yield of less than \SI{50}{\percent} on sapphire and \SI{0}{\percent} on silicon nitride films.
-
-As in our paper, the polymer used for transfer (PC, PPC) has very strong adhesion to the metal areas of the shunts, ground planes and center conductors.
+Various challenges were encountered when integrating van der Waals heterostructures with RF circuits:
+The polymer used for transfer (PC, PPC) has very strong adhesion to the metal areas of the shunts, ground planes and center conductors.
+While during stack assembly on oxidized silicon, the polymer would only touch the substrate preliminary, when attempting to delaminate the heterostructure on the pre-patterned substrates, the polymer would rip off the PDMS carrier and also get delaminated, cf. Fig.~\ref{fig:fab-hetero-challenge}A.
+Additionally, van der Waals crystals have strong adhesion to the metals used in our work, which resulted in a number of residual flakes on the final chip surrounding the intended heterostructure.
 A long soak in NMP was able to remove the polymer at least visibly, but residual flakes had to be etched away in a separate step.
+
+On the other hand, flake adhesion on the substrate itself was found to vary from good to extremely poor:
+We found that BN-G-BN stacks would often get washed away due to unsufficient adhesion to sapphire substrates during processing.
+Due to the low adhesion of BN to sapphire and silicon nitride, many stacks were washed off the final substrates when dissolving the polymer.
+While the transfer yield of heterostructures on sapphire and silicon nitride was only as low as \SI{50}{\percent} and \SI{0}{\percent}, respectively, we did not observe this behaviour on silicon and silicon oxide (HSQ) surfaces, (cf. Fig.~\ref{fig:fab-hetero-challenge} (B)), where all delaminated flakes would stick.
+Note that even adhesion promotion using HMDS did not improve the situation.
+
+Finally, trapped dirt at the interfaces between BN and graphene 
 
 \begin{figure}
 	\centering
@@ -254,46 +261,46 @@ The RF circuits are patterned first on either large silicon chips, or \SI{2}{in}
 %
 In a second process flow, the vdW heterostructures are delaminated and contacts and top gates to the Josephson junctions are made.
 
-We fabricate the graphene Josephson junctions in the following fashion:
-%
-\begin{itemize}
-	%
-	\item \textbf{Making NbTiN contacts using etch-fill}
-	
-	\begin{tabular}{cc}
-		\hline \hline
-		Ebeam resist (1/2) & PMMA 495 A4, \SI{4000}{rpm}, bake \SI{10}{\minute} at \SI{185}{\celsius} \\
-		Ebeam resist (2/2) & PMMA 950 A3, \SI{4000}{rpm}, bake \SI{10}{\minute} at \SI{185}{\celsius}. \\
-		%\hline
-		Ebeam patterning & \SI{1000}{\micro\coulomb\per\centi\meter\squared} + PEC \\
-		%\hline
-		Development & MIBK:IPA (1:3) for \SI{90}{\second}, IPA \SI{30}{\second}. \\
-		%\hline
-		Dry etching & \ce{CHF3}+\ce{O2} \SI{40}{sccm}+\SI{4}{sccm} @ \SI{60}{\watt}, \SI{80}{\micro\bar} for \SI{1}{\minute}\footnote{etch rate roughly \SI{60}{\nano\meter\per\minute}} \\
-		%\hline
-		Metal deposition & \SI{5}{\nano\meter} NbTi and \SIrange{60}{70}{\nano\meter} NbTiN \\
-		%\hline
-		Liftoff & hot PRS~3000 @ \SI{88}{\celsius} for a few hours \\
-		\hline \hline
-	\end{tabular}
-	\item \textbf{Shaping the device:} Same as for making the contacts, but with lower etch pressure (\SI{50}{\micro\bar}) and without the metal deposition.
-	%
-	\item \textbf{Top-gate dielectric}
-	
-	\begin{tabular}{cc}
-		\hline \hline
-		Ebeam resist & conc. HSQ, \SI{5000}{rpm}, bake \SI{10}{\minute} at \SI{90}{\celsius} in an oven. \\
-		%\hline
-		Ebeam patterning & \SI{500}{\micro\coulomb\per\centi\meter\squared}. \\
-		%\hline
-		Development & MF322 for \SI{1}{\minute}, MF322:\ce{H2O} (1:9) for \SI{15}{\second}, \ce{H2O} for \SI{15}{\second}. \\
-		%\hline
-		& Repeat this process once with \SI{4000}{rpm} spin speed. \\
-		\hline \hline
-	\end{tabular}
-	%
-	\item \textbf{Top-gate metal: } Same as for making the contacts, but without etching.
-\end{itemize}
+We fabricate the graphene Josephson junctions using the etch-fill technique with top-gates, consisting of a combination of Ebeam lithography, reactive ion etching and sputter deposition, in the following fashion:
+
+\begin{tabular}{cc}
+	\hline \hline
+	\textbf{1.} & \textbf{Making NbTiN contacts using etch-fill} \\
+	\hline
+	Ebeam resist (1/2) & PMMA 495 A4, \SI{4000}{rpm}, bake \SI{10}{\minute} at \SI{185}{\celsius} \\
+	Ebeam resist (2/2) & PMMA 950 A3, \SI{4000}{rpm}, bake \SI{10}{\minute} at \SI{185}{\celsius}. \\
+	%\hline
+	Ebeam patterning & \SI{1000}{\micro\coulomb\per\centi\meter\squared} + PEC \\
+	%\hline
+	Development & MIBK:IPA (1:3) for \SI{90}{\second}, IPA \SI{30}{\second}. \\
+	%\hline
+	Dry etching & \ce{CHF3}+\ce{O2} \SI{40}{sccm}+\SI{4}{sccm} @ \SI{60}{\watt}, \SI{80}{\micro\bar} for \SI{1}{\minute}\footnote{etch rate roughly \SI{60}{\nano\meter\per\minute}} \\
+	%\hline
+	Metal deposition & \SI{5}{\nano\meter} NbTi and \SIrange{60}{70}{\nano\meter} NbTiN \\
+	%\hline
+	Liftoff & hot PRS~3000 @ \SI{88}{\celsius} for a few hours \\
+	\hline
+	\textbf{2.} & \textbf{Shaping the device:} \\
+	\hline
+	& Same as for making the contacts, but with lower etch \\
+	& pressure (\SI{50}{\micro\bar}) and without the metal deposition. \\
+	\hline
+	\textbf{3.} & \textbf{Top-gate dielectric} \\
+	\hline
+	Ebeam resist & conc. HSQ, \SI{5000}{rpm}, bake \SI{10}{\minute} at \SI{90}{\celsius} in an oven. \\
+	%\hline
+	Ebeam patterning & \SI{500}{\micro\coulomb\per\centi\meter\squared}. \\
+	%\hline
+	Development & MF322 for \SI{1}{\minute}, MF322:\ce{H2O} (1:9) for \SI{15}{\second}, \ce{H2O} for \SI{15}{\second}. \\
+	%\hline
+	& Repeat this process once with \SI{4000}{rpm} spin speed. \\
+	\hline 
+	\textbf{4.} & \textbf{Top-gate metal: } \\
+	\hline
+	& Same as for making the contacts, but without etching \\
+	& and with metal thickness of \SIrange{80}{120}{\nano\meter}. \\
+	\hline \hline
+\end{tabular}
 
 
 Figure 4, if possible: Cross-sectional TEM of one of our devices (courtesy Sonia's lab)
@@ -323,67 +330,59 @@ Figure 4, if possible: Cross-sectional TEM of one of our devices (courtesy Sonia
 	\label{fig:placeholder}
 \end{figure}
 
-\pagebreak
 \subsection{Fabrication of DC bias cavities}
 
-The RF circuits in Chapters~\ref{chap:gJJ} and \ref{chap:gJJ-power} are fabricated as follows, while the one in Chapter~\ref{chap:current-detection} used Al:Si as superconducting layer and silicon as base layer.
+The RF circuits in Chapters~\ref{chap:gJJ} and \ref{chap:gJJ-power} are fabricated as follows, while the one in Chapter~\ref{chap:current-detection} used Al:Si as superconducting layer and silicon as base layer, cf. the Supplementary Material of Chapter~\ref{chap:current-detection}.
 
-\begin{itemize}
-	%
-	\item 
-	\begin{tabular}{cc}
-		\textbf{1.} & \textbf{Deposit and pattern MoRe base layer} \\
-		\hline \hline
-		Metal deposition & \SI{60}{\nano\meter} MoRe, \SI{100}{\watt}, \SI{60}{sccm} Argon flow. \\
-		%\hline
-		Ebeam resist & AR-P 6200.13 (CSAR), \SI{4000}{rpm}, bake \SI{3}{\minute} at \SI{155}{\celsius}. \\
-		%\hline
-		Ebeam patterning & \SI{300}{\micro\coulomb\per\centi\meter\squared}. \\
-		%\hline
-		Development & Pentylacetate for \SI{60}{\second}, MIBK:IPA (1:1) for \SI{30}{\second}, IPA for \SI{15}{\second}. \\
-		%\hline
-		Dry etching & \ce{SF6}+\ce{He} \SI{12.5}{sccm}+\SI{10}{sccm} @ \SI{50}{\watt}, \SI{10}{\micro\bar} \\
-		%\hline
-		Liftoff & hot PRS~3000 @ \SI{88}{\celsius} for a few hours \\
-		\hline\hline
-	\end{tabular}
-	%
-	\item 	
-	\begin{tabular}{cc}
-		\textbf{2.} & \textbf{Deposit and pattern dielectric layer for shunt capacitor} \\
-		\hline \hline
-		Dielectric deposition & PECVD \SI{70}{\nano\meter} of \ce{Si3N4} @ \SI{300}{\celsius}. \\
-		%\hline
-		Ebeam resist & AR-N 7700.18, \SI{3000}{rpm}, bake \SI{1}{\minute} at \SI{90}{\celsius}. \\
-		%\hline
-		Ebeam patterning & \SI{210}{\micro\coulomb\per\centi\meter\squared}. \\
-		%\hline
-		Development & MF321 for \SI{60}{\second}, MF320:\ce{H2O} (1:10) for \SI{15}{\second} (twice), \ce{H2O} for \SI{15}{\second}. \\
-		%\hline
-		Wet etching & BOE \SI{1}{\minute} \\
-		%\hline
-		Strip resist & hot PRS~3000 @ \SI{88}{\celsius} for a few hours \\
-		\hline
-	\end{tabular}
-	%
-	\item 	
-	\begin{tabular}{cc}
-		\textbf{3.} & \textbf{Deposit top metal plate of shunt capacitor} \\
-		\hline \hline
-		Ebeam resist (1/2) & PMMA 495 A4, \SI{4000}{rpm}, bake \SI{10}{\minute} at \SI{185}{\celsius}. \\
-		%\hline
-		Ebeam resist (2/2) & PMMA 950 A3, \SI{4000}{rpm}, bake \SI{10}{\minute} at \SI{185}{\celsius}. \\
-		%\hline
-		Ebeam patterning & \SI{1400}{\micro\coulomb\per\centi\meter\squared}. \\
-		%\hline
-		Development & MIBK:IPA (1:3) for \SI{90}{\second}+ IPA \SI{30}{\second}. \\
-		%\hline
-		Metal deposition & \SI{60}{\nano\meter} MoRe as described above. \\
-		%\hline
-		Lift-off & hot PRS~3000 @ \SI{88}{\celsius} for a few hours \\
-		\hline
-	\end{tabular}
-\end{itemize}
+
+\begin{tabular}{cc}
+	\hline \hline
+	\textbf{1.} & \textbf{Deposit and pattern MoRe base layer} \\
+	\hline 
+	Metal deposition & \SI{60}{\nano\meter} MoRe, \SI{100}{\watt}, \SI{60}{sccm} Argon flow. \\
+	%\hline
+	Ebeam resist & AR-P 6200.13 (CSAR), \SI{4000}{rpm}, bake \SI{3}{\minute} at \SI{155}{\celsius}. \\
+	%\hline
+	Ebeam patterning & \SI{300}{\micro\coulomb\per\centi\meter\squared}. \\
+	%\hline
+	Development & Pentylacetate for \SI{60}{\second}, MIBK:IPA (1:1) for \SI{30}{\second}, IPA for \SI{15}{\second}. \\
+	%\hline
+	Dry etching & \ce{SF6}+\ce{He} \SI{12.5}{sccm}+\SI{10}{sccm} @ \SI{50}{\watt}, \SI{10}{\micro\bar} \\
+	%\hline
+	Liftoff & hot PRS~3000 @ \SI{88}{\celsius} for a few hours \\
+	\hline
+	
+	\textbf{2.} & \textbf{Deposit and pattern dielectric layer for shunt capacitor} \\
+	\hline 
+	Dielectric deposition & PECVD \SI{70}{\nano\meter} of \ce{Si3N4} @ \SI{300}{\celsius}. \\
+	%\hline
+	Ebeam resist & AR-N 7700.18, \SI{3000}{rpm}, bake \SI{1}{\minute} at \SI{90}{\celsius}. \\
+	%\hline
+	Ebeam patterning & \SI{210}{\micro\coulomb\per\centi\meter\squared}. \\
+	%\hline
+	Development & MF321 for \SI{60}{\second}, MF320:\ce{H2O} (1:10) for \SI{15}{\second} (twice), \ce{H2O} for \SI{15}{\second}. \\
+	%\hline
+	Wet etching & BOE \SI{1}{\minute} \\
+	%\hline
+	Strip resist & hot PRS~3000 @ \SI{88}{\celsius} for a few hours \\
+	\hline
+	
+	\textbf{3.} & \textbf{Deposit top metal plate of shunt capacitor} \\
+	\hline 
+	Ebeam resist (1/2) & PMMA 495 A4, \SI{4000}{rpm}, bake \SI{10}{\minute} at \SI{185}{\celsius}. \\
+	%\hline
+	Ebeam resist (2/2) & PMMA 950 A3, \SI{4000}{rpm}, bake \SI{10}{\minute} at \SI{185}{\celsius}. \\
+	%\hline
+	Ebeam patterning & \SI{1400}{\micro\coulomb\per\centi\meter\squared}. \\
+	%\hline
+	Development & MIBK:IPA (1:3) for \SI{90}{\second}+ IPA \SI{30}{\second}. \\
+	%\hline
+	Metal deposition & \SI{100}{\nano\meter} MoRe as described above. \\
+	%\hline
+	Lift-off & hot PRS~3000 @ \SI{88}{\celsius} for a few hours \\
+	\hline\hline
+\end{tabular}
+
 % 
 In order to improve the adhesion between the electron beam resist and substrate, we coated the substrate with a monolayer of HMDS (hexamethyldisilazane, \ce{[(CH3)3Si]2NH}) from \textit{MicroChemicals} from the gas phase using the hotplate with integrated HMDS deposition system of a \textit{Suss MicroTec Delta 80 RC}, with prebaking at \SI{150}{\celsius} for \SI{6}{\minute}.
 % 
@@ -397,7 +396,7 @@ We found that this immensely helped against under-etching of dielectrics with BO
 	\caption{
 		\textbf{Fabrication of current-bias microwave cavities.}
 		% 
-		DC bias cavity on sapphire with MoRe base and top layer and \ce{Si3N4} capacitor dielectric (\textbf{A,}), and device on silicon (\textbf{B}) with NbTiN base and top layer.
+		DC bias cavity on sapphire with MoRe base and top layer and \ce{Si3N4} capacitor dielectric (\textbf{A}), and device on silicon (\textbf{B}) with NbTiN base and top layer.
 		%
 		The dark areas are holes in the ground plane for flux trapping.
 		%
