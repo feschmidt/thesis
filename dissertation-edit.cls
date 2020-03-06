@@ -390,6 +390,7 @@
 %% Define an unnumbered footnote command.
 \def\blfootnote{\xdef\@thefnmark{}\@footnotetext}
 
+
 %% The authors environment is used to display the authors of a chapter on the
 %% title page. This is only necessary if multiple people contributed
 %% significantly to the chapter.

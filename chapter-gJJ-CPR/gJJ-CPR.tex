@@ -1,8 +1,8 @@
 \newchapstyle
-\chapter{Probing the current-phase relation of graphene Josephson junctions
-with microwave circuits}
+\chapter{Current phase relations of graphene Josephson junctions in microwave circuits}
 \label{chap:gJJ-CPR}
 
+\blfootnote{\color{title}This chapter is based on previously unpublished data of the devices presented in Chapter~\ref{chap:gJJ}.}
 
 \begin{abstract}
 	We perform extensive analysis of graphene Josephson junctions embedded in microwave circuits.
@@ -111,6 +111,17 @@ As depicted in Fig.\ref{fig:figure2}, we fit the RF-measured $f_0$ versus the DC
 The fit converges for both the diffusive and the hot ballistic device.
 %
 On the other hand, at \SI{15}{\milli\kelvin}, the ballistic device exhibits multi-valued $f_0(I_s)$, as the resonance frequency and switching current follow different trends for p- and n-doping.
+%
+This is a first indication of a deviation of the CPR from Eq.\ref{eq:CPR-sin}:
+%
+While at first glance, any forward skew in the CPR leads to an drop in CPR slope, therefore for the same DC-extracted $I_s$, $L_J$ should increase.
+
+%% How to formulate this in a good way?
+%% DC-Is and assumption of sinusoidal CPR leads us to an estimated DC-Lj.
+%% This value is smaller than the actually measured Lj
+%% This can only be if the CPR is forward skewed because this enhances the true Lj while keeping Ic the same for the two cases.
+%% To get the same Lj as for a sinusoidal CPR, DC-Is would need to be smaller.? But according to Figs1.2, 1.3 it would need to be larger???
+%% TODO!
 
 \begin{figure}
 	\centering
@@ -122,7 +133,7 @@ On the other hand, at \SI{15}{\milli\kelvin}, the ballistic device exhibits mult
 		%
 		In contrast, for low temperatures, the ballistic gJJ (\textbf{(b)}, blue) exhibits multi-valued $f_0(I_s)$ for gate voltages larger (full circles) and smaller (empty squares) than the charge neutrality point.
 		%
-		The	multivalued behavior in the ballistic device at low temperature indicates a strong nonsinusoidal CPR, while this is not observed for diffusive and hot transport.
+		The	multivalued behavior in the ballistic device at low temperature indicates a strong nonsinusoidal CPR, and only allows for a fit for $V_g>0$.
 		%
 		Dashed lines correspond to fits to Eq.~\ref{eq:Pogorzalek}.
 	}
@@ -152,17 +163,16 @@ On the other hand, at \SI{15}{\milli\kelvin}, the ballistic device exhibits mult
 
 The anharmonicity of a CPW shorted to ground by a Josephson junction is
 \begin{align}
-\alpha=-\frac{\omega_0}{2} \left(\frac{L_J}{L_r+L_J}\right)^3,
+\alpha=-\frac{\omega_0}{2} \left(\frac{L_J}{L_r+L_J}\right)^3
 \end{align}
-\cite{wilsonPhotonGenerationElectromagnetic2010b,zhouHighgainWeaklyNonlinear2014}
-%
-with $\omega_0=2\pi f_0$.
+with $\omega_0=2\pi f_0$~\cite{wilsonPhotonGenerationElectromagnetic2010b,zhouHighgainWeaklyNonlinear2014}.
 %
 However, in the case of a non-sinusoidal CPR, the anharmonicity is reduced due to the increased CPR slope, resulting in
 \begin{align}
 \alpha^\prime = \alpha \left( 1-\frac{3}{4}\frac{\sum_i\tau_i^2}{\sum_i\tau_i}\right) \rightarrow \alpha \left( 1-\frac{3}{4}\tau \right)
 \end{align}
-\cite{kringhojAnharmonicitySuperconductingQubit2018}
+%
+where the limes holds for an average $\tau$ of the ensemble of transmission channels~\cite{kringhojAnharmonicitySuperconductingQubit2018}
 
 A more suitable measurement would have been to perform two-tone spectroscopy with a fixed-frequency pump tone with variable power, and a low-power swept probe tone, since this would avoid bifurcation and yield a direct measurement of the anharmonicity from the frequency shift per photon.
 %
@@ -195,22 +205,22 @@ However, such a setup was not available at the time.
 
 \section{Reconstructing the current phase relation}
 
-The current phase relation (CPR) for a ballistic point contact is given by
+The current phase relation (CPR) for a ballistic point contact as a function of transparency $\tau$ and temperature $T$ is given by
 %
 \begin{align}
-I_J(\delta,\tau,T) = \frac{\pi\Delta}{2 e R_n} \frac{\sin\delta}{\sqrt{1 - \tau \sin^2\delta / 2}} \tanh\left(\frac{\Delta}{k_B T} \sqrt{1 - \tau \sin^2\delta / 2}\right),
+I_J(\delta,\tau,T) = \frac{\pi\Delta_0}{2 e R_n} \frac{\sin\delta}{\sqrt{1 - \tau \sin^2\delta / 2}} \tanh\left[\frac{\Delta_0}{k_B T} \sqrt{1 - \tau \sin^2\delta / 2}\right],
 \label{eq:CPR-ball}
 \end{align}
 %
-with the normal state resistance $R_n= R_q/N = h/(Ne^2)\approx \SI{25.812}{\kilo\ohm} / N$~\cite{golubovCurrentphaseRelationJosephson2004a}.
+with the superconducting energy gap $\Delta_0$, the Boltzmann constant $k_B$ and normal state resistance $R_n= R_q/N = h/(Ne^2)\approx \SI{25.812}{\kilo\ohm} / N$~\cite{golubovCurrentphaseRelationJosephson2004a}.
 %
 Here, $R_q$ denotes the quantum Hall resistance and $N$ the number of conducting channels.
 %
 With a normal state resistance of or devices ranging between \SIrange{35}{350}{\ohm} (depending on gate voltage), we estimate around 74 to 740 conducting channels.
 %
 This justifies the use of a single transparency parameter $\tau$ that is the average of all the other channels.
-%
-Forward skew $S=2\delta_{\rm max}/\pi -1$~\cite{englishObservationNonsinusoidalCurrentphase2016}.
+
+This corresponds to a forward skew $S=2\delta_{\rm max}/\pi -1$ of 0.05 and 0.38 for the diffusive and ballistic device, respectively, comparable to measurements from DC-measurements of the CPR~\cite{englishObservationNonsinusoidalCurrentphase2016,nandaCurrentPhaseRelationBallistic2017}.
 %
 %$I_c(\tau,T)=\underaccent{\delta}{\max} \left[I_J(\delta,\tau,T)\right]$
 %
@@ -245,8 +255,126 @@ Forward skew $S=2\delta_{\rm max}/\pi -1$~\cite{englishObservationNonsinusoidalC
 	\label{fig:figure6}
 \end{figure}
 
+\section{Conclusion}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Insert SM.tex contents here
 
+\pagebreak
+\clearpage
+%\widetext
+
+%\setcounter{equation}{0}
+%\setcounter{figure}{0}
+%\setcounter{table}{0}
+%\setcounter{page}{1}
+%\setcounter{section}{0}
+
+%\renewcommand{\thepage}{S\arabic{page}}
+%\renewcommand{\thesection}{S\Roman{section}}
+%\renewcommand{\thetable}{S\Roman{table}}
+%\renewcommand{\thefigure}{S\arabic{figure}}
+%\renewcommand{\theequation}{S\arabic{equation}}
+%\renewcommand{\bibnumfmt}[1]{[S#1]}
+%\renewcommand{\citenumfont}[1]{S#1}
+
+\section{Supplementary Material: Current phase relations of graphene Josephson junctions in microwave circuits}
+
+\subsection{Extraction of DC-$I_s$ and $f_0$}
+
+\begin{align}
+S_{11} = -1+\frac{2\kappa_e}{\kappa+2i\Delta},
+\end{align}
+$\kappa=\kappa_e+\kappa_i$ and $\Delta=\omega-\omega_0$.
+
+\subsection{Fitting procedure for extracting $\alpha$}
+
+\begin{align}
+\dot{\alpha} = \left[ -i \left( \Delta+\beta\abs{\alpha}^2 \right)-\frac{\kappa}{2} \right]\alpha + \sqrt{\kappa_\text{e}} S_\text{in}\ ,
+\label{eq:Duffing-EOM}
+\end{align}
+
+\begin{align}
+\left(i\Delta+\frac{\kappa}{2}\right)\alpha_0 + i\beta\alpha_0^3=\sqrt{\kappa_\text{e}}S_{p0}e^{i\phi}
+\end{align}
+% 
+Multiplying this equation with its complex conjugate returns
+% 
+\begin{align}
+\beta^2 \alpha_0^6 + 2\Delta\beta\alpha_0^4 + \left(\Delta^2+\frac{\kappa^2}{4}\right)\alpha_0^2 - \kappa_\text{e} S_{p0}^2 = 0\ .
+\label{eq:polynom}
+\end{align}
+
+\subsection{Fitting procedure for extracting $\tau$}
+
+Without any knowledge on the junction transparency $\tau$, fitting data of a CPW cavity with JJ exhibiting a potentially nonsinusoidal CPR can lead to significant deviations from the true circuit parameters.
+%
+In Fig.~\ref{fig:SMtau}, we demonstrate the effect of $\tau$ on the extracted circuit parameters:
+%
+If the JJ shorting the CPW to ground has a forward skewed CPR, i.e. $\tau>0$, and Eq.~\ref{eq:Pogorzalek} is used to fit this data (dashed lines in Fig.~\ref{fig:SMtau}) under the assumption of a JJ with purely sinusoidal CPR, the extracted values (solid lines) for $f_r$ and $L_r$ will be too small compared with the true values, while $I_c$ will appear to be larger than expected, with consequently lower $L_J$.
+%
+Naively, one would assume the RF measurement to result in $L_J$ to be larger than the value expected from DC measurements due to the increased inverse CPR slope for identical $I_c$.
+%
+Nonetheless, the fit model accounting for the resonator tunability results in the opposite behavior.
+
+To fit the bias current dependence data for extracting $\tau$, we first keep $\tau$ fixed and compare the fit residuals for various $\tau\in[0,1]$, cf. Fig.~\ref{fig:SMres}(a).
+%
+In a second step, we set $\tau$ as additional free parameter with the best results for $f_r$, $L_r$ and $I_c$, and set the initial value of $\tau$ as the one with previously determined minimum reduced $\chi^2$.
+%
+The fit converges more reliably than by setting $\tau$ as free parameter from the start, since this way the fit does not get trapped in a local minima.
+
+Both current and frequency noise, however, can result in artificial global minima in $\chi^2(\tau)$, as shown in Fig.~\ref{fig:SMres}(b-c).
+%
+For a critical current of \SI{2}{\micro\ampere} and bias currents up to $0.9I_c$, already $\sigma_I\geq\SI{1}{\nano\ampere}$ is enough to significantly throw off the fit for low values of $\tau$.
+%
+Frequency noise of $\sigma_f<\SI{1}{\mega\hertz}$ has no influence on the fitting algorithm.
+%
+As the responsivity $\partial f_0/\partial I_b$ increases with $I_b$, so does the frequency noise for a fixed current noise, cf. Fig.~\ref{fig:SMres}(d).
+%
+From the average data fluctuations and comparing these with the expected $\sigma_f(\sigma_I)$, we estimate $\sigma_I<\SI{1}{\nano\ampere}$ in our setup.
+%
+We therefore conclude that our fitting algorithm should present a reliable way of extracting $\tau$. 
+
+\begin{figure}
+	\centering
+	\includegraphics[width=\linewidth]{chapter-gJJ-CPR/figs/SMFigure-tauparams}
+	\caption{
+		\textbf{Influence of $\tau$ on extracted fit parameters with Eq.~\ref{eq:Pogorzalek}.}
+		Increasing $\tau$ (dashed line in \textbf{(a)}) results in a larger $L_J$ (dashed line in \textbf{(e)}), while the other fit parameters (dashed lines in \textbf{(b-d)}) remain constant.
+		%
+		In order for a fit model using Eq.~\ref{eq:Pogorzalek} under the assumption of a sinusoidal CPR (solid lines) to reproduce the data (points), significant deviations from the true parameters occur.
+		%
+		Specifically, the fit model returns a larger critical current than expected which leads to a reduced calculated $L_J$, even though the real $L_J$ increases with $\tau$.
+	}
+	\label{fig:SMtau}
+\end{figure}
+
+\begin{figure}
+	\centering
+	\includegraphics[width=\linewidth]{chapter-gJJ-CPR/figs/SMFigure-noise}
+	\caption{
+		\textbf{Influence of $\tau$ and noise on fit result.}
+		\textbf{(a)} Assuming a sinusoidal CPR for Eq.~\ref{eq:Pogorzalek} to fit data originating from a forward skewed CPR results in minimum fit residuals for $\tau=0$ (solid line).
+		%
+		Assuming the correct $\tau$ however results in minimum residuals (dashed line).
+		%
+		\textbf{(b-d)} Both current and frequency noise can significantly throw off the fitting algorithm by creating artificially global residual minima.
+		%
+		Plotted are calculations for $I_c=\SI{2}{\micro\ampere}$.
+		%
+		We estimate $\sigma_I<\SI{1}{\nano\ampere}$ in our setup.
+	}
+	\label{fig:SMres}
+\end{figure}
+
+\subsection{Internal loss rate dependence on power and bias current}
+
+\subsection{Validity of Eq.\ref{eq:Pogorzalek}}
+
+\begin{align}
+L_r &= \frac{\pi Z_0}{2\omega_r} \\
+C_r &= \frac{2}{\pi Z_0 \omega_r}
+\end{align}
 
 \references{dissertation}
 
