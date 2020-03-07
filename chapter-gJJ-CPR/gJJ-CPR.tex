@@ -2,7 +2,12 @@
 \chapter{Current phase relations of graphene Josephson junctions in microwave circuits}
 \label{chap:gJJ-CPR}
 
-\blfootnote{\color{title}This chapter is based on previously unpublished data of the devices presented in Chapter~\ref{chap:gJJ}.}
+\blfootnote{
+	\color{title}
+	This chapter is based on previously unpublished data of the devices presented in Chapter~\ref{chap:gJJ}.
+	%
+	Data and code to reproduce the calculations and figures presented here can be found on Zenodo~\cite{schmidtDataCodeCurrent2020}.
+}
 
 \begin{abstract}
 	We perform extensive analysis of graphene Josephson junctions embedded in microwave circuits.
@@ -83,13 +88,13 @@ On the other hand, even small changes in the significantly smaller $I_s$ for $V_
 
 \section{Extracting the Josephson inductance from DC and RF measurements}
 
-The resonance frequency of a $\lambda/2$-resonator shorted to ground by a Josephson inductance can be modeled by
+The resonance frequency of a $\lambda/2$-resonator shorted to ground by a Josephson inductance can be approximated by
 \begin{align}
-f_0(I_b,I_c) = \frac{f_{\lambda/2}}{1 +  L_J(I_b, I_c)/L_r}
+f_0(I_b,I_c) = \frac{f_{\lambda/2}}{2}\frac{1}{1 +  2L_J(I_b, I_c)/L_r}
 \label{eq:Pogorzalek}
 \end{align}
 %
-with $L_r$ the bare CPW inductance and $f_{\lambda/2}$ the resonance frequency of the CPW without the JJ~\cite{pogorzalekHystereticFluxResponse2017}.
+with $L_r$ the bare CPW inductance and $f_{\lambda/2}$ the resonance frequency of the CPW without the JJ, see Supplementary Material Sec.~\ref{sec:validity}.
 %
 $I_b$ is the bias current flowing through CPW and the JJ, $I_c$ the critical current of the JJ.
 %
@@ -150,26 +155,27 @@ While at first glance, any forward skew in the CPR leads to an drop in CPR slope
 		%
 		\textbf{(a-b)} RF-extracted Josephson inductance versus DC-measured switching current for the diffusive device at \SI{15}{\milli\kelvin} \textbf{(a)} and ballistic device at \SI{15}{\milli\kelvin} and at \SI{1}{\kelvin} (\textbf{(b)}, blue and red, respectively).
 		%
-		Solid line corresponds to Josephson inductance calculated from sinusoidal CPR.
+		Dashed line corresponds to Josephson inductance calculated from sinusoidal CPR.
 		%
 		\textbf{(c-d)} Corresponding RF-extracted critical current.
 		%
-		Solid line corresponds to DC-measured $I_s$.
+		Dashed line corresponds to DC-measured $I_s$.
 	}
 	\label{fig:figure3}
 \end{figure}
 
 \section{Circuit anharmonicity}
 
-The anharmonicity of a CPW shorted to ground by a Josephson junction is
+The anharmonicity of a CPW shorted to ground by a Josephson junction is~\cite{wilsonPhotonGenerationElectromagnetic2010b,zhouHighgainWeaklyNonlinear2014}
 \begin{align}
-\alpha=-\frac{\omega_0}{2} \left(\frac{L_J}{L_r+L_J}\right)^3
+\beta=-\frac{f_0}{2} \left(\frac{L_J}{L_r+L_J}\right)^3.
+\label{eq:anharmonicity}
 \end{align}
-with $\omega_0=2\pi f_0$~\cite{wilsonPhotonGenerationElectromagnetic2010b,zhouHighgainWeaklyNonlinear2014}.
 %
 However, in the case of a non-sinusoidal CPR, the anharmonicity is reduced due to the increased CPR slope, resulting in
 \begin{align}
-\alpha^\prime = \alpha \left( 1-\frac{3}{4}\frac{\sum_i\tau_i^2}{\sum_i\tau_i}\right) \rightarrow \alpha \left( 1-\frac{3}{4}\tau \right)
+\beta^\prime = \beta \left( 1-\frac{3}{4}\frac{\sum_i\tau_i^2}{\sum_i\tau_i}\right) \rightarrow \beta \left( 1-\frac{3}{4}\tau \right)
+\label{eq:anh_nonsin}
 \end{align}
 %
 where the limes holds for an average $\tau$ of the ensemble of transmission channels~\cite{kringhojAnharmonicitySuperconductingQubit2018}
@@ -220,7 +226,7 @@ With a normal state resistance of or devices ranging between \SIrange{35}{350}{\
 %
 This justifies the use of a single transparency parameter $\tau$ that is the average of all the other channels.
 
-This corresponds to a forward skew $S=2\delta_{\rm max}/\pi -1$ of 0.05 and 0.38 for the diffusive and ballistic device, respectively, comparable to measurements from DC-measurements of the CPR~\cite{englishObservationNonsinusoidalCurrentphase2016,nandaCurrentPhaseRelationBallistic2017}.
+This corresponds to a forward skew $S=2\delta_{\rm max}/\pi -1$ of 0.03 and 0.34 for the diffusive and ballistic device, respectively, comparable to measurements from DC-measurements of the CPR~\cite{englishObservationNonsinusoidalCurrentphase2016,nandaCurrentPhaseRelationBallistic2017}.
 %
 %$I_c(\tau,T)=\underaccent{\delta}{\max} \left[I_J(\delta,\tau,T)\right]$
 %
@@ -282,28 +288,140 @@ This corresponds to a forward skew $S=2\delta_{\rm max}/\pi -1$ of 0.05 and 0.38
 
 \subsection{Extraction of DC-$I_s$ and $f_0$}
 
+The DC switching current (Fig.~\ref{fig:figure1}(b,c)) is taken as the current at which $\partial V/\partial I_b$ is maximum, where $V$ is the measured voltage.
+%
+Noise or interference on the DC lines could lead to a reduction of the measured $I_s$ compared to the true $I_c$.
+%
+To get a more accurate estimation of $I_c$ together with a good understanding of the noise sources, switching histograms are the preferred measurement method.
+%
+The necessary setup was however not available at the time of measurement.
+
+To extract resonance frequency and loss rates from the RF data, we fit the reflection coefficient to the following model (cf. Ref.~\cite{bosmanBroadbandArchitectureGalvanically2015c} for a derivation):
+%
 \begin{align}
-S_{11} = -1+\frac{2\kappa_e}{\kappa+2i\Delta},
+S_{11}(\omega) = -1+\frac{2\kappa_e}{\kappa+2i\Delta},
 \end{align}
-$\kappa=\kappa_e+\kappa_i$ and $\Delta=\omega-\omega_0$.
+%
+where $\kappa=\kappa_e+\kappa_i$ and $\Delta=\omega-\omega_0$.
+%
+The measured $S_{11}$ is usually distorted by a setup-related microwave background of the following shape:
+\begin{align}
+B(\omega) = (a+b\omega+c\omega^2)e^{i(a^\prime+b^\prime\omega)},
+\end{align}
+%
+and with additional rotation by angle $\theta$ in the complex plane, the measured $S_{11}^\prime$ looks like this:
+\begin{align}
+S_{11}^\prime(\omega)=B(\omega)\left(e^{i\theta}(S_{11}(\omega)+1)-1\right)
+\end{align}
+%
+The origin of the microwave background and phase rotations are impedance mismatches in the wiring originating from various non-ideal circuit elements (e.g. connectors, attenuators, directional couplers).
+%
+Standing waves can form in some segments of the wiring which interfere with the measured signal.
 
-\subsection{Fitting procedure for extracting $\alpha$}
+For the gate voltage sweeps (Fig.~\ref{fig:figure1}(d,e)), we pick the measurement trace at the CNP as the one with only background signal, as the RF resonance is extremely broad and effectively not present anymore.
+%
+We then divide the other traces by this background, resulting in a much cleaner signal.
 
+For measurements based on bias current sweeps, cf. Fig~\ref{fig:figure6}(a), we take the RF background at $I_b>I_s$ at which the JJ switched to the normal state and the RF resonance is removed from the measurement and divide it off the cases at which there is a circuit resonance.
+
+In order to remove RF background from the power dependence, we mask the regions in which there are resonances for the various powers and gate voltage setpoints, and average the remaining traces.
+%
+This way, we obtain a power and frequency map of the RF background, which we use for removing background signal from power traces, such as the one in Fig.~\ref{fig:figure4}(a).
+
+\subsection{Derivation and validity of Eq.~\ref{eq:Pogorzalek}}\label{sec:validity}
+
+\begin{figure}
+	\centering
+	\includegraphics[width=0.5\linewidth]{chapter-gJJ-CPR/figs/rfderivation}
+	\caption{
+		\textbf{Derivation of resonance frequency.}
+		%
+		We define the three impedances $Z_1$, $Z_2$ and $Z_q$ as seen from the CPW towards the input port, from the gJJ towards the CPW, and as the parallel circuit impedance.
+	}
+	\label{fig:rfderivation}
+\end{figure}
+
+We can derive an expression for the circuit resonance frequency depending on the other parameters by using the impedances defined in Fig.~\ref{fig:rfderivation}.
+%
+The circuit impedance as seen from the JJ towards the CPW, $Z_1$, the input impedance as seen from the CPW towards the input port, $Z_2$, and the overall parallel circuit impedance $Z_q$ are defined as follows:
+%
+\begin{align}
+Z_1 &= Z_0 \frac{Z_2+Z_0\tanh\gamma l}{Z_0+Z_2\tanh\gamma l} \\
+Z_2 &= \left(\frac{1}{Z_{C_s}}+\frac{1}{Z_0}\right)^{-1} = \left(i\omega C_s+\frac{1}{Z_0}\right)^{-1} \\
+Z_q &= \left(\frac{1}{Z_{JJ}}+\frac{1}{Z_1}\right)^{-1} = \left(\frac{1}{i\omega L_J}+\frac{1}{Z_1}\right)^{-1}
+\end{align}
+
+Assuming negligible losses in the CPW, $\gamma l\approx i\beta l = i\pi\omega_0/\omega_r$ and using $\tanh(iz)=i\tan(z)$, the resonance condition of the above circuit is for the imaginary part of the admittance $Y=1/Z_q=0$:
+%
+\begin{align}
+0 = \Im \left[ \frac{1}{i\omega_0 L_J} + \frac{1}{Z_0}\frac{Z_0+iZ_2\tan\frac{\pi\omega_0}{\omega_r}}{Z_2+iZ_0\tan\frac{\pi\omega_0}{\omega_r}}\right]
+\label{eq:SolAnalytical}
+\end{align}
+%
+The solution of this equation yields the solid line in Fig.~\ref{fig:SMval}(a).
+%
+We can however approximate the above by a similar method as the authors of Refs.~\cite{wallquistSelectiveCouplingSuperconducting2006a,wustmannParametricResonanceTunable2013,pogorzalekHystereticFluxResponse2017}, arriving at the expression stated in Eq.~\ref{eq:Pogorzalek} which is plotted as dashed line in Fig.~\ref{fig:SMval}(a).
+%
+We find that over a range of seven orders of magnitudes in $L_J$, and for the values measured, the approximation differs by no more than \SI{1}{\percent} from the analytical solution.
+
+
+\begin{figure}
+	\centering
+	\includegraphics[width=0.5\linewidth]{chapter-gJJ-CPR/figs/SMFigure-validity}
+	\caption{
+		\textbf{Validity of Eq.~\ref{eq:Pogorzalek}.}
+		%
+		The equation used for modeling $f_0$ of the microwave circuit is an approximation to the true value.
+		%
+		\textbf{(a)} Resonance frequency as calculated using the  (solid) and using Eq.~\ref{eq:Pogorzalek} (dashed) for increasing Josephson inductance.
+		\textbf{(b)} Relative difference between the two resonance frequencies.
+		%
+		\textbf{(c)} Impedance of the JJ (solid) and CPW impedance (dashed).
+		%
+		The approximation is only good regardless of $Z_J$ or $Z_0$.
+	}
+	\label{fig:SMval}
+\end{figure}
+
+
+\subsection{Fitting procedure for extracting $\beta$}
+
+Following the method described in Ref.~\cite{schmidtCurrentDetectionUsing2020}, the equation of motion of the amplitude field $\alpha(t)$ of a resonator with weak anharmonicity $\beta$ written in the frame rotating with the drive $S_{\rm in}$ is given by
+%
 \begin{align}
 \dot{\alpha} = \left[ -i \left( \Delta+\beta\abs{\alpha}^2 \right)-\frac{\kappa}{2} \right]\alpha + \sqrt{\kappa_\text{e}} S_\text{in}\ ,
 \label{eq:Duffing-EOM}
 \end{align}
-
-\begin{align}
-\left(i\Delta+\frac{\kappa}{2}\right)\alpha_0 + i\beta\alpha_0^3=\sqrt{\kappa_\text{e}}S_{p0}e^{i\phi}
-\end{align}
-% 
-Multiplying this equation with its complex conjugate returns
+%
+from which the steady-state solution $\dot{\alpha_0}=0$ results in the following polynomial function,
 % 
 \begin{align}
-\beta^2 \alpha_0^6 + 2\Delta\beta\alpha_0^4 + \left(\Delta^2+\frac{\kappa^2}{4}\right)\alpha_0^2 - \kappa_\text{e} S_{p0}^2 = 0\ .
+\beta^2 \alpha_0^6 + 2\Delta\beta\alpha_0^4 + \left(\Delta^2+\frac{\kappa^2}{4}\right)\alpha_0^2 - \kappa_\text{e} S_{p0}^2 = 0\ ,
 \label{eq:polynom}
 \end{align}
+%
+which we can solve numerically and use to calculate the expected reflection coefficient,
+\begin{align}
+S_{11}(\omega)=-1-\frac{\sqrt{\kappa_e}}{S_{\rm in}}\alpha_0(\omega)\ .
+\label{eq:S11anh}
+\end{align}
+
+We calculate $S_{\rm in}$ by calibrating the attenuation in our fridge, using the thermal noise power of the cryogenic HEMT as calibration source.
+%
+The HEMT noise power is given by
+%
+\begin{align}
+P_{\rm HEMT}=10\log\left(\frac{k_B T_{\rm HEMT}}{\si{\milli\watt}}\right) + 10\log\left(\frac{\Delta f}{\si{\hertz}}\right)\ ,
+\label{eq:HEMT}
+\end{align}
+%
+with the Boltzmann constant $k_B$, the noise temperature of the HEMT $T_{\rm HEMT}=\SI{2}{\kelvin}$ as specified by the manufacturer and the measurement bandwidth $\Delta f=\SI{100}{\hertz}$ resulting in $P_{\rm HEMT}\approx\SI{-175.59}{dBm}$.
+
+The resulting fit model has four parameters:
+%
+$\omega_0$, $\kappa_e$, $\kappa_i$ and $\beta$.
+%
+Using a two-step fit, we first extract one set of parameters for each data set.
 
 \subsection{Fitting procedure for extracting $\tau$}
 
@@ -367,14 +485,8 @@ We therefore conclude that our fitting algorithm should present a reliable way o
 	\label{fig:SMres}
 \end{figure}
 
-\subsection{Internal loss rate dependence on power and bias current}
+\subsection{Internal loss rate dependence on bias current}
 
-\subsection{Validity of Eq.\ref{eq:Pogorzalek}}
-
-\begin{align}
-L_r &= \frac{\pi Z_0}{2\omega_r} \\
-C_r &= \frac{2}{\pi Z_0 \omega_r}
-\end{align}
 
 \references{dissertation}
 
