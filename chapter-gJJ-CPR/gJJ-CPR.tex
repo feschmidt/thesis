@@ -90,7 +90,7 @@ On the other hand, even small changes in the significantly smaller $I_s$ for $V_
 
 The resonance frequency of a $\lambda/2$-resonator shorted to ground by a Josephson inductance can be approximated by
 \begin{align}
-f_0(I_b,I_c) = \frac{f_{\lambda/2}}{2}\frac{1}{1 +  2L_J(I_b, I_c)/L_r}
+f_0\left(I_b,I_c\right) = f_{\lambda/2} \frac{L_r+L_J\left(I_b, I_c\right)}{L_r +  2L_J\left(I_b, I_c\right)}
 \label{eq:Pogorzalek}
 \end{align}
 %
@@ -115,7 +115,7 @@ As depicted in Fig.\ref{fig:figure2}, we fit the RF-measured $f_0$ versus the DC
 %
 The fit converges for both the diffusive and the hot ballistic device.
 %
-On the other hand, at \SI{15}{\milli\kelvin}, the ballistic device exhibits multi-valued $f_0(I_s)$, as the resonance frequency and switching current follow different trends for p- and n-doping.
+On the other hand, at \SI{15}{\milli\kelvin}, the ballistic device exhibits multi-valued $f_0\left(I_s\right)$, as the resonance frequency and switching current follow different trends for p- and n-doping.
 %
 This is a first indication of a deviation of the CPR from Eq.\ref{eq:CPR-sin}:
 %
@@ -130,15 +130,15 @@ While at first glance, any forward skew in the CPR leads to an drop in CPR slope
 
 \begin{figure}
 	\centering
-	\includegraphics[width=0.5\linewidth]{chapter-gJJ-CPR/figs/Figure2}
+	\includegraphics[width=0.583\linewidth]{chapter-gJJ-CPR/figs/Figure2}
 	\caption{
 		\textbf{Resonance frequency vs switching currents for two different gJJ devices.}
 		%
 		Both the diffusive device at low temperature \textbf{(a)} and the ballistic device at \SI{1}{\kelvin} (\textbf{(b)}, red) show monotonically increasing $f_0$ versus DC-extracted switching currents.
 		%
-		In contrast, for low temperatures, the ballistic gJJ (\textbf{(b)}, blue) exhibits multi-valued $f_0(I_s)$ for gate voltages larger (full circles) and smaller (empty squares) than the charge neutrality point.
+		In contrast, for low temperatures, the ballistic gJJ (\textbf{(b)}, blue) exhibits multi-valued $f_0\left(I_s\right)$ for gate voltages larger (full circles) and smaller (empty squares) than the charge neutrality point.
 		%
-		The	multivalued behavior in the ballistic device at low temperature indicates a strong nonsinusoidal CPR, and only allows for a fit for $V_g>0$.
+		The	multivalued behavior in the ballistic device at low temperature indicates a strong nonsinusoidal CPR and only allows for a fit for $V_g>0$, while this is not observed at higher temperature or for the diffusive device.
 		%
 		Dashed lines correspond to fits to Eq.~\ref{eq:Pogorzalek}.
 	}
@@ -147,26 +147,22 @@ While at first glance, any forward skew in the CPR leads to an drop in CPR slope
 
 \begin{figure}
 	\centering
-	\includegraphics[width=0.833\linewidth]{chapter-gJJ-CPR/figs/Figure3}
+	\includegraphics[width=0.583\linewidth]{chapter-gJJ-CPR/figs/Figure3}
 	\caption{
-		\textbf{Comparing switching current and Josephson inductance.}
+		\textbf{Comparing switching and critical currents.}
 		%
-		Both scattering in the JJ as well as elevated temperatures reduce the deviation from RF and DC data.
-		%
-		\textbf{(a-b)} RF-extracted Josephson inductance versus DC-measured switching current for the diffusive device at \SI{15}{\milli\kelvin} \textbf{(a)} and ballistic device at \SI{15}{\milli\kelvin} and at \SI{1}{\kelvin} (\textbf{(b)}, blue and red, respectively).
-		%
-		Dashed line corresponds to Josephson inductance calculated from sinusoidal CPR.
-		%
-		\textbf{(c-d)} Corresponding RF-extracted critical current.
+		RF-extracted critical current versus DC-measured switching current for the diffusive device at \SI{15}{\milli\kelvin} \textbf{(a)} and the ballistic device at \SI{15}{\milli\kelvin} and at \SI{1}{\kelvin} (\textbf{(b)}, blue and red, respectively).
 		%
 		Dashed line corresponds to DC-measured $I_s$.
+		%
+		Both scattering in the JJ as well as elevated temperatures reduce the deviation from RF and DC data.
 	}
 	\label{fig:figure3}
 \end{figure}
 
 \section{Circuit anharmonicity}
 
-The anharmonicity of a CPW shorted to ground by a Josephson junction is~\cite{wilsonPhotonGenerationElectromagnetic2010b,zhouHighgainWeaklyNonlinear2014}
+The anharmonicity of a CPW shorted to ground by a Josephson junction is given by~\cite{wilsonPhotonGenerationElectromagnetic2010b,zhouHighgainWeaklyNonlinear2014}
 \begin{align}
 \beta=-\frac{f_0}{2} \left(\frac{L_J}{L_r+L_J}\right)^3.
 \label{eq:anharmonicity}
@@ -178,7 +174,7 @@ However, in the case of a non-sinusoidal CPR, the anharmonicity is reduced due t
 \label{eq:anh_nonsin}
 \end{align}
 %
-where the limes holds for an average $\tau$ of the ensemble of transmission channels~\cite{kringhojAnharmonicitySuperconductingQubit2018}
+where the limes holds for an average $\tau$ of the ensemble of transmission channels~\cite{kringhojAnharmonicitySuperconductingQubit2018}.
 
 A more suitable measurement would have been to perform two-tone spectroscopy with a fixed-frequency pump tone with variable power, and a low-power swept probe tone, since this would avoid bifurcation and yield a direct measurement of the anharmonicity from the frequency shift per photon.
 %
@@ -204,17 +200,17 @@ However, such a setup was not available at the time.
 		%
 		Dots: data as extracted from fits as in \textbf{(b-c)}, orange line: model using DC-$I_s$, green: model using RF-$I_c$.
 		%
-		The overestimation of the anharmonicity of the DC-$I_s$ for high gate voltages hints at a non-sinusoidal CPR.
+		The overestimation of the anharmonicity of the DC-$I_s$ for high gate voltages is consistent with and confirms a non-sinusoidal CPR.
 	}
 	\label{fig:figure4}
 \end{figure}
 
 \section{Reconstructing the current phase relation}
 
-The current phase relation (CPR) for a ballistic point contact as a function of transparency $\tau$ and temperature $T$ is given by
+A more realistic model for the CPR of our devices than Eq.~\ref{eq:CPR-sin} is the one for a ballistic point contact as a function of transparency $\tau$ and temperature $T$:
 %
 \begin{align}
-I_J(\delta,\tau,T) = \frac{\pi\Delta_0}{2 e R_n} \frac{\sin\delta}{\sqrt{1 - \tau \sin^2\delta / 2}} \tanh\left[\frac{\Delta_0}{k_B T} \sqrt{1 - \tau \sin^2\delta / 2}\right],
+I_J(\delta,\tau,T) = \frac{\pi\Delta_0}{2 e R_n} \frac{\sin\delta}{\sqrt{1 - \tau \sin^2\delta / 2}} \tanh\left[\frac{\Delta_0}{k_B T} \sqrt{1 - \tau \sin^2\delta / 2}\right]\ ,
 \label{eq:CPR-ball}
 \end{align}
 %
@@ -226,6 +222,7 @@ With a normal state resistance of or devices ranging between \SIrange{35}{350}{\
 %
 This justifies the use of a single transparency parameter $\tau$ that is the average of all the other channels.
 
+average channel transmission 0.17 and 0.88
 This corresponds to a forward skew $S=2\delta_{\rm max}/\pi -1$ of 0.03 and 0.34 for the diffusive and ballistic device, respectively, comparable to measurements from DC-measurements of the CPR~\cite{englishObservationNonsinusoidalCurrentphase2016,nandaCurrentPhaseRelationBallistic2017}.
 %
 %$I_c(\tau,T)=\underaccent{\delta}{\max} \left[I_J(\delta,\tau,T)\right]$
@@ -235,30 +232,15 @@ This corresponds to a forward skew $S=2\delta_{\rm max}/\pi -1$ of 0.03 and 0.34
 	\centering
 	\includegraphics[width=\linewidth]{chapter-gJJ-CPR/figs/Figure5}
 	\caption{
-		\textbf{Predicted influence of the junction transparency on the bias current dependence.}
-		%
-		\textbf{(a)} CPR for various $\tau=0$ (solid), $\tau=0.5$ (dashed) and $\tau=1.0$	(dash-dotted).
-		%
-		\textbf{(b-c)} Josephson inductance \textbf{(b)} and resonance frequency \textbf{(c)} supercurrent for	same transparencies as in \textbf{(a)}.
-		%
-		Increased junction transmission leads to forward skewing of the CPR, thus a reduced slope and higher Josephson inductance, which in turn reduces the resonance frequency and increases the tuning.
-	}
-	\label{fig:figure5}
-\end{figure}
-
-\begin{figure}
-	\centering
-	\includegraphics[width=\linewidth]{chapter-gJJ-CPR/figs/Figure6}
-	\caption{
 		\textbf{Extracting the current phase relation from current-biasing the gJJ microwave circuit.}
 		%
-		Fitting the bias current dependence \textbf{(a)}, we can extract the junction transparency \textbf{(b)} for the diffusive (green) and ballistic (blue) gJJ device versus gate voltage.
+		Fitting the bias current dependence \textbf{(a)}, we can extract the junction transparency \textbf{(b)} and corresponding CPR skew \textbf{(c)} for the diffusive (green) and ballistic (blue) gJJ device versus gate voltage.
 		%
-		\textbf{(c)} Reconstructed current-phase relation for the diffusive (green) and ballistic (blue) device.
+		\textbf{(d)} Reconstructed current-phase relation for the diffusive (green) and ballistic (blue) device.
 		%
 		The large transparency of the ballistic JJ leads to significant forward skewing, while the relatively low transparency of the diffusive JJ only results in minor skewing.
 	}
-	\label{fig:figure6}
+	\label{fig:figure5}
 \end{figure}
 
 \section{Conclusion}
@@ -302,16 +284,16 @@ To extract resonance frequency and loss rates from the RF data, we fit the refle
 S_{11}(\omega) = -1+\frac{2\kappa_e}{\kappa+2i\Delta},
 \end{align}
 %
-where $\kappa=\kappa_e+\kappa_i$ and $\Delta=\omega-\omega_0$.
+where $\kappa=\kappa_e+\kappa_i$ denoting the total, external and internal loss rates, respectively, and $\Delta=\omega-\omega_0$ with resonance frequency $\omega_0=2\pi f_0$.
 %
 The measured $S_{11}$ is usually distorted by a setup-related microwave background of the following shape:
 \begin{align}
-B(\omega) = (a+b\omega+c\omega^2)e^{i(a^\prime+b^\prime\omega)},
+B(\omega) = \left(a+b\omega+c\omega^2\right)e^{i\left(a^\prime+b^\prime\omega\right)},
 \end{align}
 %
-and with additional rotation by angle $\theta$ in the complex plane, the measured $S_{11}^\prime$ looks like this:
+and with additional rotation by angle $\theta$ in the complex plane, the measured $S_{11}^\prime$ is:
 \begin{align}
-S_{11}^\prime(\omega)=B(\omega)\left(e^{i\theta}(S_{11}(\omega)+1)-1\right)
+S_{11}^\prime(\omega)=B(\omega)\left(e^{i\theta}\left(S_{11}(\omega)+1\right)-1\right)
 \end{align}
 %
 The origin of the microwave background and phase rotations are impedance mismatches in the wiring originating from various non-ideal circuit elements (e.g. connectors, attenuators, directional couplers).
@@ -322,7 +304,7 @@ For the gate voltage sweeps (Fig.~\ref{fig:figure1}(d,e)), we pick the measureme
 %
 We then divide the other traces by this background, resulting in a much cleaner signal.
 
-For measurements based on bias current sweeps, cf. Fig~\ref{fig:figure6}(a), we take the RF background at $I_b>I_s$ at which the JJ switched to the normal state and the RF resonance is removed from the measurement and divide it off the cases at which there is a circuit resonance.
+For measurements based on bias current sweeps, cf. Fig~\ref{fig:figure5}(a), we take the RF background at $I_b>I_s$ at which the JJ switched to the normal state and the RF resonance is removed from the measurement and divide it off the cases at which there is a circuit resonance.
 
 In order to remove RF background from the power dependence, we mask the regions in which there are resonances for the various powers and gate voltage setpoints, and average the remaining traces.
 %
@@ -348,10 +330,12 @@ The circuit impedance as seen from the JJ towards the CPW, $Z_1$, the input impe
 \begin{align}
 Z_1 &= Z_0 \frac{Z_2+Z_0\tanh\gamma l}{Z_0+Z_2\tanh\gamma l} \\
 Z_2 &= \left(\frac{1}{Z_{C_s}}+\frac{1}{Z_0}\right)^{-1} = \left(i\omega C_s+\frac{1}{Z_0}\right)^{-1} \\
-Z_q &= \left(\frac{1}{Z_{JJ}}+\frac{1}{Z_1}\right)^{-1} = \left(\frac{1}{i\omega L_J}+\frac{1}{Z_1}\right)^{-1}
+Z_q &= \left(\frac{1}{Z_{JJ}}+\frac{1}{Z_1}\right)^{-1} = \left(\frac{1}{i\omega L_J}+\frac{1}{Z_1}\right)^{-1}\ ,
 \end{align}
-
-Assuming negligible losses in the CPW, $\gamma l\approx i\beta l = i\pi\omega_0/\omega_r$ and using $\tanh(iz)=i\tan(z)$, the resonance condition of the above circuit is for the imaginary part of the admittance $Y=1/Z_q=0$:
+%
+with the CPW length $l$, the loss complex CPW loss per unit length $l=\alpha+i\beta$, and the line impedance $Z_0$.
+%
+Assuming negligible losses in the CPW, $\gamma l\approx i\beta l = i\pi\omega_0/\omega_r$ (i.e. the CPW only acts as a phase shifter) and using $\tanh(iz)=i\tan(z)$, the resonance condition of the above circuit is for the imaginary part of the admittance $Y=1/Z_q=0$:
 %
 \begin{align}
 0 = \Im \left[ \frac{1}{i\omega_0 L_J} + \frac{1}{Z_0}\frac{Z_0+iZ_2\tan\frac{\pi\omega_0}{\omega_r}}{Z_2+iZ_0\tan\frac{\pi\omega_0}{\omega_r}}\right]
@@ -360,9 +344,11 @@ Assuming negligible losses in the CPW, $\gamma l\approx i\beta l = i\pi\omega_0/
 %
 The solution of this equation yields the solid line in Fig.~\ref{fig:SMval}(a).
 %
-We can however approximate the above by a similar method as the authors of Refs.~\cite{wallquistSelectiveCouplingSuperconducting2006a,wustmannParametricResonanceTunable2013,pogorzalekHystereticFluxResponse2017}, arriving at the expression stated in Eq.~\ref{eq:Pogorzalek} which is plotted as dashed line in Fig.~\ref{fig:SMval}(a).
+We can however approximate the above by a similar method as the authors of Refs.~\cite{wallquistSelectiveCouplingSuperconducting2006a,wustmannParametricResonanceTunable2013,pogorzalekHystereticFluxResponse2017}.
 %
-We find that over a range of seven orders of magnitudes in $L_J$, and for the values measured, the approximation differs by no more than \SI{1}{\percent} from the analytical solution.
+Assuming $Z_2\approx 0$ and expanding the tangent, we arrive at the expression stated in Eq.~\ref{eq:Pogorzalek} which is plotted as dashed line in Fig.~\ref{fig:SMval}(a).
+%
+We find that over a range of seven orders of magnitudes in $L_J$, and for the values measured, the approximation differs by no more than \SI{1}{\percent} from the analytical solution, regardless of JJ to CPW impedance, cf. Figs.~\ref{fig:SMval}(b-c).
 
 
 \begin{figure}
@@ -396,34 +382,38 @@ Following the method described in Ref.~\cite{schmidtCurrentDetectionUsing2020}, 
 from which the steady-state solution $\dot{\alpha_0}=0$ results in the following polynomial function,
 % 
 \begin{align}
-\beta^2 \alpha_0^6 + 2\Delta\beta\alpha_0^4 + \left(\Delta^2+\frac{\kappa^2}{4}\right)\alpha_0^2 - \kappa_\text{e} S_{p0}^2 = 0\ ,
+\beta^2 \alpha_0^6 + 2\Delta\beta\alpha_0^4 + \left(\Delta^2+\frac{\kappa^2}{4}\right)\alpha_0^2 - \kappa_\text{e} \abs{S_{\rm in}}^2 = 0\ ,
 \label{eq:polynom}
 \end{align}
 %
 which we can solve numerically and use to calculate the expected reflection coefficient,
 \begin{align}
-S_{11}(\omega)=-1-\frac{\sqrt{\kappa_e}}{S_{\rm in}}\alpha_0(\omega)\ .
+S_{11}=-1-\frac{\sqrt{\kappa_e}}{S_{\rm in}}\alpha_0\ .
 \label{eq:S11anh}
 \end{align}
-
-We calculate $S_{\rm in}$ by calibrating the attenuation in our fridge, using the thermal noise power of the cryogenic HEMT as calibration source.
 %
-The HEMT noise power is given by
+We reduce the number of free parameters from five to two by fixing $\omega_0$ and $\kappa_e$ as the values extracted at lowest drive power and calculating $S_{\rm in}$ from the fridge attenuation, see Supplementary Section Sec.~\ref{sec:attenuation}.
 %
-\begin{align}
-P_{\rm HEMT}=10\log\left(\frac{k_B T_{\rm HEMT}}{\si{\milli\watt}}\right) + 10\log\left(\frac{\Delta f}{\si{\hertz}}\right)\ ,
-\label{eq:HEMT}
-\end{align}
+The remaining parameters are $\beta$ and $\kappa_i$, where the internal loss rate can in fact depend on the drive power, $\kappa_i=\kappa_i(S_{\rm in})$.
 %
-with the Boltzmann constant $k_B$, the noise temperature of the HEMT $T_{\rm HEMT}=\SI{2}{\kelvin}$ as specified by the manufacturer and the measurement bandwidth $\Delta f=\SI{100}{\hertz}$ resulting in $P_{\rm HEMT}\approx\SI{-175.59}{dBm}$.
-
-The resulting fit model has four parameters:
-%
-$\omega_0$, $\kappa_e$, $\kappa_i$ and $\beta$.
-%
-Using a two-step fit, we first extract one set of parameters for each data set.
+Our algorithm first fits the measured data to return constant $\beta$ and $\kappa_i$, and uses these as initial values for a fit to extract the power dependent loss rate, shown in Fig.~\ref{fig:SMFig-lossrates}.
 
 \subsection{Fitting procedure for extracting $\tau$}
+
+\begin{figure}
+	\centering
+	\includegraphics[width=\linewidth]{chapter-gJJ-CPR/figs/SMFigure-influence}
+	\caption{
+		\textbf{Predicted influence of the junction transparency on the bias current dependence.}
+		%
+		\textbf{(a)} CPR for various $\tau=0$ (solid), $\tau=0.5$ (dashed) and $\tau=1.0$	(dash-dotted).
+		%
+		\textbf{(b-c)} Josephson inductance \textbf{(b)} and resonance frequency \textbf{(c)} supercurrent for	same transparencies as in \textbf{(a)}.
+		%
+		Increased junction transmission leads to forward skewing of the CPR, thus a reduced slope and higher Josephson inductance, which in turn reduces the resonance frequency and increases the tuning.
+	}
+	\label{fig:SMinfluence}
+\end{figure}
 
 Without any knowledge on the junction transparency $\tau$, fitting data of a CPW cavity with JJ exhibiting a potentially nonsinusoidal CPR can lead to significant deviations from the true circuit parameters.
 %
@@ -485,8 +475,31 @@ We therefore conclude that our fitting algorithm should present a reliable way o
 	\label{fig:SMres}
 \end{figure}
 
-\subsection{Internal loss rate dependence on bias current}
+\subsection{Internal loss rate dependence on bias current}\label{sec:kintib}
 
+\begin{figure}
+	\centering
+	\includegraphics[width=0.583\linewidth]{chapter-gJJ-CPR/figs/SMFigure-lossrates}
+	\caption{
+		\textbf{Internal loss rate for increasing bias current (a) and drive power (b).}
+		%
+		Increasing loss rate with bias current could originate from either low-frequency noise or phase slip events.
+		%
+		An increase in $\kappa_i$ with drive power could be due to dielectric losses in the gJJ.
+	}
+	\label{fig:SMFig-lossrates}
+\end{figure}
+
+
+\subsection{Estimation of the fridge attenuation}\label{sec:attenuation}
+The HEMT noise power is given by
+%
+\begin{align}
+P_{\rm HEMT}=10\log\left(\frac{k_B T_{\rm HEMT}}{\si{\milli\watt}}\right) + 10\log\left(\frac{\Delta f}{\si{\hertz}}\right)\ ,
+\label{eq:HEMT}
+\end{align}
+%
+with the Boltzmann constant $k_B$, the noise temperature of the HEMT $T_{\rm HEMT}=\SI{2}{\kelvin}$ as specified by the manufacturer and the measurement bandwidth $\Delta f=\SI{100}{\hertz}$ resulting in $P_{\rm HEMT}\approx\SI{-175.59}{dBm}$.
 
 \references{dissertation}
 
