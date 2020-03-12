@@ -137,21 +137,19 @@ L_J = \frac{\Phi_0}{2\pi I_c \cos\delta}.
 \end{align}
 %
 Depending on the exact shape of the CPR however, $L_J$, and with it $f_0$ can significantly deviate from the above equations, cf. Supplementary Fig.~\ref{fig:SMinfluence}.
+%
+Specifically, the CPR of gJJ are known to exhibit forward-skewing, where the skew is defined as the deviation of the CPR maximum from phase $\pi/2$, $S=2\delta_{\rm max}/\pi -1$.
 
 As depicted in Fig.\ref{fig:figure2}, we fit the RF-measured $f_0$ versus the DC-measured $I_s^{\rm DC}$ using Eq.~\ref{eq:Pogorzalek} assuming a sinusoidal CPR, shown by the black dashed line.
 %
 Here, we assumed $\delta=0$ because the DC bias port was shorted to ground during measurement, and the RF excitation merely oscillates the phase around zero.
 %
-The fit converges for both the diffusive and the hot ballistic device.
+The fit converges for both the diffusive and the “hot” ballistic device.
 %
 On the other hand, at \SI{15}{\milli\kelvin}, the ballistic device exhibits multi-valued $f_0\left(I_s\right)$, as the resonance frequency and switching current follow different trends for p- and n-doping.
 %
-This is a first indication of a deviation of the CPR from Eq.\ref{eq:CPR-sin}:
-%
+This is a first indication of a deviation of the CPR from Eq.\ref{eq:CPR-sin}.
 
-%% At first glance, any forward skew in the CPR leads to a drop in CPR slope, therefore for the same extracted $I_s^{\rm DC}$, $L_J$ should increase.
-%% However, our fit results in the opposite behavior.
-%% I think I have this written down somewhere in one of the ipynb files?
 %% How to formulate this in a good way?
 %% DC-Is and assumption of sinusoidal CPR leads us to an estimated DC-Lj.
 %% This value is smaller than the actually measured Lj
@@ -180,9 +178,22 @@ We can additionally directly compare the estimates for the junction critical cur
 %
 As shown in Fig.~\ref{fig:figure3}, our devices exhibit tunable supercurrent over almost two orders of magnitude range.
 %
-In the diffusive device, $I_s^{\rm DC}$ and $I_c^{\rm RF}$ match closely, but small deviations at the low and high end, with $I_c^{\rm RF}$ resulting in values larger than expected from DC measurements.
+In the diffusive device, $I_s^{\rm DC}$ and $I_c^{\rm RF}$ match closely, but small deviations at the low and high end are visible, with $I_c^{\rm RF}$ resulting in values larger than expected from DC.
 %
-Similarly, the DC measurements of the ballistic device at \SI{1}{\kelvin} underestimate the critical current as extracted from RF for small values of $I_s^{\rm DC}$.
+Similarly, the DC measurements of the ballistic device at \SI{1}{\kelvin} underestimate the critical current as extracted from RF for small values of $I_s^{\rm DC}$, but match remarkably well everywhere else.
+%
+At first glance, any forward skew in the CPR should lead to a drop in CPR slope.
+%
+Therefore, for the same value of $I_c$, $L_J$ should increase and $I_s^{\rm RF}<I_s^{\rm DC}$.
+%
+However, our fit results in the opposite behavior, cf. Supplementary Fig.~\ref{fig:SMinfluence}:
+%
+The fit model returns a larger $I_c$ than expected for a sinusoidal CPR, given that the data to be fitted has an underlying forward-skewed CPR.
+%% I think I have this written down somewhere in one of the ipynb files?
+
+At a temperature of \SI{15}{\milli\kelvin}, the ballistic device deviates significantly from the DC-calculations, especially at low currents and $V_g<0$.
+%
+Deviations at large $I_c$ are less obvious, presumably due to the fact that in this regime, $L_J \ll L_r$ and the Josephson inductance has only minor effect on $f_0$. \textbf{TODO: ERROR PROPAGATION FOR FIG 1.3!!! IT DEPENDS ON df0, AND ALSO ON dfr AND dLr!!!}
 
 \begin{figure}
 	\centering
@@ -195,6 +206,7 @@ Similarly, the DC measurements of the ballistic device at \SI{1}{\kelvin} undere
 		Dashed line corresponds to DC-measured $I_s$.
 		%
 		Both scattering in the JJ as well as elevated temperatures reduce the deviation from RF and DC data.
+		\textbf{TODO: ERROR PROPAGATION FOR FIG 1.3!!! IT DEPENDS ON df0, AND ALSO ON dfr AND dLr!!!}
 	}
 	\label{fig:figure3}
 \end{figure}
@@ -262,7 +274,7 @@ With a normal state resistance of or devices ranging between \SIrange{35}{350}{\
 This justifies the use of a single transparency parameter $\tau$ that is the average of all the other channels.
 
 average channel transmission 0.17 and 0.88
-This corresponds to a forward skew $S=2\delta_{\rm max}/\pi -1$ of 0.03 and 0.34 for the diffusive and ballistic device, respectively, comparable to measurements from DC-measurements of the CPR~\cite{englishObservationNonsinusoidalCurrentphase2016,nandaCurrentPhaseRelationBallistic2017}.
+This corresponds to a forward skew of 0.03 and 0.34 for the diffusive and ballistic device, respectively, comparable to measurements from DC-measurements of the CPR~\cite{englishObservationNonsinusoidalCurrentphase2016,nandaCurrentPhaseRelationBallistic2017}.
 %
 %$I_c(\tau,T)=\underaccent{\delta}{\max} \left[I_J(\delta,\tau,T)\right]$
 %
