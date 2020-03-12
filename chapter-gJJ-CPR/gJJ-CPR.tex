@@ -42,9 +42,9 @@ Our circuit consists of a DC-bias microwave cavity formed by a coplanar waveguid
 %
 The superconducting base layer and shunt capacitor metal layers consist of DC-sputtered molybdenum-rhenium (MoRe) on a sapphire substrate, while the shunt capacitr dielectric layer is PECVD-SiN.
 %
-The circuit is connected via a bias-T, allowing both DC and RF characterization in the same cooldown.
+The circuit is connected via a bias-T, allowing both DC and RF characterization in the same setup, and mounted on the millikelvin plate on a dilution refrigerator.
 %
-The gate voltage lead is fed through a shunt capacitor of the same geometry as the capacitor at the input in order to suppress RF radiation leaking  in through or out of the gate line.
+The gate voltage lead is fed through a shunt capacitor of the same geometry as the capacitor at the input in order to suppress RF radiation leaking in through or out of the gate line.
 
 We measured two separate devices with nominally identical microwave circuits and junction designs:
 %
@@ -81,7 +81,11 @@ Since the supercurrent in our gJJs cannot be fully suppressed, the maximum $L_J\
 %
 Our devices thus remain in the $\lambda/2$-resonator regime.
 
-Measurements show a gate-tunable resonance frequency $f_0$ between \SIrange{7.0}{8.2}{\giga\hertz}, comparable for both devices, cf. bottom row of Fig.~\ref{fig:figure1}.
+The device response is measured by recording the reflection coefficient $S_{11}$ using a vector network analyzer, which excites the device through a series of attenuators and a directional coupler, and measuring the reflected signal, amplified by low noise cryogenic and room temperature HEMTs. 
+%
+We fit the response using an analytical model (cf. Supplementary Sec.~\ref{sec:extraction}).
+%
+The measurements show a gate-tunable resonance frequency $f_0$ between \SIrange{7.0}{8.2}{\giga\hertz}, comparable for both devices, cf. bottom row of Fig.~\ref{fig:figure1}.
 %
 Due to the inverse nature of junction current and inductance, the large changes in $I_s$ for $V_g>V_{\rm CNP}$ only lead to minor changes in $f_0$ when comparing the hot and cold ballistic device.
 %
@@ -195,6 +199,10 @@ At a temperature of \SI{15}{\milli\kelvin}, the ballistic device deviates signif
 %
 Deviations at large $I_c$ are less obvious, presumably due to the fact that in this regime, $L_J \ll L_r$ and the Josephson inductance has only minor effect on $f_0$. \textbf{TODO: ERROR PROPAGATION FOR FIG 1.3!!! IT DEPENDS ON df0, AND ALSO ON dfr AND dLr!!!}
 
+This shows that extrapolation of a value for $L_J$ at microwave frequencies from DC measurements can lead to severe discrepancies.
+%
+In order to examine the underlying mechanisms further, we continue by studying the power and bias current dependence of our circuit.
+
 \begin{figure}
 	\centering
 	\includegraphics[width=0.583\linewidth]{chapter-gJJ-CPR/figs/Figure3}
@@ -230,6 +238,20 @@ where the limes holds for an average $\tau$ of the ensemble of transmission chan
 A more suitable measurement would have been to perform two-tone spectroscopy with a fixed-frequency pump tone with variable power, and a low-power swept probe tone, since this would avoid bifurcation and yield a direct measurement of the anharmonicity from the frequency shift per photon.
 %
 However, such a setup was not available at the time.
+
+Non-linear dissipation is absent in SIS JJ circuits ~\cite{boakninDispersiveMicrowaveBifurcation2007}, but is necessary for our setup to get good agreement of data and model at high drive powers.
+%
+Dissipation mechanisms could include heating, dielectric losses, or subgap losses!
+%
+Maybe what we observe here are the subgap states!!~\cite{fuechsleEffectMicrowavesCurrentPhase2009,dassonnevilleDissipationSupercurrentFluctuations2013}
+%
+We populate them as we increase the drive power, resulting in an increase in internal loss rate, cf. Supplementary Fig.~\ref{fig:SMFig-lossrates}.
+%
+Difficult to separate from the dielectric circuit losses.
+%
+However, dielectric volume is only present at voltage nodes, where these effects should not play a significant role.
+%
+Heating of the circuit itself is unlikely due to the close match between data and model, and the fact that $f_0$ should tune significantly stronger, since $I_c$ should also be reduced by the heat which can have strong influence on $f_0$, c.f. Fig.~\ref{fig:figure1}.
 
 \begin{figure}
 	\centering
@@ -352,7 +374,7 @@ This corresponds to a forward skew of 0.03 and 0.34 for the diffusive and ballis
 	\label{tab:frLr2}
 \end{table}
 
-\subsection{Extraction of $I_s^{\rm DC}$ and $f_0$}
+\subsection{Extraction of $I_s^{\rm DC}$ and $f_0$}\label{sec:extraction}
 
 The DC switching current (Fig.~\ref{fig:figure1}(b,c)) is taken as the current at which $\partial V/\partial I_b$ is maximum, where $V$ is the measured voltage.
 %
