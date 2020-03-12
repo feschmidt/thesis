@@ -221,11 +221,21 @@ In order to examine the underlying mechanisms further, we continue by studying t
 
 \section{Anharmonicity of a gJJ RF circuit}
 
+The nonlinear inductance of a Josephson junction consequently introduces nonlinear behaviour of the overall circuit.
+%
+Depending on the exact circuit design, this nonlinearity is more or less diluted, yet finite so-called anharmonicity, i.e. deviation from the ideal case of pure LC-resonator behavior, remains.
+
+We can observe the anharmonicity of our gJJ-terminated DC bias circuit by performing $S_{11}$ measurements at high drive powers, as shown in Fig.~\ref{fig:figure4}.
+\textbf{TODO: What was the drive power at which all the other measurements were performed?}
+\textbf{TODO: Update arXiv references}
+
 The anharmonicity of a CPW shorted to ground by a Josephson junction is given by~\cite{wilsonPhotonGenerationElectromagnetic2010b,zhouHighgainWeaklyNonlinear2014}
 \begin{align}
-\beta=-\frac{f_0}{2} \left(\frac{L_J}{L_r+L_J}\right)^3.
+\beta=-\frac{f_0}{2} \left(\frac{L_J}{L_r+L_J}\right)^3\ ,
 \label{eq:anharmonicity}
 \end{align}
+%
+where we have followed the same notation as in the earlier equations.
 %
 However, in the case of a non-sinusoidal CPR, the anharmonicity is reduced due to the increased CPR slope, resulting in
 \begin{align}
@@ -320,6 +330,12 @@ This corresponds to a forward skew of 0.03 and 0.34 for the diffusive and ballis
 \section{Conclusion}
 
 The influence of high microwave powers on the CPR: Bias current dependence as we shake the washboard a lot
+
+Use a SQUID to measure the CPR in-situ: full circle
+
+gJJ seem unfeasible for high-power cQED applications such as quantum-limited parametric amplification due to the intrinsic circuit losses.
+%
+Nevertheless, their application in lower power circuits, such as transmon qubits, should be investigated further.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Insert SM.tex contents here
@@ -586,17 +602,27 @@ We therefore conclude that our fitting algorithm should present a reliable way o
 	\label{fig:SMres}
 \end{figure}
 
-\subsection{Internal loss rate dependence on bias current}\label{sec:kintib}
+\subsection{Internal loss rate dependence on gate voltage, bias current and drive power}\label{sec:kintib}
+
+The internal loss rate of our circuit depends on various parameters.
+
+\begin{itemize}
+	\item \textbf{Gate voltage dependence, cf. Fig~\ref{fig:SMFig-lossrates}(a)}
+	\item \textbf{Bias current dependence, cf. Fig~\ref{fig:SMFig-lossrates}(b)}
+	\item \textbf{Drive power dependence, cf. Fig~\ref{fig:SMFig-lossrates}(c)}
+\end{itemize}
 
 \begin{figure}
 	\centering
 	\includegraphics[width=0.583\linewidth]{chapter-gJJ-CPR/figs/SMFigure-lossrates}
 	\caption{
-		\textbf{Internal loss rate for increasing bias current (a) and drive power (b).}
+		\textbf{Internal loss rate for varying gate voltage (a), increasing bias current (b) and drive power (c).}
+		%
+		Higher losses around the CNP and for $V_g<0$ are presumably due to a higher number of subgap states.
 		%
 		Increasing loss rate with bias current could originate from either low-frequency noise or phase slip events.
 		%
-		An increase in $\kappa_i$ with drive power could be due to dielectric losses in the gJJ.
+		An increase in $\kappa_i$ with drive power could be due to subgap states in the gJJ.
 	}
 	\label{fig:SMFig-lossrates}
 \end{figure}
