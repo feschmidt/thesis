@@ -20,9 +20,27 @@
 
 \section{Introduction}
 
+Josephson junctions are widely used in high frequency applications, such as quantum information processing and sensing.
+%
+There, they are being exploited as nonlinear inductors.
+%
+However, their nonlinear character can significantly differ from junction to junction depending on the intrinsic properties of the current-phase relation.
+%
+For the use of JJs in superconducting quantum information circuits, the junction nonlinearity has a major effect on the circuit requirements and capabilities~\cite{kringhojAnharmonicitySuperconductingQubit2018}.
+%
+While the CPR of gJJs has been studied in the DC regime before~\cite{englishObservationNonsinusoidalCurrentphase2016,nandaCurrentPhaseRelationBallistic2017}, and gJJs have been successfully incorporated in RF circuits~\cite{schmidtBallisticGrapheneSuperconducting2018,krollMagneticFieldCompatible2018,wangCoherentControlHybrid2019}, the influence of the non-sinusoidal CPR has not been studied in this regime.
+
+Here, we analyze the influence of the CPR on the microwave performance of RF-circuit embedded gJJ and compare the influence of scattering transport and temperature.
+%
+Our circuit design allows in-situ, and even simultaneous, even DC and RF measurements, providing us with various measurement types to compare.
+%
+The results show the usefulness of combining DC and RF in the same circuits for funamental research on Josephson junction physics.
+
 \section{Circuit characterization}
 
 Our circuit consists of a DC-bias microwave cavity formed by a coplanar waveguide (CPW) which is shunted by a large capacitor at the input, and shorted to ground on the far end by a gate-voltage ($V_g$) tunable graphene Josephson junction (gJJ), cf. Fig.\ref{fig:figure1}(a) and Refs.~\cite{schmidtBallisticGrapheneSuperconducting2018,schmidtCurrentDetectionUsing2020,bosmanBroadbandArchitectureGalvanically2015c}.
+%
+The superconducting base layer and shunt capacitor metal layers consist of DC-sputtered molybdenum-rhenium (MoRe) on a sapphire substrate, while the shunt capacitr dielectric layer is PECVD-SiN.
 %
 The circuit is connected via a bias-T, allowing both DC and RF characterization in the same cooldown.
 %
@@ -33,6 +51,10 @@ We measured two separate devices with nominally identical microwave circuits and
 One of the devices exhibited signatures ballistic DC-transport, which we will refer to as the \textit{ballistic device}, which is the device presented in the main text of Ref.~\cite{schmidtBallisticGrapheneSuperconducting2018}.
 %
 The other one, in lack of such features, will be called \textit{diffusive device}, and corresponds to the reference sample of Ref.~\cite{schmidtBallisticGrapheneSuperconducting2018}.
+%
+Both gJJ were designed to be \SI{5}{\micro\meter} wide and separate the NbTiN leads by a length of \SI{500}{\nano\meter}.
+%
+Gate tunability is achieved by placing a third NbTiN lead extending over the entire gJJ, separated by a bilayer of HSQ.
 
 We extract the DC circuit parameters by applying a bias current to the JJ, using the CPW as a long capacitive lead.
 %
@@ -52,14 +74,14 @@ For high frequency signals, i.e. a few \si{\giga\hertz}, the gJJ behaves as a no
 L_J = \frac{\Phi_0}{2\pi}\left(\diff{I_J}{\delta}\right)^{-1},
 \end{align}
 %
-where $I_J(\delta)$ is the current phase relation (CPR) between the phase difference across and the corresponding supercurrent $I_J$ flowing through the junction.
-Depending on the impedance of the gJJ, $Z_J(V_g)=j\omega L_J(V_g)$, the fundamental mode hosted by the CPW+gJJ varies between a $\lambda/2$ wave for $Z_J\rightarrow0$ and $\lambda/4$ for $Z_J\rightarrow\infty$.
+where $\Phi_0$ is the magnetic flux quantum and $I_J(\delta)$ the current phase relation (CPR) between the phase difference $\delta$ across the JJ between two superconducting banks and the corresponding supercurrent $I_J$ flowing through the junction.
+Depending on the impedance of the gJJ at the circuit resonance frequency, $Z_J=i\omega_0 L_J$, the fundamental mode hosted by the gJJ-terminated CPW varies between a $\lambda/2$ wave for $Z_J\rightarrow0$ and $\lambda/4$ for $Z_J\rightarrow\infty$.
 %
-Since the supercurrent in our gJJs cannot be fully suppressed, the maximum $L_J\lessapprox\SI{1}{\nano\henry}$, thus $Z_J\lessapprox1\ll Z_0\approx\SI{50}{\ohm}$ with the CPW impedance $Z_0$.
+Since the supercurrent in our gJJs cannot be fully suppressed, the maximum $L_J\lessapprox\SI{1}{\nano\henry}$, thus $Z_J\lessapprox1 <  Z_0\approx\SI{50}{\ohm}$ with the CPW impedance $Z_0$.
 %
 Our devices thus remain in the $\lambda/2$-resonator regime.
 
-Measurements show a gate-tunable resonance frequency $f_0$ between \SIrange{7}{8.2}{\giga\hertz}, comparable for both devices, cf. bottom row of Fig.~\ref{fig:figure1}.
+Measurements show a gate-tunable resonance frequency $f_0$ between \SIrange{7.0}{8.2}{\giga\hertz}, comparable for both devices, cf. bottom row of Fig.~\ref{fig:figure1}.
 %
 Due to the inverse nature of junction current and inductance, the large changes in $I_s$ for $V_g>V_{\rm CNP}$ only lead to minor changes in $f_0$ when comparing the hot and cold ballistic device.
 %
@@ -86,7 +108,7 @@ On the other hand, even small changes in the significantly smaller $I_s$ for $V_
 	\label{fig:figure1}
 \end{figure}
 
-\section{Extracting the Josephson inductance from DC and RF measurements}
+\section{Measuring the Josephson inductance in DC and RF}
 
 The resonance frequency of a $\lambda/2$-resonator shorted to ground by a Josephson inductance can be approximated by
 \begin{align}
@@ -98,6 +120,8 @@ with $L_r$ the bare CPW inductance and $f_{\lambda/2}$ the resonance frequency o
 %
 $I_b$ is the bias current flowing through CPW and the JJ, $I_c$ the critical current of the JJ.
 %
+We can immediately see that for small $L_J$, $f_0=f_{\lambda/2}$, while for $L_J\gg L_r$, $f_0=f_{\lambda/2}/2$.
+%
 Assuming a purely sinusoidal current-phase relation,
 %
 \begin{align}
@@ -108,10 +132,15 @@ I_J(\delta) = I_c\sin\delta,
 the Josephson inductance can be extracted from the current phase relation via
 %
 \begin{align}
-L_J = \frac{\Phi_0}{2\pi\sqrt{I_c^2-I_b^2}}.
+L_J = \frac{\Phi_0}{2\pi I_c \cos\delta}.
+\label{eq:LJsin}
 \end{align}
+%
+Depending on the exact shape of the CPR however, $L_J$, and with it $f_0$ can significantly deviate from the above equations, cf. Supplementary Fig.~\ref{fig:SMinfluence}.
 
-As depicted in Fig.\ref{fig:figure2}, we fit the RF-measured $f_0$ versus the DC-measured $I_s$ using Eq.\ref{eq:Pogorzalek} assuming a sinusoidal CPR, shown by the black dashed line.
+As depicted in Fig.\ref{fig:figure2}, we fit the RF-measured $f_0$ versus the DC-measured $I_s^{\rm DC}$ using Eq.~\ref{eq:Pogorzalek} assuming a sinusoidal CPR, shown by the black dashed line.
+%
+Here, we assumed $\delta=0$ because the DC bias port was shorted to ground during measurement, and the RF excitation merely oscillates the phase around zero.
 %
 The fit converges for both the diffusive and the hot ballistic device.
 %
@@ -119,8 +148,10 @@ On the other hand, at \SI{15}{\milli\kelvin}, the ballistic device exhibits mult
 %
 This is a first indication of a deviation of the CPR from Eq.\ref{eq:CPR-sin}:
 %
-While at first glance, any forward skew in the CPR leads to an drop in CPR slope, therefore for the same DC-extracted $I_s$, $L_J$ should increase.
 
+%% At first glance, any forward skew in the CPR leads to a drop in CPR slope, therefore for the same extracted $I_s^{\rm DC}$, $L_J$ should increase.
+%% However, our fit results in the opposite behavior.
+%% I think I have this written down somewhere in one of the ipynb files?
 %% How to formulate this in a good way?
 %% DC-Is and assumption of sinusoidal CPR leads us to an estimated DC-Lj.
 %% This value is smaller than the actually measured Lj
@@ -145,6 +176,14 @@ While at first glance, any forward skew in the CPR leads to an drop in CPR slope
 	\label{fig:figure2}
 \end{figure}
 
+We can additionally directly compare the estimates for the junction critical current from our DC measurement, $I_s^{\rm DC}$, with the value calculated from our RF measurement of the resonance frequency via Eq.~\ref{eq:LJsin}, $I_c^{\rm RF}=I_c\left(L_J\left(f_0\right)\right)$. 
+%
+As shown in Fig.~\ref{fig:figure3}, our devices exhibit tunable supercurrent over almost two orders of magnitude range.
+%
+In the diffusive device, $I_s^{\rm DC}$ and $I_c^{\rm RF}$ match closely, but small deviations at the low and high end, with $I_c^{\rm RF}$ resulting in values larger than expected from DC measurements.
+%
+Similarly, the DC measurements of the ballistic device at \SI{1}{\kelvin} underestimate the critical current as extracted from RF for small values of $I_s^{\rm DC}$.
+
 \begin{figure}
 	\centering
 	\includegraphics[width=0.583\linewidth]{chapter-gJJ-CPR/figs/Figure3}
@@ -160,7 +199,7 @@ While at first glance, any forward skew in the CPR leads to an drop in CPR slope
 	\label{fig:figure3}
 \end{figure}
 
-\section{Circuit anharmonicity}
+\section{Anharmonicity of a gJJ RF circuit}
 
 The anharmonicity of a CPW shorted to ground by a Josephson junction is given by~\cite{wilsonPhotonGenerationElectromagnetic2010b,zhouHighgainWeaklyNonlinear2014}
 \begin{align}
@@ -198,9 +237,9 @@ However, such a setup was not available at the time.
 		%
 		\textbf{(d)} Anharmonicity vs gate voltage.
 		%
-		Dots: data as extracted from fits as in \textbf{(b-c)}, orange line: model using DC-$I_s$, green: model using RF-$I_c$.
+		Dots: data as extracted from fits as in \textbf{(b-c)}, orange line: model using $I_s^{\rm DC}$, green: model using $L_J$.
 		%
-		The overestimation of the anharmonicity of the DC-$I_s$ for high gate voltages is consistent with and confirms a non-sinusoidal CPR.
+		The overestimation of the anharmonicity of the $I_s^{\rm DC}$ for high gate voltages is consistent with and confirms a non-sinusoidal CPR.
 	}
 	\label{fig:figure4}
 \end{figure}
@@ -268,7 +307,40 @@ This corresponds to a forward skew $S=2\delta_{\rm max}/\pi -1$ of 0.03 and 0.34
 
 \section{Supplementary Material: Current phase relations of graphene Josephson junctions in microwave circuits}
 
-\subsection{Extraction of DC-$I_s$ and $f_0$}
+\subsection{Circuit parameters}
+
+\begin{table}
+	\centering
+	\caption{\textbf{Circuit parameters as extracted for the various measurements}}
+	\begin{tabular}{cccc}
+		\hline\hline
+		& Diffusive JJ & \multicolumn{2}{c}{Ballistic JJ}  \\
+		Temperature & \SI{15}{\milli\kelvin} & \SI{15}{\milli\kelvin} & \SI{1}{\kelvin} \\
+		\hline
+		$f_{\lambda/2}$ (\si{\giga\hertz}) & $1.23\pm0.22$ & $1.23\pm0.22$ & $1.23\pm0.22$ \\
+		$L_r$ (\si{\nano\henry}) & $1.23\pm0.22$ & $1.23\pm0.22$ & $1.23\pm0.22$ \\
+		\hline\hline
+	\end{tabular}
+	\label{tab:frLr}
+\end{table}
+
+\begin{table}
+	\centering
+	\caption{\textbf{Circuit parameters as extracted for the various measurements}}
+	\begin{tabular}{cccccc}
+		\hline\hline
+		& \multicolumn{2}{c}{Diffusive JJ} & \multicolumn{3}{c}{Ballistic JJ}  \\
+		Temperature & \multicolumn{2}{c}{\SI{15}{\milli\kelvin}} & \multicolumn{2}{c}{\SI{15}{\milli\kelvin}} & \SI{1}{\kelvin} \\
+		Measurement type & $I_b=0$ & $I_b\neq 0$ & $I_b=0$ & $I_b\neq 0$ & $I_b=0$ \\
+		\hline
+		$f_{\lambda/2}$ (\si{\giga\hertz}) & $1.23\pm0.22$ & $1.23\pm0.22$ & $1.23\pm0.22$ & $1.23\pm0.22$ & $1.23\pm0.22$ \\
+		$L_r$ (\si{\nano\henry}) & $1.23\pm0.22$ & $1.23\pm0.22$ & $1.23\pm0.22$ & $1.23\pm0.22$ & $1.23\pm0.22$ \\
+		\hline\hline
+	\end{tabular}
+	\label{tab:frLr2}
+\end{table}
+
+\subsection{Extraction of $I_s^{\rm DC}$ and $f_0$}
 
 The DC switching current (Fig.~\ref{fig:figure1}(b,c)) is taken as the current at which $\partial V/\partial I_b$ is maximum, where $V$ is the measured voltage.
 %
@@ -333,22 +405,24 @@ Z_2 &= \left(\frac{1}{Z_{C_s}}+\frac{1}{Z_0}\right)^{-1} = \left(i\omega C_s+\fr
 Z_q &= \left(\frac{1}{Z_{JJ}}+\frac{1}{Z_1}\right)^{-1} = \left(\frac{1}{i\omega L_J}+\frac{1}{Z_1}\right)^{-1}\ ,
 \end{align}
 %
-with the CPW length $l$, the loss complex CPW loss per unit length $l=\alpha+i\beta$, and the line impedance $Z_0$.
+with the CPW length $l$, the complex CPW loss per unit length $\gamma=\alpha+i\beta$, and the transmission line impedance $Z_0$.
 %
-Assuming negligible losses in the CPW, $\gamma l\approx i\beta l = i\pi\omega_0/\omega_r$ (i.e. the CPW only acts as a phase shifter) and using $\tanh(iz)=i\tan(z)$, the resonance condition of the above circuit is for the imaginary part of the admittance $Y=1/Z_q=0$:
+Assuming negligible losses in the CPW, $\gamma l\approx i\beta l = i\pi\omega_0/\omega_r$ (i.e. the CPW only acts as a phase shifter) on resonance.
+%
+Using $\tanh(iz)=i\tan(z)$, the resonance condition of the above circuit is for the imaginary part of the admittance $Y=1/Z_q=0$, which yields
 %
 \begin{align}
-0 = \Im \left[ \frac{1}{i\omega_0 L_J} + \frac{1}{Z_0}\frac{Z_0+iZ_2\tan\frac{\pi\omega_0}{\omega_r}}{Z_2+iZ_0\tan\frac{\pi\omega_0}{\omega_r}}\right]
+0 = \Im \left[ \frac{1}{i\omega_0 L_J} + \frac{1}{Z_0}\frac{Z_0+iZ_2\tan\left(\pi\omega_0/\omega_r\right)}{Z_2+iZ_0\tan\left(\pi\omega_0/\omega_r\right)}\right]
 \label{eq:SolAnalytical}
 \end{align}
 %
-The solution of this equation yields the solid line in Fig.~\ref{fig:SMval}(a).
+The solution of this equation for $\omega_0$ is plotted as solid line in Fig.~\ref{fig:SMval}(a).
 %
-We can however approximate the above by a similar method as the authors of Refs.~\cite{wallquistSelectiveCouplingSuperconducting2006a,wustmannParametricResonanceTunable2013,pogorzalekHystereticFluxResponse2017}.
+We can approximate the above by a similar method as the authors of Refs.~\cite{wallquistSelectiveCouplingSuperconducting2006a,wustmannParametricResonanceTunable2013,pogorzalekHystereticFluxResponse2017}:
 %
 Assuming $Z_2\approx 0$ and expanding the tangent, we arrive at the expression stated in Eq.~\ref{eq:Pogorzalek} which is plotted as dashed line in Fig.~\ref{fig:SMval}(a).
 %
-We find that over a range of seven orders of magnitudes in $L_J$, and for the values measured, the approximation differs by no more than \SI{1}{\percent} from the analytical solution, regardless of JJ to CPW impedance, cf. Figs.~\ref{fig:SMval}(b-c).
+We find that for all values of $L_J$, including the range in our experiments, the approximation differs by no more than \SI{1}{\percent} from the analytical solution, regardless of JJ to CPW impedance, cf. Figs.~\ref{fig:SMval}(b-c).
 
 
 \begin{figure}
@@ -364,7 +438,7 @@ We find that over a range of seven orders of magnitudes in $L_J$, and for the va
 		%
 		\textbf{(c)} Impedance of the JJ (solid) and CPW impedance (dashed).
 		%
-		The approximation is only good regardless of $Z_J$ or $Z_0$.
+		The approximation is in acceptable agreement with the full model regardless of $Z_J/Z_0$.
 	}
 	\label{fig:SMval}
 \end{figure}
@@ -500,6 +574,10 @@ P_{\rm HEMT}=10\log\left(\frac{k_B T_{\rm HEMT}}{\si{\milli\watt}}\right) + 10\l
 \end{align}
 %
 with the Boltzmann constant $k_B$, the noise temperature of the HEMT $T_{\rm HEMT}=\SI{2}{\kelvin}$ as specified by the manufacturer and the measurement bandwidth $\Delta f=\SI{100}{\hertz}$ resulting in $P_{\rm HEMT}\approx\SI{-175.59}{dBm}$.
+
+By averaging over a few $S_{11}$ traces taken with the VNA in an area unaffected by our DUT, i.e. off-resonant to the cavity and thus leaving the background unaltered in power, we extract an average signal and standard deviation which we use to define the signal-to-noise ratio at the VNA, $\text{SNR}_\text{VNA}=\SI{34.5}{\decibel}$ for a VNA output power of \SI{0}{dBm}.
+
+attenuation of \SI{129.3}{dB} of our VNA input line, assuming $X=\SI{2}{dB}$ of cable loss between sample and HEMT
 
 \references{dissertation}
 
