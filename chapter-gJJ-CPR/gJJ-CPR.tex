@@ -226,8 +226,8 @@ The nonlinear inductance of a Josephson junction consequently introduces nonline
 Depending on the exact circuit design, this nonlinearity is more or less diluted, yet finite so-called anharmonicity $\beta$, i.e. deviation from the ideal case of pure LC-resonator behavior, remains.
 
 We can observe the anharmonicity of our gJJ-terminated DC bias circuit by performing $S_{11}$ measurements at high drive powers, as shown in Fig.~\ref{fig:figure4}.
-\textbf{TODO: What was the drive power at which all the other measurements were performed?}
-\textbf{TODO: Update arXiv references}
+%
+For comparison, all other measurements were performed at fixed drive power of \SI{-131.4}{dBm}, still in the linear regime.
 %
 At very low drive powers, the circuit response can be described by a purely harmonic oscillator.
 %
@@ -255,18 +255,18 @@ However, in the case of a non-sinusoidal CPR, the anharmonicity is reduced due t
 %
 where the limes holds for an average $\tau$ of the ensemble of transmission channels~\cite{kringhojAnharmonicitySuperconductingQubit2018}.
 
-Non-linear dissipation is absent in SIS JJ circuits ~\cite{boakninDispersiveMicrowaveBifurcation2007}, but is necessary for our setup to get good agreement of data and model at high drive powers.
+Nonlinear dissipation is absent in SIS JJ circuits ~\cite{boakninDispersiveMicrowaveBifurcation2007b}, but is necessary for our setup to get good agreement of data and model at high drive powers.
 %
 Dissipation mechanisms could include heating, dielectric losses, or subgap losses!
 %
 Maybe what we observe here are the subgap states!!~\cite{fuechsleEffectMicrowavesCurrentPhase2009,dassonnevilleDissipationSupercurrentFluctuations2013}
 %
 We populate them as we increase the drive power, resulting in an increase in internal loss rate, cf. Supplementary Fig.~\ref{fig:SMFig-lossrates}.
-%
+
 Difficult to separate from the dielectric circuit losses.
 %
 However, dielectric volume is only present at voltage nodes, where these effects should not play a significant role.
-%
+
 Heating of the circuit itself is unlikely due to the close match between data and model, and the fact that $f_0$ should tune significantly stronger, since $I_c$ should also be reduced by the heat which can have strong influence on $f_0$, c.f. Fig.~\ref{fig:figure1}.
 
 
@@ -305,7 +305,7 @@ I_J(\delta,\tau,T) = \frac{\pi\Delta_0}{2 e R_n} \frac{\sin\delta}{\sqrt{1 - \ta
 \label{eq:CPR-ball}
 \end{align}
 %
-with the superconducting energy gap $\Delta_0$, the Boltzmann constant $k_B$ and normal state resistance $R_n= R_q/N = h/(Ne^2)\approx \SI{25.812}{\kilo\ohm} / N$~\cite{golubovCurrentphaseRelationJosephson2004a}.
+with the superconducting energy gap at zero temperature $\Delta_0$, the Boltzmann constant $k_B$ and normal state resistance $R_n= R_q/N = h/(Ne^2)\approx \SI{25.812}{\kilo\ohm} / N$~\cite{golubovCurrentphaseRelationJosephson2004a}.
 %
 Here, $R_q$ denotes the quantum Hall resistance and $N$ the number of conducting channels.
 %
@@ -538,11 +538,13 @@ Our algorithm first fits the measured data to return constant $\beta$ and $\kapp
 	\centering
 	\includegraphics[width=\linewidth]{chapter-gJJ-CPR/figs/SMFigure-power}
 	\caption{
-		\textbf{Anharmonicity fit under assumption of constant $\kappa_i$.}
+		\textbf{Anharmonicity fit assuming different cases for $\kappa_i$.}
 		%
-		Fixing $\kappa_i$ to be the value at lowest drive power \textbf{(a)} results in significantly worse fit than introducing it as constant, but free parameter \textbf{(b)}.
+		Fixing $\kappa_i$ to be the value at lowest drive power (first column) results in significantly worse fit than introducing it as constant, but free parameter (second column).
 		%
-		However, best agreement between data and model is reached when introducing nonlinear damping, \textbf{(b)} and Fig.~\ref{fig:figure4}.
+		However, best agreement between data and model is reached when introducing nonlinear damping (third column and Fig.~\ref{fig:figure4}).
+		%
+		Linecuts and colors correspond to the ones in Fig.~\ref{fig:figure4}.
 	}
 	\label{fig:SMpower}
 \end{figure}
@@ -627,7 +629,6 @@ We therefore conclude that our fitting algorithm should present a reliable way o
 \subsection{Internal loss rate dependence on bias current, drive power and gate voltage}\label{sec:kintib}
 
 The internal loss rate of our circuit depends on various parameters.
-TODO: Anharmonicity versus line width for panel c
 
 \begin{itemize}
 	\item \textbf{Bias current dependence, cf. Fig~\ref{fig:SMFig-lossrates}(a)}
