@@ -223,11 +223,21 @@ In order to examine the underlying mechanisms further, we continue by studying t
 
 The nonlinear inductance of a Josephson junction consequently introduces nonlinear behaviour of the overall circuit.
 %
-Depending on the exact circuit design, this nonlinearity is more or less diluted, yet finite so-called anharmonicity, i.e. deviation from the ideal case of pure LC-resonator behavior, remains.
+Depending on the exact circuit design, this nonlinearity is more or less diluted, yet finite so-called anharmonicity $\beta$, i.e. deviation from the ideal case of pure LC-resonator behavior, remains.
 
 We can observe the anharmonicity of our gJJ-terminated DC bias circuit by performing $S_{11}$ measurements at high drive powers, as shown in Fig.~\ref{fig:figure4}.
 \textbf{TODO: What was the drive power at which all the other measurements were performed?}
 \textbf{TODO: Update arXiv references}
+%
+At very low drive powers, the circuit response can be described by a purely harmonic oscillator.
+%
+As the drive power increases, the resonance frequency experiences a down-shift, and both amplitude and phase of $S_{11}$ start to get skewed towards lower frequencies.
+%
+Once the drive power exceeds a critical threshold, the resonator response bifurcates, which can be seen by the discontinuity in the data.
+
+We can model this dataset by solving the equation of motion of a harmonic oscillator with additional third order term of amplitude $\beta$ cf. Supplementary Material Sec.~\ref{sec:SMduffing}.
+%
+Fig.~\ref{fig:SMpower}
 
 The anharmonicity of a CPW shorted to ground by a Josephson junction is given by~\cite{wilsonPhotonGenerationElectromagnetic2010b,zhouHighgainWeaklyNonlinear2014}
 \begin{align}
@@ -245,11 +255,6 @@ However, in the case of a non-sinusoidal CPR, the anharmonicity is reduced due t
 %
 where the limes holds for an average $\tau$ of the ensemble of transmission channels~\cite{kringhojAnharmonicitySuperconductingQubit2018}.
 
-A more suitable measurement would have been to perform two-tone spectroscopy with a fixed-frequency pump tone with variable power, and a low-power swept probe tone, since this would avoid bifurcation and yield a direct measurement of the anharmonicity from the frequency shift per photon.
-%
-However, such a setup was not available at the time.
-
-
 Non-linear dissipation is absent in SIS JJ circuits ~\cite{boakninDispersiveMicrowaveBifurcation2007}, but is necessary for our setup to get good agreement of data and model at high drive powers.
 %
 Dissipation mechanisms could include heating, dielectric losses, or subgap losses!
@@ -263,6 +268,8 @@ Difficult to separate from the dielectric circuit losses.
 However, dielectric volume is only present at voltage nodes, where these effects should not play a significant role.
 %
 Heating of the circuit itself is unlikely due to the close match between data and model, and the fact that $f_0$ should tune significantly stronger, since $I_c$ should also be reduced by the heat which can have strong influence on $f_0$, c.f. Fig.~\ref{fig:figure1}.
+
+
 
 \begin{figure}
 	\centering
@@ -497,7 +504,7 @@ We find that for all values of $L_J$, including the range in our experiments, th
 \end{figure}
 
 
-\subsection{Fitting procedure for extracting $\beta$}
+\subsection{Fitting procedure for extracting $\beta$}\label{sec:SMduffing}
 
 Following the method described in Ref.~\cite{schmidtCurrentDetectionUsing2020}, the equation of motion of the amplitude field $\alpha(t)$ of a resonator with weak anharmonicity $\beta$ written in the frame rotating with the drive $S_{\rm in}$ is given by
 %
@@ -523,7 +530,22 @@ We reduce the number of free parameters from five to two by fixing $\omega_0$ an
 %
 The remaining parameters are $\beta$ and $\kappa_i$, where the internal loss rate can in fact depend on the drive power, $\kappa_i=\kappa_i(S_{\rm in})$.
 %
+Fixing the loss rate to be constant throughout the fit does not lead to a good fit to the data, as shown in Fig.~\ref{fig:SMpower}.
+%
 Our algorithm first fits the measured data to return constant $\beta$ and $\kappa_i$, and uses these as initial values for a fit to extract the power dependent loss rate, shown in Fig.~\ref{fig:SMFig-lossrates}.
+
+\begin{figure}
+	\centering
+	\includegraphics[width=\linewidth]{chapter-gJJ-CPR/figs/SMFigure-power}
+	\caption{
+		\textbf{Anharmonicity fit under assumption of constant $\kappa_i$.}
+		%
+		Fixing $\kappa_i$ to be the value at lowest drive power \textbf{(a)} results in significantly worse fit than introducing it as constant, but free parameter \textbf{(b)}.
+		%
+		However, best agreement between data and model is reached when introducing nonlinear damping, \textbf{(b)} and Fig.~\ref{fig:figure4}.
+	}
+	\label{fig:SMpower}
+\end{figure}
 
 \subsection{Fitting procedure for extracting $\tau$}
 
@@ -602,14 +624,15 @@ We therefore conclude that our fitting algorithm should present a reliable way o
 	\label{fig:SMres}
 \end{figure}
 
-\subsection{Internal loss rate dependence on gate voltage, bias current and drive power}\label{sec:kintib}
+\subsection{Internal loss rate dependence on bias current, drive power and gate voltage}\label{sec:kintib}
 
 The internal loss rate of our circuit depends on various parameters.
+TODO: Anharmonicity versus line width for panel c
 
 \begin{itemize}
-	\item \textbf{Gate voltage dependence, cf. Fig~\ref{fig:SMFig-lossrates}(a)}
-	\item \textbf{Bias current dependence, cf. Fig~\ref{fig:SMFig-lossrates}(b)}
-	\item \textbf{Drive power dependence, cf. Fig~\ref{fig:SMFig-lossrates}(c)}
+	\item \textbf{Bias current dependence, cf. Fig~\ref{fig:SMFig-lossrates}(a)}
+	\item \textbf{Drive power dependence, cf. Fig~\ref{fig:SMFig-lossrates}(b)}
+	\item \textbf{Gate voltage dependence, cf. Fig~\ref{fig:SMFig-lossrates}(c)}
 \end{itemize}
 
 \begin{figure}
