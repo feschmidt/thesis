@@ -27,32 +27,49 @@ Since inside the superconductor, there are no states allowed for $\epsilon_F - \
 Here also elaborate on the Thouless energy and 2D junctions.
 
 The energy of these particles is given by
-
+%
 \begin{eqnarray}
-E_{\pm}(\delta)=\pm\Delta\sqrt{1-\tau\sin^2(\delta/2)},
+E_{\pm}(\delta,\tau)=\pm\Delta\sqrt{1-\tau\sin^2(\delta/2)},
 \end{eqnarray}
-
+%
 with each Andreev state ($\pm$) carrying a supercurrent
-
+%
 \begin{eqnarray}
-I_{\pm}(\delta)=\frac{1}{\Phi_0}\diffp{ E_{\pm}}{\delta}=\mp\frac{\Delta}{4\Phi_0}\frac{\tau\sin(\delta)}{\sqrt{1-\tau\sin^2(\delta/2)}}
+I_{\pm}(\delta,\tau)=\frac{1}{\Phi_0}\diffp{ E_{\pm}(\delta,\tau)}{\delta}=\mp\frac{\Delta}{4\Phi_0}\frac{\tau\sin(\delta)}{\sqrt{1-\tau\sin^2(\delta/2)}}
 \label{eq:CPR-full}
 \end{eqnarray}
 
 For temperature $T\rightarrow0$, all states with $E<\epsilon_F$ are unoccupied, so only the lower-lying Andreev state $E_{-}(\delta)$ carries current.
+%
 The critical current of the junction is given by the maximum current possible being carried by the state. Mathematically, this equals
-
+%
 \begin{eqnarray}
 I_c=\max_\delta I_{-}(\delta) \Rightarrow \diff{I_{-}(\delta)}{\delta}\equiv0=-\Delta\tau\frac{-4(\tau-2)\cos(\delta)+\tau(3+\cos(2\delta))}{8\sqrt{2}\Phi_0(2-\tau+\tau\cos(\delta))^{3/2}}
 \label{eq:ABS-start}
 \end{eqnarray}
 
-After a lot of math (see Appendix \ref{app:eqs}), we arrive at
-
+After a lot of math (see Appendix \ref{app:eqs}), we arrive at a compact expression for the critical current of a single ABS channel,
+%
 \begin{eqnarray}
 I_c = \frac{\Delta}{2\Phi_0}\left( 1-\sqrt{1-\tau} \right).
 \label{eq:ABS-stop}
 \end{eqnarray}
+
+For finite temperatures, also electronic states above the gap are filled according to the Fermi-Dirac distribution
+\begin{align}
+f(T,x)=\frac{1}{1+e^{x/k_BT}} \ ,
+\label{eq:fermidirac}
+\end{align}
+with the Boltzmann constant $k_B$.
+%
+The total current of an ABS pair traversing the JJ is consequently
+\begin{align}
+I_J(\delta,\tau,T) &= \sum_n \left[ I_+\left(\delta,\tau\right) f\left(T,E_+\left(\delta,\tau\right)\right) + I_-\left(\delta,\tau\right) f\left(T,E_-\left(\delta,\tau\right)\right) \right] \\
+&=\frac{\pi\Delta_0}{2 e R_n} \frac{\sin\delta}{\sqrt{1 - \tau \sin^2\delta / 2}} \tanh\left[\frac{\Delta_0}{k_B T} \sqrt{1 - \tau \sin^2\delta / 2}\right]\ ,
+\label{eq:CPR-ball}
+\end{align}
+
+
 
 \subsection{SIS junctions: $\tau \rightarrow 0$}
 If the weak link between the superconducting banks is an insulator, we can take eq.\ref{eq:ABS-stop} in the limit $\tau \rightarrow 0$ to arrive at\footnote{$\sqrt{1-\tau x}\approx 1-\tau x/2+\mathcal{O}(\tau x)^2\rightarrow 1$.}
@@ -70,10 +87,14 @@ for each Andreev channel. The overall junction critical current for $N$ channels
 They start from the general cases of current-phase relations and develop from there.
 Relevant cases for us are KO-1, point-contact, tunnel junctions and clean and dirty SNS ones.}
 
-\subsection{ScS}
+\subsection{Current bias}
 
-
-\subsection{SNS}
+The washboard potential is 
+%
+\begin{align}
+U(\delta) = -E_J \left( \cos\delta + \frac{I_b}{I_c}\delta \right)
+\label{eq:washboard}
+\end{align}
 
 \subsection{Voltage bias}
 Voltage biasing a Josephson junction leads to a process called Multiple Andreev reflection (MAR).
