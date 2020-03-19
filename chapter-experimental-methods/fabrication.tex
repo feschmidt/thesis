@@ -7,42 +7,61 @@
 
 Fabrication of graphene Josephson junctions is a tedious process:
 % 
-In contrast to integrated circuits, where the active materials are homogeneously deposited over an entire substrate, the best graphene devices to date are not fabricated using scalable techniques, but rather each device is manually assembled and crafted, thus requiring significant efforts, since no two devices have the same exact shape.
-
-Wafer-scale graphene fabrication is usually achieved by chemical vapour deposition of single layer graphene on copper foils.
-% 
-However, only until recently did the thus deposited films exhibit sufficiently low defect densities, which would otherwise result in inferior device quality.
-% 
-Transferring the graphene layer from its growth to the final substrate often contaminates both graphene and final substrate, which typically result in low device quality.
-% 
-Finally, even in the cases where transferred graphene results in low defect and residue densities, patterning into the final device shape always results in contaminations, most often due to organic resist residues.
-
-Since graphene is really only a single atom thick and thus all electronic transport takes place at its surface, contaminations on either side will result in charge carrier scattering and degrade the device performance.
-% 
-Till this day, the vast majority of devices with highest electronic quality, exhibiting phenomena such as ballistic transport, hydrodynamics, or superconductivity, rely on single layer graphene manually exfoliated from bulk graphite crystals~\cite{???,caoCorrelatedInsulatorBehaviour2018,caoUnconventionalSuperconductivityMagicangle2018a}.
+In contrast to integrated circuits, where the active materials are homogeneously deposited over an entire substrate, which enables massive parallel processing, the best graphene devices to date are not fabricated using scalable techniques, but rather each device is manually assembled and crafted.
+%
+This requires significant efforts, since no two devices have the same exact shape, which often results in slightly different properties between devices.
 
 
-Additionally, it is often required to change the carrier density in the graphene layer, for which a gate electrode separated by a dielectric is needed.
+The most promising wafer-scale graphene fabrication is achieved by chemical vapor deposition of single layer graphene on copper foils~\cite{zhangReviewChemicalVapor2013,linBridgingGapReality2018}.
 % 
-Because of the single-layer nature of graphene, it conforms very well to any surface roughness and is very sensitive to trapped charges in the dielectric layers, which called for an ideal gate dielectric.
+However, only until recently did such deposited films exhibit sufficiently low defect densities for high quality transport, which would otherwise result in inferior device quality~\cite{banszerusBallisticTransportExceeding2016a,neumaierIntegratingGrapheneSemiconductor2019}.
 % 
-In 2010, Dean \textit{et al.}~\cite{deanBoronNitrideSubstrates2010} realized the use of hexagonal Boron Nitride (BN) as the (until now) best dielectric and capping layer for graphene devices, showing vast improvements with respect to device mobility.
+Additionally, device quality can be reduced by contaminations that are often encountered when transferring the graphene layer from its growth to the final substrate.
+% 
+Finally, even in the cases where transferred graphene itself only exhibits low defect and residue densities, patterning it into the final device shape almost exclusively contaminates it, most often via organic resist residues.
 
-Like graphene, BN has a hexagonal lattice, albeit consisting of two sub-lattices of boron and nitride atoms, and with a lattice mismatch of \SI{1}{\percent} to graphene.
+Since single layer graphene (SLG) is really only a single atom thick and thus all electronic transport takes place at its surface, contaminations on either side will result in charge carrier scattering and degrade the device performance.
+% 
+Till this day, the vast majority of devices with highest electronic quality, exhibiting phenomena such as ballistic transport, hydrodynamics, or superconductivity, rely on single layer graphene manually exfoliated from bulk graphite crystals~\cite{mayorovMicrometerScaleBallisticTransport2011b,bandurinNegativeLocalResistance2016a,caoCorrelatedInsulatorBehaviour2018,caoUnconventionalSuperconductivityMagicangle2018a}.
+
+
+Additionally, it is often required to tune the carrier density in the graphene layer, for which a gate electrode separated by a dielectric is needed.
+% 
+Because of the single-layer nature of graphene, it conforms very well to any surface roughness and is very sensitive to trapped charges in the dielectric layers.
+%
+Significant efforts were put into removing the substrate entirely, thus freely suspending graphene.
+%
+This, in conjunction with device annealing to burn off fabrication residues, can result in remarkably high-quality samples~\cite{duApproachingBallisticTransport2008a,rickhausBallisticInterferencesSuspended2013,mizunoBallisticlikeSupercurrentSuspended2013a,kiHighQualityMultiterminalSuspended2013,maurandFabricationBallisticSuspended2014,rickhausGateTuneableBeamsplitter2015,rickhausGuidingElectronsFewMode2015}.
+% 
+However, such devices are highly fragile and fabrication can be tedious~\cite{rickhausElectronOpticsBallistic2015}.
+%
+On the other hand, finding an inert dielectric would ease fabrication needs.
+%
+To this end, Dean \textit{et al.}~\cite{deanBoronNitrideSubstrates2010} realized the use of hexagonal Boron Nitride (BN) as the (until now) best dielectric and capping layer for graphene devices, showing vast improvements with respect to device mobility.
+
+
+Like graphene, BN has a hexagonal lattice, albeit consisting of two sub-lattices of boron and nitride atoms with a lattice mismatch of \SI{1}{\percent} to graphene.
 % 
 BN can be exfoliated from bulk crystals to thin insulating films of arbitrary layer number and signifcantly lower surface roughness than any other dielectric, making it a perfect match for graphene encapsulation.
 % 
-The highest quality BN crystals, i.e. the ones exhibiting the lowest charge defect density, are the ones made by high pressure by Kenji Watanabe and Takashi Taniguchi at NIMS, Japan~\cite{taniguchiSynthesisHighpurityBoron2007}.
+The highest quality BN crystals, i.e. the ones exhibiting the lowest charge defect density, are made by high pressure synthesis by Kenji Watanabe and Takashi Taniguchi at the \textit{National Institute for Material Sciences} (NIMS), Japan~\cite{taniguchiSynthesisHighpurityBoron2007,zastrowMeetCrystalGrowers2019}.
 
-As confirmed by atomic force and scanning tunneling microscopy, SLG on BN exhibits a significantly lower roughness compared to samples on \ce{SiO2}, until then the standard dielectric for graphene devices.
+As confirmed by atomic force and scanning tunneling microscopy, SLG on BN exhibits significantly lower roughness compared to samples on \ce{SiO2}, until then the standard dielectric for graphene devices.
 % 
-In addition, variations in the local density of states of SLG on BN can thus be reduced by a factor ten, while charge fluctuations are suppressed by a factor 100, as compared to SLG directly on \ce{SiO2}~\cite{xueScanningTunnellingMicroscopy2011,deckerLocalElectronicProperties2011}.
+In addition, variations in the local density of states of SLG on BN is reduced by a factor ten, while charge fluctuations are suppressed by a factor 100, as compared to SLG directly on \ce{SiO2}~\cite{xueScanningTunnellingMicroscopy2011,deckerLocalElectronicProperties2011}.
 % 
-Complete screening of any trapped charges in the dielectric layer can finally be achieved with gate electrodes out of graphite instead of conventional metals~\cite{ponomarenkoTunableMetalInsulator2011,ametNovelPhenomenaDriven2014}.
+Complete screening of any trapped charges in the dielectric layer is possible with gate electrodes out of graphite instead of conventional metals~\cite{ponomarenkoTunableMetalInsulator2011,ametNovelPhenomenaDriven2014}.
 %
 BN encapsulation even enables ballistic transport in very high quality CVD graphene devices~\cite{banszerusBallisticTransportExceeding2016a}.
 
-However, assembling a heterostructure of BN-G-BN, with subsequent patterning, and deposition of gate metals and dielectrics results in an extensive and long process, with processes varying between most research groups.
+
+Flake transfer procedures have since paved the way for the assembly of so-called van der Waals heterostructures, named so due to the van der Waals forces holding the flakes together.
+%
+This has allowed for all kinds of exfoliatable crystals to be stacked, which enabled a new method of studying emergent phenomena such as induced spin orbit coupling, ferromagnetism or superconductivity~\cite{geimVanWaalsHeterostructures2013a}.
+%
+In this PhD thesis, however, we limit ourselves to the use of only SLG and BN to study induced superconductivity in the SLG.
+%
+Even so, assembling a heterostructure of BN-G-BN, with subsequent patterning, and deposition of gate metals and dielectrics results in an extensive and long process, with processes varying between most research groups.
 % 
 In the following, we will detail the fabrication procedure used in the course of this thesis that resulted in the best measured devices.
 
@@ -56,53 +75,58 @@ For optimal contrast~\cite{blakeMakingGrapheneVisible2007b}, we used silicon sub
 % 
 Details on dicing parameters are given in Sec.~\ref{sec:fab-packaging}.
 
+
 As mentioned earlier, any organic residues that come in contact with graphene will very likely lead to inferior device performance.
 % 
 Specifically, after dicing the chips, they need to be cleaned extensively in order to remove any leftovers from the dicing resist.
 % 
-To this end, diced chips are placed in a teflon holder and transferred through four \SI{50}{\milli\liter} glass beakers filled with acetone, acetone, isopropyl alcohol (isoporpanol, IPA) and IPA, each time ultrasonicated for \SI{5}{\minute}.
+To this end, diced chips are placed in a teflon holder and transferred through four \SI{50}{\milli\liter} glass beakers filled with acetone, acetone, isopropyl alcohol (isopropanol, IPA) and IPA, each time ultrasonicated for \SI{5}{\minute}.
 % 
 The chips can either be blow-dried one by one using high-pressure nitrogen gas, or by rinsing the teflon holder with the chips still on it in three water baths and placing it on a petri dish in an oven.
 % 
-To remove acetone and IPA residues, the chips ultrasonicated for \SI{5}{\minute} in nitric acid and blow-dried after rinsing in water.
+To remove acetone and IPA residues, the chips are ultrasonicated for \SI{5}{\minute} in nitric acid and blow-dried after rinsing in water.
 % 
-We found that an additional soft oxygen plasma to functionalize the \ce{SiO2} surface (\SI{200}{sccm} of \ce{O2}, \SI{600}{\watt}, \SI{2}{\minute}, no cage inside the Tepla) just before, i.e. not more than \SI{15}{\minute} prior to, flake exfoliation increased flake exfoliation yield, regardless of graphene or BN.
+We found that an additional soft oxygen plasma to functionalize the \ce{SiO2} surface (\SI{200}{sccm} of \ce{O2}, \SI{600}{\watt}, \SI{2}{\minute}, no cage in a \textit{PVA Tepla 300}) just before, i.e. not more than \SI{15}{\minute} prior to, flake exfoliation increased flake exfoliation yield, regardless of graphene or BN.
 
-
+While there already exist fully automized exfoliation-to-heterostructure stations~\cite{masubuchiAutonomousRoboticSearching2018a}, we performed all of the following steps manually.
+%
 Flake exfoliation is achieved by manually thinning down bulk crystals until micron-sized flakes of only one or two (SLG, BLG) or a few tens of layers (BN) thickness are left on a chip.
 % 
-The author estimates that there are as many different ways of flake exfoliation as there are researchers working on this procedure.
+We estimate that there are as many different ways of flake exfoliation as there are researchers working on this procedure.
 % 
-The procedure that worked best for us concerning BN exfoliation consists of placing individual BN crystallites (approximately a few $(\SI{100}{\micro\meter})^3$ in volume) on a piece of \textit{Scotch} tape \textit{"Magic"} or \textit{Nitto} tape, and subsequently folding over said piece of tape numerous times, such that one acquires a closed layer of thin BN crystallites.
+The procedure that worked best for us concerning BN exfoliation consists of placing individual BN crystallites (approximately a few \SI{100x100x100}{\micro\meter} in volume) on a piece of \textit{Scotch} tape \textit{"Magic"} or \textit{Nitto} tape, and subsequently folding over said piece of tape numerous times, such that one acquires a closed layer of thin BN crystallites.
 % 
 In the case of graphene, we would peel off a preferably closed film of graphite from a single \SI{1x1}{\centi\meter} HOPG crystal with a piece of tape, followed by subsequent folding of the piece of tape until we acquired a homogeneous, yet closed film of thin graphite.
 
-Once we were satisfied with the tape template, we would use pre-cut \SI{8x8}{\milli\meter} pieces of clean tape to peel off crystals from the template, the press the side with crystals on the small piece of tape onto a previously cleaned substrate, keep pressure applied using our index finger or thumb for approximately \SI{30}{\second}, then transfer the substrate with the tape still on to a hot plate and leave the substrate sit on the hot plate for \SIrange{2}{5}{\minute}.
+
+Once satisfied with the tape template, we used pre-cut \SI{8x8}{\milli\meter} pieces of clean tape to peel off crystals from the template and press the side with crystals on the small piece of tape onto a previously cleaned substrate.
+%
+After having kept pressure applied for approximately \SI{30}{\second}, we transferred the substrate with the tape still on to a hot plate and left the chip sit for \SIrange{2}{5}{\minute}.
 % 
 We found highest flake densities for temperatures of \SI{50}{\celsius} for \textit{Nitto} and \SI{100}{\celsius} for \textit{Magic} tape.
 % 
-Finally, the chip was transferred off the hot plate, left to cool for \SI{1}{\minute} and the tape would be gently peeled off, while holding the substrate in place with a pair of tweezers.
+Finally, the chip was transferred off the hot plate, left to cool for \SI{1}{\minute} and the tape was gently peeled off, while holding the substrate in place with a pair of tweezers.
 % 
-During this process, no further pressure should be applied to the tape as this usually resulted in lots of tape residues on the chip.
+During this process, no further pressure should be applied to the tape as this usually results in lots of tape residues on the chip.
 
 
 The process of exfoliation turns out to be a tradeoff between getting as many flakes as possible, and getting the lowest tape residues possibles.
 % 
-\textit{Magic} tape has a higher adhesive strength, thus resulting in a higher flake density and predominantly large flakes (i.e. $>(\SI{20}{\micro\meter})^2$) than \textit{Nitto} tape.
+\textit{Magic} tape has a higher adhesive strength, thus resulting in a higher flake density and predominantly large flakes (i.e. larger than \SI{20x20}{\micro\meter}) compared to \textit{Nitto} tape.
 % 
-On the other hand, this comes at the cost of more tape residues on both the substrate and the individual flakes.
+On the other hand, this comes at the cost of more tape residues on both substrate and the individual flakes.
 % 
 Tape residues can lead to enhanced charge carrier scattering of graphene films, thus severely limiting device quality.
 % 
 Additionally, they increase the chance of bubble formation (see below), thus limiting the available sample space.
 % 
-Tape residues can be entirely removed by thermal annealing at \SI{400}{\celsius} in  an \ce{Ar+H2} atmosphere.
+Tape residues can be entirely removed by thermal annealing at \SI{400}{\celsius} in  an \ce{Ar}+\ce{H2} atmosphere.
 % 
-However, it extremely difficult to pick up or transfer flakes treated in this manner for heterostructure assembly (see below).
+However, it proved extremely difficult to pick up or transfer flakes treated in this manner for heterostructure assembly.
 % 
 While we found that annealing at temperatures below \SI{300}{\celsius} was still compatible with flake transfer, significantly less tape residues were removed this way.
 % 
-It is thus advisable to omit thermal annealing until the first lithography step.
+It is thus advisable to omit thermal annealing until the first lithography step and instead settle on a slightly lower exfoliation yield.
 
 \subsubsection{Heterostructure assembly}
 
@@ -259,13 +283,14 @@ Finally, trapped dirt at the interfaces between BN and graphene
 
 The graphene devices presented in this thesis consist of the BN-G-BN sandwich and G-Josephson junction, and the surrounding RF circuitry.
 %
-The RF circuits are patterned first on either large silicon chips, or \SI{2}{in} sapphire wafers.
+The RF circuits are patterned first on either large silicon chips, or \SI{2}{inch} sapphire wafers.
 %
 In a second process flow, the vdW heterostructures are delaminated and contacts and top gates to the Josephson junctions are made.
 
 We fabricate the graphene Josephson junctions using the etch-fill technique with top-gates, consisting of a combination of Ebeam lithography, reactive ion etching and sputter deposition, in the following fashion:
 
-\begin{tabular}{cc}
+\noindent
+\begin{tabularx}{\textwidth}{@{}cY@{}}
 	\hline \hline
 	\textbf{1.} & \textbf{Making NbTiN contacts using etch-fill} \\
 	\hline
@@ -276,7 +301,7 @@ We fabricate the graphene Josephson junctions using the etch-fill technique with
 	%\hline
 	Development & MIBK:IPA (1:3) for \SI{90}{\second}, IPA \SI{30}{\second}. \\
 	%\hline
-	Dry etching & \ce{CHF3}+\ce{O2} \SI{40}{sccm}+\SI{4}{sccm} @ \SI{60}{\watt}, \SI{80}{\micro\bar} for \SI{1}{\minute}\footnote{etch rate roughly \SI{60}{\nano\meter\per\minute}} \\
+	Dry etching & \ce{CHF3}+\ce{O2} \SI{40}{sccm}+\SI{4}{sccm} @ \SI{60}{\watt}, \SI{80}{\micro\bar} for \SI{1}{\minute} (etch rate roughly \SI{60}{\nano\meter\per\minute}) \\
 	%\hline
 	Metal deposition & \SI{5}{\nano\meter} NbTi and \SIrange{60}{70}{\nano\meter} NbTiN \\
 	%\hline
@@ -284,8 +309,7 @@ We fabricate the graphene Josephson junctions using the etch-fill technique with
 	\hline
 	\textbf{2.} & \textbf{Shaping the device:} \\
 	\hline
-	& Same as for making the contacts, but with lower etch \\
-	& pressure (\SI{50}{\micro\bar}) and without the metal deposition. \\
+	& Same as for making the contacts, but with lower etch pressure (\SI{50}{\micro\bar}) and without the metal deposition. \\
 	\hline
 	\textbf{3.} & \textbf{Top-gate dielectric} \\
 	\hline
@@ -302,7 +326,7 @@ We fabricate the graphene Josephson junctions using the etch-fill technique with
 	& Same as for making the contacts, but without etching \\
 	& and with metal thickness of \SIrange{80}{120}{\nano\meter}. \\
 	\hline \hline
-\end{tabular}
+\end{tabularx}
 
 
 Figure 4, if possible: Cross-sectional TEM of one of our devices (courtesy Sonia's lab)
@@ -336,7 +360,8 @@ Figure 4, if possible: Cross-sectional TEM of one of our devices (courtesy Sonia
 
 The RF circuits in Chapters~\ref{chap:gJJ} and \ref{chap:gJJ-power} are fabricated as follows, while the one in Chapter~\ref{chap:current-detection} used Al:Si as superconducting layer and silicon as base layer, cf. the Supplementary Material of Chapter~\ref{chap:current-detection}.
 
-
+%\noindent
+%\begin{tabularx}{\textwidth}{cc}
 \begin{tabular}{cc}
 	\hline \hline
 	\textbf{1.} & \textbf{Deposit and pattern MoRe base layer} \\

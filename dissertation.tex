@@ -19,6 +19,8 @@
 \usepackage[version=4]{mhchem}
 \usepackage{accents}
 \usepackage{multirow}
+\usepackage{tabularx}
+\newcolumntype{Y}{>{\centering\arraybackslash}X} % automatic linebreak in tables, with centering
 
 
 \definecolor{dkgreen}{rgb}{0,0.6,0}
@@ -80,11 +82,11 @@
 %\include{acks/acks}
 
 %% Use letters for the chapter numbers of the appendices.
-%\appendix
+\appendix
 %\include{appendix/app-equations}
-%\include{appendix/app-code}
-%\include{appendix/app-ebeam}
-%\include{appendix/app-copperpowder}
+\include{appendix/app-code}
+\include{appendix/app-ebeam}
+\include{appendix/app-copperpowder}
 %\include{appendix/app-notes}
 %
 %%% Turn off thumb indices for unnumbered chapters.
