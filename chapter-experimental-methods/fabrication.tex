@@ -130,18 +130,41 @@ It is thus advisable to omit thermal annealing until the first lithography step 
 
 \subsubsection{Heterostructure assembly}
 
-%TODO: check for accuracy
-Our transfer setup is the same as in Ref.~\cite{castellanos-gomezDeterministicTransferTwodimensional2014d}, but upgraded with a heater stage capable of fast heating and cooling cycles between room temperature and \SI{150}{celsius}.
+For assembling our BN-G heterostructures, we used the original transfer setup of Castellanos-Gomez \textit{et al.}~\cite{castellanos-gomezDeterministicTransferTwodimensional2014d}, upgraded with a heater stage capable of fast heating and cooling cycles between room temperature and \SI{200}{\celsius}.
+%
+Heterostructures were assembled with a modified version of the procedures developed by Pizzocchero \textit{et al.}~\cite{pizzoccheroHotPickupTechnique2016a} and Zomer \textit{et al.}~\cite{zomerFastPickTechnique2014b}.
 % 
-We prepared the PPC solution by dissolving PPC at a \SI{15}{\percent} weight ratio in anisole at \SI{50}{\celsius}, while stirring with a fish magnet until everything was properly dissolved.
-% 
-Our assembly using PPC is based on Ref.~\cite{pizzoccheroHotPickupTechnique2016a} with minor modifications adjusted to our transfer setup.
-% 
-For every pick-and-place step, we fixed the substrate from or to which to transfer the flakes with vacuum, and used a single glass slide with a bubble of PDMS covered with PPC.
+BN-G-BN structures are formed by repeated pick-and-place of SLG and few-layer BN (flake thickness between \SIrange{10}{50}{\nano\meter}).
+%
+The process makes use of the change in viscoelasticity of an adhesive film on top of an elastic cushion of polydimethylsiloxane (PDMS), which is stuck to a microscope glass slide.
+%
+Heating this transfer template above the glass transition temperature $T_g$ of the polymer expands the cushion and allows the adhesive film to become viscous, thus conforming and adhering strongly to flakes covered by it.
+%
+Cooling below $T_g$ then solidifies the polymer and flakes will be picked up by lifting the transfer template.
+
+We used two different adhesive films, either polypropylene carbonate (PPC) or polybisphenol-a-carbonate (PC).
+%
+We prepared the PPC solution by dissolving PPC acquired from \textit{SigmaAldrich}\footnote{Poly(propylene carbonate), average $M_n\sim50,000$ by GPC. SigmaAldrich product no. 389021, CAS 25511-85-7, MDL MFCD00197919} at a \SI{15}{\percent} weight ratio in anisole\footnote{Anisole, ReagentPlus\textsuperscript{\textregistered}, \SI{99}{\percent}. SigmaAldrich product no. 123226, CAS 100-66-3, MDL MFCD00008354} at \SI{50}{\celsius}, while stirring with a fish magnet until everything was properly dissolved.
+%
+The PC\footnote{Poly(Bisphenol A carbonate), average $m_W\sim 45,000$ by GPC. SigmaAldrich product no. 181625, CAS 25037-45-0, MDL MFCD00084476} was dissolved in chloroform\footnote{Chloroform, anhydrous, $\geq\SI{99}{\percent}$, contains \SIrange{0.5}{1.0}{\percent} ethanol as stabilizer. SigmaAldrich product no. 288306, CAS 67-66-3, MDL MFCD00000826} at a \SI{6}{\percent} weight ratio.
+%
+While PPC requires lower working temperatures than PC, thus making it easier to align template and substrate, we have observed that temperatures above \SI{110}{\celsius} resulted in fewer bubbles at the flake interfaces during transfer.
+%
+The advantage of PC over PPC is that it is a much stronger adhesive, so the intermediate flake delamination (step \ref{flake-delam}) can be skipped.
+%
+However, it needs to be kept in a fridge in order to not degrade, and cannot be spin-coated on the PDMS layer, whereas PPC can.
+%
+Instead, a droplet of PC is placed on a \SI{20x20}{\milli\meter} glass coverslip.
+%
+A second coverslip is dropped on the first one, thus spreading the droplet in between.
+%
+With care, but in a swift motion, we pull the top glass piece off, thus leaving behind a thin film of PC on the bottom glass slide, which can be peeled off using a piece of tape and placed on the PDMS stamp.
+
+For every pick-and-place step, we fixed the substrate from or to which to transfer the flakes with vacuum, and used a single glass slide with a bubble of PDMS covered with PPC or PC.
 %
 Both glass slide and chip could be individually moved with micrometer screws.
 %
-The following steps describe our typical working process for achieving high-quality interfaces:
+The following steps describe our typical working process for achieving high-quality interfaces using the PPC method:
 
 \begin{enumerate}
 	\item Align the top BN flake with the center area of the PDMS/PPC template.
@@ -190,19 +213,7 @@ The following steps describe our typical working process for achieving high-qual
 	If needed, transfer the sandwich to another substrate.
 \end{enumerate}
 
-Another polymer commonly used for heterostructure assembly is PC.
-%
-Its advantage over PPC is that it is a much stronger adhesive, so the intermediate flake delamination (step \ref{flake-delam}) can be skipped.
-%
-However, it needs to be kept in a fridge in order to not degrade, and cannot be spin-coated on the PDMS layer.
-%
-Instead, a droplet of PC is placed on a \SI{20x20}{\milli\meter} glass coverslip.
-%
-A second coverslip is dropped on the first one, thus spreading the droplet in between.
-%
-With care, but in a swift motion, we pull the top glass piece off, thus leaving behind a thin film of PC on the bottom glass slide, which can be peeled off using a piece of tape and placed on the PDMS stamp.
-%
-For flake transfer, we follow the above steps, except that the transfer takes place at a base temperature of \SI{110}{\celsius} instead of \SI{40}{\celsius}, and to activate the adhesion to PC, heating to \SIrange{130}{140}{\celsius} instead of \SIrange{80}{90}{\celsius} is required.
+For flake transfer using PC, we follow the above steps, except that the transfer takes place at a base temperature of \SI{110}{\celsius} instead of \SI{40}{\celsius}, and to activate the adhesion to PC, heating to \SIrange{130}{140}{\celsius} instead of \SIrange{80}{90}{\celsius} is required.
 
 
 \begin{figure}
