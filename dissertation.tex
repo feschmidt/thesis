@@ -26,22 +26,39 @@
 \definecolor{dkgreen}{rgb}{0,0.6,0}
 \definecolor{gray}{rgb}{0.5,0.5,0.5}
 \definecolor{mauve}{rgb}{0.58,0,0.82}
+\definecolor{skyblue}{rgb}{0.36,0.8,0.86}
+\definecolor{darkgreen}{rgb}{0.18,0.54,0.34}
+\definecolor{maroon}{rgb}{0.64,0.16,0.16}
+\definecolor{darkpink}{rgb}{0.75,0.25,0.5}
+
 \lstset{frame=single,
-	language=C,
+	language=[ISO]C++,
 	aboveskip=3mm,
 	belowskip=3mm,
 	showstringspaces=false,
 	columns=flexible,
-	basicstyle={\small\ttfamily},
+%	basicstyle={\small\ttfamily},
 	numbers=none,
-	numberstyle=\tiny\color{gray},
+	numberstyle=\color{gray},
+%	keywordstyle=\color{blue},
+%	commentstyle=\color{dkgreen},
+%	stringstyle=\color{mauve},
+	rulecolor=\color{black},
+	breaklines=true,
+	breakatwhitespace=true,
+	tabsize=3,
 	keywordstyle=\color{blue},
 	commentstyle=\color{dkgreen},
 	stringstyle=\color{mauve},
-	breaklines=true,
-	breakatwhitespace=true,
-	tabsize=3
+	basicstyle={\color{blue}\small\ttfamily},
+	identifierstyle={\color{black}},
+	literate=*
+	{*}{{{\color{black}*}}}{1}
+	{=}{{{\color{black}=}}}{1}
+	{;}{{{\color{black};}}}{1}
+	{.7}{{{\color{blue}.7}}}{2},
 }
+%\def\lst@visiblespace{\lst@ttfamily{\ }{\ }}
 \usepackage{afterpage}
 
 \begin{document}
@@ -51,19 +68,19 @@
 \author{Felix Erik}{Schmidt}
 
 %% Use Roman numerals for the page numbers of the title pages and table of contents.
-\frontmatter
+%\frontmatter
 
 %\include{title/title-en}
-
-%% The (optional) dedication can be used to thank someone or display a significant quotation.
-%\dedication{Für Katrin und Felicitas}
-%\newchapstyle
-%\tableofcontents
-
-
+%
+%%% The (optional) dedication can be used to thank someone or display a significant quotation.
+%%\dedication{Für Katrin und Felicitas}
+%%\newchapstyle
+%%\tableofcontents
+%
+%
 %\include{summary/summary}
-%\include{preface/preface}
-
+% %%%\include{preface/preface}
+%
 %% Use Arabic numerals for the page numbers of the chapters.
 \mainmatter
 
@@ -71,27 +88,27 @@
 \thumbtrue
 
 %\include{chapter-introduction/introduction}
-%\include{chapter-theory/theory}
+% %%%\include{chapter-theory/theory}
 \include{chapter-experimental-methods/experiment}
 %\include{chapter-gJJ/gJJ}
 %\include{chapter-gJJ-CPR/gJJ-CPR}
-%\include{chapter-gJJ-misc/gJJ-misc}
 %\include{chapter-currentdetection/currentdetection}
 %\include{conclusion/conclusion}
-%% \include{epilogue/epilogue}
+%% %%%\include{epilogue/epilogue}
 %\include{acks/acks}
-
-%% Use letters for the chapter numbers of the appendices.
+%
+%%% Use letters for the chapter numbers of the appendices.
 \appendix
-%\include{appendix/app-equations}
-\include{appendix/app-code}
+%\include{chapter-gJJ-misc/gJJ-misc}
+%\include{appendix/app-copperpowder}
 \include{appendix/app-ebeam}
-\include{appendix/app-copperpowder}
-%\include{appendix/app-notes}
-%
-%%% Turn off thumb indices for unnumbered chapters.
+\include{appendix/app-code}
+%\include{appendix/app-equations}
+%% %%%\include{appendix/app-notes}
+%%
+%%%% Turn off thumb indices for unnumbered chapters.
 %\thumbfalse
-%
+%%
 %\include{cv/cv}
 %\include{publications/publications}
 \end{document}

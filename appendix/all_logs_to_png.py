@@ -1,14 +1,18 @@
-import numpy as np
+import glob
+import logging
 import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d import Axes3D
-import glob
-import traceback
-import logging
+import numpy as np
 import pandas as pd
+import seaborn as sns
+sns.set()
+sns.set_style('white')
+sns.set_style('ticks')
+import traceback
 
 ebeam = input("For which ebeam is the analysis supposed to be run?\n")
 
-logfiles = sorted(glob.glob('log_'+ebeam+'/*.log'))
+logfiles = sorted(glob.glob('log_' + ebeam + '/*.log'))
 print(logfiles)
 
 # Look for the following line:
@@ -99,25 +103,26 @@ for myfile in logfiles:
         x = np.array(x)
         y = np.array(y)
         hs = np.array(hs)
-        dx = abs(x[-1]-x[0])
-        dy = abs(y[-1]-y[0])
-        DX = np.linspace(-dx/2, dx/2, len(x))
-        DY = np.linspace(-dy/2, dy/2, len(y))
+        dx = abs(x[-1] - x[0])
+        dy = abs(y[-1] - y[0])
+        DX = np.linspace(-dx / 2, dx / 2, len(x))
+        DY = np.linspace(-dy / 2, dy / 2, len(y))
 
         try:
             fig, ax = plt.subplots()
             # ax.imshow(hs,extent=(x.min(), x.max(), y.max(), y.min()))
-            heightmap = ax.imshow(
-                hs, extent=(-dx/2, dx/2, -dy/2, dy/2), cmap='RdBu_r')
+            heightmap = ax.imshow(hs,
+                                  extent=(-dx / 2, dx / 2, -dy / 2, dy / 2),
+                                  cmap='RdBu_r')
             cbar = plt.colorbar(heightmap)
             cbar.set_label('Height (um)')
             plt.xlabel('x (mm)')
             plt.ylabel('y (mm)')
             plt.title(filename)
             plt.tight_layout()
-            plt.savefig('png_'+ebeam+'/2d/'+filename +
-                        '.png', bbox_inches='tight')
-        #     plt.show()
+            plt.savefig('png_' + ebeam + '/2d/' + filename + '.png',
+                        bbox_inches='tight')
+            #     plt.show()
             plt.close()
 
             X, Y = np.meshgrid(DX, DY)
@@ -129,9 +134,9 @@ for myfile in logfiles:
             ax.set_ylabel('y (mm)')
             ax.set_zlabel('Height (um)')
             plt.tight_layout()
-            plt.savefig('png_'+ebeam+'/3d/'+filename +
-                        '3D.png', bbox_inches='tight')
-        #     plt.show()
+            plt.savefig('png_' + ebeam + '/3d/' + filename + '3D.png',
+                        bbox_inches='tight')
+            #     plt.show()
             plt.close()
 
         except Exception as e:

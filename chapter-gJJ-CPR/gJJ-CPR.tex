@@ -737,55 +737,55 @@ Naively, one would assume the RF measurement to result in $L_J$ to be larger tha
 %
 Nonetheless, the fit model accounting for the resonator tunability results in the opposite behavior.
 
-To fit the bias current dependence data for extracting $\tau$, we first keep $\tau$ fixed and compare the fit residuals for various $\tau\in[0,1]$, cf. Fig.~\ref{fig:SMres}(a).
+To fit the bias current dependence data for extracting $\tau$, we first keep $\tau$ fixed and compare the fit residuals for various $\tau\in[0,1]$.
 %
 In a second step, we set $\tau$ as additional free parameter with the best results for $f_r$, $L_r$ and $I_c$, and set the initial value of $\tau$ as the one with previously determined minimum reduced $\chi^2$.
 %
 The fit converges more reliably than by setting $\tau$ as free parameter from the start, since this way the fit does not get trapped in a local minimum.
 
-Both current and frequency noise, however, can result in artificial global minima in $\chi^2(\tau)$, as shown in Fig.~\ref{fig:SMres}(b-c).
+Both current and frequency noise, however, can result in artificial global minima in $\chi^2(\tau)$.
 %
 For a critical current of \SI{2}{\micro\ampere} and bias currents up to $0.9I_c$, already $\sigma_I\geq\SI{1}{\nano\ampere}$ is enough to significantly throw off the fit for low values of $\tau$.
 %
 Frequency noise of $\sigma_f<\SI{1}{\mega\hertz}$ has no influence on the fitting algorithm.
 %
-As the responsivity $\partial f_0/\partial I_b$ increases with $I_b$, so does the frequency noise for a fixed current noise, cf. Fig.~\ref{fig:SMres}(d).
+As the responsivity $\partial f_0/\partial I_b$ increases with $I_b$, so does the frequency noise for a fixed current noise.
 %
 From the average data fluctuations and comparing these with the expected $\sigma_f(\sigma_I)$, we estimate $\sigma_I<\SI{1}{\nano\ampere}$ in our setup.
 %
 We therefore conclude that our fitting algorithm should present a reliable way of extracting $\tau$. 
 
-\begin{figure}
-	\centering
-	\includegraphics[width=\linewidth]{chapter-gJJ-CPR/figs/SMFigure-tauparams}
-	\caption{
-		\textbf{Influence of $\tau$ on extracted fit parameters with Eq.~\ref{eq:Pogorzalek}.}
-		Increasing $\tau$ (dashed line in \textbf{(a)}) results in a larger $L_J$ (dashed line in \textbf{(e)}), while the other fit parameters (dashed lines in \textbf{(b-d)}) remain constant.
-		%
-		In order for a fit model using Eq.~\ref{eq:Pogorzalek} under the assumption of a sinusoidal CPR (solid lines) to reproduce the data (points), significant deviations from the true parameters occur.
-		%
-		Specifically, the fit model returns a larger critical current than expected which leads to a reduced calculated $L_J$, even though the real $L_J$ increases with $\tau$.
-	}
-	\label{fig:SMtau}
-\end{figure}
-
-\begin{figure}
-	\centering
-	\includegraphics[width=\linewidth]{chapter-gJJ-CPR/figs/SMFigure-noise}
-	\caption{
-		\textbf{Influence of $\tau$ and noise on fit result.}
-		\textbf{(a)} Assuming a sinusoidal CPR for Eq.~\ref{eq:Pogorzalek} to fit data originating from a forward skewed CPR results in minimum fit residuals for $\tau=0$ (solid line).
-		%
-		Assuming the correct $\tau$ however results in minimum residuals (dashed line).
-		%
-		\textbf{(b-d)} Both current and frequency noise can significantly throw off the fitting algorithm by creating artificially global residual minima.
-		%
-		Plotted are calculations for $I_c=\SI{2}{\micro\ampere}$.
-		%
-		We estimate $\sigma_I<\SI{1}{\nano\ampere}$ in our setup.
-	}
-	\label{fig:SMres}
-\end{figure}
+%\begin{figure}
+%	\centering
+%	\includegraphics[width=\linewidth]{chapter-gJJ-CPR/figs/SMFigure-tauparams}
+%	\caption{
+%		\textbf{Influence of $\tau$ on extracted fit parameters with Eq.~\ref{eq:Pogorzalek}.}
+%		Increasing $\tau$ (dashed line in \textbf{(a)}) results in a larger $L_J$ (dashed line in \textbf{(e)}), while the other fit parameters (dashed lines in \textbf{(b-d)}) remain constant.
+%		%
+%		In order for a fit model using Eq.~\ref{eq:Pogorzalek} under the assumption of a sinusoidal CPR (solid lines) to reproduce the data (points), significant deviations from the true parameters occur.
+%		%
+%		Specifically, the fit model returns a larger critical current than expected which leads to a reduced calculated $L_J$, even though the real $L_J$ increases with $\tau$.
+%	}
+%	\label{fig:SMtau}
+%\end{figure}
+%
+%\begin{figure}
+%	\centering
+%	\includegraphics[width=\linewidth]{chapter-gJJ-CPR/figs/SMFigure-noise}
+%	\caption{
+%		\textbf{Influence of $\tau$ and noise on fit result.}
+%		\textbf{(a)} Assuming a sinusoidal CPR for Eq.~\ref{eq:Pogorzalek} to fit data originating from a forward skewed CPR results in minimum fit residuals for $\tau=0$ (solid line).
+%		%
+%		Assuming the correct $\tau$ however results in minimum residuals (dashed line).
+%		%
+%		\textbf{(b-d)} Both current and frequency noise can significantly throw off the fitting algorithm by creating artificially global residual minima.
+%		%
+%		Plotted are calculations for $I_c=\SI{2}{\micro\ampere}$.
+%		%
+%		We estimate $\sigma_I<\SI{1}{\nano\ampere}$ in our setup.
+%	}
+%	\label{fig:SMres}
+%\end{figure}
 
 \references{dissertation}
 

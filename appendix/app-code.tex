@@ -11,14 +11,12 @@ The following source code describes how to generate \texttt{.ppm} files based on
 
 \lstinputlisting[language=python,caption=ppm\_for\_spyview.py]{appendix/ppm_for_spyview.py}
 
-Sources:
-
-* [Stackexchange](https://stackoverflow.com/questions/25408393/getting-individual-colors-from-a-color-map-in-matplotlib)
-
-* [Solarian programmer](https://solarianprogrammer.com/2017/10/25/ppm-image-python-3/)
-
+\clearpage
 \section{Ebeam height map visualization}
-TODO: Fill with useful info
+
+The Raith EBPGs have the capability to record the height of the chip before exposure by measuring the angular reflection of a laser beam off the chip surface.
+%
+The following is a python file to extract this data from the log files in a user folder on either one of the TU Delft EBPGs, and plot these height maps as single pngs.
 
 \lstinputlisting[language=python,breaklines=true,caption=all\_logs\_to\_png.py]{appendix/all_logs_to_png.py}
 

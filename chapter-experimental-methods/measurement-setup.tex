@@ -123,14 +123,19 @@ For a measurement bandwidth of \SI{1}{\hertz} and a resistor of \SI{50}{\ohm}, t
 Moreover, current and voltage fluctuations originating from room temperature electronics can carry the typical \SI{50}{\hertz} interference (also dubbed \textit{mains hum}), along with other, high-frequency, components.
 In our lab, we suppress the mains hum by physically separating any electronic equipment powered by the \SI{50}{\hertz} power system from our DC electronics.
 Our DC electronics, the IVVI rack, is home-made at \textit{DEMO}\footnote{Dienst Elektronische en Mechanische Ontwikkeling, \url{https://www.tudelft.nl/demo/}} of TU Delft.
+
 \begin{itemize}
 	\item 50 Hz
 	\item other sources of electronic noise
 	\item battery powered and separated grounds, including measurement?
 	\item low pass filters
+	\item noise temperature calculation a la Bluefors
+	\item pictures
 \end{itemize}
 
 The detailed recipe for making the copper powder filters can be found in appendix \ref{app:copperpowder}.
+
+All measurements presented in this thesis were performed at millikelvin temperatures, using dry dilution refrigerator models \textit{Triton} from \textit{Oxford Instruments} or \textit{LD-400} from \textit{Bluefors Oy}.
 
 \begin{figure}
 	\centering
@@ -147,24 +152,16 @@ The detailed recipe for making the copper powder filters can be found in appendi
 	\label{fig:filter}
 \end{figure}
 
-\subsection{Fridge wiring}
-
-\begin{figure}
-	\centering
-	\includegraphics[]{{chapter-experimental-methods/figs-packaging/wiring.svg}.png}
-	\caption{
-		\textbf{Cryogenic fridge wiring.}
-		\textbf{A,} Inside view of a Bluefors LD dry dilution refrigerator.
-		\textbf{B,} Photograph of a four-port PCB mounted on a copper block with rails.
-		\textbf{C,} Fully enclosed sample mounted inside of a hand-wound magnet and bolted to the millikelvin stage of the dilution refrigerator.
-	}
-	\label{fig:wiring}
-\end{figure}
-
-All measurements presented in this thesis were performed at millikelvin temperatures, using dry dilution refrigerator models \textit{Triton} from \textit{Oxford Instruments} or \textit{LD-400} from \textit{Bluefors Oy}.
-
-\begin{itemize}
-	\item noise temperature calculation a la Bluefors
-	\item pictures
-\end{itemize}
-
+%\subsection{Fridge wiring}
+%
+%\begin{figure}
+%	\centering
+%	\includegraphics[]{{chapter-experimental-methods/figs-packaging/wiring.svg}.png}
+%	\caption{
+%		\textbf{Cryogenic fridge wiring.}
+%		\textbf{A,} Inside view of a Bluefors LD dry dilution refrigerator.
+%		\textbf{B,} Photograph of a four-port PCB mounted on a copper block with rails.
+%		\textbf{C,} Fully enclosed sample mounted inside of a hand-wound magnet and bolted to the millikelvin stage of the dilution refrigerator.
+%	}
+%	\label{fig:wiring}
+%\end{figure}

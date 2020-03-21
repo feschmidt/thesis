@@ -57,7 +57,7 @@ BN encapsulation even enables ballistic transport in very high quality CVD graph
 
 Flake transfer procedures have since paved the way for the assembly of so-called van der Waals heterostructures, named so due to the van der Waals forces holding the flakes together.
 %
-This has allowed for all kinds of exfoliatable crystals to be stacked, which enabled a new method of studying emergent phenomena such as induced spin orbit coupling, ferromagnetism or superconductivity~\cite{geimVanWaalsHeterostructures2013a}.
+This has allowed for all kinds of exfoliatable crystals to be stacked, which enabled a new method of studying emergent phenomena such as induced spin orbit coupling, ferromagnetism or superconductivity~\cite{geimVanWaalsHeterostructures2013a,novoselov2DMaterialsVan2016}.
 %
 In this PhD thesis, however, we limit ourselves to the use of only SLG and BN to study induced superconductivity in the SLG.
 %
@@ -94,7 +94,7 @@ Flake exfoliation is achieved by manually thinning down bulk crystals until micr
 % 
 We estimate that there are as many different ways of flake exfoliation as there are researchers working on this procedure.
 % 
-The procedure that worked best for us concerning BN exfoliation consists of placing individual BN crystallites (approximately a few \SI{100x100x100}{\micro\meter} in volume) on a piece of \textit{Scotch} tape \textit{"Magic"} or \textit{Nitto} tape, and subsequently folding over said piece of tape numerous times, such that one acquires a closed layer of thin BN crystallites.
+The procedure that worked best for us concerning BN exfoliation consists of placing individual BN crystallites (approximately a few \SI{100x100x100}{\micro\meter} in volume) on a piece of \textit{Scotch} tape \textit{"Magic"} or \textit{Nitto} tape\footnote{Nitto Processing Tape SWT20+ REACH R 280X100, bought from TELTEC GmbH}, and subsequently folding over said piece of tape numerous times, such that one acquires a closed layer of thin BN crystallites.
 % 
 In the case of graphene, we would peel off a preferably closed film of graphite from a single \SI{1x1}{\centi\meter} HOPG crystal with a piece of tape, followed by subsequent folding of the piece of tape until we acquired a homogeneous, yet closed film of thin graphite.
 
@@ -218,58 +218,87 @@ For flake transfer using PC, we follow the above steps, except that the transfer
 
 \begin{figure}
 	\centering
-	\includegraphics[]{{chapter-experimental-methods/figs-fabrication/placeholder-large.svg}.png}
+	\includegraphics[]{{chapter-experimental-methods/figs-fabrication/fab-heterostructures.svg}.png}
 	\caption{
 		\textbf{From bulk crystals to van der Waals heterostructures.}
 		% 
-		\textbf{A,} Bulk crystals of HOPG (grey) and hBN (white), together with a piece of wafer adhesive tape used to thin down these crystals by repeated folding and opening of the tape.
+		\textbf{(a)} Bulk crystals of HOPG (grey) and hBN (white), together with a piece of wafer adhesive tape used to thin down these crystals by repeated folding and opening of the tape.
 		% 
 		The tape is pressed on a \SI{6x6}{\milli\meter} piece of silicon with \SI{285}{\nano\meter} \ce{SiO2} to enhance the optical contrast for monolayer graphene.
 		% 
-		\textbf{B,} Optical microscope image of a thin flake of graphite, exhibiting regions of single and multilayer graphene.
+		\textbf{(b)} Optical microscope image of a BN flake of approximately \SI{30}{\nano\meter} thickness.
 		% 
-		\textbf{C,} Optical microscope image of an hBN flake of approximately \SI{30}{\nano\meter} thickness.
+		\textbf{(c)} Optical microscope image of a thin flake of graphite, exhibiting regions of single and multilayer graphene.
 		% 
-		All scalebars \SI{20}{\micro\meter}.
+		\textbf{(d)} Photograph of a glass slide with PDMS covered with a spun-on layer of PPC (approximately \SIrange{1}{2}{\micro\meter} thick).
 		% 
-		\textbf{D,} Photograph of a glass slide with PDMS covered with a spun-on layer of PPC (approximately \SIrange{1}{2}{\micro\meter} thick).
+		\textbf{(e-i)} Typical sandwich assembly cycle for creating multi-layered van der Waals heterostructures.
 		% 
-		\textbf{E,} Typical sandwich assembly cycle for creating multi-layered van der Waals heterostructures:
+		\textbf{(e)} Polymer brought in contact with exfoliated flake on substrate at room temperature.
 		% 
-		\textbf{i,} Polymer brought in contact with exfoliated flake on substrate at room temperature.
+		\textbf{(f)} Heating substrate above glass transition temperature $T_g$ enhances the adhesion of the flake to the polymer significantly above the adhesion to the substrate.
 		% 
-		\textbf{ii,} Heating substrate above glass transition temperature $T_g$ enhances the adhesion of the flake to the polymer significantly above the adhesion to the substrate.
-		% 
-		\textbf{iii,} Subsequent cooling of the substrate leads to stiffening of the polymer.
+		\textbf{(g)} Subsequent cooling of the substrate leads to stiffening of the polymer.
 		% 
 		Combined with rapid lifting of the glass slide, usually solely induced by the thermally shrinking polymer, lifts the flake off the substrate.
 		% 
-		By repeating steps \textbf{i}-\textbf{iii}, multiple flakes can be stacked on top of each other.
+		By repeating steps \textbf{(e)}-\textbf{(g)}, multiple flakes can be stacked on top of each other.
 		% 
-		\textbf{iv,} In order to deposit the finished heterostructure on a final substrate, the heterostructure is brought in contact with the substrate at room temperature, and the stage heated above the melting temperature of the polymer.
+		\textbf{(h)} In order to deposit the finished heterostructure on a final substrate, the heterostructure is brought in contact with the substrate at room temperature, and the stage heated above the melting temperature of the polymer.
 		% 
 		Slow lifting of the glass slide leads to the structure remaining on the substrate, while the polymer can either remain fully stuck to the PDMS, or also remain on the substrate.
 		% 
-		\textbf{v,} Polymer residues can be removed in organic solvents such as anisole, NMP, PRS3000 or chloroform.
+		\textbf{(i)} Polymer residues can be removed in organic solvents such as anisole, NMP, PRS3000 or chloroform.
 	}
-	\label{fig:placeholder-large}
+	\label{fig:fabheterostructures}
 \end{figure}
 
 \subsubsection{Challenges of heterostructure assembly}
 
-Various challenges were encountered when integrating van der Waals heterostructures with RF circuits:
-The polymer used for transfer (PC, PPC) has very strong adhesion to the metal areas of the shunts, ground planes and center conductors.
-While during stack assembly on oxidized silicon, the polymer would only touch the substrate preliminary, when attempting to delaminate the heterostructure on the pre-patterned substrates, the polymer would rip off the PDMS carrier and also get delaminated, cf. Fig.~\ref{fig:fab-hetero-challenge}A.
+Compared to interfacing van der Waals heterostructures with DC circuitry, numerous challenges arise for integration with RF devices.
+%
+RF circuits in coplanar architecture, such as the ones in this thesis, need a metallic ground plane around the conducting lines, separated by micron-sized gaps.
+%
+Due to the long-range interaction of electromagnetic fields, fabrication residues of any kind (metallic, dielectric, organic) should be avoided as much as possible to ensure reliable circuit operation.
+
+
+That being said, the nature of flake transfer always introduces contaminations.
+%
+For one, the polymer used for transfer has very strong adhesion to the metal areas of the shunts, ground planes and center conductors.
+%
+While during stack assembly on oxidized silicon, the polymer would only touch the substrate preliminary, when attempting to delaminate the heterostructure on the pre-patterned substrates, the polymer often ripped off the PDMS carrier and would also get delaminated, cf. Fig.~\ref{fig:fab-hetero-challenge}A.
+%
 Additionally, van der Waals crystals have strong adhesion to the metals used in our work, which resulted in a number of residual flakes on the final chip surrounding the intended heterostructure.
+%
 A long soak in NMP was able to remove the polymer at least visibly, but residual flakes had to be etched away in a separate step.
 
-On the other hand, flake adhesion on the substrate itself was found to vary from good to extremely poor:
-We found that BN-G-BN stacks would often get washed away due to unsufficient adhesion to sapphire substrates during processing.
-Due to the low adhesion of BN to sapphire and silicon nitride, many stacks were washed off the final substrates when dissolving the polymer.
-While the transfer yield of heterostructures on sapphire and silicon nitride was only as low as \SI{50}{\percent} and \SI{0}{\percent}, respectively, we did not observe this behaviour on silicon and silicon oxide (HSQ) surfaces, (cf. Fig.~\ref{fig:fab-hetero-challenge} (B)), where all delaminated flakes would stick.
-Note that even adhesion promotion using HMDS did not improve the situation.
 
-Finally, trapped dirt at the interfaces between BN and graphene 
+On the other hand, flake adhesion to the substrate itself was found to vary from good to extremely poor:
+%
+We found that BN-G-BN stacks would often get washed away due to unsufficient adhesion to sapphire substrates during processing.
+%
+Due to the low adhesion of BN to sapphire and silicon nitride, many stacks were washed off the final substrates when dissolving the polymer.
+%
+While the transfer yield of heterostructures on sapphire and silicon nitride was only as low as \SI{50}{\percent} and \SI{0}{\percent}, respectively, we did not observe this behaviour on silicon and silicon oxide (HSQ) surfaces, (cf. Fig.~\ref{fig:fab-hetero-challenge} (B)), where all delaminated flakes would stick.
+%
+Note that even adhesion promotion using HMDS (hexamethyldisilazane, \ce{[(CH3)3Si]2NH}) did not improve this issue.
+
+
+When stacking flakes on top of each other, hydrocarbon gases and water, usually covering all surfaces in ambient conditions, can get trapped in between flakes~\cite{haighCrosssectionalImagingIndividual2012}, similar to air pockets encountered when placing protective covers on flat surfaces such as phone screens or windows.
+%
+These bubbles can cluster together, reaching pressures of up to \SI{1}{\giga\pascal}~\cite{khestanovaUniversalShapePressure2016,ghorbanfekr-kalashamiDependenceShapeGraphene2017} and resulting in local pseudomagnetic fields in excess of \SI{300}{\tesla}~\cite{levyStrainInducedPseudoMagneticFields2010}.
+%
+Bubbles are hence undesired since they pose strong charge carrier scattering centers.
+%
+Nevertheless, high substrate temperatures, both during and after assembly, can mobilize these gasses, allowing them to clear up large sample spaces by accumulating along flake defects.
+%
+We have occasionally observed bubbles piercing the top BN and escape from the stack when annealing the heterostructures at temperatures above \SI{300}{\celsius}.
+
+For these reasons, every single gJJ has to be designed by hand, since it is important to place the structure to be fabricated in an area without bubbles present in order to obtain a high-quality device.
+%
+After stack placement on the final chip, we took several optical and atomic force microscope images to determine the graphene location with respect to alignment marks, and to identify bubble-free areas, cf. Fig~\ref{fig:fab-hetero-challenge}(b).
+%
+These combined images are loaded into the CAD software (we highly recommend \textit{KLayout}, or \textit{LibreCAD} as an alternative) to design the electrodes and gates for the gJJ, as shown in Fig~\ref{fig:fab-hetero-challenge}(c).
 
 \begin{figure}
 	\centering
@@ -277,11 +306,11 @@ Finally, trapped dirt at the interfaces between BN and graphene
 	\caption{
 		\textbf{Fabrication issues associated with van der Waals assembly.}
 		% 
-		\textbf{A,} Due to the good adhesion of the polymer to metal surfaces, after flake deposition the polymer would often get delaminated and the chip needs to be thoroughly cleaned using wet chemistry solvents.
+		\textbf{(a)} Due to the good adhesion of the polymer to metal surfaces, after flake deposition the polymer would often get delaminated and the chip needs to be thoroughly cleaned using wet chemistry solvents.
 		% 
-		\textbf{B,} Due to the high adhesive strength of the PC and PPC, residual flakes around the assembled heterostructure are delaminated on the chip, requiring additional etching steps to clean the chip of these dielectrics.
+		\textbf{(b)} Due to the high adhesive strength of the PC and PPC, residual flakes around the assembled heterostructure are delaminated on the chip, requiring additional etching steps to clean the chip of these dielectrics.
 		% 
-		\textbf{C,} AFM image (greyscale) of a heterostructure assembled via the PC method.
+		\textbf{(c)} AFM image (greyscale) of a heterostructure assembled via the PC method.
 		% 
 		Due to the significantly slower expansion of the polymer, gas and water molecules at the interfaces between the flakes are pushed towards the edges and fewer, but larger pockets are formed.
 		% 
@@ -290,17 +319,152 @@ Finally, trapped dirt at the interfaces between BN and graphene
 	\label{fig:fab-hetero-challenge}
 \end{figure}
 
-\subsubsection{Device patterning}
+\subsubsection{Device patterning and arising challenges}
 
-The graphene devices presented in this thesis consist of the BN-G-BN sandwich and G-Josephson junction, and the surrounding RF circuitry.
+Since the gJJ have to be individually designed are not fabricated scalably, we chose to first pattern the RF circuitry on either large silicon chips, or \SI{2}{inch} sapphire wafers, and subsequently transfer the BN-G heterostructures on the final substrate, where they are patterned into the gate-tunable gJJ.
 %
-The RF circuits are patterned first on either large silicon chips, or \SI{2}{inch} sapphire wafers.
+Fabrication was carried out in the class 10000 (ISO 7) cleanroom of the \textit{Kavli Nanolab Delft}, which offers class 100 (ISO 5) wet bench areas for sample processing.
 %
-In a second process flow, the vdW heterostructures are delaminated and contacts and top gates to the Josephson junctions are made.
+While the RF circuits could also have been fabricated using photolithography, we patterned all devices using electron beam lithography with either one of the \textit{Raith EBPG 5200} or \textit{5000+}.
+%
+Dry-etching was done using \textit{Leybold Heraeus Fluor} reactive ion etchers, dielectric deposition with PECVD in an \textit{Oxford Instruments PlasmaPro 80}.
+%
+Superconductors were deposited in sputtering systems from \textit{AJA International, Inc.} and \textit{Alliance Concept}.
 
-We fabricate the graphene Josephson junctions using the etch-fill technique with top-gates, consisting of a combination of Ebeam lithography, reactive ion etching and sputter deposition, in the following fashion:
+The graphene Josephson junctions were fabricated the etch-fill technique pioneered by Wang \textit{et al.}~\cite{wangOneDimensionalElectricalContact2013b}, with added top-gates as in Refs.~\cite{nandaCurrentPhaseRelationBallistic2017,schmidtBallisticGrapheneSuperconducting2018}.
+%
+Compared to fabrication on oxidized silicon, we encountered numerous challenges during fabrication that needed to be addressed before samples could be processed reliably.
 
-\noindent
+We found that for ebeam lithography on sapphire substrates, a conductive charging layer on top of the bilayer PMMA in the form of Electra 92 (AllResist AR-PC 5091) was crucial to create high-resolution patterns, such as Josephson junctions with length x width of \SI{0.5x5}{\micro\meter}.
+%
+Without a conductive layer, the resist would consistently be exposed in the center of the junction, leading to a nano-short at this spot, cf. Fig.~\ref{fig:fabgJJchallenges}(a-c).
+%
+This issue does not appear on silicon with or without oxide, since the band gaps of these materials are low enough for them to be somewhat conductive at room temperature.
+%
+Failure to use a conductive layer during ebeam exposure of sapphire can even lead to physical damage to the EBPG in the case of sudden electrical discharge.
+
+Various samples also exhibited cracks in the resist after ebeam exposure and development, as shown in Fig.~\ref{fig:fabgJJchallenges}(d).
+%
+These cracks were up to several tens of microns long and usually originated in sharp bends or corners of patterned structures, as well as from the edgebeads on bare chips coated with either PMMA or CSAR.
+%
+They are most likely due to a combination of tensile film stress in the resist and insufficient resist adhesion to the substrate~\cite{jacksonMicrofabricationNanomanufacturing2006}:
+%
+When a film does not properly adhere to the substrate, developer can peel off parts of the resist.
+%
+Tensile stress in the resist accelerates this issue and can lead to long cracks, especially starting at sharp corners.
+%
+Resist cracking could be avoided by changing the pattern shape to rounded corners and improving resist adhesion.
+%
+One method was to coat the substrate with a monolayer of HMDS (hexamethyldisilazane, \ce{[(CH3)3Si]2NH}) from \textit{MicroChemicals} from the gas phase prior to resist application.
+%
+For this, we used the hotplate with integrated HMDS deposition system of a \textit{Suss MicroTec Delta 80 RC}, with prebaking at \SI{150}{\celsius} for \SI{6}{\minute}.
+% 
+We found that this immensely helped against both cracks in various resists (PMMA, CSAR), regardless of whether the substrate was metallic or dielectric, and even under-etching of dielectrics with BOE.
+%
+Alternatively, applying the resist to be spun on the chip and just letting the chip rest for \SIrange{30}{60}{\second} before spinning significantly improved resist adhesion as well.
+%
+We speculate that the water layer present on all surfaces in ambient conditions needs this long to be replaced by the resist, which then stuck much better to the substrate.
+%
+We note that for PMMA, cold development with a combination of IPA and water at a 3:1 ratio also solves the issue of cracking resists and can even improve feature resolution~\cite{rooksLowStressDevelopment2002,cordOptimalTemperatureDevelopment2007}
+
+Another issue commonly encountered during nanofabrication, in particular when performing lift-off, are so-called \textit{dog-ears}.
+%
+These are visible as metal parts sticking to the edges of patterned areas and are due to the side-coverage of the resist protecting other areas.
+%
+Since sputtering leads to fairly isotropic deposition (compared to directional deposition with metal evaporation), sufficient resist undercut and thickness are necessary to facilitate liftoff.
+%
+These requirements also restrict the minimum feature size that can be reliably patterned.
+%
+Typically, a resist-to-metal ratio at least 3:1 allows stable liftoff.
+%
+However, the etch-fill technique requires a careful balance between choosing a thick enough resist in order to have enough resist left after dry-etching for good liftoff, while not making it too thin for high-resolution patterning.
+%
+A lower resist thickness can be chosen for lift-off if sufficient undercut is present, which is why a bilayer resist of PMMA was chosen.
+%
+This undercut can be enhanced by longer development.
+%
+Additionally, dry-etching at high pressures was found to be fairly isotropic and thus widening patterned structures and even increasing the undercut.
+%
+Judging from optical images, this resulted in an undercut of approximately \SIrange{100}{150}{\nano\meter}.
+%
+Some dog-ears could be removed by using an unused transfer template with PPC polymer, with which we were able to pull away some dogears which would then stick to the polymer.
+%
+Using ultrasonication during liftoff typically works well with removing dog-ears.
+%
+Due to the violent agitation and previously experienced problems with stack adhesion to the substrate, we opted against this procedure.
+%
+Instead, we used the jet stream of syringes filled with PRS3000 inside the filled beaker in which the liftoff was happening, to aid the process.
+
+\begin{figure}
+	\centering
+	\includegraphics[]{{chapter-experimental-methods/figs-fabrication/fab-gJJ-challenges.svg}.png}
+	\caption{
+		% 
+		\textbf{Challenges associated with gJJ fabrication.}
+		% 
+		\textbf{(a-c)} Due to the insulating nature of sapphire, ebeam patterning can lead to the substrate charging up and overexposing parts of the resist. 
+		% 
+		After developing \textbf{(a)}, dark spots in the resist in the gap center indicate developed resist.
+		%
+		\textbf{(b)} After etching and lift-off, the junction is shorted in the center and dog-ears are visible to the right side, standing up.
+		% 
+		\textbf{(c)} Illumination through the backside of the sapphire substrate reveals a nanobridge short.
+		% 
+		\textbf{(d)} Insufficient resist adhesion to the substrate and resist tension can lead to cracks originating at sharp bends and extending several tens of microns.
+		%
+		\textbf{(e)} Significant dog-ears after liftoff are visible as colored bands on top of the metal film of a top-gate extending over a graphene SQUID.
+		% 
+		\textbf{(f)} SEM image of two superconducting banks on sapphire, partially connected by two dog-ears across the gap.
+	}
+	\label{fig:fabgJJchallenges}
+\end{figure}
+
+
+Cross-sectional SEM showed side-angles of approximately \SI{60}{\degree} at the contact interfaces, allowing for good overlap 
+
+\begin{figure}
+	\centering
+	\includegraphics[]{{chapter-experimental-methods/figs-fabrication/fab-gJJ.svg}.png}
+	\caption{
+		% 
+		\textbf{From stack to device: Fabrication of top-gated graphene Josephson junctions.}
+		% 
+		\textbf{(a)} BN-G-BN sandwich on sapphire substrate. The optical micrograph is loaded into a CAD program and aligned with respect to the prepatterned markers.
+		% 
+		After electron beam exposure and development, the areas to be metallized are open, while the rest of the substrate remains covered by the resist.
+		% 
+		\textbf{(b)} In order to make galvanic contacts to the graphene layer, the chip is placed in a \ce{CHF3}+\ce{O2} plasma, which dry-etches the BN layer.
+		% 
+		Careful etch-rate calibration is required to not under-etch for good contact to the graphene while not over-etching so that enough PMMA is left for successful liftoff.
+		% 
+		\textbf{(c)} Sample after metallization and lift-off.
+		% 
+		\textbf{(d)} Sample after patterning into rectangular shape.
+		%
+		Only the gJJ remains.
+		%
+		\textbf{(e)} Bilayer HSQ covering the stack and metal leads as an insulating gate dielectric.
+		% 
+		\textbf{(f)} Finalized sample with superconducting gate electrode extending over the entire Josephson junction.
+		\textbf{(g)} Cross-sectional SEM of a gJJ resting on silicon, contacted by NbTiN.
+		%
+		Contact angles are approximately \SI{60}{\degree}.
+		%
+		Defects such as bubbles (*) and dog-ears (+) are visible.
+		%
+		Courtesy of Triantafyllia (Rose) Sermpeniadi/Conesa-Boj lab.
+	}
+	\label{fig:fabgJJ}
+\end{figure}
+
+
+The full process flow is shown in Tab.~\ref{tab:fabgJJ}.
+
+\begin{table}
+	\caption{
+		\textbf{Fabrication of side-contacted top-gated graphene Josephson junctions.}
+	}
+	\label{tab:fabgJJ}
 \begin{tabularx}{\textwidth}{@{}cY@{}}
 	\hline \hline
 	\textbf{1.} & \textbf{Making NbTiN contacts using etch-fill} \\
@@ -316,15 +480,15 @@ We fabricate the graphene Josephson junctions using the etch-fill technique with
 	%\hline
 	Metal deposition & \SI{5}{\nano\meter} NbTi and \SIrange{60}{70}{\nano\meter} NbTiN \\
 	%\hline
-	Liftoff & hot PRS~3000 @ \SI{88}{\celsius} for a few hours \\
+	Liftoff & hot PRS~3000 @ \SI{88}{\celsius} for a few hours, rinsing in IPA \\
 	\hline
 	\textbf{2.} & \textbf{Shaping the device:} \\
 	\hline
-	& Same as for making the contacts, but with lower etch pressure (\SI{50}{\micro\bar}) and without the metal deposition. \\
+	& Same resist, patterning and etching as for making the contacts, but with lower etch pressure (\SI{50}{\micro\bar}) and no metal deposition. \\
 	\hline
 	\textbf{3.} & \textbf{Top-gate dielectric} \\
 	\hline
-	Ebeam resist & conc. HSQ, \SI{5000}{rpm}, bake \SI{10}{\minute} at \SI{90}{\celsius} in an oven. \\
+	Ebeam resist & concentrated HSQ, \SI{5000}{rpm}, bake \SI{10}{\minute} at \SI{90}{\celsius} in an oven. \\
 	%\hline
 	Ebeam patterning & \SI{500}{\micro\coulomb\per\centi\meter\squared}. \\
 	%\hline
@@ -334,46 +498,24 @@ We fabricate the graphene Josephson junctions using the etch-fill technique with
 	\hline 
 	\textbf{4.} & \textbf{Top-gate metal: } \\
 	\hline
-	& Same as for making the contacts, but without etching \\
-	& and with metal thickness of \SIrange{80}{120}{\nano\meter}. \\
+	& Same steps as for making the contacts, but no etching and with metal thickness of \SIrange{80}{120}{\nano\meter}. \\
 	\hline \hline
 \end{tabularx}
+\end{table}
 
 
-Figure 4, if possible: Cross-sectional TEM of one of our devices (courtesy Sonia's lab)
-
-
-\begin{figure}
-	\centering
-	\includegraphics[]{{chapter-experimental-methods/figs-fabrication/placeholder-six.svg}.png}
-	\caption{
-		% 
-		\textbf{From stack to device: Fabrication of van der Waals devices.}
-		% 
-		\textbf{A,} BN-G-BN sandwich on sapphire substrate. The optical micrograph is loaded into a CAD program and aligned with respect to the prepatterned markers.
-		% 
-		\textbf{B,} After electron beam exposure and development, the areas to be metallized are open, while the rest of the substrate remains covered by the resist.
-		% 
-		\textbf{C,} In order to make galvanic contacts to the graphene layer, the chip is placed in a \ce{CHF3}+\ce{O2} plasma, which dry-etches the BN layer.
-		% 
-		Careful etch-rate calibration is required to not over- or under-etch.
-		% 
-		\textbf{D,} Sample after metallization and lift-off.
-		% 
-		\textbf{E,} Bilayer HSQ covering the stack and metal leads as an insulating gate dielectric.
-		% 
-		\textbf{F,} Finalized sample with superconducting gate electrode extending over the entire Josephson junction.
-	}
-	\label{fig:placeholder}
-\end{figure}
 
 \subsection{Fabrication of DC bias cavities}
 
 The RF circuits in Chapters~\ref{chap:gJJ} and \ref{chap:gJJ-power} are fabricated as follows, while the one in Chapter~\ref{chap:current-detection} used Al:Si as superconducting layer and silicon as base layer, cf. the Supplementary Material of Chapter~\ref{chap:current-detection}.
 
 %\noindent
-%\begin{tabularx}{\textwidth}{cc}
-\begin{tabular}{cc}
+\begin{table}
+	\caption{
+		\textbf{Fabrication of DC-bias superconducting microwave cavities.}
+	}
+	\label{tab:fabRF}
+\begin{tabularx}{\textwidth}{@{}cY@{}}
 	\hline \hline
 	\textbf{1.} & \textbf{Deposit and pattern MoRe base layer} \\
 	\hline 
@@ -387,7 +529,7 @@ The RF circuits in Chapters~\ref{chap:gJJ} and \ref{chap:gJJ-power} are fabricat
 	%\hline
 	Dry etching & \ce{SF6}+\ce{He} \SI{12.5}{sccm}+\SI{10}{sccm} @ \SI{50}{\watt}, \SI{10}{\micro\bar} \\
 	%\hline
-	Liftoff & hot PRS~3000 @ \SI{88}{\celsius} for a few hours \\
+	Liftoff & hot PRS~3000 @ \SI{88}{\celsius} for a few hours, rinsing in IPA \\
 	\hline
 	
 	\textbf{2.} & \textbf{Deposit and pattern dielectric layer for shunt capacitor} \\
@@ -402,7 +544,7 @@ The RF circuits in Chapters~\ref{chap:gJJ} and \ref{chap:gJJ-power} are fabricat
 	%\hline
 	Wet etching & BOE \SI{1}{\minute} \\
 	%\hline
-	Strip resist & hot PRS~3000 @ \SI{88}{\celsius} for a few hours \\
+	Strip resist & hot PRS~3000 @ \SI{88}{\celsius} for a few hours, rinsing in IPA \\
 	\hline
 	
 	\textbf{3.} & \textbf{Deposit top metal plate of shunt capacitor} \\
@@ -417,22 +559,25 @@ The RF circuits in Chapters~\ref{chap:gJJ} and \ref{chap:gJJ-power} are fabricat
 	%\hline
 	Metal deposition & \SI{100}{\nano\meter} MoRe as described above. \\
 	%\hline
-	Lift-off & hot PRS~3000 @ \SI{88}{\celsius} for a few hours \\
+	Lift-off & hot PRS~3000 @ \SI{88}{\celsius} for a few hours, rinsing in IPA \\
 	\hline\hline
-\end{tabular}
+\end{tabularx}
+\end{table}
 
-% 
-In order to improve the adhesion between the electron beam resist and substrate, we coated the substrate with a monolayer of HMDS (hexamethyldisilazane, \ce{[(CH3)3Si]2NH}) from \textit{MicroChemicals} from the gas phase using the hotplate with integrated HMDS deposition system of a \textit{Suss MicroTec Delta 80 RC}, with prebaking at \SI{150}{\celsius} for \SI{6}{\minute}.
-% 
-We found that this immensely helped against under-etching of dielectrics with BOE, or even cracks in the resist after development of PMMA or CSAR, regardless of whether the substrate was metallic or dielectric.
-% 
 
+TODO: While we do not have evidence to back this up, we speculate that depositing dielectric on the entire chip area might degrade the film quality by damaging the superconducting layer.
+%
+We observed that ALD-deposited \ce{Al2O3} left micron-sized flakes on the chip, that could not entirely get dissolved in BOE.
+%
+As an alternative, we propose local deposition by liftoff, as can be done with low-temperature PECVD or ALD.
+%
+This could protect the surrounding circuitry and potentially enable improved circuit coherence.
 
 \begin{figure}
 	\centering
 	\includegraphics{{chapter-experimental-methods/figs-fabrication/fab-shunt-bias.svg}.png}
 	\caption{
-		\textbf{Fabrication of current-bias microwave cavities.}
+		\textbf{Finished current-bias microwave cavities.}
 		% 
 		DC bias cavity on sapphire with MoRe base and top layer and \ce{Si3N4} capacitor dielectric (\textbf{A}), and device on silicon (\textbf{B}) with NbTiN base and top layer.
 		%

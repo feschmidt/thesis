@@ -64,65 +64,18 @@ Now that we have the general orientation of our big chip, we go into each of the
 On each chip we will do two exposures with different patterns for two bias cavities. Since the patterns are fairly far spaced apart, we choose to do a separate alignment for each exposure with very closely spaced markers. We now also switch to RN10 markers, since these are smaller and therefore the marker search is less likely to expose too much resist around our sample. Here for example the marker group of RN10 is (-1900,-2200), (-1200,-2200), (-1200,-1250), (-1900,-1250). The xdistance between two markers is \SI{700}{\micro\meter}, the ydistance \SI{950}{\micro\meter}. Note that we also use keystone correction here.
 
 \subsubsection{How did the job go?}
-Let's take a look at the log file, located on the ebpg5200 under \lstinline|pg/users/schmidt/log/|, filename \lstinline|1809-3_shapingARP_2018-11-14_17:04:55.log|.
-\begin{itemize}
-	\item Marker search starts in line 1831:
+Let's take a look at the log file, located on the ebpg5200 under \texttt{pg/users/schmidt/log/}, filename \texttt{1809-3\_shapingARP\_2018-11-14\_170455.log}.
 
-\begin{lstlisting}
-Locating pre-alignment marker find_RN20 @ position 45157.000000,44783.000000 [um] (absolute)
-Entered USER-DEFINED marker search routine findmarker
+Marker search starts in line 1831:
 
-Executing /home/pg/.naf/bin/findmarker RN20
-PG_IMAGE_FINE_SIZE not defined
-getstringpar(): status = 1088 = E_NOMAPSEL, set to HILL_I_NORMAL, type = -1, returned ""
-Current position  45157.000, 44783.000 corresponds to absolute position  45157.000, 44783.000 (map "")
-The measured height at expected marker position 45157.000,44783.000 is 18.7 micron, compensating
-Searching marker "RN20" at  45157.000, 44783.000 and found at  45167.510, 44783.300
-Searching marker "RN20" at 45157.000,44783.000 and found at 45167.510,44783.300, tababs /meas 45157.203,44776.097
-found @ 45.167510,44.783300
-found marker @ position 45167.510400,44783.300050 [um] (absolute)
-\end{lstlisting}
+\lstinputlisting[firstline=1831,lastline=1842,firstnumber=1831,numbers=left]{appendix/1809-3_shapingARP_2018-11-14_170455.log}
+
 so there was some misalignment of the actual markerposition and the one read off the microscope (\SI{10}{\micro\meter} in x, \SI{0.3}{\micro\meter} in y)
 
-\item Next the marker search continues with the other three markers (l 1875-1909)
+Next the marker search continues with the other three markers (l 1875-1909)
 
-\begin{lstlisting}
-pg select map substrate cjob_shapingARP
-cjob_align (pre)
-Entered USER-DEFINED marker search routine findmarker
+\lstinputlisting[firstline=1875,lastline=1909,firstnumber=1875,numbers=left]{appendix/1809-3_shapingARP_2018-11-14_170455.log}
 
-Executing /home/pg/.naf/bin/findmarker RN20
-PG_IMAGE_FINE_SIZE not defined
-getstringpar(): status = 0, type = 10, returned "cjob_shapingARP"
-Current position  -6500.000,  8100.000 corresponds to absolute position  45167.510, 60983.300 (map "cjob_shapingARP")
-The measured height at expected marker position -6500.000,8100.000 is 11.3 micron, compensating
-Searching marker "RN20" at  -6500.000,  8100.000 and found at  -6522.129,  8099.725
-Searching marker "RN20" at -6500.000,8100.000 and found at -6522.129,8099.725, tababs /meas 45135.510,60976.133
-Locating align marker 1 find_RN20 at position -6500.000000,8100.000000  (-6500.000000,8100.000000) (cjob_shapingARP)
-Entered USER-DEFINED marker search routine findmarker
-
-Executing /home/pg/.naf/bin/findmarker RN20
-PG_IMAGE_FINE_SIZE not defined
-getstringpar(): status = 0, type = 10, returned "cjob_shapingARP"
-Current position   6500.000,  8100.000 corresponds to absolute position  58167.510, 60983.300 (map "cjob_shapingARP")
-The measured height at expected marker position 6500.000,8100.000 is 0.7 micron, compensating
-Searching marker "RN20" at   6500.000,  8100.000 and found at   6477.666,  8117.098
-Searching marker "RN20" at 6500.000,8100.000 and found at 6477.666,8117.098, tababs /meas 58135.341,60993.509
-found
-Locating align marker 2 find_RN20 at position 6500.000000,8100.000000  (6500.000000,8100.000000) (cjob_shapingARP)
-Entered USER-DEFINED marker search routine findmarker
-
-Executing /home/pg/.naf/bin/findmarker RN20
-PG_IMAGE_FINE_SIZE not defined
-getstringpar(): status = 0, type = 10, returned "cjob_shapingARP"
-Current position   6500.000, -8100.000 corresponds to absolute position  58167.510, 44783.300 (map "cjob_shapingARP")
-The measured height at expected marker position 6500.000,-8100.000 is 8.2 micron, compensating
-Searching marker "RN20" at   6500.000, -8100.000 and found at   6499.656, -8083.052
-Searching marker "RN20" at 6500.000,-8100.000 and found at 6499.656,-8083.052, tababs /meas 58156.871,44793.346
-found
-Locating align marker 3 find_RN20 at position 6500.000000,-8100.000000  (6500.000000,-8100.000000) (cjob_shapingARP)
-found
-\end{lstlisting}
 
 So the ebeam found all three markers, but there are quite some shifts detected:
 \begin{itemize}
@@ -132,131 +85,17 @@ So the ebeam found all three markers, but there are quite some shifts detected:
 \end{itemize}
 This tells us that there is quite some rotation and scaling going on. Good thing we did marker search! These shifts can be reduced if you do the rotation alignment very precise. I seemed to have been a bit sloppy here, but the ebeam can still account for this without any problems.
 
-\item Now the ebeam continues with searching the markers in the second step, at the layout patterns (l 2744-2801):
+Now the ebeam continues with searching the markers in the second step, at the layout patterns (l 2744-2801):
 
-\begin{lstlisting}
-/home/pg/users/schmidt/jobs/RN20.mar
-cjob_do: layout: 1x1
-centre         [um] :  0.000000,0.000000
-origin         [um] :  0.000000,0.000000
-cells               :  1,1
-current mapping     :  cjob_shapingARP
-mapping             :  cjob_1x1
-pg select map substrate cjob_shapingARP
-centre         [um] :  0.000000,0.000000 (cjob_shapingARP)
-cjob_align (do)
-Entered USER-DEFINED marker search routine findmarker
-
-Executing /home/pg/.naf/bin/findmarker RN20
-PG_IMAGE_FINE_SIZE not defined
-getstringpar(): status = 0, type = 10, returned "cjob_shapingARP"
-Current position  -6500.000, -8100.000 corresponds to absolute position  45167.371, 44782.876 (map "cjob_shapingARP")
-The measured height at expected marker position -6500.000,-8100.000 is 18.5 micron, compensating
-Searching marker "RN20" at  -6500.000, -8100.000 and found at  -6499.856, -8099.553
-Searching marker "RN20" at -6500.000,-8100.000 and found at -6499.856,-8099.553, tababs /meas 45165.938,44780.110
-align marker 1: -6500.000000,-8100.000000,find_RN20
-align marker 2: -6500.000000,-1900.000000,find_RN20
-align marker 3: -3500.000000,-1900.000000,find_RN20
-align marker 4: -3500.000000,-8100.000000,find_RN20
-Locating align marker 1 find_RN20: -6500.000,-8100.000  (-6500.000,-8100.000)
-Entered USER-DEFINED marker search routine findmarker
-
-Executing /home/pg/.naf/bin/findmarker RN20
-PG_IMAGE_FINE_SIZE not defined
-getstringpar(): status = 0, type = 10, returned "cjob_shapingARP"
-Current position  -6500.000, -1900.000 corresponds to absolute position  45158.955, 50982.933 (map "cjob_shapingARP")
-The measured height at expected marker position -6500.000,-1900.000 is 16.2 micron, compensating
-Searching marker "RN20" at  -6500.000, -1900.000 and found at  -6499.918, -1899.681
-Searching marker "RN20" at -6500.000,-1900.000 and found at -6499.918,-1899.681, tababs /meas 45157.700,50980.158
-found @ -6499.856,-8099.553 (absolute: 45167.515,44783.323)
-Locating align marker 2 find_RN20: -6500.000,-1900.000  (-6500.000,-1900.000)
-Entered USER-DEFINED marker search routine findmarker
-
-Executing /home/pg/.naf/bin/findmarker RN20
-PG_IMAGE_FINE_SIZE not defined
-getstringpar(): status = 0, type = 10, returned "cjob_shapingARP"
-Current position  -3500.000, -1900.000 corresponds to absolute position  48158.908, 50986.942 (map "cjob_shapingARP")
-The measured height at expected marker position -3500.000,-1900.000 is 13.8 micron, compensating
-Searching marker "RN20" at  -3500.000, -1900.000 and found at  -3499.941, -1899.714
-Searching marker "RN20" at -3500.000,-1900.000 and found at -3499.941,-1899.714, tababs /meas 48157.674,50984.175
-found @ -6499.918,-1899.681 (absolute: 45159.037,50983.252)
-Locating align marker 3 find_RN20: -3500.000,-1900.000  (-3500.000,-1900.000)
-Entered USER-DEFINED marker search routine findmarker
-
-Executing /home/pg/.naf/bin/findmarker RN20
-PG_IMAGE_FINE_SIZE not defined
-getstringpar(): status = 0, type = 10, returned "cjob_shapingARP"
-Current position  -3500.000, -8100.000 corresponds to absolute position  48167.324, 44786.885 (map "cjob_shapingARP")
-The measured height at expected marker position -3500.000,-8100.000 is 16.1 micron, compensating
-Searching marker "RN20" at  -3500.000, -8100.000 and found at  -3499.889, -8099.631
-Searching marker "RN20" at -3500.000,-8100.000 and found at -3499.889,-8099.631, tababs /meas 48165.902,44784.120
-found @ -3499.941,-1899.714 (absolute: 48158.966,50987.229)
-Locating align marker 4 find_RN20: -3500.000,-8100.000  (-3500.000,-8100.000)
-found @ -3499.889,-8099.631 (absolute: 48167.435,44787.254)
-\end{lstlisting}
+\lstinputlisting[firstline=2744,lastline=2801,firstnumber=2744,numbers=left]{appendix/1809-3_shapingARP_2018-11-14_170455.log}
 
 Obviously, the first alignment on the exposure level was already quite good, since we now already have alignment precision to our marker positions on the sub-micron level. This is probably good enough for most people, but definitely not if you require very precise feature alignment (in this case precision below \SI{100}{\nano\meter})
 
-\item So as a last step, we search for the RN10 markers at the pattern level (l 2840-2895):
-\begin{lstlisting}
-Layout Cell 1 1 of 1x1
-/home/pg/users/schmidt/jobs/RN10.mar
-lay_dose_update = +,0.000000,0
-cjob_do: expose pattern, started at 17:18:16
+So as a last step, we search for the RN10 markers at the pattern level (l 2840-2895):
 
-pg select map substrate cjob_1x1
-centre         [um] :  0.000000,0.000000 (cjob_1x1)
-cjob_align (do)
-Entered USER-DEFINED marker search routine findmarker
+\lstinputlisting[firstline=2840,lastline=2895,firstnumber=2840,numbers=left]{appendix/1809-3_shapingARP_2018-11-14_170455.log}
 
-Executing /home/pg/.naf/bin/findmarker RN10
-PG_IMAGE_FINE_SIZE not defined
-getstringpar(): status = 0, type = 10, returned "cjob_1x1"
-Current position  -1900.000, -2200.000 corresponds to absolute position  49759.338, 50689.349 (map "cjob_1x1")
-The measured height at expected marker position -1900.000,-2200.000 is 13.4 micron, compensating
-Searching marker "RN10" at  -1900.000, -2200.000 and found at  -1900.017, -2200.002
-Searching marker "RN10" at -1900.000,-2200.000 and found at -1900.017,-2200.002, tababs /meas 49758.077,50686.574
-align marker 1: -1900.000000,-2200.000000,find_RN10
-align marker 2: -1200.000000,-2200.000000,find_RN10
-align marker 3: -1200.000000,-1250.000000,find_RN10
-align marker 4: -1900.000000,-1250.000000,find_RN10
-Locating align marker 1 find_RN10: -1900.000,-2200.000  (-1900.000,-2200.000)
-Entered USER-DEFINED marker search routine findmarker
 
-Executing /home/pg/.naf/bin/findmarker RN10
-PG_IMAGE_FINE_SIZE not defined
-getstringpar(): status = 0, type = 10, returned "cjob_1x1"
-Current position  -1200.000, -2200.000 corresponds to absolute position  50459.322, 50690.277 (map "cjob_1x1")
-The measured height at expected marker position -1200.000,-2200.000 is 13.0 micron, compensating
-Searching marker "RN10" at  -1200.000, -2200.000 and found at  -1200.016, -2200.023
-Searching marker "RN10" at -1200.000,-2200.000 and found at -1200.016,-2200.023, tababs /meas 50458.060,50687.497
-found @ -1900.017,-2200.002 (absolute: 49759.321,50689.347)
-Locating align marker 2 find_RN10: -1200.000,-2200.000  (-1200.000,-2200.000)
-Entered USER-DEFINED marker search routine findmarker
-
-Executing /home/pg/.naf/bin/findmarker RN10
-PG_IMAGE_FINE_SIZE not defined
-getstringpar(): status = 0, type = 10, returned "cjob_1x1"
-Current position  -1200.000, -1250.000 corresponds to absolute position  50458.025, 51640.278 (map "cjob_1x1")
-The measured height at expected marker position -1200.000,-1250.000 is 12.6 micron, compensating
-Searching marker "RN10" at  -1200.000, -1250.000 and found at  -1200.006, -1250.035
-Searching marker "RN10" at -1200.000,-1250.000 and found at -1200.006,-1250.035, tababs /meas 50456.797,51637.506
-found @ -1200.016,-2200.023 (absolute: 50459.305,50690.253)
-Locating align marker 3 find_RN10: -1200.000,-1250.000  (-1200.000,-1250.000)
-Entered USER-DEFINED marker search routine findmarker
-
-Executing /home/pg/.naf/bin/findmarker RN10
-PG_IMAGE_FINE_SIZE not defined
-getstringpar(): status = 0, type = 10, returned "cjob_1x1"
-Current position  -1900.000, -1250.000 corresponds to absolute position  49758.041, 51639.349 (map "cjob_1x1")
-The measured height at expected marker position -1900.000,-1250.000 is 13.0 micron, compensating
-Searching marker "RN10" at  -1900.000, -1250.000 and found at  -1900.006, -1250.009
-Searching marker "RN10" at -1900.000,-1250.000 and found at -1900.006,-1250.009, tababs /meas 49756.803,51636.566
-found @ -1200.006,-1250.035 (absolute: 50458.020,51640.243)
-Locating align marker 4 find_RN10: -1900.000,-1250.000  (-1900.000,-1250.000)
-found @ -1900.006,-1250.009 (absolute: 49758.035,51639.341)
-\end{lstlisting}
-\end{itemize}
 Now the misalignment is already below \SI{100}{\nano\meter} for each marker. This is good enough, and we will expose.
 
 
