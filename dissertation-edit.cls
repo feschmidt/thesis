@@ -48,6 +48,7 @@
 \RequirePackage{titletoc}
 \RequirePackage[nottoc]{tocbibind}
 \RequirePackage{xcolor}
+\RequirePackage{pagecolor}
 
 %% Fonts
 %%% Either Libertine + Biolinum
@@ -56,7 +57,11 @@
 % \usepackage{biolinum}
 %%% Or Fira Sans
 \usepackage[sfdefault,scaled=.85]{FiraSans}
-\usepackage{newtxsf}
+\ifxetex
+\usepackage[Scale=.85]{firamath-otf} % use firamath for xelatex
+\else
+\usepackage{newtxsf} % otherwise newtxsf
+\fi
 %\usepackage{eulervm} % experimental
 %% The style for titles is small caps.
 \def\titlefont{\sffamily}
@@ -309,7 +314,7 @@
 %% A part title starts with a huge (96pt) bold black number, flushed to the
 %% right, followed by the part name on the next line in the title color.
 \titleformat{\part}[display]
-{\flushright\titlestyle\pagecolor{mDarkTeal}\afterpage{\nopagecolor}}
+{\flushright\titlestyle\newpagecolor{mDarkTeal}\afterpage{\pagecolor{none}}}
 %{\cleartoevenpage\pagecolor{mDarkTeal}\afterpage{\nopagecolor}}
 %{\flushright\titlestyle}
 {\fontsize{200pt}{150pt}\selectfont\bfseries\color{mLightBrown}\thechapter}
@@ -323,7 +328,7 @@
 
 %% Chapter titles have the same layout as parts.
 \titleformat{\chapter}[display]
-{\flushright\titlestyle\pagecolor{mDarkTeal}\afterpage{\nopagecolor}}
+{\flushright\titlestyle\newpagecolor{mDarkTeal}\afterpage{\pagecolor{none}}}
 %{\cleartoevenpage\pagecolor{mDarkTeal}\afterpage{\nopagecolor}}
 %{\flushright\titlestyle}
 {\fontsize{200pt}{150pt}\selectfont\bfseries\color{mLightBrown}\thechapter}

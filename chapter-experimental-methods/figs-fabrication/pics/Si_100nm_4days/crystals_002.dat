@@ -1,0 +1,25 @@
+Statistical Quantities
+
+File:         C:\Users\feschmidt\Downloads\MoRe_crystals\MoRe_crystals\Si_100nm_4days\crystals.002
+Data channel: Filtered Data 5
+
+Selected area: 1024 × 512 at (0, 0) px
+               1.0000 × 1.0000 at (0.0000, 0.0000) µm
+Mask in use:   No
+
+Minimum:          0.0000 nm
+Maximum:          3.1799 nm
+Average value:    1.5527 nm
+Median:           1.5385 nm
+Ra (Sa):          0.3070 nm
+Rms (Sq):         0.3855 nm
+Rms (grain-wise): 0.3855 nm
+Skew:             0.2067
+Kurtosis:         0.06608
+Surface area:     1.0014239 µm^2
+Projected area:   1.0000000 µm^2
+Variation:        46.901 10^-15 m^2
+Entropy:          -20.261
+Entropy deficit:  0.0038441
+Inclination θ:    0.00 deg
+Inclination φ:    -102.56 deg

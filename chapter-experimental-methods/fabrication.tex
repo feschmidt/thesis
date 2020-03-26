@@ -120,7 +120,7 @@ Tape residues can lead to enhanced charge carrier scattering of graphene films, 
 % 
 Additionally, they increase the chance of bubble formation (see below), thus limiting the available sample space.
 % 
-Tape residues can be entirely removed by thermal annealing at \SI{400}{\celsius} in  an \ce{Ar}+\ce{H2} atmosphere.
+Tape residues can be entirely removed by thermal annealing at \SI{400}{\celsius} in  an \ce{Ar + H2} atmosphere.
 % 
 However, it proved extremely difficult to pick up or transfer flakes treated in this manner for heterostructure assembly.
 % 
@@ -279,7 +279,7 @@ We found that BN-G-BN stacks would often get washed away due to unsufficient adh
 %
 Due to the low adhesion of BN to sapphire and silicon nitride, many stacks were washed off the final substrates when dissolving the polymer.
 %
-While the transfer yield of heterostructures on sapphire and silicon nitride was only as low as \SI{50}{\percent} and \SI{0}{\percent}, respectively, we did not observe this behaviour on silicon and silicon oxide (HSQ) surfaces, (cf. Fig.~\ref{fig:fab-hetero-challenge} (B)), where all delaminated flakes would stick.
+While the transfer yield of heterostructures on sapphire and silicon nitride was only as low as \SI{50}{\percent} and \SI{0}{\percent}, respectively, we did not observe this behaviour on silicon and silicon oxide surfaces, (cf. Fig.~\ref{fig:fab-hetero-challenge} (B)), where all delaminated flakes would stick.
 %
 Note that even adhesion promotion using HMDS (hexamethyldisilazane, \ce{[(CH3)3Si]2NH}) did not improve this issue.
 
@@ -319,7 +319,7 @@ These combined images are loaded into the CAD software (we highly recommend \tex
 	\label{fig:fab-hetero-challenge}
 \end{figure}
 
-\subsubsection{Device patterning and arising challenges}
+\subsubsection{Device patterning and arising challenges}\label{sec:fabgJJ}
 
 Since the gJJ have to be individually designed are not fabricated scalably, we chose to first pattern the RF circuitry on either large silicon chips, or \SI{2}{inch} sapphire wafers, and subsequently transfer the BN-G heterostructures on the final substrate, where they are patterned into the gate-tunable gJJ.
 %
@@ -334,6 +334,8 @@ Superconductors were deposited in sputtering systems from \textit{AJA Internatio
 The graphene Josephson junctions were fabricated the etch-fill technique pioneered by Wang \textit{et al.}~\cite{wangOneDimensionalElectricalContact2013b}, with added top-gates as in Refs.~\cite{nandaCurrentPhaseRelationBallistic2017,schmidtBallisticGrapheneSuperconducting2018}.
 %
 Compared to fabrication on oxidized silicon, we encountered numerous challenges during fabrication that needed to be addressed before samples could be processed reliably.
+%
+We chose NbTiN as superconductor for the contacts to graphene after the MoRe target in our lab ran empty, and since the use of NbTiN was well established in the neighboring group of Leo Kouwenhoven~\cite{popinciucZerobiasConductancePeak2012,mourikSignaturesMajoranaFermions2012}.
 
 We found that for ebeam lithography on sapphire substrates, a conductive charging layer on top of the bilayer PMMA in the form of Electra 92 (AllResist AR-PC 5091) was crucial to create high-resolution patterns, such as Josephson junctions with length x width of \SI{0.5x5}{\micro\meter}.
 %
@@ -342,6 +344,12 @@ Without a conductive layer, the resist would consistently be exposed in the cent
 This issue does not appear on silicon with or without oxide, since the band gaps of these materials are low enough for them to be somewhat conductive at room temperature.
 %
 Failure to use a conductive layer during ebeam exposure of sapphire can even lead to physical damage to the EBPG in the case of sudden electrical discharge.
+%
+Note that Electra 92 needs to be stored in a fridge and the bottle has to be warmed up to room temperature before being opened to avoid water condensation.
+%
+Additionally, Electra needs to be washed off after ebeam exposure and before resist development in a simple water bath.
+%
+Most importantly, the chip needs to be blow-dried from the water bath before development and should not be transferred from the water bath into the developer, as mixing either water and IPA, or water and developer can lead to overdevelopment of the resist.
 
 Various samples also exhibited cracks in the resist after ebeam exposure and development, as shown in Fig.~\ref{fig:fabgJJchallenges}(d).
 %
@@ -395,6 +403,21 @@ Due to the violent agitation and previously experienced problems with stack adhe
 %
 Instead, we used the jet stream of syringes filled with PRS3000 inside the filled beaker in which the liftoff was happening, to aid the process.
 
+
+The final process flow is shown in Fig.~\ref{fig:fabgJJ}(a-f) and Tab.~\ref{tab:fabgJJ}.
+%
+As a trade-off between strong superconducting coupling and reliable sample fabrication, we designed all gJJ to be \SI{500}{\nano\meter} long.
+%
+Cross-sectional SEM showed side-angles of approximately \SI{60}{\degree} at the contact interfaces, allowing for good overlap between metal contacts and graphene layer.
+%
+We chose hydrogen silsesquioxane (HSQ, \ce{[HSiO3/2]_n}, \cite{namatsuThreedimensionalSiloxaneResist1998}) as a spin-on gate dielectric due to its process reversibility, good step coverage and straightforward thickness variability.
+%
+HSQ needs to be stored in a fridge, like Electra 92, and has to be warmed up to room temperature before applying on the sample.
+%
+Once BN-G heterostructures would stick to the sapphire chip, and including the use of Electra 92, the device yield, i.e. gate-tunable supercurrents, was approximately \SI{70}{\percent}.
+
+
+
 \begin{figure}
 	\centering
 	\includegraphics[]{{chapter-experimental-methods/figs-fabrication/fab-gJJ-challenges.svg}.png}
@@ -419,9 +442,6 @@ Instead, we used the jet stream of syringes filled with PRS3000 inside the fille
 	\label{fig:fabgJJchallenges}
 \end{figure}
 
-
-Cross-sectional SEM showed side-angles of approximately \SI{60}{\degree} at the contact interfaces, allowing for good overlap 
-
 \begin{figure}
 	\centering
 	\includegraphics[]{{chapter-experimental-methods/figs-fabrication/fab-gJJ.svg}.png}
@@ -433,7 +453,7 @@ Cross-sectional SEM showed side-angles of approximately \SI{60}{\degree} at the 
 		% 
 		After electron beam exposure and development, the areas to be metallized are open, while the rest of the substrate remains covered by the resist.
 		% 
-		\textbf{(b)} In order to make galvanic contacts to the graphene layer, the chip is placed in a \ce{CHF3}+\ce{O2} plasma, which dry-etches the BN layer.
+		\textbf{(b)} In order to make galvanic contacts to the graphene layer, the chip is placed in a \ce{CHF3 + O2} plasma, which dry-etches the BN layer.
 		% 
 		Careful etch-rate calibration is required to not under-etch for good contact to the graphene while not over-etching so that enough PMMA is left for successful liftoff.
 		% 
@@ -457,12 +477,13 @@ Cross-sectional SEM showed side-angles of approximately \SI{60}{\degree} at the 
 	\label{fig:fabgJJ}
 \end{figure}
 
-
-The full process flow is shown in Tab.~\ref{tab:fabgJJ}.
-
 \begin{table}
 	\caption{
 		\textbf{Fabrication of side-contacted top-gated graphene Josephson junctions.}
+		%
+		Note that after washing off Electra 92, the chip needs to be blow-dried before developing the PMMA.
+		%
+		Electra is not necessarly needed for the top-gate dielectric and gate metal.
 	}
 	\label{tab:fabgJJ}
 \begin{tabularx}{\textwidth}{@{}cY@{}}
@@ -472,11 +493,13 @@ The full process flow is shown in Tab.~\ref{tab:fabgJJ}.
 	Ebeam resist (1/2) & PMMA 495 A4, \SI{4000}{rpm}, bake \SI{10}{\minute} at \SI{185}{\celsius} \\
 	Ebeam resist (2/2) & PMMA 950 A3, \SI{4000}{rpm}, bake \SI{10}{\minute} at \SI{185}{\celsius}. \\
 	%\hline
+	Conductive resist & Electra 92, \SI{2000}{rpm}, bake \SI{90}{\second} at \SI{80}{\celsius}. \\
 	Ebeam patterning & \SI{1000}{\micro\coulomb\per\centi\meter\squared} + PEC \\
 	%\hline
+	Wash off Electra 92 & Rinse in water for \SIrange{30}{60}{\second}. \\
 	Development & MIBK:IPA (1:3) for \SI{90}{\second}, IPA \SI{30}{\second}. \\
 	%\hline
-	Dry etching & \ce{CHF3}+\ce{O2} \SI{40}{sccm}+\SI{4}{sccm} @ \SI{60}{\watt}, \SI{80}{\micro\bar} for \SI{1}{\minute} (etch rate roughly \SI{60}{\nano\meter\per\minute}) \\
+	Dry etching & \ce{CHF3 + O2} \SI{40}{sccm}+\SI{4}{sccm} @ \SI{60}{\watt}, \SI{80}{\micro\bar} for \SI{1}{\minute} (etch rate roughly \SI{60}{\nano\meter\per\minute}) \\
 	%\hline
 	Metal deposition & \SI{5}{\nano\meter} NbTi and \SIrange{60}{70}{\nano\meter} NbTiN \\
 	%\hline
@@ -488,13 +511,13 @@ The full process flow is shown in Tab.~\ref{tab:fabgJJ}.
 	\hline
 	\textbf{3.} & \textbf{Top-gate dielectric} \\
 	\hline
-	Ebeam resist & concentrated HSQ, \SI{5000}{rpm}, bake \SI{10}{\minute} at \SI{90}{\celsius} in an oven. \\
+	Ebeam resist & concentrated HSQ, \SI{8000}{rpm}, bake \SI{10}{\minute} at \SI{90}{\celsius} in an oven. \\
 	%\hline
-	Ebeam patterning & \SI{500}{\micro\coulomb\per\centi\meter\squared}. \\
+	Ebeam patterning & \SI{1000}{\micro\coulomb\per\centi\meter\squared}. \\
 	%\hline
 	Development & MF322 for \SI{1}{\minute}, MF322:\ce{H2O} (1:9) for \SI{15}{\second}, \ce{H2O} for \SI{15}{\second}. \\
 	%\hline
-	& Repeat this process once with \SI{4000}{rpm} spin speed. \\
+	& Repeat this process once. \\
 	\hline 
 	\textbf{4.} & \textbf{Top-gate metal: } \\
 	\hline
@@ -504,13 +527,19 @@ The full process flow is shown in Tab.~\ref{tab:fabgJJ}.
 \end{table}
 
 
+%\clearpage
+\subsection{Fabrication of DC bias cavities}\label{sec:fabRF}
 
-\subsection{Fabrication of DC bias cavities}
-
-The RF circuits in Chapters~\ref{chap:gJJ} and \ref{chap:gJJ-power} are fabricated as follows, while the one in Chapter~\ref{chap:current-detection} used Al:Si as superconducting layer and silicon as base layer, cf. the Supplementary Material of Chapter~\ref{chap:current-detection}.
+The RF circuits in Chapters~\ref{chap:gJJ} and \ref{chap:gJJ-CPR} are fabricated as listed in Tab~\ref{tab:fabRF}, while the one in Chapter~\ref{chap:currentdetection} used Al:Si as superconducting layer and silicon as substrate and dielectric layer.
+%
+We have also fabricated and measured cavities with NbTiN as superconductor with \ce{Si3N4} dielectric and on silicon substrates with comparable RF quality factors.
+%
+For best fabrication results, a mono-layer of HMDS was applied before every resist spinning, as described in Sec.~\ref{sec:fabgJJ}.
+%
+The use of Electra 92 on sapphire for these devices is not strictly necessary due to the large feature size and the conducing metal base layer, but still recommended.
 
 %\noindent
-\begin{table}
+\begin{table}[h]
 	\caption{
 		\textbf{Fabrication of DC-bias superconducting microwave cavities.}
 	}
@@ -527,7 +556,7 @@ The RF circuits in Chapters~\ref{chap:gJJ} and \ref{chap:gJJ-power} are fabricat
 	%\hline
 	Development & Pentylacetate for \SI{60}{\second}, MIBK:IPA (1:1) for \SI{30}{\second}, IPA for \SI{15}{\second}. \\
 	%\hline
-	Dry etching & \ce{SF6}+\ce{He} \SI{12.5}{sccm}+\SI{10}{sccm} @ \SI{50}{\watt}, \SI{10}{\micro\bar} \\
+	Dry etching & \ce{SF6 + He} \SI{12.5}{sccm}+\SI{10}{sccm} @ \SI{50}{\watt}, \SI{10}{\micro\bar} \\
 	%\hline
 	Liftoff & hot PRS~3000 @ \SI{88}{\celsius} for a few hours, rinsing in IPA \\
 	\hline
@@ -564,14 +593,23 @@ The RF circuits in Chapters~\ref{chap:gJJ} and \ref{chap:gJJ-power} are fabricat
 \end{tabularx}
 \end{table}
 
-
-TODO: While we do not have evidence to back this up, we speculate that depositing dielectric on the entire chip area might degrade the film quality by damaging the superconducting layer.
+Instead of wet-etching the shunt capacitor dielectric, dry-etching using a \ce{CHF3 + O2} plasma at \SI{60}{\watt} power and base pressure of \SI{50}{\micro\bar} yielded comparable results.
 %
-We observed that ALD-deposited \ce{Al2O3} left micron-sized flakes on the chip, that could not entirely get dissolved in BOE.
+However, the combination of plasma etching with negative ebeam resist often resulted in teflonization of the latter, severely complicating resist stripping afterwards.
+%
+This can be avoided by either in-situ \ce{O2} ashing, or by applying a thin PMMA layer below the negative ebeam resist, which can be stripped off the sample much easier.
+%
+From a safety perspective, the plasma etch process is to be preferred over the use of BOE due to the much lower risk to the operator's safety.
+%
+Additionally, even though wet-etching seems to be a cleaner process compared to dry-etching, the obtained microwave properties of samples fabricated using BOE did not reliably surpass those of dry-etched devices.
+
+While we do not have evidence to back this claim, we would like to point out that depositing dielectric on the entire chip area might degrade the film quality by damaging the superconducting layer.
+%
+For example, we observed that ALD-deposited \ce{Al2O3} left micron-sized flakes on the chip, that could not entirely get dissolved in BOE.
 %
 As an alternative, we propose local deposition by liftoff, as can be done with low-temperature PECVD or ALD.
 %
-This could protect the surrounding circuitry and potentially enable improved circuit coherence.
+This could protect the surrounding circuitry and potentially reduce internal circuit losses.
 
 \begin{figure}
 	\centering
@@ -579,11 +617,7 @@ This could protect the surrounding circuitry and potentially enable improved cir
 	\caption{
 		\textbf{Finished current-bias microwave cavities.}
 		% 
-		DC bias cavity on sapphire with MoRe base and top layer and \ce{Si3N4} capacitor dielectric (\textbf{A}), and device on silicon (\textbf{B}) with NbTiN base and top layer.
-		%
-		The dark areas are holes in the ground plane for flux trapping.
-		%
-		All scale bars \SI{100}{\micro\meter}.
+		DC bias cavity on sapphire with MoRe base and top layer and \ce{Si3N4} capacitor dielectric \textbf{(a)}, and device on silicon \textbf{(b)} with aluminum base and top layer.
 	}
 	\label{fig:biascavityfab}
 \end{figure}
