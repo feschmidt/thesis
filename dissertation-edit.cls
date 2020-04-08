@@ -14,7 +14,7 @@
 \RequirePackage[dutch,english]{babel}
 \RequirePackage{calc}
 \RequirePackage[nooneline,footnotesize,font={sf,small},labelfont={sf,bf}]{caption}
-\RequirePackage{chapterbib}
+%\RequirePackage{chapterbib} %% for individual reference sections per chapter
 \RequirePackage{etaremune}
 \RequirePackage{fancyhdr}
 \RequirePackage[flushmargin,hang]{footmisc}
@@ -42,7 +42,8 @@
 \fi
 \RequirePackage{lettrine}
 \RequirePackage{metalogo}
-\RequirePackage[sectionbib,numbers,sort&compress]{natbib}
+%\RequirePackage[sectionbib,numbers,sort&compress]{natbib} %% for individual reference sections per chapter
+\RequirePackage[numbers,sort&compress]{natbib} %% otherwise
 \RequirePackage{tikz}
 \RequirePackage[noindentafter]{titlesec}
 \RequirePackage{titletoc}
@@ -335,12 +336,11 @@
 {0pt}
 {\Huge\color{mLightBrown}}
 \titlespacing{\chapter}{0pt}{0pt}{2\baselineskip}
-%% In the table of contents, a chapter is similar to a part, except that it is
-%% preceded by half an empty line.
+
+%% In the table of contents, a chapter is similar to a part, except that it is preceded by half an empty line.
 \dottedcontents{chapter}[1.5em]{\vspace{0.5\baselineskip}\titlefont\bfseries\color{mLightBrown}}{1.5em}{0pc}
 
-%% Section titles start with the number in bold, followed by the name printed
-%% in the title color.
+%% Section titles start with the number in bold, followed by the name printed in the title color.
 \titleformat{\section}
 {\Large\headerstyle}
 {\bfseries\thesection.\ }
@@ -348,12 +348,10 @@
 {\color{title}}
 %% Sections are preceded by an empty line.
 \titlespacing{\section}{0pt}{\baselineskip}{0pt}
-%% In the table of contents, section names are followed by a line of dots 8pt
-%% apart.
+%% In the table of contents, section names are followed by a line of dots 8pt apart.
 \dottedcontents{section}[3.8em]{\titlefont\color{mLightBrown}}{2.3em}{8pt}
 
-%% Subsection titles have the same layout as section titles, except in a smaller
-%% font.
+%% Subsection titles have the same layout as section titles, except in a smaller font.
 \titleformat{\subsection}
 {\large\headerstyle}
 {\bfseries\thesubsection.\ }
@@ -362,26 +360,22 @@
 \titlespacing{\subsection}{0pt}{\baselineskip}{0pt}
 \dottedcontents{subsection}[7em]{\titlefont\color{mLightBrown}}{3.2em}{8pt}
 
-%% Subsubsections have the same font and color as sections and subsections, but
-%% are not preceded by a number.
+%% Subsubsections have the same font and color as sections and subsections, but are not preceded by a number.
 \titleformat{\subsubsection}
 {\headerstyle}
 {}
 {0pt}
 {\color{title}}
-%% Subsubsections are preceded by an empty line and do not appear in the table
-%% of contents.
+%% Subsubsections are preceded by an empty line and do not appear in the table of contents.
 \titlespacing{\subsubsection}{0pt}{\bigskipamount}{0pt}
 
-%% Color the bullets of the itemize environment and make the symbol of the third
-%% level a diamond instead of an asterisk.
+%% Color the bullets of the itemize environment and make the symbol of the third level a diamond instead of an asterisk.
 \renewcommand*\labelitemi{\color{title}\textbullet}
 \renewcommand*\labelitemii{\color{title}--}
 \renewcommand*\labelitemiii{\color{title}$\diamond$}
 \renewcommand*\labelitemiv{\color{title}\textperiodcentered}
 
-%% The dedication is vertically centered on a separate page and flushed to the
-%% right.
+%% The dedication is vertically centered on a separate page and flushed to the right.
 \newcommand\dedication[1]{%
 	\thispagestyle{empty}%
 	\vspace*{\fill}%
@@ -396,9 +390,7 @@
 \def\blfootnote{\xdef\@thefnmark{}\@footnotetext}
 
 
-%% The authors environment is used to display the authors of a chapter on the
-%% title page. This is only necessary if multiple people contributed
-%% significantly to the chapter.
+%% The authors environment is used to display the authors of a chapter on the title page. This is only necessary if multiple people contributed significantly to the chapter.
 \newcommand*\authors[1]{%
 	\begin{center}%
 		{\color{mLightBrown}\Large\bfseries #1}%
@@ -406,8 +398,7 @@
 	\vspace{2\baselineskip}%
 }
 
-%% The epigraph environment can be used to to add a quote to the title page of
-%% a chapter.
+%% The epigraph environment can be used to to add a quote to the title page of a chapter.
 \newcommand\epigraph[3][2\baselineskip]{%
 	\begin{flushright}%
 		\color{mLightBrown}
@@ -429,8 +420,7 @@
 	\endlist%
 }
 
-%% Define a drop command which can be used to generate drop caps at the
-%% beginning of a section.
+%% Define a drop command which can be used to generate drop caps at the beginning of a section.
 \renewcommand*\LettrineTextFont{\titleshape}
 \newcommand*\dropcap[2]{
 	\lettrine[lines=2,findent=0.2em,nindent=0pt]{\color{title} #1}{#2}%

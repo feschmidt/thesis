@@ -61,6 +61,7 @@
 %\def\lst@visiblespace{\lst@ttfamily{\ }{\ }}
 \usepackage{afterpage}
 \usepackage{subcaption}
+%\renewcommand{\bibsection}{} %% tsting
 
 
 \begin{document}
@@ -70,14 +71,21 @@
 \author{Felix Erik}{Schmidt}
 
 %% Use Roman numerals for the page numbers of the title pages and table of contents.
-%\frontmatter
+\frontmatter
 %
-%\include{title/title-en}
+\include{title/title-en}
 %%%
 %%%%% The (optional) dedication can be used to thank someone or display a significant quotation.
-%\dedication{Für Katrin und Felicitas}
-%\newchapstyle
-%\tableofcontents
+\dedication{
+	Für Katrin und Felicitas
+	\vskip 10\baselineskip
+	\textit{Remember, kids, the only difference between screwing around and science is writing it down.}
+	\vskip 0.5\baselineskip
+	Adam Savage, quoting Alex Jason in the 2012 MythBusters episode \textit{Titanic Survival}~\cite{savageOriginOnlyDifference2015}
+}
+\newchapstyle
+\tableofcontents
+\afterpage{\pagecolor{none}}
 %%%
 %%%
 %\include{summary/summary}
@@ -97,10 +105,9 @@
 %\include{chapter-currentdetection/currentdetection}
 %\include{conclusion/conclusion}
 %%% %%%\include{epilogue/epilogue}
-%\include{acks/acks}
 %%
 %%%% Use letters for the chapter numbers of the appendices.
-%\appendix
+\appendix
 \include{chapter-gJJ-misc/gJJ-misc}
 %\include{appendix/app-ebeam}
 %\include{appendix/app-copperpowder}
@@ -109,9 +116,13 @@
 %%% %%%\include{appendix/app-notes}
 %%%
 %%%%% Turn off thumb indices for unnumbered chapters.
-%\thumbfalse
+\thumbfalse
 %%%
+%\include{acks/acks}
 %\include{cv/cv}
 %\include{publications/publications}
+
+\bibliographystyle{dissertation} %dissertation, abbrvnat
+\bibliography{dissertation}
 \end{document}
 

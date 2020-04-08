@@ -1,5 +1,5 @@
 \newchapstyle
-\chapter{Current phase relations of graphene Josephson junctions in microwave circuits}
+\chapter{Inductance and current-phase relation of graphene Josephson junctions}
 \label{chap:gJJ-CPR}
 
 \blfootnote{
@@ -16,7 +16,7 @@
 \end{abstract}
 
 %% Start the actual chapter on a new page.
-\newpage
+\afterpage{\pagecolor{none}}\newpage
 
 \section{Introduction}
 
@@ -173,22 +173,20 @@ On the other hand, even small changes in the significantly smaller $I_c$ for $V_
 
 \begin{figure}[t]
 	\centering
-	\includegraphics[width=\linewidth]{chapter-gJJ-CPR/figs/Figure2}
+	\includegraphics[width=\linewidth]{chapter-gJJ-CPR/figs/SMFigure2}
 	\caption{
 		\textbf{Evidence for non-sinusoidal CPR from deviation between Josephson inductance and critical current.}
 		%
-		MW-extracted $L_J$ versus DC-measured $I_c$ for the diffusive device at \SI{15}{\milli\kelvin} \textbf{(a)} and the ballistic one at \SI{15}{\milli\kelvin} and at \SI{1}{\kelvin} (\textbf{(b)}, blue and red, respectively).
+		MW-extracted $L_J$ versus DC-measured $I_c$, corrected for estimates of current noise of \SI{110}{\nano\ampere} for the diffusive device at \SI{15}{\milli\kelvin} \textbf{(a)} and \SI{390}{\nano\ampere} for the ballistic one at \SI{15}{\milli\kelvin} and at \SI{1}{\kelvin} (\textbf{(b)}, blue and red, respectively).
 		%
 		Full circles (empty squares) correspond to $V_g>V_{\rm CNP}$ ($V_g<V_{\rm CNP}$).
 		%
 		Dashed line corresponds to an $L_J$ calculated from $I_c$ assuming a sinusoidal CPR.
 		%
-		Values of $L_J$ below the dashed line are due to current noise (see main text).
+		Deviations from $L_J$ above the dashed line indicate a forward-skewed CPR.
 	}
 	\label{fig:figure2}
 \end{figure}
-
-\textbf{TODO!!!! No fitting, but we calibrated fr,Lr! And we also don't calculate Ic, but extract LJ}
 
 Assuming a purely sinusoidal current-phase relation, the Josephson inductance can be extracted from the current phase relation via $L_J = \hbar/(2\pi I_c \cos\delta)$.
 %
@@ -204,52 +202,21 @@ From this, we extract $f_{\lambda/2}=\SI{8.364}{\giga\hertz}$ and $L_r=\SI{3.671
 
 In Fig.~\ref{fig:figure2}, we plot the observed Josephson inductance together with the measured critical currents for the measured devices.
 %
-Regardless of diffusive or ballistic transport, or elevated temeperatures, we observe significant deviations from a sinusoidal CPR underlying $L_J(I_c)$.
+As detailed in Supplementary Material Sec.~\ref{sec:SMfitbiascurrent}, we estimate low-frequency current noise $I_n$ to range between \SIrange{110}{390}{\nano\ampere} in the setups used for measuring the diffusive and ballistic device, respectively.
 %
-For large values of $I_c$, we observe larger values for the measured Josephson inductance as expected from sinusoidal CPR, which points at a forward-skew of the CPR in line with Eq.~\ref{eq:CPR-ball}.
+Without accounting for $I_n$, the observed $L_J$ is significantly smaller than the SIS-CPR estimate from DC measurements of $I_c$, which, without any current noise, could only be explained by a backward-skewed CPR, cf. Supplementary Fig.~\ref{fig:SMfigure2}.
 %
-On the other hand, small critical currents seem to correspond to smaller Josephson inductances.
-%
-This could either be due to backwards skew in the CPR, or current noise, artificially reducing the measured value of $I_c$.
-%
-Backwards skew in gJJ is highly unlikely and has not been observed before, but current noise in our setups can have a significant influence.
-%
-As detailed in Supplementary Material Sec.~\ref{sec:SMfitbiascurrent}, we estimate low-frequency current noise to range between \SIrange{110}{390}{\nano\ampere} in the setups used for measuring the diffusive and ballistic device, respectively.
-%
-Added to the measured values of $I_c$, this amount of current noise would be sufficient to move all data points such that $L_J$ is larger than expected from sinusoidal CPR for all $I_c$, cf. Supplementary Fig.~\ref{fig:SMfigure2}.
+However, added to the measured values of $I_c$, this amount of current noise is sufficient to move all data points such that $L_J$ is larger than expected from sinusoidal CPR for all $I_c$, matching the expected forward-skewed CPR regardless of diffusive or ballistic transport, or elevated temperatures.
 
-Additionally, we can directly compare the estimates for the junction critical current from our DC measurement, $I_c$, with the value calculated from our MW measurement of the resonance frequency via Eq.~\ref{eq:LJsin}, $I_c^{\rm MW}=I_c\left(L_J\left(f_0\right)\right)$. 
+
+The deviation is largest for the ballistic device at base temperature, and significantly reduced for the diffusive device, or at \SI{1}{\kelvin}.
 %
-As shown in Fig.~\ref{fig:figure3}, our devices exhibit tunable supercurrent over almost two orders of magnitude range.
-%
-In the diffusive device, $I_c$ and $I_c^{\rm MW}$ match closely, but small deviations at the low and high end are visible, with $I_c^{\rm MW}$ resulting in values larger than expected from DC.
-%
-Similarly, the DC measurements of the ballistic device at \SI{1}{\kelvin} underestimate the critical current as extracted from MW for small values of $I_c$, but match remarkably well everywhere else.
-%
-This matches with the expectation of reduced forward skewing of the CPR at higher temperatures:
+This matches with the expectation of reduced forward skewing of the CPR at higher temperatures or lower transparencies:
 %
 The skew is due to the phase coherence of Andreev bound states traversing the normal region between the superconducting banks multiple times (or, in a similar picture, multiple ABS crossing the normal region) which in turn means a longer phase coherence length is required to keep this contribution.
 %
-As the phase coherence length is highly sensitive to temperature, an increase in the latter results in both a reduction of switching current and forward skewing~\cite{fuechsleEffectMicrowavesCurrentPhase2009,hagymasiJosephsonCurrentBallistic2010,black-schafferStronglyAnharmonicCurrentphase2010,rakytaMagneticFieldOscillations2016,englishObservationNonsinusoidalCurrentphase2016}.
-%
-At base temperature, the ballistic device deviates significantly from the DC-calculations, especially at low currents and $V_g<0$.
-%
-Deviations at large $I_c$ are less obvious, presumably due to the fact that in this regime, $L_J \ll L_r$ and the Josephson inductance has only minor effect on $f_0$.
+As the phase coherence length is highly sensitive to temperature and scattering, an increase in either one of the last two results in both a reduction of switching current and forward skewing~\cite{fuechsleEffectMicrowavesCurrentPhase2009,hagymasiJosephsonCurrentBallistic2010,black-schafferStronglyAnharmonicCurrentphase2010,rakytaMagneticFieldOscillations2016,englishObservationNonsinusoidalCurrentphase2016}.
 
-At first glance, any forward skew in the CPR should lead to a drop in CPR slope.
-%
-Therefore, for the same value of $I_c$, $L_J$ should increase and $I_s^{\rm MW}<I_c$.
-%
-However, our fit results in the opposite behavior:
-%
-The fit model returns a larger $I_c$ than expected for a sinusoidal CPR, given that the data to be fitted has an underlying forward-skewed CPR.
-%
-This is achieved by returning incorrect values for $f_{\lambda/2}$ and $L_r$ which explains to mismatching values from Fig.~\ref{fig:figure2}.
-%
-In lack of a reference device with a simple short to ground instead of a gJJ, or a JJ with known sinusoidal CPR, we need additional measurements to accurately determine the CPRs of our devices.
-%
-This shows that extrapolation of a value for $L_J$ at microwave frequencies from DC measurements can lead to severe discrepancies.
-%
 In order to examine the underlying mechanisms further, we continue by studying the power and bias current dependence of our circuit.
 
 
@@ -348,11 +315,9 @@ In Fig.~\ref{fig:figure3}(d), we compare the measured value of the anharmonicity
 
 Surprisingly, assuming a sinusoidal CPR and using $I_c$ to calculate $L_J$ results in a closer match to the observed coefficient than the expected value as calculated from the Josephson inductance directly observed in Fig.~\ref{fig:figure2}.
 %
-\textbf{TODO!!! WHY IS THAT?}
-%
 Without knowing exactly how many ABS channels are active in the JJ, it is not possible to extract a number for $\tau$, as the measured anharmonicity coefficient only returns information on $\sum\tau_i=N\tau$.
 %
-Additional experiments, such as extracting the transparency for each channel from multiple Andreev reflection via voltage-biased measurements, would be required to reach further conclusions~\cite{scheerConductionChannelTransmissions1997,goffmanConductionChannelsInAsAl2017,bretheauTunnellingSpectroscopyAndreev2017a,pandeyAndreevReflectionBallistic2019}.
+Additional experiments, such as extracting the transparency for each channel from multiple Andreev reflection via voltage-biased measurements~\cite{scheerConductionChannelTransmissions1997,goffmanConductionChannelsInAsAl2017,bretheauTunnellingSpectroscopyAndreev2017a,pandeyAndreevReflectionBallistic2019}, or direct measures of the anharmonicity coefficient in transmon qubits~\cite{larsenSemiconductorNanowireBasedSuperconductingQubit2015, delangeRealizationMicrowaveQuantum2015, casparisGatemonBenchmarkingTwoQubit2016a,casparisSuperconductingGatemonQubit2018}, would be required to reach further conclusions.
 
 
 \subsection{Bias current dependence}
@@ -442,7 +407,7 @@ Our results also indicate that scattering mechanisms, such as diffusive transpor
 %\renewcommand{\bibnumfmt}[1]{[S#1]}
 %\renewcommand{\citenumfont}[1]{S#1}
 
-\section{Supplementary Material: Current phase relations of graphene Josephson junctions in microwave circuits}\label{sec:SM}
+\section{Supplementary Material: Inductance and current-phase relation of graphene Josephson junctions}\label{sec:SM}
 
 \subsection{Classification as diffusive or ballistic JJ}\label{sec:SMballistic}
 
@@ -492,7 +457,7 @@ Doing so, we extract an average signal and standard deviation, which yields the 
 %
 Assuming \SI{2}{\decibel} of cable loss between sample and HEMT, we arrive at an attenuation of \SI{111.74}{dB} of our VNA input line,
 
-\subsection{Extraction of $I_c$ and $f_0$}\label{sec:SMextraction}
+\subsection{Extracting $I_c$ and $f_0$}\label{sec:SMextraction}
 
 The DC switching current (Fig.~\ref{fig:figure1}(b,c)) is taken as the current at which $\partial V/\partial I_b$ is maximum, where $V$ is the measured voltage drop across the JJ.
 %
@@ -536,7 +501,7 @@ In order to remove MW background from the power dependence, we mask the regions 
 %
 This way, we obtain a power and frequency map of the MW background, which we use for removing background signal from power traces, such as the one in Fig.~\ref{fig:figure3}(a).
 
-\subsection{Extraction of $f_r$, $L_r$ and $L_J$}\label{sec:SMcalibration}
+\subsection{Extracting $f_r$, $L_r$ and $L_J$}\label{sec:SMcalibration}
 
 We can derive an expression for the circuit resonance frequency depending on the other parameters by using the impedances defined in Fig.~\ref{fig:rfderivation}.
 %
@@ -681,6 +646,27 @@ Over the range of measured gate voltages, the increase in loss is roughly consta
 	\label{fig:SMFig-lossrates-power}
 \end{figure}
 
+In Fig.~\ref{fig:SMFigpoweratJJ}, we show the estimated currents and voltages at the diffusive gJJ for low and high MW powers.
+%
+While in the case of low powers (all measurements except for the once in Fig.~\ref{fig:figure3}) the voltage is in the sub-micron regime and the current at the junction much smaller than $I_c$, for large drive powers we begin to sample a greater region of the CPR and voltage excitations on the order of a few \si{\micro\volt} start to become relevant.
+
+\begin{figure}
+	\centering
+	\includegraphics[width=\linewidth]{chapter-gJJ-CPR/figs/SMFigure-poweratJJ}
+	\caption{
+		\textbf{Voltage and current across the diffusive graphene Josephson junction.}
+		%
+		\textbf{(a,b)} Voltage across the JJ for varying gate voltage at reference power \textbf{(a)} and maximum drive power \textbf{(b)}.
+		%
+		\textbf{(c,d)} Current across the JJ for varying gate voltage at reference power \textbf{(c)} and maximum drive power \textbf{(d)}.
+		%
+		\textbf{(e,f)} Ratio of current across the JJ to DC-measured switching current for varying gate voltage at reference power \textbf{(e)} and maximum drive power \textbf{(f)}.
+		%
+		Note the different scales for the left and right column.
+	}
+	\label{fig:SMFigpoweratJJ}
+\end{figure}
+
 \subsection{Device response to bias current}\label{sec:SMfitbiascurrent}
 \subsubsection{Increasing loss rate}
 In addition to an increase in $\kappa_i$ for high drive powers as discussed in the main text, the internal loss rate of our circuit also depends on bias current.
@@ -703,8 +689,9 @@ From the peak spacing and the measured responsitvity $G_1=\partial f_0/\partial 
 \label{eq:currnoise-a}
 \end{align}
 %
-We estimate $\Delta I_n\approx\SI{270}{\nano\ampere}$ due to low-frequency noise for the ballistic device.
-%
+From this, we estimate $\Delta I_n\approx\SI{270}{\nano\ampere}$ due to low-frequency noise for the ballistic device.
+
+
 Similarly, the increase in total linewidth can be fitted as a linear function of $G_1$, resulting in an upper bound for the total corresponding bias current induced losses, cf. Fig.~\ref{fig:SMFig-lossrates-current}(b).
 %
 For the ballistic device, we extract a total corresponding current noise $I_n\approx\SI{390}{\nano\ampere}$ for the ballistic, and $I_n\approx\SI{110}{\nano\ampere}$ for the diffusive device.
@@ -724,35 +711,36 @@ Still, some contribution due to processes such as phase slip events is necessary
 	\label{fig:SMFig-lossrates-current}
 \end{figure}
 
-Adding the estimates for $I_n$ to the measured $I_c$ of Fig.~\ref{fig:figure2} results in a rescaling of the current axis, cf. Fig.~\ref{fig:SMfigure2}
+Since this current noise also leads to an artificial reduction in the measured $I_c$, this leads to a rescaling of the current axis of Fig.~\ref{fig:figure2}.
+%
+Adding the respective estimates of $I_n$ to the measured $I_c$ results in Fig.~\ref{fig:SMfigure2}.
+%
+In this case, all measured values of $L_J$ are larger than the ones extrapolated from $I_c$ and a sinusoidal CPR, hinting at an overall forward skewed CPR over the full gate voltage range in both devices.
+%
+Additional measurements in the form of statistics on the switching current~\cite{kiviojaWeakCouplingJosephson2005a,coskunDistributionSupercurrentSwitching2012,leeProximityCouplingSuperconductorgraphene2018a} could result in more information on this matter, but were not performed at the time.
 
 \begin{figure}
 	\centering
-	\includegraphics[width=\linewidth]{chapter-gJJ-CPR/figs/SMFigure2}
+	\includegraphics[width=\linewidth]{chapter-gJJ-CPR/figs/Figure2}
 	\caption{
-		\textbf{Josephson inductance and critical currents with added current noise.}
+		\textbf{Josephson inductance and critical currents without added current noise.}
 		%
-		Accounting for $I_n=\SI{110}{\nano\ampere}$ for the diffusive \textbf{(a)} and $I_n=\SI{390}{\nano\ampere}$ for the ballistic device \textbf{(b)} results in all values of $L_J$ being larger than expected from a sinusoidal CPR (dashed line).
+		Without accounting for DC current noise, a significant portion of the measured $L_J$ drop below the SIS limit of a sinusoidal CPR.
 	}
 	\label{fig:SMfigure2}
 \end{figure}
 
-\begin{figure}
-	\centering
-	\includegraphics[width=\linewidth]{chapter-gJJ-CPR/figs/SMFigure-poweratJJ}
-	\caption{
-		\textbf{Voltage and current across the diffusive graphene Josephson junction.}
-		%
-		\textbf{(a,b)} Voltage across the JJ for varying gate voltage at reference power \textbf{(a)} and maximum drive power \textbf{(b)}.
-		%
-		\textbf{(c,d)} Current across the JJ for varying gate voltage at reference power \textbf{(c)} and maximum drive power \textbf{(d)}.
-		%
-		\textbf{(e,f)} Ratio of current across the JJ to DC-measured switching current for varying gate voltage at reference power \textbf{(e)} and maximum drive power \textbf{(f)}.
-		%
-		Note the different scales for the left and right column.
-	}
-	\label{fig:SMFigpoweratJJ}
-\end{figure}
+
+
+
+
+\subsubsection{Extracting $\tau$}
+
+Figure~\ref{fig:SMinfluence} illustrates the effect of a forward skewed CPR on the Josephson inductance and resonance frequency dependence on bias current.
+%
+Since a higher skew results in a reduced slope of the CPR, Eq.~\ref{eq:LJgeneral} tells us that $L_J$ must therefore be increased at zero phase (and current).
+%
+Consequently, for the same DC bias microwave circuit with parameters $f_{\lambda/2}$ and $L_r$, a JJ with larger forward skew and $L_J$ pushes the initial resonance frequency further downwards than in the case of sinusoidal CPR.
 
 \begin{figure}
 	\centering
@@ -769,68 +757,18 @@ Adding the estimates for $I_n$ to the measured $I_c$ of Fig.~\ref{fig:figure2} r
 	\label{fig:SMinfluence}
 \end{figure}
 
-\subsubsection{Extracting $\tau$}
-\textbf{TODO: REWRITE THIS BECAUSE WE NOW CALIBRATED FR AND LR!!!}
 Without any knowledge on the junction transparency $\tau$, fitting data of a CPW cavity with JJ exhibiting a potentially nonsinusoidal CPR can lead to significant deviations from the true circuit parameters.
 %
-In Fig.~\ref{fig:SMtau}, we demonstrate the effect of $\tau$ on the extracted circuit parameters:
+It is therefore essential to use a fixed set of parameters for $f_{\lambda_2}$ and $L_r$, as described in Sec.~\ref{sec:SMcalibration}.
 %
-If the JJ shorting the CPW to ground has a forward skewed CPR, i.e. $\tau>0$, and Eq.~\ref{eq:Pogorzalek} is used to fit this data (dashed lines in Fig.~\ref{fig:SMtau}) under the assumption of a JJ with purely sinusoidal CPR, the extracted values (solid lines) for $f_r$ and $L_r$ will be too small compared with the true values, while $I_c$ will appear to be larger than expected, with consequently lower $L_J$.
+To fit the bias current dependence data for extracting $\tau$, we keep these values fixed and only allow $\tau$ and $I_c$ to vary within reasonable boundaries, i.e. $\tau\in[0,1]$ and $I_c<\max I_b$.
 %
-Naively, one would assume the MW measurement to result in $L_J$ to be larger than the value expected from DC measurements due to the increased inverse CPR slope for identical $I_c$.
+Due to the significant current noise, the cavity resonance gets very broad and begins to resemble a double-dip feature, which makes extraction of reliable values for small gate voltages increasingly difficult.
 %
-Nonetheless, the fit model accounting for the resonator tunability results in the opposite behavior.
+For this reason, we chose to omit gate voltages below the CNP from further analysis.
 
-To fit the bias current dependence data for extracting $\tau$, we first keep $\tau$ fixed and compare the fit residuals for various $\tau\in[0,1]$.
-%
-In a second step, we set $\tau$ as additional free parameter with the best results for $f_r$, $L_r$ and $I_c$, and set the initial value of $\tau$ as the one with previously determined minimum reduced $\chi^2$.
-%
-The fit converges more reliably than by setting $\tau$ as free parameter from the start, since this way the fit does not get trapped in a local minimum.
 
-Both current and frequency noise, however, can result in artificial global minima in $\chi^2(\tau)$.
-%
-For a critical current of \SI{2}{\micro\ampere} and bias currents up to $0.9I_c$, already $\sigma_I\geq\SI{1}{\nano\ampere}$ is enough to significantly throw off the fit for low values of $\tau$.
-%
-Frequency noise of $\sigma_f<\SI{1}{\mega\hertz}$ has no influence on the fitting algorithm.
-%
-As the responsivity $\partial f_0/\partial I_b$ increases with $I_b$, so does the frequency noise for a fixed current noise.
-%
-From the average data fluctuations and comparing these with the expected $\sigma_f(\sigma_I)$, we estimate $\sigma_I<\SI{1}{\nano\ampere}$ in our setup.
-%
-We therefore conclude that our fitting algorithm should present a reliable way of extracting $\tau$. 
 
-%\begin{figure}
-%	\centering
-%	\includegraphics[width=\linewidth]{chapter-gJJ-CPR/figs/SMFigure-tauparams}
-%	\caption{
-%		\textbf{Influence of $\tau$ on extracted fit parameters with Eq.~\ref{eq:Pogorzalek}.}
-%		Increasing $\tau$ (dashed line in \textbf{(a)}) results in a larger $L_J$ (dashed line in \textbf{(e)}), while the other fit parameters (dashed lines in \textbf{(b-d)}) remain constant.
-%		%
-%		In order for a fit model using Eq.~\ref{eq:Pogorzalek} under the assumption of a sinusoidal CPR (solid lines) to reproduce the data (points), significant deviations from the true parameters occur.
-%		%
-%		Specifically, the fit model returns a larger critical current than expected which leads to a reduced calculated $L_J$, even though the real $L_J$ increases with $\tau$.
-%	}
-%	\label{fig:SMtau}
-%\end{figure}
-%
-%\begin{figure}
-%	\centering
-%	\includegraphics[width=\linewidth]{chapter-gJJ-CPR/figs/SMFigure-noise}
-%	\caption{
-%		\textbf{Influence of $\tau$ and noise on fit result.}
-%		\textbf{(a)} Assuming a sinusoidal CPR for Eq.~\ref{eq:Pogorzalek} to fit data originating from a forward skewed CPR results in minimum fit residuals for $\tau=0$ (solid line).
-%		%
-%		Assuming the correct $\tau$ however results in minimum residuals (dashed line).
-%		%
-%		\textbf{(b-d)} Both current and frequency noise can significantly throw off the fitting algorithm by creating artificially global residual minima.
-%		%
-%		Plotted are calculations for $I_c=\SI{2}{\micro\ampere}$.
-%		%
-%		We estimate $\sigma_I<\SI{1}{\nano\ampere}$ in our setup.
-%	}
-%	\label{fig:SMres}
-%\end{figure}
-
-\clearpage
-\references{dissertation}
+%\clearpage
+%\references{dissertation}
 
