@@ -5,3 +5,4 @@ bibtex chapter-experimental-methods/experiment
 bibtex chapter-gJJ/gJJ
 bibtex chapter-gJJ-CPR/gJJ-CPR
 bibtex chapter-currentdetection/currentdetection
+bibtex chapter-gJJ-misc/gJJ-misc

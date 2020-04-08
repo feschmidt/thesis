@@ -530,6 +530,23 @@ Once BN-G heterostructures would stick to the sapphire chip, and including the u
 %\clearpage
 \subsection{Fabrication of DC bias cavities}\label{sec:fabRF}
 
+The process for fabricating DC bias cavities consists of three main steps:
+\begin{itemize}
+	\item Deposit and pattern base layer (CPW, ground plane, shunt bottom part)
+	\item Deposit and pattern shunt dielectric
+	\item Deposit and pattern shunt top plate
+\end{itemize}
+%
+Care needs to be taken to ensure that there are no shorts in the shunt dielecric layer.
+%
+Since the dielectric deposition using PECVD does not necessarily provide complete step coverage, the dielectric layer should be at least \SI{30}{\percent} thicker than the base layer.
+%
+We found this to be problematic when patterning the base layer using dry etching on silicon substrates because the dry-etch process can cut deep into the silicon substrate, increasing the step height to be covered by the dielectric.
+%
+In this case, depositing a dielectric fill layer in the gaps slightly extending above the step edges, resulted in reliable device yield.
+%
+We note that, for the devices presented in the following chapters, using BOE for etching on silicon, or lift-off for the metal base layer circumvented this challenge.
+
 The RF circuits in Chapters~\ref{chap:gJJ} and \ref{chap:gJJ-CPR} are fabricated as listed in Tab~\ref{tab:fabRF}, while the one in Chapter~\ref{chap:currentdetection} used Al:Si as superconducting layer and silicon as substrate and dielectric layer.
 %
 We have also fabricated and measured cavities with NbTiN as superconductor with \ce{Si3N4} dielectric and on silicon substrates with comparable RF quality factors.
