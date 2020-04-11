@@ -20,7 +20,7 @@
 
 \section{Introduction}
 
-Josephson junctions (JJs) are widely used in microwave (MW) applications, such as quantum limited amplification and sensing, where they are being exploited as nonlinear inductors.
+Josephson junctions (JJs) are widely used in microwave (MW) applications, such as quantum limited amplification and sensing, where JJs are exploited as nonlinear inductors.
 %
 For the use of JJs in superconducting quantum information circuits, the junction nonlinearity has a major effect on the circuit requirements and capabilities~\cite{kringhojAnharmonicitySuperconductingQubit2018}.
 %
@@ -30,19 +30,19 @@ While JJs are generally non-linear elements, the specific non-linearity depends 
 
 The current-phase relation is a fundamental property of the JJ, relating the supercurrent $I_J$ flowing across a weak link between two superconducting banks with the phase difference $\delta$ between the two superconductors.
 %
-It results from the first derivative of the Josephson energy potential with respect to phase, $I_J(\delta) = (2e/\hbar) \partial V(\delta)/\partial \delta$.
+It results from the first derivative of the Josephson energy potential with respect to phase, $I_J(\delta) = (2e/\hbar) \partial_\delta V(\delta)$.
 %
 For the ideal case of a JJ formed by a thin insulating tunnel barrier between two superconducting electrodes (SIS), the Josephson potential is given by $V(\delta)=1-E_J\cos\delta$ and the CPR has pure sinusoidal character as given by the first Josephson relation, $I_J(\delta) = I_c\sin\delta$~\cite{josephsonPossibleNewEffects1962,josephsonSupercurrentsBarriers1965}.
 
-However, in JJs formed by normal conductors between superconductors (SNS) such as graphene Josephson junctions (gJJs), transport across the JJ is governed by Andreev bound states, each with ground state energy
+However, in JJs formed by normal conductors between superconductors (SNS) such as graphene Josephson junctions (gJJs), transport across the JJ is governed by Andreev bound states (ABS), each with ground state energy
 \begin{align}
 V_i(\delta)=1-\Delta_0\sqrt{1-\tau_i\sin^2(\delta/2)}
 \label{eq:ABSenergy}
 \end{align}
 %
-with transmission probability $\tau$ and superconducting gap $\Delta_0$~\cite{beenakkerUniversalLimitCriticalcurrent1991,titovJosephsonEffectBallistic2006b}.
+with transmission probability $\tau_i$ and superconducting gap $\Delta_0$~\cite{beenakkerUniversalLimitCriticalcurrent1991,titovJosephsonEffectBallistic2006b}.
 %
-Assuming equal $\tau$ for all channels, i.e. $\tau=\sum\tau_i/N$, the corresponding CPR is given by
+Assuming a JJ with $N$ channels of equal $\tau_i$, i.e. $\tau=\sum\tau_i/N$, the corresponding CPR is given by
 \begin{align}
 I_J(\delta) = \frac{\pi\Delta_0}{2 e R_n} \frac{\sin\delta}{\sqrt{1 - \tau \sin^2(\delta / 2)}},
 \label{eq:CPR-ball}
@@ -86,9 +86,11 @@ To suppress thermal excitations, the MW inout line is heavily attenuated and all
 
 We measured two separate devices with nominally identical microwave circuits and junction designs:
 %
-One of the devices exhibited signatures of ballistic transport in form of Fabry-Pérot-like oscillations, which we will refer to as the \textit{ballistic device}, which is the device presented in the main text of Ref.~\cite{schmidtBallisticGrapheneSuperconducting2018}.
+One of the devices exhibited signatures of ballistic transport in form of Fabry-Pérot-like oscillations, which we will refer to as the \textit{ballistic device} (cf. Supplementary Material Sec.~\ref{sec:SMballistic} and Fig.~\ref{fig:SMFig-ballistic}).
 %
-The other one, in lack of such features, will be called \textit{diffusive device}, and corresponds to the reference sample of the same reference, cf. Supplementary Material Sec.~\ref{sec:ballistic} and Fig.~\ref{fig:SMFig-ballistic} for details on the ballistic features.
+This is the device presented in the main text of Ref.~\cite{schmidtBallisticGrapheneSuperconducting2018}.
+%
+The other one, in lack of such features, will be called \textit{diffusive device}, and corresponds to the reference sample of Ref.~\cite{schmidtBallisticGrapheneSuperconducting2018}.
 %
 With a normal state resistance of both devices ranging between \SIrange{35}{350}{\ohm}, depending on gate voltage, we estimate around 74 to 740 conducting channels.
 %
@@ -143,21 +145,19 @@ L_J = \frac{\hbar}{2e}\left(\diff{I_J}{\delta}\right)^{-1},
 \label{eq:LJgeneral}
 \end{align}
 %
-which can be derived from the second Josephson relation, $\partial\delta/\partial t=2e V/\hbar$.
+which can be derived from the second Josephson relation, $\partial_t\delta=2e V/\hbar$.
 %
-Depending on the impedance of the gJJ at the circuit resonance frequency, $Z_J=i\omega_0 L_J$, the fundamental mode hosted by the gJJ-terminated CPW varies between a $\lambda/2$ wave for $Z_J\rightarrow0$ and $\lambda/4$ for $Z_J\rightarrow\infty$.
-
-The resonance frequency of a $\lambda/2$-resonator shorted to ground by a Josephson inductance can be approximated by
+The resonance frequency of a $\lambda/2$-resonator shorted to ground by such a Josephson inductance can be approximated by
 \begin{align}
 f_0\left(I_b,I_c\right) = f_{\lambda/2} \frac{L_r+L_J\left(I_b, I_c\right)}{L_r +  2L_J\left(I_b, I_c\right)}
 \label{eq:Pogorzalek}
 \end{align}
 %
-with $L_r$ the bare CPW inductance and $f_{\lambda/2}$ the resonance frequency of the CPW without the JJ, see Supplementary Material Sec.~\ref{sec:calibration}.
+with $L_r$ the bare CPW inductance and $f_{\lambda/2}$ the resonance frequency of the CPW without the JJ, see Supplementary Material Sec.~\ref{sec:SMcalibration}.
 %
 $I_b$ is the bias current flowing through CPW and the JJ, $I_c$ the critical current of the JJ.
 %
-We can immediately see that for small $L_J$, $f_0\rightarrow f_{\lambda/2}$, while for $L_J\gg L_r$, $f_0 \rightarrow f_{\lambda/2}/2$.
+Depending on the impedance of the gJJ at the circuit resonance frequency, $Z_J=i\omega_0 L_J$, the fundamental mode hosted by the gJJ-terminated CPW varies between a $\lambda/2$ wave ($f_0\rightarrow f_{\lambda/2}$) for small $Z_J\rightarrow0$, while for $L_J\gg L_r$ the fundamental mode is $\lambda/4$ ($f_0 \rightarrow f_{\lambda/2}/2=f_{\lambda/4}$).
 
 The circuit response is measured by recording the reflection coefficient $S_{11}$ of the cavity using a vector network analyzer, which excites the device through a series of attenuators and a directional coupler, and measures the reflected signal, amplified by low noise cryogenic and room temperature HEMTs. 
 %
@@ -221,9 +221,9 @@ In order to examine the underlying mechanisms further, we continue by studying t
 
 
 
-\section{Reconstructing the current phase relation}
+\section{Pure MW measurements of the Josephson nonlinearity}
 
-\subsection{Anharmonicity of a gJJ MW circuit}
+\subsection{Probing $L_J$ via the power dependence}
 
 The nonlinear inductance of a Josephson junction consequently introduces nonlinear behavior of the overall circuit.
 %
@@ -273,9 +273,11 @@ This is in contrast with circuits incorporating standard aluminum oxide JJs, whe
 		%
 		Black lines are fits.
 		%
-		\textbf{(d)} Anharmonicity coefficient vs gate voltage.
+		\textbf{(d)} Josephson energy correction for measured gate voltages.
 		%
-		Black dots: data as extracted from fits as in \textbf{(b-c)}, blue line: model using $I_c$ and assuming sinusoidal CPR, orange line: model using $L_J$.
+		Dots: data as extracted from fits as in \textbf{(b-c)} and $L_J$, dashed line: SIS limit, dotted line: $\tau=1$ limit.
+		%
+		Values below the two line indicate forward skewed CPR.
 	}
 	\label{fig:figure3}
 \end{figure}
@@ -305,48 +307,70 @@ Loss mechanisms in similar SNS systems, with normal metal weak links, have shown
 The $\beta$ term in Eq.~\ref{eq:Duffing-EOM} is due to the anharmonicity of the microwave cavity for high drive powers which is evident when expanding the Josephson energy potential to higher orders,
 \begin{align}
 V_J(\delta) \approx E_J \frac{\delta^2}{2} - E_J\left( 1-\frac{3\sum\tau_i^2}{4\sum\tau_i} \right) \frac{\delta^4}{24} +\mathcal{O}(\delta^6)\ , 
+\label{eq:EJtaylor}
 \end{align}
 %
 where $E_J=\Delta_0\sum\tau_i/4$~\cite{kringhojAnharmonicitySuperconductingQubit2018}.
 %
-In Fig.~\ref{fig:figure3}(d), we compare the measured value of the anharmonicity coefficient with the one expected from a CPW shorted to ground by a Josephson junction, approximately given by $p^3/2$ with the participation ratio between Josephson and total inductance $p=L_J/(L_r+L_J)$~\cite{wilsonPhotonGenerationElectromagnetic2010b,zhouHighgainWeaklyNonlinear2014}.
-
-
-
-Surprisingly, assuming a sinusoidal CPR and using $I_c$ to calculate $L_J$ results in a closer match to the observed coefficient than the expected value as calculated from the Josephson inductance directly observed in Fig.~\ref{fig:figure2}.
+Compared to the case of an SIS junction, depending on $\tau$ the fourth-order correction 
 %
-Without knowing exactly how many ABS channels are active in the JJ, it is not possible to extract a number for $\tau$, as the measured anharmonicity coefficient only returns information on $\sum\tau_i=N\tau$.
+\begin{align}
+\Gamma = 1-3\tau/4
+\label{eq:Ejcorrection}
+\end{align} 
 %
-Additional experiments, such as extracting the transparency for each channel from multiple Andreev reflection via voltage-biased measurements~\cite{scheerConductionChannelTransmissions1997,goffmanConductionChannelsInAsAl2017,bretheauTunnellingSpectroscopyAndreev2017a,pandeyAndreevReflectionBallistic2019}, or direct measures of the anharmonicity coefficient in transmon qubits~\cite{larsenSemiconductorNanowireBasedSuperconductingQubit2015, delangeRealizationMicrowaveQuantum2015, casparisGatemonBenchmarkingTwoQubit2016a,casparisSuperconductingGatemonQubit2018}, would be required to reach further conclusions.
+can vary between 1 (SIS) to 0.25 ($\tau=1$).
+%
+In Fig.~\ref{fig:figure3}(d), we plot this quantity as the ratio of the measured value of the anharmonicity coefficient $\beta_{\rm meas}$ and the one expected from a $\lambda/2$ resonator shorted to ground by a Josephson junction, approximately given by $\beta_{\rm th}=f_0p^3/2$ with the participation ratio between Josephson and total inductance $p=L_J/(L_r+L_J)$~\cite{wilsonPhotonGenerationElectromagnetic2010b,zhouHighgainWeaklyNonlinear2014}.
 
 
-\subsection{Bias current dependence}
+For a broad range of gate voltages, the correction lies between the two extremes of no and full forward skewing.
+%
+However, for $V_g>\SI{5}{\volt}$, this value drops below the minimum of 0.25 as expected from Eq.~\ref{eq:EJtaylor}.
+%
+While this is unexpected, we note that without knowing exactly how many ABS channels are active in the JJ, it is not possible to extract a number for $\tau$, as the measured anharmonicity coefficient only returns information on $\sum\tau_i=N\tau$.
+%
+Additional experiments, such as extracting the transparency for each channel from multiple Andreev reflection via voltage-biased measurements~\cite{scheerConductionChannelTransmissions1997,goffmanConductionChannelsInAsAl2017,bretheauTunnellingSpectroscopyAndreev2017a,pandeyAndreevReflectionBallistic2019}, or direct measures of both $E_J$ and the anharmonicity coefficient in transmon qubits~\cite{larsenSemiconductorNanowireBasedSuperconductingQubit2015, delangeRealizationMicrowaveQuantum2015, casparisGatemonBenchmarkingTwoQubit2016a,casparisSuperconductingGatemonQubit2018}, would be required to draw further conclusions.
+
+
+\subsection{Probing $L_J$ via the bias current dependence}
 
 A second way of reconstructing the CPR is by means of analyzing the bias current dependence of the high frequency circuit response, as this allows for a direct measure of $L_J(I_b)$.
 %
-We model the bias current dependence of both the ballistic and diffusive device at \SI{15}{\milli\kelvin} using Eqs.~\ref{eq:LJgeneral} and \ref{eq:Pogorzalek} under the assumption of a general CPR according to Eq.~\ref{eq:CPR-ball} and using $\tau$ as a free parameter, as shown in Fig.~\ref{fig:figure4}(a).
-%
-For details on the fitting algorithm, see the Supplemental Material Sec.~\ref{sec:fitbiascurrent}.
+We model the bias current dependence of both the ballistic and diffusive device at \SI{15}{\milli\kelvin} using Eqs.~\ref{eq:LJgeneral} and \ref{eq:Pogorzalek} under the assumption of a general CPR according to Eq.~\ref{eq:CPR-ball} and using $\tau$ and $I_c$ as a free parameters, as shown in Fig.~\ref{fig:figure4}(a) (see Supplementary Material Sec.~\ref{sec:SMfitbiascurrent} for details).
 
-Our model accurately reproduces the data for all measured gate voltages, cf. Fig.~\ref{fig:figure4}(a), which allows us to extract a CPR-transparency parameter $\tau(V_g)$, as plotted in Fig.~\ref{fig:figure4}
-(b).
+Compared to a Josephson inductance with sinusoidal CPR, the measured data requires additional Josephson inductance, pushing $f_0$ to lower frequencies, which is provided by a CPR with same $I_c$, but forward skewed (cf. Supplementary Material Fig.~\ref{fig:SMinfluence}).
 %
-We extract an average channel transmission $\tau_{\rm diff}=0.60\pm0.10$ and $\tau_{\rm ball}=0.78\pm0.09$ for the diffusive and ballistic device, respectively, at base temperature.
+The lower limit of the resonance frequency at zero bias current is given by a fully forward skewed CPR with $\tau=1$, which yields maximum $L_J$ for the same $I_c$ as a fully sinusoidal CPR.
 %
-Measurements at \SI{1}{\kelvin} were not performed.
+For all gate voltages, the measured data lies between these two extremes.
 %
-The resulting CPRs are forward skewed, as plotted in Fig.~\ref{fig:figure4}(c).
+Fixing $L_r$ and $f_{\lambda/2}$ as the earlier calibrated values, and including a forward skewed CPR in our model, we are able to fit the measured $f_0$, which allows us to extract a CPR-transparency parameter $\tau(V_g)$.
+
+As the bias current increases, so does the internal linewidth of the $S_{11}$ resonance, cf. Supplementary Material Sec.~\ref{sec:SMfitbiascurrent} and Fig.~\ref{fig:SMFig-lossrates-current}.
 %
-With skew defined as the deviation of the CPR maximum from phase $\pi/2$, $S=2\delta_{\rm max}/\pi -1$, the corresponding values are $S_{\rm diff}=0.15\pm0.03$ and $S_{\rm ball}=0.26\pm0.07$ for the diffusive and ballistic device, respectively.
+This is most likely due to the previously mentioned current noise on our DC lines, which modulates the resonance frequency around the value set by $f_0$.
+%
+Due to the measurement time, the recorded trace then shows a widened resonance dip, that even resembles a split-dip feature at high responsivity to bias current, $G_1=\partial f_0/\partial I_b$.
+%
+We therefore chose to omit bias current measurements of gate voltages where the resonance frequency was not clearly visible, which is the reason for some missing datapoints in Fig.~\ref{fig:figure4}.
+
+From the remaining data, we extract an average channel transmission $\tau_{\rm diff}=0.64\pm0.18$ and $\tau_{\rm ball}=0.77\pm0.14$ for the diffusive and ballistic device, respectively, at base temperature.
+%
+With skew defined as the deviation of the CPR maximum from phase $\pi/2$, $S=2\delta_{\rm max}/\pi -1$, the corresponding values are $S_{\rm diff}=0.20\pm0.09$ and $S_{\rm ball}=0.27\pm0.15$ for the diffusive and ballistic device, respectively, as plotted in Fig.~\ref{fig:figure4}(b).
 %
 We note that this is comparable to the results obtained from DC-measurements of the CPR~\cite{englishObservationNonsinusoidalCurrentphase2016,nandaCurrentPhaseRelationBallistic2017}.
+%
+Overall, the skewness seems to be constant for both devices, except for the region around CNP, where skewness seems to be significantly higher than elsewhere.
+%
+While not reported earlier, this might be due to 
 
-\textbf{TODO: UPDATE!!!}
-We plot the thus reconstructed current phase relations of both the ballistic and diffusive gJJ in Fig.~\ref{fig:figure4}(c).
+
+
+
+Corrections to $E_J$ amount to $0.52\pm0.13$ for the diffusive and $0.42\pm0.10$.
 %
-While the relatively small forward skew of the diffusive device only deviates slightly from the case of a perfectly sinusoidal CPR, the ballistic device shows significant forward skewing.
-%
-We would like to point out that even though the skew in the diffusive case is only minor, our MW circuit still sensitive enough to these small changes, making its use competitive with DC-measurements of the CPR by using asymmetric SQUIDs or pickup loops.
+This is an important result for future use of gJJs in applications such as qubits, as this correction plays an important role in the circuit's anharmonicity and coherence times~\cite{kringhojAnharmonicitySuperconductingQubit2018}.
 
 \begin{figure}[t]
 	\centering
@@ -354,11 +378,13 @@ We would like to point out that even though the skew in the diffusive case is on
 	\caption{
 		\textbf{Observation of the skewness of the current phase relation by measuring the DC current dependence of the linear response of the Josephson inductance.}
 		%
-		Fitting the bias current dependence \textbf{(a)}, we can extract the junction transparency \textbf{(b)} and corresponding CPR skew \textbf{(c)} for the diffusive (green) and ballistic (blue) gJJ device versus gate voltage.
+		Fitting the bias current dependence \textbf{(a)}, we can extract the junction transparency and corresponding CPR skew \textbf{(b)} for the diffusive (green) and ballistic (blue) gJJ device versus gate voltage.
 		%
-		\textbf{(d)} Reconstructed current-phase relation for the diffusive (green) and ballistic (blue) device.
+		An Josephson inductance with underlying SIS-CPR would result in high $f_0$ and small frequency tuning, while maximum skew provides a lower bound on $f_0$.
 		%
-		The large transparency of the ballistic JJ leads to significant forward skewing, while the relatively low transparency of the diffusive JJ only results in minor skewing.
+		\textbf{(d)} Using $\tau$, we calculate the correction factor to $E_J$ following Eq.~\ref{eq:Ejcorrection} for both devices, indicating significant forward skewing in both samples.
+		%
+		Dashed lines: Underlying sinusoidal CPR, dotted lines: maximally skewed CPR with $\tau=1$ (cf. Supplementary Material Fig.~\ref{fig:SMinfluence}).
 	}
 	\label{fig:figure4}
 \end{figure}
@@ -750,9 +776,11 @@ Consequently, for the same DC bias microwave circuit with parameters $f_{\lambda
 		%
 		\textbf{(a)} CPR for various $\tau=0$ (solid), $\tau=0.5$ (dashed) and $\tau=1.0$	(dash-dotted).
 		%
-		\textbf{(b-c)} Josephson inductance \textbf{(b)} and resonance frequency \textbf{(c)} supercurrent for	same transparencies as in \textbf{(a)}.
+		\textbf{(b-c)} Josephson inductance \textbf{(b)} and resonance frequency \textbf{(c)} normalized to the calibrated values of $L_r$ and $f_r$, respectively.
 		%
-		Increased junction transmission leads to forward skewing of the CPR, thus a reduced slope and higher Josephson inductance, which in turn reduces the resonance frequency and increases the tuning.
+		Each linestyle corresponds to an underlying CPR as calculated in \textbf{(a)}, each with a simulated $I_c=\SI{1}{\micro\ampere}$.
+		%
+		Increased forward skewing of the CPR leads to a reduced slope and higher Josephson inductance, which in turn reduces the resonance frequency and increases the tuning.
 	}
 	\label{fig:SMinfluence}
 \end{figure}

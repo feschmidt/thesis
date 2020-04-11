@@ -315,9 +315,8 @@
 %% A part title starts with a huge (96pt) bold black number, flushed to the
 %% right, followed by the part name on the next line in the title color.
 \titleformat{\part}[display]
-{\flushright\titlestyle\newpagecolor{mDarkTeal}\afterpage{\pagecolor{none}}}
-%{\cleartoevenpage\pagecolor{mDarkTeal}\afterpage{\nopagecolor}}
-%{\flushright\titlestyle}
+%{\flushright\titlestyle\newpagecolor{mDarkTeal}\afterpage{\pagecolor{none}}} %% uncomment for colored pages, then comment out next line
+{\flushright\titlestyle}
 {\fontsize{200pt}{150pt}\selectfont\bfseries\color{mLightBrown}\thechapter}
 {0pt}
 {\Huge\color{mLightBrown}}
@@ -329,9 +328,8 @@
 
 %% Chapter titles have the same layout as parts.
 \titleformat{\chapter}[display]
-{\flushright\titlestyle\newpagecolor{mDarkTeal}\afterpage{\pagecolor{none}}}
-%{\cleartoevenpage\pagecolor{mDarkTeal}\afterpage{\nopagecolor}}
-%{\flushright\titlestyle}
+%{\flushright\titlestyle\newpagecolor{mDarkTeal}\afterpage{\pagecolor{none}}} %% uncomment for colored pages, then comment out next line
+{\flushright\titlestyle}
 {\fontsize{200pt}{150pt}\selectfont\bfseries\color{mLightBrown}\thechapter}
 {0pt}
 {\Huge\color{mLightBrown}}
