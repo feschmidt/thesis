@@ -13,9 +13,124 @@
 %% Start the actual chapter on a new page.
 \afterpage{\pagecolor{none}}\newpage
 
-\section{The Josephson inductance}
+\section{Superconducting-normal Josephson devices}
 
-Since a dissertation is a substantial document, it is convenient to break it up into smaller pieces. In this template we therefore give every chapter its own file. The chapters (and appendices) are gathered together in \texttt{dissertation.tex}, which is the master file describing the overall structure of the document. \texttt{dissertation.tex} starts with the line
+\subsection{Andreev reflection at the SN interface}
+
+\subsection{Andreev bound states in SNS junctions}
+
+\begin{align}
+\frac{\partial\delta}{\partial t}&=\frac{2eV_J}{\hbar}\, ,\, V_J=L_J\frac{\partial I_J}{\partial t}=L_J\frac{\partial I_J}{\partial\delta}\frac{\partial\delta}{\partial t}
+\end{align}
+
+The work done on the junction must be $U_J=\int I_J V_J {\rm d}t=\frac{\hbar}{2e}\int I_J \frac{\partial\delta}{\partial t}{\rm d}t = \frac{\hbar}{2e}\int I_J {\rm d}\delta$, therefore $I(\delta) = \frac{2e}{\hbar}\frac{\partial U_J}{\partial\delta}$.
+Each Andreev bound state has a ground state energy $U_i=-\Delta\sqrt{1-T_i\sin^2(\delta/2)}$ with induced superconducting gap $\Delta$ and channel transparency $T_i$.
+Summing over all of these channels, the total Josephson potential is given by
+\begin{align}
+U_J(\delta) &= 1-\Delta\sum_i\sqrt{1-T_i\sin^2(\delta/2)} \\
+&\approx E_J \frac{\delta^2}{2} - E_J\left( 1-\frac{3\sum T_i^2}{4\sum T_i} \right) \frac{\delta^4}{24} +\mathcal{O}(\delta^6)\ , \\
+E_J &= \frac{\Delta}{4}\sum_i T_i \rightarrow \frac{\Delta}{4}N\tau
+\end{align}
+
+The corresponding Josephson current and inductance are 
+\begin{align}
+I(\delta) &= \frac{2e}{\hbar}\frac{\partial U_J}{\partial\delta} = \frac{e\Delta}{2\hbar}\frac{\tau\sin\delta}{\sqrt{1-\tau\sin^2\delta/2}} \\
+L_J(\delta) &= \frac{\hbar}{2e}\left( \frac{\partial I_J}{\partial\delta} \right)^{-1} = \left(\frac{\hbar}{2e}\right)^2\left(\frac{\partial^2U_J}{\partial\delta^2}\right)^{-1}
+\end{align}
+
+The anharmonicity in the circuit is then reduced depending on the channel transparencies.
+In the limit of small $L_J$, we can model the TL resonator as a series $LC$-circuit, resulting in anharmonicity
+\begin{align}
+\chi &= \frac{-E_C}{2} \left( 1-\frac{3\sum T_i^2}{4\sum T_i} \right) p^3 \rightarrow \frac{-E_C}{2} \left(1-\frac{3}{4}N\tau \right) p^3 
+\end{align}
+
+\begin{figure}
+	\centering
+	\includegraphics[width=0.7\linewidth]{chapter-introduction/figs/EJ_phase_tau}
+	\caption{}
+	\label{fig:ejphasetau}
+\end{figure}
+
+\begin{figure}
+	\centering
+	\includegraphics[width=0.7\linewidth]{chapter-introduction/figs/EJ_phase_Ib}
+	\caption{}
+	\label{fig:ejphaseib}
+\end{figure}
+
+
+\subsection{Subgap density of states}
+
+KWANT~\cite{grothKwantSoftwarePackage2014} simulations are at \url{https://nas-steelelab.tnw.tudelft.nl:5001/?launchApp=SYNO.SDS.Drive.Application#file_id=509401234564752146}, located on the NAS under \texttt{Felix/programming/kwant}.
+
+\subsection{The limit of low $\tau$: SIS}
+
+
+
+\section{DC bias cavities for probing Josephson junctions}
+
+%\subsection{Coplanar waveguide electrodynamics}
+
+%\subsection{DC bias cavities}
+
+In order to probe the Josephson inductance, we make use of superconducting microwave resonators based on coplanar waveguides~\cite{gopplCoplanarWaveguideResonators2008,zmuidzinasSuperconductingMicroresonatorsPhysics2012}.
+%
+These have been used extensively in the field of particle detection and circuit (quantum) electrodynamics due to the intrinsic low loss originating from the absence in resistance of the Cooper pairs~\cite{dayBroadbandSuperconductingDetector2003a,blaisCavityQuantumElectrodynamics2004c}.
+%
+In order to analyze our devices both in the low and high frequency range (DC to several $\SI{e9}{\hertz}$), our circuits need to be able to sustain relatively large quality factors while being able to introduce direct current and voltage access to the device under test (DUT).
+
+While there is a variety of circuit architectures capable of this approach, such as using inductive coupling~\cite{vissersFrequencytunableSuperconductingResonators2015b}, direct leads at voltage nodes of a $\lambda/2$ resonator with matching length~\cite{chenIntroductionDcBias2011a,liApplyingDirectCurrent2013} or lumped-element split-cavities~\cite{mahashabdeFastTunableHigh2020}, we based our design on an architecture previously developed in our group, the shunt capacitor DC bias access~\cite{bosmanBroadbandArchitectureGalvanically2015c}.
+%
+The advantage of this approach is threefold:
+%
+As no circuit symmetries need to be considered, the design is rather simple.
+%
+No additional port needs to be used to probe or excite the DUT, thus there is no additional leakage channel.
+%
+Finally, using a shunt capacitor provides a broadband signal port up to the self-resonance of the shunt capacitor, which is chosen to be well above the resonance frequency of the circuit.
+
+Figure~\ref{fig:DCbias} depicts a schematic of the DC bias cavity circuit.
+%
+In principle, measurements in both transmission and reflection geometry are possible.
+%
+However, we typically use the second port for supplying a DC gate voltage, and short the DUT to ground.
+%
+Therefore, we only perform reflection measurements.
+
+The reflection coefficient of this circuit is given by
+%
+\begin{align}
+S_{11}=-1+\frac{2\kappa_e}{\kappa_e+\kappa_i+2i\Delta}
+\end{align}
+%
+with the internal and external loss rates$ \kappa_i$ and $\kappa_e$ and the detuning $\Delta=\omega-\omega_0$~\cite{bosmanBroadbandArchitectureGalvanically2015c}.
+%
+In Fig.~\ref{fig:s11} we plot the reflection coefficient for various fractions of $\kappa_e/\kappa_i$, to illustrate the effects of over-, under- and critical coupling.
+%
+For a best signal-to-noise ratio, the shunt capacitor should be designed such that the external coupling matches the internal loss rate, with the internal and external loss rates approximately given by
+%
+\begin{align}
+\kappa_i &= \frac{\omega_0}{Q_i} = \frac{\omega_0 R C C_s}{C+C_s} \\
+\kappa_e &= \frac{\omega_0}{Q_e} = \frac{C}{Z_0 C_s (C+C_s)}
+\end{align}
+%
+
+
+\begin{figure}
+	\centering
+	\includegraphics[width=\linewidth]{chapter-introduction/figs/S11}
+	\caption{}
+	\label{fig:s11}
+\end{figure}
+
+
+\begin{figure}
+	\centering
+	\includegraphics[width=\linewidth]{chapter-gJJ-CPR/figs/SMFigure-influence}
+	\caption{}
+	\label{fig:smfigure-influence}
+\end{figure}
+
 
 \section{Outline}
 In chapter~\ref{chap:experiment}

@@ -6,29 +6,50 @@
 This is a concluding chapter explaining the scientific and technical
 implications for society of the research findings in considerable detail.
 
-\section{Future of graphene}
+\section{Graphene for superconducting MW circuits}
 
-With current technology and fabrication, encapsulated graphene Josephson junctions are not a scalable option for quantum Josephson devices.
-The following pitfalls would need to be solved in order to improve this:
+As we have seen in Chapters~\ref{chap:gJJ} and \ref{chap:gJJ-CPR}, with current technology and fabrication, encapsulated graphene Josephson junctions are not a scalable option for quantum Josephson devices.
+%
+This is mainly due to the remaining high intrinsic losses, which are likely limiting graphene transmon qubits such as the ones in Refs.~\cite{krollMagneticFieldCompatible2018,wangCoherentControlHybrid2019}.
 
-- Dry-etching using CHF3+O2 in order to make galvanic contacts with the graphene layer can add surface defects in the silicon area close to the junction, providing a number of loss channels.
-It would therefore be beneficial to pre-pattern graphene or at least remove residual stacks, but this significantly adds to fabrication complexity
-- BN encapsulation remains non-scalable as long as it cannot be done on a wafer scale.
-Especially the hydrogen bubbles at BN/G interfaces limit device usability, since annealing in forming gas at \SI{400}{\celsius} degrades the RF properties of the superconducting layer used for the RF circuitry and can potentially lead to surface defects in the silicon layer
+The following pitfalls would need to be addressed in order to improve this:
+\begin{description}
+	\item[Graphene-metal interface] Dry-etching using \ce{CHF3 + O2} in order to make galvanic contacts with the graphene layer can add surface defects in the silicon area close to the junction, providing a number of loss channels.
+	%
+	It would therefore be beneficial to pre-pattern graphene or at least remove residual stacks, but this significantly adds to fabrication complexity
+	\item[BN encapsulation] BN encapsulation remains non-scalable as long as it cannot be done on a wafer scale.
+	%
+	Especially the hydrogen bubbles at BN/G interfaces limit device usability, since annealing in forming gas at \SI{400}{\celsius} degrades the RF properties of the superconducting layer used for the RF circuitry and can potentially lead to surface defects in the silicon layer.
+\end{description}
 
 A more viable route could be Josephson junctions based on CVD-grown single layer graphene.
-It remains to be seen if the device quality would be sufficient, since AlOx JJs are also not ballistic.
+%
+It remains to be seen if the device quality would be sufficient, since \ce{AlO_x} JJs are also not ballistic.
+%
 A possible fabrication scheme could look like this:
+%
+\begin{itemize}
+	\item Pre-pattern all metal layers including bottom gate
+	\item Cover bottom gate by local sputtering of dielectric
+	\item Transfer SLG on wafer scale
+	\item Pattern SLG using \ce{O2} plasma
+	\item Contact SLG using Ti/Al evaporation
+\end{itemize}
 
-1. Pre-pattern all metal layers including bottom gate
-1. Cover bottom gate by local sputtering of dielectric
-1. Transfer SLG on wafer scale
-1. Pattern SLG using O2 plasma
-1. Contact SLG using Ti/Al evaporation
 
 \section{Usefulness of current bias cavities}
 
-Josephson laser
+Josephson laser~\cite{chenRealizationSingleCooperpairJosephson2014c,cassidyDemonstrationAcJosephson2017e}, current detection~\cite{kherKineticInductanceParametric2016,kherSuperconductingNonlinearKinetic2017}, JPA~\cite{hoeomWidebandLownoiseSuperconducting2012d}
+
+Improved dielectrics for DC shunt bias~\cite{adamyanTunableSuperconductingMicrostrip2016}
+
+Outlook on other architectures:
+%
+Direct leads at voltage nodes of $\lambda$ and $\lambda/2$ resonators~\cite{chenIntroductionDcBias2011a,liApplyingDirectCurrent2013}.
+%
+Inductive coupling~\cite{vissersFrequencytunableSuperconductingResonators2015b}.
+%
+Fractals~\cite{mahashabdeFastTunableHigh2020}
 
 %\clearpage
 %\references{dissertation}

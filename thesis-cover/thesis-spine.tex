@@ -1,0 +1,33 @@
+%\documentclass{dissertation-edit}
+\documentclass[border=0pt,tikz]{standalone}
+\usetikzlibrary{fit}
+%\usepackage{geometry}
+%\geometry{papersize={10mm,244mm}}
+\usepackage{blindtext}
+
+%%%% all of this if <standalone> is used
+\pagestyle{empty}
+\definecolor{mDarkTeal}{cmyk}{0.4068,0.0678,0.0000,0.7686}
+\definecolor{mLightBrown}{cmyk}{0.00,0.27,0.74,0.13}
+\pagecolor{mDarkTeal}
+\color{mLightBrown}
+\usepackage[sfdefault,scaled=.85]{FiraSans}
+
+%\usepackage{rotating}
+\begin{document}
+%	\begin{turn}{90}
+%		T
+%	\end{turn}
+	\begin{tikzpicture}
+	
+	\node[rotate=90] (a1) at (0,0){\bfseries\Large Felix E. Schmidt};
+	\node[rotate=90] (a2) at (-0.25,10){\bfseries\Large Superconducting coplanar DC bias cavities};
+	\node[rotate=90] (a3) at (0.25,10){\bfseries\Large for probing Josephson junctions};
+	
+	\node[fit=(a1) (a2) (a3), anchor=center, minimum width=10mm, 
+	minimum height=244mm, inner sep=0pt] (spine) {};
+	
+	%\draw (spine.south west) rectangle ++(1,21);
+	
+	\end{tikzpicture}
+\end{document}
