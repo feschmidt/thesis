@@ -1,0 +1,1 @@
+gs -q -dNOPAUSE -dBATCH -sDEVICE=pdfwrite -sOutputFile=dissertation-merged.pdf thesis-cover/thesis-cover.pdf dissertation.pdf

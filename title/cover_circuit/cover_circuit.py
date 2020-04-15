@@ -12,8 +12,8 @@ chip = Base_Chip('cover_circuit',
                  label=False,
                  boxwidth=100)
 
-feedwidth = 12
-gapwidth = 5
+feedwidth = 24
+gapwidth = 12
 ######## add launchers and feedline
 launchdist = 6950 / 2
 dict_feedline = {
@@ -35,18 +35,19 @@ chip.add_component(rf_feed_hor, (0, 0))
 
 ### Define shunt cavity part
 dict_cavity = {
-    'length': 10e3,
+    'length': 6e3,
     'feedlength': 200,
     'centerwidth': feedwidth,
     'gapwidth': gapwidth,
     'shunt': (155, 300, 310, 500, 300, 480),
     'holedim': (80, 70),
     'position': (-launchdist / 2., 0),
-    'nbends': 3,
+    'nbends': 2,
     'launchdist': launchdist,
     'shuntgate': True,
     'gatestub': 100,
-    'ymax': 20e3
+    'ymax': 40e3,
+    'turnradius':300
 }
 # to calculate the available space into which to fit the resonator
 dict_cavity['xmax'] = launchdist - dict_cavity['feedlength'] - dict_cavity[
@@ -54,7 +55,7 @@ dict_cavity['xmax'] = launchdist - dict_cavity['feedlength'] - dict_cavity[
 
 name_cav = 'Shunt cavity'
 cav = RFShuntGate(name_cav, dict_cavity, shunttype=0, label=True)
-cav1 = cav.gen_partial(loc='top')
+cav1 = cav.gen_partial(loc='top',mask=False)
 
 chip.add_component(cav1)
 

@@ -14,3 +14,5 @@ propositions.pdf
 *.ppm
 *.out.pdf
 thesis-*.pdf
+dissertation-merged.pdf
+*.ipynb_checkpoints/

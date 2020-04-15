@@ -103,17 +103,29 @@ The reflection coefficient of this circuit is given by
 S_{11}=-1+\frac{2\kappa_e}{\kappa_e+\kappa_i+2i\Delta}
 \end{align}
 %
-with the internal and external loss rates$ \kappa_i$ and $\kappa_e$ and the detuning $\Delta=\omega-\omega_0$~\cite{bosmanBroadbandArchitectureGalvanically2015c}.
+with the internal and external loss rates $\kappa_i$ and $\kappa_e$ and the detuning $\Delta=\omega-\omega_0$~\cite{bosmanBroadbandArchitectureGalvanically2015c}.
 %
-In Fig.~\ref{fig:s11} we plot the reflection coefficient for various fractions of $\kappa_e/\kappa_i$, to illustrate the effects of over-, under- and critical coupling.
+In Fig.~\ref{fig:s11} we plot the reflection coefficient for various fractions of $\eta=\kappa_e/\kappa_i$, to illustrate the effects of over-, under- and critical coupling ($\eta>1$, $\eta<1$ and $\eta=1$, respectively).
 %
-For a best signal-to-noise ratio, the shunt capacitor should be designed such that the external coupling matches the internal loss rate, with the internal and external loss rates approximately given by
+For a best signal-to-noise ratio, the shunt capacitor $C_s$ should be designed such that $\kappa_e=\kappa_i$, with the external loss rate approximately given by
 %
 \begin{align}
-\kappa_i &= \frac{\omega_0}{Q_i} = \frac{\omega_0 R C C_s}{C+C_s} \\
-\kappa_e &= \frac{\omega_0}{Q_e} = \frac{C}{Z_0 C_s (C+C_s)}
+\kappa_e &= \frac{\omega_0}{Q_e} = \frac{2}{\pi\omega_0Z_0^2C_s^2}
 \end{align}
 %
+with external quality factor $Q_e$ and transmission line impedance $Z_0$.
+%
+However, when placing a JJ at the end of the TL, the internal loss rate can rise significantly.
+%
+For this reason, we typically design our circuits such that they are overcoupled without a JJ present, anticipating a rise in $\kappa_i$.
+
+With an added Josephson junction with inductance $L_J$ shorting the TL to ground, the shifted resonance frequency can be approximated by
+%
+\begin{align}
+\omega_0^\prime = \omega_0\frac{L_r+L_J}{L_r+2L_J}
+\end{align}
+%
+where $L_r$ is the lumped TL resonator inductance including geometric and kinetic inductances, cf. Chapter~\ref{chap:gJJ-CPR}.
 
 
 \begin{figure}
