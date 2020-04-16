@@ -15,9 +15,27 @@
 
 \section{Superconducting-normal Josephson devices}
 
-\subsection{Andreev reflection at the SN interface}
+\subsection{Andreev reflection and Andreev bound states}
 
-\subsection{Andreev bound states in SNS junctions}
+The process of Andreev reflection at the interface between superconductors and normal metals lays the fundament for understanding how a Josephson junction works.
+%
+The process is sketched in Fig. \ref{fig:kdtmk}:
+%
+An electron impinging onto the super-normal interface from inside the normal region can only enter the superconductor in the form of a Cooper pair by being reflected as a hole with opposite spin and momentum.
+%
+Vice versa, a Cooper pair travelling towards the normal region will decay into an electron travelling forward, and annihilate a hole travelling backwards with spin opposite to that of the electron.
+%
+Inside the normal region, this will result in the formation of the so-called Andreev bound states (ABS).
+
+Since inside the superconductor, there are no states allowed for $\epsilon_F - \Delta \leq \epsilon_F \leq \epsilon_F - \Delta$, the superconducting electrodes can be though of as forming potential barriers at the interface, leading to transparencies $\tau$, and the Andreev paris can be thought of analogously as particles inside a box.
+%
+Here also elaborate on the Thouless energy and 2D junctions.
+
+Nanda \textit{et al.}~\cite{nandaCurrentPhaseRelationBallistic2017} point out an important factor to take into account:
+%
+Skewness can quite significantly depend on the S-N interface, i.e. transparency, and the ratio $L/\xi$.
+%
+Temperature additionally suppresses skewness, since this leads to a higher number of quasiparticles, and increases the amount of continuum states contributing to the supercurrent.
 
 \begin{align}
 \frac{\partial\delta}{\partial t}&=\frac{2eV_J}{\hbar}\, ,\, V_J=L_J\frac{\partial I_J}{\partial t}=L_J\frac{\partial I_J}{\partial\delta}\frac{\partial\delta}{\partial t}
@@ -89,7 +107,7 @@ No additional port needs to be used to probe or excite the DUT, thus there is no
 %
 Finally, using a shunt capacitor provides a broadband signal port up to the self-resonance of the shunt capacitor, which is chosen to be well above the resonance frequency of the circuit.
 
-Figure~\ref{fig:DCbias} depicts a schematic of the DC bias cavity circuit.
+Figure~\ref{fig:TLmodel}(a) depicts a schematic of the DC bias cavity circuit.
 %
 In principle, measurements in both transmission and reflection geometry are possible.
 %
@@ -101,6 +119,7 @@ The reflection coefficient of this circuit is given by
 %
 \begin{align}
 S_{11}=-1+\frac{2\kappa_e}{\kappa_e+\kappa_i+2i\Delta}
+\label{eq:intro-s11}
 \end{align}
 %
 with the internal and external loss rates $\kappa_i$ and $\kappa_e$ and the detuning $\Delta=\omega-\omega_0$~\cite{bosmanBroadbandArchitectureGalvanically2015c}.
@@ -111,6 +130,7 @@ For a best signal-to-noise ratio, the shunt capacitor $C_s$ should be designed s
 %
 \begin{align}
 \kappa_e &= \frac{\omega_0}{Q_e} = \frac{2}{\pi\omega_0Z_0^2C_s^2}
+\label{eq:intro-kappae}
 \end{align}
 %
 with external quality factor $Q_e$ and transmission line impedance $Z_0$.
@@ -118,41 +138,115 @@ with external quality factor $Q_e$ and transmission line impedance $Z_0$.
 However, when placing a JJ at the end of the TL, the internal loss rate can rise significantly.
 %
 For this reason, we typically design our circuits such that they are overcoupled without a JJ present, anticipating a rise in $\kappa_i$.
+%
+As shown in the inset of Fig.~\ref{fig:s11}(a), over- or undercoupling by the same factor in fact leads to the same SNR in the absolute value of $S_{11}$.
+%
+It is tempting to therefore search for a circuit resonance in the measured since this provides a potentially more reliable identification method.
+%
+Nevertheless, measurement background from impedance mismatches, resulting in oscillations of the background, often obscure even drastic phase changes, for which reason the absolute value can at times be better suited.
 
+\begin{figure}[t]
+	\centering
+	\includegraphics[width=\linewidth]{chapter-introduction/figs/model_DC_bias_cavity_coupling.pdf}
+	\caption{
+		\textbf{Effect of coupling ratio of the reflection coefficient of a DC bias cavity.}
+		%
+		Using Eq.~\ref{eq:intro-s11}, we can model the absolute value \textbf{(a)}, phase \textbf{(b)} and real and imaginary parts \textbf{(c)} of the reflection coefficient of a DC bias cavity.
+		%
+		Colors denote the various coupling types: blue: critically coupled $\kappa_e/\kappa_i=1$, orange: undercoupled $\kappa_e/\kappa_i=0.1$, green: overcoupled $\kappa_e/\kappa_i=10$.
+		%
+		Best signal-to-noise ratio is achieved for critical coupling, while the other two cases have identical SNR in terms of $\abs{S_{11}}$.
+	}
+	\label{fig:s11}
+\end{figure}
+
+When probing Josephson junctions with the DC bias cavity, we need to calibrate the microwave circuit parameters.
+%
+This is done by measuring a combination of an open and shorted reference device with the same sample geometry, except with an open or short to ground in place of the JJ.
+%
+Equipped with these values, we can proceed to extract information about the JJ:
+%
 With an added Josephson junction with inductance $L_J$ shorting the TL to ground, the shifted resonance frequency can be approximated by
 %
 \begin{align}
 \omega_0^\prime = \omega_0\frac{L_r+L_J}{L_r+2L_J}
+\label{eq:intro-omega0p}
 \end{align}
 %
-where $L_r$ is the lumped TL resonator inductance including geometric and kinetic inductances, cf. Chapter~\ref{chap:gJJ-CPR}.
-
+where $L_r$ is the lumped TL resonator inductance including geometric and kinetic inductances, cf. Chapter~\ref{chap:gJJ-CPR} and Fig.~\ref{fig:TLmodel}(b).
+%
+A complete analytical model of an RSCJ model parametrizing the JJ can be used for calculating junction-induced losses in the form of a subgap resistance, cf. Chapter~\ref{chap:gJJ} and Fig.~\ref{fig:TLmodel}.
+%
+For very small $R_{\rm sg}$, the Josephson inductance is effectively short-circuited, so $Q_i$ approaches the limit of no JJ.
+%
+On the other hand, very large $R_{\rm sg}$ implies an open circuit with no losses other than the ones in the TL resonator, again approaching $Q_i$ of the bare cavity.
+%
+Intermediate resistance values suppress the resonance entirely.
+%
+The shift in $f_0$ for large $R_{\rm sg}$ shows the frequency shift induced by $L_J$.
 
 \begin{figure}
 	\centering
-	\includegraphics[width=\linewidth]{chapter-introduction/figs/S11}
-	\caption{}
-	\label{fig:s11}
-\end{figure}
-
-
-\begin{figure}
-	\centering
-	\includegraphics[width=\linewidth]{chapter-gJJ-CPR/figs/SMFigure-influence}
-	\caption{}
-	\label{fig:smfigure-influence}
+	\includegraphics[width=\linewidth]{chapter-introduction/figs/model_DC_bias_cavity_params_RCSJ.pdf}
+	\caption{
+		\textbf{DC bias cavity shorted to ground by a parametrized top-gated graphene Josephson junction.}
+		%
+		\textbf{(a)} Parametrized circuit model.
+		%
+		\textbf{(b)} Resonance frequency versus Josephson inductance.
+		%
+		\textbf{(c,d)} Influence on subgap resistance on internal quality factor and resonance frequency.
+		%
+		Panel \textbf{(d)} also illustrates the shift of $f_0$ due to $L_J$ as in panel \textbf{(b)}.
+	}
+	\label{fig:TLmodel}
 \end{figure}
 
 
 \section{Outline}
-In chapter~\ref{chap:experiment}
+
+In the following, we will show the applications of DC bias cavities to both extract information about the intrinsic parameters of the Josephson junctions to be probed, and use the combination of cavity and junction to perform a detection measurement.
+
+
+In chapter~\ref{chap:experiment}, we provide a detailed overview on the experimental methods that we developed and used to enable the measurements presented later on.
 %
-In chapter~\ref{chap:gJJ}
+We detail the exfoliation and fabrication of van der Waals devices, superconducting CPW resonators.
 %
-In chapter~\ref{chap:gJJ-CPR}
+Additionally, a short introduction to the use of the superconducting alloy molybdenum-rhenium in Delft, together with a small study on its pros and cons, is supplied.
 %
-In chapter~\ref{chap:currentdetection}
+This chapter also includes a brief introduction to thermal noise and the fridge wiring used to suppress the former during measurements.
+
+In chapter~\ref{chap:gJJ}, we present the first measurements of a graphene Josephson junction in the microwave regime.
 %
+Motivated by the potential use of graphene in superconducting quantum circuits, we studied the Josephson inductance by tracking the resonance frequency, and high-frequency losses of the junction attributed to its subgap resistance by extracting the added circuit losses.
+%
+Together with a detailed circuit characterization in both DC and the MW regime, the results indicate that graphene Josephson junctions are indeed a feasible platform for circuit quantum electrodynamics.
+
+
+In chapter~\ref{chap:gJJ-CPR}, we take a closer look at the underlying mechanisms governing the Josephson inductance of graphene Josephson junctions, i.e. their current-phase relation.
+%
+Using previously not performed microwave measurements of DC bias cavities, we show that the CPR of diffusive and ballistic devices is forward-skewed, as is expected for these junctions.
+%
+We quantify the resulting correction of the Josephson energy potential, which is crucial for the use of gJJs in microwave quantum circuits.
+
+We end the part of this thesis concerned with graphene devices with chapter~\ref{chap:gJJ-misc}.
+%
+Here, we provide a collection of additional DC data on graphene Josephson junctions and SQUIDs.
+%
+In particular, we investigate oscillations in the IV curves that occur as a result of the junction probing its electromagnetic environment in the absence, and the phase locking to the presence of microwave radiation, resulting in Fiske and Shapiro steps, respectively.
+
+
+Chapter~\ref{chap:currentdetection} shows the result of a DC bias MW cavity coupled to a aluminum constriction Josephson junction.
+%
+Making use of the responsivity of the circuit's resonance frequency to bias current, we detect low-frequency currents with a minimum measured sensitivity of \SI{8.9}{\pico\ampere\per\hertz\tothe{1/2}}, comparable to state-of-the-art devices.
+%
+With an analytical circuit model, we extrapolate orders of magnitude better values for improved device designs based on our circuit, which could eventually enable quantum limited current detection.
+
+
+We close with a summary of all presented results and a possible way onwards in chapter~\ref{chap:conclusion}.
+%
+Additional information on tips and tricks for electron beam lithography, such as alignment and height measurements, useful source code and specifications on the self-assembled low-pass and copper powder filters are appended to this thesis.
+
 
 %\clearpage
 %\references{dissertation}

@@ -16,7 +16,7 @@
 %% Start the actual chapter on a new page.
 \afterpage{\pagecolor{none}}\newpage
 
-\section{JJ self-oscillations}
+\section{JJ self-oscillations}\ref{sec:fiske}
 In the IV traces of all gJJ devices embedded in MW cavities, we found peculiar oscillations for bias currents exceeding $I_c$, in particular on the retrapping branch, as shown in Fig.~\ref{fig:IVoscillations}.
 %
 These oscillations occured without any MW probe tone applied, and seemed to be largely independent of gate voltage or magnetic field.
@@ -75,12 +75,14 @@ Nevertheless, the DC data shows the sensitivity of the JJ to its environment, ev
 	\hfill
 	\includegraphics[width=0.45\linewidth]{chapter-gJJ-misc/figs/processing_DC_IsVm_Fiske_Bfield}
 	\hfill
-	\caption{IVsteps}
+	\caption{
+		IVsteps
+	}
 	\label{fig:IVsteps}
 \end{figure}
 
 
-\section{Shapiro steps}
+\section{Shapiro steps}\ref{sec:shapiro}
 
 In addition to voltage steps arising from self-oscillations of the JJ due to its electromagnetic environment, irradiating the JJ with microwaves can also lead to steps in the measured voltage, the so-called Shapiro steps~\cite{shapiroJosephsonCurrentsSuperconducting1963,kautzNoiseChaosJosephson1996,tinkhamIntroductionSuperconductivity1996,heerscheBipolarSupercurrentGraphene2007a,leeUltimatelyShortBallistic2015,shellyExistenceShapiroSteps2020,larsonZerobiasCrossingsPeculiar2020}.
 %
@@ -93,7 +95,11 @@ Here, we noted significant differences between power sweeps of a gJJ embedded in
 	\includegraphics[width=0.45\linewidth]{chapter-gJJ-misc/figs/processing_Shapiro_2x1_5GHz}
 	\hfill
 	\includegraphics[width=0.45\linewidth]{chapter-gJJ-misc/figs/processing_Shapiro_2x1_onres}
-	\caption{Shapiro steps of a gJJ in a low-loss MW cavity at \SI{5}{\giga\hertz} (off-resonant) and at \SI{8.1}{\giga\hertz} (on-resonance).}
+	\caption{
+		Shapiro steps of a gJJ in a low-loss MW cavity at \SI{5}{\giga\hertz} (off-resonant) and at \SI{8.1}{\giga\hertz} (on-resonance).
+		%
+		Oscillations in the differential resistance in \textbf{(b)} above $I_c$ are due to Fiske-like steps (see Sec.~\ref{sec:fiske})
+	}
 	\label{fig:Shapiro2x1}
 \end{figure}
 
@@ -104,7 +110,9 @@ Here, we noted significant differences between power sweeps of a gJJ embedded in
 	\includegraphics[width=0.3\linewidth]{chapter-gJJ-misc/figs/processing_Shapiro_Hero_5GHz_2}
 	\hfill
 	\includegraphics[width=0.3\linewidth]{chapter-gJJ-misc/figs/processing_Shapiro_Hero_8GHz_2}
-	\caption{Shapiro steps of a gSQUID in a high-loss MW cavity at \SI{3}{\giga\hertz}, \SI{5}{\giga\hertz} and \SI{8}{\giga\hertz}..}
+	\caption{
+		Shapiro steps of a gSQUID in a high-loss MW cavity at \SI{3}{\giga\hertz}, \SI{5}{\giga\hertz} and \SI{8}{\giga\hertz}.
+	}
 	\label{fig:ShapiroHero}
 \end{figure}
 
@@ -118,7 +126,11 @@ Clearly, the voltage steps occur at multiple integer heights of $V=2e\omega/\hba
 	\hfill
 	\includegraphics[width=0.45\linewidth]{chapter-gJJ-misc/figs/processing_Shapiro_Hero_freq_peaks}
 	\hfill
-	\caption{Shapiro steps of a gSQUID in a high-loss MW cavity at varying drive frequency.}
+	\caption{
+		Shapiro steps of a gSQUID in a high-loss MW cavity at varying drive frequency.
+		%
+		The voltage steps follow multiple integer values of $2e\omega/\hbar$.
+	}
 	\label{fig:Shapirofreq}
 \end{figure}
 
