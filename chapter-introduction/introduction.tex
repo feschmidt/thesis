@@ -56,25 +56,56 @@ I(\delta) &= \frac{2e}{\hbar}\frac{\partial U_J}{\partial\delta} = \frac{e\Delta
 L_J(\delta) &= \frac{\hbar}{2e}\left( \frac{\partial I_J}{\partial\delta} \right)^{-1} = \left(\frac{\hbar}{2e}\right)^2\left(\frac{\partial^2U_J}{\partial\delta^2}\right)^{-1}
 \end{align}
 
+\begin{figure}
+	\centering
+	\includegraphics[width=\linewidth]{chapter-introduction/figs/model_SNS_DOS}
+	\caption{
+		\textbf{Cooper pair transport in SIS and SNS Josephson junctions.}
+		%
+		The density of states in a superconductor exhibits a gap of width $2\Delta$ in energy around the Fermi level $\epsilon_F$, with states below $\epsilon_F$ filled and states above unoccupied.
+		%
+		\textbf{(a)} In an SIS Josephson junction, Cooper pairs, consisting of an electron and hole with opposite spins can tunnel through a thin insulating barrier separating two superconducting banks.
+		%
+		There are no states inside the insulating region.
+		%
+		\textbf{(b)} In an SNS Josephson junction, the normal region exhibits a DOS that is filled up to $\epsilon_F$.
+		%
+		Cooper pairs entering the normal region are broken up into electrons and holes of opposite spin and momentum, that can enter the superconductor under Andreev reflection, thus forming Andreev bound states within the normal region.
+		%
+		This results in a net current across the junction.
+	}
+	\label{fig:modelsnsdos}
+\end{figure}
+
+\begin{figure}
+	\centering
+	\includegraphics[width=\linewidth]{chapter-introduction/figs/model_SNS_EjIc}
+	\caption{
+		\textbf{Channel transmission and nonsinusoidality.}
+		%
+		\textbf{(a)} Josephson energy of the ground (blue) and excited (orange) Andreev bound state for varying channel transmission $\tau$ as a function of phase drop across the Josephson junction.
+		%
+		Increasing color intensity corresponds to increasing $\tau$.
+		%
+		Dashed line corresponds to $\tau=1$.
+		%
+		\textbf{(b)} Josephson current for varying $\tau$.
+		%
+		Increasing transmission increases both amplitude and forward skewing of the CPR.
+		%
+		\textbf{(c)} Josephson inductance as a function of phase normalized to the one at maximum $L_J$.
+		%
+		Due to the increased CPR slope for increasing $\tau$ at zero phase, the Josephson inductance decreases.
+	}
+	\label{fig:modelsnsejic}
+\end{figure}
+
+
 The anharmonicity in the circuit is then reduced depending on the channel transparencies.
 In the limit of small $L_J$, we can model the TL resonator as a series $LC$-circuit, resulting in anharmonicity
 \begin{align}
 \chi &= \frac{-E_C}{2} \left( 1-\frac{3\sum T_i^2}{4\sum T_i} \right) p^3 \rightarrow \frac{-E_C}{2} \left(1-\frac{3}{4}N\tau \right) p^3 
 \end{align}
-
-\begin{figure}
-	\centering
-	\includegraphics[width=0.7\linewidth]{chapter-introduction/figs/EJ_phase_tau}
-	\caption{}
-	\label{fig:ejphasetau}
-\end{figure}
-
-\begin{figure}
-	\centering
-	\includegraphics[width=0.7\linewidth]{chapter-introduction/figs/EJ_phase_Ib}
-	\caption{}
-	\label{fig:ejphaseib}
-\end{figure}
 
 
 \subsection{Subgap density of states}
@@ -124,7 +155,7 @@ S_{11}=-1+\frac{2\kappa_e}{\kappa_e+\kappa_i+2i\Delta}
 %
 with the internal and external loss rates $\kappa_i$ and $\kappa_e$ and the detuning $\Delta=\omega-\omega_0$~\cite{bosmanBroadbandArchitectureGalvanically2015c}.
 %
-In Fig.~\ref{fig:s11} we plot the reflection coefficient for various fractions of $\eta=\kappa_e/\kappa_i$, to illustrate the effects of over-, under- and critical coupling ($\eta>1$, $\eta<1$ and $\eta=1$, respectively).
+In Fig.~\ref{fig:s11} we plot the reflection coefficient for various fractions of $g_Q =\kappa_e/\kappa_i$, to illustrate the effects of over-, under- and critical coupling ($g_Q >1$, $g_Q <1$ and $g_Q =1$, respectively).
 %
 For a best signal-to-noise ratio, the shunt capacitor $C_s$ should be designed such that $\kappa_e=\kappa_i$, with the external loss rate approximately given by
 %
