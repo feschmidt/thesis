@@ -32,7 +32,7 @@ Proposals for merging field of semi and super transistors~\cite{clarkFeasibility
 
 Then IBM dropped it because semiconductors were better~\cite{robinsonIBMDropsSuperconducting1983}
 
-However people continued working on it RSFQ was kept as a promise~\cite{hayakawaJosephsonComputerTechnology1986}
+However people continued working on it RSFQ was kept as a promise~\cite{hayakawaJosephsonComputerTechnology1986}, with clock speeds reaching several hundreds gigahertz~\cite{likharevRSFQLogicMemory1991}.
 
 In parallel to semiconductors, Moores law was predicted to come to an end at some point
 So people started thinking about alternatives to semicon transistors
@@ -41,6 +41,12 @@ breakthrough the transmon
 field as taken off, now Rigetti, IBM~\cite{steffenQuantumComputingIBM2011}, Google~\cite{aruteQuantumSupremacyUsing2019} working on it
 SNS JJs resurfaced in Microsoft approach for Majoranas~\cite{NewMicrosoftBreakthroughs}
 Intel remains invested in semiconductors for quantum computing (spin qubits in Silicon)~\cite{vandersypenInterfacingSpinQubits2017,vandersypenQuantumComputingSemiconductor2019}
+
+Limitations of current magnetic flux tunable qubits: power dissipation for many qubits.
+%
+Here, non-dissipative voltage tunability might be beneficial.
+%
+Additionally, cross-talk would be significantly reduced due to the nature of gate voltages being significantly more locally confined to a small volume than magnetic fields, potentially coupling qubits several centimeters apart from each other~\cite{dicarloDemonstrationTwoqubitAlgorithms2009}.
 
 First observation of Josephson effect in experiments~\cite{andersonProbableObservationJosephson1963}
 
@@ -66,33 +72,7 @@ Inside the normal region, this will result in the formation of the so-called And
 
 Since inside the superconductor, there are no states allowed for $\epsilon_F - \Delta \leq \epsilon_F \leq \epsilon_F - \Delta$, the superconducting electrodes can be though of as forming potential barriers at the interface, leading to transparencies $\tau$, and the Andreev paris can be thought of analogously as particles inside a box.
 %
-Here also elaborate on the Thouless energy and 2D junctions.
-
-Nanda \textit{et al.}~\cite{nandaCurrentPhaseRelationBallistic2017} point out an important factor to take into account:
-%
-Skewness can quite significantly depend on the S-N interface, i.e. transparency, and the ratio $L/\xi$.
-%
-Temperature additionally suppresses skewness, since this leads to a higher number of quasiparticles, and increases the amount of continuum states contributing to the supercurrent.
-
-\begin{align}
-\frac{\partial\delta}{\partial t}&=\frac{2eV_J}{\hbar}\, ,\, V_J=L_J\frac{\partial I_J}{\partial t}=L_J\frac{\partial I_J}{\partial\delta}\frac{\partial\delta}{\partial t}
-\end{align}
-
-The work done on the junction must be $U_J=\int I_J V_J {\rm d}t=\frac{\hbar}{2e}\int I_J \frac{\partial\delta}{\partial t}{\rm d}t = \frac{\hbar}{2e}\int I_J {\rm d}\delta$, therefore $I(\delta) = \frac{2e}{\hbar}\frac{\partial U_J}{\partial\delta}$.
-Each Andreev bound state has a ground state energy $U_i=-\Delta\sqrt{1-T_i\sin^2(\delta/2)}$ with induced superconducting gap $\Delta$ and channel transparency $T_i$.
-Summing over all of these channels, the total Josephson potential is given by
-\begin{align}
-U_J(\delta) &= 1-\Delta\sum_i\sqrt{1-T_i\sin^2(\delta/2)} \\
-&\approx E_J \frac{\delta^2}{2} - E_J\left( 1-\frac{3\sum T_i^2}{4\sum T_i} \right) \frac{\delta^4}{24} +\mathcal{O}(\delta^6)\ , \\
-E_J &= \frac{\Delta}{4}\sum_i T_i \rightarrow \frac{\Delta}{4}N\tau
-\end{align}
-
-The corresponding Josephson current and inductance are 
-\begin{align}
-I(\delta) &= \frac{2e}{\hbar}\frac{\partial U_J}{\partial\delta} = \frac{e\Delta}{2\hbar}\sum_i\frac{T_i\sin\delta}{\sqrt{1-T_i\sin^2\delta/2}} \\
-L_J(\delta) &= \frac{\hbar}{2e}\left( \frac{\partial I_J}{\partial\delta} \right)^{-1} = \left(\frac{\hbar}{2e}\right)^2\left(\frac{\partial^2U_J}{\partial\delta^2}\right)^{-1} \\
-&= \frac{4\hbar^2}{e^2\Delta}\sum_i \frac{\left(1-T_i\sin^2(\delta/2)\right)^{3/2}}{4T_i\cos\delta\left(1-T_i\sin^2(\delta/2)\right)+T_i^2\sin^2(\delta)}
-\end{align}
+\textbf{TODO!!! ?? Here also elaborate on the Thouless energy and 2D junctions.}
 
 \begin{figure}
 	\centering
@@ -115,6 +95,84 @@ L_J(\delta) &= \frac{\hbar}{2e}\left( \frac{\partial I_J}{\partial\delta} \right
 	\label{fig:modelsnsdos}
 \end{figure}
 
+Nanda \textit{et al.}~\cite{nandaCurrentPhaseRelationBallistic2017} point out an important factor to take into account:
+%
+Skewness can quite significantly depend on the S-N interface, i.e. transparency, and the ratio $L/\xi$.
+%
+Temperature additionally suppresses skewness, since this leads to a higher number of quasiparticles, and increases the amount of continuum states contributing to the supercurrent.
+
+Let us consider a 1-dimensional SNS junction with perfect contact transparency $\tau_c=1$ at the SN interface.
+%
+Then each Andreev bound state has a ground state energy
+%
+\begin{align}
+E_{i}^{\rm ABS} = -\Delta\sqrt{1-T_i\sin^2(\delta/2)}
+\end{align}
+%
+with induced superconducting gap $\Delta$ and channel transparency $T_i$, where $T_i$ takes into account scattering inside the normal region.
+%
+The energy of the excited ABS has opposite sign.
+%
+Summing over all of these channels, the total Josephson potential is given by
+%
+\begin{align}
+U_J(\delta) = 1-\sum_i E_{i}^{\rm ABS} \approx E_J \frac{\delta^2}{2} - E_J\left( 1-\frac{3\sum T_i^2}{4\sum T_i} \right) \frac{\delta^4}{24} +\mathcal{O}(\delta^6)%\ , \\
+%E_J &= \frac{\Delta}{4}\sum_i T_i \rightarrow \frac{\Delta}{4}N\tau
+\end{align}
+%
+In the limit of low $T_i$, i.e. for an SIS junction, the energy would be given simply by $U_J^{\rm SIS}(\delta)=1-\Delta\cos(\delta)\approx E_J\delta^2/2-E_J\delta^4/24$.
+%
+Compared to the SIS case, the Josephson energy is reduced by a fraction depending on the channel transparency which will become important later on.
+%
+We plot the ground and excited state energies of the ABS in Fig.~\ref{fig:modelsnsejic}(a).
+%
+With increasing channel transmission, $U_J$ exhibits stronger modulation and a closing band gap at $\delta=\pi$ with minimum separation $2\Delta\sqrt{1-\tau}$.
+
+The exact nature of the subgap states however depends on a multitude of parameters, such as the crystal structure, size and geometry of the junction, as well as the contact transparency.
+%
+Figure~\ref{fig:modelsubgap} shows the calculated subgap density of states for a basic graphene Josephson junction and the influence of these parameters.
+%
+Most notably in comparison to the basic ABS energy, contact transparency $\tau_c<1$ leads to the ABS detaching from the bulk gap at $\Delta$ even for zero phase difference~\cite{bretheauTunnellingSpectroscopyAndreev2017a}.
+%
+Additionally, the longer the junction, i.e. the further the superconducting banks are spaced apart, the lower the resulting ABS energy, since the superconducting phase decays exponentially in the normal conductor.
+%
+In the case of a 2D junction, large junction width, i.e. lateral extensions, additionally reduce the ABS energy.
+
+
+\begin{figure}
+	\centering
+	\includegraphics[width=\linewidth]{chapter-introduction/figs/kwant_modeling_181206_subgap_length_supp_Plot_subgap_dos}
+	\caption{
+		\textbf{Realistic subgap states of a 2D graphene Josephson junction.}
+		%
+		Tight-binding simulations of a graphene Josephson junction show strong dependence of the subgap state energies on momentum parallel to the SN interface \textbf{(a)}, with lowest lying energies at large $k_\parallel$.
+		%
+		While the short JJ (orange) shows an only slightly reduced minimum energy and DOS \textbf{(b)} compared to $\Delta$, long junctions (blue) exhibit heavily reduced energy gaps.
+	}
+	\label{fig:modelsubgap}
+\end{figure}
+
+Turning back to the basic 1D-ABS picture, the corresponding Josephson current and inductance are 
+\begin{align}
+I(\delta) &= \frac{2e}{\hbar}\frac{\partial U_J}{\partial\delta} = \frac{e\Delta}{2\hbar}\sum_i\frac{T_i\sin\delta}{\sqrt{1-T_i\sin^2\delta/2}} \\
+L_J(\delta) &= \frac{\hbar}{2e}\left( \frac{\partial I_J}{\partial\delta} \right)^{-1} = \left(\frac{\hbar}{2e}\right)^2\left(\frac{\partial^2U_J}{\partial\delta^2}\right)^{-1} \\
+&= \frac{4\hbar^2}{e^2\Delta}\sum_i \frac{\left(1-T_i\sin^2(\delta/2)\right)^{3/2}}{4T_i\cos\delta\left(1-T_i\sin^2(\delta/2)\right)+T_i^2\sin^2(\delta)}
+\end{align}
+
+Both quantities are depicted in Fig.~\ref{fig:modelsnsejic}.
+%
+We can conclude two things:
+%
+First, the larger the channel transmission, the stronger the forward skew of the current phase relation and corresponding deviation to the SIS case.
+%
+Second, while also strongly nonlinear, the Josephson inductance of SNS junctions is significantly reduced compared to the SIS case.
+
+In order to build reliable, reproducible circuits out of SNS junctions, it is thus vital to characterize them not only in the DC, but also in the microwave regime, as this is where the inductance will be measurable.
+%
+To this end, we placed our junctions in a circuit allowing for steady and high frequency signals to probe our device.
+%
+These DC bias microwave circuits are described in the following section.
+
 \begin{figure}
 	\centering
 	\includegraphics[width=\linewidth]{chapter-introduction/figs/model_SNS_EjIc}
@@ -125,7 +183,7 @@ L_J(\delta) &= \frac{\hbar}{2e}\left( \frac{\partial I_J}{\partial\delta} \right
 		%
 		Increasing color intensity corresponds to increasing $\tau$.
 		%
-		Dashed line corresponds to $\tau=1$.
+		Finite contact transparency $\tau_c<1$ at the SN interface detaches the ABS energy from the bulk gap $\pm\Delta$ (dashed line).
 		%
 		\textbf{(b)} Josephson current for varying $\tau$.
 		%
@@ -137,21 +195,6 @@ L_J(\delta) &= \frac{\hbar}{2e}\left( \frac{\partial I_J}{\partial\delta} \right
 	}
 	\label{fig:modelsnsejic}
 \end{figure}
-
-
-The anharmonicity in the circuit is then reduced depending on the channel transparencies.
-In the limit of small $L_J$, we can model the TL resonator as a series $LC$-circuit, resulting in anharmonicity
-\begin{align}
-\chi &= \frac{-E_C}{2} \left( 1-\frac{3\sum T_i^2}{4\sum T_i} \right) p^3 \rightarrow \frac{-E_C}{2} \left(1-\frac{3}{4}N\tau \right) p^3 
-\end{align}
-
-
-\subsection{Subgap density of states}
-
-KWANT~\cite{grothKwantSoftwarePackage2014} simulations are at \url{https://nas-steelelab.tnw.tudelft.nl:5001/?launchApp=SYNO.SDS.Drive.Application#file_id=509401234564752146}, located on the NAS under \texttt{Felix/programming/kwant}.
-
-\subsection{The limit of low $\tau$: SIS}
-
 
 
 \section{DC bias cavities for probing Josephson junctions}
