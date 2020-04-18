@@ -187,7 +187,7 @@
 %%% font-size is 75% of the size of thumb height.
 \newif\ifthumb
 \newlength\thumbheight
-\setlength\thumbheight{45pt} % fontsize
+\setlength\thumbheight{30pt} % fontsize
 \newlength\thumbedge
 \setlength\thumbedge{4pt} % shifts thumb number from inside out
 \newlength\thumbhspace
@@ -223,6 +223,7 @@
 	\coordinate (center right) at ($(bottom right)+(0pt,0.5\thumbheight)$);
 	\node at (center right)[anchor=east,inner sep=2\thumbedge]{
 		\titlefont\color{mLightBrown} %\sfseries % for seriffonts
+		% \bfseries % optional
 		\fontsize{0.75\thumbheight}{0.75\thumbheight}\selectfont
 		\thechapter
 	};
@@ -248,6 +249,7 @@
 	\coordinate (center left) at ($(bottom left)+(0pt,0.5\thumbheight)$);
 	\node at (center left)[anchor=west,inner sep=2\thumbedge]{
 		\titlefont\color{mLightBrown} %\sfseries % for seriffonts
+		% \bfseries % optional
 		\fontsize{0.75\thumbheight}{0.75\thumbheight}\selectfont
 		\thechapter
 	};
