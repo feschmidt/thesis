@@ -15,66 +15,109 @@
 
 \section{Computing with semi- and superconducting circuits}
 
-What do I want to write about?
+The information age and the underlying development of the metal oxide semiconductor field-effect transistor (MOSFET, cf. Fig.~\ref{fig:introcomputing}(a)) lay the ground to the world which we know today.
 %
-The Josephson inductance: What is it good for and where does it come from
+Pushed by continuous advances in material sciences, solid state physics and electrical engineering, the MOSFET is now the building block of all commercial computers.
 %
-Why is it different for SIS and SNS
+Owed largely by the success of scalability from integrated circuits, state-of-the-art microprocessors host more than 39.54 billion transistors on a single chip, with physical dimensions down to a few tens of nanometers, cf. Fig.~\ref{fig:introcomputing}(b)~\cite{mujtabaAMDEPYCRome2019}.
 %
-Why are SNS JJs useful
+With the increasing transistor density and shrinking physical dimensions came however the realization, that alternative computation architectures to the one based on semiconducting transistors might be needed to satisfy society's desire for information, as there might be a limit to how dense logic circuits might be packed with current technology as the number of transistors on a chip were found to double every two years~\cite{mooreCrammingMoreComponents2006}.
+
+Based on Feynman's ideas of building quantum machines to run the most complex calculations much more efficient than any digital one, MOSFET-based, computer could, the late twentieth century saw the birth of first prototypes based on a quantum computing architecture~\cite{feynmanSimulatingPhysicsComputers1982}.
 %
-How could we measure them --> DC bias circuits and their applications
-
-The race or challenge of building powerful computers
-First idea was actually to use Josephson junctions as a basis for superconducting logic circuits
-IBM heivly invested~\cite{anackerJosephsonComputerTechnology1980a}
-Proposals for merging field of semi and super transistors~\cite{clarkFeasibilityHybridJosephson1980,gallagherThreeterminalSuperconductingDevices1985}
-
-Then IBM dropped it because semiconductors were better~\cite{robinsonIBMDropsSuperconducting1983}
-
-However people continued working on it RSFQ was kept as a promise~\cite{hayakawaJosephsonComputerTechnology1986}, with clock speeds reaching several hundreds gigahertz~\cite{likharevRSFQLogicMemory1991}.
-
-In parallel to semiconductors, Moores law was predicted to come to an end at some point
-So people started thinking about alternatives to semicon transistors
-superconducting circuits: phase, flux, charge qubits
-breakthrough the transmon
-field as taken off, now Rigetti, IBM~\cite{steffenQuantumComputingIBM2011}, Google~\cite{aruteQuantumSupremacyUsing2019} working on it
-SNS JJs resurfaced in Microsoft approach for Majoranas~\cite{NewMicrosoftBreakthroughs}
-Intel remains invested in semiconductors for quantum computing (spin qubits in Silicon)~\cite{vandersypenInterfacingSpinQubits2017,vandersypenQuantumComputingSemiconductor2019}
-
-Limitations of current magnetic flux tunable qubits: power dissipation for many qubits.
+Since then, the buzz on "quantum computing" is all around us, with global tech companies like IBM~\cite{steffenQuantumComputingIBM2011}, Google~\cite{aruteQuantumSupremacyUsing2019}, Microsoft~\cite{linnNewMicrosoftBreakthroughs2020} and Intel~\cite{vandersypenQuantumComputingSemiconductor2019} all heavily invested and following slightly different paths.
 %
-Here, non-dissipative voltage tunability might be beneficial.
+One promising approach relies on Josephson junctions, which are weak links between two superconducting banks, as the building block for a superconducting quantum computing architecture.
 %
-Additionally, cross-talk would be significantly reduced due to the nature of gate voltages being significantly more locally confined to a small volume than magnetic fields, potentially coupling qubits several centimeters apart from each other~\cite{dicarloDemonstrationTwoqubitAlgorithms2009}.
-
-First observation of Josephson effect in experiments~\cite{andersonProbableObservationJosephson1963}
-
-First image: Intel die shot, quantum bit chip picture
-
-\section{The Josephson inductance}
-
-Josephson junctions have been used widely in the field of superconducting circuits.
+While, superconducting circuits were already envisioned in the first half of the twentieth century as a competitive alternative to semiconducting computers~\cite{brockWillNSAFinally}, Josephson junctions spured additional interest due to their sensitive nature to magnetic flux and potentially much higher switching speeds compared to MOSFETs~\cite{josephsonPossibleNewEffects1962,andersonProbableObservationJosephson1963}.
 %
-Already their first applications were thought of as the building block for superconducting logical circuits.
+In parallel to the development of MOSFETs, Josephson junctions were hence envisioned as building blocks for superconducting logic circuits, with IBM being one of the main drivers at the time~\cite{anackerJosephsonComputerTechnology1980a}.
+%
+In an attempt to combine the best of two worlds, the versatility of a high gain transistor, and the low dissipation of superconducting circuits, proposals were made in the 1980s to merge these two elements into the Josephson field effect transistor (JoFET), cf. Fig.~\ref{fig:introcomputing}(c)~\cite{clarkFeasibilityHybridJosephson1980,gallagherThreeterminalSuperconductingDevices1985}.
+%
+Yet, IBM eventually seized to research Josephson junction computation due to an apparent supremacy of semiconducting computers~\cite{robinsonIBMDropsSuperconducting1983}.
 
-\subsection{Andreev reflection and Andreev bound states in SNS junctions}
+Research continued however at public institutions and universities, and soon it was realized that Josephson junctions could form the basis of quantum bits~\cite{martinisQuantumJosephsonJunction2020}.
+%
+Since then, superconducting quantum processors based on Josephson junctions embedded in microwave circuits, as pursued by IBM and Google, have culminated in the milestone "quantum supremacy", i.e. the threshold at which a quantum processor became capable of executing an algorithm that would be prohibitively costly in terms of computing time and money for a classical computer to perform~\cite{aruteQuantumSupremacyUsing2019}.
+%
+The building block of these processors are superconducting quantum interference devices (SQUIDs, cf. Fig.~\ref{fig:introcomputing}(e,f)) formed by two Josephson junctions in a loop.
 
-The process of Andreev reflection at the interface between superconductors and normal metals lays the fundament for understanding how a Josephson junction works.
+To tune the states of these qubits, magnetic flux is threaded through the SQUID loop, supplied via on-chip current bias lines in close proximity of the SQUIDs.
 %
-The process is sketched in Fig. \ref{fig:kdtmk}:
+However, these magnetic fields come with a few drawbacks:
 %
-An electron impinging onto the super-normal interface from inside the normal region can only enter the superconductor in the form of a Cooper pair by being reflected as a hole with opposite spin and momentum.
+Already the very first implementation of such a two-qubit processor showed that these magnetic fields can lead to significant cross talk coupling qubits several centimeters apart from each other\cite{dicarloDemonstrationTwoqubitAlgorithms2009}.
 %
-Vice versa, a Cooper pair travelling towards the normal region will decay into an electron travelling forward, and annihilate a hole travelling backwards with spin opposite to that of the electron.
+Additionally, the dilution refrigerators cooling the chips to isolate them from thermal fluctuations only have limited cooling power which can be exceeded if enough current is put on chip.
 %
-Inside the normal region, this will result in the formation of the so-called Andreev bound states (ABS).
+As the number of physical qubits increases, so does the challenge of shielding individual qubits from each other's bias lines, and retaining enough cooling power as to not induce thermal effects.
 
-Since inside the superconductor, there are no states allowed for $\epsilon_F - \Delta \leq \epsilon_F \leq \epsilon_F - \Delta$, the superconducting electrodes can be though of as forming potential barriers at the interface, leading to transparencies $\tau$, and the Andreev paris can be thought of analogously as particles inside a box.
+In comparison, replacing SQUIDs with the long-abandoned JoFET might be beneficial:
 %
-\textbf{TODO!!! ?? Here also elaborate on the Thouless energy and 2D junctions.}
+Applying gate voltages instead of running a current through a wire is non-dissipative, which removes the cooling power constraint.
+%
+Additionally, cross-talk would be significantly reduced due to the nature of electric fields in gate capacitors being strongly confined to a small volume around the gate voltage lead.
+%
+Finally, JoFETs have consistently performed well under application of in-plane magnetic fields.
+%
+While the latter are not strictly necessary in transmon qubits, flux noise is one of the limiting factors of SQUIDs.
+%
+Even more important, magnetic fields are one of the requirements of qubits based on the Majorana architecture~\cite{hyartFluxcontrolledQuantumComputation2013}, which rules out aluminum oxide junctions and necessitates JoFETs.
 
-\begin{figure}
+
+As of now, there has been only very little research in integrating JoFETs in superconducting qubits.
+%
+Most notably, semiconductor nanowires and epitaxial 2DEGs were integrated in transmon qubits, resulting in so-called "gatemons", cf. Fig.~\ref{fig:introcomputing}(d)~\cite{delangeRealizationMicrowaveQuantum2015,larsenSemiconductorNanowireBasedSuperconductingQubit2015,casparisGatemonBenchmarkingTwoQubit2016a,casparisSuperconductingGatemonQubit2018,luthiEvolutionNanowireTransmon2018}.
+%
+While coherence times are not yet at the same level as for standard transmons, gatemons show great promise and have gained significant interest in the scientific community.
+%
+Gatemons not only provide a new way of qubit control~\cite{shimSemiconductorinspiredDesignPrinciples2016}, but also a path towards studying unconventional superconducting weak links at high frequencies~\cite{tahanGrapheneQubitMotivates2019}.
+
+
+\begin{figure}[t]
+	\centering
+	\includegraphics[width=\linewidth]{chapter-introduction/figs/intro_computing.svg.png}
+	\caption{
+		\textbf{Semi- and superconducting based computing devices.}
+		%
+		\textbf{(a)} Cross-sectional TEM image of \SI{45}{\nano\meter} node MOSFETs, the building block of semiconducting computers, adapted from~\cite{thompsonLogicNanotechnologyFeaturing2004}.
+		%
+		\textbf{(b)} Die shot of part of the I/O die of the microprocessor with currently highest number of transistors, in this case with \SI{14}{\nano\meter} node: The \textit{AMD Epyc Rome} with \num{8.34e9} transistors on the I/D die and \num{39.54e9} total, adapted from \cite{mujtabaAMDEPYCRome2019}.
+		%
+		\textbf{(c)} Sketch of the first envisioned JoFET as hybrid between semiconducting transistors and superconducting Josephson junctions, adapted from~\cite{clarkFeasibilityHybridJosephson1980}.
+		%
+		\textbf{(d)} SEM of a single-qubit gatemon, a potential computation basis for a hybrid super-semi approach, adapted from~\cite{casparisSuperconductingGatemonQubit2018}.
+		%
+		\textbf{(e)} SEM of an aluminum oxide Josephson junction, the workhorse of the superconducting quantum computing architecture, adapted from~\cite{langfordExperimentallySimulatingDynamics2017}.
+		%
+		\textbf{(f)} Optical image of Google's "quantum supremacy" 53 qubit \textit{Sycamore} quantum processor, adapted from~\cite{shanklandTakeLookGoogle2020}. 
+	}
+	\label{fig:introcomputing}
+\end{figure}
+
+
+In this thesis, we initially set out to explore how graphene Josephson junctions could perform in superconducting microwave circuits.
+%
+Since its discovery in 2004, graphene has shown versatile field effect applications and, already since very early on, gate-tunable superconductivity~\cite{novoselovElectricFieldEffect2004c,heerscheBipolarSupercurrentGraphene2007a}.
+%
+With improvements on contact engineering and reduced film disorder, induced superconductivity in graphene Josephson has been a testbed for Andreev physics, phase coherence, quantum phase transitions and the interplay of superconductivity and magnetism ~\cite{leeProximityCouplingSuperconductorgraphene2018a}.
+%
+Incorporating these devices in microwave circuits thus is a first step towards the realization of gate-tunable superconducting microwave logic circuits.
+%
+However, to not lose the information about the device's DC properties, and to directly link them to the microwave performance, we chose to combine both DC and MW in one device, by utilizing DC bias cavities~\cite{bosmanBroadbandArchitectureGalvanically2015c}.
+%
+This not only allows for a detailed study of the junction's properties, but also enables applications based on current-biasing the device.
+
+
+
+
+
+
+
+\section{Josephson effects in SNS systems}
+
+\begin{figure}[t]
 	\centering
 	\includegraphics[width=\linewidth]{chapter-introduction/figs/model_SNS_DOS}
 	\caption{
@@ -94,6 +137,25 @@ Since inside the superconductor, there are no states allowed for $\epsilon_F - \
 	}
 	\label{fig:modelsnsdos}
 \end{figure}
+
+Josephson junctions have been used widely in the field of superconducting circuits.
+%
+Already their first applications were thought of as the building block for superconducting logical circuits.
+
+The process of Andreev reflection at the interface between superconductors and normal metals lays the fundament for understanding how a Josephson junction works.
+%
+The process is sketched in Fig. \ref{fig:modelsnsdos}:
+%
+An electron impinging onto the super-normal interface from inside the normal region can only enter the superconductor in the form of a Cooper pair by being reflected as a hole with opposite spin and momentum.
+%
+Vice versa, a Cooper pair travelling towards the normal region will decay into an electron travelling forward, and annihilate a hole travelling backwards with spin opposite to that of the electron.
+%
+Inside the normal region, this will result in the formation of the so-called Andreev bound states (ABS).
+
+Since inside the superconductor, there are no states allowed for $\epsilon_F - \Delta \leq \epsilon_F \leq \epsilon_F - \Delta$, the superconducting electrodes can be though of as forming potential barriers at the interface, leading to transparencies $\tau$, and the Andreev paris can be thought of analogously as particles inside a box.
+%
+\textbf{TODO!!! ?? Here also elaborate on the Thouless energy and 2D junctions.}
+
 
 Nanda \textit{et al.}~\cite{nandaCurrentPhaseRelationBallistic2017} point out an important factor to take into account:
 %
@@ -128,18 +190,7 @@ We plot the ground and excited state energies of the ABS in Fig.~\ref{fig:models
 %
 With increasing channel transmission, $U_J$ exhibits stronger modulation and a closing band gap at $\delta=\pi$ with minimum separation $2\Delta\sqrt{1-\tau}$.
 
-The exact nature of the subgap states however depends on a multitude of parameters, such as the crystal structure, size and geometry of the junction, as well as the contact transparency.
-%
-Figure~\ref{fig:modelsubgap} shows the calculated subgap density of states for a basic graphene Josephson junction and the influence of these parameters.
-%
-Most notably in comparison to the basic ABS energy, contact transparency $\tau_c<1$ leads to the ABS detaching from the bulk gap at $\Delta$ even for zero phase difference~\cite{bretheauTunnellingSpectroscopyAndreev2017a}.
-%
-Additionally, the longer the junction, i.e. the further the superconducting banks are spaced apart, the lower the resulting ABS energy, since the superconducting phase decays exponentially in the normal conductor.
-%
-In the case of a 2D junction, large junction width, i.e. lateral extensions, additionally reduce the ABS energy.
-
-
-\begin{figure}
+\begin{figure}[t]
 	\centering
 	\includegraphics[width=\linewidth]{chapter-introduction/figs/kwant_modeling_181206_subgap_length_supp_Plot_subgap_dos}
 	\caption{
@@ -151,6 +202,19 @@ In the case of a 2D junction, large junction width, i.e. lateral extensions, add
 	}
 	\label{fig:modelsubgap}
 \end{figure}
+
+The exact nature of the subgap states however depends on a multitude of parameters, such as the crystal structure, size and geometry of the junction, as well as the contact transparency.
+%
+Figure~\ref{fig:modelsubgap} shows the calculated subgap density of states for a basic graphene Josephson junction and the influence of these parameters.
+%
+Most notably in comparison to the basic ABS energy, contact transparency $\tau_c<1$ leads to the ABS detaching from the bulk gap at $\Delta$ even for zero phase difference~\cite{bretheauTunnellingSpectroscopyAndreev2017a}.
+%
+Additionally, the longer the junction, i.e. the further the superconducting banks are spaced apart, the lower the resulting ABS energy, since the superconducting phase decays exponentially in the normal conductor.
+%
+In the case of a 2D junction, large junction width, i.e. lateral extensions, additionally reduce the ABS energy.
+
+
+
 
 Turning back to the basic 1D-ABS picture, the corresponding Josephson current and inductance are 
 \begin{align}
@@ -173,7 +237,7 @@ To this end, we placed our junctions in a circuit allowing for steady and high f
 %
 These DC bias microwave circuits are described in the following section.
 
-\begin{figure}
+\begin{figure}[t]
 	\centering
 	\includegraphics[width=\linewidth]{chapter-introduction/figs/model_SNS_EjIc}
 	\caption{
@@ -199,13 +263,25 @@ These DC bias microwave circuits are described in the following section.
 
 \section{DC bias cavities for probing Josephson junctions}
 
-%\subsection{Coplanar waveguide electrodynamics}
+\begin{figure}[t]
+	\centering
+	\includegraphics[width=\linewidth]{chapter-introduction/figs/model_DC_bias_cavity_coupling.pdf}
+	\caption{
+		\textbf{Effect of coupling ratio of the reflection coefficient of a DC bias cavity.}
+		%
+		Using Eq.~\ref{eq:intro-s11}, we can model the absolute value \textbf{(a)}, phase \textbf{(b)} and real and imaginary parts \textbf{(c)} of the reflection coefficient of a DC bias cavity.
+		%
+		Colors denote the various coupling types: blue: critically coupled $\kappa_e/\kappa_i=1$, orange: undercoupled $\kappa_e/\kappa_i=0.1$, green: overcoupled $\kappa_e/\kappa_i=10$.
+		%
+		Best signal-to-noise ratio is achieved for critical coupling, while the other two cases have identical SNR in terms of $\abs{S_{11}}$.
+	}
+	\label{fig:s11}
+\end{figure}
 
-%\subsection{DC bias cavities}
 
 In order to probe the Josephson inductance, we make use of superconducting microwave resonators based on coplanar waveguides~\cite{gopplCoplanarWaveguideResonators2008,zmuidzinasSuperconductingMicroresonatorsPhysics2012}.
 %
-These have been used extensively in the field of particle detection and circuit (quantum) electrodynamics due to the intrinsic low loss originating from the absence in resistance of the Cooper pairs~\cite{dayBroadbandSuperconductingDetector2003a,blaisCavityQuantumElectrodynamics2004c}.
+These have been used extensively in the field of particle detection and circuit (quantum) electrodynamics due to the intrinsic low loss originating from the absence in resistance of the Cooper pairs~\cite{dayBroadbandSuperconductingDetector2003a,blaisCavityQuantumElectrodynamics2004c,clerkHybridQuantumSystems2020,blaisQuantumInformationProcessing2020}.
 %
 In order to analyze our devices both in the low and high frequency range (DC to several $\SI{e9}{\hertz}$), our circuits need to be able to sustain relatively large quality factors while being able to introduce direct current and voltage access to the device under test (DUT).
 
@@ -236,7 +312,7 @@ S_{11}=-1+\frac{2\kappa_e}{\kappa_e+\kappa_i+2i\Delta}
 %
 with the internal and external loss rates $\kappa_i$ and $\kappa_e$ and the detuning $\Delta=\omega-\omega_0$~\cite{bosmanBroadbandArchitectureGalvanically2015c}.
 %
-In Fig.~\ref{fig:s11} we plot the reflection coefficient for various fractions of $g_Q =\kappa_e/\kappa_i$, to illustrate the effects of over-, under- and critical coupling ($g_Q >1$, $g_Q <1$ and $g_Q =1$, respectively).
+In Fig.~\ref{fig:s11} we plot the reflection coefficient for various fractions of $\eta =\kappa_e/\kappa_i$, to illustrate the effects of over-, under- and critical coupling ($\eta >1$, $\eta <1$ and $\eta =1$, respectively).
 %
 For a best signal-to-noise ratio, the shunt capacitor $C_s$ should be designed such that $\kappa_e=\kappa_i$, with the external loss rate approximately given by
 %
@@ -257,20 +333,35 @@ It is tempting to therefore search for a circuit resonance in the measured since
 %
 Nevertheless, measurement background from impedance mismatches, resulting in oscillations of the background, often obscure even drastic phase changes, for which reason the absolute value can at times be better suited.
 
-\begin{figure}[t]
+\begin{figure}
 	\centering
-	\includegraphics[width=\linewidth]{chapter-introduction/figs/model_DC_bias_cavity_coupling.pdf}
+	\includegraphics[width=\linewidth]{chapter-introduction/figs/model_DC_bias_cavity_params_RCSJ.pdf}
 	\caption{
-		\textbf{Effect of coupling ratio of the reflection coefficient of a DC bias cavity.}
+		\textbf{DC bias cavity shorted to ground by a parametrized top-gated graphene Josephson junction.}
 		%
-		Using Eq.~\ref{eq:intro-s11}, we can model the absolute value \textbf{(a)}, phase \textbf{(b)} and real and imaginary parts \textbf{(c)} of the reflection coefficient of a DC bias cavity.
+		\textbf{(a)} Fully parametrized circuit model.
 		%
-		Colors denote the various coupling types: blue: critically coupled $\kappa_e/\kappa_i=1$, orange: undercoupled $\kappa_e/\kappa_i=0.1$, green: overcoupled $\kappa_e/\kappa_i=10$.
+		The transmission line is described by length $l$, inductance and capacitance per unit length $L^\prime$ and $C^\prime$ and attenuation $\alpha$, and is coupled to an input impedance $z_0^\prime$ via a shunt capacitance $C_s$.
 		%
-		Best signal-to-noise ratio is achieved for critical coupling, while the other two cases have identical SNR in terms of $\abs{S_{11}}$.
+		The Josephson junction is modeled as a network of linear lead inductance $L_g$ together with an RCSJ model of subgap-resistance $R_{\rm sg}$, junction capacitance $C_J$, nonlinear inductance $L_J$ and gate capacitance $C_g$.
+		%
+		\textbf{(b)} Resonance frequency versus Josephson inductance with the other parameters fixed.
+		%
+		Depending on the junction impedance, the fundamental cavity mode changes from $\lambda/2$ (small $L_J$) to $\lambda/4$ (large $L_J$).
+		%
+		\textbf{(c,d)} Influence on subgap resistance on internal quality factor and resonance frequency.
+		%
+		Very small $R_{\rm sg}$ corresponds to a short, very large $R_{\rm sg}$ to an open to ground in parallel with $L_J$.
+		%
+		In both cases, the internal losses are dominated by the transmission line attenuation.
+		%
+		For intermediate values of $R_{\rm sg}$, significant resistive damping effectively suppresses the circuit response.
+		%
+		Panel \textbf{(d)} also illustrates the shift of $f_0$ due to $L_J$ as in panel \textbf{(b)} when changing the boundary condition.
 	}
-	\label{fig:s11}
+	\label{fig:TLmodel}
 \end{figure}
+
 
 When probing Josephson junctions with the DC bias cavity, we need to calibrate the microwave circuit parameters.
 %
@@ -297,22 +388,6 @@ Intermediate resistance values suppress the resonance entirely.
 %
 The shift in $f_0$ for large $R_{\rm sg}$ shows the frequency shift induced by $L_J$.
 
-\begin{figure}
-	\centering
-	\includegraphics[width=\linewidth]{chapter-introduction/figs/model_DC_bias_cavity_params_RCSJ.pdf}
-	\caption{
-		\textbf{DC bias cavity shorted to ground by a parametrized top-gated graphene Josephson junction.}
-		%
-		\textbf{(a)} Parametrized circuit model.
-		%
-		\textbf{(b)} Resonance frequency versus Josephson inductance.
-		%
-		\textbf{(c,d)} Influence on subgap resistance on internal quality factor and resonance frequency.
-		%
-		Panel \textbf{(d)} also illustrates the shift of $f_0$ due to $L_J$ as in panel \textbf{(b)}.
-	}
-	\label{fig:TLmodel}
-\end{figure}
 
 
 \section{Outline}
@@ -348,7 +423,9 @@ Here, we provide a collection of additional DC data on graphene Josephson juncti
 In particular, we investigate oscillations in the IV curves that occur as a result of the junction probing its electromagnetic environment in the absence, and the phase locking to the presence of microwave radiation, resulting in Fiske and Shapiro steps, respectively.
 
 
-Chapter~\ref{chap:currentdetection} shows the result of a DC bias MW cavity coupled to a aluminum constriction Josephson junction.
+We switch from pure fundamental studies of the junction's characteristics to a circuit application in chapter~\ref{chap:currentdetection}.
+%
+Instead of a graphene JoFET, we present a DC bias MW cavity coupled to an aluminum constriction Josephson junction, a so-called Dayem bridge~\cite{andersonRadioFrequencyEffectsSuperconducting1964}.
 %
 Making use of the responsivity of the circuit's resonance frequency to bias current, we detect low-frequency currents with a minimum measured sensitivity of \SI{8.9}{\pico\ampere\per\hertz\tothe{1/2}}, comparable to state-of-the-art devices.
 %

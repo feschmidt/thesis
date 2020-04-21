@@ -1554,6 +1554,14 @@ FUNCTION {format.names}
           {
             t *
           } {
+          	nameptr #3
+            #1 + =
+          	numnames #6
+          	> and
+          		{ "others" 't :=
+      				#1 'namesleft := }
+          		'skip$
+          	if$
             namesleft #1 >
               {
                 names.punctuate
