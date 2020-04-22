@@ -15,64 +15,65 @@
 
 \section{Computing with semi- and superconducting circuits}
 
-The information age and the underlying development of the metal oxide semiconductor field-effect transistor (MOSFET, cf. Fig.~\ref{fig:introcomputing}(a)) lay the ground to the world which we know today.
+The invention of the metal oxide semiconductor field-effect transistor (MOSFET, cf. Fig.~\ref{fig:introcomputing}(a)) lay the ground to the information age, in large parts shaping the world to be what we know it as today.
 %
 Pushed by continuous advances in material sciences, solid state physics and electrical engineering, the MOSFET is now the building block of all commercial computers.
 %
-Owed largely by the success of scalability from integrated circuits, state-of-the-art microprocessors host more than 39.54 billion transistors on a single chip, with physical dimensions down to a few tens of nanometers, cf. Fig.~\ref{fig:introcomputing}(b)~\cite{mujtabaAMDEPYCRome2019}.
+Owed largely by the success of scalability from integrated circuits, today's state-of-the-art microprocessors can host more than 39.54 billion transistors on a single chip, with physical dimensions down to a few tens of nanometers, cf. Fig.~\ref{fig:introcomputing}(b)~\cite{mujtabaAMDEPYCRome2019}.
 %
-With the increasing transistor density and shrinking physical dimensions came however the realization, that alternative computation architectures to the one based on semiconducting transistors might be needed to satisfy society's desire for information, as there might be a limit to how dense logic circuits might be packed with current technology as the number of transistors on a chip were found to double every two years~\cite{mooreCrammingMoreComponents2006}.
+With the increasing transistor density and shrinking physical dimensions came however the realization, that alternative computation architectures to the one based on semiconducting transistors might be needed to satisfy society's desire for computation power, as there might be a limit to how dense logic circuits could be packed with current technology.
+%
+The slowing of Moore's law, originally predicting the doubling of transistor chip density every two years~\cite{mooreCrammingMoreComponents2006}, is an important reminder of this challenge.
 
-Based on Feynman's ideas of building quantum machines to run the most complex calculations much more efficient than any digital one, MOSFET-based, computer could, the late twentieth century saw the birth of first prototypes based on a quantum computing architecture~\cite{feynmanSimulatingPhysicsComputers1982}.
+
+Already before the invention of the MOSFET, circuits on the basis of superconducting switches called "cryotrons" were envisioned as a competitive alternative to semiconducting computers~\cite{buckCryotronASuperconductiveComputer1956,brockWillNSAFinally}.
 %
-Since then, the buzz on "quantum computing" is all around us, with global tech companies like IBM~\cite{steffenQuantumComputingIBM2011}, Google~\cite{aruteQuantumSupremacyUsing2019}, Microsoft~\cite{linnNewMicrosoftBreakthroughs2020} and Intel~\cite{vandersypenQuantumComputingSemiconductor2019} all heavily invested and following slightly different paths.
-%
-One promising approach relies on Josephson junctions, which are weak links between two superconducting banks, as the building block for a superconducting quantum computing architecture.
-%
-While, superconducting circuits were already envisioned in the first half of the twentieth century as a competitive alternative to semiconducting computers~\cite{brockWillNSAFinally}, Josephson junctions spured additional interest due to their sensitive nature to magnetic flux and potentially much higher switching speeds compared to MOSFETs~\cite{josephsonPossibleNewEffects1962,andersonProbableObservationJosephson1963}.
+The discovery of Josephson junctions (JJs), weak links between two superconductors, depicted in Fig.~\ref{fig:introcomputing}(e), in 1962~\cite{josephsonPossibleNewEffects1962,andersonProbableObservationJosephson1963} spured additional interest due to their sensitive nature to magnetic flux, low power consumption and high switching speeds~\cite{mcdonaldPicosecondApplicationsJosephson1980}.
 %
 In parallel to the development of MOSFETs, Josephson junctions were hence envisioned as building blocks for superconducting logic circuits, with IBM being one of the main drivers at the time~\cite{anackerJosephsonComputerTechnology1980a}.
 %
 In an attempt to combine the best of two worlds, the versatility of a high gain transistor, and the low dissipation of superconducting circuits, proposals were made in the 1980s to merge these two elements into the Josephson field effect transistor (JoFET), cf. Fig.~\ref{fig:introcomputing}(c)~\cite{clarkFeasibilityHybridJosephson1980,gallagherThreeterminalSuperconductingDevices1985}.
-%
-Yet, IBM eventually seized to research Josephson junction computation due to an apparent supremacy of semiconducting computers~\cite{robinsonIBMDropsSuperconducting1983}.
 
-Research continued however at public institutions and universities, and soon it was realized that Josephson junctions could form the basis of quantum bits~\cite{martinisQuantumJosephsonJunction2020}.
-%
-Since then, superconducting quantum processors based on Josephson junctions embedded in microwave circuits, as pursued by IBM and Google, have culminated in the milestone "quantum supremacy", i.e. the threshold at which a quantum processor became capable of executing an algorithm that would be prohibitively costly in terms of computing time and money for a classical computer to perform~\cite{aruteQuantumSupremacyUsing2019}.
-%
-The building block of these processors are superconducting quantum interference devices (SQUIDs, cf. Fig.~\ref{fig:introcomputing}(e,f)) formed by two Josephson junctions in a loop.
 
-To tune the states of these qubits, magnetic flux is threaded through the SQUID loop, supplied via on-chip current bias lines in close proximity of the SQUIDs.
+While IBM eventually seized to research Josephson junction computation due to an apparent supremacy of semiconducting computers~\cite{robinsonIBMDropsSuperconducting1983}, research continued at public institutions and universities, in part driven by Richard Feynman's ideas of building quantum machines to run complex calculations much more efficient than any classical, MOSFET-based, computer~\cite{feynmanSimulatingPhysicsComputers1982}.
 %
-However, these magnetic fields come with a few drawbacks:
+The late twentieth century then saw the birth of first prototypes for a quantum computing architecture, and it was realized that Josephson junctions could form the basis of quantum bits~\cite{martinisQuantumJosephsonJunction2020}.
 %
-Already the very first implementation of such a two-qubit processor showed that these magnetic fields can lead to significant cross talk coupling qubits several centimeters apart from each other\cite{dicarloDemonstrationTwoqubitAlgorithms2009}.
+Since then, global tech companies like IBM, Google, Microsoft and Intel are all heavily invested in this architecture, each following a slightly different path~\cite{steffenQuantumComputingIBM2011,aruteQuantumSupremacyUsing2019,linnNewMicrosoftBreakthroughs2020,vandersypenQuantumComputingSemiconductor2019}.
 %
-Additionally, the dilution refrigerators cooling the chips to isolate them from thermal fluctuations only have limited cooling power which can be exceeded if enough current is put on chip.
+Superconducting quantum processors based on Josephson junctions embedded in microwave circuits, as pursued by IBM and Google, have culminated in the milestone "quantum supremacy", i.e. the threshold at which a quantum processor can execute an algorithm that would be prohibitively costly in terms of computing time and money for a classical computer to perform~\cite{aruteQuantumSupremacyUsing2019}.
+%
+Figure~\ref{fig:introcomputing}(e) shows an image of Google's "quantum supremacy" processor.
+%
+The building block of these processors are transmon qubits.
+%
+These consist of a coplanar capacitance in series with superconducting quantum interference devices (SQUIDs), formed by two Josephson junctions in a loop.
+
+
+
+To tune the states of the transmons, magnetic flux is threaded through the SQUID loop, supplied via on-chip current bias lines in close proximity to the SQUIDs.
+%
+While coherence times of several hundreds of microseconds show great potential for future devices~\cite{placeNewMaterialPlatform2020}, standard transmons come with a few drawbacks:
+%
+Already the very first implementation of a two-qubit transmon processor showed that magnetic fields can lead to significant cross talk coupling qubits several centimeters apart from each other\cite{dicarloDemonstrationTwoqubitAlgorithms2009}.
+%
+Additionally, since the chips need to be operated at temperatures only fractions of a Kelvin above absolute zero in order to protect their coherence from thermal excitations, the cooling power of the refrigerator must not be exceeded.
+%
+This can be problematic with high qubit numbers, since the tuning current through all individual flux lines might exceed the cooling power.
 %
 As the number of physical qubits increases, so does the challenge of shielding individual qubits from each other's bias lines, and retaining enough cooling power as to not induce thermal effects.
 
-In comparison, replacing SQUIDs with the long-abandoned JoFET might be beneficial:
+In contrast, replacing SQUIDs with the long-abandoned JoFET might be beneficial:
 %
-Applying gate voltages instead of running a current through a wire is non-dissipative, which removes the cooling power constraint.
+Applying gate voltages instead of running a current through a wire does not lead to thermal dissipation, which removes the cooling power constraint.
 %
-Additionally, cross-talk would be significantly reduced due to the nature of electric fields in gate capacitors being strongly confined to a small volume around the gate voltage lead.
+Additionally, cross-talk can be significantly reduced due to the nature of electric fields in gate capacitors being strongly confined to a small volume around the gate voltage lead.
 %
 Finally, JoFETs have consistently performed well under application of in-plane magnetic fields.
 %
-While the latter are not strictly necessary in transmon qubits, flux noise is one of the limiting factors of SQUIDs.
+While the latter are not strictly necessary in transmon qubits (rather to be avoided) flux noise is one of the limiting factors of SQUIDs, to which gatemons are insensitive~\cite{casparisSuperconductingGatemonQubit2018}.
 %
-Even more important, magnetic fields are one of the requirements of qubits based on the Majorana architecture~\cite{hyartFluxcontrolledQuantumComputation2013}, which rules out aluminum oxide junctions and necessitates JoFETs.
-
-
-As of now, there has been only very little research in integrating JoFETs in superconducting qubits.
-%
-Most notably, semiconductor nanowires and epitaxial 2DEGs were integrated in transmon qubits, resulting in so-called "gatemons", cf. Fig.~\ref{fig:introcomputing}(d)~\cite{delangeRealizationMicrowaveQuantum2015,larsenSemiconductorNanowireBasedSuperconductingQubit2015,casparisGatemonBenchmarkingTwoQubit2016a,casparisSuperconductingGatemonQubit2018,luthiEvolutionNanowireTransmon2018}.
-%
-While coherence times are not yet at the same level as for standard transmons, gatemons show great promise and have gained significant interest in the scientific community.
-%
-Gatemons not only provide a new way of qubit control~\cite{shimSemiconductorinspiredDesignPrinciples2016}, but also a path towards studying unconventional superconducting weak links at high frequencies~\cite{tahanGrapheneQubitMotivates2019}.
+Even more important, magnetic field-compatible JoFETs are one of the requirements of qubits based on the Majorana architecture, which could result in significantly more coherent qubits due to their intrinsic topological protection~\cite{hyartFluxcontrolledQuantumComputation2013}.
 
 
 \begin{figure}[t]
@@ -81,33 +82,58 @@ Gatemons not only provide a new way of qubit control~\cite{shimSemiconductorinsp
 	\caption{
 		\textbf{Semi- and superconducting based computing devices.}
 		%
-		\textbf{(a)} Cross-sectional TEM image of \SI{45}{\nano\meter} node MOSFETs, the building block of semiconducting computers, adapted from~\cite{thompsonLogicNanotechnologyFeaturing2004}.
+		\textbf{(a)} Cross-sectional TEM image of \SI{45}{\nano\meter} node MOSFETs, the building block of semiconducting computers.
 		%
-		\textbf{(b)} Die shot of part of the I/O die of the microprocessor with currently highest number of transistors, in this case with \SI{14}{\nano\meter} node: The \textit{AMD Epyc Rome} with \num{8.34e9} transistors on the I/D die and \num{39.54e9} total, adapted from \cite{mujtabaAMDEPYCRome2019}.
+		Figure adapted from~\cite{thompsonLogicNanotechnologyFeaturing2004}.
 		%
-		\textbf{(c)} Sketch of the first envisioned JoFET as hybrid between semiconducting transistors and superconducting Josephson junctions, adapted from~\cite{clarkFeasibilityHybridJosephson1980}.
+		\textbf{(b)} Die shot of part of the I/O die of the microprocessor with currently highest number of transistors, in this case with \SI{14}{\nano\meter} node: The \textit{AMD Epyc Rome} with \num{8.34} billion transistors on the I/O die and \num{39.54} billion in total.
 		%
-		\textbf{(d)} SEM of a single-qubit gatemon, a potential computation basis for a hybrid super-semi approach, adapted from~\cite{casparisSuperconductingGatemonQubit2018}.
+		Figure adapted from \cite{fritzAMD7nm12nmIOD2019}.
 		%
-		\textbf{(e)} SEM of an aluminum oxide Josephson junction, the workhorse of the superconducting quantum computing architecture, adapted from~\cite{langfordExperimentallySimulatingDynamics2017}.
+		\textbf{(c)} Sketch of the first envisioned JoFET as hybrid between semiconducting transistors and superconducting Josephson junctions.
 		%
-		\textbf{(f)} Optical image of Google's "quantum supremacy" 53 qubit \textit{Sycamore} quantum processor, adapted from~\cite{shanklandTakeLookGoogle2020}. 
+		Figure adapted from~\cite{clarkFeasibilityHybridJosephson1980}.
+		%
+		\textbf{(d)} SEM of a gatemon qubit, a potential building block for quantum computing on a hybrid super-semi approach.
+		%
+		Figure adapted from~\cite{casparisSuperconductingGatemonQubit2018}.
+		%
+		\textbf{(e)} SEM of an aluminum oxide Josephson junction, the workhorse of state-of-the-art superconducting microwave quantum  computing.
+		%
+		Figure adapted from~\cite{langfordExperimentallySimulatingDynamics2017}.
+		%
+		\textbf{(f)} Optical image of Google's "quantum supremacy" 53 qubit \textit{Sycamore} quantum processor.
+		%
+		Figure adapted from~\cite{shanklandTakeLookGoogle2020}. 
 	}
 	\label{fig:introcomputing}
 \end{figure}
 
+As of now, there has been only very little research in integrating JoFETs in superconducting quantum computing.
+%
+Recently, semiconductor nanowires and epitaxial 2DEGs were incorporated in transmon qubits, resulting in so-called "gatemons", cf. Fig.~\ref{fig:introcomputing}(d)~\cite{delangeRealizationMicrowaveQuantum2015,larsenSemiconductorNanowireBasedSuperconductingQubit2015,casparisGatemonBenchmarkingTwoQubit2016a,casparisSuperconductingGatemonQubit2018,luthiEvolutionNanowireTransmon2018}.
+%
+While coherence times are not yet at the same level as for standard transmons, gatemons show great promise and have gained significant interest in the scientific community.
+%
+They not only provide a new way of qubit control~\cite{shimSemiconductorinspiredDesignPrinciples2016}, but also a path towards studying unconventional superconducting weak links at high frequencies~\cite{tahanGrapheneQubitMotivates2019}.
 
-In this thesis, we initially set out to explore how graphene Josephson junctions could perform in superconducting microwave circuits.
+
+
+
+
+In this thesis, we initially set out to explore how JoFETs based on graphene Josephson junctions (gJJs) could perform in superconducting microwave circuits.
 %
 Since its discovery in 2004, graphene has shown versatile field effect applications and, already since very early on, gate-tunable superconductivity~\cite{novoselovElectricFieldEffect2004c,heerscheBipolarSupercurrentGraphene2007a}.
 %
-With improvements on contact engineering and reduced film disorder, induced superconductivity in graphene Josephson has been a testbed for Andreev physics, phase coherence, quantum phase transitions and the interplay of superconductivity and magnetism ~\cite{leeProximityCouplingSuperconductorgraphene2018a}.
+With improvements in contact engineering and reduced film disorder, induced superconductivity in gJJs has been a testbed for Andreev physics, phase coherent mechanisms, quantum phase transitions and the interplay of superconductivity and magnetism ~\cite{leeProximityCouplingSuperconductorgraphene2018a}.
 %
-Incorporating these devices in microwave circuits thus is a first step towards the realization of gate-tunable superconducting microwave logic circuits.
+Integrating gJJs in microwave circuits would thus be a first step towards the realization of gate-tunable superconducting microwave logic circuits.
 %
-However, to not lose the information about the device's DC properties, and to directly link them to the microwave performance, we chose to combine both DC and MW in one device, by utilizing DC bias cavities~\cite{bosmanBroadbandArchitectureGalvanically2015c}.
+In order to retain information about the device's DC properties, and to directly link them to the microwave performance, we chose to combine both DC and MW in one device.
 %
-This not only allows for a detailed study of the junction's properties, but also enables applications based on current-biasing the device.
+To this end, we based our circuits on an architecture that allows simultaneous signal probing both with low and high frequencies, DC bias microwave cavities~\cite{bosmanBroadbandArchitectureGalvanically2015c}.
+%
+This not only allows for a detailed study of the junction's properties, but also enables applications based on current-biasing the sample.
 
 
 
