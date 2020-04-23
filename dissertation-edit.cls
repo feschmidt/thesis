@@ -17,7 +17,7 @@
 %\RequirePackage{chapterbib} %% for individual reference sections per chapter
 \RequirePackage{etaremune}
 \RequirePackage{fancyhdr}
-\RequirePackage[flushmargin,hang]{footmisc}
+\RequirePackage[flushmargin,hang,symbol]{footmisc}
 \RequirePackage{ifpdf}
 \RequirePackage{ifxetex}
 \ifxetex

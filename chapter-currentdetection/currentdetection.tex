@@ -49,11 +49,11 @@ This would also enable the incorporation of processes such as Josephson parametr
 
 Typically, the integration of JJs in superconducting microwave circuits is technologically more demanding due to the additionally needed fabrication steps to avoid aging effects and low coherence at microwave frequencies~\cite{pavolotskyAgingAnnealinginducedVariations2011,gotetiReliabilityStudiesNb2019,gunnarssonDielectricLossesMultilayer2013,yanaiObservationEnhancedCoherence2019}.
 % 
-The intrinsically large Kerr-nonlinearity of JJs~\cite{wallraffStrongCouplingSingle2004} can additionally place an upper limit on the device power allowed for circuit operation, which calls for either large critical current JJs with additional fabrication challenges~\cite{lecocqJunctionFabricationShadow2011}, or appropriate circuit design for sufficiently diluting the nonlinearity to provide stable device operation.
+The intrinsically large Kerr-nonlinearity of JJs~\cite{wallraffStrongCouplingSingle2004e} can additionally place an upper limit on the device power allowed for circuit operation, which calls for either large critical current JJs with additional fabrication challenges~\cite{lecocqJunctionFabricationShadow2011b}, or appropriate circuit design for sufficiently diluting the nonlinearity to provide stable device operation.
 
-Here, we provide experimental realisation of a JPUP based on a hybrid combination of a direct current (DC) accessible microwave cavity in coplanar waveguide (CPW) geometry~\cite{bosmanBroadbandArchitectureGalvanically2015a,schmidtBallisticGrapheneSuperconducting2018}.
+Here, we provide experimental realisation of a JPUP based on a hybrid combination of a direct current (DC) accessible microwave cavity in coplanar waveguide (CPW) geometry~\cite{bosmanBroadbandArchitectureGalvanically2015c,schmidtBallisticGrapheneSuperconducting2018}.
 % 
-The design uses a constriction JJ fabricated in the same step and layer as the microwave cavity which simplifies the fabrication procedure and allows for high cavity drive powers~\cite{vijayOptimizingAnharmonicityNanoscale2009a,kennedyTunableNbSuperconducting2019a,rodriguesCouplingMicrowavePhotons2019a,bothnerPhotonPressureStrongCouplingTwo2019}.
+The design uses a constriction JJ fabricated in the same step and layer as the microwave cavity which simplifies the fabrication procedure and allows for high cavity drive powers~\cite{vijayOptimizingAnharmonicityNanoscale2009,kennedyTunableNbSuperconducting2019,rodriguesCouplingMicrowavePhotons2019,bothnerPhotonPressureStrongCouplingTwo2019}.
 % 
 We show device operation by converting \si{\kilo\hertz} current signals to the \si{\giga\hertz} range, and reproduce the data with an analytical model for a wide range of bias currents, drive detunings and drive powers.
 %
@@ -155,11 +155,11 @@ The resonator inductance agrees with the value expected from our circuit design.
 % 
 The critical current as inferred from the microwave measurement is approximately \SI{8}{\percent} larger than the DC switching current.
 % 
-We suspect that current noise in the DC line leads to premature switching of the JJ in the IV measurements, resulting in $I_s<I_c$, as discussed in Sec.~\ref{sec:lossrates} of the Supplemental Material~\cite{SeeSupplementalMaterial} and Ref.~\cite{kautzNoiseaffectedIVCurves1990b}.
+We suspect that current noise in the DC line leads to premature switching of the JJ in the IV measurements, resulting in $I_s<I_c$, as discussed in Sec.~\ref{sec:lossrates} of the Supplemental Material~\cite{SeeSupplementalMaterial} and Ref.~\cite{kautzNoiseaffectedIVCurves1990}.
 % 
 On the other hand, the RF measurement is sensitive to the Josephson inductance, from which we can infer the critical current in a less perturbative way.
 % 
-We note that current-biasing a superconducting wire will also change its kinetic inductance $L_k$~\cite{annunziataTunableSuperconductingNanoinductors2010,vissersFrequencytunableSuperconductingResonators2015}.
+We note that current-biasing a superconducting wire will also change its kinetic inductance $L_k$~\cite{annunziataTunableSuperconductingNanoinductors2010b,vissersFrequencytunableSuperconductingResonators2015b}.
 % 
 However, while our device does possess a noticeable kinetic inductance fraction~\cite{gaoExperimentalStudyKinetic2006}, the changes in $L_k$ within the range of applied bias currents are negligible compared to $L_J$ and we thus attribute the resonance frequency shift completely to the latter, cf. Sec.~\ref{sec:Lk} of the Supplemental Material~\cite{SeeSupplementalMaterial}.
 
@@ -309,7 +309,7 @@ We obtain
 \label{eq:sensitivity}
 \end{align}
 % 
-with $\text{ENBW}$ the equivalent noise bandwidth of the spectrum analyzer~\cite{rauscherFundamentalsSpectrumAnalysis2016a}, and $S$ and $N$ the amplitudes of the sideband and the noisefloor in \si{dBm}, respectively.
+with $\text{ENBW}$ the equivalent noise bandwidth of the spectrum analyzer~\cite{rauscherFundamentalsSpectrumAnalysis2016}, and $S$ and $N$ the amplitudes of the sideband and the noisefloor in \si{dBm}, respectively.
 
 \subsection{Measured device}
 % 
@@ -460,7 +460,7 @@ We estimate that future devices using increased Josephson participation ratios, 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section*{Data availability}
-All raw and processed data as well as supporting code for measurement libraries, data processing and figure generation is available in Zenodo~\cite{zenodo1}
+All raw and processed data as well as supporting code for measurement libraries, data processing and figure generation is available in Zenodo~\cite{schmidtDataProcessingCurrent2020}
 
 \section*{Acknowledgements}
 This project has received funding from the European Union Horizon 2020 research and innovation programme under grant agreement Nos. 681476 -- QOMD, 732894 -- HOT and 785219 -- GrapheneCore2.
@@ -533,7 +533,7 @@ S_{\pm 1} = \frac{\sqrt{\kappa_\text{e}}\alpha_0 G_1 I_\text{LF}}{-i\kappa+2(\De
 \label{eq:input-output-first}
 \end{align}
 
-We calculated all $a_{\pm m}$ coefficients up to $m=3$ using \textit{Mathematica} v11.3.0.0 in the notebook \texttt{input-output formalism.nb}, which we subsequently converted to \textit{python3} code using the notebook \texttt{Export to Python.nb} located in Zenodo~\cite{zenodo1}.
+We calculated all $a_{\pm m}$ coefficients up to $m=3$ using \textit{Mathematica} v11.3.0.0 in the notebook \texttt{input-output formalism.nb}, which we subsequently converted to \textit{python3} code using the notebook \texttt{Export to Python.nb} located in Zenodo~\cite{schmidtDataProcessingCurrent2020}.
 
 \section{Calculating the steady-state solution}\label{sec:Duffing}
 % 
@@ -578,7 +578,7 @@ Furthermore, taking the resonance frequency as the point where $\partial\alpha_0
 
 \section{Higher order terms}\label{app:higher-orders}
 % 
-Already for second order in $\delta I$, the prefactors are too complicated to write down in a short form, which is why we refer to the full analytical solutions in the \textit{Mathematica} notebook \texttt{input-output formalism.nb} located on Zenodo~\cite{zenodo1}.
+Already for second order in $\delta I$, the prefactors are too complicated to write down in a short form, which is why we refer to the full analytical solutions in the \textit{Mathematica} notebook \texttt{input-output formalism.nb} located on Zenodo~\cite{schmidtDataProcessingCurrent2020}.
 % 
 We note that higher order corrections arising for terms in $\delta I^m$, have only negligible effects on the lower order forms.
 % 
@@ -882,7 +882,7 @@ The kinetic inductance fraction is given by~\cite{gaoExperimentalStudyKinetic200
 % 
 which has a value of $0.267$ in our device, hence $L_k^\prime=\SI{154}{\nano\henry\per\meter}$.
 % 
-Kinetic inductance also increases as a function of DC bias current via $L_k(I)=L_k(0)\left[1+(I/I_*)^2\right]$ with the characteristic current $I_*$ \cite{annunziataTunableSuperconductingNanoinductors2010}.
+Kinetic inductance also increases as a function of DC bias current via $L_k(I)=L_k(0)\left[1+(I/I_*)^2\right]$ with the characteristic current $I_*$ \cite{annunziataTunableSuperconductingNanoinductors2010b}.
 % 
 The resulting downshift of the resonance frequency can be described by
 % 
@@ -1185,7 +1185,7 @@ Since the detected power is proportional to the square of the voltage field, whi
 \mathcal{S}_I &= \frac{I_\text{LF}}{\sqrt{\text{ENBW}\times10^{(S-N)/10}}}\ .
 \end{align}
 % 
-For a Gaussian filter such as the one used in our setup, $\text{ENBW}=1.065 \times \text{RBW}$, with RBW the resolution bandwidth of the spectrum analyzer which was set to \SI{5}{\hertz} for all measurements \cite{rauscherFundamentalsSpectrumAnalysis2016a}.
+For a Gaussian filter such as the one used in our setup, $\text{ENBW}=1.065 \times \text{RBW}$, with RBW the resolution bandwidth of the spectrum analyzer which was set to \SI{5}{\hertz} for all measurements \cite{rauscherFundamentalsSpectrumAnalysis2016}.
 % 
 In practice, we extract the sideband amplitude from the measured spectra as the peak power value at the expected $\omega_0 \pm m\Omega$ and compute the noise floor as the average of the remaining data points.
 

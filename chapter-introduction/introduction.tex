@@ -143,6 +143,32 @@ This not only allows for a detailed study of the junction's properties, but also
 
 \section{Josephson effects in SNS systems}
 
+Josephson junctions are formed by a weak link between two superconducting electrodes, which mus be sufficiently weak to sustain a phase difference $\delta=\phi_1-\phi_2$ between the phases of the two electrodes, $\phi_1$ and $\phi_2$, respectively.
+%
+The perhaps simplest case of a JJ is a thin insulating tunnel barrier between two superconductors, the SIS JJ, cf. Fig.~\ref{fig:modelsnsdos}(a).
+%
+Here, Cooper pairs can tunnel from one superconductor through the barrier to the other side, while acquiring a phase $\delta$.
+%
+The current flowing across this type of junction is given by
+%
+\begin{align}
+I_J^{\rm SIS}(\delta) &= I_c\sin\delta.
+\end{align}
+
+The situation is different in the case in which the weak link consists of a normal metal between two superconducting banks, an SNS junction.
+%
+To support a supercurrent, the length of the normal metal must be smaller than the coherence length in the normal region, $L<\xi_N$, which in fact is much longer than the maximum thickness of the insulating barrier in the case of an SIS junction, where the thickness has to be smaller than the superconducting coherence length, $t\ll\xi_S$~\cite{caladoBallisticJosephsonJunctions2015d,benshalomQuantumOscillationsCritical2015}.
+%
+The process of Andreev reflection at the interface between superconductors and normal metals lays the basis for understanding how an SNS junction works~\cite{blonderTransitionMetallicTunneling1982c}.
+%
+The process is sketched in Fig.~\ref{fig:modelsnsdos}(b):
+%
+An electron impinging onto the super-normal interface from inside the normal region can only enter the superconductor in the form of a Cooper pair by being reflected as a hole with opposite spin and momentum.
+%
+Vice versa, a Cooper pair travelling towards the normal region will decay into an electron travelling forward, and annihilate a hole travelling backwards with spin opposite to that of the electron.
+%
+Inside the normal region, this will result in the formation of the so-called Andreev bound states (ABS) and a net current across the JJ.
+
 \begin{figure}[t]
 	\centering
 	\includegraphics[width=\linewidth]{chapter-introduction/figs/model_SNS_DOS}
@@ -151,70 +177,123 @@ This not only allows for a detailed study of the junction's properties, but also
 		%
 		The density of states in a superconductor exhibits a gap of width $2\Delta$ in energy around the Fermi level $\epsilon_F$, with states below $\epsilon_F$ filled and states above unoccupied.
 		%
-		\textbf{(a)} In an SIS Josephson junction, Cooper pairs, consisting of an electron and hole with opposite spins can tunnel through a thin insulating barrier separating two superconducting banks.
+		\textbf{(a)} In an SIS Josephson junction, Cooper pairs, consisting of an electron and hole with opposite spins and momentum, can tunnel through a thin insulating barrier separating two superconducting banks.
 		%
 		There are no states inside the insulating region.
 		%
 		\textbf{(b)} In an SNS Josephson junction, the normal region exhibits a DOS that is filled up to $\epsilon_F$.
 		%
-		Cooper pairs entering the normal region are broken up into electrons and holes of opposite spin and momentum, that can enter the superconductor under Andreev reflection, thus forming Andreev bound states within the normal region.
+		Unpaired electrons can enter the superconductor by Andreev reflection as a hole with opposite momentum.
 		%
-		This results in a net current across the junction.
+		Conversely, Cooper pairs can enter the normal region by breaking into an electron and hole of opposite spin and momentum.
+		%
+		This way, Andreev bound states form within the normal region and a net current flows across the junction.
 	}
 	\label{fig:modelsnsdos}
 \end{figure}
 
-Josephson junctions have been used widely in the field of superconducting circuits.
-%
-Already their first applications were thought of as the building block for superconducting logical circuits.
 
-The process of Andreev reflection at the interface between superconductors and normal metals lays the fundament for understanding how a Josephson junction works.
+The current-phase relation in SNS junctions takes on a significantly different form than the sinusoidal one in SIS junctions:
 %
-The process is sketched in Fig. \ref{fig:modelsnsdos}:
-%
-An electron impinging onto the super-normal interface from inside the normal region can only enter the superconductor in the form of a Cooper pair by being reflected as a hole with opposite spin and momentum.
-%
-Vice versa, a Cooper pair travelling towards the normal region will decay into an electron travelling forward, and annihilate a hole travelling backwards with spin opposite to that of the electron.
-%
-Inside the normal region, this will result in the formation of the so-called Andreev bound states (ABS).
-
-Since inside the superconductor, there are no states allowed for $\epsilon_F - \Delta \leq \epsilon_F \leq \epsilon_F - \Delta$, the superconducting electrodes can be though of as forming potential barriers at the interface, leading to transparencies $\tau$, and the Andreev paris can be thought of analogously as particles inside a box.
-%
-\textbf{TODO!!! ?? Here also elaborate on the Thouless energy and 2D junctions.}
-
-
-Nanda \textit{et al.}~\cite{nandaCurrentPhaseRelationBallistic2017} point out an important factor to take into account:
-%
-Skewness can quite significantly depend on the S-N interface, i.e. transparency, and the ratio $L/\xi$.
-%
-Temperature additionally suppresses skewness, since this leads to a higher number of quasiparticles, and increases the amount of continuum states contributing to the supercurrent.
-
-Let us consider a 1-dimensional SNS junction with perfect contact transparency $\tau_c=1$ at the SN interface.
-%
-Then each Andreev bound state has a ground state energy
+For the simplest case of a one-dimensional SNS junction with perfect contact transparency $\tau_c=1$ at the SN interface, each Andreev bound state has a ground state energy
 %
 \begin{align}
 E_{i}^{\rm ABS} = -\Delta\sqrt{1-T_i\sin^2(\delta/2)}
+\label{eq:ABS}
 \end{align}
 %
-with induced superconducting gap $\Delta$ and channel transparency $T_i$, where $T_i$ takes into account scattering inside the normal region.
+with induced superconducting gap $\Delta$ and channel transparency $T_i$, where $T_i$ takes into account scattering inside the normal region\cite{beenakkerUniversalLimitCriticalcurrent1991,titovJosephsonEffectBallistic2006b}.
 %
 The energy of the excited ABS has opposite sign.
 %
-Summing over all of these channels, the total Josephson potential is given by
+Summing over all channels in the junction, the total Josephson potential is given by
 %
 \begin{align}
 U_J(\delta) = 1-\sum_i E_{i}^{\rm ABS} \approx E_J \frac{\delta^2}{2} - E_J\left( 1-\frac{3\sum T_i^2}{4\sum T_i} \right) \frac{\delta^4}{24} +\mathcal{O}(\delta^6)%\ , \\
 %E_J &= \frac{\Delta}{4}\sum_i T_i \rightarrow \frac{\Delta}{4}N\tau
 \end{align}
 %
-In the limit of low $T_i$, i.e. for an SIS junction, the energy would be given simply by $U_J^{\rm SIS}(\delta)=1-\Delta\cos(\delta)\approx E_J\delta^2/2-E_J\delta^4/24$.
+where we Taylor-expanded Eq.~\ref{eq:ABS}~\cite{kringhojAnharmonicitySuperconductingQubit2018}.
 %
-Compared to the SIS case, the Josephson energy is reduced by a fraction depending on the channel transparency which will become important later on.
+In the limit of low $T_i$, i.e. for an SIS junction, the energy would be given simply by $U_J^{\rm SIS}(\delta)=1-E_J\cos(\delta)\approx E_J\delta^2/2-E_J\delta^4/24$.
+%
+Compared to the SIS case, we therefore find that the Josephson energy is reduced by a fraction depending on the channel transparency which will become important for gatemon qubits, cf. Ref.~\cite{kringhojAnharmonicitySuperconductingQubit2018} and Chapter~\ref{chap:gJJ-CPR}.
 %
 We plot the ground and excited state energies of the ABS in Fig.~\ref{fig:modelsnsejic}(a).
 %
 With increasing channel transmission, $U_J$ exhibits stronger modulation and a closing band gap at $\delta=\pi$ with minimum separation $2\Delta\sqrt{1-\tau}$.
+
+The corresponding relation between Josephson current and the respective phase drop across the one-dimensional SNS JJ is 
+\begin{align}
+I(\delta) = \frac{2e}{\hbar}\frac{\partial U_J}{\partial\delta} = \frac{e\Delta}{2\hbar}\sum_i\frac{T_i\sin\delta}{\sqrt{1-T_i\sin^2\delta/2}}
+\end{align}
+
+In addition, we can ascribe an inductance value to the JJ, given by
+%
+\begin{align}
+L_J(\delta) &= \frac{\hbar}{2e}\left( \frac{\partial I_J}{\partial\delta} \right)^{-1} = \left(\frac{\hbar}{2e}\right)^2\left(\frac{\partial^2U_J}{\partial\delta^2}\right)^{-1} \nonumber\\
+&= \frac{4\hbar^2}{e^2\Delta}\sum_i \frac{\left(1-T_i\sin^2(\delta/2)\right)^{3/2}}{4T_i\cos\delta\left(1-T_i\sin^2(\delta/2)\right)+T_i^2\sin^2(\delta)}
+\end{align} 
+%
+In the microwave regime, the junction therefore behaves as a strong nonlinear inductor.
+
+Both quantities are depicted in Fig.~\ref{fig:modelsnsejic}(b,c).
+%
+We can conclude two things:
+%
+First, the larger the channel transmission, the stronger the forward skew of the current phase relation and corresponding deviation to the SIS case.
+%
+Second, while also strongly nonlinear, the Josephson inductance of SNS junctions is significantly reduced compared to the SIS case, $L_J^{\rm SIS}=\hbar(2eI_c\cos\delta)^{-1}$.
+%
+Since exact knowledge of the Josephson inductance is critical for operating transmon qubits, these deviations need to be investigated for future applications. 
+
+\begin{figure}[t]
+	\centering
+	\includegraphics[width=\linewidth]{chapter-introduction/figs/model_SNS_EjIc}
+	\caption{
+		\textbf{Channel transmission and nonsinusoidality.}
+		%
+		\textbf{(a)} Josephson energy of the ground (blue) and excited (orange) Andreev bound state for varying channel transmission $\tau$ as a function of phase drop across the Josephson junction.
+		%
+		Increasing color intensity corresponds to increasing $\tau$.
+		%
+		Dashed line indicates the bulk gap $\pm\Delta$.
+		%
+		\textbf{(b)} Josephson current for varying $\tau$.
+		%
+		Increasing transmission increases both amplitude and forward skewing of the CPR.
+		%
+		\textbf{(c)} Josephson inductance as a function of phase normalized to the one at maximum $L_J$.
+		%
+		Due to the increased CPR slope for increasing $\tau$ around $\delta=0$, the Josephson inductance decreases significantly.
+	}
+	\label{fig:modelsnsejic}
+\end{figure}
+
+However, for a realistic SNS junction such as the two-dimensional graphene devices measured in this thesis, there are a number of effects that lead to deviations of the above presented mechanisms.
+%
+The exact nature of the subgap density of states for example depends on size and geometry of the junction, as well as the contact transparency.
+%
+If the junction is sufficiently wide that the transport is no longer strictly one-dimensional, the ABS energy is reduced and moves closer to zero.
+%
+The same holds for the case of long compared to short junctions, cf. Fig.~\ref{fig:modelsubgap}:
+%
+This can be understood qualitatively by an effective energy $E_{\rm Th^\star}=\hbar v_F/\Lambda<\Delta$ governing transport inside the junction, analogously to the Thouless energy~\cite{benshalomQuantumOscillationsCritical2015,schmidtBallisticGrapheneSuperconducting2018}, with an effective length scale $\Lambda=L/\tau$ and the Fermi velocity $v_F$.
+%
+In the case of a very wide junction, the transverse Thouless energy $E_{\rm Th^\star}^\parallel=\hbar v_F/\Lambda_\parallel$ with $\Lambda_\parallel=W/\tau$ needs to be introduced.
+%
+The lower this energy, the longer the dwell time of ABS inside the normal region, hence their lower energy.
+%
+Finally, reduced contact transparency $\tau_c<1$ at the SN interface leads to the ABS detaching from the bulk gap at $\Delta$ even for zero phase difference~\cite{bretheauTunnellingSpectroscopyAndreev2017a}.
+
+
+Figure~\ref{fig:modelsubgap} shows the calculated subgap density of states (DOS) for a exemplary graphene Josephson junction in the short and long regime, i.e. $L_N\ll\xi$ and $L_N>\xi$.
+%
+We find that for both cases the states with lowest energies are located at large parallel momentum $k_\parallel$, and that for the long junction, there are a number of subgap states below the bulk gap energy $\Delta$.
+%
+This significantly induced gap can potentially absorb RF excitations, leading to dissipation and decoherence in microwave circuits.
+%
+Finally, graphene shows strong angle-dependent transport due to Klein-tunneling at interfaces, which collimates charge carrier transport perpendicular to interfaces at pn junctions, which can further modify the DOS~\cite{beenakkerColloquiumAndreevReflection2008}.
 
 \begin{figure}[t]
 	\centering
@@ -229,63 +308,11 @@ With increasing channel transmission, $U_J$ exhibits stronger modulation and a c
 	\label{fig:modelsubgap}
 \end{figure}
 
-The exact nature of the subgap states however depends on a multitude of parameters, such as the crystal structure, size and geometry of the junction, as well as the contact transparency.
-%
-Figure~\ref{fig:modelsubgap} shows the calculated subgap density of states for a basic graphene Josephson junction and the influence of these parameters.
-%
-Most notably in comparison to the basic ABS energy, contact transparency $\tau_c<1$ leads to the ABS detaching from the bulk gap at $\Delta$ even for zero phase difference~\cite{bretheauTunnellingSpectroscopyAndreev2017a}.
-%
-Additionally, the longer the junction, i.e. the further the superconducting banks are spaced apart, the lower the resulting ABS energy, since the superconducting phase decays exponentially in the normal conductor.
-%
-In the case of a 2D junction, large junction width, i.e. lateral extensions, additionally reduce the ABS energy.
-
-
-
-
-Turning back to the basic 1D-ABS picture, the corresponding Josephson current and inductance are 
-\begin{align}
-I(\delta) &= \frac{2e}{\hbar}\frac{\partial U_J}{\partial\delta} = \frac{e\Delta}{2\hbar}\sum_i\frac{T_i\sin\delta}{\sqrt{1-T_i\sin^2\delta/2}} \\
-L_J(\delta) &= \frac{\hbar}{2e}\left( \frac{\partial I_J}{\partial\delta} \right)^{-1} = \left(\frac{\hbar}{2e}\right)^2\left(\frac{\partial^2U_J}{\partial\delta^2}\right)^{-1} \\
-&= \frac{4\hbar^2}{e^2\Delta}\sum_i \frac{\left(1-T_i\sin^2(\delta/2)\right)^{3/2}}{4T_i\cos\delta\left(1-T_i\sin^2(\delta/2)\right)+T_i^2\sin^2(\delta)}
-\end{align}
-
-Both quantities are depicted in Fig.~\ref{fig:modelsnsejic}.
-%
-We can conclude two things:
-%
-First, the larger the channel transmission, the stronger the forward skew of the current phase relation and corresponding deviation to the SIS case.
-%
-Second, while also strongly nonlinear, the Josephson inductance of SNS junctions is significantly reduced compared to the SIS case.
-
 In order to build reliable, reproducible circuits out of SNS junctions, it is thus vital to characterize them not only in the DC, but also in the microwave regime, as this is where the inductance will be measurable.
 %
 To this end, we placed our junctions in a circuit allowing for steady and high frequency signals to probe our device.
 %
 These DC bias microwave circuits are described in the following section.
-
-\begin{figure}[t]
-	\centering
-	\includegraphics[width=\linewidth]{chapter-introduction/figs/model_SNS_EjIc}
-	\caption{
-		\textbf{Channel transmission and nonsinusoidality.}
-		%
-		\textbf{(a)} Josephson energy of the ground (blue) and excited (orange) Andreev bound state for varying channel transmission $\tau$ as a function of phase drop across the Josephson junction.
-		%
-		Increasing color intensity corresponds to increasing $\tau$.
-		%
-		Finite contact transparency $\tau_c<1$ at the SN interface detaches the ABS energy from the bulk gap $\pm\Delta$ (dashed line).
-		%
-		\textbf{(b)} Josephson current for varying $\tau$.
-		%
-		Increasing transmission increases both amplitude and forward skewing of the CPR.
-		%
-		\textbf{(c)} Josephson inductance as a function of phase normalized to the one at maximum $L_J$.
-		%
-		Due to the increased CPR slope for increasing $\tau$ at zero phase, the Josephson inductance decreases significantly.
-	}
-	\label{fig:modelsnsejic}
-\end{figure}
-
 
 \section{DC bias cavities for probing Josephson junctions}
 
@@ -299,25 +326,27 @@ These DC bias microwave circuits are described in the following section.
 		%
 		Colors denote the various coupling types: blue: critically coupled $\kappa_e/\kappa_i=1$, orange: undercoupled $\kappa_e/\kappa_i=0.1$, green: overcoupled $\kappa_e/\kappa_i=10$.
 		%
-		Best signal-to-noise ratio is achieved for critical coupling, while the other two cases have identical SNR in terms of $\abs{S_{11}}$.
+		Best signal-to-noise ratio in terms of $\abs{S_{11}}$ is achieved for critical coupling, while the other two cases have identical SNR.
 	}
 	\label{fig:s11}
 \end{figure}
 
 
-In order to probe the Josephson inductance, we make use of superconducting microwave resonators based on coplanar waveguides~\cite{gopplCoplanarWaveguideResonators2008,zmuidzinasSuperconductingMicroresonatorsPhysics2012}.
+To probe the Josephson inductance, we make use of superconducting microwave resonators based on coplanar waveguides~\cite{gopplCoplanarWaveguideResonators2008,zmuidzinasSuperconductingMicroresonatorsPhysics2012}.
 %
-These have been used extensively in the field of particle detection and circuit (quantum) electrodynamics due to the intrinsic low loss originating from the absence in resistance of the Cooper pairs~\cite{dayBroadbandSuperconductingDetector2003a,blaisCavityQuantumElectrodynamics2004c,clerkHybridQuantumSystems2020,blaisQuantumInformationProcessing2020}.
+These have been used extensively in the field of particle detection and circuit (quantum) electrodynamics due to their intrinsic low loss originating from the absent resistance of the Cooper pairs~\cite{dayBroadbandSuperconductingDetector2003a,blaisCavityQuantumElectrodynamics2004c,clerkHybridQuantumSystems2020,blaisQuantumInformationProcessing2020}.
 %
-In order to analyze our devices both in the low and high frequency range (DC to several $\SI{e9}{\hertz}$), our circuits need to be able to sustain relatively large quality factors while being able to introduce direct current and voltage access to the device under test (DUT).
+For probing the device under test both in the low and high frequency range (DC to several $\SI{e9}{\hertz}$), our circuits need to sustain a stable resonance when biased with direct currents.
 
-While there is a variety of circuit architectures capable of this approach, such as using inductive coupling~\cite{vissersFrequencytunableSuperconductingResonators2015b}, direct leads at voltage nodes of a $\lambda/2$ resonator with matching length~\cite{chenIntroductionDcBias2011a,liApplyingDirectCurrent2013} or lumped-element split-cavities~\cite{mahashabdeFastTunableHigh2020}, we based our design on an architecture previously developed in our group, the shunt capacitor DC bias access~\cite{bosmanBroadbandArchitectureGalvanically2015c}.
+There is a variety of circuit architectures capable of this approach, such as using inductive coupling~\cite{vissersFrequencytunableSuperconductingResonators2015b}, direct leads at voltage nodes of a $\lambda/2$ resonator with matching length~\cite{chenIntroductionDcBias2011a,liApplyingDirectCurrent2013} or lumped-element split-cavities~\cite{mahashabdeFastTunableHigh2020}.
 %
-The advantage of this approach is threefold:
+In contrast, we based our design on an architecture previously developed in our group: the shunt capacitor DC bias cavity~\cite{bosmanBroadbandArchitectureGalvanically2015c}.
 %
-As no circuit symmetries need to be considered, the design is rather simple.
+This circuit has several advantages over the previously mentioned ones:
 %
-No additional port needs to be used to probe or excite the DUT, thus there is no additional leakage channel.
+As no circuit symmetries need to be considered, the circuit layout is rather simple.
+%
+Because the shunt capacitor is placed at the input port to the device, no additional port needs to be used to probe or excite the DUT, which prevents additional leakage channels.
 %
 Finally, using a shunt capacitor provides a broadband signal port up to the self-resonance of the shunt capacitor, which is chosen to be well above the resonance frequency of the circuit.
 
@@ -328,7 +357,7 @@ In principle, measurements in both transmission and reflection geometry are poss
 However, we typically use the second port for supplying a DC gate voltage, and short the DUT to ground.
 %
 Therefore, we only perform reflection measurements.
-
+%
 The reflection coefficient of this circuit is given by
 %
 \begin{align}
@@ -340,7 +369,7 @@ with the internal and external loss rates $\kappa_i$ and $\kappa_e$ and the detu
 %
 In Fig.~\ref{fig:s11} we plot the reflection coefficient for various fractions of $\eta =\kappa_e/\kappa_i$, to illustrate the effects of over-, under- and critical coupling ($\eta >1$, $\eta <1$ and $\eta =1$, respectively).
 %
-For a best signal-to-noise ratio, the shunt capacitor $C_s$ should be designed such that $\kappa_e=\kappa_i$, with the external loss rate approximately given by
+For a best signal-to-noise ratio in terms of $\abs{S_{11}}$, the shunt capacitor $C_s$ should be designed such that $\kappa_e=\kappa_i$, with the external loss rate approximately given by
 %
 \begin{align}
 \kappa_e &= \frac{\omega_0}{Q_e} = \frac{2}{\pi\omega_0Z_0^2C_s^2}
@@ -349,15 +378,14 @@ For a best signal-to-noise ratio, the shunt capacitor $C_s$ should be designed s
 %
 with external quality factor $Q_e$ and transmission line impedance $Z_0$.
 %
+Due to stray inductance of the shunt capacitor, there is an upper limit to the maximum feasible $C_s$ we can use while keeping the self-resonance of the latter well above $\omega_0$.
+%
+In practice, this limits $Q_e$ to approximately \num{100e3}.
+%
 However, when placing a JJ at the end of the TL, the internal loss rate can rise significantly.
 %
-For this reason, we typically design our circuits such that they are overcoupled without a JJ present, anticipating a rise in $\kappa_i$.
-%
-As shown in the inset of Fig.~\ref{fig:s11}(a), over- or undercoupling by the same factor in fact leads to the same SNR in the absolute value of $S_{11}$.
-%
-It is tempting to therefore search for a circuit resonance in the measured since this provides a potentially more reliable identification method.
-%
-Nevertheless, measurement background from impedance mismatches, resulting in oscillations of the background, often obscure even drastic phase changes, for which reason the absolute value can at times be better suited.
+For this reason, we typically design our circuits such that they would be overcoupled in the case of a short to ground instead of a JJ, anticipating a rise in $\kappa_i$.
+
 
 \begin{figure}
 	\centering
@@ -367,7 +395,7 @@ Nevertheless, measurement background from impedance mismatches, resulting in osc
 		%
 		\textbf{(a)} Fully parametrized circuit model.
 		%
-		The transmission line is described by length $l$, inductance and capacitance per unit length $L^\prime$ and $C^\prime$ and attenuation $\alpha$, and is coupled to an input impedance $z_0^\prime$ via a shunt capacitance $C_s$.
+		The transmission line is described by length $l$, inductance and capacitance per unit length $L^\prime$ and $C^\prime$ and attenuation $\alpha$, and is coupled to an input impedance $Z_0^\prime$ via a shunt capacitance $C_s$.
 		%
 		The Josephson junction is modeled as a network of linear lead inductance $L_g$ together with an RCSJ model of subgap-resistance $R_{\rm sg}$, junction capacitance $C_J$, nonlinear inductance $L_J$ and gate capacitance $C_g$.
 		%
@@ -377,23 +405,23 @@ Nevertheless, measurement background from impedance mismatches, resulting in osc
 		%
 		\textbf{(c,d)} Influence on subgap resistance on internal quality factor and resonance frequency.
 		%
-		Very small $R_{\rm sg}$ corresponds to a short, very large $R_{\rm sg}$ to an open to ground in parallel with $L_J$.
+		Small $R_{\rm sg}$ corresponds to a short, large $R_{\rm sg}$ to an open to ground in parallel to $L_J$.
 		%
-		In both cases, the internal losses are dominated by the transmission line attenuation.
+		In both cases, the internal losses of the circuit are dominated by the transmission line attenuation.
 		%
 		For intermediate values of $R_{\rm sg}$, significant resistive damping effectively suppresses the circuit response.
 		%
-		Panel \textbf{(d)} also illustrates the shift of $f_0$ due to $L_J$ as in panel \textbf{(b)} when changing the boundary condition.
+		Panel \textbf{(d)} also illustrates the shift of $f_0$ when changing the boundary condition of the circuit, similar to the on due to $L_J$ in panel \textbf{(b)}.
 	}
 	\label{fig:TLmodel}
 \end{figure}
 
 
-When probing Josephson junctions with the DC bias cavity, we need to calibrate the microwave circuit parameters.
+When probing Josephson junctions with the DC bias cavity, we need to calibrate the parameters of the microwave circuit prior to extract quantitative information on the high frequency properties of the added JJ.
 %
-This is done by measuring a combination of an open and shorted reference device with the same sample geometry, except with an open or short to ground in place of the JJ.
+We do this by measuring a combination of open and shorted references device with the same sample geometry, except with an open or short to ground in place of the JJ.
 %
-Equipped with these values, we can proceed to extract information about the JJ:
+Equipped with these values, we can proceed to study the influence JJ on the microwave circuit:
 %
 With an added Josephson junction with inductance $L_J$ shorting the TL to ground, the shifted resonance frequency can be approximated by
 %
@@ -406,9 +434,9 @@ where $L_r$ is the lumped TL resonator inductance including geometric and kineti
 %
 A complete analytical model of an RSCJ model parametrizing the JJ can be used for calculating junction-induced losses in the form of a subgap resistance, cf. Chapter~\ref{chap:gJJ} and Fig.~\ref{fig:TLmodel}.
 %
-For very small $R_{\rm sg}$, the Josephson inductance is effectively short-circuited, so $Q_i$ approaches the limit of no JJ.
+For very small $R_{\rm sg}$, the Josephson inductance is effectively short-circuited, so both $Q_i$ and $f_0$ approach the limit of no JJ.
 %
-On the other hand, very large $R_{\rm sg}$ implies an open circuit with no losses other than the ones in the TL resonator, again approaching $Q_i$ of the bare cavity.
+On the other hand, very large $R_{\rm sg}$ implies an open circuit with no losses other than the ones in the TL resonator, again approaching $Q_i$ of the bare cavity and $f_0$ shifting the the value due to the added $L_J$.
 %
 Intermediate resistance values suppress the resonance entirely.
 %
@@ -418,27 +446,26 @@ The shift in $f_0$ for large $R_{\rm sg}$ shows the frequency shift induced by $
 
 \section{Outline}
 
-In the following, we will show the applications of DC bias cavities to both extract information about the intrinsic parameters of the Josephson junctions to be probed, and use the combination of cavity and junction to perform a detection measurement.
+In the following, we will show how DC bias cavities can be utilized to both extract information on the intrinsic microwave properties of a Josephson junction, and use the combination of cavity and junction to detect very small currents.
 
-
-In chapter~\ref{chap:experiment}, we provide a detailed overview on the experimental methods that we developed and used to enable the measurements presented later on.
+In chapter~\ref{chap:experiment}, we provide an overview on the experimental methods that we developed and used to enable the measurements presented later on.
 %
-We detail the exfoliation and fabrication of van der Waals devices, superconducting CPW resonators.
+We detail the exfoliation and fabrication of graphene and boron nitride, and the fabrication of gJJs and superconducting CPW resonators.
 %
 Additionally, a short introduction to the use of the superconducting alloy molybdenum-rhenium in Delft, together with a small study on its pros and cons, is supplied.
 %
-This chapter also includes a brief introduction to thermal noise and the fridge wiring used to suppress the former during measurements.
+The chapter closes with a brief introduction to thermal noise and the fridge wiring used to suppress the former during measurements.
 
 In chapter~\ref{chap:gJJ}, we present the first measurements of a graphene Josephson junction in the microwave regime.
 %
-Motivated by the potential use of graphene in superconducting quantum circuits, we studied the Josephson inductance by tracking the resonance frequency, and high-frequency losses of the junction attributed to its subgap resistance by extracting the added circuit losses.
+Motivated by the potential use of graphene in superconducting quantum circuits, we studied the Josephson inductance by tracking the resonance frequency, and extracted the subgap resistance from the added circuit losses of the JJ.
 %
-Together with a detailed circuit characterization in both DC and the MW regime, the results indicate that graphene Josephson junctions are indeed a feasible platform for circuit quantum electrodynamics.
+Together with a detailed circuit characterization in both DC and the microwave regime, the results indicate that graphene Josephson junctions are indeed a feasible platform for circuit quantum electrodynamics.
 
 
-In chapter~\ref{chap:gJJ-CPR}, we take a closer look at the underlying mechanisms governing the Josephson inductance of graphene Josephson junctions, i.e. their current-phase relation.
+In chapter~\ref{chap:gJJ-CPR}, we take a closer look at the underlying mechanism governing the Josephson inductance of graphene Josephson junctions, i.e. their current-phase relation.
 %
-Using previously not performed microwave measurements of DC bias cavities, we show that the CPR of diffusive and ballistic devices is forward-skewed, as is expected for these junctions.
+Using the power and current bias dependence of our devices, we show that the CPR of diffusive and ballistic devices is forward-skewed, as is expected for these junctions.
 %
 We quantify the resulting correction of the Josephson energy potential, which is crucial for the use of gJJs in microwave quantum circuits.
 
@@ -453,7 +480,7 @@ We switch from pure fundamental studies of the junction's characteristics to a c
 %
 Instead of a graphene JoFET, we present a DC bias MW cavity coupled to an aluminum constriction Josephson junction, a so-called Dayem bridge~\cite{andersonRadioFrequencyEffectsSuperconducting1964}.
 %
-Making use of the responsivity of the circuit's resonance frequency to bias current, we detect low-frequency currents with a minimum measured sensitivity of \SI{8.9}{\pico\ampere\per\hertz\tothe{1/2}}, comparable to state-of-the-art devices.
+Making use of the responsivity of the circuit's resonance frequency to bias current, we detect low-frequency currents with a minimum sensitivity of \SI{8.9}{\pico\ampere\per\hertz\tothe{1/2}}, comparable to state-of-the-art devices.
 %
 With an analytical circuit model, we extrapolate orders of magnitude better values for improved device designs based on our circuit, which could eventually enable quantum limited current detection.
 

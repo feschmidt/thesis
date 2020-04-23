@@ -9,7 +9,7 @@ dissertation.fdb_latexmk
 *.gz
 *.aux
 *.out
-dissertation.pdf
+dissertation*.pdf
 propositions.pdf
 *.ppm
 *.out.pdf
