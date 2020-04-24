@@ -459,6 +459,7 @@
 % make empty color page before new chapter
 \newcommand*{\newchapstyle}{%
 %	\cleartoleftpage
+	\clearpage
 %	\thispagestyle{empty}
 	\pagecolor{mDarkTeal}
 %	\mbox{}

@@ -91,31 +91,26 @@
 %%%
 %%%
 \include{summary/summary}
-%% %%%\include{preface/preface}
-%%
+
 %%% Use Arabic numerals for the page numbers of the chapters.
 \mainmatter
-%
+
 %%% Turn on thumb indices.
 \thumbtrue
-%
+
 \include{chapter-introduction/introduction}
-%%% %%%\include{chapter-theory/theory}
-\include{chapter-experimental-methods/experiment}
 \include{chapter-gJJ/gJJ}
 \include{chapter-gJJ-CPR/gJJ-CPR}
-\include{chapter-gJJ-misc/gJJ-misc}
 \include{chapter-currentdetection/currentdetection}
 \include{conclusion/conclusion}
-%%
+
 %%%% Use letters for the chapter numbers of the appendices.
 \appendix
+\include{appendix/gJJ-misc}
 \include{appendix/app-ebeam}
 \include{appendix/app-copperpowder}
 \include{appendix/app-code}
-%%% %%%\include{appendix/app-equations}
-%%% %%%\include{appendix/app-notes}
-%%%
+
 %%%%% Turn off thumb indices for unnumbered chapters.
 \thumbfalse
 %%%
@@ -129,3 +124,7 @@
 
 \end{document}
 
+%% %%%\include{preface/preface}
+%%% %%%\include{chapter-theory/theory}
+%%% %%%\include{appendix/app-equations}
+%%% %%%\include{appendix/app-notes}
