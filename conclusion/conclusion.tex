@@ -5,9 +5,28 @@
 \afterpage{\pagecolor{none}}\newpage
 
 \section{The results of this thesis}
-In this thesis, we have presented studies on hybrid Josephson junction -- DC bias microwave circuits.
+In this thesis, we presented studies on hybrid Josephson junction -- DC bias microwave circuits.
 %
 We studied both the fundamental properties of graphene Josephson junctions at microwave frequencies, and used the circuit which we developed for detection of very small currents.
+
+Chapter~\ref{chap:gJJ} featured the integration of a graphene Josephson junction into a superconducting microwave circuit.
+%
+Using an analytical circuit model and the previously calibrated parameters of a DC bias cavity allowed us to quantitatively extract the Josephson inductance from microwave measurements.
+%
+This showed significant deviations between the value extrapolated from DC measurements, consistent with a skewed current phase relation.
+%
+Analysis of the subgap resistance of the junction from the microwave losses of the resonance suggests that graphene Josephson junctions are a feasible platform for building gate-tunable microwave qubits.
+
+In chapter~\ref{chap:gJJ-CPR}, we took a closer look at the underlying physics of the Josephson inductance of these graphene devices, namely the current-phase relation.
+%
+The high-frequency response of the devices, together with circuit calibration, allows for a direct way of extracting the Josephson inductance of our junctions.
+%
+As in chapter~\ref{chap:gJJ}, this value does not agree with the one estimated from the DC measured switching current of any of the junctions.
+%
+Using the combination of DC and MW measurements in situ, we found low-frequency current noise to have reduced the DC measured switching current significantly.
+%
+The noise source is most likely poor isolation between the battery powered DC electronics and mains powered high frequency equipment via a shared ground at room temperature.
+%
 
 \section{The road onwards}
 
@@ -15,7 +34,7 @@ We studied both the fundamental properties of graphene Josephson junctions at mi
 
 Dayem bridge~\cite{paolucciMagnetotransportExperimentsFully2019}
 All metallic~\cite{desimoniMetallicSupercurrentFieldeffect2018}
-\subsection{Graphene for superconducting MW circuits}
+%\subsection{Graphene for superconducting MW circuits}
 
 As we have seen in Chapters~\ref{chap:gJJ} and \ref{chap:gJJ-CPR}, with current technology and fabrication, encapsulated graphene Josephson junctions are not a scalable option for quantum Josephson devices.
 %
@@ -31,11 +50,9 @@ The following pitfalls would need to be addressed in order to improve this:
 	Especially the hydrogen bubbles at BN/G interfaces limit device usability, since annealing in forming gas at \SI{400}{\celsius} degrades the RF properties of the superconducting layer used for the RF circuitry and can potentially lead to surface defects in the silicon layer.
 \end{description}
 
-A more viable route could be Josephson junctions based on CVD-grown single layer graphene.
+A more viable route, which could be investigated in parallel, are unencapsulated Josephson junctions based on CVD-grown single layer graphene with top contacts.
 %
-It remains to be seen if the device quality would be sufficient, since \ce{AlO_x} JJs are also not ballistic.
-%
-A possible fabrication scheme could look like this:
+A possible fabrication scheme for this process could look like this:
 %
 \begin{itemize}
 	\item Pre-pattern all metal layers including bottom gate
@@ -44,14 +61,22 @@ A possible fabrication scheme could look like this:
 	\item Pattern SLG using \ce{O2} plasma
 	\item Contact SLG using Ti/Al evaporation
 \end{itemize}
+%
+The use of CVD graphene would have the significant advantage of wafer scale processing, enabling rapid prototyping and significantly larger throughput than both manual and automatic exfoliation and heterostructure assembly of graphene and boron nitride.
+%
+It remains to be seen if the device quality would be sufficient for coherent devices.
 
+%\subsection{Usefulness of current bias cavities}
 
-\subsection{Usefulness of current bias cavities}
+From the perspective of DC bias cavities, there are still a few roads unexplored in this regard:
+%
+Low frequency resonators: our approach is universal and works for all frequencies!
 
-Josephson laser~\cite{chenRealizationSingleCooperpairJosephson2014c,cassidyDemonstrationAcJosephson2017e}, current detection~\cite{kherKineticInductanceParametric2016,kherSuperconductingNonlinearKinetic2017}, JPA~\cite{hoeomWidebandLownoiseSuperconducting2012d}
+Josephson laser~\cite{chenRealizationSingleCooperpairJosephson2014c,cassidyDemonstrationAcJosephson2017e}, current detection~\cite{kherKineticInductanceParametric2016,kherSuperconductingNonlinearKinetic2017}
 
-Improved dielectrics for DC shunt bias~\cite{adamyanTunableSuperconductingMicrostrip2016}
+Improved dielectrics for DC shunt bias~\cite{adamyanTunableSuperconductingMicrostrip2016} % what is this?
 
+% I don't think I need these ones?
 Outlook on other architectures:
 %
 Direct leads at voltage nodes of $\lambda$ and $\lambda/2$ resonators~\cite{chenIntroductionDcBias2011a,liApplyingDirectCurrent2013}.
