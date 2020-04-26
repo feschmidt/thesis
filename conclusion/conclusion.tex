@@ -28,39 +28,30 @@ Using the combination of DC and MW measurements in situ, we found low-frequency 
 The noise source is most likely poor isolation between the battery powered DC electronics and mains powered high frequency equipment via a shared ground at room temperature.
 %
 
-\section{The road onwards}
+\section{The road ahead}
 
-\subsection{Josephson field effect transistor}
+%\subsection{Josephson field effect transistor}
 
-Dayem bridge~\cite{paolucciMagnetotransportExperimentsFully2019}
-All metallic~\cite{desimoniMetallicSupercurrentFieldeffect2018}
 %\subsection{Graphene for superconducting MW circuits}
 
-As we have seen in Chapters~\ref{chap:gJJ} and \ref{chap:gJJ-CPR}, with current technology and fabrication, encapsulated graphene Josephson junctions are not a scalable option for quantum Josephson devices.
+As we have seen in Chapters~\ref{chap:gJJ} and \ref{chap:gJJ-CPR}, with current technology and fabrication, encapsulated graphene Josephson junctions are not an immediately scalable option for quantum Josephson devices.
 %
 This is mainly due to the remaining high intrinsic losses, which are likely limiting graphene transmon qubits such as the ones in Refs.~\cite{krollMagneticFieldCompatible2018,wangCoherentControlHybrid2019}.
 
-The following pitfalls would need to be addressed in order to improve this:
-\begin{description}
-	\item[Graphene-metal interface] Dry-etching using \ce{CHF3 + O2} in order to make galvanic contacts with the graphene layer can add surface defects in the silicon area close to the junction, providing a number of loss channels.
-	%
-	It would therefore be beneficial to pre-pattern graphene or at least remove residual stacks, but this significantly adds to fabrication complexity
-	\item[BN encapsulation] BN encapsulation remains non-scalable as long as it cannot be done on a wafer scale.
-	%
-	Especially the hydrogen bubbles at BN/G interfaces limit device usability, since annealing in forming gas at \SI{400}{\celsius} degrades the RF properties of the superconducting layer used for the RF circuitry and can potentially lead to surface defects in the silicon layer.
-\end{description}
+The two main issues that need to be addressed in order to improve this are (1) disorder at the graphene-metal interface and (2) the tedious BN encapsulation:
+Dry-etching using \ce{CHF3 + O2} in order to make galvanic contacts with the graphene layer can add surface defects in the silicon area close to the junction, providing a number of loss channels.
+%
+It would therefore be beneficial to pre-pattern graphene or at least remove residual stacks, but this significantly adds to fabrication complexity
+%
+BN encapsulation on the other hand remains non-scalable as long as it cannot be done on a wafer scale.
+%
+Especially the hydrogen bubbles at BN/G interfaces limit device usability, since annealing in forming gas at \SI{400}{\celsius} degrades the MW properties of the superconducting layer used for the MW circuitry and can potentially lead to surface defects in the silicon layer.
 
 A more viable route, which could be investigated in parallel, are unencapsulated Josephson junctions based on CVD-grown single layer graphene with top contacts.
 %
-A possible fabrication scheme for this process could look like this:
+A possible fabrication scheme for this process could feature the following steps:
 %
-\begin{itemize}
-	\item Pre-pattern all metal layers including bottom gate
-	\item Cover bottom gate by local sputtering of dielectric
-	\item Transfer SLG on wafer scale
-	\item Pattern SLG using \ce{O2} plasma
-	\item Contact SLG using Ti/Al evaporation
-\end{itemize}
+(1) Pre-pattern all metal layers including bottom gate, (2) cover bottom gate by local sputtering of dielectric, (3) transfer SLG on wafer scale, (4) pattern SLG using \ce{O2} plasma, (5) contact SLG using Ti/Al evaporation.
 %
 The use of CVD graphene would have the significant advantage of wafer scale processing, enabling rapid prototyping and significantly larger throughput than both manual and automatic exfoliation and heterostructure assembly of graphene and boron nitride.
 %
@@ -69,21 +60,43 @@ It remains to be seen if the device quality would be sufficient for coherent dev
 %\subsection{Usefulness of current bias cavities}
 
 From the perspective of DC bias cavities, there are still a few roads unexplored in this regard:
-%
-Low frequency resonators: our approach is universal and works for all frequencies!
 
-Josephson laser~\cite{chenRealizationSingleCooperpairJosephson2014c,cassidyDemonstrationAcJosephson2017e}, current detection~\cite{kherKineticInductanceParametric2016,kherSuperconductingNonlinearKinetic2017}
+Our devices are most likely limited by dielectric losses originating from depositing the shunt capacitor dielectric.
+%
+As described in chapter~\ref{chap:experiment}, side-coupled coplanar resonators made from the same NbTiN film as our DC bias cavities showed internal quality factors more than ten times higher our best devices.
+%
+Dielectric losses at the metal-substrate interface are therefore not to blame.
+%
+Similarly, radiative losses are unlikely the dominant source due to the coplanar geometry.
+%
+However, the DC bias cavity fabrication in its current state requires three steps (compared to one for $\lambda/4$ resonators) and dielectric deposition on the entire superconducting surface with subsequent patterning.
+%
+Switching dielectrics to low-temperature deposited low-loss materials such as aluminum oxide or silicon could enable much lower internal loss rates and more coherent devices~\cite{adamyanTunableSuperconductingMicrostrip2016}.
 
-Improved dielectrics for DC shunt bias~\cite{adamyanTunableSuperconductingMicrostrip2016} % what is this?
+In addition to current detection, Josephson lasers are another exciting applications suited for our circuit layouts.
+%
+These rely on DC biasing a Josephson junction placed inside a coplanar waveguide cavity~\cite{chenRealizationSingleCooperpairJosephson2014c,cassidyDemonstrationAcJosephson2017e}.
+%
+The Josephson radiation of these recent implementations lies in the gigahertz range and is highly coherent, which makes them attractive for on-chip microwave sources.
+%
+However, the existing approaches are limited to a fixed frequency with only a few~\si{\percent} of frequency tuning.
+%
+Additionally, the circuit design relies on introducing DC leads to a cavity at voltage nodes, which can be affected by lithographic errors.
+%
+Using the shunt capacitor DC bias cavities would allow for arbitrary frequency targeting:
+%
+Since the input port of the DC and high frequency signals are identical, there are no constraints on the length of the circuit.
+%
+Building a low-frequency resonator simply by extending the transmission line length, shorted by a Josephson junction to ground, could result in a megahertz Josephson laser, enabling a significantly larger frequency span than existing devices by using the cavity overtones in addition to the fundamental mode.
 
-% I don't think I need these ones?
-Outlook on other architectures:
+%current detection~\cite{kherKineticInductanceParametric2016,kherSuperconductingNonlinearKinetic2017}
 %
-Direct leads at voltage nodes of $\lambda$ and $\lambda/2$ resonators~\cite{chenIntroductionDcBias2011a,liApplyingDirectCurrent2013}.
+
+
+The road ahead might even feature a renaissance of all-superconducting DC circuits for computing applications.
 %
-Inductive coupling~\cite{vissersFrequencytunableSuperconductingResonators2015b}.
-%
-Fractals~\cite{mahashabdeFastTunableHigh2020}
+With cryotrons still being pursued both for memory applications and training neural networks~\cite{toomeyBridgingGapNanowires2019,onenDesignCharacterizationSuperconducting2020}, and the discovery of field effect in all-superconducting devices~\cite{desimoniMetallicSupercurrentFieldeffect2018,paolucciMagnetotransportExperimentsFully2019}, we can only wait and see what is to come.
+
 
 %\clearpage
 %\references{dissertation}
