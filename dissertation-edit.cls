@@ -49,7 +49,73 @@
 \RequirePackage{titletoc}
 \RequirePackage[nottoc]{tocbibind}
 \RequirePackage{xcolor}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%% My own packages from preamble
+\RequirePackage{graphicx}% Include figure files
+\RequirePackage{dcolumn}% Align table columns on decimal point
+\RequirePackage{bm}% bold math
+\RequirePackage{hyperref}% add hypertext capabilities
+\RequirePackage{textcomp}
+\RequirePackage[mode=text]{siunitx} % see https://tex.stackexchange.com/questions/423711/text-font-in-maths-mode-with-siunitx
+\DeclareSIUnit{\sqrthz}{\ensuremath{\sqrt{\text{\hertz}}}}
+\RequirePackage{mathtools} % for defining my own math commands
+\DeclarePairedDelimiter\abs{\lvert}{\rvert}
 \RequirePackage{pagecolor}
+\RequirePackage{pdfpages}
+\RequirePackage{listings} % for code blocks
+\RequirePackage{esdiff} % for easier typing out derivatives
+\RequirePackage[version=4]{mhchem}
+\RequirePackage{accents}
+\RequirePackage{multirow}
+\RequirePackage{tabularx}
+\newcolumntype{Y}{>{\centering\arraybackslash}X} % automatic linebreak in tables
+\RequirePackage{afterpage}
+\RequirePackage{subcaption}
+\renewcommand*{\thefootnote}{\arabic{footnote}}
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+\definecolor{skyblue}{rgb}{0.36,0.8,0.86}
+\definecolor{darkgreen}{rgb}{0.18,0.54,0.34}
+\definecolor{maroon}{rgb}{0.64,0.16,0.16}
+\definecolor{darkpink}{rgb}{0.75,0.25,0.5}
+
+\lstset{frame=single,
+	language=[ISO]C++,
+	aboveskip=3mm,
+	belowskip=3mm,
+	showstringspaces=false,
+	columns=flexible,
+	%	basicstyle={\small\ttfamily},
+	numbers=none,
+	numberstyle=\color{gray},
+	%	keywordstyle=\color{blue},
+	%	commentstyle=\color{dkgreen},
+	%	stringstyle=\color{mauve},
+	rulecolor=\color{black},
+	breaklines=true,
+	breakatwhitespace=true,
+	tabsize=3,
+	keywordstyle=\color{blue},
+	commentstyle=\color{dkgreen},
+	stringstyle=\color{mauve},
+	basicstyle={\color{blue}\small\ttfamily},
+	identifierstyle={\color{black}},
+	literate=*
+	{*}{{{\color{black}*}}}{1}
+	{=}{{{\color{black}=}}}{1}
+	{;}{{{\color{black};}}}{1}
+	{.7}{{{\color{blue}.7}}}{2},
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %% Fonts
 %%% Either Libertine + Biolinum

@@ -1,71 +1,5 @@
 \documentclass{dissertation-edit}
 
-%%% My own packages
-\usepackage{graphicx}% Include figure files
-\usepackage{dcolumn}% Align table columns on decimal point
-\usepackage{bm}% bold math
-\usepackage{hyperref}% add hypertext capabilities
-%\usepackage[mathlines]{lineno}% Enable numbering of text and display math
-%\linenumbers\relax % Commence numbering lines
-\usepackage{xcolor} % colored text
-\usepackage{textcomp}
-\usepackage[mode=text]{siunitx} % see https://tex.stackexchange.com/questions/423711/text-font-in-maths-mode-with-siunitx
-\DeclareSIUnit{\sqrthz}{\ensuremath{\sqrt{\text{\hertz}}}}
-%\sisetup{detect-all} % tell siunitx to use standard font, not math font
-%\usepackage{float} % force figure placement
-\usepackage{mathtools} % for defining my own math commands
-\DeclarePairedDelimiter\abs{\lvert}{\rvert}
-\usepackage{listings} % for code blocks
-\usepackage{esdiff} % for easier typing out derivatives
-\usepackage[version=4]{mhchem}
-\usepackage{accents}
-\usepackage{multirow}
-\usepackage{tabularx}
-\newcolumntype{Y}{>{\centering\arraybackslash}X} % automatic linebreak in tables, with centering
-\usepackage{pdfpages}
-
-
-\definecolor{dkgreen}{rgb}{0,0.6,0}
-\definecolor{gray}{rgb}{0.5,0.5,0.5}
-\definecolor{mauve}{rgb}{0.58,0,0.82}
-\definecolor{skyblue}{rgb}{0.36,0.8,0.86}
-\definecolor{darkgreen}{rgb}{0.18,0.54,0.34}
-\definecolor{maroon}{rgb}{0.64,0.16,0.16}
-\definecolor{darkpink}{rgb}{0.75,0.25,0.5}
-
-\lstset{frame=single,
-	language=[ISO]C++,
-	aboveskip=3mm,
-	belowskip=3mm,
-	showstringspaces=false,
-	columns=flexible,
-%	basicstyle={\small\ttfamily},
-	numbers=none,
-	numberstyle=\color{gray},
-%	keywordstyle=\color{blue},
-%	commentstyle=\color{dkgreen},
-%	stringstyle=\color{mauve},
-	rulecolor=\color{black},
-	breaklines=true,
-	breakatwhitespace=true,
-	tabsize=3,
-	keywordstyle=\color{blue},
-	commentstyle=\color{dkgreen},
-	stringstyle=\color{mauve},
-	basicstyle={\color{blue}\small\ttfamily},
-	identifierstyle={\color{black}},
-	literate=*
-	{*}{{{\color{black}*}}}{1}
-	{=}{{{\color{black}=}}}{1}
-	{;}{{{\color{black};}}}{1}
-	{.7}{{{\color{blue}.7}}}{2},
-}
-%\def\lst@visiblespace{\lst@ttfamily{\ }{\ }}
-\usepackage{afterpage}
-\usepackage{subcaption}
-\renewcommand*{\thefootnote}{\arabic{footnote}}
-
-
 \begin{document}
 
 %% Specify the title and author of the thesis. This information will be used on the title page (in title/title.tex) and in the metadata of the final PDF.
@@ -75,21 +9,20 @@
 %% Use Roman numerals for the page numbers of the title pages and table of contents.
 %\frontmatter % !! Leave commented out, otherwise there will be a "0" thumb at some point (I think?)
 %
-%\include{title/title-en}
-%%%%
+\include{title/title-en}
+
 %%%%%% The (optional) dedication can be used to thank someone or display a significant quotation.
-%\dedication{
-%	Für Katrin und Felicitas
-%	\vskip 10\baselineskip
-%	\textit{Remember, kids, the only difference between screwing around and science is writing it down.}
-%	\vskip 0.5\baselineskip
-%	Adam Savage, quoting Alex Jason in the 2012 MythBusters episode \textit{Titanic Survival}~\cite{savageOriginOnlyDifference2015}
-%}
-%\newchapstyle
-%\tableofcontents
-%\afterpage{\pagecolor{none}}
-%%%
-%%%
+\dedication{
+	Für Katrin und Felicitas
+	\vskip 10\baselineskip
+	\textit{Remember, kids, the only difference between screwing around and science is writing it down.}
+	\vskip 0.5\baselineskip
+	Adam Savage, quoting Alex Jason in the 2012 MythBusters episode \textit{Titanic Survival}~\cite{savageOriginOnlyDifference2015}
+}
+\newchapstyle
+\tableofcontents
+\afterpage{\pagecolor{none}}
+
 \include{summary/summary}
 
 %%% Use Arabic numerals for the page numbers of the chapters.
@@ -99,33 +32,28 @@
 \thumbtrue
 
 \include{chapter-introduction/introduction}
-%\include{chapter-experimental-methods/experiment}
-%\include{chapter-gJJ/gJJ}
-%\include{chapter-gJJ-CPR/gJJ-CPR}
-%\include{chapter-currentdetection/currentdetection}
+\include{chapter-experimental-methods/experiment}
+\include{chapter-gJJ/gJJ}
+\include{chapter-gJJ-CPR/gJJ-CPR}
+\include{chapter-currentdetection/currentdetection}
 \include{conclusion/conclusion}
 
 %%%%% Use letters for the chapter numbers of the appendices.
-%\appendix
-%\include{appendix/gJJ-misc}
-%\include{appendix/app-ebeam}
-%\include{appendix/app-copperpowder}
-%\include{appendix/app-code}
-%
-%%%%%% Turn off thumb indices for unnumbered chapters.
-%\thumbfalse
-%%%%
-%\include{acks/acks}
-%\include{cv/cv}
-%\include{publications/publications}
+\appendix
+\include{appendix/gJJ-misc}
+\include{appendix/app-ebeam}
+\include{appendix/app-copperpowder}
+\include{appendix/app-code}
 
-\bibliographystyle{dissertation} %dissertation, abbrvnat
+%%%%% Turn off thumb indices for unnumbered chapters.
+\thumbfalse
+
+\include{acks/acks}
+\include{cv/cv}
+\include{publications/publications}
+
+\bibliographystyle{dissertation}
 \bibliography{dissertation}
 
 
 \end{document}
-
-%% %%%\include{preface/preface}
-%%% %%%\include{chapter-theory/theory}
-%%% %%%\include{appendix/app-equations}
-%%% %%%\include{appendix/app-notes}
