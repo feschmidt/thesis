@@ -31,7 +31,19 @@ The remaining deviations can be attributed to a forward-skewed current phase rel
 %
 We were able to quantify this skew, and with it the resulting anharmonicity of the Josephson energy potential, which is reduced to the case of a purely sinusoidal CPR.
 
-
+We finally turned to a sensing application of our combined transmission line resonators and Josephson junctions in chapter~\ref{chap:currentdetection}.
+%
+Inspired by kinetic inductance parametric upconverters for radiation detection, we used the responsivity of the resonance frequency of our devices to bias current to detect small, low-frequency current modulations.
+%
+To simplify fabrication, we chose a single-layer constriction Josephson junction fabricated in the same step as the base layer of an aluminum film instead of graphene Josephson junctions (which would also have been feasible for this measurement).
+%
+We were able to formulate an analytical model using input-output theory, which compared well with the measured data as a function of bias current set point, frequency detuning and and drive power.
+%
+With a minimum sensitivity of \SI{8.9}{\pico\ampere\per\hertz\tothe{1/2}} and a tunability of more than \SI{100}{\mega\hertz}, the device is compatible with state-of-the-art techniques.
+%
+We then used these results to extrapolate the sensitivity of an optimized design, featuring a Josephson transmission line, with the center conductor of the DC bias cavity replaced by unit cells consisting of short pieces of linear inductors and Josephson junctions.
+%
+The same scheme as for the measured device would enable current sensitivities as low as \SI{50}{\femto\ampere\per\hertz\tothe{1/2}}, and drop another \SI{20}{\decibel} to \SI{5}{\femto\ampere\per\hertz\tothe{1/2}} by using in-built quantum-limited Josephson parametric amplification.
 
 \section{The road ahead}
 
@@ -51,8 +63,10 @@ It would therefore be beneficial to pre-pattern graphene or at least remove resi
 BN encapsulation on the other hand remains non-scalable as long as it cannot be done on a wafer scale.
 %
 Especially the hydrogen bubbles at BN/G interfaces limit device usability, since annealing in forming gas at \SI{400}{\celsius} degrades the MW properties of the superconducting layer used for the MW circuitry and can potentially lead to surface defects in the silicon layer.
+%
+Recent work by Sonntag \textit{et al.}~\cite{sonntagExcellentElectronicTransport2020} on BN crystals grown at atmospheric pressure shows promise for large-scale BN deposition, which could advance the field in this regard.
 
-A more viable route, which could be investigated in parallel, are unencapsulated Josephson junctions based on CVD-grown single layer graphene with top contacts.
+A more viable route in the immediate future, which could be investigated in parallel, are unencapsulated Josephson junctions based on CVD-grown single layer graphene with top contacts.
 %
 A possible fabrication scheme for this process could feature the following steps:
 %
@@ -62,13 +76,11 @@ The use of CVD graphene would have the significant advantage of wafer scale proc
 %
 It remains to be seen if the device quality would be sufficient for coherent devices.
 
-We finally turned to a sensing application 
-
 %\subsection{Usefulness of current bias cavities}
 
-From the perspective of DC bias cavities, there are still a few roads unexplored in this regard:
+From the perspective of DC bias cavities, there are a few possible follow-up projects:
 
-Our devices are most likely limited by dielectric losses originating from depositing the shunt capacitor dielectric.
+The DC bias cavities could be improved further, as they are currently likely limited by dielectric losses originating from depositing the shunt capacitor dielectric.
 %
 As described in chapter~\ref{chap:experiment}, side-coupled coplanar resonators made from the same NbTiN film as our DC bias cavities showed internal quality factors more than ten times higher our best devices.
 %
@@ -80,11 +92,15 @@ However, the DC bias cavity fabrication in its current state requires three step
 %
 Switching dielectrics to low-temperature deposited low-loss materials such as aluminum oxide or silicon could enable much lower internal loss rates and more coherent devices~\cite{adamyanTunableSuperconductingMicrostrip2016}.
 
-In addition to current detection, Josephson lasers are another exciting applications suited for our circuit layouts.
+Future research could examine our circuit layouts for various applications:
 %
-These rely on DC biasing a Josephson junction placed inside a coplanar waveguide cavity~\cite{chenRealizationSingleCooperpairJosephson2014c,cassidyDemonstrationAcJosephson2017e}.
+For one, the Josephson transmission line resonator which we proposed in chapter~\ref{chap:currentdetection} should be straightforward to build, since it requires no design changes to the existing recipe.
 %
-The Josephson radiation of these recent implementations lies in the gigahertz range and is highly coherent, which makes them attractive for on-chip microwave sources.
+This would put our analytical model to the test, and could result in record low levels of current sensitivities.
+
+Alternatively, instead of current-biasing our devices, voltage-biased Josephson junctions inside coplanar waveguide cavities have recently shown to exhibit coherent radiation, and were hence dubbed Josephson lasers~\cite{chenRealizationSingleCooperpairJosephson2014c,cassidyDemonstrationAcJosephson2017e}.
+%
+The emission frequency of these recent implementations lies in the gigahertz range and is highly coherent, which makes them attractive for on-chip microwave sources.
 %
 However, the existing approaches are limited to a fixed frequency with only a few~\si{\percent} of frequency tuning.
 %

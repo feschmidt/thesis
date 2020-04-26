@@ -12,7 +12,7 @@ import traceback
 
 ebeam = input("For which ebeam is the analysis supposed to be run?\n")
 
-logfiles = sorted(glob.glob('log_' + ebeam + '/*.log'))
+logfiles = sorted(glob.glob(f'log_{ebeam}/*.log'))
 print(logfiles)
 
 # Look for the following line:
@@ -120,8 +120,7 @@ for myfile in logfiles:
             plt.ylabel('y (mm)')
             plt.title(filename)
             plt.tight_layout()
-            plt.savefig('png_' + ebeam + '/2d/' + filename + '.png',
-                        bbox_inches='tight')
+            plt.savefig(f'png_{ebeam}/2d/{filename}.png', bbox_inches='tight')
             #     plt.show()
             plt.close()
 
@@ -134,7 +133,7 @@ for myfile in logfiles:
             ax.set_ylabel('y (mm)')
             ax.set_zlabel('Height (um)')
             plt.tight_layout()
-            plt.savefig('png_' + ebeam + '/3d/' + filename + '3D.png',
+            plt.savefig(f'png_{ebeam}/2d/{filename}3D.png',
                         bbox_inches='tight')
             #     plt.show()
             plt.close()
@@ -144,4 +143,4 @@ for myfile in logfiles:
             # Logs the error appropriately.
 
     else:
-        print('no height measurement in', filename)
+        print(f'no height measurement in {filename}')

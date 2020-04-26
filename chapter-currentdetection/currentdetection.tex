@@ -143,7 +143,7 @@ This results in a continuously decreasing resonance frequency, tuning over appro
 We can approximate the bias current dependence of the cavity resonance frequency with a model describing a $\lambda/2$ CPW resonator terminated by a JJ via
 % 
 \begin{align}
-\omega_0(I_b)=\frac{\omega_{\lambda/2}}{1 + L_J(I_b,I_c)/L_r}
+\omega_0(I_b)=\omega_{\lambda/2}\frac{L_r+L_J(I_b,I_c)}{L_r + 2L_J(I_b,I_c)}
 \label{eq:f0vsI}
 \end{align}
 % 
@@ -933,7 +933,7 @@ This supports our claim that we can exclude kinetic inductance as an additional 
 Adapting the calculation for a Josephson terminated transmission line cavity given in Ref.~\cite{pogorzalekHystereticFluxResponse2017} to our device, we find for the current dependence of the cavity resonance frequency
 % 
 \begin{align}
-\omega_0(I_b)=\frac{\omega_{\lambda/2}}{1 + L_J(I_b,I_c)/L_r}\ ,
+\omega_0(I_b)=\omega_{\lambda/2}\frac{L_r+L_J(I_b,I_c)}{L_r + 2L_J(I_b,I_c)}\ ,
 \end{align}
 % 
 with $L_r$ the total device inductance, $\omega_{\lambda/2}$ the resonance frequency without the JJ and $L_J$ the Josephson inductance given in Eq.~\eqref{eq:Lj-of-I} of the main text.

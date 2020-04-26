@@ -2,16 +2,16 @@
 
 \begin{document}
 
-%% Specify the title and author of the thesis. This information will be used on the title page (in title/title.tex) and in the metadata of the final PDF.
+%%%%%% Specify the title and author of the thesis.
 \title[Fundamental studies and applications]{Josephson junctions in superconducting coplanar DC bias cavities}
 \author{Felix Erik}{Schmidt}
 
-%% Use Roman numerals for the page numbers of the title pages and table of contents.
+%%%%%% Use Roman numerals for the page numbers of the title pages and table of contents.
 %\frontmatter % !! Leave commented out, otherwise there will be a "0" thumb at some point (I think?)
-%
+
 \include{title/title-en}
 
-%%%%%% The (optional) dedication can be used to thank someone or display a significant quotation.
+%%%%%% Optional dedication
 \dedication{
 	Für Katrin und Felicitas
 	\vskip 10\baselineskip
@@ -25,10 +25,10 @@
 
 \include{summary/summary}
 
-%%% Use Arabic numerals for the page numbers of the chapters.
+%%%%%% Use Arabic numerals for the page numbers of the chapters.
 \mainmatter
 
-%%% Turn on thumb indices.
+%%%%%% Turn on thumb indices.
 \thumbtrue
 
 \include{chapter-introduction/introduction}
@@ -38,14 +38,14 @@
 \include{chapter-currentdetection/currentdetection}
 \include{conclusion/conclusion}
 
-%%%%% Use letters for the chapter numbers of the appendices.
+%%%%%%% Use letters for the chapter numbers of the appendices.
 \appendix
 \include{appendix/gJJ-misc}
 \include{appendix/app-ebeam}
 \include{appendix/app-copperpowder}
 \include{appendix/app-code}
 
-%%%%% Turn off thumb indices for unnumbered chapters.
+%%%%%% Turn off thumb indices for unnumbered chapters.
 \thumbfalse
 
 \include{acks/acks}
