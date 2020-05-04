@@ -35,13 +35,13 @@ In parallel to the development of MOSFETs, Josephson junctions were hence envisi
 In an attempt to combine the best of two worlds, the versatility of a high gain transistor, and the low dissipation of superconducting circuits, proposals were made in the 1980s to merge these two elements into the Josephson field effect transistor (JoFET), cf. Fig.~\ref{fig:introcomputing}(c)~\cite{clarkFeasibilityHybridJosephson1980,gallagherThreeterminalSuperconductingDevices1985}.
 
 
-While IBM eventually seized to research Josephson junction computation due to an apparent supremacy of semiconducting computers~\cite{robinsonIBMDropsSuperconducting1983}, research continued at public institutions and universities, in part driven by Richard Feynman's ideas of building quantum machines to run complex calculations much more efficient than any classical, MOSFET-based, computer~\cite{feynmanSimulatingPhysicsComputers1982}.
+While IBM eventually ceased to research Josephson junction computation due to an apparent supremacy of semiconducting computers~\cite{robinsonIBMDropsSuperconducting1983}, research continued at public institutions and universities, in part driven by Richard Feynman's ideas of building quantum machines to run complex calculations much more efficient than any classical, MOSFET-based, computer~\cite{feynmanSimulatingPhysicsComputers1982}.
 %
 The late twentieth century then saw the birth of first prototypes for a quantum computing architecture, and it was realized that Josephson junctions could form the basis of quantum bits~\cite{martinisQuantumJosephsonJunction2020}.
 %
 Since then, global tech companies like IBM, Google, Microsoft and Intel are all heavily invested in this architecture, each following a slightly different path~\cite{steffenQuantumComputingIBM2011,aruteQuantumSupremacyUsing2019,linnNewMicrosoftBreakthroughs2020,vandersypenQuantumComputingSemiconductor2019}.
 %
-Superconducting quantum processors based on Josephson junctions embedded in microwave circuits, as pursued by IBM and Google, have culminated in the milestone "quantum supremacy", i.e. the threshold at which a quantum processor can execute an algorithm that would be prohibitively costly in terms of computing time and money for a classical computer to perform~\cite{aruteQuantumSupremacyUsing2019}.
+Superconducting quantum processors based on Josephson junctions embedded in microwave (MW) circuits, as pursued by IBM and Google, have culminated in the milestone "quantum supremacy", i.e. the threshold at which a quantum processor can execute an algorithm that would be prohibitively costly in terms of computing time and money for a classical computer to perform~\cite{aruteQuantumSupremacyUsing2019}.
 %
 Figure~\ref{fig:introcomputing}(e) shows an image of Google's "quantum supremacy" processor.
 %
@@ -55,7 +55,7 @@ To tune the states of the transmons, magnetic flux is threaded through the SQUID
 %
 While coherence times of several hundreds of microseconds show great potential for future devices~\cite{placeNewMaterialPlatform2020}, standard transmons come with a few drawbacks:
 %
-Already the very first implementation of a two-qubit transmon processor showed that magnetic fields can lead to significant cross talk coupling qubits several centimeters apart from each other\cite{dicarloDemonstrationTwoqubitAlgorithms2009}.
+Already the very first implementation of a two-qubit transmon processor showed that magnetic fields can lead to significant cross talk coupling qubits several centimeters apart from each other~\cite{dicarloDemonstrationTwoqubitAlgorithms2009}.
 %
 Additionally, since the chips need to be operated at temperatures only fractions of a Kelvin above absolute zero in order to protect their coherence from thermal excitations, the cooling power of the refrigerator must not be exceeded.
 %
@@ -71,7 +71,7 @@ Additionally, cross-talk can be significantly reduced due to the nature of elect
 %
 Finally, JoFETs have consistently performed well under application of in-plane magnetic fields.
 %
-While the latter are not strictly necessary in transmon qubits (rather to be avoided) flux noise is one of the limiting factors of SQUIDs, to which gatemons are insensitive~\cite{casparisSuperconductingGatemonQubit2018}.
+While the latter are not strictly necessary in transmon qubits (rather to be avoided) flux noise is one of the limiting factors of SQUIDs, to which JoFET-based qubits would be insensitive~\cite{casparisSuperconductingGatemonQubit2018}.
 %
 Even more important, magnetic field-compatible JoFETs are one of the requirements of qubits based on the Majorana architecture, which could result in significantly more coherent qubits due to their intrinsic topological protection~\cite{hyartFluxcontrolledQuantumComputation2013}.
 
@@ -131,7 +131,7 @@ Integrating gJJs in microwave circuits would thus be a first step towards the re
 %
 In order to retain information about the device's DC properties, and to directly link them to the microwave performance, we chose to combine both DC and MW in one device.
 %
-To this end, we based our circuits on an architecture that allows simultaneous signal probing both with low and high frequencies, DC bias microwave cavities~\cite{bosmanBroadbandArchitectureGalvanically2015c}.
+To this end, we based our circuits on an architecture that allows simultaneous signal probing both with low and high frequencies: DC bias microwave cavities~\cite{bosmanBroadbandArchitectureGalvanically2015c}.
 %
 This not only allows for a detailed study of the junction's properties, but also enables applications based on current-biasing the sample.
 
@@ -149,11 +149,13 @@ The perhaps simplest case of a JJ is a thin insulating tunnel barrier between tw
 %
 Here, Cooper pairs can tunnel from one superconductor through the barrier to the other side, while acquiring a phase $\delta$.
 %
-The current flowing across this type of junction is given by
+The current flowing across this type of junction is given by the junction's current phase relation (CPR), which for an SIS JJ reads
 %
 \begin{align}
-I_J^{\rm SIS}(\delta) &= I_c\sin\delta.
+I_J^{\rm SIS}(\delta) &= I_c\sin\delta \ ,
 \end{align}
+%
+with the critical current $I_c$.
 
 The situation is different in the case in which the weak link consists of a normal metal between two superconducting banks, an SNS junction.
 %
@@ -202,7 +204,9 @@ E_{i}^{\rm ABS} = -\Delta\sqrt{1-T_i\sin^2(\delta/2)}
 \label{eq:ABS}
 \end{align}
 %
-with induced superconducting gap $\Delta$ and channel transparency $T_i$, where $T_i$ takes into account scattering inside the normal region\cite{beenakkerUniversalLimitCriticalcurrent1991,titovJosephsonEffectBallistic2006b}.
+with the gap energy in the superconducting regions $\Delta$ and channel transparency $T_i$, where $T_i$ takes into account scattering inside the normal region~\cite{beenakkerUniversalLimitCriticalcurrent1991,titovJosephsonEffectBallistic2006b}.
+%
+Scattering at the SN interface, i.e. $\tau_c<1$, is not taken into account here in this simplified picture, as there is no closed analytical expression~\cite{blonderTransitionMetallicTunneling1982c}.
 %
 The energy of the excited ABS has opposite sign.
 %
@@ -270,7 +274,7 @@ Since exact knowledge of the Josephson inductance is critical for operating tran
 	\label{fig:modelsnsejic}
 \end{figure}
 
-However, for a realistic SNS junction such as the two-dimensional graphene devices measured in this thesis, there are a number of effects that lead to deviations of the above presented mechanisms.
+For a realistic SNS junction such as the two-dimensional graphene devices measured in this thesis, there are a number of effects that lead to deviations of the above presented mechanisms.
 %
 The exact nature of the subgap density of states for example depends on size and geometry of the junction, as well as the contact transparency.
 %
@@ -291,7 +295,7 @@ Figure~\ref{fig:modelsubgap} shows the calculated subgap density of states (DOS)
 %
 We find that for both cases the states with lowest energies are located at large parallel momentum $k_\parallel$, and that for the long junction, there are a number of subgap states below the bulk gap energy $\Delta$.
 %
-This significantly induced gap can potentially absorb RF excitations, leading to dissipation and decoherence in microwave circuits.
+This significantly reduced gap can potentially absorb RF excitations, leading to dissipation and decoherence in microwave circuits.
 %
 Finally, graphene shows strong angle-dependent transport due to Klein-tunneling at interfaces, which collimates charge carrier transport perpendicular to interfaces at pn junctions, which can further modify the DOS~\cite{beenakkerColloquiumAndreevReflection2008}.
 
@@ -346,7 +350,7 @@ This circuit has several advantages over the previously mentioned ones:
 %
 As no circuit symmetries need to be considered, the circuit layout is rather simple.
 %
-Because the shunt capacitor is placed at the input port to the device, no additional port needs to be used to probe or excite the DUT, which prevents additional leakage channels.
+Because the shunt capacitor is placed at the input port to the device, no additional port needs to be used to probe or excite the device under test (DUT), which prevents additional leakage channels.
 %
 Finally, using a shunt capacitor provides a broadband signal port up to the self-resonance of the shunt capacitor, which is chosen to be well above the resonance frequency of the circuit.
 
@@ -393,6 +397,10 @@ For this reason, we typically design our circuits such that they would be overco
 	\caption{
 		\textbf{DC bias cavity shorted to ground by a parametrized top-gated graphene Josephson junction.}
 		%
+		For simulating the device in QUCS, we ignored $L_g$ and $C_g$ and used the following parameters (unless swept):
+		%
+		$Z_0=Z_0^\prime=\SI{50}{\ohm}$, $C_s=\SI{60}{\pico\farad}$, $l=\SI{6}{\milli\meter}/\sqrt{\epsilon_r}$ with the dielectric constant of silicon $\epsilon_r=11.7$, $\alpha=1.002$,  $L_J=\SI{36}{\pico\henry}$, $C_J=\SI{1}{\femto\farad}$, $R_{\rm sg}=\SI{1}{\mega\ohm}$.
+		%
 		\textbf{(a)} Fully parametrized circuit model.
 		%
 		The transmission line is described by length $l$, inductance and capacitance per unit length $L^\prime$ and $C^\prime$ and attenuation $\alpha$, and is coupled to an input impedance $Z_0^\prime$ via a shunt capacitance $C_s$.
@@ -423,7 +431,7 @@ We do this by measuring a combination of open and shorted references device with
 %
 Equipped with these values, we can proceed to study the influence JJ on the microwave circuit:
 %
-With an added Josephson junction with inductance $L_J$ shorting the TL to ground, the shifted resonance frequency can be approximated by
+With an added Josephson junction with inductance $L_J$ shorting the TL to ground, and neglecting $R_{\rm sg}$ and $C_{J}$, the shifted resonance frequency can be approximated by
 %
 \begin{align}
 \omega_0^\prime = \omega_0\frac{L_r+L_J}{L_r+2L_J}
