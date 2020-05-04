@@ -70,7 +70,7 @@ The coupling to the external feedline is provided by a parallel plate shunt capa
 In contrast to series capacitors often used as mirrors, the use of shunt capacitors allows us to probe the circuit with steady-state voltages and currents, enabling DC characterization of the gJJ.
 A circuit schematic of the device setup is depicted in Fig. \ref{fig:figure1}(d).
 The gJJ is made from a graphene and hexagonal boron nitride (BN/G/BN) trilayer stack with self-aligned side contacts \cite{pizzoccheroHotPickupTechnique2016a,wangOneDimensionalElectricalContact2013b} using a sputtered superconducting niobium titanium nitride (NbTiN) alloy.
-The stack is shaped into a junction of length $L=\SI{500}{nm}$ and width $W=\SI{5}{\micro m}$.
+The stack is shaped into a junction of length $L=\SI{500}{\nano\meter}$ and width $W=\SI{5}{\micro\meter}$.
 Here, $L$ and $W$ denote the distance between the superconducting contacts and lateral extension, respectively.
 In order to tune the carrier density of the gJJ, a local DC gate electrode covers the junction and contact area.
 Optical micrographs of the device are shown in Figs.\ref{fig:figure1}(b,c) and a schematic cross-section of the gJJ is shown in Fig.\ref{fig:figure1}(e).
@@ -81,10 +81,10 @@ Measurements of a similar second device can be found in Supplementary Figs. 10 a
 To compare our device with state-of-the-art gJJs, we first perform a purely DC characterization.
 We sweep the current-bias ($I_\text{dc}$) and measure the voltage across the gJJ for different applied gate voltages ($V_\text{g}$).
 The resulting differential resistance is plotted in Fig. \ref{fig:figure2}(a) and clearly shows a superconducting branch that is tunable through $V_\text{g}$.
-The junction exhibits $I_\text{c}$ in the range of \SI{150}{nA} to \SI{7}{\micro A} for $\lvert V_\mathrm{G} \rvert<\SI{30}{V}$ with significantly lower $I_\text{c}$ for $V_\text{g}<0$ (p-doped regime) compared to $V_\text{g}>0$ (n-doped regime).
+The junction exhibits $I_\text{c}$ in the range of \SI{150}{\nano\ampere} to \SI{7}{\micro\ampere} for $\abs{V_\text{G}}<\SI{30}{\volt}$ with significantly lower $I_\text{c}$ for $V_\text{g}<0$ (p-doped regime) compared to $V_\text{g}>0$ (n-doped regime).
 Comparing the bulk superconducting gap of our NbTiN leads with the junction Thouless energy, $\Delta/E_\text{th}\approx1.52>1$, our device is found to be in the intermediate to long junction regime (see Supplementary Note 7 and Supplementary Figs. 12, 15 and 16).
 
-While in the non-superconducting state (current bias far above the junction critical current $I_\text{c}$), the graphene junction shows a narrow peak in its normal resistance associated with low disorder at the charge neutrality point (CNP, at $V_\text{g}\approx\SI{-2}{V}$, see Fig.\ref{fig:figure2}(b)), indicating high sample quality.
+While in the non-superconducting state (current bias far above the junction critical current $I_\text{c}$), the graphene junction shows a narrow peak in its normal resistance associated with low disorder at the charge neutrality point (CNP, at $V_\text{g}\approx\SI{-2}{\volt}$, see Fig.\ref{fig:figure2}(b)), indicating high sample quality.
 Some hysteresis in the switching and retrapping currents can also be observed in the measurement (see Supplementary Note 6 for discussion).
 We furthermore observe oscillations in both the normal state resistance $R_\text{n}$ and the switching and retrapping currents as a function of gate voltage for p-doping of the channel.
 We attribute these effects to the presence of PN junctions that form near the graphene-NbTiN contact.
@@ -108,7 +108,7 @@ The characteristics of these oscillations indicate that our junction is in the b
 \end{figure}
 
 Having established the DC properties of our junction, we turn to the microwave response of the circuit.
-Using a vector network analyser, we sweep a microwave tone in the 4 to \SI{8.5}{GHz} range and measure the reflection signal $S_{11}$ of the device for different applied gate voltages $\lvert V_\text{g} \rvert \leq \SI{30}{V}$.
+Using a vector network analyser, we sweep a microwave tone in the 4 to \SI{8.5}{GHz} range and measure the reflection signal $S_{11}$ of the device for different applied gate voltages $\lvert V_\text{g} \rvert \leq \SI{30}{\volt}$.
 The input powers and attenuation used correspond to an estimated intra-cavity photon number of at most 10-20 depending on operating frequency and linewidth.
 Further tests were performed at lower powers (down to approximately 0.02 intra-cavity photons) with negligible changes to the cavity line shape and width.
 More information on the measurement setup can be found in the Methods section and a detailed sketch in Supplementary Fig. 1.
@@ -149,12 +149,12 @@ If $L_\text{j}\rightarrow 0$ (i.e. $I_\text{c}\rightarrow\infty$), the cavity bo
 If, on the other hand $L_\text{j}\rightarrow \infty$ ($I_\text{c}\rightarrow 0$), the cavity will transition into a $\lambda/4$ resonator with opposite boundary conditions at each end (a voltage node at the shunt capacitor and a current node at the junction end).
 This leads to a fundamental mode frequency of about half that of the previous case.
 Any intermediate inductance value lies between these two extremes.
-Due to the inverse relationship between $I_\text{c}$ and $L_\text{j}$, the resonance frequency changes very quickly in certain gate voltage regions, having a tuning rate of up to $\mathrm{d}f_0/\mathrm{d}V_\text{g}=\SI{1.8}{GHz.V^{-1}}$ at $V_\text{g}=\SI{-0.54}{V}$.
+Due to the inverse relationship between $I_\text{c}$ and $L_\text{j}$, the resonance frequency changes very quickly in certain gate voltage regions, having a tuning rate of up to $\text{d}f_0/\text{d}V_\text{g}=\SI{1.8}{GHz.V^{-1}}$ at $V_\text{g}=\SI{-0.54}{\volt}$.
 This slope could potentially be further increased by increasing the gate lever arm, for example by choosing a thinner gate dielectric.
-We again note that the resonance frequency does not saturate within the measured range although the tuning rate at $\vert V_\text{g} \rvert=\SI{30}{V}$ is much lower.
+We again note that the resonance frequency does not saturate within the measured range although the tuning rate at $\vert V_\text{g} \rvert=\SI{30}{\volt}$ is much lower.
 Additionally, by comparing Figs. \ref{fig:figure2}(a) and \ref{fig:figure2}(c), we can observe features in the RF measurements that are also present in the DC response.
 In particular, the Fabry-P\'erot (FP) oscillations of $I_\text{c}$ and $R_\text{n}$ seen in the DC measurements result in a modulation of $L_\text{j}$, producing corresponding oscillations in the cavity frequency.
-By analysing the oscillation period in reciprocal space, we extract a FP cavity length of $L_\text{c}\approx \SI{390}{nm}$ (see Supplementary Figs. 13 and 14).
+By analysing the oscillation period in reciprocal space, we extract a FP cavity length of $L_\text{c}\approx \SI{390}{\nano\meter}$ (see Supplementary Figs. 13 and 14).
 We can thus take $L_\text{c}$ as a lower bound for the free momentum scattering and the phase coherence lengths, i.e. $l_\text{mfp},\xi>L_\text{c}$.
 
 Further analysis of the data presented in Fig.\ref{fig:figure2}c can be used to perform a more quantitative analysis of the Josephson inductance of the gJJ as a function of gate voltage.
@@ -194,7 +194,7 @@ However, this is contrary to what has been reported in previous measurements on 
 		\textbf{a,}
 		Extracted sub-gap resistance at as a function of gate voltage.
 		The values are calculated by calibrating the cavity properties and using the junction model shown connected to the transmission line cavity to fit the observed cavity response.
-		Inset shows the cavity response at $V_\text{g}=\SI{30}{V}$.
+		Inset shows the cavity response at $V_\text{g}=\SI{30}{\volt}$.
 		The horizontal and vertical axis divisions are \SI{10}{MHz} and \SI{10}{dB} respectively.
 		\textbf{b,}
 		Predicted linewidth for a graphene transmon qubit, obtained by taking the RCSJ parameters as a function of gate and adding a capacitance $C_\text{q}$ such that the final operating frequency remains $\omega/2\pi = \left(2\pi\sqrt{(L_\text{j}(C_\text{j}+C_\text{q}))}\right)^{-1} = \SI{6}{GHz}$.
@@ -260,22 +260,22 @@ From the physics of the proximity junctions, we have suggested a route towards i
 \section{Methods}
 \subsection{Fabrication of the microwave circuit}
 We closely follow a recipe published earlier \cite{bosmanBroadbandArchitectureGalvanically2015c,singhMolybdenumrheniumAlloyBased2014}.
-In short, a \SI{50}{nm} film of MoRe is first sputtered onto a 2" sapphire wafer (\SI{430}{\micro m}, c-plane, SSP from \textit{University Wafers}).
-The coplanar waveguide (CPW) resonator is defined using positive e-beam lithography and dry-etching with an $\mathrm{SF_6 + He}$ plasma.
-We subsequently deposit \SI{60}{nm} of \ce{Si3N4} for the shunt dielectric using PECVD and pattern this layer with a negative e-beam step and a $\mathrm{CHF_3 + O2}$ plasma.
-The top plate of the shunts consists of a \SI{100}{nm} layer of MoRe which is deposited using positive e-beam lithography and lift-off.
+In short, a \SI{50}{\nano\meter} film of MoRe is first sputtered onto a \SI{2}{in} sapphire wafer (\SI{430}{\micro\meter}, c-plane, SSP from \textit{University Wafers}).
+The coplanar waveguide (CPW) resonator is defined using positive e-beam lithography and dry-etching with an \ce{SF6 + He} plasma.
+We subsequently deposit \SI{60}{\nano\meter} of \ce{Si3N4} for the shunt dielectric using PECVD and pattern this layer with a negative e-beam step and a \ce{CHF3 + O2} plasma.
+The top plate of the shunts consists of a \SI{100}{\nano\meter} layer of MoRe which is deposited using positive e-beam lithography and lift-off.
 An additional shunt capacitor, identical to the one on the main input, is built on the gate line.
 This will filter RF noise on the gate line and suppress microwave losses through this lead.
-Finally, we dice the wafer into $\SI{10}{mm}\times\SI{10}{mm}$ pieces, onto which the BN/G/BN stacks can be deposited.
+Finally, we dice the wafer into \SI{10x10}{\milli\meter} pieces, onto which the BN/G/BN stacks can be deposited.
 
 \subsection{Fabrication of the gJJ}
-We exfoliate graphene and BN from thick crystals (HOPG from \textit{HQ Graphene} and BN from \textit{NIMS}\cite{taniguchiSynthesisHighpurityBoron2007}) onto cleaned Si/$\mathrm{SiO_2}$ pieces using wafer adhesive tape.
+We exfoliate graphene and BN from thick crystals (HOPG from \textit{HQ Graphene} and BN from \textit{NIMS}\cite{taniguchiSynthesisHighpurityBoron2007}) onto cleaned Si/\ce{SiO2} pieces using wafer adhesive tape.
 After identifying suitable flakes with an optical microscope, we build a BN/G/BN heterostructure using a PPC/PDMS stamp on a glass slide \cite{pizzoccheroHotPickupTechnique2016a,wangOneDimensionalElectricalContact2013b}.
 The assembled stack is then transferred onto the chip with the finished microwave cavity.
-Using an etch-fill technique ($\ce{CHF3} + \ce{O2}$ plasma and NbTiN sputtering), we contact the center line of the CPW to the graphene flake on one side, and short the other side to the ground plane.
+Using an etch-fill technique (\ce{CHF3 + O2} plasma and NbTiN sputtering), we contact the center line of the CPW to the graphene flake on one side, and short the other side to the ground plane.
 Clean interfaces between the NbTiN junction leads and the MoRe resonator body are ensured by maximizing the overlap area of the two materials and immediate sputtering of the contact metal after etch-exposing the graphene edge.
 The resistance measured from the resonator center line to ground is therefore due entirely to the gJJ.
-After shaping the device ($\ce{CHF3} + \ce{O2}$ plasma), we cover it with two layers of HSQ \cite{nandaCurrentPhaseRelationBallistic2017} and add the top-gate with a final lift-off step.
+After shaping the device (\ce{CHF3 + O2} plasma), we cover it with two layers of HSQ \cite{nandaCurrentPhaseRelationBallistic2017} and add the top-gate with a final lift-off step.
 
 \subsection{Measurement setup}\label{sec:setup}
 \noindent A sketch of the complete measurement setup is given in Supplementary Fig. 1.
@@ -288,7 +288,7 @@ The input line is attenuated by \SI{53}{dB} through the cryogenic stages, and \S
 Adding to these numbers an estimate for our cable and component losses results in a total attenuation on our input line of approximately \SI{92}{dB}.
 The sample is excited with \SI{-30}{dBm}, so less than \SI{-122}{dBm} should arrive at the cavity.
 This corresponds to an estimated intra-cavity photon number of at most 10-20 depending on operating frequency and linewidth (see Supplementary Fig. 9).
-Test were run at $V_\text{g} = \SI{30}{V}$ for powers down to \SI{-152}{dBm}, or approximately 0.02 photons, with negligible changes to the cavity line shape.
+Test were run at $V_\text{g} = \SI{30}{\volt}$ for powers down to \SI{-152}{dBm}, or approximately 0.02 photons, with negligible changes to the cavity line shape.
 Other gate voltages are expected to have even lower photon populations for with the same setup due to the lower internal cavity Q-factor.
 The reflected microwave signal is split off from the exciting tone via a directional coupler, a DC block, two isolators and a high-pass filter to reject any low-frequency noise coupling to the line.
 The signal is furthermore amplified by a \SI{40}{dB} \textit{Low-Noise Factory} amplifier on the \SI{3}{K} plate, and two room-temperature \textit{Miteqs}, each about \SI{31}{dB}, leading to a total amplification of \SI{102}{dB}.
@@ -360,21 +360,21 @@ All raw and processed data as well as supporting code for processing and figure 
 \subsection{Fitting routine for extracting the resonance frequency}\label{sec:fitting}
 \noindent The microwave response function of a capacitively shunted resonator in reflection geometry is given by \cite{pozarMicrowaveEngineering2012}
 \begin{eqnarray}
-\Gamma(\omega) = \frac{\kappa_\mathrm{ext}-\kappa_\mathrm{int}-2i\Delta\omega}{\kappa_\mathrm{ext}+\kappa_\mathrm{int}+2i\Delta\omega},
+\Gamma(\omega) = \frac{\kappa_\text{ext}-\kappa_\text{int}-2i\Delta\omega}{\kappa_\text{ext}+\kappa_\text{int}+2i\Delta\omega},
 \end{eqnarray}
-where $\kappa_\mathrm{ext,int}=\omega_0/Q_\mathrm{ext,int}$ are the internal and external loss rates and $Q_\mathrm{ext,int}$ are the respective quality factors.
+where $\kappa_\text{ext,int}=\omega_0/Q_\text{ext,int}$ are the internal and external loss rates and $Q_\text{ext,int}$ are the respective quality factors.
 $\Delta\omega=\omega-\omega_0$ is the frequency detuning from the resonance frequency $\omega_0$.
 
 The measured reflection coefficient must also include the effect of the connecting wires and devices between the network analyser and the device under test.
 The reflection coefficient is accordingly modified to incorporate this background:
 \begin{eqnarray}
-S_{11} = B(\omega)\left(-1 + \frac{2\kappa_\mathrm{ext}e^{i\theta}}{\kappa_\mathrm{ext}+\kappa_\mathrm{int}+2i\Delta\omega}\right)
+S_{11} = B(\omega)\left(-1 + \frac{2\kappa_\text{ext}e^{i\theta}}{\kappa_\text{ext}+\kappa_\text{int}+2i\Delta\omega}\right)
 \end{eqnarray}
 The complex background $B(\omega)$ has the form:
 \begin{equation}
 B(\omega) = (a+b\omega+c\omega^2)e^{i(a'+b'\omega)},
 \end{equation}
-where $a,b,c,a',b'$ are real parameters.  We use this function to fit the measurement data and extract $\omega_0$ and $\kappa_\mathrm{ext,int}$.
+where $a,b,c,a',b'$ are real parameters.  We use this function to fit the measurement data and extract $\omega_0$ and $\kappa_\text{ext,int}$.
 
 \subsection{Extraction of parameters from microwave measurements}\label{sec:extraction}
 \noindent The schematic for the gJJ and cavity model can be seen in Supplementary Figure \ref{fig:rfmodel}.
@@ -484,7 +484,7 @@ It is therefore reasonable to assume that $R_\text{sg}$ scales at least as fast 
 
 With these assumptions we can then calculate the required width and expected linewidth shown in Supplementary Figure \ref{fig:anharm3}.
 In this case there is an ample range of gate voltages that comply with the condition $\Gamma<\alpha$.
-The required junction widths are always above \SI{100}{nm}, a limit that is within reach of state of the art fabrication techniques.
+The required junction widths are always above \SI{100}{\nano\meter}, a limit that is within reach of state of the art fabrication techniques.
 It is on this basis that we propose that it is feasible to construct a graphene based transmon qubit.
 
 
@@ -495,10 +495,10 @@ It is on this basis that we propose that it is feasible to construct a graphene 
 A valid estimation of the relevant Stewart-McCumber parameter\cite{tinkhamIntroductionSuperconductivity1996}, $\beta_\text{C}=2\pi I_\text{c}R^2C/\Phi_0$, is not straightforward because there is always the question of how much capacitance of the leads going to the junction should be included.
 In principle, for example in DC measurements, even a portion of the wires going up the cryostat could be arguably relevant, up to a point where the inductance of these wires ``chokes'' the capacitance contribution.
 
-We here discuss several estimates of possible relevant capacitances that could enter into $\beta_\text{C}$, where we assume a typical $R=\SI{50}{\ohm}$ and $I_\text{s}=\SI{5}{\micro A}$.
+We here discuss several estimates of possible relevant capacitances that could enter into $\beta_\text{C}$, where we assume a typical $R=\SI{50}{\ohm}$ and $I_\text{s}=\SI{5}{\micro\ampere}$.
 First, we note that the ``geometric'' capacitance of a parallel plate capacitor formed between the superconducting leads across the BN/G/BN stack yields a negligible value on the order of a few tens of atto Farads.
 More important is the ``local'' stray capacitance of the junction which we have simulated in \textit{COMSOL} v5.3 (COMSOL Inc., 2017) and \textit{Sonnet} v16.54 (Sonnet Software Inc., 2017).
-If we include the leads up to a distance of \SI{5}{\micro m} from the junction, the relevant $C=\SI{2}{fF}$ and $\beta_\text{C}=0.08$.
+If we include the leads up to a distance of \SI{5}{\micro\meter} from the junction, the relevant $C=\SI{2}{fF}$ and $\beta_\text{C}=0.08$.
 We also simulated the capacitance of the leads that go from the junction to the surrounding ground plane and to the CPW cavity, giving $C=\SI{6.7}{\femto\farad}$ and $\beta_\text{C}=0.25$.
 Of course, there is also likely a relevant capacitance contribution from the center conductor of the CPW to ground.
 For this, we can make a rough estimate of the total CPW center conductor capacitance of \SI{909}{fF} and a resulting $\beta_\text{C}=35$, reaching far into the underdamped regime.
@@ -519,7 +519,7 @@ Our device is then placed in the intermediate to long regime, $\Delta/E_\text{th
 The modelled system consists of a discretized 2D honeycomb lattice with infinite boundary conditions in y-direction.
 The superconducting areas are implemented by setting the pairing potential of these regions to a finite value, effectively making the graphene itself superconducting.
 For the simulation shown we assume full SN coupling, corresponding to a contact transparency $Tr=1$.
-The simulated system size was $L_\text{N}=60$ and $L_\text{SC}=300$ (both in units of the graphene lattice constant $a=\SI{0.214}{nm}$), while we adjusted the pairing potential such that the junction is in the intermediate regime, i.e. $L_\text{N}/\xi=\Delta/E_\text{th} = 1.52$.
+The simulated system size was $L_\text{N}=60$ and $L_\text{SC}=300$ (both in units of the graphene lattice constant $a=\SI{0.214}{\nano\meter}$), while we adjusted the pairing potential such that the junction is in the intermediate regime, i.e. $L_\text{N}/\xi=\Delta/E_\text{th} = 1.52$.
 The dispersion is obtained by solving the eigenvalue problem of the Hamiltonian discretized onto the implemented system and plotting the energy values as a function of transverse momentum $k_\parallel$ (see Supplementary Figure \ref{fig:subgap_dos}).
 
 As expected, there are several Andreev Bound States (ABS) hosted below the bulk gap, significantly reducing $\Delta_\text{ind}<\Delta_\text{bulk}$ and opening possible dissipation channels for RF excitations.
@@ -629,7 +629,7 @@ We note that these peaks are not directly visible in our measurements, since ins
 	\caption{
 		\textbf{Microscope image of second graphene superconducting junction.}
 		The flakes around the device are hBN residues from the transfer process.
-		Scale bar \SI{40}{\micro m}.
+		Scale bar \SI{40}{\micro\meter}.
 	}
 	\label{fig:repeatdev_img}
 \end{figure*}
@@ -682,8 +682,8 @@ We note that these peaks are not directly visible in our measurements, since ins
 	\caption{{\bf Fabry-P\'erot oscillations in ballistic gJJ.}
 		We observe FP oscillations in \textbf{(a)} $R_\text{n}$, \textbf{(b)} $I_\text{c}$ and \textbf{(c)} $f_0$.
 		We can extract the length of the resonant cavity by fitting our oscillating signal with a sine, according to the resonance condition $2L_\text{c} = m\lambda_\text{F}, m\in\mathbb{N} \rightarrow 2L_\text{c} k_\text{F} = 2\pi m$.
-		After subtracting a slowly varying background with a third-order polynomial \cite{caladoBallisticJosephsonJunctions2015d}, the fits for $R_\text{n}$, $I_\text{c}$ and $f_0$ (orange lines) independently yield $L_\text{c}\approx \SI{390}{nm}$.
-		This suggests a contact interface barrier of no more than \SI{55}{nm} on each side.
+		After subtracting a slowly varying background with a third-order polynomial \cite{caladoBallisticJosephsonJunctions2015d}, the fits for $R_\text{n}$, $I_\text{c}$ and $f_0$ (orange lines) independently yield $L_\text{c}\approx \SI{390}{\nano\meter}$.
+		This suggests a contact interface barrier of no more than \SI{55}{\nano\meter} on each side.
 		We can thus take $L_\text{c}$ as a lower bound for the free momentum scattering and the phase coherence lengths, i.e. $l_\text{mfp},\xi>L_\text{c}$.        }
 	\label{fig:fabry-perot}
 \end{figure*}
@@ -708,9 +708,9 @@ We note that these peaks are not directly visible in our measurements, since ins
 	\centering
 	\includegraphics[width=.7\linewidth]{chapter-gJJ/figs/si_cooldown_tc}
 	\caption{{\bf Critical temperature of MoRe and NbTiN.}
-		Resistance versus temperature of the gJJ sample, measured during the initial cooldown, for a current bias of \SI{1}{\micro A} without any gate voltage applied.
+		Resistance versus temperature of the gJJ sample, measured during the initial cooldown, for a current bias of \SI{1}{\micro\ampere} without any gate voltage applied.
 		The two jumps at \SI{10.5}{K} and \SI{13.2}{K} correspond to the critical temperature of MoRe and NbTiN, respectively.
-		Below $T_\mathrm{c,MoRe}$, we measure a residual resistance of \SI{250}{\ohm}, which corresponds to the graphene sheet resistance for $V_\text{g}=\SI{0}{V}$.}
+		Below $T_\text{c,MoRe}$, we measure a residual resistance of \SI{250}{\ohm}, which corresponds to the graphene sheet resistance for $V_\text{g}=\SI{0}{\volt}$.}
 	\label{fig:critical_temp}
 \end{figure*}
 

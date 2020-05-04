@@ -123,10 +123,14 @@
 % \usepackage{libertinust1math}
 % \usepackage{biolinum}
 %%% Or Fira Sans
-\usepackage[sfdefault,scaled=.85]{FiraSans}
 \ifxetex
-\usepackage[Scale=.85]{firamath-otf} % use firamath for xelatex
+%\usepackage[Scale=.85]{firamath-otf} % use firamath for xelatex
+\usepackage[mathrm=sym]{unicode-math}
+\setmathfont[Scale=.85]{Fira Math}
+\setmathfont[range={\ddots,\vdots,\Im,\star}]{newtxsf} %% TODO: fix this. Removing this does not display these characters. Alternatively don't use xetex
+\usepackage[sfdefault,scaled=.85]{FiraSans}
 \else
+\usepackage[sfdefault,scaled=.85]{FiraSans}
 \usepackage{newtxsf} % otherwise newtxsf
 \fi
 %\usepackage{eulervm} % experimental
