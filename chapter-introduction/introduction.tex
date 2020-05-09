@@ -35,7 +35,7 @@ In parallel to the development of MOSFETs, Josephson junctions were hence envisi
 In an attempt to combine the best of two worlds, the versatility of a high gain transistor, and the low dissipation of superconducting circuits, proposals were made in the 1980s to merge these two elements into the Josephson field effect transistor (JoFET), cf. Fig.~\ref{fig:introcomputing}(c)~\cite{clarkFeasibilityHybridJosephson1980,gallagherThreeterminalSuperconductingDevices1985}.
 
 
-While IBM eventually ceased to research Josephson junction computation due to an apparent supremacy of semiconducting computers~\cite{robinsonIBMDropsSuperconducting1983}, research continued at public institutions and universities, in part driven by Richard Feynman's ideas of building quantum machines to run complex calculations much more efficient than any classical, MOSFET-based, computer~\cite{feynmanSimulatingPhysicsComputers1982}.
+While IBM eventually ceased to research Josephson junction computation due to an apparent supremacy of semiconducting computers~\cite{robinsonIBMDropsSuperconducting1983}, research continued at public institutions and universities, in part driven by Richard Feynman's ideas of building quantum machines to run complex calculations much more efficiently than any classical, MOSFET-based, computer~\cite{feynmanSimulatingPhysicsComputers1982}.
 %
 The late twentieth century then saw the birth of first prototypes for a quantum computing architecture, and it was realized that Josephson junctions could form the basis of quantum bits~\cite{martinisQuantumJosephsonJunction2020}.
 %
@@ -145,7 +145,7 @@ This not only allows for a detailed study of the junction's properties, but also
 
 Josephson junctions are formed by a weak link between two superconducting electrodes, which mus be sufficiently weak to sustain a phase difference $\delta=\phi_1-\phi_2$ between the phases of the two electrodes, $\phi_1$ and $\phi_2$, respectively.
 %
-The perhaps simplest case of a JJ is a thin insulating tunnel barrier between two superconductors, the SIS JJ, cf. Fig.~\ref{fig:modelsnsdos}(a).
+Perhaps the simplest case of a JJ is a thin insulating tunnel barrier between two superconductors, the SIS JJ, cf. Fig.~\ref{fig:modelsnsdos}(a).
 %
 Here, Cooper pairs can tunnel from one superconductor through the barrier to the other side, while acquiring a phase $\delta$.
 %
@@ -330,7 +330,7 @@ These DC bias microwave circuits are described in the following section.
 		%
 		Colors denote the various coupling types: blue: critically coupled $\kappa_e/\kappa_i=1$, orange: undercoupled $\kappa_e/\kappa_i=0.1$, green: overcoupled $\kappa_e/\kappa_i=10$.
 		%
-		Best signal-to-noise ratio in terms of $\abs{S_{11}}$ is achieved for critical coupling, while the other two cases have identical SNR.
+		Strongest signal modulation in $\abs{S_{11}}$ is achieved for critical coupling, while the other two cases have an identical minimum reflection coefficient.
 	}
 	\label{fig:s11}
 \end{figure}
@@ -338,7 +338,7 @@ These DC bias microwave circuits are described in the following section.
 
 To probe the Josephson inductance, we make use of superconducting microwave resonators based on coplanar waveguides~\cite{gopplCoplanarWaveguideResonators2008,zmuidzinasSuperconductingMicroresonatorsPhysics2012}.
 %
-These have been used extensively in the field of particle detection and circuit (quantum) electrodynamics due to their intrinsic low loss originating from the absent resistance of the Cooper pairs~\cite{dayBroadbandSuperconductingDetector2003a,blaisCavityQuantumElectrodynamics2004c,clerkHybridQuantumSystems2020,blaisQuantumInformationProcessing2020}.
+These have been used extensively in the field of particle detection and circuit (quantum) electrodynamics due to their intrinsic low loss originating from the fact that Cooper Pairs do not contribute any electrical resistance~\cite{dayBroadbandSuperconductingDetector2003a,blaisCavityQuantumElectrodynamics2004c,clerkHybridQuantumSystems2020,blaisQuantumInformationProcessing2020}.
 %
 For probing the device under test both in the low and high frequency range (DC to several $\SI{e9}{\hertz}$), our circuits need to sustain a stable resonance when biased with direct currents.
 
@@ -356,11 +356,7 @@ Finally, using a shunt capacitor provides a broadband signal port up to the self
 
 Figure~\ref{fig:TLmodel}(a) depicts a schematic of the DC bias cavity circuit.
 %
-In principle, measurements in both transmission and reflection geometry are possible.
-%
-However, we typically use the second port for supplying a DC gate voltage, and short the DUT to ground.
-%
-Therefore, we only perform reflection measurements.
+A second port is supplied to tune the DUT with a gate voltage.
 %
 The reflection coefficient of this circuit is given by
 %
@@ -373,7 +369,7 @@ with the internal and external loss rates $\kappa_i$ and $\kappa_e$ and the detu
 %
 In Fig.~\ref{fig:s11} we plot the reflection coefficient for various fractions of $\eta =\kappa_e/\kappa_i$, to illustrate the effects of over-, under- and critical coupling ($\eta >1$, $\eta <1$ and $\eta =1$, respectively).
 %
-For a best signal-to-noise ratio in terms of $\abs{S_{11}}$, the shunt capacitor $C_s$ should be designed such that $\kappa_e=\kappa_i$, with the external loss rate approximately given by
+For the signal to be strongest in terms of $\abs{S_{11}}$, i.e. the absorption dip reaching zero, the shunt capacitor $C_s$ should be designed such that $\kappa_e=\kappa_i$, with the external loss rate approximately given by
 %
 \begin{align}
 \kappa_e &= \frac{\omega_0}{Q_e} = \frac{2}{\pi\omega_0Z_0^2C_s^2}
@@ -419,13 +415,13 @@ For this reason, we typically design our circuits such that they would be overco
 		%
 		For intermediate values of $R_{\rm sg}$, significant resistive damping effectively suppresses the circuit response.
 		%
-		Panel \textbf{(d)} also illustrates the shift of $f_0$ when changing the boundary condition of the circuit, similar to the on due to $L_J$ in panel \textbf{(b)}.
+		Panel \textbf{(d)} also illustrates the shift of $f_0$ when changing the boundary condition of the circuit, similar to the one due to $L_J$ in panel \textbf{(b)}.
 	}
 	\label{fig:TLmodel}
 \end{figure}
 
 
-When probing Josephson junctions with the DC bias cavity, we need to calibrate the parameters of the microwave circuit prior to extract quantitative information on the high frequency properties of the added JJ.
+When probing Josephson junctions with the DC bias cavity, we need to calibrate the parameters of the microwave circuit prior to extracting quantitative information on the high frequency properties of the added JJ.
 %
 We do this by measuring a combination of open and shorted references device with the same sample geometry, except with an open or short to ground in place of the JJ.
 %
@@ -490,9 +486,9 @@ We close with a summary of all presented results and a possible way onwards in c
 %
 Appended to this thesis is a collection of additional DC data on graphene Josephson junctions and SQUIDs.
 %
-There, we investigate oscillations in the IV curves that occur as a result of the junction probing its electromagnetic environment in the absence, and the phase locking to the presence of microwave radiation, resulting in Fiske and Shapiro steps, respectively.
+There, we investigate features in the IV curves that occur as a result of the junction interacting with its electromagnetic environment: Fiske and Shapiro steps.
 %
-The appendix additional features tips and tricks for electron beam lithography, such as alignment and height measurements, specifications on the self-assembled low-pass and copper powder filters and miscellaneous source code.
+The appendix additionally features tips and tricks for electron beam lithography, such as alignment and height measurements, specifications on the self-assembled low-pass and copper powder filters and miscellaneous source code.
 
 
 %\clearpage
