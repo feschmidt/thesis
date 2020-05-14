@@ -200,7 +200,7 @@ The current-phase relation in SNS junctions takes on a significantly different f
 For the simplest case of a one-dimensional SNS junction with perfect contact transparency $\tau_c=1$ at the SN interface, each Andreev bound state has a ground state energy
 %
 \begin{align}
-E_{i}^{\rm ABS} = -\Delta\sqrt{1-T_i\sin^2(\delta/2)}
+E_{i}^{\rm ABS} = -\Delta\sqrt{1-T_i\sin^2 (\delta/2)}
 \label{eq:ABS}
 \end{align}
 %
@@ -229,14 +229,14 @@ With increasing channel transmission, $U_J$ exhibits stronger modulation and a c
 
 The corresponding relation between Josephson current and the respective phase drop across the one-dimensional SNS JJ is 
 \begin{align}
-I(\delta) = \frac{2e}{\hbar}\frac{\partial U_J}{\partial\delta} = \frac{e\Delta}{2\hbar}\sum_i\frac{T_i\sin\delta}{\sqrt{1-T_i\sin^2\delta/2}}
+I(\delta) = \frac{2e}{\hbar}\frac{\partial U_J}{\partial\delta} = \frac{e\Delta}{2\hbar}\sum_i\frac{T_i\sin(\delta)}{\sqrt{1-T_i\sin^2(\delta/2)}}
 \end{align}
 
 In addition, we can ascribe an inductance value to the JJ, given by
 %
 \begin{align}
 L_J(\delta) &= \frac{\hbar}{2e}\left( \frac{\partial I_J}{\partial\delta} \right)^{-1} = \left(\frac{\hbar}{2e}\right)^2\left(\frac{\partial^2U_J}{\partial\delta^2}\right)^{-1} \nonumber\\
-&= \frac{4\hbar^2}{e^2\Delta}\sum_i \frac{\left(1-T_i\sin^2(\delta/2)\right)^{3/2}}{4T_i\cos\delta\left(1-T_i\sin^2(\delta/2)\right)+T_i^2\sin^2(\delta)}
+&= \frac{4\hbar^2}{e^2\Delta}\sum_i \frac{\left(1-T_i\sin^2(\delta/2)\right)^{3/2}}{4T_i\cos(\delta)\left(1-T_i\sin^2(\delta/2)\right)+T_i^2\sin^2(\delta)}
 \end{align} 
 %
 In the microwave regime, the junction therefore behaves as a strong nonlinear inductor.
