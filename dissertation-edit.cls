@@ -11,7 +11,7 @@
 \RequirePackage{amsmath}
 \RequirePackage{amssymb}
 %% English is the default language, but Dutch is used for some sections.
-\RequirePackage[dutch,english]{babel}
+\RequirePackage[dutch,english,ngerman]{babel}
 \RequirePackage{calc}
 \RequirePackage[nooneline,footnotesize,font={sf,small},labelfont={sf,bf}]{caption}
 %\RequirePackage{chapterbib} %% for individual reference sections per chapter
@@ -44,6 +44,7 @@
 \RequirePackage{metalogo}
 %\RequirePackage[sectionbib,numbers,sort&compress]{natbib} %% for individual reference sections per chapter
 \RequirePackage[numbers,sort&compress]{natbib} %% otherwise
+\setlength{\bibsep}{0.0pt}
 \RequirePackage{tikz}
 \RequirePackage[noindentafter]{titlesec}
 \RequirePackage{titletoc}
@@ -169,7 +170,7 @@
 %\definecolor{mLightBrown}{HTML}{EB811B}
 %\definecolor{mLightGreen}{HTML}{14B03D}
 \definecolor{mDarkTeal}{cmyk}{0.4068,0.0678,0.0000,0.7686}
-\definecolor{mLightBrown}{cmyk}{0.00,0.27,0.74,0.13}
+\definecolor{mLightBrown}{cmyk}{0.00,0.27,1.00,0.00}
 
 %% Use TU Delft cyan as the color for titles, unless the 'print' option is
 %% specified, in which case we use anthracite, a dark gray, which is also used
