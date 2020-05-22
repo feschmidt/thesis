@@ -11,13 +11,13 @@
 \RequirePackage{amsmath}
 \RequirePackage{amssymb}
 %% English is the default language, but Dutch is used for some sections.
-\RequirePackage[dutch,english]{babel}
+\RequirePackage[ngerman,dutch,english]{babel}
 \RequirePackage{calc}
 \RequirePackage[nooneline,footnotesize,font={sf,small},labelfont={sf,bf}]{caption}
 %\RequirePackage{chapterbib} %% for individual reference sections per chapter
 \RequirePackage{etaremune}
 \RequirePackage{fancyhdr}
-\RequirePackage[flushmargin,hang]{footmisc}
+\RequirePackage[flushmargin,hang,symbol]{footmisc}
 \RequirePackage{ifpdf}
 \RequirePackage{ifxetex}
 \ifxetex
@@ -44,12 +44,82 @@
 \RequirePackage{metalogo}
 %\RequirePackage[sectionbib,numbers,sort&compress]{natbib} %% for individual reference sections per chapter
 \RequirePackage[numbers,sort&compress]{natbib} %% otherwise
+\setlength{\bibsep}{0.0pt}
 \RequirePackage{tikz}
 \RequirePackage[noindentafter]{titlesec}
 \RequirePackage{titletoc}
 \RequirePackage[nottoc]{tocbibind}
 \RequirePackage{xcolor}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%% My own packages from preamble
+\RequirePackage{graphicx}% Include figure files
+\RequirePackage{dcolumn}% Align table columns on decimal point
+\RequirePackage{bm}% bold math
+\RequirePackage{hyperref}% add hypertext capabilities
+\RequirePackage{textcomp}
+\RequirePackage[mode=text]{siunitx} % see https://tex.stackexchange.com/questions/423711/text-font-in-maths-mode-with-siunitx
+\DeclareSIUnit{\sqrthz}{\ensuremath{\sqrt{\text{\hertz}}}}
+\RequirePackage{mathtools} % for defining my own math commands
+\DeclarePairedDelimiter\abs{\lvert}{\rvert}
 \RequirePackage{pagecolor}
+\RequirePackage{pdfpages}
+\RequirePackage{listings} % for code blocks
+\RequirePackage{esdiff} % for easier typing out derivatives
+\RequirePackage[version=4]{mhchem}
+\RequirePackage{accents}
+\RequirePackage{multirow}
+\RequirePackage{tabularx}
+\newcolumntype{Y}{>{\centering\arraybackslash}X} % automatic linebreak in tables
+\RequirePackage{afterpage}
+\RequirePackage{subcaption}
+\renewcommand*{\thefootnote}{\arabic{footnote}}
+\RequirePackage{csquotes}
+\RequirePackage{marvosym}
+\RequirePackage{fontawesome}
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+\definecolor{skyblue}{rgb}{0.36,0.8,0.86}
+\definecolor{darkgreen}{rgb}{0.18,0.54,0.34}
+\definecolor{maroon}{rgb}{0.64,0.16,0.16}
+\definecolor{darkpink}{rgb}{0.75,0.25,0.5}
+
+\lstset{frame=single,
+	language=[ISO]C++,
+	aboveskip=3mm,
+	belowskip=3mm,
+	showstringspaces=false,
+	columns=flexible,
+	%	basicstyle={\small\ttfamily},
+	numbers=none,
+	numberstyle=\color{gray},
+	%	keywordstyle=\color{blue},
+	%	commentstyle=\color{dkgreen},
+	%	stringstyle=\color{mauve},
+	rulecolor=\color{black},
+	breaklines=true,
+	breakatwhitespace=true,
+	tabsize=3,
+	keywordstyle=\color{blue},
+	commentstyle=\color{dkgreen},
+	stringstyle=\color{mauve},
+	basicstyle={\color{blue}\small\ttfamily},
+	identifierstyle={\color{black}},
+	literate=*
+	{*}{{{\color{black}*}}}{1}
+	{=}{{{\color{black}=}}}{1}
+	{;}{{{\color{black};}}}{1}
+	{.7}{{{\color{blue}.7}}}{2},
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %% Fonts
 %%% Either Libertine + Biolinum
@@ -57,10 +127,14 @@
 % \usepackage{libertinust1math}
 % \usepackage{biolinum}
 %%% Or Fira Sans
-\usepackage[sfdefault,scaled=.85]{FiraSans}
 \ifxetex
-\usepackage[Scale=.85]{firamath-otf} % use firamath for xelatex
+%\usepackage[Scale=.85]{firamath-otf} % use firamath for xelatex
+\usepackage[mathrm=sym]{unicode-math}
+\setmathfont[Scale=.85]{Fira Math}
+\setmathfont[range={\ddots,\vdots,\Im,\star}]{newtxsf} %% TODO: fix this. Removing this does not display these characters. Alternatively don't use xetex
+\usepackage[sfdefault,scaled=.85]{FiraSans}
 \else
+\usepackage[sfdefault,scaled=.85]{FiraSans}
 \usepackage{newtxsf} % otherwise newtxsf
 \fi
 %\usepackage{eulervm} % experimental
@@ -94,10 +168,9 @@
 %\definecolor{mDarkBrown}{HTML}{604c38}
 %\definecolor{mDarkTeal}{HTML}{23373b}
 %\definecolor{mLightBrown}{HTML}{EB811B}
-\definecolor{mDarkTeal}{cmyk}{0.4068,0.0678,0.0000,0.7686}
-\definecolor{mLightBrown}{cmyk}{0.00,0.27,0.74,0.13}%{0.0000,0.4511,0.8851,0.0784}
 %\definecolor{mLightGreen}{HTML}{14B03D}
-%\defincecolor{mLightBrown}{cmyk}{0.00,0.00,0.88,0.15} % gold
+\definecolor{mDarkTeal}{cmyk}{0.4068,0.0678,0.0000,0.7686}
+\definecolor{mLightBrown}{cmyk}{0.00,0.27,1.00,0.13}
 
 %% Use TU Delft cyan as the color for titles, unless the 'print' option is
 %% specified, in which case we use anthracite, a dark gray, which is also used
@@ -187,7 +260,7 @@
 %%% font-size is 75% of the size of thumb height.
 \newif\ifthumb
 \newlength\thumbheight
-\setlength\thumbheight{45pt} % fontsize
+\setlength\thumbheight{30pt} % fontsize
 \newlength\thumbedge
 \setlength\thumbedge{4pt} % shifts thumb number from inside out
 \newlength\thumbhspace
@@ -223,6 +296,7 @@
 	\coordinate (center right) at ($(bottom right)+(0pt,0.5\thumbheight)$);
 	\node at (center right)[anchor=east,inner sep=2\thumbedge]{
 		\titlefont\color{mLightBrown} %\sfseries % for seriffonts
+		% \bfseries % optional
 		\fontsize{0.75\thumbheight}{0.75\thumbheight}\selectfont
 		\thechapter
 	};
@@ -248,6 +322,7 @@
 	\coordinate (center left) at ($(bottom left)+(0pt,0.5\thumbheight)$);
 	\node at (center left)[anchor=west,inner sep=2\thumbedge]{
 		\titlefont\color{mLightBrown} %\sfseries % for seriffonts
+		% \bfseries % optional
 		\fontsize{0.75\thumbheight}{0.75\thumbheight}\selectfont
 		\thechapter
 	};
@@ -456,9 +531,10 @@
 
 % make empty color page before new chapter
 \newcommand*{\newchapstyle}{%
-	\cleartoleftpage
-	\thispagestyle{empty}
+%	\cleartoleftpage
+	\clearpage
+%	\thispagestyle{empty}
 	\pagecolor{mDarkTeal}
-	\mbox{}
-	\newpage
+%	\mbox{}
+%	\newpage
 }

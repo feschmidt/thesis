@@ -1,6 +1,6 @@
 \begin{titlepage}
 	
-	\includepdf[noautoscale=False,fitpaper=True]{thesis-cover/thesis-cover.pdf}
+%	\includepdf[noautoscale=False,fitpaper=True]{thesis-cover/thesis-cover.pdf}
 %\pagecolor{mDarkTeal}\afterpage{\nopagecolor}
 %{\color{mLightBrown}%\afterpage{\notextcolor}
 %\begin{center}
@@ -30,8 +30,29 @@
 %
 %}
 
-%\cleardoublepage
+\begin{center}
+	
+	%% Extra whitespace at the top.
+	\vspace*{2\bigskipamount}
+	
+	%% Print the title.
+	{\makeatletter
+		\titlestyle\bfseries\LARGE\@title
+		\makeatother}
+	
+	%% Print the optional subtitle.
+	{\makeatletter
+		\ifx\@subtitle\undefined\else
+		\bigskip
+		\titlefont\titleshape\Large\@subtitle
+		\fi
+		\makeatother}
+	
+\end{center}
+
+\cleardoublepage
 \thispagestyle{empty}
+
 
 \begin{center}
 
@@ -178,14 +199,14 @@ born in Cologne, Germany
 %% Uncomment the following lines if this dissertation is part of the Casimir PhD
 %% Series, or a similar research school.
 %\medskip
-\noindent Casimir PhD Series, Delft-Leiden 2020-??
+\noindent Casimir PhD Series, Delft-Leiden 2020-15
 
 \medskip
-\noindent ISBN ???-??-????-???-?
+\noindent ISBN 978-90-8593-442-4
 
 \medskip
 \noindent An electronic version of this dissertation is available at \\
-\url{http://repository.tudelft.nl/???}.
+\url{https://repository.tudelft.nl/}.
 
 \end{titlepage}
 

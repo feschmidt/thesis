@@ -19,9 +19,9 @@
 	%
 	We derive an analytical model to reproduce the measurements over a wide range of bias currents, detunings and input powers.
 	% 
-	Tuning the frequency of the cavity by more than \SI{100}{\mega\hertz} with DC current, our device achieves a minimum current sensitivity of $\SI{8.9}{\pico\ampere\per\hertz\tothe{1/2}}$.
+	Tuning the frequency of the cavity by more than \SI{100}{\mega\hertz} with DC current, our device achieves a minimum current sensitivity of \SI{8.9}{\pico\ampere\per\hertz\tothe{1/2}}.
 	% 
-	Extrapolating the results of our analytical model, we predict an improved device based on our platform, capable of achieving sensitivities down to $\SI{50}{\femto\ampere\per\hertz\tothe{1/2}}$, or even lower if one could take advantage of parametric amplification in the Josephson cavity.
+	Extrapolating the results of our analytical model, we predict an improved device based on our platform, capable of achieving sensitivities down to \SI{50}{\femto\ampere\per\hertz\tothe{1/2}}, or even lower if one could take advantage of parametric amplification in the Josephson cavity.
 	% 
 	Taking advantage of the Josephson architecture, our approach can provide higher sensitivity than kinetic inductance designs, and potentially enables detection of currents ultimately limited by quantum noise.
 \end{abstract}
@@ -218,7 +218,7 @@ Note that even higher order contributions from the current still contribute to t
 
 \begin{figure}
 	\centering
-	\includegraphics[]{chapter-currentdetection/figures/Figure2}
+	\includegraphics[width=.5\linewidth]{chapter-currentdetection/figures/Figure2}
 	\caption{
 		\textbf{Current detection by frequency up-conversion.}
 		%
@@ -418,7 +418,7 @@ Utilizing quantum-limited parametric amplification built into the device would a
 
 \begin{figure}
 	\centering
-	\includegraphics[]{chapter-currentdetection/figures/Figure5}
+	\includegraphics[width=.5\linewidth]{chapter-currentdetection/figures/Figure5}
 	\caption{
 		\textbf{Estimated sensitivities for optimized device design.}
 		%
@@ -594,7 +594,7 @@ The power dependence, cf. Fig.~\ref{fig:higher-order-peaks}(c), also closely res
 
 \begin{figure}
 	\centering
-	\includegraphics[]{chapter-currentdetection/figures/SM_second_order_peak}
+	\includegraphics[width=.5\linewidth]{chapter-currentdetection/figures/SM_second_order_peak}
 	\caption{
 		\textbf{Exploring the parameter space for the second order sideband amplitude.}
 		(a) Sideband height for changing bias current setpoint at fixed input power and zero detuning for varying bias current.
@@ -639,9 +639,9 @@ The power dependence, cf. Fig.~\ref{fig:higher-order-peaks}(c), also closely res
 
 %\vspace{1em}
 
-\subsection{Measurement setup}\label{sec:measurement}
+\section{Measurement setup}\label{sec:measurement}
 
-\subsubsection{Wiring configuration}
+\subsection{Wiring configuration}
 
 All measurements were taken with the device mounted to the millikelvin stage of a \textit{Bluefors BF 400-D} dilution refrigerator with a base temperature of approximately \SI{15}{\milli\kelvin}.
 % 
@@ -671,6 +671,8 @@ The DC lines are heavily filtered using $\pi$-filters inside the room-temperatur
 % 
 The \SI{-3}{dB} cut-off for these filters is at around \SI{30}{\kilo\hertz}, well above the chosen modulation frequency of \SI{1}{\kilo\hertz}.
 
+To reduce the influence of stray magnetic fields, a passive $\mu$-metal shield surrounds the DUT and entire \SI{15}{\milli\kelvin} stage.
+
 \begin{figure*}
 	\centering
 	\includegraphics[width=\linewidth]{{chapter-currentdetection/figures/setup.svg}.png}
@@ -686,7 +688,7 @@ The \SI{-3}{dB} cut-off for these filters is at around \SI{30}{\kilo\hertz}, wel
 	\label{fig:setup}
 \end{figure*}
 
-\subsubsection{Measurement protocol for current detection}
+\subsection{Measurement protocol for current detection}
 % 
 The measurements on current detection were performed using the following measurement scheme:
 % 
@@ -705,7 +707,7 @@ The measurements on current detection were performed using the following measure
 	% 
 	Turn on the LF modulation ($I_\text{LF}=\SI{10}{\nano\ampere}$, $\Omega=2\pi\times\SI{1}{\kilo\hertz}$).
 	% 
-	Trigger the SAto perform one measurement.
+	Trigger the SA to perform one measurement.
 	\item[3. Current detection for variable detuning] Keep the RF pump power at the same value and sweep the RF modulation frequency from $f_0-\SI{3}{\mega\hertz}$ to $f_0+\SI{3}{\mega\hertz}$ and for each detuning record the output signal using the SA.
 	\item[4. Current detection for variable pump power] Set the RF frequency back to $f_0$.
 	%   
@@ -714,7 +716,7 @@ The measurements on current detection were performed using the following measure
 	After each pump power measurement, reinitialize the bias current and find the resonance frequency again in order to reduce the number of "dead" cases in which the Josephson junction switched to the voltage state prematurely.
 \end{description}
 
-\subsubsection{Estimation of the attenuation and amplification chain}\label{sec:attenuation}
+\subsection{Estimation of the attenuation and amplification chain}\label{sec:attenuation}
 
 To estimate the attenuation chain, we use the thermal noise of our cryogenic high electron mobility transistor (HEMT) as a calibration source.
 % 
@@ -739,7 +741,7 @@ On the way, the signal will have been reduced by $X {\,\rm dB}$ due to the menti
 
 We deduce the total gain of our amplification chain by calculating the average noise power measured with the SA, $P_\text{N,SA}=\SI{-97.5}{dBm}$ in a \SI{1}{\hertz} bandwidth, and substracting from it the HEMT noise power $P_{\rm N,in}^\prime=\SI{-195.6}{dBm}$ corresponding to the same bandwidth and the cable loss $X=\SI{2}{\decibel}$, resulting in a total gain of \SI{96.1}{\decibel} for the amplifier chain.
 
-\subsection{Device fabrication}\label{sec:fabrication}
+\section{Device fabrication}\label{sec:fabrication}
 
 % 
 The device is fabricated in a four-step process in the \textit{Kavli Nanolab} cleanroom of TU Delft, using a combination of electron beam lithography (EBL, EBPG5000+ from \textit{Raith}), liftoff, sputtering (AC450 from \textit{Alliance}), PECVD (PlasmaPro 80 from \textit{Oxford Instruments}) and dry-etching (Fluorine reactive ion etcher from \textit{Leybold Hereaus}).
@@ -776,7 +778,6 @@ In the following we describe the fabrication step by step.
 \end{description}
 
 \begin{table}
-	\centering
 	\caption{Geometric device parameters\label{tab:geometry}}
 	\begin{tabular}{ccc}
 		\hline \hline
@@ -818,9 +819,9 @@ In the following we describe the fabrication step by step.
 	\label{fig:fullchip}
 \end{figure}
 
-\subsection{General device parameters}\label{sec:general}
+\section{General device parameters}\label{sec:general}
 
-\subsubsection{Reflection coefficient}\label{sec:general-S11}
+\subsection{Reflection coefficient}\label{sec:general-S11}
 % 
 The reflection coefficient of a transmission line with a shunt capacitor to ground on the input side and shorted to ground on the far end is given by
 % 
@@ -832,7 +833,7 @@ S_{11}(\omega,\kappa_\text{i},\kappa_\text{e}) = \frac{\kappa_\text{e}-\kappa_\t
 with the detuning from resonance, $\Delta=\omega-\omega_0$ and the internal, external and total loss rates $\kappa_i$, $\kappa_e$ and $\kappa=\kappa_\text{e}+\kappa_\text{i}$.
 
 % 
-The real response function is however distorted by the complex microwave background which arises due to impedance mismatches in our measurement setup.
+The real response function is however distorted by the complex microwave background which arises due to impedance mismatches in our measurement setup, as can be seen in Fig.~\ref{fig:s11fitabs}(a).
 % 
 For this reason, we model the measured $S_{11}$ spectra using the above model for an ideal device multiplied by a complex microwave background and a rotation in the complex plane:
 % 
@@ -845,7 +846,18 @@ Our fitting algorithm first detects the resonance as frequency corresponding to 
 % 
 In a second step, it fits the modified model to the full data set keeping the background parameters fixed, and finally refits all background and model parameters once more starting from the previously fitted values.
 % 
-A result of this fitting procedure, with background removed, is shown in Fig.~\ref{fig:s11fitabs}.
+A result of this fitting procedure, with background removed, is shown in Fig.~\ref{fig:s11fitabs}(b,c).
+
+Following Ref.~\cite{bosmanBroadbandArchitectureGalvanically2015c}, we infer the device's loss rate to be
+%
+\begin{align}
+\kappa_e = \frac{2}{\pi\omega_0 Z_0^2 C_s^2} \ .
+\label{eq:kappae_analytical}
+\end{align}
+%
+For the ideal device in the main text, we consider a shunt capacitor with $1/2$ of its current area, which would result in an increase of factor of 4 in external loss rate.
+%
+As a consequence, the device would be less undercoupled (i.e. less difference between $\kappa_i$ and $\kappa_e$) for higher $G1$, and more of the internally generated signal is coupled back out again.
 
 \begin{figure}
 	\centering
@@ -853,19 +865,17 @@ A result of this fitting procedure, with background removed, is shown in Fig.~\r
 	\caption{
 		\textbf{Data and fit of the reflection coefficient.}
 		% 
-		(a) Real ($\bigcirc$) and imaginary ($\square$) value of the reflection coefficient $S_{11}$ versus frequency.
-		% 
-		(b) Polar plot of the absolute value of $S_{11}$ versus phase.
+		(a,b) Real ($\bigcirc$) and imaginary ($\square$) value of the reflection coefficient $S_{11}$ versus frequency (a) as measured and (b) after removing the oscillating background which is due to impedance mismatches in the setup.
+		%		
+		(c) Polar plot of the absolute value of $S_{11}$ versus phase, without background.
 		% 
 		Markers: data, solid lines: fits according to Eq.~\eqref{eq:S11simple}.
-		% 
-		The complex background and rotation are removed in both panels.
 		\label{fig:s11fitabs}
 	}
 \end{figure}
 
 
-\subsubsection{Kinetic inductance estimation}\label{sec:Lk}
+\subsection{Kinetic inductance estimation}\label{sec:Lk}
 
 % 
 Our AlSi films have a significant kinetic inductance contribution due to their small thickness of only \SI{20}{nm}.
@@ -881,6 +891,8 @@ The kinetic inductance fraction is given by~\cite{gaoExperimentalStudyKinetic200
 \end{align}
 % 
 which has a value of $0.267$ in our device, hence $L_k^\prime=\SI{154}{\nano\henry\per\meter}$.
+%
+This changes the characteristic impedance of our CPW from the geometric value of \SI{50.1}{\ohm} to \SI{58.5}{\ohm}.
 % 
 Kinetic inductance also increases as a function of DC bias current via $L_k(I)=L_k(0)\left[1+(I/I_*)^2\right]$ with the characteristic current $I_*$ \cite{annunziataTunableSuperconductingNanoinductors2010b}.
 % 
@@ -927,32 +939,32 @@ This supports our claim that we can exclude kinetic inductance as an additional 
 % \end{align}
 % with the flux quantum $\Phi_0=\frac{h}{2e}$ where $h$ is Planck's constant and $e$ the elementary charge.
 
-\subsubsection{Resonance frequency versus current due to Josephson inductance}\label{sec:resfit}
+\subsection{Resonance frequency versus current due to Josephson inductance}\label{sec:resfit}
 
 % 
 Adapting the calculation for a Josephson terminated transmission line cavity given in Ref.~\cite{pogorzalekHystereticFluxResponse2017} to our device, we find for the current dependence of the cavity resonance frequency
 % 
 \begin{align}
-\omega_0(I_b)=\omega_{\lambda/2}\frac{L_r+L_J(I_b,I_c)}{L_r + 2L_J(I_b,I_c)}\ ,
+\omega_0(I_b)=\omega_{\lambda/2}\,\frac{L_r+L_J(I_b,I_c)}{L_r + 2L_J(I_b,I_c)}\ ,
 \end{align}
 % 
-with $L_r$ the total device inductance, $\omega_{\lambda/2}$ the resonance frequency without the JJ and $L_J$ the Josephson inductance given in Eq.~\eqref{eq:Lj-of-I} of the main text.
+with $L_r$ the total device inductance, $\omega_{\lambda/2}$ the resonance frequency without the JJ and $L_J$ the Josephson inductance given in Eq.~\eqref{main-eq:Lj-of-I} of the main text.
 % 
-We use this model to fit the measured resonance frequencies and extract $\omega_{\lambda/2}=2\pi\times\SI{7.515}{\giga\hertz}$, $L_r=\SI{3.458}{\nano\henry}$ and $I_c=\SI{9.176}{\micro\ampere}$.
+We use this model to fit the measured resonance frequencies and extract $\omega_{\lambda/2}=2\pi\times\SI{7.515}{\giga\hertz}$, $L_r=\SI{3.401}{\nano\henry}$ and $I_c=\SI{9.157}{\micro\ampere}$.
 % 
 From the device geometry and kinetic inductance estimation, we expect $L_r=(L_g^\prime+L_k^\prime)l=\SI{3.689}{\nano\henry}$, which is in acceptable agreement with the fit value.
 
-\subsection{On the hysteresis of switching currents in our DC measurements}\label{sec:hysteresis}
+\section{On the hysteresis of switching currents in our DC measurements}\label{sec:hysteresis}
 % 
 Accodring to a simple RCSJ model, hysteresis in Josephson junctions should occur only for JJ quality factors $Q=R\sqrt{2eI_c C_J/\hbar} > 1$, with the junction capacitance $C_J$~\cite{tinkhamIntroductionSuperconductivity1996}.
 % 
 We perform finite element simulations with \textit{Sonnet} v16.56 (Sonnet Software Inc., 2018) to estimate the stray capacitance of the metal leads in direct vicinity of the JJ (two \SI{1x1}{\micro\meter} pads separated by \SI{200}{\nano\meter}) to be $C_J=\SI{5.2}{\femto\farad}$.
 % 
-Together with $R=\SI{108}{\ohm}$ and $I_c=\SI{9.176}{\micro\ampere}$, the junction would have $Q\approx1.3$.
+Together with $R=\SI{108}{\ohm}$ and $I_c=\SI{9.157}{\micro\ampere}$, the junction would have $Q\approx1.3$.
 % 
 For $Q \gtrsim 1$, the ratio between retrapping and critical current can be approximated as $I_r/I_c=4/\pi Q$.
 % 
-Hence, in order to satisfy our measured values, $Q=4/\pi\times I_c/ I_r\approx1.91$, which would be reached for $C_J\approx\SI{13}{\femto\farad}$.
+Hence, in order to satisfy our measured values, $Q=4/\pi\times I_c/ I_r\approx1.91$, which would be reached for $C_J\approx\SI{11}{\femto\farad}$.
 % 
 Likely, the geometric capacitance of the CPW and the surrounding ground planes significantly contributes and dominates the circuit capacitance:
 % 
@@ -960,7 +972,7 @@ Already including a \SI{50}{\micro\meter} portion of the CPW increases $C_J$ to 
 % 
 Additionally, we note that local heating in the junction area can also play a significant role, reducing $I_r$ further~\cite{skocpolSelfHeatingHotspots1974,hazraHysteresisSuperconductingShort2010,kumarReversibilitySuperconductingNb2015}.
 
-\subsection{On the increased loss rates for increased bias current}\label{sec:lossrates}
+\section{On the increased loss rates for increased bias current}\label{sec:lossrates}
 
 % 
 We observed an increase in the internal and external loss rates of the JJ terminated device for increased bias current, as can be seen in Fig.~\ref{fig:lossratesvscurrent}(a).
@@ -981,42 +993,49 @@ Regarding the increase in internal loss rate, we identified the following mechan
 \begin{description}
 	\item[Electrical interference] While we physically disconnect all mains-powered equipment from our battery powered DC electronics, and placed DC blocks for both inner and outer conductors on the RF inputs to the fridge, we still notice a significant amount of \SI{50}{\hertz} interference on the measured spectra for high bias currents, cf. Fig.~\ref{fig:50hzinterference}(a).
 	%   
-	We calculate the magnitude of the spurious signals to be approximately \SI{170}{\pico\ampere}, or \SI{1.7}{\percent} of $I_\text{LF}$.
+	We calculate the magnitude of the spurious signals to be approximately \SI{170}{\pico\ampere}, which corresponds \SI{1.7}{\percent} of $I_\text{LF}$ or \SI{1.86e-3}{\percent} of $I_c$.
 	% 
 	We assume that this interference is always present but only has noticeable effects for large $\partial\omega_0/\partial I_b$.
 	% 
 	Since our RF spectroscopy measurement takes more than \SI{1}{\second}, the measured linewidth is effectively broadened by the moving cavity, induced by small-scale \SI{50}{\hertz} modulations.
+	%
+	While more insight could potentially have been gained by performing switching histograms, the small magnitude of the spurious interference compared to the JJ switching current should only slightly affect DC measurements.
+	
+	Note that the situation is significantly worse for an unoptimized setup, when noise couples to the DC electronics via a shared ground.
+	%
+	This is the case when bolting the power strip (into which the VNA and SA are plugged in) to the metal housing of the rack on which the battery-powered DC electronics sit.
 	% 
-	Note that the situation is significantly worse for an unoptimized setup (noise coupling into the DC electronics via ground):
-	% 
-	In this case, the cavity spectrum is extremely broadened and starts to resemble two dips for high $I_0$, severely limiting the tuning range (c.f. Fig.~\ref{fig:50hzinterference}(b) without, and Fig.~\ref{fig:figure1}(f) of the main text with isolation of the battery electronics from mains powered equipment).
+	In this case, the cavity spectrum is extremely broadened and starts to resemble two dips for high $I_0$, severely limiting the tuning range (c.f. Fig.~\ref{fig:50hzinterference}(b) without, and Fig.~\ref{main-fig:figure1}(f) of the main text with isolation of the battery electronics from mains powered equipment).
 	% 
 	We estimate the interfering current signal for this case to be \SIrange{150}{250}{\nano\ampere}, significantly limiting any device operation in either DC or RF.
 	% 
 	The measurement setup could be further improved by choosing a LF modulation frequency which is not a higher order multiple of \SI{50}{\hertz}, such as \SI{1111}{\hertz}, instead of \SI{1000}{\hertz}.
-	% 
+	
 	We note that there might be other frequencies at which interfering signals couple into our device.
+	%		
+	For example, the acoustic vibrations of the pulse tube needed to provide continuous cooling power in a dry dilution refrigerator have been shown to induce periodic current spikes of up to a few \si{\nano\ampere} ~\cite{kalraVibrationinducedElectricalNoise2016b}, which would lead to a significant increase in $\kappa_i$.
+	%
+	Since our DC lines use only a small portion of coaxial cable at the mK stage and are otherwise twisted loom pairs up to room temperature, we expect this contribution to be small.
 	% 
-	Electrical noise only cannot explain the observed increased loss rates because the latter are not simply proportional to $\partial\omega_0/\partial I_b$.
+	Nevertheless, current noise by itself cannot completely account for the observed increased loss rates with bias current because $\kappa_i(I_b)$ is not simply proportional to $\partial\omega_0/\partial I_b(I_b)$.
 	\item[Phase diffusion] The shorted reference device exhibits constant $\kappa_\text{i}$ and $\kappa_\text{e}$ upon DC bias up to \SI{200}{\micro\ampere}, at which point the mixing chamber starts to heat as we surpass the cooling power  of \SI{14}{\micro\watt} for the \textit{LD400 Bluefors} since the power dissipated in our \SI{2.7}{\kilo\ohm} low-pass filters reaches up to \SI{108}{\micro\watt}.
 	% 
 	In contrast, the temperature did not increase when measuring the JJ device.
 	% 
-	We therefore rule out quasiparticles (due to radiation or thermal excitations, \cite{tinkhamIntroductionSuperconductivity1996})in the CPW as a significantly contributing loss mechanism.
+	We therefore rule out quasiparticles (due to radiation or thermal excitations \cite{tinkhamIntroductionSuperconductivity1996}) in the CPW as a significantly contributing loss mechanism.
 	% 
-	Instead, phase diffusion across the JJ can indeed play a significant role as the bias current approaches $I_c$.
+	Instead, phase diffusion across the JJ can play a significant role as the bias current approaches $I_c$.
 	% 
-	Applying a DC current bias tilts the Josephson energy potential, enhancing the chance of phase-slip and quantum tunneling events, which can lead to dissipation even without switching to the normal state, as long as the phase particle is able to settle in the next washboard-potential minimum \cite{kiviojaWeakCouplingJosephson2005}.
+	Applying a DC bias current tilts the Josephson energy potential, enhancing the chance of phase-slip and quantum tunneling events, which can lead to dissipation even without switching to the normal state, as long as the phase particle is able to settle in the next washboard-potential minimum \cite{kiviojaWeakCouplingJosephson2005}.
 	%	\item [Fano interference] Due to impedance mismatches between the directional coupler and our sample, there can be interference between incoming and outgoing waves.
 	%	These show up in the microwave spectroscopy as Fano lineshapes, which makes extracting the internal and external device linewidths notoriously difficult.
 \end{description}
 
 \begin{table}
-	\centering
 	\caption{Extracted loss rate parameters for the main text device.\label{tab:lossrates}}
 	\begin{tabular}{cccc}
 		\hline \hline
-		Loss channel         & $\kappa_0/2\pi$ (\si{\kilo\hertz}) & $\kappa_1/2\pi$ (\si{\hertz}) & $I_{\sim}$ (\si{\nano\ampere}) \\
+		Loss rate         & $\kappa_0/2\pi$ (\si{\kilo\hertz}) & $\kappa_1/2\pi$ (\si{\hertz}) & $I_{\sim}$ (\si{\nano\ampere}) \\
 		\hline
 		Internal & $256.16 \pm 3.74$             & $78.41 \pm 11.86$      & $777.89 \pm 11.96$             \\
 		%	\hline 
@@ -1065,7 +1084,7 @@ Regarding the increase in internal loss rate, we identified the following mechan
 	\label{fig:50hzinterference}
 \end{figure*}
 
-\subsection{Difference between first order red and blue sidebands}\label{sec:bluered}
+\section{Difference between first order red and blue sidebands}\label{sec:bluered}
 % 
 As derived in the main text, to first order in $\delta I$, the coefficients describing the sideband amplitudes are
 % 
@@ -1095,7 +1114,7 @@ Our experiments with $\kappa \gtrsim 2\pi\times\SI{750}{\kilo\hertz} \gg \Omega 
 	\caption{
 		\textbf{Comparison of blue and red sideband.}
 		% 
-		Current sensitivity in $\si{\pico\ampere\per\hertz\tothe{1/2}}$ versus bias current and input power, as measured for $-\Omega$ (a, cf. Fig.~\ref{fig:figure4} of the main text) and $+\Omega$ (b).
+		Current sensitivity in \si{\pico\ampere\per\hertz\tothe{1/2}} versus bias current and input power, as measured for $-\Omega$ (a, cf. Fig.~\ref{main-fig:figure4} of the main text) and $+\Omega$ (b).
 		% 
 		Dashed grey lines correspond to the linecuts in (c) and (d), circle marks the point of minimum measured sensitivity.
 		% 
@@ -1105,7 +1124,7 @@ Our experiments with $\kappa \gtrsim 2\pi\times\SI{750}{\kilo\hertz} \gg \Omega 
 		% 
 		$\circ$: $-\Omega$ sideband, $\star$: $+\Omega$ sideband.
 		% 
-		Minimum sensitivities are $\SI{8.90}{\pico\ampere\per\hertz\tothe{1/2}}$ and $\SI{9.52}{\pico\ampere\per\hertz\tothe{1/2}}$, respectively.
+		Minimum sensitivities are \SI{8.90}{\pico\ampere\per\hertz\tothe{1/2}} and \SI{9.52}{\pico\ampere\per\hertz\tothe{1/2}}, respectively.
 		% 
 		Within the traced out parameter space, we observed no systematic differences between red and blue first order sidebands.
 	}
@@ -1113,7 +1132,7 @@ Our experiments with $\kappa \gtrsim 2\pi\times\SI{750}{\kilo\hertz} \gg \Omega 
 \end{figure}
 
 
-\subsection{Driving the cavity on resonance for high powers}\label{sec:drive_shift}
+\section{Driving the cavity on resonance for high powers}\label{sec:drive_shift}
 To counteract acquired detuning from the downshift in resonance frequency for high pump powers due to the device nonlinearity, in an ideal measurement configuration the drive tone would also be shifted correspondingly.
 % 
 As depicted in Fig.~\ref{fig:Duffing-on-res}, in such a situation, the sideband amplitude would keep increasing by more than \SI{10}{\decibel}, resulting in a minimum $\mathcal{S}_I=\SI{2.6}{\pico\ampere\per\hertz\tothe{1/2}}$.
@@ -1124,11 +1143,11 @@ As depicted in Fig.~\ref{fig:Duffing-on-res}, in such a situation, the sideband 
 	\caption{
 		\textbf{Driving the cavity on resonance.}
 		% 
-		(a) Data (circles) and model with (solid line) and without (dashed line) detuning of the first order sideband amplitude at $I_0=\SI{4}{\micro\ampere}$, cf. Fig.~\ref{fig:figure3}(c) of the main text.
+		(a) Data (circles) and model with (solid line) and without (dashed line) detuning of the first order sideband amplitude at $I_0=\SI{4}{\micro\ampere}$, cf. Fig.~\ref{main-fig:figure3}(c) of the main text.
 		% 
 		Tuning the drive to be matched to the resonance results in a further increased sideband amplitude of more than \SI{10}{\decibel}.
 		% 
-		(b) Data (circles) and model (solid line) of the first order sideband amplitude at $P_\text{in}=\SI{-113}{dBm}$, cf. Fig.~\ref{fig:figure4}(d) of the main text.
+		(b) Data (circles) and model (solid line) of the first order sideband amplitude at $P_\text{in}=\SI{-113}{dBm}$, cf. Fig.~\ref{main-fig:figure4}(d) of the main text.
 		% 
 		Dashed line corresponds to modelled sensitivity at maximum drive power with shifted drive frequency.
 	}
@@ -1137,7 +1156,7 @@ As depicted in Fig.~\ref{fig:Duffing-on-res}, in such a situation, the sideband 
 
 
 
-\subsection{Deviations between data and theory for high powers}\label{sec:deviation_power}
+\section{Deviations between data and theory for high powers}\label{sec:deviation_power}
 
 We observe deviations between the measured and modelled current sensitivity at high drive powers.
 % 
@@ -1149,11 +1168,11 @@ While in this case the sensitivity is overestimated for small drive powers, the 
 
 \begin{figure}
 	\centering
-	\includegraphics[]{chapter-currentdetection/figures/SM_Pin_detuning}
+	\includegraphics[width=.5\linewidth]{chapter-currentdetection/figures/SM_Pin_detuning}
 	\caption{
 		\textbf{Deviations between data and theory for high powers.}
 		% 
-		(a) Data (circles) and model (lines) for current sensitivity versus input power for the first order sideband amplitude at $I_0=\SI{7.3}{\micro\ampere}$, cf. Fig.~\ref{fig:figure4}(c) of the main text.
+		(a) Data (circles) and model (lines) for current sensitivity versus input power for the first order sideband amplitude at $I_0=\SI{7.3}{\micro\ampere}$, cf. Fig.~\ref{main-fig:figure4}(c) of the main text.
 		% 
 		Solid line corresponds to the same model as in the main text, dashed line has \SI{-600}{\kilo\hertz} extra detuning added, corresponding to an initially red-detuned drive.
 		% 
@@ -1163,7 +1182,7 @@ While in this case the sensitivity is overestimated for small drive powers, the 
 \end{figure}
 
 
-\subsection{Calculating the current sensitivity}\label{sec:analysis}
+\section{Calculating the current sensitivity}\label{sec:analysis}
 
 % 
 The current sensitivity is defined by
@@ -1189,7 +1208,7 @@ For a Gaussian filter such as the one used in our setup, $\text{ENBW}=1.065 \tim
 % 
 In practice, we extract the sideband amplitude from the measured spectra as the peak power value at the expected $\omega_0 \pm m\Omega$ and compute the noise floor as the average of the remaining data points.
 
-\subsection{Data visualization}
+\section{Data visualization}
 
 Our raw measurements include a significant number of outliers in current sensitivity, visible as bright spots and streaks in Fig.~\ref{fig:fig4aclipnointerp}(a).
 % 
@@ -1213,14 +1232,14 @@ To exclude these outliers from further analysis, we chose to discard data points
 		% 
 		Outliers with large values of $\mathcal{S}_I$ are due to off-resonant drive tones (streaks) or absent LF modulation (speckles) due to errors in the measurement setup, resulting in no mixing at all (see text for details).
 		% 
-		The data in (b) corresponds to Fig.~\ref{fig:figure4}(a) of the main text, with modified colorscale for enhanced visibility.
+		The data in (b) corresponds to Fig.~\ref{main-fig:figure4}(a) of the main text, with modified colorscale for enhanced visibility.
 	}
 	\label{fig:fig4aclipnointerp}
 \end{figure}
 
-\subsection{Modeling the Josephson array CPW}\label{sec:optimized}
+\section{Modeling the Josephson array CPW}\label{sec:optimized}
 
-To model a Josephson junction array transmission line resonator, we use $N$ unit cells of length $l$, a transmission line inductance per unit length $L'$, a capacitance per unit length $C'$ and a lumped element Josephson inductance $L_J$, as depicted in Fig.~\ref{fig:JJCPW-sketch} and Fig.~\ref{fig:figure5}(a) of the main text.
+To model a Josephson junction array transmission line resonator, we use $N$ unit cells of length $l$, a transmission line inductance per unit length $L'$, a capacitance per unit length $C'$ and a lumped element Josephson inductance $L_J$, as depicted in Fig.~\ref{fig:JJCPW-sketch} and Fig.~\ref{main-fig:figure5}(a) of the main text.
 %
 Each unit cell has the inductance $L_n = L'l + L_J=L_0+L_J$ and the capacitance $C_n = C'l = C_0$.
 
@@ -1241,7 +1260,7 @@ Each unit cell has the inductance $L_n = L'l + L_J=L_0+L_J$ and the capacitance 
 	\label{fig:JJCPW-sketch}
 \end{figure}
 
-\subsubsection{Full analytical model}\label{sec:analytical}
+\subsection{Full analytical model}\label{sec:analytical}
 
 In order to derive an analytical model, we follow the approach to circuit quantization presented in Ref.~\cite{gelyQuCATQuantumCircuit2019}.
 %
@@ -1253,18 +1272,17 @@ The admittance matrix $\mathbf{Y}$ which relates voltages $v_n$ of a node $n$ to
 explicitly writes
 \begin{align}
 \underbrace{\begin{pmatrix} 
-	2Y_s(\omega)+Y_g (\omega) & - Y_s(\omega) & 0 & \dots & 0 \\
-	- Y_s(\omega) & 2Y_s(\omega)+Y_g (\omega) & - Y_s(\omega) & \ddots & \vdots \\
-	0 & - Y_s(\omega) & \ddots & \ddots & \vdots  \\
-	\vdots & \ddots & \ddots & 2Y_s(\omega)+Y_g (\omega) &- Y_s(\omega) \\
-	0 & \dots & \dots & -Y_s(\omega) & 2Y_s(\omega)+Y_g (\omega)
+	2Y_s(\omega)+Y_g (\omega) & - Y_s(\omega) &  & 0 \\
+	- Y_s(\omega) & \ddots & \ddots &  \\
+	& \ddots & \ddots & -Y_s(\omega)  \\
+	0 &  & -Y_s(\omega) & 2Y_s(\omega)+Y_g (\omega)
 	% a_{K1} &        & a_{KK} 
 	\end{pmatrix}}_{\mathbf{Y}}
 \begin{pmatrix}
 v_{1} \\
 v_{2} \\
 \vdots \\
-v_{N-2} \\
+%		v_{N-2} \\
 v_{N-1}
 \end{pmatrix}
 =
@@ -1272,7 +1290,7 @@ v_{N-1}
 i_{1} \\
 i_{2} \\
 \vdots \\
-i_{N-2} \\
+%		i_{N-2} \\
 i_{N-1}
 \end{pmatrix}
 \label{eq:admittance_matrix}
@@ -1406,12 +1424,11 @@ Motivated by a larger current responsivity for large $\eta_J$, our proposed devi
 % 
 All parameters are detailed in Tab.~\ref{tab:arraygeometry}.
 % 
-We plot the calculated resonance frequency and anharmonicity for the proposed device design in Fig.~\ref{fig:figure5} from the main text as a function of bias current in Fig.~\ref{fig:JJCPW-anh}.
+We plot the calculated resonance frequency and anharmonicity for the proposed device design in Fig.~\ref{main-fig:figure5} from the main text as a function of bias current in Fig.~\ref{fig:JJCPW-anh}.
 % 
 Since Josephson inductance dominates, resulting in the resonance frequency tuning by more than \SI{55}{\percent}.
 
 \begin{table}
-	\centering
 	\caption{Device parameters for the proposed JJ CPW\label{tab:arraygeometry}}
 	\begin{tabular}{ccc}
 		\hline \hline
@@ -1440,7 +1457,7 @@ Since Josephson inductance dominates, resulting in the resonance frequency tunin
 
 \begin{figure}
 	\centering
-	\includegraphics[]{chapter-currentdetection/figures/SM_JJarrayCPW_vs_I}
+	\includegraphics[width=.5\linewidth]{chapter-currentdetection/figures/SM_JJarrayCPW_vs_I}
 	\caption{
 		\textbf{Bias current tuning of the \SI{1}{\micro\meter} JJ CPW.}
 		% 
@@ -1453,7 +1470,7 @@ Since Josephson inductance dominates, resulting in the resonance frequency tunin
 	\label{fig:JJCPW-anh}
 \end{figure}
 
-\subsubsection{Analytical model in the limit of large $N$}\label{sec:analytical-largeN}
+\subsection{Analytical model in the limit of large $N$}\label{sec:analytical-largeN}
 
 We now study the fundamental mode ($m=1$) of an array with many unit-cells ($N\gg 1$).
 %
@@ -1475,7 +1492,7 @@ A_1 &\simeq \frac{\hbar^2}{2\phi_0^2L_J }\frac{N^2C_0(L_J+L_0)}{\pi^2}\left(\fra
 \end{align}
 where $\phi_0 = \hbar/2e$ is the reduced flux quantum and we made use of the relation $\sum_{n=1}^N \cos(n\pi/N)^4=3N/8$.
 
-\subsubsection{Alternative derivation}
+\subsection{Alternative derivation}
 
 We assume that the fundamental cavity mode $m=1$ of the JJ array CPW has current antinodes at both ends, i.e. we are dealing with a $\lambda/2$ cavity such that the resonator length $l_1 = \lambda_1/2$ with the resonance wavelength $\lambda_1$.
 %
@@ -1492,10 +1509,10 @@ For given $C'$, $L'$, $L_J$, $\omega_1$ and $N$, this allows for the calculation
 As we are working with a half-wavelength mode, the basic relation between the resonance frequency and the zero-point fluctuation flux per length in the limit of a continuous flux distribution is given by
 %
 \begin{align}
-\frac{1}{2}\hbar \omega_1 = \int_0^{\lambda_1/2} \frac{\Phi_\text{zpf}'^2}{L_n'} dx
+\frac{1}{2}\hbar \omega_1 = \int_0^{\lambda_1/2} \frac{\Phi_\mathrm{zpf}'^2}{L_n'} dx
 \end{align}
 %
-where $L_n' = L_n/l$ and $\Phi_\text{zpf}' = \Phi_z'\cos\left(\frac{2\pi}{\lambda_1}x\right)$ is the flux per length of transmission line.
+where $L_n' = L_n/l$ and $\Phi_\mathrm{zpf}' = \Phi_z'\cos\left(\frac{2\pi}{\lambda_1}x\right)$ is the flux per length of transmission line.
 %
 This corresponds to
 %

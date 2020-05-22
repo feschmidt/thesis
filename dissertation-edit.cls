@@ -11,7 +11,7 @@
 \RequirePackage{amsmath}
 \RequirePackage{amssymb}
 %% English is the default language, but Dutch is used for some sections.
-\RequirePackage[dutch,english,ngerman]{babel}
+\RequirePackage[ngerman,dutch,english]{babel}
 \RequirePackage{calc}
 \RequirePackage[nooneline,footnotesize,font={sf,small},labelfont={sf,bf}]{caption}
 %\RequirePackage{chapterbib} %% for individual reference sections per chapter
@@ -59,7 +59,7 @@
 \RequirePackage{graphicx}% Include figure files
 \RequirePackage{dcolumn}% Align table columns on decimal point
 \RequirePackage{bm}% bold math
-\RequirePackage{hyperref}% add hypertext capabilities
+\RequirePackage[]{hyperref}% add hypertext capabilities
 \RequirePackage{textcomp}
 \RequirePackage[mode=text]{siunitx} % see https://tex.stackexchange.com/questions/423711/text-font-in-maths-mode-with-siunitx
 \DeclareSIUnit{\sqrthz}{\ensuremath{\sqrt{\text{\hertz}}}}
@@ -170,7 +170,7 @@
 %\definecolor{mLightBrown}{HTML}{EB811B}
 %\definecolor{mLightGreen}{HTML}{14B03D}
 \definecolor{mDarkTeal}{cmyk}{0.4068,0.0678,0.0000,0.7686}
-\definecolor{mLightBrown}{cmyk}{0.00,0.27,1.00,0.00}
+\definecolor{mLightBrown}{cmyk}{0.00,0.27,1.00,0.13}
 
 %% Use TU Delft cyan as the color for titles, unless the 'print' option is
 %% specified, in which case we use anthracite, a dark gray, which is also used
