@@ -1,36 +1,35 @@
 
 .PHONY: force-build
 
-all: dissertation.pdf
+all: diss props
 
 force-build:
 
-dissertation.pdf: force-build
-	pdflatex --interaction=batchmode dissertation
-	bibtex dissertation
-	bibtex chapter-introduction/introduction
-	bibtex chapter-theory/theory
-	bibtex chapter-experimental-methods/experiment
-	bibtex chapter-gJJ/gJJ
-	bibtex chapter-MoRe/moredna
-	bibtex chapter-AlJJ/AlJJ
-	bibtex chapter-currentdetection/currentdetection
-	pdflatex --interaction=batchmode dissertation
-	pdflatex --interaction=batchmode dissertation
+diss: dissertation.pdf
+	pdflatex dissertation.tex
+	bibtex dissertation.aux
+	pdflatex --interaction=batchmode dissertation.tex
+	pdflatex dissertation.tex
+	make viewdiss
 
-propositions.pdf: force-build
-	xelatex propositions
-	xelatex propositions
+props: propositions.pdf
+	pdflatex propositions.tex
+	make viewprops
 
+viewall: viewdiss viewprops
 
-view:
-	xdg-open dissertation.pdf
+viewdiss:
+	open dissertation.pdf &
 
-view2:
-	xdg-open dissertation.out.pdf
+viewprops:
+	open propositions.pdf &
 
 compress:
 	bash src/compress.sh
 
 clean:
 	bash src/cleanup.sh
+
+testdiss: dissertation.pdf
+	pdflatex --interaction=batchmode dissertation.tex
+	bibtex dissertation.aux
