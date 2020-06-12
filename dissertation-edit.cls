@@ -80,6 +80,8 @@
 \RequirePackage{csquotes}
 \RequirePackage{marvosym}
 \RequirePackage{fontawesome}
+% https://tex.stackexchange.com/questions/371622/how-to-get-cross-references-to-multiple-figures/484089
+\newcommand{\multiref}[2]{\ref{#1}--\ref{#2}} % from - to
 
 \definecolor{dkgreen}{rgb}{0,0.6,0}
 \definecolor{gray}{rgb}{0.5,0.5,0.5}

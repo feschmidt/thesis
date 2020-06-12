@@ -152,14 +152,14 @@ Here, Cooper pairs can tunnel from one superconductor through the barrier to the
 The current flowing across this type of junction is given by the junction's current phase relation (CPR), which for an SIS JJ reads
 %
 \begin{align}
-I_J^{\rm SIS}(\delta) &= I_c\sin\delta \ ,
+I_\text{J}^{\rm SIS}(\delta) &= I_\text{c}\sin\delta \ ,
 \end{align}
 %
-with the critical current $I_c$.
+with the critical current $I_\text{c}$.
 
 The situation is different in the case in which the weak link consists of a normal metal between two superconducting banks, an SNS junction.
 %
-To support a supercurrent, the length of the normal metal must be smaller than the coherence length in the normal region, $L<\xi_N$, which in fact is much longer than the maximum thickness of the insulating barrier in the case of an SIS junction, where the thickness has to be smaller than the superconducting coherence length, $t\ll\xi_S$~\cite{caladoBallisticJosephsonJunctions2015d,benshalomQuantumOscillationsCritical2015}.
+To support a supercurrent, the length of the normal metal must be smaller than the coherence length in the normal region, $L<\xi_\text{N}$, which in fact is much longer than the maximum thickness of the insulating barrier in the case of an SIS junction, where the thickness has to be smaller than the superconducting coherence length, $t\ll\xi_\text{S}$~\cite{caladoBallisticJosephsonJunctions2015d,benshalomQuantumOscillationsCritical2015}.
 %
 The process of Andreev reflection at the interface between superconductors and normal metals lays the basis for understanding how an SNS junction works~\cite{blonderTransitionMetallicTunneling1982c}.
 %
@@ -197,7 +197,7 @@ Inside the normal region, this will result in the formation of the so-called And
 
 The current-phase relation in SNS junctions takes on a significantly different form than the sinusoidal one in SIS junctions:
 %
-For the simplest case of a one-dimensional SNS junction with perfect contact transparency $\tau_c=1$ at the SN interface, each Andreev bound state has a ground state energy
+For the simplest case of a one-dimensional SNS junction with perfect contact transparency $\tau_\text{c}=1$ at the SN interface, each Andreev bound state has a ground state energy
 %
 \begin{align}
 E_{i}^{\rm ABS} = -\Delta\sqrt{1-T_i\sin^2 (\delta/2)}
@@ -206,36 +206,36 @@ E_{i}^{\rm ABS} = -\Delta\sqrt{1-T_i\sin^2 (\delta/2)}
 %
 with the gap energy in the superconducting regions $\Delta$ and channel transparency $T_i$, where $T_i$ takes into account scattering inside the normal region~\cite{beenakkerUniversalLimitCriticalcurrent1991,titovJosephsonEffectBallistic2006b}.
 %
-Scattering at the SN interface, i.e. $\tau_c<1$, is not taken into account here in this simplified picture, as there is no closed analytical expression~\cite{blonderTransitionMetallicTunneling1982c}.
+Scattering at the SN interface, i.e. $\tau_\text{c}<1$, is not taken into account here in this simplified picture, as there is no closed analytical expression~\cite{blonderTransitionMetallicTunneling1982c}.
 %
 The energy of the excited ABS has opposite sign.
 %
 Summing over all channels in the junction, the total Josephson potential is given by
 %
 \begin{align}
-U_J(\delta) = 1-\sum_i E_{i}^{\rm ABS} \approx E_J \frac{\delta^2}{2} - E_J\left( 1-\frac{3\sum T_i^2}{4\sum T_i} \right) \frac{\delta^4}{24} +\mathcal{O}(\delta^6)%\ , \\
-%E_J &= \frac{\Delta}{4}\sum_i T_i \rightarrow \frac{\Delta}{4}N\tau
+U_\text{J}(\delta) = 1-\sum_i E_{i}^{\rm ABS} \approx E_\text{J} \frac{\delta^2}{2} - E_\text{J}\left( 1-\frac{3\sum T_i^2}{4\sum T_i} \right) \frac{\delta^4}{24} +\mathcal{O}(\delta^6)%\ , \\
+%E_\text{J} &= \frac{\Delta}{4}\sum_i T_i \rightarrow \frac{\Delta}{4}N\tau
 \end{align}
 %
 where we Taylor-expanded Eq.~\ref{eq:ABS}~\cite{kringhojAnharmonicitySuperconductingQubit2018}.
 %
-In the limit of low $T_i$, i.e. for an SIS junction, the energy would be given simply by $U_J^{\rm SIS}(\delta)=1-E_J\cos(\delta)\approx E_J\delta^2/2-E_J\delta^4/24$.
+In the limit of low $T_i$, i.e. for an SIS junction, the energy would be given simply by $U_\text{J}^{\rm SIS}(\delta)=1-E_\text{J}\cos(\delta)\approx E_\text{J}\delta^2/2-E_\text{J}\delta^4/24$.
 %
 Compared to the SIS case, we therefore find that the Josephson energy is reduced by a fraction depending on the channel transparency which will become important for gatemon qubits, cf. Ref.~\cite{kringhojAnharmonicitySuperconductingQubit2018} and Chapter~\ref{chap:gJJ-CPR}.
 %
 We plot the ground and excited state energies of the ABS in Fig.~\ref{fig:modelsnsejic}(a).
 %
-With increasing channel transmission, $U_J$ exhibits stronger modulation and a closing band gap at $\delta=\pi$ with minimum separation $2\Delta\sqrt{1-\tau}$.
+With increasing channel transmission, $U_\text{J}$ exhibits stronger modulation and a closing band gap at $\delta=\pi$ with minimum separation $2\Delta\sqrt{1-\tau}$.
 
 The corresponding relation between Josephson current and the respective phase drop across the one-dimensional SNS JJ is 
 \begin{align}
-I(\delta) = \frac{2e}{\hbar}\frac{\partial U_J}{\partial\delta} = \frac{e\Delta}{2\hbar}\sum_i\frac{T_i\sin(\delta)}{\sqrt{1-T_i\sin^2(\delta/2)}}
+I(\delta) = \frac{2e}{\hbar}\frac{\partial U_\text{J}}{\partial\delta} = \frac{e\Delta}{2\hbar}\sum_i\frac{T_i\sin(\delta)}{\sqrt{1-T_i\sin^2(\delta/2)}}
 \end{align}
 
 In addition, we can ascribe an inductance value to the JJ, given by
 %
 \begin{align}
-L_J(\delta) &= \frac{\hbar}{2e}\left( \frac{\partial I_J}{\partial\delta} \right)^{-1} = \left(\frac{\hbar}{2e}\right)^2\left(\frac{\partial^2U_J}{\partial\delta^2}\right)^{-1} \nonumber\\
+L_\text{J}(\delta) &= \frac{\hbar}{2e}\left( \frac{\partial I_\text{J}}{\partial\delta} \right)^{-1} = \left(\frac{\hbar}{2e}\right)^2\left(\frac{\partial^2U_\text{J}}{\partial\delta^2}\right)^{-1} \nonumber\\
 &= \frac{4\hbar^2}{e^2\Delta}\sum_i \frac{\left(1-T_i\sin^2(\delta/2)\right)^{3/2}}{4T_i\cos(\delta)\left(1-T_i\sin^2(\delta/2)\right)+T_i^2\sin^2(\delta)}
 \end{align} 
 %
@@ -247,7 +247,7 @@ We can conclude two things:
 %
 First, the larger the channel transmission, the stronger the forward skew of the current phase relation and corresponding deviation to the SIS case.
 %
-Second, while also strongly nonlinear, the Josephson inductance of SNS junctions is significantly reduced compared to the SIS case, $L_J^{\rm SIS}=\hbar(2eI_c\cos\delta)^{-1}$.
+Second, while also strongly nonlinear, the Josephson inductance of SNS junctions is significantly reduced compared to the SIS case, $L_\text{J}^{\rm SIS}=\hbar(2eI_\text{c}\cos\delta)^{-1}$.
 %
 Since exact knowledge of the Josephson inductance is critical for operating transmon qubits, these deviations need to be investigated for future applications. 
 
@@ -267,7 +267,7 @@ Since exact knowledge of the Josephson inductance is critical for operating tran
 		%
 		Increasing transmission increases both amplitude and forward skewing of the CPR.
 		%
-		\textbf{(c)} Josephson inductance as a function of phase normalized to the one at maximum $L_J$.
+		\textbf{(c)} Josephson inductance as a function of phase normalized to the one at maximum $L_\text{J}$.
 		%
 		Due to the increased CPR slope for increasing $\tau$ around $\delta=0$, the Josephson inductance decreases significantly.
 	}
@@ -282,13 +282,13 @@ If the junction is sufficiently wide that the transport is no longer strictly on
 %
 The same holds for the case of long compared to short junctions, cf. Fig.~\ref{fig:modelsubgap}:
 %
-This can be understood qualitatively by an effective energy $E_{\rm Th^*}=\hbar v_F/\Lambda<\Delta$ governing transport inside the junction, analogously to the Thouless energy~\cite{benshalomQuantumOscillationsCritical2015,schmidtBallisticGrapheneSuperconducting2018}, with an effective length scale $\Lambda=L/\tau$ and the Fermi velocity $v_F$.
+This can be understood qualitatively by an effective energy $E_{\rm Th^*}=\hbar v_\text{F}/\Lambda<\Delta$ governing transport inside the junction, analogously to the Thouless energy~\cite{benshalomQuantumOscillationsCritical2015,schmidtBallisticGrapheneSuperconducting2018}, with an effective length scale $\Lambda=L/\tau$ and the Fermi velocity $v_\text{F}$.
 %
-In the case of a very wide junction, the transverse Thouless energy $E_{\rm Th^*}^\parallel=\hbar v_F/\Lambda_\parallel$ with $\Lambda_\parallel=W/\tau$ needs to be introduced.
+In the case of a very wide junction, the transverse Thouless energy $E_{\rm Th^*}^\parallel=\hbar v_\text{F}/\Lambda_\parallel$ with $\Lambda_\parallel=W/\tau$ needs to be introduced.
 %
 The lower this energy, the longer the dwell time of ABS inside the normal region, hence their lower energy.
 %
-Finally, reduced contact transparency $\tau_c<1$ at the SN interface leads to the ABS detaching from the bulk gap at $\Delta$ even for zero phase difference~\cite{bretheauTunnellingSpectroscopyAndreev2017a}.
+Finally, reduced contact transparency $\tau_\text{c}<1$ at the SN interface leads to the ABS detaching from the bulk gap at $\Delta$ even for zero phase difference~\cite{bretheauTunnellingSpectroscopyAndreev2017a}.
 
 
 Figure~\ref{fig:modelsubgap} shows the calculated subgap density of states (DOS) for a exemplary graphene Josephson junction in the short and long regime, i.e. $L_N\ll\xi$ and $L_N>\xi$.
@@ -328,7 +328,7 @@ These DC bias microwave circuits are described in the following section.
 		%
 		Using Eq.~\ref{eq:intro-s11}, we can model the absolute value \textbf{(a)}, phase \textbf{(b)} and real and imaginary parts \textbf{(c)} of the reflection coefficient of a DC bias cavity.
 		%
-		Colors denote the various coupling types: blue: critically coupled $\kappa_e/\kappa_i=1$, orange: undercoupled $\kappa_e/\kappa_i=0.1$, green: overcoupled $\kappa_e/\kappa_i=10$.
+		Colors denote the various coupling types: blue: critically coupled $\kappa_\text{e}/\kappa_\text{i}=1$, orange: undercoupled $\kappa_\text{e}/\kappa_\text{i}=0.1$, green: overcoupled $\kappa_\text{e}/\kappa_\text{i}=10$.
 		%
 		Strongest signal modulation in $\abs{S_{11}}$ is achieved for critical coupling, while the other two cases have an identical minimum reflection coefficient.
 	}
@@ -361,61 +361,61 @@ A second port is supplied to tune the DUT with a gate voltage.
 The reflection coefficient of this circuit is given by
 %
 \begin{align}
-S_{11}=-1+\frac{2\kappa_e}{\kappa_e+\kappa_i+2i\Delta}
+S_{11}=-1+\frac{2\kappa_\text{e}}{\kappa_\text{e}+\kappa_\text{i}+2i\Delta}
 \label{eq:intro-s11}
 \end{align}
 %
-with the internal and external loss rates $\kappa_i$ and $\kappa_e$ and the detuning $\Delta=\omega-\omega_0$~\cite{bosmanBroadbandArchitectureGalvanically2015c}.
+with the internal and external loss rates $\kappa_\text{i}$ and $\kappa_\text{e}$ and the detuning $\Delta=\omega-\omega_0$~\cite{bosmanBroadbandArchitectureGalvanically2015c}.
 %
-In Fig.~\ref{fig:s11} we plot the reflection coefficient for various fractions of $\eta =\kappa_e/\kappa_i$, to illustrate the effects of over-, under- and critical coupling ($\eta >1$, $\eta <1$ and $\eta =1$, respectively).
+In Fig.~\ref{fig:s11} we plot the reflection coefficient for various fractions of $\eta =\kappa_\text{e}/\kappa_\text{i}$, to illustrate the effects of over-, under- and critical coupling ($\eta >1$, $\eta <1$ and $\eta =1$, respectively).
 %
-For the signal to be strongest in terms of $\abs{S_{11}}$, i.e. the absorption dip reaching zero, the shunt capacitor $C_s$ should be designed such that $\kappa_e=\kappa_i$, with the external loss rate approximately given by
+For the signal to be strongest in terms of $\abs{S_{11}}$, i.e. the absorption dip reaching zero, the shunt capacitor $C_\text{s}$ should be designed such that $\kappa_\text{e}=\kappa_\text{i}$, with the external loss rate approximately given by
 %
 \begin{align}
-\kappa_e &= \frac{\omega_0}{Q_e} = \frac{2}{\pi\omega_0Z_0^2C_s^2}
+\kappa_\text{e} &= \frac{\omega_0}{Q_e} = \frac{2}{\pi\omega_0Z_0^2C_\text{s}^2}
 \label{eq:intro-kappae}
 \end{align}
 %
 with external quality factor $Q_e$ and transmission line impedance $Z_0$.
 %
-Due to stray inductance of the shunt capacitor, there is an upper limit to the maximum feasible $C_s$ we can use while keeping the self-resonance of the latter well above $\omega_0$.
+Due to stray inductance of the shunt capacitor, there is an upper limit to the maximum feasible $C_\text{s}$ we can use while keeping the self-resonance of the latter well above $\omega_0$.
 %
 In practice, this limits $Q_e$ to approximately \num{100e3}.
 %
 However, when placing a JJ at the end of the TL, the internal loss rate can rise significantly.
 %
-For this reason, we typically design our circuits such that they would be overcoupled in the case of a short to ground instead of a JJ, anticipating a rise in $\kappa_i$.
+For this reason, we typically design our circuits such that they would be overcoupled in the case of a short to ground instead of a JJ, anticipating a rise in $\kappa_\text{i}$.
 
 
-\begin{figure}
+\begin{figure}[t]
 	\centering
 	\includegraphics[width=\linewidth]{chapter-introduction/figs/model_DC_bias_cavity_params_RCSJ.pdf}
 	\caption{
 		\textbf{DC bias cavity shorted to ground by a parametrized top-gated graphene Josephson junction.}
 		%
-		For simulating the device in QUCS, we ignored $L_g$ and $C_g$ and used the following parameters (unless swept):
+		For simulating the device in QUCS, we ignored $L_\text{g}$ and $C_\text{g}$ and used the following parameters (unless swept):
 		%
-		$Z_0=Z_0^\prime=\SI{50}{\ohm}$, $C_s=\SI{60}{\pico\farad}$, $l=\SI{6}{\milli\meter}/\sqrt{\epsilon_r}$ with the dielectric constant of silicon $\epsilon_r=11.7$, $\alpha=1.002$,  $L_J=\SI{36}{\pico\henry}$, $C_J=\SI{1}{\femto\farad}$, $R_{\rm sg}=\SI{1}{\mega\ohm}$.
+		$Z_0=Z_0^\prime=\SI{50}{\ohm}$, $C_\text{s}=\SI{60}{\pico\farad}$, $l=\SI{6}{\milli\meter}/\sqrt{\epsilon_\text{r}}$ with the dielectric constant of silicon $\epsilon_\text{r}=11.7$, $\alpha=1.002$,  $L_\text{J}=\SI{36}{\pico\henry}$, $C_\text{J}=\SI{1}{\femto\farad}$, $R_{\rm sg}=\SI{1}{\mega\ohm}$.
 		%
 		\textbf{(a)} Fully parametrized circuit model.
 		%
-		The transmission line is described by length $l$, inductance and capacitance per unit length $L^\prime$ and $C^\prime$ and attenuation $\alpha$, and is coupled to an input impedance $Z_0^\prime$ via a shunt capacitance $C_s$.
+		The transmission line is described by length $l$, inductance and capacitance per unit length $L^\prime$ and $C^\prime$ and attenuation $\alpha$, and is coupled to an input impedance $Z_0^\prime$ via a shunt capacitance $C_\text{s}$.
 		%
-		The Josephson junction is modeled as a network of linear lead inductance $L_g$ together with an RCSJ model of subgap-resistance $R_{\rm sg}$, junction capacitance $C_J$, nonlinear inductance $L_J$ and gate capacitance $C_g$.
+		The Josephson junction is modeled as a network of linear lead inductance $L_\text{g}$ together with an RCSJ model of subgap-resistance $R_{\rm sg}$, junction capacitance $C_\text{J}$, nonlinear inductance $L_\text{J}$ and gate capacitance $C_\text{g}$.
 		%
 		\textbf{(b)} Resonance frequency versus Josephson inductance with the other parameters fixed.
 		%
-		Depending on the junction impedance, the fundamental cavity mode changes from $\lambda/2$ (small $L_J$) to $\lambda/4$ (large $L_J$).
+		Depending on the junction impedance, the fundamental cavity mode changes from $\lambda/2$ (small $L_\text{J}$) to $\lambda/4$ (large $L_\text{J}$).
 		%
 		\textbf{(c,d)} Influence on subgap resistance on internal quality factor and resonance frequency.
 		%
-		Small $R_{\rm sg}$ corresponds to a short, large $R_{\rm sg}$ to an open to ground in parallel to $L_J$.
+		Small $R_{\rm sg}$ corresponds to a short, large $R_{\rm sg}$ to an open to ground in parallel to $L_\text{J}$.
 		%
 		In both cases, the internal losses of the circuit are dominated by the transmission line attenuation.
 		%
 		For intermediate values of $R_{\rm sg}$, significant resistive damping effectively suppresses the circuit response.
 		%
-		Panel \textbf{(d)} also illustrates the shift of $f_0$ when changing the boundary condition of the circuit, similar to the one due to $L_J$ in panel \textbf{(b)}.
+		Panel \textbf{(d)} also illustrates the shift of $f_0$ when changing the boundary condition of the circuit, similar to the one due to $L_\text{J}$ in panel \textbf{(b)}.
 	}
 	\label{fig:TLmodel}
 \end{figure}
@@ -427,10 +427,10 @@ We do this by measuring a combination of open and shorted references device with
 %
 Equipped with these values, we can proceed to study the influence JJ on the microwave circuit:
 %
-With an added Josephson junction with inductance $L_J$ shorting the TL to ground, and neglecting $R_{\rm sg}$ and $C_{J}$, the shifted resonance frequency can be approximated by
+With an added Josephson junction with inductance $L_\text{J}$ shorting the TL to ground, and neglecting $R_{\rm sg}$ and $C_{J}$, the shifted resonance frequency can be approximated by
 %
 \begin{align}
-\omega_0^\prime = \omega_0\frac{L_r+L_J}{L_r+2L_J}
+\omega_0^\prime = \omega_0\frac{L_r+L_\text{J}}{L_r+2L_\text{J}}
 \label{eq:intro-omega0p}
 \end{align}
 %
@@ -440,11 +440,11 @@ A complete analytical model of an RSCJ model parametrizing the JJ can be used fo
 %
 For very small $R_{\rm sg}$, the Josephson inductance is effectively short-circuited, so both $Q_i$ and $f_0$ approach the limit of no JJ.
 %
-On the other hand, very large $R_{\rm sg}$ implies an open circuit with no losses other than the ones in the TL resonator, again approaching $Q_i$ of the bare cavity and $f_0$ shifting the the value due to the added $L_J$.
+On the other hand, very large $R_{\rm sg}$ implies an open circuit with no losses other than the ones in the TL resonator, again approaching $Q_i$ of the bare cavity and $f_0$ shifting the the value due to the added $L_\text{J}$.
 %
 Intermediate resistance values suppress the resonance entirely.
 %
-The shift in $f_0$ for large $R_{\rm sg}$ shows the frequency shift induced by $L_J$.
+The shift in $f_0$ for large $R_{\rm sg}$ shows the frequency shift induced by $L_\text{J}$.
 
 
 

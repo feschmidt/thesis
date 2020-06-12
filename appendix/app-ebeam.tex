@@ -1,10 +1,10 @@
 \newchapstyle
-\chapter{Tips for operating the TU Delft Kavli Nanolab EBPGs}
+\chapter{Tips for operating the EBPGs at the TU Delft Kavli Nanolab}
 \label{app:ebeam}
 %% Start the actual chapter on a new page.
 \afterpage{\pagecolor{none}}\newpage
 
-\section{Height adjustment}
+\section{Height adjustment}\label{sec:height}
 %
 When mounting chips on the EBPG sample holder, the chip needs to be held in place by clamps, while the holder height, tilt and rotation can be adjusted using micrometer screws.
 %
@@ -212,7 +212,7 @@ For most precise alignment (specs of the EBPG5000 and 5200 are below \SI{10}{\na
 	%
 	\item For alignment down to approximately \SI{1}{\micro\meter}, it is not necessary to put all of your pattern inside an area enclosed by your markers. 
 	%
-	For a \SI{10x10}{\milli\meter} chip, you can for example place your markers at $\pm$\SI{3000}{\micro\meter},$\pm$\SI{4000}{\micro\meter} and still expose and align all the way to the outside of the chip edge (with worse alignment the further outside the marker area you expose)
+	For a \SI{10x10}{\milli\meter} chip, you can for example place your markers at $\pm$\SI{3000}{\micro\meter}, $\pm$\SI{4000}{\micro\meter} and still expose and align all the way to the outside of the chip edge (with worse alignment the further outside the marker area you expose)
 \end{itemize}
 
 \subsection{Example workflow of high-accuracy alignment on a big chip}
@@ -241,7 +241,7 @@ Note that every single pattern is different from the others, so we cannot simply
 %
 Since we have several chips on the big one, we will first get the mapping of the entire big chip. 
 %
-For this, we find the four outermost markers, which in this case is RN20 at ($\pm6500,\pm8100$), cf. Fig.~\ref{fig:ebeam2}.
+For this, we find the four outermost markers, which in this case is RN20 at ($\pm$6500,$\pm$8100), cf. Fig.~\ref{fig:ebeam2}.
 
 \begin{figure}
 	\centering
@@ -296,15 +296,17 @@ Marker search starts in line 1831:
 %
 Clearly, there was some misalignment between the actual marker position and the one specified for the job (\SI{10}{\micro\meter} in x, \SI{0.3}{\micro\meter} in y).
 %
-Next, the marker search continues with the other three markers (ll. 1875-1909):
+Note that the EBPG already compensates for the measured sample height at the marker (l.~1838) (see also Sec.~\ref{sec:height}).
+%
+Next, the marker search continues with the other three markers (ll.~1875-1909):
 %
 \lstinputlisting[firstline=1875,lastline=1909,firstnumber=1875,numbers=left]{appendix/1809-3_shapingARP_2018-11-14_170455.log}
 %
 We can see that the EBPG found all three markers, but it detected significant shifts:
 \begin{itemize}
-	\item Marker 1 was found at -6522.129, 8099.725 versus at -6500.000, 8100.000 (\SI{17.8}{\micro\meter}, \SI{0.3}{\micro\meter})
-	\item Marker 2 was found at 6477.666, 8117.098 versus at 6500.000, 8100.000 (\SI{22.4}{\micro\meter},\SI{17.1}{\micro\meter})
-	\item Marker 3 was found found at 6499.656, -8083.052 versus at 6500.000, -8100.000 (\SI{0.4}{\micro\meter}, \SI{17}{\micro\meter})
+	\item Marker 1 was found at -6522.129, 8099.725 versus at -6500.000, 8100.000 (\SI{22.1}{\micro\meter}, \SI{0.3}{\micro\meter})
+	\item Marker 2 was found at 6477.666, 8117.098 versus at 6500.000, 8100.000 (\SI{22.3}{\micro\meter},\SI{17.1}{\micro\meter})
+	\item Marker 3 was found found at 6499.656, -8083.052 versus at 6500.000, -8100.000 (\SI{0.3}{\micro\meter}, \SI{16.9}{\micro\meter})
 \end{itemize}
 This implies nonnegligible scaling and rotation.
 %
@@ -314,15 +316,15 @@ These shifts can be reduced if you do the rotation alignment very precise.
 %
 I seemed to have been a bit sloppy here, but the EBPG can still account for this without any problems.
 
-The EBPG then continues with searching the markers in the second step, at the layout patterns (ll. 2744-2801):
+The EBPG then continues with searching the markers in the second step, at the layout patterns (ll.~2744-2801):
 %
 \lstinputlisting[firstline=2744,lastline=2801,firstnumber=2744,numbers=left]{appendix/1809-3_shapingARP_2018-11-14_170455.log}
 %
-Obviously, the first alignment on the exposure level was already quite good, since we now already have alignment precision to our marker positions on the sub-micron level. 
+Obviously, the first alignment on the exposure level was already quite good, since we now already have alignment precision to our marker positions on the sub-micron level.~
 %
 This is good enough for most cases, but not for multi-step patterns at with submicron dimension which require very precise feature alignment, in this case below \SI{100}{\nano\meter}.
 
-As a last step, we search for the RN10 markers at the pattern level (ll. 2840-2895):
+As a last step, we search for the RN10 markers at the pattern level (ll.~2840-2895):
 %
 \lstinputlisting[firstline=2840,lastline=2895,firstnumber=2840,numbers=left]{appendix/1809-3_shapingARP_2018-11-14_170455.log}
 %

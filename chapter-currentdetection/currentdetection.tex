@@ -19,9 +19,9 @@
 	%
 	We derive an analytical model to reproduce the measurements over a wide range of bias currents, detunings and input powers.
 	% 
-	Tuning the frequency of the cavity by more than \SI{100}{\mega\hertz} with DC current, our device achieves a minimum current sensitivity of \SI{8.9}{\pico\ampere\per\hertz\tothe{1/2}}.
+	Tuning the frequency of the cavity by more than \SI{100}{\mega\hertz} with DC current, our device achieves a minimum current sensitivity of \SI{8.9}{\pico\ampere/\sqrthz}.
 	% 
-	Extrapolating the results of our analytical model, we predict an improved device based on our platform, capable of achieving sensitivities down to \SI{50}{\femto\ampere\per\hertz\tothe{1/2}}, or even lower if one could take advantage of parametric amplification in the Josephson cavity.
+	Extrapolating the results of our analytical model, we predict an improved device based on our platform, capable of achieving sensitivities down to \SI{50}{\femto\ampere/\sqrthz}, or even lower if one could take advantage of parametric amplification in the Josephson cavity.
 	% 
 	Taking advantage of the Josephson architecture, our approach can provide higher sensitivity than kinetic inductance designs, and potentially enables detection of currents ultimately limited by quantum noise.
 \end{abstract}
@@ -37,11 +37,11 @@ Ultra-low noise radiation detection has applications in astronomy, particle phys
 % 
 In particular, transition edge sensors (TES) allow for broadband radiation detection with exceptionally low noise equivalent power~\cite{goldieUltralownoiseMoCuTransition2011} and photon number resolution~\cite{cabreraDetectionSingleInfrared1998,millerDemonstrationLownoiseNearinfrared2003}.
 % 
-To read out the small changes in current of TES in response to radiation absorption, highly sensitive current amplifiers such as superconducting quantum interference devices (SQUIDs) can be used with sensitivities as low as \SI{4}{\femto\ampere\per\hertz\tothe{1/2}}~\cite{gayUltralowNoiseCurrent2000}.
+To read out the small changes in current of TES in response to radiation absorption, highly sensitive current amplifiers such as superconducting quantum interference devices (SQUIDs) can be used with sensitivities as low as \SI{4}{\femto\ampere/\sqrthz}~\cite{gayUltralowNoiseCurrent2000}.
 % 
 However, with the increasing number of TES to be read out simultaneously in multipixel detectors, SQUID amplifiers significantly increase system cost and complexity, especially when employing frequency-domain multiplexing to reduce the number of necessary amplifiers~\cite{hendersonReadoutTwokilopixelTransitionedge2016}.
 
-An example of recently developed current detectors as a replacement of SQUIDs are kinetic inductance parametric upconverters (KPUPs), also referred to as microwave kinetic inductance nanowire galvanometers, which rely on the changing kinetic inductance $L_\text{k}$ of a narrow superconducting wire embedded in a microwave circuit in response to a DC bias current, with state of the art devices reaching current sensitivities $\mathcal{S}_I$ between \SIrange{5}{10}{\pico\ampere\per\hertz\tothe{1/2}}~\cite{kherKineticInductanceParametric2016,doernerCompactMicrowaveKinetic2018,kuzminTerahertzTransitionEdgeSensor2018}.
+An example of recently developed current detectors as a replacement of SQUIDs are kinetic inductance parametric upconverters (KPUPs), also referred to as microwave kinetic inductance nanowire galvanometers, which rely on the changing kinetic inductance $L_\text{k}$ of a narrow superconducting wire embedded in a microwave circuit in response to a DC bias current, with state of the art devices reaching current sensitivities $\mathcal{S}_I$ between \SIrange{5}{10}{\pico\ampere/\sqrthz}~\cite{kherKineticInductanceParametric2016,doernerCompactMicrowaveKinetic2018,kuzminTerahertzTransitionEdgeSensor2018}.
 %
 One could potentially achieve a higher response from such a cavity detector by replacing the nanowire kinetic inductance element with a Josephson junction (JJ), enabling detection of currents using a Jospheson parametric upconverter (JPUP). 
 % 
@@ -329,7 +329,7 @@ The device sensitivities extracted via Eq.~\eqref{eq:sensitivity} are plotted in
 % 
 Linecuts through the 2D measured and simulated data at the best measured value of $\mathcal{S}_I$ show good quantitative agreement between theoretical model and measurement, cf. Figs.~\ref{fig:figure4}(c,d).
 
-For a fixed bias current, the current sensitivity drops exponentially as a function of input power, reaching a minimum value of $\mathcal{S}_I=\SI{8.9}{\pico\ampere\per\hertz\tothe{1/2}}$ at $I_\text{b}=\SI{7.3}{\micro\ampere}$ and $P_\text{in}=\SI{-113}{dBm}$.
+For a fixed bias current, the current sensitivity drops exponentially as a function of input power, reaching a minimum value of $\mathcal{S}_I=\SI{8.9}{\pico\ampere/\sqrthz}$ at $I_\text{b}=\SI{7.3}{\micro\ampere}$ and $P_\text{in}=\SI{-113}{dBm}$.
 % 
 Similarly, as a function of bias current and fixed input power, the current sensitivity drops rapidly over more than two orders of magnitude.
 % 
@@ -354,7 +354,7 @@ Thus, the cavity resonance shifts stronger with pump power and the drive is more
 	\caption{
 		\textbf{Finding the best device sensitivity.}
 		%
-		Current sensitivity in \si{\pico\ampere\per\hertz\tothe{1/2}} versus bias current and input power, as measured (a) and calculated (b).
+		Current sensitivity in \si{\pico\ampere/\sqrthz} versus bias current and input power, as measured (a) and calculated (b).
 		%
 		Dashed grey lines correspond to the linecuts in (c) and (d), circle marks the point of minimum measured sensitivity.
 		%
@@ -394,7 +394,7 @@ Improving the setup should allow us to move to even higher bias currents, gainin
 % 
 In addition, the resonance frequency shift due to anharmonicity places an upper bound on the maximum input power.
 
-In an optimized measurement, shifting the pump frequency with pump power in order to remain closer to resonance should allow us to gain more than \SI{10}{dB}, reaching a minimum of \SI{2.7}{\pico\ampere\per\hertz\tothe{1/2}}, cf. Sec.~\ref{sec:drive_shift} of the Supplemental Material~\cite{SeeSupplementalMaterial}.
+In an optimized measurement, shifting the pump frequency with pump power in order to remain closer to resonance should allow us to gain more than \SI{10}{dB}, reaching a minimum of \SI{2.7}{\pico\ampere/\sqrthz}, cf. Sec.~\ref{sec:drive_shift} of the Supplemental Material~\cite{SeeSupplementalMaterial}.
 
 \subsection{Modeled optimized device}
 
@@ -420,7 +420,7 @@ For an initial resonance frequency at $\omega_0=2\pi\times\SI{7.5}{\giga\hertz}$
 % 
 Such an optimized device offers a significantly larger $G_1\approx\SI{4}{\giga\hertz\per\micro\ampere}$ with a relative frequency shift $\delta\omega_0/\omega_0\approx\SI{50}{\percent}$.
 % 
-Assuming the same internal losses as for our measured device and additionally increasing the external coupling, e.g. by reducing the shunt capacitor to $1/2$ of its current area, this device would be able to achieve sensitivities as low as \SI{0.17}{\pico\ampere\per\hertz\tothe{1/2}}, a factor of 54 improvement to our presented design, as shown in Fig.~\ref{fig:figure5}(b).
+Assuming the same internal losses as for our measured device and additionally increasing the external coupling, e.g. by reducing the shunt capacitor to $1/2$ of its current area, this device would be able to achieve sensitivities as low as \SI{0.17}{\pico\ampere/\sqrthz}, a factor of 54 improvement to our presented design, as shown in Fig.~\ref{fig:figure5}(b).
 
 \begin{figure}[t]
 	\centering
@@ -436,13 +436,13 @@ Assuming the same internal losses as for our measured device and additionally in
 		% 
 		(c) Predicted $\mathcal{S}_I$ for the optimized device.
 		% 
-		Dotted line indicates the minimum experimentally achieved sensitivity of \SI{8.9}{\pico\ampere\per\hertz\tothe{1/2}} with the present design.
+		Dotted line indicates the minimum experimentally achieved sensitivity of \SI{8.9}{\pico\ampere/\sqrthz} with the present design.
 		%
-		For the JJ array CPW, we predict sensitivities as low as \SI{170}{\femto\ampere\per\hertz\tothe{1/2}} (solid line).
+		For the JJ array CPW, we predict sensitivities as low as \SI{170}{\femto\ampere/\sqrthz} (solid line).
 		%
 		The sensitivity curves upwards for high pump powers due to the nonlinearity in the circuit.
 		%
-		Choosing the pump frequency to be continuously close to resonance for high drive powers, the predicted sensitivity would drop down to \SI{50}{\femto\ampere\per\hertz\tothe{1/2}} (dashed line).
+		Choosing the pump frequency to be continuously close to resonance for high drive powers, the predicted sensitivity would drop down to \SI{50}{\femto\ampere/\sqrthz} (dashed line).
 		% 
 		Parametric amplification could reduce the sensitivity one order of magnitude further by reducing the contribution of the noise of the cryogenic HEMT amplifier in the readout noise of the cavity.
 		% 
@@ -452,11 +452,11 @@ Assuming the same internal losses as for our measured device and additionally in
 
 We note that in an ideal experiment, the drive frequency should be tuned for increasing drive power in order to account for the Kerr-shift of the resonance to lower frequencies, thus minimizing $\Delta$ and maximizing $\alpha_0$.
 % 
-Implementing this measurement scheme would allow us to achieve sensitivities down to \SI{50}{\femto\ampere\per\hertz\tothe{1/2}}.
+Implementing this measurement scheme would allow us to achieve sensitivities down to \SI{50}{\femto\ampere/\sqrthz}.
 % 
 Since this estimation does not take parametric amplification into account, we expect it to be an upper bound to the experimentally achievable $\mathcal{S}_I$:
 % 
-Utilizing quantum-limited parametric amplification built into the device would allow us to gain approximately \SI{20}{dB}~\cite{stehlikFastChargeSensing2015,pogorzalekHystereticFluxResponse2017,planatUnderstandingSaturationPower2019}, providing noise levels down to \SI{5}{\femto\ampere\per\hertz\tothe{1/2}}.
+Utilizing quantum-limited parametric amplification built into the device would allow us to gain approximately \SI{20}{dB}~\cite{stehlikFastChargeSensing2015,pogorzalekHystereticFluxResponse2017,planatUnderstandingSaturationPower2019}, providing noise levels down to \SI{5}{\femto\ampere/\sqrthz}.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -464,9 +464,9 @@ Utilizing quantum-limited parametric amplification built into the device would a
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Conclusion}
 
-We presented a Josephson parametric upconverter and demonstrated current sensitivities down to \SI{8.9}{\pico\ampere\per\hertz\tothe{1/2}} which makes our compatible with TES readout, and derived an analytical model that accurately reproduces the measured data and is immediately applicable to other device architectures.
+We presented a Josephson parametric upconverter and demonstrated current sensitivities down to \SI{8.9}{\pico\ampere/\sqrthz} which makes our compatible with TES readout, and derived an analytical model that accurately reproduces the measured data and is immediately applicable to other device architectures.
 % 
-We estimate that future devices using increased Josephson participation ratios, and using the intrinsic Kerr-nonlinearity for four-wave parametric amplification built into the detection cavity, should allow for an improved $\mathcal{S}_I\sim\SI{5}{\femto\ampere\per\hertz\tothe{1/2}}$, orders of magnitude better than state of the art KPUPs and limited by the fundamental quantum noise of the cavity.
+We estimate that future devices using increased Josephson participation ratios, and using the intrinsic Kerr-nonlinearity for four-wave parametric amplification built into the detection cavity, should allow for an improved $\mathcal{S}_I\sim\SI{5}{\femto\ampere/\sqrthz}$, orders of magnitude better than state of the art KPUPs and limited by the fundamental quantum noise of the cavity.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -477,7 +477,7 @@ We estimate that future devices using increased Josephson participation ratios, 
 All raw and processed data as well as supporting code for measurement libraries, data processing and figure generation is available in Zenodo~\cite{schmidtDataProcessingCurrent2020}.
 
 \section*{Acknowledgements}
-This project has received funding from the European Union Horizon 2020 research and innovation programme under grant agreement Nos. 681476 -- QOMD, 732894 -- HOT and 785219 -- GrapheneCore2.
+This project has received funding from the European Union Horizon 2020 research and innovation programme under grant agreement Nos.~681476 -- QOMD, 732894 -- HOT and 785219 -- GrapheneCore2.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -653,9 +653,9 @@ The power dependence, cf. Fig.~\ref{fig:higher-order-peaks}(c), also closely res
 
 %\vspace{1em}
 
-\section{Measurement setup}\label{sec:measurement}
+\subsection{Measurement setup}\label{sec:measurement}
 
-\subsection{Wiring configuration}
+\subsubsection{Wiring configuration}
 
 All measurements were taken with the device mounted to the millikelvin stage of a \textit{Bluefors BF 400-D} dilution refrigerator with a base temperature of approximately \SI{15}{\milli\kelvin}.
 % 
@@ -706,7 +706,7 @@ To reduce the influence of stray magnetic fields, a passive $\mu$-metal shield s
 	\label{fig:setup}
 \end{figure*}
 
-\subsection{Measurement protocol for current detection}
+\subsubsection{Measurement protocol for current detection}
 % 
 The measurements on current detection were performed using the following measurement scheme:
 % 
@@ -734,7 +734,7 @@ The measurements on current detection were performed using the following measure
 	After each pump power measurement, reinitialize the bias current and find the resonance frequency again in order to reduce the number of "dead" cases in which the Josephson junction switched to the voltage state prematurely.
 \end{description}
 
-\subsection{Estimation of the attenuation and amplification chain}\label{sec:attenuation}
+\subsubsection{Estimation of the attenuation and amplification chain}\label{sec:attenuation}
 
 To estimate the attenuation chain, we use the thermal noise of our cryogenic high electron mobility transistor (HEMT) as a calibration source.
 % 
@@ -759,7 +759,7 @@ On the way, the signal will have been reduced by $X {\,\rm dB}$ due to the menti
 
 We deduce the total gain of our amplification chain by calculating the average noise power measured with the SA, $P_\text{N,SA}=\SI{-97.5}{dBm}$ in a \SI{1}{\hertz} bandwidth, and substracting from it the HEMT noise power $P_{\rm N,in}'=\SI{-195.6}{dBm}$ corresponding to the same bandwidth and the cable loss $X=\SI{2}{\decibel}$, resulting in a total gain of \SI{96.1}{\decibel} for the amplifier chain.
 
-\section{Device fabrication}\label{sec:fabrication}
+\subsection{Device fabrication}\label{sec:fabrication}
 
 % 
 The device is fabricated in a four-step process in the \textit{Kavli Nanolab} cleanroom of TU Delft, using a combination of electron beam lithography (EBL, EBPG5000+ from \textit{Raith}), liftoff, sputtering (AC450 from \textit{Alliance}), PECVD (PlasmaPro 80 from \textit{Oxford Instruments}) and dry-etching (Fluorine reactive ion etcher from \textit{Leybold Hereaus}).
@@ -837,9 +837,9 @@ In the following we describe the fabrication step by step.
 	\label{fig:fullchip}
 \end{figure}
 
-\section{General device parameters}\label{sec:general}
+\subsection{General device parameters}\label{sec:general}
 
-\subsection{Reflection coefficient}\label{sec:general-S11}
+\subsubsection{Reflection coefficient}\label{sec:general-S11}
 % 
 The reflection coefficient of a transmission line with a shunt capacitor to ground on the input side and shorted to ground on the far end is given by
 % 
@@ -890,7 +890,7 @@ A result of this fitting procedure, with background removed, is shown in Fig.~\r
 \end{figure}
 
 
-\subsection{Kinetic inductance estimation}\label{sec:Lk}
+\subsubsection{Kinetic inductance estimation}\label{sec:Lk}
 
 % 
 Our AlSi films have a significant kinetic inductance contribution due to their small thickness of only \SI{20}{nm}.
@@ -954,7 +954,7 @@ This supports our claim that we can exclude kinetic inductance as an additional 
 % \end{align}
 % with the flux quantum $\Phi_0=\frac{h}{2e}$ where $h$ is Planck's constant and $e$ the elementary charge.
 
-\subsection{Resonance frequency versus current due to Josephson inductance}\label{sec:resfit}
+\subsubsection{Resonance frequency versus current due to Josephson inductance}\label{sec:resfit}
 
 % 
 Adapting the calculation for a Josephson terminated transmission line cavity given in Ref.~\cite{pogorzalekHystereticFluxResponse2017} to our device, we find for the current dependence of the cavity resonance frequency
@@ -969,7 +969,7 @@ We use this model to fit the measured resonance frequencies and extract $\omega_
 % 
 From the device geometry and kinetic inductance estimation, we expect $L_\text{r}=(L_\text{g}'+L_\text{k}')l=\SI{3.689}{\nano\henry}$, which is in acceptable agreement with the fit value.
 
-\section{On the hysteresis of switching currents in our DC measurements}\label{sec:hysteresis}
+\subsection{On the hysteresis of switching currents in our DC measurements}\label{sec:hysteresis}
 % 
 Accodring to a simple RCSJ model, hysteresis in Josephson junctions should occur only for JJ quality factors $Q=R\sqrt{2eI_\text{c} C_\text{J}/\hbar} > 1$, with the junction capacitance $C_\text{J}$~\cite{tinkhamIntroductionSuperconductivity1996}.
 % 
@@ -987,7 +987,7 @@ Already including a \SI{50}{\micro\meter} portion of the CPW increases $C_\text{
 % 
 Additionally, we note that local heating in the junction area can also play a significant role, reducing $I_\text{r}$ further~\cite{skocpolSelfHeatingHotspots1974,hazraHysteresisSuperconductingShort2010,kumarReversibilitySuperconductingNb2015}.
 
-\section{On the increased loss rates for increased bias current}\label{sec:lossrates}
+\subsection{On the increased loss rates for increased bias current}\label{sec:lossrates}
 
 % 
 We observed an increase in the internal and external loss rates of the JJ terminated device for increased bias current, as can be seen in Fig.~\ref{fig:lossratesvscurrent}(a).
@@ -1099,7 +1099,7 @@ Regarding the increase in internal loss rate, we identified the following mechan
 	\label{fig:50hzinterference}
 \end{figure*}
 
-\section{Estimating the AC current at the junction}\label{sec:accurrent}
+\subsection{Estimating the AC current at the junction}\label{sec:accurrent}
 
 The current along a $\lambda/2$ resonator shorted to ground on both ends is given by
 %
@@ -1136,7 +1136,7 @@ From the impedance of the junction at this operation point $Z_\text{J} \approx \
 The intracavity microwave current is therefore capable of explaining the suppression of the DC critical current (premature switching) with increasing microwave power.
 
 
-\section{Difference between first order red and blue sidebands}\label{sec:bluered}
+\subsection{Difference between first order red and blue sidebands}\label{sec:bluered}
 % 
 As derived in the main text, to first order in $\delta I$, the coefficients describing the sideband amplitudes are
 % 
@@ -1166,7 +1166,7 @@ Our experiments with $\kappa \gtrsim 2\pi\times\SI{750}{\kilo\hertz} \gg \Omega 
 	\caption{
 		\textbf{Comparison of blue and red sideband.}
 		% 
-		Current sensitivity in \si{\pico\ampere\per\hertz\tothe{1/2}} versus bias current and input power, as measured for $-\Omega$ (a, cf. Fig.~\ref{fig:figure4} of the main text) and $+\Omega$ (b).
+		Current sensitivity in \si{\pico\ampere/\sqrthz} versus bias current and input power, as measured for $-\Omega$ (a, cf. Fig.~\ref{fig:figure4} of the main text) and $+\Omega$ (b).
 		% 
 		Dashed grey lines correspond to the linecuts in (c) and (d), circle marks the point of minimum measured sensitivity.
 		% 
@@ -1176,7 +1176,7 @@ Our experiments with $\kappa \gtrsim 2\pi\times\SI{750}{\kilo\hertz} \gg \Omega 
 		% 
 		$\circ$: $-\Omega$ sideband, $\star$: $+\Omega$ sideband.
 		% 
-		Minimum sensitivities are \SI{8.90}{\pico\ampere\per\hertz\tothe{1/2}} and \SI{9.52}{\pico\ampere\per\hertz\tothe{1/2}}, respectively.
+		Minimum sensitivities are \SI{8.90}{\pico\ampere/\sqrthz} and \SI{9.52}{\pico\ampere/\sqrthz}, respectively.
 		% 
 		Within the traced out parameter space, we observed no systematic differences between red and blue first order sidebands.
 	}
@@ -1184,12 +1184,12 @@ Our experiments with $\kappa \gtrsim 2\pi\times\SI{750}{\kilo\hertz} \gg \Omega 
 \end{figure}
 
 
-\section{Current detection in the high power regime}\label{sec:high_powers}
+\subsection{Current detection in the high power regime}\label{sec:high_powers}
 
-\subsection{Driving the cavity on resonance for high powers}\label{sec:drive_shift}
+\subsubsection{Driving the cavity on resonance for high powers}\label{sec:drive_shift}
 To counteract acquired detuning from the downshift in resonance frequency for high pump powers due to the device nonlinearity, in an ideal measurement configuration the drive tone would also be shifted correspondingly.
 % 
-As depicted in Fig.~\ref{fig:Duffing-on-res}, in such a situation, the sideband amplitude would keep increasing by more than \SI{10}{\decibel}, resulting in a minimum $\mathcal{S}_I=\SI{2.6}{\pico\ampere\per\hertz\tothe{1/2}}$.
+As depicted in Fig.~\ref{fig:Duffing-on-res}, in such a situation, the sideband amplitude would keep increasing by more than \SI{10}{\decibel}, resulting in a minimum $\mathcal{S}_I=\SI{2.6}{\pico\ampere/\sqrthz}$.
 
 \begin{figure}
 	\centering
@@ -1210,7 +1210,7 @@ As depicted in Fig.~\ref{fig:Duffing-on-res}, in such a situation, the sideband 
 
 
 
-\subsection{Deviations between data and theory for high powers}\label{sec:deviation_power}
+\subsubsection{Deviations between data and theory for high powers}\label{sec:deviation_power}
 
 We observe deviations between the measured and modelled current sensitivity at high drive powers.
 % 
@@ -1236,7 +1236,7 @@ While in this case the sensitivity is overestimated for small drive powers, the 
 \end{figure}
 
 
-\section{Calculating the current sensitivity}\label{sec:analysis}
+\subsection{Calculating the current sensitivity}\label{sec:analysis}
 
 % 
 The current sensitivity is defined by
@@ -1262,11 +1262,11 @@ For a Gaussian filter such as the one used in our setup, $\text{ENBW}=1.065 \tim
 % 
 In practice, we extract the sideband amplitude from the measured spectra as the peak power value at the expected $\omega_0 \pm m\Omega$ and compute the noise floor as the average of the remaining data points.
 
-\section{Data visualization}
+\subsection{Data visualization}
 
 Our raw measurements include a significant number of outliers in current sensitivity, visible as bright spots and streaks in Fig.~\ref{fig:fig4aclipnointerp}(a).
 % 
-These are due to absent sidebands of all integer multiples of $\Omega$, resulting in apparent negligible SNR and $\mathcal{S}_I > \SI{1000}{\pico\ampere\per\hertz\tothe{1/2}}$ for these operating points.
+These are due to absent sidebands of all integer multiples of $\Omega$, resulting in apparent negligible SNR and $\mathcal{S}_I > \SI{1000}{\pico\ampere/\sqrthz}$ for these operating points.
 % 
 The streaks between \SIrange{7}{8}{\micro\ampere} are due to the pump frequency not correctly adjusted to compensate for the shift due to changing bias current, resulting in very large detuning and undetectable sidebands.
 % 
@@ -1282,7 +1282,7 @@ To exclude these outliers from further analysis, we chose to discard data points
 	\caption{
 		\textbf{Interpolating the dataset.}
 		% 
-		Raw (a) and interpolated (b) measured current sensitivities in \si{\pico\ampere\per\hertz\tothe{1/2}} of the $-1\Omega$ sideband for all applied bias currents and pump powers.
+		Raw (a) and interpolated (b) measured current sensitivities in \si{\pico\ampere/\sqrthz} of the $-1\Omega$ sideband for all applied bias currents and pump powers.
 		% 
 		Outliers with large values of $\mathcal{S}_I$ are due to off-resonant drive tones (streaks) or absent LF modulation (speckles) due to errors in the measurement setup, resulting in no mixing at all (see text for details).
 		% 
@@ -1291,7 +1291,7 @@ To exclude these outliers from further analysis, we chose to discard data points
 	\label{fig:fig4aclipnointerp}
 \end{figure}
 
-\section{Modeling the Josephson array CPW}\label{sec:optimized}
+\subsection{Modeling the Josephson array CPW}\label{sec:optimized}
 
 To model a Josephson junction array transmission line resonator, we use $N$ unit cells of length $l$, a transmission line inductance per unit length $L'$, a capacitance per unit length $C'$ and a lumped element Josephson inductance $L_\text{J}$, as depicted in Fig.~\ref{fig:JJCPW-sketch} and Fig.~\ref{fig:figure5}(a) of the main text.
 %
@@ -1314,7 +1314,7 @@ Each unit cell has the inductance $L_n = L' l + L_\text{J}=L_0+L_\text{J}$ and t
 	\label{fig:JJCPW-sketch}
 \end{figure}
 
-\subsection{Full analytical model}\label{sec:analytical}
+\subsubsection{Full analytical model}\label{sec:analytical}
 
 In order to derive an analytical model, we follow the approach to circuit quantization presented in Ref.~\cite{gelyQuCATQuantumCircuit2019}.
 %
@@ -1524,7 +1524,7 @@ Since Josephson inductance dominates, resulting in the resonance frequency tunin
 	\label{fig:JJCPW-anh}
 \end{figure}
 
-\subsection{Analytical model in the limit of large $N$}\label{sec:analytical-largeN}
+\subsubsection{Analytical model in the limit of large $N$}\label{sec:analytical-largeN}
 
 We now study the fundamental mode ($m=1$) of an array with many unit-cells ($N\gg 1$).
 %
@@ -1546,7 +1546,7 @@ A_1 &\simeq \frac{\hbar^2}{2\phi_0^2L_\text{J} }\frac{N^2C_0(L_\text{J}+L_0)}{\p
 \end{align}
 where $\phi_0 = \hbar/2e$ is the reduced flux quantum and we made use of the relation $\sum_{n=1}^N \cos(n\pi/N)^4=3N/8$.
 
-\subsection{Alternative derivation}
+\subsubsection{Alternative derivation}
 
 We assume that the fundamental cavity mode $m=1$ of the JJ array CPW has current antinodes at both ends, i.e. we are dealing with a $\lambda/2$ cavity such that the resonator length $l_1 = \lambda_1/2$ with the resonance wavelength $\lambda_1$.
 %
