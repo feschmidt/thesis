@@ -473,10 +473,12 @@ We estimate that future devices using increased Josephson participation ratios, 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section*{Data availability}
+
+\section{Methods}
+\subsection{Data availability}
 All raw and processed data as well as supporting code for measurement libraries, data processing and figure generation is available in Zenodo~\cite{schmidtDataProcessingCurrent2020}.
 
-\section*{Acknowledgements}
+\subsection{Acknowledgements}
 This project has received funding from the European Union Horizon 2020 research and innovation programme under grant agreement Nos.~681476 -- QOMD, 732894 -- HOT and 785219 -- GrapheneCore2.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -485,7 +487,7 @@ This project has received funding from the European Union Horizon 2020 research 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %\appendix
 
-\section{Input-output formalism}\label{app:inputoutput}
+\subsection{Input-output formalism}\label{app:inputoutput}
 
 Starting from Eq.~\eqref{eq:Duffing-EOM}, with the steady-state solution $\alpha_0$, the reflection coefficient is given by
 % 
@@ -549,7 +551,7 @@ S_{\pm 1} = \frac{\sqrt{\kappa_\text{e}}\alpha_0 G_1 I_\text{LF}}{-i\kappa+2(\De
 
 We calculated all $a_{\pm m}$ coefficients up to $m=3$ using \textit{Mathematica} v11.3.0.0 in the notebook \texttt{input-output formalism.nb}, which we subsequently converted to \textit{python3} code using the notebook \texttt{Export to Python.nb} located in Zenodo~\cite{schmidtDataProcessingCurrent2020}.
 
-\section{Calculating the steady-state solution}\label{sec:Duffing}
+\subsection{Calculating the steady-state solution}\label{sec:Duffing}
 % 
 We can calculate $\alpha_0$ by solving Eq.~\eqref{eq:Duffing-EOM} for a large pump signal and treating the probe as a perturbation.
 % 
@@ -590,7 +592,7 @@ Furthermore, taking the resonance frequency as the point where $\partial\alpha_0
 \end{align}
 
 
-\section{Higher order terms}\label{app:higher-orders}
+\subsection{Higher order terms}\label{app:higher-orders}
 % 
 Already for second order in $\delta I$, the prefactors are too complicated to write down in a short form, which is why we refer to the full analytical solutions in the \textit{Mathematica} notebook \texttt{input-output formalism.nb} located on Zenodo~\cite{schmidtDataProcessingCurrent2020}.
 % 

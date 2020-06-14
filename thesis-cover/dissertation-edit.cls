@@ -59,7 +59,7 @@
 \RequirePackage{graphicx}% Include figure files
 \RequirePackage{dcolumn}% Align table columns on decimal point
 \RequirePackage{bm}% bold math
-\RequirePackage{hyperref}% add hypertext capabilities
+\RequirePackage[]{hyperref}% add hypertext capabilities
 \RequirePackage{textcomp}
 \RequirePackage[mode=text]{siunitx} % see https://tex.stackexchange.com/questions/423711/text-font-in-maths-mode-with-siunitx
 \DeclareSIUnit{\sqrthz}{\ensuremath{\sqrt{\text{\hertz}}}}
@@ -80,6 +80,8 @@
 \RequirePackage{csquotes}
 \RequirePackage{marvosym}
 \RequirePackage{fontawesome}
+% https://tex.stackexchange.com/questions/371622/how-to-get-cross-references-to-multiple-figures/484089
+\newcommand{\multiref}[2]{\ref{#1}--\ref{#2}} % from - to
 
 \definecolor{dkgreen}{rgb}{0,0.6,0}
 \definecolor{gray}{rgb}{0.5,0.5,0.5}

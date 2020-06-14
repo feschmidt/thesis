@@ -145,7 +145,7 @@
 \def\titleshape{\scshape}
 \def\titlestyle{\titlefont\titleshape\bfseries}
 \if@print
-\def\headerstyle{\titlefont\titleshape\bfseries}
+\def\headerstyle{\titlefont\titleshape\bfseries\color{title}}
 \else
 \def\headerstyle{\titlefont\titleshape}
 

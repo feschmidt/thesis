@@ -138,15 +138,15 @@ BN-G-BN structures are formed by repeated pick-and-place of SLG and few-layer BN
 %
 The process makes use of the change in viscoelasticity of an adhesive film on top of an elastic cushion of polydimethylsiloxane (PDMS), which is stuck to a microscope glass slide.
 %
-Heating this transfer template above the glass transition temperature $T_g$ of the polymer expands the cushion and allows the adhesive film to become viscous, thus conforming and adhering strongly to flakes covered by it.
+Heating this transfer template above the glass transition temperature $T_\text{g}$ of the polymer expands the cushion and allows the adhesive film to become viscous, thus conforming and adhering strongly to flakes covered by it.
 %
-Cooling below $T_g$ then solidifies the polymer and flakes will be picked up by lifting the transfer template.
+Cooling below $T_\text{g}$ then solidifies the polymer and flakes will be picked up by lifting the transfer template.
 
 We used two different adhesive films, either polypropylene carbonate (PPC) or polybisphenol carbonate (PC).
 %
-We prepared the PPC solution by dissolving PPC acquired from \textit{SigmaAldrich}\footnote{Poly(propylene carbonate), average $M_n\sim50,000$ by GPC. SigmaAldrich product no. 389021, CAS 25511-85-7, MDL MFCD00197919} at a \SI{15}{\percent} weight ratio in anisole\footnote{Anisole, ReagentPlus\textsuperscript{\textregistered}, \SI{99}{\percent}. SigmaAldrich product no. 123226, CAS 100-66-3, MDL MFCD00008354} at \SI{50}{\celsius}, while stirring with a fish magnet until everything was properly dissolved.
+We prepared the PPC solution by dissolving PPC acquired from \textit{SigmaAldrich}\footnote{Poly(propylene carbonate), average $M_\text{n}\sim50,000$ by GPC. SigmaAldrich product no. 389021, CAS 25511-85-7, MDL MFCD00197919} at a \SI{15}{\percent} weight ratio in anisole\footnote{Anisole, ReagentPlus\textsuperscript{\textregistered}, \SI{99}{\percent}. SigmaAldrich product no. 123226, CAS 100-66-3, MDL MFCD00008354} at \SI{50}{\celsius}, while stirring with a fish magnet until everything was properly dissolved.
 %
-The PC\footnote{Poly(Bisphenol A carbonate), average $m_W\sim 45,000$ by GPC. SigmaAldrich product no. 181625, CAS 25037-45-0, MDL MFCD00084476} was dissolved in chloroform\footnote{Chloroform, anhydrous, $\geq\SI{99}{\percent}$, contains \SIrange{0.5}{1.0}{\percent} ethanol as stabilizer. SigmaAldrich product no. 288306, CAS 67-66-3, MDL MFCD00000826} at a \SI{6}{\percent} weight ratio.
+The PC\footnote{Poly(Bisphenol A carbonate), average $m_\text{W}\sim 45,000$ by GPC. SigmaAldrich product no. 181625, CAS 25037-45-0, MDL MFCD00084476} was dissolved in chloroform\footnote{Chloroform, anhydrous, $\geq\SI{99}{\percent}$, contains \SIrange{0.5}{1.0}{\percent} ethanol as stabilizer. SigmaAldrich product no. 288306, CAS 67-66-3, MDL MFCD00000826} at a \SI{6}{\percent} weight ratio.
 %
 While PPC requires lower working temperatures than PC, thus making it easier to align template and substrate, we have observed that temperatures above \SI{110}{\celsius} resulted in fewer bubbles at the flake interfaces during transfer.
 %
@@ -238,7 +238,7 @@ For flake transfer using PC, we follow the above steps, except that the transfer
 		% 
 		\textbf{(e)} Polymer brought in contact with exfoliated flake on substrate at room temperature.
 		% 
-		\textbf{(f)} Heating substrate above glass transition temperature $T_g$ enhances the adhesion of the flake to the polymer significantly above the adhesion to the substrate.
+		\textbf{(f)} Heating substrate above glass transition temperature $T_\text{g}$ enhances the adhesion of the flake to the polymer significantly above the adhesion to the substrate.
 		% 
 		\textbf{(g)} Subsequent cooling of the substrate leads to stiffening of the polymer.
 		% 
@@ -300,7 +300,7 @@ For these reasons, every single gJJ has to be designed by hand, since it is impo
 %
 After stack placement on the final chip, we took several optical and atomic force microscope images to determine the graphene location with respect to alignment marks, and to identify bubble-free areas, cf. Fig~\ref{fig:fab-hetero-challenge}(b).
 %
-These combined images are loaded into the CAD software (we highly recommend \textit{KLayout}, or \textit{LibreCAD} as an alternative) to design the electrodes and gates for the gJJ, as shown in Fig~\ref{fig:fab-hetero-challenge}(c).
+These combined images are loaded into the CAD software (we highly recommend \textit{KLayout}\footnote{\url{https://www.klayout.de}}, or alternatively \textit{LibreCAD}\footnote{\url{https://librecad.org}}) to design the electrodes and gates for the gJJ, as shown in Fig~\ref{fig:fab-hetero-challenge}(c).
 
 \begin{figure}
 	\centering
@@ -339,7 +339,7 @@ Compared to fabrication on oxidized silicon, we encountered numerous challenges 
 %
 We chose NbTiN as superconductor for the contacts to graphene after the MoRe target in our lab ran empty, and since the use of NbTiN was well established in the neighboring group of Leo Kouwenhoven~\cite{popinciucZerobiasConductancePeak2012,mourikSignaturesMajoranaFermions2012}.
 
-We found that for ebeam lithography on sapphire substrates, a conductive charging layer on top of the bilayer PMMA in the form of Electra 92 (AllResist AR-PC 5091) was crucial to create high-resolution patterns, such as Josephson junctions with length x width of \SI{0.5x5}{\micro\meter}.
+We found that for ebeam lithography on sapphire substrates, a conductive charging layer on top of the bilayer PMMA in the form of Electra 92 (AllResist AR-PC 5091) was crucial to create high-resolution patterns, such as Josephson junctions with length by width of \SI{0.5x5}{\micro\meter}.
 %
 Without a conductive layer, the resist would consistently be exposed in the center of the junction, leading to a nano-short at this spot, cf. Fig.~\ref{fig:fabgJJchallenges}(a-c).
 %
@@ -410,9 +410,9 @@ The final process flow is shown in Fig.~\ref{fig:fabgJJ}(a-f) and Tab.~\ref{tab:
 %
 As a trade-off between strong superconducting coupling and reliable sample fabrication, we designed all gJJ to be \SI{500}{\nano\meter} long.
 %
-Cross-sectional SEM showed side-angles of approximately \SI{60}{\degree} at the contact interfaces, allowing for good overlap between metal contacts and graphene layer.
+Cross-sectional SEM showed side-angles of approximately \SI{60}{\degree} at the contact interfaces (cf. Fig.~\ref{fig:fabgJJ}(g)), allowing for good overlap between metal contacts and graphene layer.
 %
-We chose hydrogen silsesquioxane (HSQ, \ce{[HSiO3/2]_n}, \cite{namatsuThreedimensionalSiloxaneResist1998}) as a spin-on gate dielectric due to its process reversibility, good step coverage and straightforward thickness variability.
+We chose hydrogen silsesquioxane (HSQ, \ce{[HSiO3/2]_n}~\cite{namatsuThreedimensionalSiloxaneResist1998}) as a spin-on gate dielectric due to its process reversibility, good step coverage and straightforward thickness variability.
 %
 HSQ needs to be stored in a fridge, like Electra 92, and has to be warmed up to room temperature before applying on the sample.
 %
@@ -429,7 +429,7 @@ Once BN-G heterostructures would stick to the sapphire chip, and including the u
 		% 
 		\textbf{(a-c)} Due to the insulating nature of sapphire, ebeam patterning can lead to the substrate charging up and overexposing parts of the resist. 
 		% 
-		After developing \textbf{(a)}, dark spots in the resist in the gap center indicate developed resist.
+		After developing \textbf{(a)}, dark spots in the resist in the gap center are due to developed resist due to charging effects.
 		%
 		\textbf{(b)} After etching and lift-off, the junction is shorted in the center and dog-ears are visible to the right side, standing up.
 		% 
@@ -459,11 +459,11 @@ Once BN-G heterostructures would stick to the sapphire chip, and including the u
 		% 
 		Careful etch-rate calibration is required to not under-etch for good contact to the graphene while not over-etching so that enough PMMA is left for successful liftoff.
 		% 
-		\textbf{(c)} Sample after metallization and lift-off.
+		\textbf{(c)} Sample after metallization and lift-off, with etch mask for shaping the stack into the final shape.
 		% 
 		\textbf{(d)} Sample after patterning into rectangular shape.
 		%
-		Only the gJJ remains.
+		Only the gJJ slab remains.
 		%
 		\textbf{(e)} Bilayer HSQ covering the stack and metal leads as an insulating gate dielectric.
 		% 
@@ -529,7 +529,7 @@ Once BN-G heterostructures would stick to the sapphire chip, and including the u
 \end{table}
 
 
-%\clearpage
+\clearpage
 \subsection{Fabrication of DC bias cavities}\label{sec:fabRF}
 
 The process for fabricating DC bias cavities consists of three main steps:
@@ -551,74 +551,15 @@ We found this to be problematic when patterning the base layer using dry etching
 %
 In this case, depositing a dielectric fill layer in the gaps slightly extending above the step edges, resulted in reliable device yield.
 
-
-
-%\noindent
-\begin{table}
-	\caption{
-		\textbf{Fabrication of DC-bias superconducting microwave cavities.}
-		%
-		This is the recipe for the circuits in Chapters~\ref{chap:gJJ} and \ref{chap:gJJ-CPR}.
-	}
-	\label{tab:fabRF}
-\begin{tabularx}{\textwidth}{@{}cY@{}}
-	\hline \hline
-	\textbf{1.} & \textbf{Deposit and pattern MoRe base layer} \\
-	\hline 
-	Metal deposition & \SI{60}{\nano\meter} MoRe, \SI{100}{\watt}, \SI{60}{sccm} Argon flow. \\
-	%\hline
-	Ebeam resist & AR-P 6200.13 (CSAR), \SI{4000}{rpm}, bake \SI{3}{\minute} at \SI{155}{\celsius}. \\
-	%\hline
-	Ebeam patterning & \SI{300}{\micro\coulomb\per\centi\meter\squared}. \\
-	%\hline
-	Development & Pentylacetate for \SI{60}{\second}, MIBK:IPA (1:1) for \SI{30}{\second}, IPA for \SI{15}{\second}. \\
-	%\hline
-	Dry etching & \ce{SF6 + He} \SI{12.5}{sccm}+\SI{10}{sccm} @ \SI{50}{\watt}, \SI{10}{\micro\bar} \\
-	%\hline
-	Liftoff & hot PRS~3000 @ \SI{88}{\celsius} for a few hours, rinsing in IPA \\
-	\hline
-	
-	\textbf{2.} & \textbf{Deposit and pattern dielectric layer for shunt capacitor} \\
-	\hline 
-	Dielectric deposition & PECVD \SI{70}{\nano\meter} of \ce{Si3N4} @ \SI{300}{\celsius}. \\
-	%\hline
-	Ebeam resist & AR-N 7700.18, \SI{3000}{rpm}, bake \SI{1}{\minute} at \SI{90}{\celsius}. \\
-	%\hline
-	Ebeam patterning & \SI{210}{\micro\coulomb\per\centi\meter\squared}. \\
-	%\hline
-	Development & MF321 for \SI{60}{\second}, MF321:\ce{H2O} (1:10) for \SI{15}{\second} (twice), \ce{H2O} for \SI{15}{\second}. \\
-	%\hline
-	Wet etching & BOE \SI{1}{\minute} \\
-	%\hline
-	Strip resist & hot PRS~3000 @ \SI{88}{\celsius} for a few hours, rinsing in IPA \\
-	\hline
-	
-	\textbf{3.} & \textbf{Deposit top metal plate of shunt capacitor} \\
-	\hline 
-	Ebeam resist (1/2) & PMMA 495 A4, \SI{4000}{rpm}, bake \SI{10}{\minute} at \SI{185}{\celsius}. \\
-	%\hline
-	Ebeam resist (2/2) & PMMA 950 A3, \SI{4000}{rpm}, bake \SI{10}{\minute} at \SI{185}{\celsius}. \\
-	%\hline
-	Ebeam patterning & \SI{1400}{\micro\coulomb\per\centi\meter\squared}. \\
-	%\hline
-	Development & MIBK:IPA (1:3) for \SI{90}{\second}+ IPA \SI{30}{\second}. \\
-	%\hline
-	Metal deposition & \SI{100}{\nano\meter} MoRe as described above. \\
-	%\hline
-	Lift-off & hot PRS~3000 @ \SI{88}{\celsius} for a few hours, rinsing in IPA \\
-	\hline\hline
-\end{tabularx}
-\end{table}
-
 Instead of wet-etching the shunt capacitor dielectric, dry-etching using a \ce{CHF3 + O2} plasma at \SI{60}{\watt} power and base pressure of \SI{50}{\micro\bar} yielded comparable results.
 %
 However, the combination of plasma etching with negative ebeam resist often resulted in teflonization of the latter, severely complicating resist stripping afterwards.
 %
 This can be avoided by either in-situ \ce{O2} ashing, or by applying a thin PMMA layer below the negative ebeam resist, which can be stripped off the sample much easier.
 %
-From a safety perspective, the plasma etch process is to be preferred over the use of BOE due to the much lower risk to the operator's safety.
+From a safety perspective, the plasma etch process is to be preferred over the use of BOE due to the much lower risk to the operator.
 %
-Additionally, even though wet-etching seems to be a cleaner process compared to dry-etching, the obtained microwave properties of samples fabricated using BOE did not reliably surpass those of dry-etched devices.
+Additionally, even though wet-etching seems to be a cleaner process compared to dry-etching, the obtained microwave properties of samples fabricated using BOE did not consistently surpass those of dry-etched devices.
 
 \begin{figure}
 	\centering
@@ -637,13 +578,70 @@ Additionally, even though wet-etching seems to be a cleaner process compared to 
 	\label{fig:biascavityfab}
 \end{figure}
 
+%\noindent
+\begin{table}
+	\caption{
+		\textbf{Fabrication of DC-bias superconducting microwave cavities.}
+		%
+		This is the recipe for the circuits in Chapters~\ref{chap:gJJ} and \ref{chap:gJJ-CPR}.
+	}
+	\label{tab:fabRF}
+	\begin{tabularx}{\textwidth}{@{}cY@{}}
+		\hline \hline
+		\textbf{1.} & \textbf{Deposit and pattern MoRe base layer} \\
+		\hline 
+		Metal deposition & \SI{60}{\nano\meter} MoRe, \SI{100}{\watt}, \SI{60}{sccm} Argon flow. \\
+		%\hline
+		Ebeam resist & AR-P 6200.13 (CSAR), \SI{4000}{rpm}, bake \SI{3}{\minute} at \SI{155}{\celsius}. \\
+		%\hline
+		Ebeam patterning & \SI{300}{\micro\coulomb\per\centi\meter\squared}. \\
+		%\hline
+		Development & Pentylacetate for \SI{60}{\second}, MIBK:IPA (1:1) for \SI{30}{\second}, IPA for \SI{15}{\second}. \\
+		%\hline
+		Dry etching & \ce{SF6 + He} \SI{12.5}{sccm}+\SI{10}{sccm} @ \SI{50}{\watt}, \SI{10}{\micro\bar} \\
+		%\hline
+		Liftoff & hot PRS~3000 @ \SI{88}{\celsius} for a few hours, rinsing in IPA \\
+		\hline
+		
+		\textbf{2.} & \textbf{Deposit and pattern dielectric layer for shunt capacitor} \\
+		\hline 
+		Dielectric deposition & PECVD \SI{70}{\nano\meter} of \ce{Si3N4} @ \SI{300}{\celsius}. \\
+		%\hline
+		Ebeam resist & AR-N 7700.18, \SI{3000}{rpm}, bake \SI{1}{\minute} at \SI{90}{\celsius}. \\
+		%\hline
+		Ebeam patterning & \SI{210}{\micro\coulomb\per\centi\meter\squared}. \\
+		%\hline
+		Development & MF321 for \SI{60}{\second}, MF321:\ce{H2O} (1:10) for \SI{15}{\second} (twice), \ce{H2O} for \SI{15}{\second}. \\
+		%\hline
+		Wet etching & BOE \SI{1}{\minute} \\
+		%\hline
+		Strip resist & hot PRS~3000 @ \SI{88}{\celsius} for a few hours, rinsing in IPA \\
+		\hline
+		
+		\textbf{3.} & \textbf{Deposit top metal plate of shunt capacitor} \\
+		\hline 
+		Ebeam resist (1/2) & PMMA 495 A4, \SI{4000}{rpm}, bake \SI{10}{\minute} at \SI{185}{\celsius}. \\
+		%\hline
+		Ebeam resist (2/2) & PMMA 950 A3, \SI{4000}{rpm}, bake \SI{10}{\minute} at \SI{185}{\celsius}. \\
+		%\hline
+		Ebeam patterning & \SI{1400}{\micro\coulomb\per\centi\meter\squared}. \\
+		%\hline
+		Development & MIBK:IPA (1:3) for \SI{90}{\second}+ IPA \SI{30}{\second}. \\
+		%\hline
+		Metal deposition & \SI{100}{\nano\meter} MoRe as described above. \\
+		%\hline
+		Lift-off & hot PRS~3000 @ \SI{88}{\celsius} for a few hours, rinsing in IPA \\
+		\hline\hline
+	\end{tabularx}
+\end{table}
+
 The RF circuits in Chapters~\ref{chap:gJJ} and \ref{chap:gJJ-CPR} are fabricated as listed in Tab~\ref{tab:fabRF}, while the one in Chapter~\ref{chap:currentdetection} used Al:Si as superconducting layer and silicon as substrate and dielectric layer.
 %
-In terms of internal quality factor $Q_i=\omega_0/\kappa_i$, the best devices with sapphire substrate and MoRe base layer showed $Q_i\approx\num{41e3}$, while DC bias cavities out of aluminum on silicon substrates and shunt dielectric had $Q_i\approx\num{29e3}$.
+In terms of internal quality factor $Q_\text{i}=\omega_0/\kappa_\text{i}$, the best devices with sapphire substrate and MoRe base layer showed $Q_\text{i}\approx\num{41e3}$, while DC bias cavities out of aluminum on silicon substrates and shunt dielectric had $Q_\text{i}\approx\num{29e3}$.
 %
 While not used for further measurements in this thesis, the reproducibly highest internal quality factors were achieved with sputter-deposited NbTiN on silicon after intensive wafer cleaning by our collaborators at \textit{SRON}~\cite{thoenSuperconductingNbTinThin2017}, and \ce{Si3N4} as dielectric with BOE patterning.
 %
-Figure~\ref{fig:s11NbTiN} shows the resulting reflection measurement of the best measured sample (cf. Fig.~\ref{fig:biascavityfab}(c)), with an internal quality factor $Q_i\approx\num{82439}$.
+Figure~\ref{fig:s11NbTiN} shows the resulting reflection measurement of the best measured sample (cf. Fig.~\ref{fig:biascavityfab}(c)), with an internal quality factor $Q_\text{i}\approx\num{82439}$.
 %
 In comparison, $\lambda/4$ side-coupled resonators from the same wafer fabricated in a single step exhibited internal quality factors exceeding 1 million.
 
@@ -669,7 +667,7 @@ This could protect the surrounding circuitry and potentially reduce internal cir
 		%
 		Data (blue points) and fit (orange line) to the absolute value \textbf{(a)}, phase \textbf{(b)} and real and imaginary parts \textbf{(c)} of the reflection coefficient of a DC bias cavity with NbTiN base layer on silicon, the device in Fig.~\ref{fig:biascavityfab}(c).
 		%
-		The internal and external quality factors are $Q_i\approx\num{82439}$ and $Q_i\approx\num{41209}$.
+		The internal and external quality factors are $Q_\text{i}\approx\num{82439}$ and $Q_\text{i}\approx\num{41209}$.
 	}
 	\label{fig:s11NbTiN}
 \end{figure}

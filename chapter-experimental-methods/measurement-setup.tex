@@ -33,7 +33,7 @@ However, we noticed that this lead to cross-talk of devices across the entire ch
 %
 To mitigate this spurious coupling, we removed most of the copper base to leave only two thin rails behind, to which the chips are glued with GE low temperature varnish.
 % 
-Wirebonding is done using a \textit{Westbond 4000 "E"} system from \textit{West•Bond Inc.} with bond wires from an AlSi alloy (\SI{99}{\percent}-\SI{1}{\percent}).
+Wirebonding is done using a \textit{Westbond 4000 \enquote{E}} system from \textit{West•Bond Inc.} with bond wires from an AlSi alloy (\SI{99}{\percent}-\SI{1}{\percent}).
 % 
 To ensure good thermalization and electrical contact, we usually used three to four bonds for each bond pad, and as many bonds as would fit on the ground planes.
 % 
@@ -115,7 +115,7 @@ The origin of these excitations in the so-called Johnson-Nyquist noise due to th
 \end{tabular}
 \end{table}
 
-In order to neglect the influence of thermal effects on our circuits and for the superconductor to be in its thermal ground state, it is necessary to operate the devices at temperatures $T \ll T_c$.
+In order to neglect the influence of thermal effects on our circuits and for the superconductor to be in its thermal ground state, it is necessary to operate the devices at temperatures $T \ll T_\text{c}$.
 %
 Since the superconducting gap voltages of \ce{NbTiN}, \ce{MoRe} and \ce{Al} are \SI{2.3}{\milli\electronvolt}, \SI{1.5}{\milli\electronvolt} and \SI{183}{\micro\electronvolt}, respectively, our experiments require access to the sub-Kelvin regime which is enabled by using dilution refrigerators.
 %
@@ -168,7 +168,7 @@ These consist of a long PCB trace encased in a copper box, which is filled with 
 		%
 		The PCB trace is approximately \SI{50}{\centi\meter} long.
 		%
-		\textbf{(d)} Photograph of a two-stage RC filter of SMD 0812 elements and a fully assembled copper powder filter.
+		\textbf{(d)} Photograph of a two-stage RC filter of SMD 0812 elements and a fully assembled copper powder filter (see Appendix \ref{app:copperpowder} for details).
 	}
 	\label{fig:filterDC}
 \end{figure}
@@ -177,7 +177,7 @@ We can estimate the effect of attenuation on the electron noise temperature~\cit
 %
 With the Bose-Einstein distribution
 \begin{align}
-n_{\rm BE}(f,T)=\frac{1}{e^{hf/k_B T}-1}\label{eq:nBE}
+n_{\rm BE}(f,T)=\frac{1}{e^{hf/k_\text{B} T}-1}\label{eq:nBE}
 \end{align}
 we can calculate the photon flux at frequency $f$ due to thermal noise coming from $T_1$ transmitted through a bath at $T_2$ with transmission $\tau$ with the rate equation
 \begin{align}
@@ -185,7 +185,7 @@ n_{\rm ph}(f,T_1,T_2,\tau)=\tau n_{\rm BE}(f,T_1)+(1-\tau)n_{\rm BE}(f,T_2)\labe
 \end{align}
 The noise temperature of the corresponding photon flux is then
 \begin{align}
-T_{n}=\frac{hf}{k_B\ln\left(\frac{n_{\rm ph}+1}{n_{\rm ph}}\right)}
+T_{n}=\frac{hf}{k_\text{B}\ln\left(\frac{n_{\rm ph}+1}{n_{\rm ph}}\right)}
 \label{eq:Tnoise}
 \end{align}
 
@@ -196,7 +196,9 @@ T_{n}=\frac{hf}{k_B\ln\left(\frac{n_{\rm ph}+1}{n_{\rm ph}}\right)}
 		\textbf{Reducing noise temperature through attenuation.}
 		\textbf{(a,b)} Calculated noise temperature \textbf{(a)} and corresponding photon flux \textbf{(b)} of the DC lines using typical low-pass filters for attenuation.
 		%
-		\textbf{(c,d)} Calculated noise temperature \textbf{(c)} and corresponding photon flux \textbf{(d)} of the RF lines using attenuators of \SI{3}{dB}, \SI{6}{dB}, \SI{10}{dB}, \SI{20}{dB}, and between \SIrange{3}{20}{dB} at the \SI{50}{\kelvin}, \SI{4}{\kelvin}, \SI{1}{\kelvin}, \SI{100}{\milli\kelvin} and \SI{15}{\milli\kelvin} stage, respectively.
+		\textbf{(c,d)} Calculated noise temperature \textbf{(c)} and corresponding photon flux \textbf{(d)} of the RF lines using attenuators of \SI{3}{dB}, \SI{6}{dB}, \SI{10}{dB}, \SI{20}{dB} at the \SI{50}{\kelvin}, \SI{4}{\kelvin}, \SI{1}{\kelvin}, \SI{100}{\milli\kelvin}, stages, respectively, together with additional attenuation between \SIrange{3}{20}{dB} at the \SI{15}{\milli\kelvin} stage.
+		%
+		Dashed black lines indicate a noise temperature of \SI{15}{\milli\kelvin} and the corresponding thermal photon flux.
 	}
 	\label{fig:noisefull}
 \end{figure}

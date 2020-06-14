@@ -91,21 +91,21 @@ To minimize the risk of encountering these issues, the following points should a
 
 \begin{figure}
 	\centering
-	\includegraphics[width=0.3\linewidth]{{appendix/figs/stitching/Image_2019}.png}
+	\includegraphics[width=0.3\linewidth]{{appendix/figs/stitching/Image_2019.svg}.png}
 	\hfill
-	\includegraphics[width=0.3\linewidth]{{appendix/figs/stitching/Image_21071}.png}
+	\includegraphics[width=0.3\linewidth]{{appendix/figs/stitching/Image_21071.svg}.png}
 	\hfill
-	\includegraphics[width=0.3\linewidth]{{appendix/figs/stitching/Image_21825}.png}	
+	\includegraphics[width=0.3\linewidth]{{appendix/figs/stitching/Image_21825.svg}.png}	
 	\caption{
 		\textbf{Stitching errors encountered on the EBPG5000+.}
 		%
-		Parts of the pattern are offset from each other, leading to severe defects in the circuit pattern.
+		Parts of the pattern are unexposed (left, as marked by the black ellipsoids) or offset from each other (center and right, marked by ellipsoids and arrows), leading to severe defects in the circuit pattern.
 	}
 	\label{fig:stitching}
 \end{figure}
 
 \section{Ebeam alignment}
-We here provide information, tips and tricks on how ebeam alignment works and how to implement it reliably on the Raith EBPG 5000+ and 5200 in the TU Delft Kavli cleanroom.
+Here, we provide information, tips and tricks on how ebeam alignment works and how to implement it reliably on the Raith EBPG 5000+ and 5200 in the TU Delft Kavli cleanroom.
 %
 This is important because when writing patterns onto a chip, you will need to specify the location of where on the chip you want your pattern to be.
 %
@@ -215,7 +215,7 @@ For most precise alignment (specs of the EBPG5000 and 5200 are below \SI{10}{\na
 	For a \SI{10x10}{\milli\meter} chip, you can for example place your markers at $\pm$\SI{3000}{\micro\meter}, $\pm$\SI{4000}{\micro\meter} and still expose and align all the way to the outside of the chip edge (with worse alignment the further outside the marker area you expose)
 \end{itemize}
 
-\subsection{Example workflow of high-accuracy alignment on a big chip}
+\subsection{Example workflow of high-accuracy alignment on a large chip}
 %
 This is an example workflow from Felix' device \textit{1809.3} exposed on 14 November 2018 at 17:04:55.
 %
@@ -239,7 +239,7 @@ Note that every single pattern is different from the others, so we cannot simply
 
 \subsubsection{First step: Alignment at the exposure level}
 %
-Since we have several chips on the big one, we will first get the mapping of the entire big chip. 
+Since we have several chips on the big one, we will first get the mapping of the entire large chip. 
 %
 For this, we find the four outermost markers, which in this case is RN20 at ($\pm$6500,$\pm$8100), cf. Fig.~\ref{fig:ebeam2}.
 
@@ -252,7 +252,7 @@ For this, we find the four outermost markers, which in this case is RN20 at ($\p
 
 \subsubsection{Second step: Alignment at the layout level}
 %
-Now that we have the general orientation of our big chip, we go into each of the four sub-chips and align the beam to four chip-markers. 
+Now that we have the general orientation of our large chip, we go into each of the four sub-chips and align the beam to four chip-markers. 
 %
 For the bottom-left chip, this is for example RN20 at (-6500,-8100), (-6500,-1900), (-3500,-1900), (-3500,-8100), cf. Fig.~\ref{fig:ebeam3}.
 %
