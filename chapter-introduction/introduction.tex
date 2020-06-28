@@ -15,11 +15,11 @@
 
 \section{Computing with semi- and superconducting circuits}
 
-The invention of the metal oxide semiconductor field-effect transistor (MOSFET, cf. Fig.~\ref{fig:introcomputing}(a)) lay the ground to the information age, in large parts shaping the world to be what we know it as today.
+The invention of the metal oxide semiconductor field-effect transistor (MOSFET, cf. Fig.~\ref{fig:introcomputing}(a)) laid the ground for the information age, in large parts shaping the world to be what we know it as today.
 %
 Pushed by continuous advances in material sciences, solid state physics and electrical engineering, the MOSFET is now the building block of all commercial computers.
 %
-Owed largely by the success of scalability from integrated circuits, today's state-of-the-art microprocessors can host more than 39.54 billion transistors on a single chip, with physical dimensions down to a few tens of nanometers, cf. Fig.~\ref{fig:introcomputing}(b)~\cite{mujtabaAMDEPYCRome2019}.
+Owing largely to the success of scalability from integrated circuits, today's state-of-the-art microprocessors can host more than 39.54 billion transistors on a single chip, with physical dimensions down to a few tens of nanometers, cf. Fig.~\ref{fig:introcomputing}(b)~\cite{mujtabaAMDEPYCRome2019}.
 %
 With the increasing transistor density and shrinking physical dimensions came however the realization, that alternative computation architectures to the one based on semiconducting transistors might be needed to satisfy society's desire for computation power, as there might be a limit to how dense logic circuits could be packed with current technology.
 %
@@ -28,7 +28,7 @@ The slowing of Moore's law, originally predicting the doubling of transistor chi
 
 Already before the invention of the MOSFET, circuits on the basis of superconducting switches called \enquote{cryotrons} were envisioned as a competitive alternative to semiconducting computers~\cite{buckCryotronASuperconductiveComputer1956,brockWillNSAFinally}.
 %
-The discovery of Josephson junctions (JJs), weak links between two superconductors, depicted in Fig.~\ref{fig:introcomputing}(e), in 1962~\cite{josephsonPossibleNewEffects1962,andersonProbableObservationJosephson1963} spured additional interest due to their sensitive nature to magnetic flux, low power consumption and high switching speeds~\cite{mcdonaldPicosecondApplicationsJosephson1980}.
+The discovery of Josephson junctions (JJs), weak links between two superconductors, depicted in Fig.~\ref{fig:introcomputing}(e), in 1962~\cite{josephsonPossibleNewEffects1962,andersonProbableObservationJosephson1963} spured additional interest due to the possibility of sensing extremely small magnetic fields, their low power consumption and high switching speeds~\cite{mcdonaldPicosecondApplicationsJosephson1980}.
 %
 In parallel to the development of MOSFETs, Josephson junctions were hence envisioned as building blocks for superconducting logic circuits, with IBM being one of the main drivers at the time~\cite{anackerJosephsonComputerTechnology1980a}.
 %
@@ -41,16 +41,19 @@ The late twentieth century then saw the birth of first prototypes for a quantum 
 %
 Since then, global tech companies like IBM, Google, Microsoft and Intel are all heavily invested in this architecture, each following a slightly different path~\cite{steffenQuantumComputingIBM2011,aruteQuantumSupremacyUsing2019,linnNewMicrosoftBreakthroughs2020,vandersypenQuantumComputingSemiconductor2019}.
 %
-Superconducting quantum processors based on Josephson junctions embedded in microwave (MW) circuits, as pursued by IBM and Google, have culminated in the milestone \enquote{quantum supremacy}, i.e. the threshold at which a quantum processor can execute an algorithm that would be prohibitively costly in terms of computing time and money for a classical computer to perform~\cite{aruteQuantumSupremacyUsing2019}.
+Superconducting quantum processors based on Josephson junctions embedded in microwave (MW) circuits, as pursued by IBM and Google, have culminated in the milestone of \enquote{quantum supremacy}, i.e. the threshold at which a quantum processor can execute an algorithm that would be prohibitively costly in terms of computing time and money for a classical computer to perform~\cite{aruteQuantumSupremacyUsing2019}.
 %
-Figure~\ref{fig:introcomputing}(e) shows an image of Google's \enquote{quantum supremacy} processor.
+As a side note, we would like to point out that the usefulness of Google's supremacy experiment, while still an impressive experimental achievement, is challenged and criticized by the IBM team~\cite{QuantumSupremacy2019}.
+
+
+
+
+Figure~\ref{fig:introcomputing}(f) shows an image of Google's \enquote{quantum supremacy} processor \textit{Sycamore}.
 %
 The building block of these processors are transmon qubits.
 %
 These consist of a coplanar capacitance in series with superconducting quantum interference devices (SQUIDs), formed by two Josephson junctions in a loop.
-
-
-
+%
 To tune the states of the transmons, magnetic flux is threaded through the SQUID loop, supplied via on-chip current bias lines in close proximity to the SQUIDs.
 %
 While coherence times of several hundreds of microseconds show great potential for future devices~\cite{placeNewMaterialPlatform2020}, standard transmons come with a few drawbacks:
@@ -59,7 +62,7 @@ Already the very first implementation of a two-qubit transmon processor showed t
 %
 Additionally, since the chips need to be operated at temperatures only fractions of a Kelvin above absolute zero in order to protect their coherence from thermal excitations, the cooling power of the refrigerator must not be exceeded.
 %
-This can be problematic with high qubit numbers, since the tuning current through all individual flux lines might exceed the cooling power.
+This can be problematic with high qubit numbers, since the Joule heating caused by the tuning current through all individual flux lines might exceed the cooling power.
 %
 As the number of physical qubits increases, so does the challenge of shielding individual qubits from each other's bias lines, and retaining enough cooling power as to not induce thermal effects.
 
@@ -115,7 +118,7 @@ Recently, semiconductor nanowires and epitaxial 2DEGs were incorporated in trans
 %
 While coherence times are not yet at the same level as for standard transmons, gatemons show great promise and have gained significant interest in the scientific community.
 %
-They not only provide a new way of qubit control~\cite{shimSemiconductorinspiredDesignPrinciples2016}, but also a path towards studying unconventional superconducting weak links at high frequencies~\cite{tahanGrapheneQubitMotivates2019}.
+They not only provide a new way of controlling qubits~\cite{shimSemiconductorinspiredDesignPrinciples2016}, but also a path towards studying unconventional superconducting weak links at high frequencies~\cite{tahanGrapheneQubitMotivates2019}.
 
 
 
@@ -143,7 +146,7 @@ This not only allows for a detailed study of the junction's properties, but also
 
 \section{Josephson effects in SNS systems}
 
-Josephson junctions are formed by a weak link between two superconducting electrodes, which mus be sufficiently weak to sustain a phase difference $\delta=\phi_1-\phi_2$ between the phases of the two electrodes, $\phi_1$ and $\phi_2$, respectively.
+Josephson junctions are formed by a weak link between two superconducting electrodes, which must be sufficiently weak to sustain a phase difference $\delta=\phi_1-\phi_2$ between the phases of the two electrodes, $\phi_1$ and $\phi_2$, respectively.
 %
 Perhaps the simplest case of a JJ is a thin insulating tunnel barrier between two superconductors, the SIS JJ, cf. Fig.~\ref{fig:modelsnsdos}(a).
 %
@@ -152,7 +155,7 @@ Here, Cooper pairs can tunnel from one superconductor through the barrier to the
 The current flowing across this type of junction is given by the junction's current phase relation (CPR), which for an SIS JJ reads
 %
 \begin{align}
-I_\text{J}^{\rm SIS}(\delta) &= I_\text{c}\sin\delta \ ,
+I_\text{J}^\text{SIS}(\delta) &= I_\text{c}\sin\delta \ ,
 \end{align}
 %
 with the critical current $I_\text{c}$.
@@ -165,7 +168,7 @@ The process of Andreev reflection at the interface between superconductors and n
 %
 The process is sketched in Fig.~\ref{fig:modelsnsdos}(b):
 %
-An electron impinging onto the super-normal interface from inside the normal region can only enter the superconductor in the form of a Cooper pair by being reflected as a hole with opposite spin and momentum.
+an electron impinging onto the super-normal interface from inside the normal region can only enter the superconductor in the form of a Cooper pair by being reflected as a hole with opposite spin and momentum.
 %
 Vice versa, a Cooper pair travelling towards the normal region will decay into an electron travelling forward, and annihilate a hole travelling backwards with spin opposite to that of the electron.
 %
@@ -213,13 +216,13 @@ The energy of the excited ABS has opposite sign.
 Summing over all channels in the junction, the total Josephson potential is given by
 %
 \begin{align}
-U_\text{J}(\delta) = 1-\sum_i E_{i}^{\rm ABS} \approx E_\text{J} \frac{\delta^2}{2} - E_\text{J}\left( 1-\frac{3\sum T_i^2}{4\sum T_i} \right) \frac{\delta^4}{24} +\mathcal{O}(\delta^6)%\ , \\
+U_\text{J}(\delta) = \Delta-\sum_i E_{i}^{\rm ABS} \approx E_\text{J} \frac{\delta^2}{2} - E_\text{J}\left( 1-\frac{3\sum T_i^2}{4\sum T_i} \right) \frac{\delta^4}{24} +\mathcal{O}(\delta^6)%\ , \\
 %E_\text{J} &= \frac{\Delta}{4}\sum_i T_i \rightarrow \frac{\Delta}{4}N\tau
 \end{align}
 %
 where we Taylor-expanded Eq.~\ref{eq:ABS}~\cite{kringhojAnharmonicitySuperconductingQubit2018}.
 %
-In the limit of low $T_i$, i.e. for an SIS junction, the energy would be given simply by $U_\text{J}^{\rm SIS}(\delta)=1-E_\text{J}\cos(\delta)\approx E_\text{J}\delta^2/2-E_\text{J}\delta^4/24$.
+In the limit of low $T_i$, i.e. for an SIS junction, the energy would be given simply by $U_\text{J}^\text{SIS}(\delta)/E_\text{J}=1-\cos(\delta)\approx \delta^2/2-\delta^4/24$.
 %
 Compared to the SIS case, we therefore find that the Josephson energy is reduced by a fraction depending on the channel transparency which will become important for gatemon qubits, cf. Ref.~\cite{kringhojAnharmonicitySuperconductingQubit2018} and Chapter~\ref{chap:gJJ-CPR}.
 %
@@ -229,31 +232,36 @@ With increasing channel transmission, $U_\text{J}$ exhibits stronger modulation 
 
 The corresponding relation between Josephson current and the respective phase drop across the one-dimensional SNS JJ is 
 \begin{align}
-I(\delta) = \frac{2e}{\hbar}\frac{\partial U_\text{J}}{\partial\delta} = \frac{e\Delta}{2\hbar}\sum_i\frac{T_i\sin(\delta)}{\sqrt{1-T_i\sin^2(\delta/2)}}
+I_\text{J}(\delta) = \frac{2e}{\hbar}\frac{\partial U_\text{J}}{\partial\delta} = \frac{e\Delta}{2\hbar}\sum_i\frac{T_i\sin(\delta)}{\sqrt{1-T_i\sin^2(\delta/2)}}
 \end{align}
-
-In addition, we can ascribe an inductance value to the JJ, given by
+%
+In addition, we can see that the JJ behaves as a strong nonlinear inductor, with inductance
 %
 \begin{align}
 L_\text{J}(\delta) &= \frac{\hbar}{2e}\left( \frac{\partial I_\text{J}}{\partial\delta} \right)^{-1} = \left(\frac{\hbar}{2e}\right)^2\left(\frac{\partial^2U_\text{J}}{\partial\delta^2}\right)^{-1} \nonumber\\
-&= \frac{4\hbar^2}{e^2\Delta}\sum_i \frac{\left(1-T_i\sin^2(\delta/2)\right)^{3/2}}{4T_i\cos(\delta)\left(1-T_i\sin^2(\delta/2)\right)+T_i^2\sin^2(\delta)}
+&= \frac{4\hbar^2}{e^2\Delta}\sum_i \frac{\left(1-T_i\sin^2(\delta/2)\right)^{3/2}}{4T_i\cos(\delta)\left(1-T_i\sin^2(\delta/2)\right)+T_i^2\sin^2(\delta)} \ .
 \end{align} 
-%
-In the microwave regime, the junction therefore behaves as a strong nonlinear inductor.
+
 
 Both quantities are depicted in Fig.~\ref{fig:modelsnsejic}(b,c).
 %
 We can conclude two things:
 %
-First, the larger the channel transmission, the stronger the forward skew of the current phase relation and corresponding deviation to the SIS case.
+First, the larger the channel transmission, the stronger the forward skew of the current phase relation, defined as deviation of the CPR maximum from phase $\pi/2$, $S=2\delta_{\rm max}/\pi -1$, and corresponding deviation to the SIS case.
 %
-Second, while also strongly nonlinear, the Josephson inductance of SNS junctions is significantly reduced compared to the SIS case, $L_\text{J}^{\rm SIS}=\hbar(2eI_\text{c}\cos\delta)^{-1}$.
+Second, while also strongly nonlinear, the Josephson inductance of SNS junctions is significantly reduced compared to the SIS case, $L_\text{J}^\text{SIS}(\delta)=\hbar/(2eI_\text{c}\cos\delta)$.
+%
+On the other hand, for junctions where $I_\text{c}$ remains constant, the increase in forward skew leads to a decrease in $\partial I_\text{J}/\partial\delta$, and hence an increase in $L_J$ around zero phase.
+%
+After an inflection point at $\delta\approx0.3\pi$, the SIS inductance is larger than the one at finite transmission, $L_\text{J}^\text{SIS}>L_\text{J}(\tau)$.
+%
+This is shown in Fig.~\ref{fig:modelsnsejic}(d,e).
 %
 Since exact knowledge of the Josephson inductance is critical for operating transmon qubits, these deviations need to be investigated for future applications. 
 
 \begin{figure}[t]
 	\centering
-	\includegraphics[width=\linewidth]{chapter-introduction/figs/model_SNS_EjIc}
+	\includegraphics[width=\linewidth]{chapter-introduction/figs/model_SNS_EjIc_full}
 	\caption{
 		\textbf{Channel transmission and nonsinusoidality.}
 		%
@@ -267,9 +275,17 @@ Since exact knowledge of the Josephson inductance is critical for operating tran
 		%
 		Increasing transmission increases both amplitude and forward skewing of the CPR.
 		%
-		\textbf{(c)} Josephson inductance as a function of phase normalized to the one at maximum $L_\text{J}$.
+		\textbf{(c)} Josephson inductance as a function of phase. %normalized to the one at maximum $L_\text{J}$.
 		%
 		Due to the increased CPR slope for increasing $\tau$ around $\delta=0$, the Josephson inductance decreases significantly.
+		%
+		\textbf{(d)} Same as in \textbf{(b)}, but for constant critical current, hence only the forward skew increases.
+		%
+		Dashed line: CPR of an SIS junction.
+		%
+		\textbf{(e)} Josephson inductance as a function of transmission under the assumption of constant critical current as in \textbf{(d)}, compared to the case of an SIS junction (dashed line).
+		%
+		Around zero phase, $L_\text{J}$ increases with $\tau$, while for large phase bias, the inductance of an SIS JJ is in fact larger than the one of a junction with finite transmission.
 	}
 	\label{fig:modelsnsejic}
 \end{figure}
@@ -324,7 +340,7 @@ These DC bias microwave circuits are described in the following section.
 	\centering
 	\includegraphics[width=\linewidth]{chapter-introduction/figs/model_DC_bias_cavity_coupling.pdf}
 	\caption{
-		\textbf{Effect of coupling ratio of the reflection coefficient of a DC bias cavity.}
+		\textbf{Effect of coupling ratio on the reflection coefficient of a DC bias cavity.}
 		%
 		Using Eq.~\ref{eq:intro-s11}, we can model the absolute value \textbf{(a)}, phase \textbf{(b)} and real and imaginary parts \textbf{(c)} of the reflection coefficient of a DC bias cavity.
 		%
@@ -348,15 +364,11 @@ In contrast, we based our design on an architecture previously developed in our 
 %
 This circuit has several advantages over the previously mentioned ones:
 %
-As no circuit symmetries need to be considered, the circuit layout is rather simple.
+as no circuit symmetries need to be considered, the circuit layout is rather simple.
 %
 Because the shunt capacitor is placed at the input port to the device, no additional port needs to be used to probe or excite the device under test (DUT), which prevents additional leakage channels.
 %
 Finally, using a shunt capacitor provides a broadband signal port up to the self-resonance of the shunt capacitor, which is chosen to be well above the resonance frequency of the circuit.
-
-Figure~\ref{fig:TLmodel}(a) depicts a schematic of the DC bias cavity circuit.
-%
-A second port is supplied to tune the DUT with a gate voltage.
 %
 The reflection coefficient of this circuit is given by
 %
@@ -393,27 +405,31 @@ For this reason, we typically design our circuits such that they would be overco
 	\caption{
 		\textbf{DC bias cavity shorted to ground by a parametrized top-gated graphene Josephson junction.}
 		%
-		For simulating the device in QUCS, we ignored $L_\text{g}$ and $C_\text{g}$ and used the following parameters (unless swept):
-		%
-		$Z_0=Z_0^\prime=\SI{50}{\ohm}$, $C_\text{s}=\SI{60}{\pico\farad}$, $l=\SI{6}{\milli\meter}/\sqrt{\epsilon_\text{r}}$ with the dielectric constant of silicon $\epsilon_\text{r}=11.7$, $\alpha=1.002$,  $L_\text{J}=\SI{36}{\pico\henry}$, $C_\text{J}=\SI{1}{\femto\farad}$, $R_{\rm sg}=\SI{1}{\mega\ohm}$.
-		%
 		\textbf{(a)} Fully parametrized circuit model.
 		%
 		The transmission line is described by length $l$, inductance and capacitance per unit length $L^\prime$ and $C^\prime$ and attenuation $\alpha$, and is coupled to an input impedance $Z_0^\prime$ via a shunt capacitance $C_\text{s}$.
 		%
-		The Josephson junction is modeled as a network of linear lead inductance $L_\text{g}$ together with an RCSJ model of subgap-resistance $R_{\rm sg}$, junction capacitance $C_\text{J}$, nonlinear inductance $L_\text{J}$ and gate capacitance $C_\text{g}$.
+		The Josephson junction is modeled as a network of linear lead inductance $L_\text{g}$ together with an RCSJ model of subgap-resistance $R_\text{sg}$, junction capacitance $C_\text{J}$, nonlinear inductance $L_\text{J}$ and gate capacitance $C_\text{g}$.
+		%
+		In a realistic device (cf. Fig.~\ref{fig:fabgJJ}), the gate electrode has capacitances to both the lead $L_\text{g}$ and the transmission line.
+		%
+		For simplicity, we model $C_\text{g}$ as depicted here, and include additional capacitance in $C_\text{J}$.
+		%
+		For simulating the device in \textit{QUCS} however, we ignored $L_\text{g}$ and $C_\text{g}$ and used the following parameters (unless swept):
+		%
+		$Z_0=Z_0^\prime=\SI{50}{\ohm}$, $C_\text{s}=\SI{60}{\pico\farad}$, $l=\SI{6}{\milli\meter}/\sqrt{\epsilon_\text{r}}$ with the dielectric constant of silicon $\epsilon_\text{r}=11.7$, $\alpha=1.002$,  $L_\text{J}=\SI{36}{\pico\henry}$, $C_\text{J}=\SI{1}{\femto\farad}$, $R_\text{sg}=\SI{1}{\mega\ohm}$.
 		%
 		\textbf{(b)} Resonance frequency versus Josephson inductance with the other parameters fixed.
 		%
 		Depending on the junction impedance, the fundamental cavity mode changes from $\lambda/2$ (small $L_\text{J}$) to $\lambda/4$ (large $L_\text{J}$).
 		%
-		\textbf{(c,d)} Influence on subgap resistance on internal quality factor and resonance frequency.
+		\textbf{(c,d)} Influence of subgap resistance on internal quality factor and resonance frequency.
 		%
-		Small $R_{\rm sg}$ corresponds to a short, large $R_{\rm sg}$ to an open to ground in parallel to $L_\text{J}$.
+		Small $R_\text{sg}$ corresponds to a short, large $R_\text{sg}$ to an open to ground in parallel to $L_\text{J}$.
 		%
 		In both cases, the internal losses of the circuit are dominated by the transmission line attenuation.
 		%
-		For intermediate values of $R_{\rm sg}$, significant resistive damping effectively suppresses the circuit response.
+		For intermediate values of $R_\text{sg}$, significant resistive damping effectively suppresses the circuit response.
 		%
 		Panel \textbf{(d)} also illustrates the shift of $f_0$ when changing the boundary condition of the circuit, similar to the one due to $L_\text{J}$ in panel \textbf{(b)}.
 	}
@@ -423,11 +439,18 @@ For this reason, we typically design our circuits such that they would be overco
 
 When probing Josephson junctions with the DC bias cavity, we need to calibrate the parameters of the microwave circuit prior to extracting quantitative information on the high frequency properties of the added JJ.
 %
-We do this by measuring a combination of open and shorted references device with the same sample geometry, except with an open or short to ground in place of the JJ.
+Figure~\ref{fig:TLmodel}(a) depicts a schematic of the DC bias cavity with the relevant circuit parameters, including a second port to tune the DUT with a gate voltage.
 %
-Equipped with these values, we can proceed to study the influence JJ on the microwave circuit:
+We perform the calibration by measuring a combination of open and shorted reference device with the same sample geometry, except with an open or short to ground in place of the JJ.
 %
-With an added Josephson junction with inductance $L_\text{J}$ shorting the TL to ground, and neglecting $R_{\rm sg}$ and $C_{J}$, the shifted resonance frequency can be approximated by
+Equipped with these values, we can proceed to study the influence JJ on the microwave circuit.
+%
+For modeling, we use the open-source tool \textit{Quite Universal Circuit Simulator} (QUCS~\cite{QucsProjectQuite}).
+
+
+
+
+With an added Josephson junction with inductance $L_\text{J}$ shorting the TL to ground, and neglecting $R_\text{sg}$ and $C_{J}$, the shifted resonance frequency can be approximated by
 %
 \begin{align}
 \omega_0^\prime = \omega_0\frac{L_\text{r}+L_\text{J}}{L_\text{r}+2L_\text{J}}
@@ -438,13 +461,13 @@ where $L_\text{r}$ is the lumped TL resonator inductance including geometric and
 %
 A complete analytical model of an RSCJ model parametrizing the JJ can be used for calculating junction-induced losses in the form of a subgap resistance, cf. Chapter~\ref{chap:gJJ} and Fig.~\ref{fig:TLmodel}.
 %
-For very small $R_{\rm sg}$, the Josephson inductance is effectively short-circuited, so both $Q_i$ and $f_0$ approach the limit of no JJ.
+For very small $R_\text{sg}$, the Josephson inductance is effectively short-circuited, so both $Q_i$ and $f_0$ approach the limit of no JJ.
 %
-On the other hand, very large $R_{\rm sg}$ implies an open circuit with no losses other than the ones in the TL resonator, again approaching $Q_i$ of the bare cavity and $f_0$ shifting the the value due to the added $L_\text{J}$.
+On the other hand, very large $R_\text{sg}$ implies an open circuit with no losses other than the ones in the TL resonator, again approaching $Q_i$ of the bare cavity and $f_0$ shifting the the value due to the added $L_\text{J}$.
 %
 Intermediate resistance values suppress the resonance entirely.
 %
-The shift in $f_0$ for large $R_{\rm sg}$ shows the frequency shift induced by $L_\text{J}$.
+The shift in $f_0$ for large $R_\text{sg}$ shows the frequency shift induced by $L_\text{J}$.
 
 
 

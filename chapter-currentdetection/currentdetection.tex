@@ -478,8 +478,8 @@ We estimate that future devices using increased Josephson participation ratios, 
 \subsection{Data availability}
 All raw and processed data as well as supporting code for measurement libraries, data processing and figure generation is available in Zenodo~\cite{schmidtDataProcessingCurrent2020}.
 
-\subsection{Acknowledgements}
-This project has received funding from the European Union Horizon 2020 research and innovation programme under grant agreement Nos.~681476 -- QOMD, 732894 -- HOT and 785219 -- GrapheneCore2.
+%\subsection{Acknowledgements}
+%This project has received funding from the European Union Horizon 2020 research and innovation programme under grant agreement Nos.~681476 -- QOMD, 732894 -- HOT and 785219 -- GrapheneCore2.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -613,13 +613,13 @@ The power dependence, cf. Fig.~\ref{fig:higher-order-peaks}(c), also closely res
 	\includegraphics[width=.5\linewidth]{chapter-currentdetection/figures/SM_second_order_peak}
 	\caption{
 		\textbf{Exploring the parameter space for the second order sideband amplitude.}
-		(a) Sideband height for changing bias current setpoint at fixed input power and zero detuning for varying bias current.
-		(b) Sideband height for changing drive detuning at fixed input power and bias current.
-		(c) Sideband height for changing input power at fixed bias current and detuning.
+		(a) The power spectrum at the output at $I_0=\SI{4}{\micro\ampere}$, $\Delta=0$ and $P_\text{in}=\SI{-129}{dBm}$ containing the input pump signal at $\omega_0$ and the first and second order sidebands due to mixing at $\omega_0 \pm \Omega$ and $\omega_0 \pm 2\Omega$.
+		Dotted grey line corresponds to the one in panels (b-d), dashed grey line corresponds to the one in Fig.~\ref{fig:figure3}.
+		(b) Sideband height for changing bias current setpoint at fixed input power and zero detuning for varying bias current.
+		(c) Sideband height for changing drive detuning at fixed input power and bias current.
+		(d) Sideband height for changing input power at fixed bias current and detuning.
 		Circles: measured data, solid lines: calculated amplitude via input-ouput theory, dotted grey line: calculated sideband amplitude at $I_0=\SI{4}{\micro\ampere}$, $\Delta=0$ and $P_\text{in}=\SI{-129}{dBm}$.
 		Arrows indicate the setpoints for the other respective panels.
-		(d) The power spectrum at the output at $I_0=\SI{4}{\micro\ampere}$, $\Delta=0$ and $P_\text{in}=\SI{-129}{dBm}$ containing the input pump signal at $\omega_0$ and the first and second order sidebands due to mixing at $\omega_0 \pm \Omega$ and $\omega_0 \pm 2\Omega$.
-		Dotted grey line corresponds to the one in panels (a-c), dashed grey line corresponds to the one in Fig.~\ref{fig:figure3}.
 	}
 	\label{fig:higher-order-peaks}
 \end{figure}
@@ -659,7 +659,7 @@ The power dependence, cf. Fig.~\ref{fig:higher-order-peaks}(c), also closely res
 
 \subsubsection{Wiring configuration}
 
-All measurements were taken with the device mounted to the millikelvin stage of a \textit{Bluefors BF 400-D} dilution refrigerator with a base temperature of approximately \SI{15}{\milli\kelvin}.
+All measurements were taken with the device mounted to the millikelvin stage of a \textit{Bluefors LD400} dilution refrigerator with a base temperature of approximately \SI{15}{\milli\kelvin}.
 % 
 The measurement setup is sketched in Fig.~\ref{fig:setup}.
 % 
@@ -693,7 +693,7 @@ To reduce the influence of stray magnetic fields, a passive $\mu$-metal shield s
 	\centering
 	\includegraphics[width=\linewidth]{{chapter-currentdetection/figures/setup.svg}.png}
 	\caption{
-		\textbf{Measurement setup used for all measurements.}
+		\textbf{Measurement setup used for all measurements in this chapter.}
 		% 
 		The directional coupler at the \SI{3}{\kelvin} stage was terminated by a \SI{50}{\ohm} load at the coupled port.
 		% 
@@ -868,7 +868,7 @@ S_{11}'(\omega,\kappa_\text{i},\kappa_\text{e},\theta) & = \left( a+b\omega+c\om
 \label{eq:S11full}
 \end{align}
 % 
-Our fitting algorithm first detects the resonance as frequency corresponding to the maximum phase derivative and fits the background signal by removing a certain window around the resonance frequency.
+Our fitting algorithm first detects the resonance as the frequency corresponding to the maximum phase derivative and fits the background signal by removing a certain window around the resonance frequency.
 % 
 In a second step, it fits the modified model to the full data set keeping the background parameters fixed, and finally refits all background and model parameters once more starting from the previously fitted values.
 % 
@@ -1189,7 +1189,7 @@ Our experiments with $\kappa \gtrsim 2\pi\times\SI{750}{\kilo\hertz} \gg \Omega 
 \subsection{Current detection in the high power regime}\label{sec:high_powers}
 
 \subsubsection{Driving the cavity on resonance for high powers}\label{sec:drive_shift}
-To counteract acquired detuning from the downshift in resonance frequency for high pump powers due to the device nonlinearity, in an ideal measurement configuration the drive tone would also be shifted correspondingly.
+To counteract the detuning acquired from the downshift in resonance frequency for high pump powers due to the device nonlinearity, in an ideal measurement configuration the drive tone would also be shifted correspondingly.
 % 
 As depicted in Fig.~\ref{fig:Duffing-on-res}, in such a situation, the sideband amplitude would keep increasing by more than \SI{10}{\decibel}, resulting in a minimum $\mathcal{S}_I=\SI{2.6}{\pico\ampere/\sqrthz}$.
 
@@ -1325,7 +1325,7 @@ The admittance matrix $\mathbf{Y}$ which relates voltages $v_n$ of a node $n$ to
 \mathbf{Y}\mathbf{v} = \mathbf{i}
 \label{eq:v_to_i_relation}
 \end{align}
-explicitly writes
+is explicitly written as
 \begin{align}
 \underbrace{\begin{pmatrix} 
 	2Y_\text{s}(\omega)+Y_\text{g} (\omega) & - Y_\text{s}(\omega) &  & 0 \\

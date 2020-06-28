@@ -1,7 +1,7 @@
 
 .PHONY: force-build
 
-all: diss props
+all: diss props clean
 
 force-build:
 

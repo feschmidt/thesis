@@ -74,7 +74,7 @@ The gate voltage lead is fed through a second shunt capacitor of the same geomet
 %
 The MW wiring of both samples was fabricated on a single \SI{2}{inch} sapphire wafer, after which the wafer was diced into \SI{10x10}{\milli\meter} pieces onto which the individual gJJ were placed.
 %
-The gJJ consist of boron nitride encapsulated single layer graphene with side-contacts of DC-sputtered niobium titanium nitride (NbTiN), fabricated via the etch-fill technique~\cite{wangOneDimensionalElectricalContact2013b,schmidtBallisticGrapheneSuperconducting2018}
+The gJJ consist of boron nitride encapsulated single layer graphene with side-contacts of DC-sputtered niobium titanium nitride (NbTiN), fabricated via the etch-fill technique~\cite{wangOneDimensionalElectricalContact2013b,schmidtBallisticGrapheneSuperconducting2018}.
 %
 The gJJ are designed to be \SI{5}{\micro\meter} wide and separate the NbTiN leads by a length of \SI{500}{\nano\meter}.
 %
@@ -82,7 +82,7 @@ Gate tunability is achieved by placing a third NbTiN lead extending over the ent
 %
 The circuit is wirebonded into a PCB that is mounted on the millikelvin plate of a dilution refrigerator and connected to the outside world via a bias-T, allowing both DC and MW characterization in the same setup.
 %
-To suppress thermal excitations, the MW inout line is heavily attenuated and all DC lines were equipped with $\pi$-filters in the room temperature battery powered electronics, as well as copper powder and two-stage RC filters thermally anchored to the millikelvin stage.
+To suppress thermal excitations, the MW input line is heavily attenuated and all DC lines were equipped with $\pi$-filters in the room temperature battery powered electronics, as well as copper powder and two-stage RC filters thermally anchored to the millikelvin stage.
 
 We measured two separate devices with nominally identical microwave circuits and junction designs:
 %
@@ -177,7 +177,7 @@ On the other hand, even small changes in the significantly smaller $I_\text{c}$ 
 	\caption{
 		\textbf{Evidence for non-sinusoidal CPR from deviation between Josephson inductance and critical current.}
 		%
-		MW-extracted $L_\text{J}$ versus DC-measured $I_\text{c}$, corrected for estimates of current noise of \SI{110}{\nano\ampere} for the diffusive device at \SI{15}{\milli\kelvin} \textbf{(a)} and \SI{390}{\nano\ampere} for the ballistic one at \SI{15}{\milli\kelvin} and at \SI{1}{\kelvin} (\textbf{(b)}, blue and red, respectively).
+		MW-extracted $L_\text{J}$ versus DC-measured $I_\text{c}$, corrected for estimates of current noise of \SI{110}{\nano\ampere} for the diffusive device at \SI{15}{\milli\kelvin} \textbf{(a)} and \SI{390}{\nano\ampere} for the ballistic one at \SI{15}{\milli\kelvin} and at \SI{1}{\kelvin} \textbf{(b)} (blue and red, respectively).
 		%
 		Full circles (empty squares) correspond to $V_\text{g}>V_{\rm CNP}$ ($V_\text{g}<V_{\rm CNP}$).
 		%
@@ -225,7 +225,7 @@ In order to examine the underlying mechanisms further, we continue by studying t
 
 \subsection{Probing $L_\text{J}$ via the power dependence}
 
-The nonlinear inductance of a Josephson junction consequently introduces nonlinear behavior of the overall circuit.
+The nonlinear inductance of a Josephson junction consequently introduces nonlinear behavior to the overall circuit.
 %
 Depending on the exact circuit design and participation ratio between Josephson and total circuit inductance, this nonlinearity is more or less diluted, yet finite so-called anharmonicity $\beta$, i.e. deviation from the ideal case of pure LC-resonator behavior, remains.
 %
@@ -275,7 +275,7 @@ This is in contrast with circuits incorporating standard aluminum oxide JJs, whe
 		%
 		Dots: data as extracted from fits as in \textbf{(b-c)} and $L_\text{J}$, dashed line: SIS limit, dotted line: $\tau=1$ limit.
 		%
-		Values below the two line indicate forward skewed CPR.
+		Values below the dashed line indicate forward skewed CPR.
 	}
 	\label{CPRfig:figure3}
 \end{figure}
@@ -286,7 +286,7 @@ Heating of the circuit itself is unlikely since $f_0$ should tune significantly 
 %
 Moreover, the power dissipated on-chip is extremely small and very unlikely to cause even local heating.
 
-Losses due to electric dipole moments of two-level systems are also unlikely the source of observation, as these are known to be activated for decreasing drive excitation voltages~\cite{martinisDecoherenceJosephsonQubits2005c,oconnellMicrowaveDielectricLoss2008a,gunnarssonDielectricLossesMultilayer2013}.
+Losses due to electric dipole moments of two-level systems are also unlikely the source of the observation, as these are known to be activated for decreasing drive excitation voltages~\cite{martinisDecoherenceJosephsonQubits2005c,oconnellMicrowaveDielectricLoss2008a,gunnarssonDielectricLossesMultilayer2013}.
 %
 Moreover, TLS mainly reside in disordered dielectric materials.
 %
@@ -360,8 +360,7 @@ With skew defined as the deviation of the CPR maximum from phase $\pi/2$, $S=2\d
 We note that this is comparable to the results obtained from DC-measurements of the CPR~\cite{englishObservationNonsinusoidalCurrentphase2016,nandaCurrentPhaseRelationBallistic2017}.
 %
 Overall, the skewness seems to be constant for both devices, except for the region around CNP, where skewness seems to be significantly higher than elsewhere.
-%
-While not reported earlier, this might be due to 
+
 
 
 
@@ -378,7 +377,7 @@ This is an important result for future use of gJJs in applications such as qubit
 		%
 		Fitting the bias current dependence \textbf{(a)}, we can extract the junction transparency and corresponding CPR skew \textbf{(b)} for the diffusive (green) and ballistic (blue) gJJ device versus gate voltage.
 		%
-		An Josephson inductance with underlying SIS-CPR would result in high $f_0$ and small frequency tuning, while maximum skew provides a lower bound on $f_0$.
+		A Josephson inductance with underlying SIS-CPR would result in high $f_0$ and small frequency tuning, while maximum skew provides a lower bound on $f_0$.
 		%
 		\textbf{(d)} Using $\tau$, we calculate the correction factor to $E_\text{J}$ following Eq.~\ref{CPReq:Ejcorrection} for both devices, indicating significant forward skewing in both samples.
 		%
@@ -440,11 +439,11 @@ As stated in the main text, we define the device as ballistic or diffusive in th
 %
 In Fig.~\ref{CPRfig:SMFig-ballistic}, we plot these oscillations after removing a third order background from the data to remove the overall gate-voltage tuning dependence.
 %
-Both at base temperature and at \SI{1}{\kelvin}, we observe high-frequent, highly correlated oscillations in all off $f_0$, $I_\text{c}$ and $G_\text{n}=R_\text{n}^{-1}$ for the \textit{ballistic} device, which justifies its classification as such.
+Both at base temperature and at \SI{1}{\kelvin}, we observe high-frequency, highly correlated oscillations in all of $f_0$, $I_\text{c}$ and $G_\text{n}=R_\text{n}^{-1}$ for the \textit{ballistic} device, which justifies its classification as such.
 %
 The oscillation period allows an estimate of a cavity length of \SI{390}{\nano\meter} for the ABS inside the JJ~\cite{schmidtBallisticGrapheneSuperconducting2018}.
 %
-For the same voltage range, however, the \textit{diffusive} device only shows a low-frequent trend originating from the deviation about the removed background, thus lacking the ballistic feature.
+For the same voltage range, however, the \textit{diffusive} device only shows a low-frequency trend originating from the deviation about the removed background, thus lacking the ballistic feature.
 
 \begin{figure}[!h]
 	\centering
@@ -724,7 +723,14 @@ From the peak spacing and the measured responsitvity $G_1=\partial f_0/\partial 
 From this, we estimate $\Delta I_\text{n}\approx\SI{270}{\nano\ampere}$ due to low-frequency noise for the ballistic device.
 
 
-Similarly, the increase in total linewidth can be fitted as a linear function of $G_1$, resulting in an upper bound for the total corresponding bias current induced losses, cf. Fig.~\ref{CPRfig:SMFig-lossrates-current}(b).
+Similarly, the increase in total linewidth can be fitted as a linear function of $G_1$, 
+%
+\begin{align}
+\kappa_\text{i}(I_\text{b})=\kappa_\text{i}(0)+I_\text{n} \frac{\partial f_0}{\partial I_\text{b}} \ ,
+\label{CPReq:currnoise-b}
+\end{align}
+%
+resulting in an upper bound for the total corresponding bias current induced losses, cf. Fig.~\ref{CPRfig:SMFig-lossrates-current}(b).
 %
 For the ballistic device, we extract a total corresponding current noise $I_\text{n}\approx\SI{390}{\nano\ampere}$ for the ballistic, and $I_\text{n}\approx\SI{110}{\nano\ampere}$ for the diffusive device.
 %
@@ -738,7 +744,13 @@ Still, some contribution due to processes such as phase slip events is necessary
 	\caption{
 		\textbf{Internal loss rate for increasing bias current.}
 		%
-		Increasing loss rate with bias current could originate from either low-frequency noise or phase slip events.
+		\textbf{(a)} Compared to the case of zero bias (blue), large bias currents lead to a splitting of the reflected signal in two separate dips (orange).
+		%
+		The peak spacing and eq.~\ref{CPReq:currnoise-a}, we can extract a current noise of approximately \SI{270}{\nano\ampere}.
+		%
+		\textbf{(b)} Difference in total loss rate compared to zero bias current shows a linear increase as a function of responsivity $G_1$, which can be fitted using eq.~\ref{CPReq:currnoise-b}.
+		%
+		Increasing loss rate with bias current could originate from  low-frequency noise and/or phase slip events.
 	}
 	\label{CPRfig:SMFig-lossrates-current}
 \end{figure}

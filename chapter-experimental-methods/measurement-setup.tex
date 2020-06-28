@@ -29,7 +29,7 @@ For electrical measurements, the chips are wirebonded to PCBs that are mounted o
 %
 The bottom part of the first generation copper boxes, on which the chip rests, had a simple flat base.
 %
-However, we noticed that this lead to cross-talk of devices across the entire chip, presumably due to electromagnetic box modes between substrate and copper base.
+However, we noticed that this led to cross-talk of devices across the entire chip, presumably due to electromagnetic box modes between substrate and copper base.
 %
 To mitigate this spurious coupling, we removed most of the copper base to leave only two thin rails behind, to which the chips are glued with GE low temperature varnish.
 % 
@@ -129,9 +129,9 @@ It is therefore vital to suppress this noise by means of signal attenuation befo
 
 While attenuating the input lines as much as possible seems to be a good idea at first, this is not necessary because the physical temperature of the lowest fridge stage, in our experiments the base temperature of $T_{\rm MXC}\approx\SI{15}{\milli\kelvin}$, places a lower bound on the sample temperature, and therefore on the required lowest noise temperature.
 %
-Additionally, due to low electron-phonon coupling at low temperatures, the electrons in the device most likely have a slightly larger temperature than the fridge itself, as cooling becomes inefficient at these temperatures~\cite{giazottoOpportunitiesMesoscopicsThermometry2006}.
+Additionally, due to low electron-phonon coupling at low temperatures, the electrons in the device most likely have a slightly higher temperature than the fridge itself, as cooling becomes inefficient at these temperatures~\cite{giazottoOpportunitiesMesoscopicsThermometry2006}.
 %
-Cooling below the fridge temperature is possible, but requires nuclear refrigeration in combination with further attenuation and low electron-phonon coupling~\cite{sarsby500MicrokelvinNanoelectronics2020}.
+Cooling below the fridge temperature is possible, but requires nuclear refrigeration in combination with further attenuation and low electron-phonon coupling~\cite{sarsby500MicrokelvinNanoelectronics2020,jonesProgressCoolingNanoelectronic2020}.
 %
 
 Since we will be probing our devices both at DC and with \si{\giga\hertz} frequencies, both low and high frequency lines need to be attenuated separately.
@@ -142,13 +142,13 @@ The RC filters have a cutoff frequency $f_{\SI{3}{\decibel}}\approx\SI{30}{\kilo
 %
 Above this range, radiation starts to leak through again, due to stray capacitance of the filter resistors and parasitic inductance of the capacitors, cf. Fig.~\ref{fig:filterDC}(a,b).
 %
-As shown in Fig.~\ref{fig:filterDC}(b), a two-stage filter has a higher slope, \SI{-40}{dB/decade} compared to \SI{-20}{dB/decade}, while exhibiting only a slightly lower cut-off frequency.
+As shown in Fig.~\ref{fig:filterDC}(a), a two-stage filter has a higher slope, \SI{-40}{dB/decade} compared to \SI{-20}{dB/decade}, while exhibiting only a slightly lower cut-off frequency.
 %
 The radiation leaking through calls for additional, very high-frequency lowpass filters.
 %
 We use home-made copper powder filters for this purpose, cf. Fig.~\ref{fig:filterDC}(c,d).
 %
-These consist of a long PCB trace encased in a copper box, which is filled with copper powder and epoxy, essentially forming a very long and lossy transmission line with very low resistance, suppressing frequencies above a few \SI{100}{\mega\hertz}, as shown in Fig.~\ref{fig:filterDC}(a).
+These consist of a long PCB trace encased in a copper box, which is filled with copper powder and epoxy, essentially forming a very long and lossy transmission line with very low resistance, suppressing frequencies above a few \SI{100}{\mega\hertz}, as shown in Fig.~\ref{fig:filterDC}(b).
 
 \begin{figure}
 	\centering
@@ -156,13 +156,13 @@ These consist of a long PCB trace encased in a copper box, which is filled with 
 	\caption{
 		\textbf{Electronic noise reduction using low-pass filters.}
 		%
-		\textbf{(a)} Measured transfer function of combinations of two-stage RC lowpass and copper powder filters.
-		%
-		Parasitic inductance and capacitances in the RC filter allow radiation to leak through at higher frequencies, which can be suppressed using copper powder filters.
-		%
-		\textbf{(b)} Simulated transfer function of single (orange) and two-stage (blue) RC low-pass filters.
+		\textbf{(a)} Simulated transfer function of single (orange) and two-stage (blue) RC low-pass filters.
 		%
 		Dashed: ideal filter characteristic, solid: realistic behavior with stray capacitance and inductance.
+		%
+		\textbf{(b)} Measured transfer function of combinations of two-stage RC lowpass and copper powder filters.
+		%
+		Parasitic inductance and capacitances in the RC filter allow radiation to leak through at higher frequencies, which can be suppressed using copper powder filters.
 		%
 		\textbf{(c)} Copper powder filter PCB with connector, without enclosure.
 		%
@@ -211,7 +211,7 @@ In Fig.~\ref{fig:noisefull}, we plot the expected noise temperature and correspo
 %
 The strong DC attenuation of both copper powder and RC filters ensures a noise temperature of \SI{15}{\milli\kelvin}, limited by the mixing chamber plate, while without the copper powder filters, the noise temperature would reach \SI{1}{\kelvin} for a few \si{\giga\hertz}.
 %
-Assuming the RF attenuators are constant over the entire frequency range, the total distributed attenuation of \SI{42}{\decibel} would not be enough to cool the electronic noise down to base temperature, but instead would level out at \SI{85}{\milli\kelvin} at low frequencies.
+Assuming the RF attenuators are constant over the entire frequency range, the total distributed attenuation of \SI{42}{\decibel} (using \SI{3}{\decibel} at \SI{15}{\milli\kelvin}) would not be enough to cool the electronic noise down to base temperature, but instead would level out at \SI{85}{\milli\kelvin} at low frequencies.
 %
 To reach base temperature, attenuation of \SI{20}{\decibel} would be required at the mixing chamber, resulting in $T_n=\SI{16}{\milli\kelvin}$ with a total attenuation of \SI{59}{\decibel}, cf. Fig.~\ref{fig:noisefull}(c,d).
 

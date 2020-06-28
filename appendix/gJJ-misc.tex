@@ -11,6 +11,10 @@
 \begin{abstract}
 	\color{title}
 	Here, we provide additional data of current-voltage curves of graphene Josephson junctions and SQUIDs embedded in DC bias microwave cavities.
+	%
+	Specifically, we take a closer look at nonlinear features in the IVCs of our devices when the junction is biased above its critical current, which are present regardless of device, gate voltage or magnetic field.
+	%
+	Additionally, we investigate the effect of microwave radiation on the IVCs of our devices.
 \end{abstract}
 
 %% Start the actual chapter on a new page.
@@ -21,7 +25,17 @@
 \begin{figure}[b]
 	\centering
 	\includegraphics[width=\linewidth]{appendix/gJJ-misc-figs/fig_IVosc}
-	\caption{IVoscillations}
+	\caption{
+		\textbf{Fiske-oscillations in gJJs embedded in MW resonance circuits.}
+		%
+		We observe oscillations in the differential resistance for numerous devices as a function of gate voltage \textbf{(a,b)} and magnetic field \textbf{(c,d)}.
+		%
+		Devices in \textbf{(a)} and \textbf{(c)} are identical and correspond to the main text/ballistic one in Chapters~\ref{chap:gJJ} and~\ref{chap:gJJ-CPR}, panel \textbf{(b)} is from the reference/diffusive device in the same chapters.
+		%
+		The device in panel \textbf{(d)} is a gSQUID embedded in a MW DC bias cavity that did not show any MW response due to residual normal graphene areas around the SQUID.
+		%
+		Offsets in magnetic field in panels \textbf{(c,d)} are due to flux focusing and trapping due to large areas of the chip covered by superconducting ground plane.
+	}
 	\label{fig:IVoscillations}
 \end{figure}
 
@@ -46,10 +60,10 @@ This Josephson radiation can resonantly excite any present cavity modes with fre
 In a current-voltage trace of a JJ, this results in steps at voltages
 %
 \begin{align}
-V_n=\frac{\hbar}{2e}\omega_n=\frac{v_{ph}\pi}{L}n
+V_n=\frac{\hbar}{2e}\omega_n=\frac{v_\text{ph}\pi}{L}n
 \end{align}
 %
-with the phase velocity $v_{ph}$ and the cavity length $L$.
+with the phase velocity $v_\text{ph}$ and the cavity length $L$.
 
 Fiske steps are usually known to occur as a result of standing electromagnetic waves in a cavity formed by the Josephson junction itself, and are hence prominent in large-area JJ~\cite{krasnovFiskeStepsIntrinsic1999,kimFiskeStepsStudied2005,yabukiSupercurrentVanWaals2016b,liHighQualityEpitaxialMgB22017}.
 %
@@ -58,7 +72,7 @@ However in our devices, there is a patterned $\lambda/2$ MW cavity surrounding t
 
 In Fig.~\ref{fig:IVsteps}, we show a subset of IVs that exhibit such voltage steps as a function of gate voltage and magnetic field, respectively.
 %
-Steps occur at integer multiples of approximately \SI{16.7}{\micro\volt}, which corresponds to a resonance frequency of \SI{8.1}{\giga\hertz}, deviating by about \SI{2}{\percent} from the expected resonance frequency $f_r\approx\SI{8.3}{\giga\hertz}$ our MW circuits are designed for (cf. Chapter~\ref{chap:gJJ-CPR}).
+Steps occur at integer multiples of approximately \SI{16.7}{\micro\volt}, which corresponds to a resonance frequency of \SI{8.1}{\giga\hertz}, deviating by about \SI{2}{\percent} from the expected resonance frequency $f_\text{r}\approx\SI{8.3}{\giga\hertz}$ our MW circuits are designed for (cf. Chapter~\ref{chap:gJJ-CPR}).
 %
 We note that specifically in the device shown here, we were unable to detect a cavity resonance when performing spectroscopy using a vector network analyzer due to large internal losses from residual normal metal around the JJ.
 %
@@ -68,7 +82,13 @@ Nevertheless, the DC data shows the sensitivity of the JJ to its environment, ev
 	\centering
 	\includegraphics[width=\linewidth]{appendix/gJJ-misc-figs/fig_IVsteps}
 	\caption{
-		IVsteps
+		\textbf{Fiske-steps in the IVs of gJJs versus gate voltage and magnetic field.}
+		%
+		Panel \textbf{(a)} is the return branch of IVs taken as a function of gate voltage of the gSQUID in Fig.~\ref{fig:IVoscillations}(d).
+		%
+		Panel \textbf{(b)} are linecuts through panel (c) of Fig.~\ref{fig:IVoscillations}.
+		%
+		Dashed lines at integer multiples of \SI{16.7}{\micro\volt} correspond to a resonance frequency of \SI{8.1}{\giga\hertz}.
 	}
 	\label{fig:IVsteps}
 \end{figure}
@@ -98,6 +118,8 @@ Here, we noted significant differences between power sweeps of a gJJ embedded in
 	\includegraphics[width=\linewidth]{appendix/gJJ-misc-figs/fig_ShapiroHero}
 	\caption{
 		Shapiro steps of a gSQUID in a high-loss MW cavity at \textbf{(a)} \SI{3}{\giga\hertz}, \textbf{(b)} \SI{5}{\giga\hertz} and \textbf{(c)} \SI{8}{\giga\hertz}.
+		%
+		The device is designed to exhibit a resonance at approximately \SI{8.3}{\giga\hertz}.
 	}
 	\label{fig:ShapiroHero}
 \end{figure}
@@ -111,6 +133,8 @@ Clearly, the voltage steps occur at multiple integer heights of $V=2e\omega/\hba
 	\includegraphics[width=\linewidth]{appendix/gJJ-misc-figs/fig_ShapiroHeroFreq}
 	\caption{
 		Shapiro steps of a gSQUID in a high-loss MW cavity at varying drive frequency.
+		%
+		The device is designed to exhibit a resonance at approximately \SI{8.3}{\giga\hertz}.
 		%
 		The voltage steps follow multiple integer values of $2e\omega/\hbar$.
 	}

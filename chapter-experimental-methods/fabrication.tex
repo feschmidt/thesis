@@ -7,14 +7,14 @@
 
 Fabrication of graphene Josephson junctions is a tedious process:
 % 
-In contrast to integrated circuits, where the active materials are homogeneously deposited over an entire substrate, which enables massive parallel processing, the best graphene devices to date are not fabricated using scalable techniques, but rather each device is manually assembled and crafted.
+in contrast to integrated circuits, where the active materials are homogeneously deposited over an entire substrate, which enables massive parallel processing, the best graphene devices to date are not fabricated using scalable techniques, but rather each device is manually assembled and crafted.
 %
 This requires significant efforts, since no two devices have the same exact shape, which often results in slightly different properties between devices.
 
 
 The most promising wafer-scale graphene fabrication is achieved by chemical vapor deposition of single layer graphene on copper foils~\cite{zhangReviewChemicalVapor2013,linBridgingGapReality2018}.
 % 
-However, only until recently did such deposited films exhibit sufficiently low defect densities for high quality transport, which would otherwise result in inferior device quality~\cite{banszerusBallisticTransportExceeding2016a,neumaierIntegratingGrapheneSemiconductor2019}.
+However, only recently have such deposited films exhibited sufficiently low defect densities for high quality transport, which would otherwise result in inferior device quality~\cite{banszerusBallisticTransportExceeding2016a,neumaierIntegratingGrapheneSemiconductor2019}.
 % 
 Additionally, device quality can be reduced by contaminations that are often encountered when transferring the graphene layer from its growth to the final substrate.
 % 
@@ -50,7 +50,7 @@ As confirmed by atomic force and scanning tunneling microscopy, SLG on BN exhibi
 % 
 In addition, variations in the local density of states of SLG on BN is reduced by a factor ten, while charge fluctuations are suppressed by a factor 100, as compared to SLG directly on \ce{SiO2}~\cite{xueScanningTunnellingMicroscopy2011,deckerLocalElectronicProperties2011}.
 % 
-Complete screening of any trapped charges in the dielectric layer is possible with gate electrodes out of graphite instead of conventional metals~\cite{ponomarenkoTunableMetalInsulator2011,ametNovelPhenomenaDriven2014}.
+Complete screening of any trapped charges in the dielectric layer is possible with gate electrodes made of graphite instead of conventional metals~\cite{ponomarenkoTunableMetalInsulator2011,ametNovelPhenomenaDriven2014}.
 %
 BN encapsulation even enables ballistic transport in very high quality CVD graphene devices~\cite{banszerusBallisticTransportExceeding2016a}.
 
@@ -67,9 +67,9 @@ In the following, we will detail the fabrication procedure used in the course of
 
 \subsubsection{Substrate cleaning and flake exfoliation}
 
-All BN-G-BN heterostructures are based on SLG and few-layer BN exfoliated from bulk highly oriented pyrolithic graphite (HOPG) and NIMS, respectively.
+All BN-G-BN heterostructures are based on SLG and few-layer BN exfoliated from bulk highly oriented pyrolithic graphite (HOPG) and \textit{NIMS} BN, respectively.
 % 
-Identifying flakes of suitable thickness is done by estimation the layer number and thickness from optical images.
+Identifying flakes of suitable thickness is done by estimating the layer number and thickness from optical images.
 % 
 For optimal contrast~\cite{blakeMakingGrapheneVisible2007b}, we used silicon substrates with \SI{285}{\nano\meter} of dry chlorinated thermal \ce{SiO2}, diced into \SI{6x6}{\milli\meter} pieces from \SI{4}{inch} wafers from \textit{NOVA Electronic Materials}.
 % 
@@ -132,6 +132,10 @@ It is thus advisable to omit thermal annealing until the first lithography step 
 
 For assembling our BN-G heterostructures, we used the original transfer setup of Castellanos-Gomez \textit{et al.}~\cite{castellanos-gomezDeterministicTransferTwodimensional2014d}, upgraded with a heater stage capable of fast heating and cooling cycles between room temperature and \SI{200}{\celsius}.
 %
+The stage was additionally equipped with a small center hole to which a pump was attached via tubing.
+%
+This allowed us to fix the substrates to or from which flakes were transferred via vacuum, avoiding glue residues from commonly used sticky tape which are notorious to remove after high temperatures.
+%
 Heterostructures were assembled with a modified version of the procedures developed by Pizzocchero \textit{et al.}~\cite{pizzoccheroHotPickupTechnique2016a} and Zomer \textit{et al.}~\cite{zomerFastPickTechnique2014b}.
 % 
 BN-G-BN structures are formed by repeated pick-and-place of SLG and few-layer BN (flake thickness between \SIrange{10}{50}{\nano\meter}).
@@ -160,7 +164,7 @@ A second coverslip is dropped on the first one, thus spreading the droplet in be
 %
 With care, but in a swift motion, we pull the top glass piece off, thus leaving behind a thin film of PC on the bottom glass slide, which can be peeled off using a piece of tape and placed on the PDMS stamp.
 
-For every pick-and-place step, we fixed the substrate from or to which to transfer the flakes with vacuum, and used a single glass slide with a bubble of PDMS covered with PPC or PC.
+The adhesive film was placed on a droplet of PDMS which was stuck to a glass slide.
 %
 Both glass slide and chip could be individually moved with micrometer screws.
 %
@@ -264,11 +268,11 @@ RF circuits in coplanar architecture, such as the ones in this thesis, need a me
 Due to the long-range interaction of electromagnetic fields, fabrication residues of any kind (metallic, dielectric, organic) should be avoided as much as possible to ensure reliable circuit operation.
 
 
-That being said, the nature of flake transfer always introduces contaminations.
+That being said, the nature of flake transfer always introduces contaminations:
 %
-For one, the polymer used for transfer has very strong adhesion to the metal areas of the shunts, ground planes and center conductors.
+for one, the polymer used for transfer has very strong adhesion to the metal areas of the shunts, ground planes and center conductors.
 %
-While during stack assembly on oxidized silicon, the polymer would only touch the substrate preliminary, when attempting to delaminate the heterostructure on the pre-patterned substrates, the polymer often ripped off the PDMS carrier and would also get delaminated, cf. Fig.~\ref{fig:fab-hetero-challenge}(a).
+While during stack assembly on oxidized silicon, the polymer would only touch the substrate at the start, when attempting to delaminate the heterostructure on the pre-patterned substrates, the polymer often ripped off the PDMS carrier and would also get delaminated, cf. Fig.~\ref{fig:fab-hetero-challenge}(a).
 %
 Additionally, van der Waals crystals have strong adhesion to the metals used in our work, which resulted in a number of residual flakes on the final chip surrounding the intended heterostructure.
 %
@@ -290,17 +294,17 @@ When stacking flakes on top of each other, hydrocarbon gases and water, usually 
 %
 These bubbles can cluster together, reaching pressures of up to \SI{1}{\giga\pascal}~\cite{khestanovaUniversalShapePressure2016,ghorbanfekr-kalashamiDependenceShapeGraphene2017} and resulting in local pseudomagnetic fields in excess of \SI{300}{\tesla}~\cite{levyStrainInducedPseudoMagneticFields2010}.
 %
-Bubbles are hence undesired since they pose strong charge carrier scattering centers.
+Bubbles are hence undesirable since they pose strong charge carrier scattering centers.
 %
 Nevertheless, high substrate temperatures, both during and after assembly, can mobilize these gasses, allowing them to clear up large sample spaces by accumulating along flake defects.
 %
-We have occasionally observed bubbles piercing the top BN and escape from the stack when annealing the heterostructures at temperatures above \SI{300}{\celsius}.
+We have occasionally observed bubbles piercing the top BN and escaping from the stack when annealing the heterostructures at temperatures above \SI{300}{\celsius}.
 
 For these reasons, every single gJJ has to be designed by hand, since it is important to place the structure to be fabricated in an area without bubbles present in order to obtain a high-quality device.
 %
 After stack placement on the final chip, we took several optical and atomic force microscope images to determine the graphene location with respect to alignment marks, and to identify bubble-free areas, cf. Fig~\ref{fig:fab-hetero-challenge}(b).
 %
-These combined images are loaded into the CAD software (we highly recommend \textit{KLayout}\footnote{\url{https://www.klayout.de}}, or alternatively \textit{LibreCAD}\footnote{\url{https://librecad.org}}) to design the electrodes and gates for the gJJ, as shown in Fig~\ref{fig:fab-hetero-challenge}(c).
+These combined images are loaded into the CAD software (we highly recommend \textit{KLayout}~\cite{KLayoutLayoutViewer}, or alternatively \textit{LibreCAD}~\cite{LibreCADFreeOpen}) to design the electrodes and gates for the gJJ, as shown in Fig~\ref{fig:fab-hetero-challenge}(c).
 
 \begin{figure}
 	\centering
@@ -333,7 +337,7 @@ Dry-etching was done using \textit{Leybold Heraeus Fluor} reactive ion etchers, 
 %
 Superconductors were deposited in sputtering systems from \textit{AJA International, Inc.} and \textit{Alliance Concept}.
 
-The graphene Josephson junctions were fabricated the etch-fill technique pioneered by Wang \textit{et al.}~\cite{wangOneDimensionalElectricalContact2013b}, with added top-gates as in Refs.~\cite{nandaCurrentPhaseRelationBallistic2017,schmidtBallisticGrapheneSuperconducting2018}.
+The graphene Josephson junctions were fabricated using the etch-fill technique pioneered by Wang \textit{et al.}~\cite{wangOneDimensionalElectricalContact2013b}, with added top-gates as in Refs.~\cite{nandaCurrentPhaseRelationBallistic2017,schmidtBallisticGrapheneSuperconducting2018}.
 %
 Compared to fabrication on oxidized silicon, we encountered numerous challenges during fabrication that needed to be addressed before samples could be processed reliably.
 %
@@ -387,7 +391,7 @@ These requirements also restrict the minimum feature size that can be reliably p
 %
 Typically, a resist-to-metal ratio at least 3:1 allows stable liftoff.
 %
-However, the etch-fill technique requires a careful balance between choosing a thick enough resist in order to have enough resist left after dry-etching for good liftoff, while not making it too thin for high-resolution patterning.
+However, the etch-fill technique requires a careful balance between choosing a thick resist in order to have enough of it left after dry-etching for good liftoff, while making it as thin as possible to achieve for high-resolution patterning.
 %
 A lower resist thickness can be chosen for lift-off if sufficient undercut is present, which is why a bilayer resist of PMMA was chosen.
 %
@@ -416,7 +420,7 @@ We chose hydrogen silsesquioxane (HSQ, \ce{[HSiO3/2]_n}~\cite{namatsuThreedimens
 %
 HSQ needs to be stored in a fridge, like Electra 92, and has to be warmed up to room temperature before applying on the sample.
 %
-Once BN-G heterostructures would stick to the sapphire chip, and including the use of Electra 92, the device yield, i.e. gate-tunable supercurrents, was approximately \SI{70}{\percent}.
+Once BN-G heterostructures would stick to the sapphire chip, and including the use of Electra 92, the yield of devices with gate-tunable supercurrents, was approximately \SI{70}{\percent}.
 
 
 
@@ -559,7 +563,7 @@ This can be avoided by either in-situ \ce{O2} ashing, or by applying a thin PMMA
 %
 From a safety perspective, the plasma etch process is to be preferred over the use of BOE due to the much lower risk to the operator.
 %
-Additionally, even though wet-etching seems to be a cleaner process compared to dry-etching, the obtained microwave properties of samples fabricated using BOE did not consistently surpass those of dry-etched devices.
+Additionally, even though wet-etching seems to be a cleaner process compared to dry-etching, the obtained internal quality factors of samples fabricated using BOE did not consistently surpass those of dry-etched devices.
 
 \begin{figure}
 	\centering
