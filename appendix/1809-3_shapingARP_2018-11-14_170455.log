@@ -1,0 +1,4261 @@
+I am the created child with PID 1113 = 1113
+Just before execlp( callexecutor )
+argv[0] = "/home/pg/.naf/bin/callexecutor"
+argv[1] = "/home/pg/.naf/pgman/executor"
+argv[2] = "schmidt"
+argv[3] = "QN-GStl"
+argv[4] = "/home/pg/users/schmidt/jobs/1809-3_shapingARP.job"
+argv[5] = "BW0036A"
+argv[6] = "1,0"
+argv[7] = "45157,44783"
+argv[8] = ""
+argv[9] = ""
+argv[10] = ""
+argv[11] = ""
+callexecutor: Going to register process in jman
+hill_set_mode() returned with status 1305 = 0x519
+%JMAN_E_OTHEROPER  -  Other process with operator control
+********************** BE CAREFUL ***********************
+hill_set_mode
+
+    acc env          pid mode     remark         origin            command   pid
+================================================================================
+    pg               656 SUPER 0  jmand                                         
+    pg  vanrun       837 ADMIN 0  callexecutor                                  
+    pg  vanrun      1321 ADMIN 0  cmon                                          
+    pg  asingh     24482 SUPER 0  bash           131.180.32.252                 
+    pg  schmidt    26201 SUPER 0  bash                                          
+    pg  vanrun     28475 SUPER 0  bash           131.180.32.9                   
+    pg  kalhor     30479 SUPER 0  bash           131.180.116.106                
+    pg  dobrovolsk 31307 SUPER 0  bash           131.180.116.106                
+    pg  jwatson      705 SUPER 0  bash           145.94.39.145                  
+--> pg              1113 ADMIN 0  callexecutor                                  
+
+
+********************************************************************
+
+Wed Nov 14 17:04:55 CET 2018
+
+********************************************************************
+
+/home/pg/.naf/pgman/executor schmidt QN-GStl /home/pg/users/schmidt/jobs/1809-3_shapingARP.job BW0036A 1,0 45157,44783
+Arguments: schmidt QN-GStl /home/pg/users/schmidt/jobs/1809-3_shapingARP.job BW0036A 1,0 45157,44783    
+PG_USERID = "pg", PG_USER = "OPER"
+/home/pg/.naf/pgman
+Current users:
+
+   PPID    705  SID    705  jwatson    SUPER 145.94.39.145
+-> PPID   1113  SID   1113  schmidt    EXEC  1809-3_shapingARP.job BW0036A 1,0 -f 43761,-4308   
+   PPID  24482  SID  24482  asingh     SUPER 131.180.32.252
+   PPID  26201  SID  26201  schmidt    SUPER 
+   PPID  28475  SID  28475  vanrun     SUPER 131.180.32.9
+   PPID  30479  SID  30479  kalhor     SUPER 131.180.116.106
+   PPID  31307  SID  31307  dobrovolsk SUPER 131.180.116.106
+job
+pass here
+Changing environment for schmidt
+Installing project schmidt environment
+
+tmp=$($NAF_PGMAN/pgman_client sym get pars_specified | awk '{printf "%s %s %s %s %s %s %s",$3,$4,$5,$6,$7,$8,$9}')
+$NAF_PGMAN/pgman_client sym get pars_specified | awk '{printf "%s %s %s %s %s %s %s",$3,$4,$5,$6,$7,$8,$9}')
+$NAF_PGMAN/pgman_client sym get pars_specified | awk '{printf "%s %s %s %s %s %s %s",$3,$4,$5,$6,$7,$8,$9}'
+tmp=${tmp//\"/}
+if [ -z "$tmp" ]; then
+	$NAF_PGMAN/pgman_client exec $jobfile $holderid $loadunload
+else
+	$NAF_PGMAN/pgman_client exec $jobfile $holderid $loadunload "($tmp)"
+fi
+
+# Both aliases and environment variables can be used here:
+
+if [ "$PG_USER" != "OPER" ]; then
+	echo "executing job is NO OPERator"
+	$NAF_PGMAN/pgman_client execend E_RESTRICTED
+	exit 1
+fi
+
+$NAF_PGMAN/pgman_client info jobs
+02-Oct-2018 17:53:35    18:06:54  QN-GStl        schmidt           normal : sin_sputter_PMMA.job BW0036B 1,0 -f 44378,106316 -a 17:30 
+02-Oct-2018 18:06:54    18:14:39  QN-GStl        schmidt           normal : sin_sputter_PMGI.job BW0036D 0,1 -f 157293,107366 -a 17:30 
+06-Nov-2018 16:29:35    16:35:44  QN-GStl        schmidt          e_linux : 1809-3_contactsPMMA.job BW0036A 5,0 -f 43773,-5749   
+06-Nov-2018 16:35:44    16:46:33  QN-GStl        schmidt           normal : 1809-4_contactsPMMA.job BW0036B 0,0 -f 44001,99287   
+06-Nov-2018 16:48:27    16:51:56  QN-GStl        schmidt          e_linux : 1809-3_contactsPMMA.job BW0036A 0,0 -f 43773,-5548   
+06-Nov-2018 16:58:08    17:08:54  QN-GStl        schmidt           normal : 1809-3_contactsPMMA.job BW0036A 0,0 -o 45178,43546   
+12-Nov-2018 17:20:36    17:34:11  QN-GStl        schmidt           normal : 1809-4_2x2_contactsPMMA.job BW0036A 7,0 -f 43756,-5286   
+13-Nov-2018 15:20:22    15:24:58  QN-GStl        schmidt          e_linux : 1809-3_shapingARP.job BW0036A 7,0 -f 43765,-3626   
+13-Nov-2018 16:59:09    17:17:06  QN-GStl        schmidt           normal : 1809-4_shapingARP.job BW0036B 7,0 -o 45241,149373   
+13-Nov-2018 17:18:21    17:42:33  QN-GStl        schmidt           normal : 1809-3_shapingARP.job BW0036A 7,0 -o 45169,45470   
+Your last (max. 10) jobs:
+
+$NAF_PGMAN/pgman_client info users
+Current users:
+
+   PPID    705  SID    705  jwatson    SUPER 145.94.39.145
+-> PPID   1113  SID   1113  schmidt    EXEC  1809-3_shapingARP.job BW0036A 1,0 -f 43761,-4308   
+   PPID  24482  SID  24482  asingh     SUPER 131.180.32.252
+   PPID  26201  SID  26201  schmidt    SUPER 
+   PPID  28475  SID  28475  vanrun     SUPER 131.180.32.9
+   PPID  30479  SID  30479  kalhor     SUPER 131.180.116.106
+   PPID  31307  SID  31307  dobrovolsk SUPER 131.180.116.106
+$NAF_PGMAN/pgman_client info mode
+BATCH
+
+bashopts=$-
+if [[ "$bashopts" == *v* ]]; then set +v; fi
+casload 1 casunload 0
+Loading holder from position 1
+Time 17:04:57 substrate load might take 2-3 minutes, executing ... (DON'T abort)
+Waiting for the airlock vacuum to become better than 2.0e-05
+................
+moving the xy-stage to 10mm,10mm
+..
+Time 17:09:10
+Selecting holder BW0036A
+At begin of job clamppos = 41944, measured: 41950
+First moving to calibration marker position ... (DON'T abort)
+Restore work level to : HIGH
+HolderName = BW0036A loaded from cassette position 1
+HolderSerial = BW0036
+Last used BEAMNAME: 99NM_260NA_400UM_100KV.beam_100
+Before shaking 25 times 1600,0 um, markdefl = -0.000775,-0.000900 um
+..................................................
+After shaking 1600,0 um, markdefl = -0.015700,0.004250 um, shifted -14.9,+5.2 nm OK
+Before shaking 25 times 0,1600 um, markdefl = 0.000800,-0.001150 um
+..................................................
+After shaking 0,1600 um, markdefl = -0.000950,-0.003650 um, shifted -1.7,-2.5 nm OK
+Before shaking 25 times 1600,1600 um, markdefl = 0.000875,-0.000725 um
+..................................................
+After shaking 1600,1600 um, markdefl = -0.004000,0.006300 um, shifted -4.9,+7.0 nm OK
+Before shaking 25 times 1600,-1600 um, markdefl = -0.000175,0.000275 um
+..................................................
+After shaking 1600,-1600 um, markdefl = -0.009050,0.004675 um, shifted -8.9,+4.4 nm OK
+2018-11-14 17:10:38 holderfix BW0036 from  1 trail 1:  OK  OK  OK  OK largest shift -14.9,+7.0 nm OK (tolerance 15.0)
+
+After holderfix clamppos = 41944, measured: 41950
+
+# Clean up possibly unwanted environment variables as they are not always necessary:
+
+if [ ! -z "$PG_USER_JOYMARKER" ]; then unset PG_USER_JOYMARKER ; fi
+if [ ! -z "$PG_USER_MAINFIELD" ]; then unset PG_USER_MAINFIELD ; fi
+if [ ! -z "$PG_NOHEIGHTCOMP" ]; then unset PG_NOHEIGHTCOMP ; fi
+
+#Allow 4GB (gtx) patterns to be exposed:	(AvR, added 22-Dec-2013)
+
+export PG_MAPSIZE=4096000000
+
+case "$ftyp" in
+	job | JOB | job_ | JOB_ )
+
+		# Re-convert .job file if it has been overwritten meanwhile (AvR, added 28-Nov-2017)
+		if [ $ftyp = "job" -o $ftyp = "JOB" ]; then
+			if [ -x $NAF_BIN/jobconverter ]; then
+
+				# When grep fails, i.e. "jobconverter" not found,
+				# because of the or "||" function, (re)conversion is done:
+
+				grep jobconverter $jobfile > /dev/null || {
+					printf "\nJobfile %s has been overwritten meanwhile; re-converting:\n\n" $bname
+					$NAF_BIN/jobconverter $jobfile
+					printf "\n"
+				}
+			fi
+		fi
+
+		if [ $BEAMSVERDAY -ge 91000000 ]; then
+			export CJ_NOMARKERHEIGHT=on
+		fi
+
+		if [ $BEAMSVERDAY -ge 91017494 ]; then
+			chmod u-w $jobfile	# Make job file not-user-writeable during job execution
+		fi
+
+		printf "First make sure standard marker definitions are available\n"
+		if [ $BEAMSVERDAY -gt 90300000 ]; then
+			if [ $BEAMSVERDAY -gt 91000000 ]; then
+				pg info marker ident JOY > /dev/null 2>&1
+				if [ $? -eq 0 ]; then
+					pg marker delete JOY
+				fi
+				pg marker create joy \"\" JOY
+			else
+				pg info marker ident JOY > /dev/null 2>&1 || pg marker create rect pos 20,20 JOY
+			fi
+			pg info marker ident RP20 > /dev/null 2>&1 || pg marker create rect pos 20,20 RP20
+			pg info marker ident RP10 > /dev/null 2>&1 || pg marker create rect pos 10,10 RP10
+			pg info marker ident RN20 > /dev/null 2>&1 || pg marker create rect neg 20,20 RN20
+			pg info marker ident RN10 > /dev/null 2>&1 || pg marker create rect neg 10,10 RN10
+			pg info marker ident DIRDRA > /dev/null 2>&1 || pg marker create rect pos 20,20 DIRDRA
+		else
+			pg info marker JOY > /dev/null 2>&1 || pg marker create rect pos 20,20 JOY
+			pg info marker RP20 > /dev/null 2>&1 || pg marker create rect pos 20,20 RP20
+			pg info marker RP10 > /dev/null 2>&1 || pg marker create rect pos 10,10 RP10
+			pg info marker RN20 > /dev/null 2>&1 || pg marker create rect neg 20,20 RN20
+			pg info marker RN10 > /dev/null 2>&1 || pg marker create rect neg 10,10 RN10
+			pg info marker DIRDRA > /dev/null 2>&1 || pg marker create rect pos 20,20 DIRDRA
+		fi
+#		export PG_DEBUG="DEBUG>"
+        	echo "executing job $jobfile $jobopt $holderid 0 $jobargs"
+		if [ $BEAMSVERDAY -ge 90214939 ]; then
+			export PG_NOHEIGHTCOMP="yes"
+			echo Set PG_NOHEIGHTCOMP
+		fi
+		if [ $BEAMSVERDAY -ge 90817149 ]; then
+			export CJ_BEAMALIGN="$NAF_BIN/fegmode align"
+		else
+			export CJOB_BEAMALIGN="$NAF_BIN/fegmode align"
+		fi
+#		export PG_USER_MAINFIELD="$NAF_BIN/hmap_mainfield"	# Is set in .job by $NAF_BIN/jobconverter
+		$jobfile $jobopt $holderid 0 $jobargs
+		;;
+	laydev | LAYDEV )
+		export PG_USER_JOYMARKER="$NAF_BIN/findmarker"
+		export PG_USER_MAINFIELD="$NAF_BIN/hmap_mainfield"
+		if [ $BEAMSVERDAY -ge 90214939 ]; then
+			export PG_NOHEIGHTCOMP="yes"
+			echo Set PG_NOHEIGHTCOMP
+		fi
+        	echo "executing laydev $jobfile 0,0 EXPOSE_SUBS"
+		$NAF_BIN/laydev_expose $jobfile 0,0 EXPOSE_SUBS
+		;;
+	layout | LAYOUT )
+		export PG_USER_JOYMARKER="$NAF_BIN/findmarker"
+		export PG_USER_MAINFIELD="$NAF_BIN/hmap_mainfield"
+#		export PG_DEBUG="DEBUG>"
+#		export PG_DIMES="ON"
+		if [ $BEAMSVERDAY -ge 90214939 ]; then
+			export PG_NOHEIGHTCOMP="yes"
+			echo Set PG_NOHEIGHTCOMP
+		fi
+        	echo "executing layout $jobfile 0,0 EXPOSE_SUBS"
+		$NAF_BIN/layout_expose $jobfile 0,0 EXPOSE_SUBS
+		;;
+	*)
+        	echo "executing job $jobfile"
+        	$jobfile $jobargs
+esac
+First make sure standard marker definitions are available
+executing job /home/pg/users/schmidt/jobs/1809-3_shapingARP.job  BW0036A 0 45157,44783    
+Set PG_NOHEIGHTCOMP
+#############################################
+#############################################
+/home/pg/users/schmidt/jobs/1809-3_shapingARP.job BW0036A 0 45157,44783
+Wed Nov 14 17:10:39 CET 2018
+#############################################
+#############################################
+#! /bin/bash
+
+## Converter dd. Nov 12 2018 10:46:31                                            # added by $NAF_BIN/jobconverter
+## Settings file <jobname>.set dd. N/A                                           #
+##                                                                               #
+########################################################
+#
+# Copyright � 2018 RAITH nanofabrication
+# This script is automatically generated by cjob v02_18
+# date: Wed Nov 14 17:02:55 2018
+#
+########################################################
+
+# for help use: 
+#   $0 -h       
+#               
+#
+# Estitmated exposure times WITH calibration and marker searches:
+#
+#                                                        Stage Moves+
+# Pattern                   cnt  Min Freq    Max Freq    Beam On     +Over Head
+# -----------------------------------------------------------------------------
+# text14_1809-3_shaping...    4  24.128 MHz  24.128 MHz  00:00:02 h  00:00:04 h
+# 1809-3_1x1_shaping.gpf      1  58.386 MHz  58.386 MHz  00:00:06 h  00:00:07 h
+# 1809-3_1x1_shaping_re...    1  58.386 MHz  58.386 MHz  00:00:06 h  00:00:07 h
+# 1809-3_1x2_shaping.gpf      1  58.386 MHz  58.386 MHz  00:00:06 h  00:00:07 h
+# 1809-3_1x2_shaping_re...    1  58.386 MHz  58.386 MHz  00:00:06 h  00:00:07 h
+# 1809-3_2x1_shaping.gpf      1  58.386 MHz  58.386 MHz  00:00:08 h  00:00:08 h
+# 1809-3_2x1_shaping_re...    1  58.386 MHz  58.386 MHz  00:00:08 h  00:00:08 h
+# 1809-3_2x2_shaping.gpf      1  58.386 MHz  58.386 MHz  00:00:09 h  00:00:09 h
+# 1809-3_2x2_shaping_re...    1  58.386 MHz  58.386 MHz  00:00:09 h  00:00:09 h
+#                      11 Stage moves between patterns:  00:00:03 h  00:00:03 h
+#                           Estimated Load Holder Time:              00:03:00 h
+#                           Estimated Adjust EBPG Time:              00:05:00 h
+#                         Estimated Marker Search Time:              00:01:42 h
+#                        Total Estimated Exposure Time:  00:01:06 h  00:10:55 h
+
+
+# include error handling
+. script_init_template
+
+# pre marker
+#export cjob_ref1="0.0,0.0"   #um
+
+# include do_xxxx functions
+. cjob_func
+
+
+########################################################
+#
+# execute task for exposure : shapingARP
+#
+########################################################
+
+if [ -z "$cjob_lay" ]; then
+
+  # log this script to log file
+  echo "#############################################"
+  echo "#############################################"
+  
+  echo $0 $@
+  date
+  
+  echo "#############################################"
+  echo "#############################################"
+  
+  cat $0
+  
+  echo "#############################################"
+  echo "#############################################"
+  echo ""
+  
+  export cjob_jobname=1809-3
+  export cjob_hightension=100
+  export cjob_workdistance=40
+
+  # set default machine specific conditions here
+
+  if [ -r "$CJ_INI" ]; then
+    . $CJ_INI
+  fi
+
+  # optional file user specific machine conditions
+
+  if [ -r "$CJ_USER_INI" ]; then
+    . $CJ_USER_INI
+  fi
+
+  # define here optionally for each marker
+  pg marker create joy "\"$NAF_BIN/findmarker RN20\"" find_RN20                  # added by $NAF_BIN/jobconverter
+  pg marker create joy "\"$NAF_BIN/findmarker RN10\"" find_RN10                  #
+
+  cjob_check $0
+  # clear any inheritage from environment
+  do_clear
+
+  if [ "$reference" != "" ]; then 
+    export cjob_reference=$reference
+  fi
+
+  if [ "$JMAN_LOAD_SELECT" != "done" ]; then
+    if [ "$holder" == "" ]; then 
+      cjob_usage
+      do_exit 0
+    fi
+    export cjob_holder=$holder
+
+    if [ "$caspos" == "" ]; then 
+      cjob_usage
+      do_exit 0
+    fi
+    export cjob_caspos=$caspos
+
+    # load holder (optional)and define holder parameters
+    
+    cjob_substrate
+
+  fi
+  # optional file job specific machine conditions
+
+  inifile=`echo ${0%%.job}.ini`
+  if [ -r "$inifile" ]; then
+    . $inifile
+  fi
+
+  export cjob_beam="99NM_260NA_400UM_100KV.beam_100"
+  $NAF_BIN/preselect_aperture 99NM_260NA_400UM_100KV.beam_100                    # added by $NAF_BIN/jobconverter
+  export cjob_calib_method="optimized"
+  export cjob_resolution="0.07,0.07"
+  export cjob_bss="0.07,0.07"
+  export cjob_dose=220.0
+
+  export cjob_height=measure_map   # none | check | current_map | measure_map
+  #export cjob_check_maindist=on
+  #export cjob_check_mainfield=on
+  #export cjob_check_xmbc=on
+  #export cjob_check_xmbq=on
+
+  # position of substrate
+  export cjob_position="0.0,0.0"
+  export cjob_bound_bottomleft="-9000.0,-9000.0"
+  export cjob_bound_topright="9000.0,9000.0"
+  export cjob_origin="0.0,0.0"
+
+  # global alignment with pre-align marker
+  export cjob_premark=RN20
+  export cjob_premark=find_RN20                                                  # added by $NAF_BIN/jobconverter
+  marfile=$(dirname $0)/RN20.mar                                                 # added by $NAF_BIN/jobconverter
+  echo $marfile                                                                  #
+  if [ -x "$marfile" ]; then                                                     #
+    echo Executing $marfile                                                      #
+    . $marfile                                                                   #
+  fi                                                                             #
+  export cjob_preoff="-6500.0,-8100.0"
+
+  # markers
+  export cjob_dwmark=RN20
+  export cjob_dwmark=find_RN20                                                   # added by $NAF_BIN/jobconverter
+  export cjob_dwoff_1="-6500.0,8100.0"
+  export cjob_dwoff_2="6500.0,8100.0"
+  export cjob_dwoff_3="6500.0,-8100.0"
+  export cjob_dwoff_4=""
+  export cjob_dwoff_5=""
+  export cjob_dwoff_6=""
+  export cjob_dwoff_7=""
+  export cjob_dwoff_8=""
+  export cjob_dwmap=cjob_shapingARP
+ 
+  # Insert here additional machine parameter settings
+  # for this exposure layer
+  
+  export cjob_height=current                                                     # added by $NAF_BIN/jobconverter
+                                                                                 #
+# export JHGTCHK_BORDERONLY=                                                     # Uncomment when needed
+# export JHGTCHK_MAXTILT=2.5,2.5                                                 # Uncomment to change
+# export JHGTCHK_NRPOINTS=11,11                                                  # Uncomment to change
+# export JHGTCHK_PITCH=1000,1000                                                 # Uncomment to change
+                                                                                 #
+  $NAF_PGMAN/pgman_client sym del newcjob_ref1                                   #
+                                                                                 #
+  $NAF_BIN/jobheightcheck --$cjob_reference $holder $cjob_ref1 --measure_map     #
+                                                                                 #
+  tmp=$($NAF_PGMAN/pgman_client sym get newcjob_ref1 | awk '{print $3}')         #
+  tmp=${tmp#\"*}                                                                 #
+  tmp=${tmp%%\"*}                                                                #
+  if [ -n "$tmp" ]; then export cjob_ref1=$tmp; fi                               #
+                                                                                 #
+  export PG_USER_MAINFIELD=$NAF_BIN/hmap_mainfield                               #
+  $NAF_PGMAN/pgman_client sym set PG_HEIGHT ON                                   # Comment out to NOT print per mainfield height info
+
+  cjob_layout $0 shapingARP $cjob_ref1 $cjob_ref2 $cjob_ref3 $cjob_ref4
+
+  pg marker delete find_\*                                                       # added by $NAF_BIN/jobconverter
+                                                                                 #
+  # optional file job specific exit conditions
+
+  exifile=`echo ${0%%.job}.exi`
+  if [ -r "$exifile" ]; then
+    . $exifile
+  fi
+
+  # optional file user specific exit conditions
+
+  if [ -r "$CJ_USER_EXI" ]; then
+    . $CJ_USER_EXI
+  fi
+
+  # set default machine exit specific conditions here
+
+  if [ -r "$CJ_EXI" ]; then
+    . $CJ_EXI
+  fi
+
+fi
+
+if [ "$cjob_lay" == "shapingARP" ]; then
+
+  ############################
+  # Exposure        shapingARP
+  # Resolution      0.07
+  
+  # setup repetition layout
+
+  pg info measure height map                                                     # added by $NAF_BIN/jobconverter
+
+  do_clear_layout
+
+  export cjob_scanorder=serpentine
+  export cjob_vect1="10000.0,0.0"
+  export cjob_vect2="0.0,10000.0"
+  export cjob_cells="2,2"
+ 
+  do_clear_dropcirc
+  export cjob_origin="0.0,0.0"
+  cjob_do $0 2x2
+
+  ############################
+  # Exposure        shapingARP
+  # Main Resolution 0.001
+  # Sub Resolution  0.0005
+  # Main Field      1040
+  # beam            15NM_514PA_400UM_100KV.beam_100
+  
+  do_clear_layout
+  
+  export cjob_beam="15NM_514PA_400UM_100KV.beam_100"
+  $NAF_BIN/preselect_aperture 15NM_514PA_400UM_100KV.beam_100                    # added by $NAF_BIN/jobconverter
+  export cjob_pattern="1809-3_1x1_shaping.gpf"
+  export cjob_dose=220.0
+  
+  # Insert here additional machine parameter settings
+  # for this exposure layer
+  
+  cjob_init
+
+  # setup repetition layout
+
+  do_clear_layout
+
+  # markers
+  export cjob_dwmark=RN20
+  export cjob_dwmark=find_RN20                                                   # added by $NAF_BIN/jobconverter
+  marfile=$(dirname $0)/RN20.mar                                                 # added by $NAF_BIN/jobconverter
+  echo $marfile                                                                  #
+  if [ -x "$marfile" ]; then                                                     #
+    echo Executing $marfile                                                      #
+    . $marfile                                                                   #
+  fi                                                                             #
+  export cjob_dwoff_1="-6500.0,-8100.0"
+  export cjob_dwoff_2="-6500.0,-1900.0"
+  export cjob_dwoff_3="-3500.0,-1900.0"
+  export cjob_dwoff_4="-3500.0,-8100.0"
+  export cjob_keystone=on
+  export cjob_dwmap=cjob_1x1
+ 
+  export cjob_scanorder=serpentine
+  export cjob_vect1="0.0,0.0"
+  export cjob_vect2="0.0,0.0"
+  export cjob_cells="1,1"
+ 
+  do_clear_dropcirc
+  export cjob_origin="0.0,0.0"
+  cjob_do $0 1x1
+
+  # setup repetition layout
+
+  do_clear_layout
+
+  # markers
+  export cjob_dwmark=RN20
+  export cjob_dwmark=find_RN20                                                   # added by $NAF_BIN/jobconverter
+  marfile=$(dirname $0)/RN20.mar                                                 # added by $NAF_BIN/jobconverter
+  echo $marfile                                                                  #
+  if [ -x "$marfile" ]; then                                                     #
+    echo Executing $marfile                                                      #
+    . $marfile                                                                   #
+  fi                                                                             #
+  export cjob_dwoff_1="-6500.0,8100.0"
+  export cjob_dwoff_2="-6500.0,1900.0"
+  export cjob_dwoff_3="-3500.0,1900.0"
+  export cjob_dwoff_4="-3500.0,8100.0"
+  export cjob_keystone=on
+  export cjob_dwmap=cjob_1x1_2nd
+ 
+  export cjob_scanorder=serpentine
+  export cjob_vect1="0.0,0.0"
+  export cjob_vect2="0.0,0.0"
+  export cjob_cells="1,1"
+ 
+  do_clear_dropcirc
+  export cjob_origin="0.0,0.0"
+  cjob_do $0 1x1_2nd
+
+  # setup repetition layout
+
+  do_clear_layout
+
+  # markers
+  export cjob_dwmark=RN20
+  export cjob_dwmark=find_RN20                                                   # added by $NAF_BIN/jobconverter
+  marfile=$(dirname $0)/RN20.mar                                                 # added by $NAF_BIN/jobconverter
+  echo $marfile                                                                  #
+  if [ -x "$marfile" ]; then                                                     #
+    echo Executing $marfile                                                      #
+    . $marfile                                                                   #
+  fi                                                                             #
+  export cjob_dwoff_1="6500.0,-8100.0"
+  export cjob_dwoff_2="6500.0,-1900.0"
+  export cjob_dwoff_3="3500.0,-1900.0"
+  export cjob_dwoff_4="3500.0,-8100.0"
+  export cjob_keystone=on
+  export cjob_dwmap=cjob_1x1_3rd
+ 
+  export cjob_scanorder=serpentine
+  export cjob_vect1="0.0,0.0"
+  export cjob_vect2="0.0,0.0"
+  export cjob_cells="1,1"
+ 
+  do_clear_dropcirc
+  export cjob_origin="0.0,0.0"
+  cjob_do $0 1x1_3rd
+
+  # setup repetition layout
+
+  do_clear_layout
+
+  # markers
+  export cjob_dwmark=RN20
+  export cjob_dwmark=find_RN20                                                   # added by $NAF_BIN/jobconverter
+  marfile=$(dirname $0)/RN20.mar                                                 # added by $NAF_BIN/jobconverter
+  echo $marfile                                                                  #
+  if [ -x "$marfile" ]; then                                                     #
+    echo Executing $marfile                                                      #
+    . $marfile                                                                   #
+  fi                                                                             #
+  export cjob_dwoff_1="6500.0,8100.0"
+  export cjob_dwoff_2="6500.0,1900.0"
+  export cjob_dwoff_3="3500.0,1900.0"
+  export cjob_dwoff_4="3500.0,8100.0"
+  export cjob_keystone=on
+  export cjob_dwmap=cjob_1x1_4th
+ 
+  export cjob_scanorder=serpentine
+  export cjob_vect1="0.0,0.0"
+  export cjob_vect2="0.0,0.0"
+  export cjob_cells="1,1"
+ 
+  do_clear_dropcirc
+  export cjob_origin="0.0,0.0"
+  cjob_do $0 1x1_4th
+
+fi
+
+
+########################################################
+#
+# execute task for layout : 2x2
+#
+########################################################
+
+if [ "$cjob_lay" == "2x2" ]; then
+
+  # clear alignment
+  do_clear_dw
+  do_clear_dropcirc
+  # setup expose identifier
+  export cjob_beam="99NM_260NA_400UM_100KV.beam_100"
+  $NAF_BIN/preselect_aperture 99NM_260NA_400UM_100KV.beam_100                    # added by $NAF_BIN/jobconverter
+  export cjob_calib_method="optimized"
+  export cjob_resolution="0.07,0.07"
+  export cjob_bss="0.07,0.07"
+  export cjob_dose=220.0
+
+  export cjob_identifier_type=text
+  export cjob_fontname="helvetica"
+  export cjob_fontweight=medium # medium, bold
+  export cjob_fontslant=r       # r, o, i
+  export cjob_fontsize=25
+
+  export cjob_identifier="%j_%e\0x20-\0x20220\0x20\0xB5C/cm\0xB2\0x20-\0x20%d"
+  export cjob_identifier_layout=2x2
+  export cjob_orientation=r90
+  export cjob_placement=center,line
+  export cjob_invert=0
+  export cjob_pixelsize=3.5,3.5
+
+  export cjob_origin="1700.0,1500.0"
+
+  cjob_do identifier
+
+fi
+
+
+########################################################
+#
+# execute task for layout : 1x1
+#
+########################################################
+
+if [ "$cjob_lay" == "1x1" ]; then
+
+  # clear alignment
+  do_clear_dw
+
+  do_clear_dropcirc
+  # setup expose pattern
+  export cjob_pattern="1809-3_1x1_shaping.gpf"
+  export cjob_dose=220.0
+
+  # markers
+  export cjob_dwmark=RN10
+  export cjob_dwmark=find_RN10                                                   # added by $NAF_BIN/jobconverter
+  marfile=$(dirname $0)/RN10.mar                                                 # added by $NAF_BIN/jobconverter
+  echo $marfile                                                                  #
+  if [ -x "$marfile" ]; then                                                     #
+    echo Executing $marfile                                                      #
+    . $marfile                                                                   #
+  fi                                                                             #
+  export cjob_dwoff_1="-1900.0,-2200.0"
+  export cjob_dwoff_2="-1200.0,-2200.0"
+  export cjob_dwoff_3="-1200.0,-1250.0"
+  export cjob_dwoff_4="-1900.0,-1250.0"
+  export cjob_keystone=on
+  export cjob_dwmap=cjob_pattern
+ 
+  export cjob_origin="-5000.0,-5000.0"
+
+  cjob_do pattern
+
+  # clear alignment
+  do_clear_dw
+
+  do_clear_dropcirc
+  # setup expose pattern
+  export cjob_pattern="1809-3_1x1_shaping_ref.gpf"
+  export cjob_dose=220.0
+
+  # markers
+  export cjob_dwmark=RN10
+  export cjob_dwmark=find_RN10                                                   # added by $NAF_BIN/jobconverter
+  marfile=$(dirname $0)/RN10.mar                                                 # added by $NAF_BIN/jobconverter
+  echo $marfile                                                                  #
+  if [ -x "$marfile" ]; then                                                     #
+    echo Executing $marfile                                                      #
+    . $marfile                                                                   #
+  fi                                                                             #
+  export cjob_dwoff_1="-6000.0,-2400.0"
+  export cjob_dwoff_2="-5000.0,-2400.0"
+  export cjob_dwoff_3="-5000.0,-1600.0"
+  export cjob_dwoff_4="-6000.0,-1600.0"
+  export cjob_keystone=on
+  export cjob_dwmap=cjob_pattern
+ 
+  export cjob_origin="-5000.0,-5000.0"
+
+  cjob_do pattern
+
+fi
+
+
+########################################################
+#
+# execute task for layout : 1x1_2nd
+#
+########################################################
+
+if [ "$cjob_lay" == "1x1_2nd" ]; then
+
+  # clear alignment
+  do_clear_dw
+
+  do_clear_dropcirc
+  # setup expose pattern
+  export cjob_pattern="1809-3_1x2_shaping.gpf"
+  export cjob_dose=220.0
+
+  # markers
+  export cjob_dwmark=RN10
+  export cjob_dwmark=find_RN10                                                   # added by $NAF_BIN/jobconverter
+  marfile=$(dirname $0)/RN10.mar                                                 # added by $NAF_BIN/jobconverter
+  echo $marfile                                                                  #
+  if [ -x "$marfile" ]; then                                                     #
+    echo Executing $marfile                                                      #
+    . $marfile                                                                   #
+  fi                                                                             #
+  export cjob_dwoff_1="-1900.0,7800.0"
+  export cjob_dwoff_2="-1200.0,7800.0"
+  export cjob_dwoff_3="-1200.0,8750.0"
+  export cjob_dwoff_4="-1900.0,8750.0"
+  export cjob_keystone=on
+  export cjob_dwmap=cjob_pattern
+ 
+  export cjob_origin="-5000.0,5000.0"
+
+  cjob_do pattern
+
+  # clear alignment
+  do_clear_dw
+
+  do_clear_dropcirc
+  # setup expose pattern
+  export cjob_pattern="1809-3_1x2_shaping_ref.gpf"
+  export cjob_dose=220.0
+
+  # markers
+  export cjob_dwmark=RN10
+  export cjob_dwmark=find_RN10                                                   # added by $NAF_BIN/jobconverter
+  marfile=$(dirname $0)/RN10.mar                                                 # added by $NAF_BIN/jobconverter
+  echo $marfile                                                                  #
+  if [ -x "$marfile" ]; then                                                     #
+    echo Executing $marfile                                                      #
+    . $marfile                                                                   #
+  fi                                                                             #
+  export cjob_dwoff_1="-6000.0,7600.0"
+  export cjob_dwoff_2="-5000.0,7600.0"
+  export cjob_dwoff_3="-5000.0,8400.0"
+  export cjob_dwoff_4="-6000.0,8400.0"
+  export cjob_keystone=on
+  export cjob_dwmap=cjob_pattern
+ 
+  export cjob_origin="-5000.0,5000.0"
+
+  cjob_do pattern
+
+fi
+
+
+########################################################
+#
+# execute task for layout : 1x1_3rd
+#
+########################################################
+
+if [ "$cjob_lay" == "1x1_3rd" ]; then
+
+  # clear alignment
+  do_clear_dw
+
+  do_clear_dropcirc
+  # setup expose pattern
+  export cjob_pattern="1809-3_2x1_shaping.gpf"
+  export cjob_dose=220.0
+
+  # markers
+  export cjob_dwmark=RN10
+  export cjob_dwmark=find_RN10                                                   # added by $NAF_BIN/jobconverter
+  marfile=$(dirname $0)/RN10.mar                                                 # added by $NAF_BIN/jobconverter
+  echo $marfile                                                                  #
+  if [ -x "$marfile" ]; then                                                     #
+    echo Executing $marfile                                                      #
+    . $marfile                                                                   #
+  fi                                                                             #
+  export cjob_dwoff_1="8100.0,-2200.0"
+  export cjob_dwoff_2="8800.0,-2200.0"
+  export cjob_dwoff_3="8800.0,-1250.0"
+  export cjob_dwoff_4="8100.0,-1250.0"
+  export cjob_keystone=on
+  export cjob_dwmap=cjob_pattern
+ 
+  export cjob_origin="5000.0,-5000.0"
+
+  cjob_do pattern
+
+  # clear alignment
+  do_clear_dw
+
+  do_clear_dropcirc
+  # setup expose pattern
+  export cjob_pattern="1809-3_2x1_shaping_ref.gpf"
+  export cjob_dose=220.0
+
+  # markers
+  export cjob_dwmark=RN10
+  export cjob_dwmark=find_RN10                                                   # added by $NAF_BIN/jobconverter
+  marfile=$(dirname $0)/RN10.mar                                                 # added by $NAF_BIN/jobconverter
+  echo $marfile                                                                  #
+  if [ -x "$marfile" ]; then                                                     #
+    echo Executing $marfile                                                      #
+    . $marfile                                                                   #
+  fi                                                                             #
+  export cjob_dwoff_1="4000.0,-2400.0"
+  export cjob_dwoff_2="5000.0,-2400.0"
+  export cjob_dwoff_3="5000.0,-1600.0"
+  export cjob_dwoff_4="4000.0,-1600.0"
+  export cjob_keystone=on
+  export cjob_dwmap=cjob_pattern
+ 
+  export cjob_origin="5000.0,-5000.0"
+
+  cjob_do pattern
+
+fi
+
+
+########################################################
+#
+# execute task for layout : 1x1_4th
+#
+########################################################
+
+if [ "$cjob_lay" == "1x1_4th" ]; then
+
+  # clear alignment
+  do_clear_dw
+
+  do_clear_dropcirc
+  # setup expose pattern
+  export cjob_pattern="1809-3_2x2_shaping.gpf"
+  export cjob_dose=220.0
+
+  # markers
+  export cjob_dwmark=RN10
+  export cjob_dwmark=find_RN10                                                   # added by $NAF_BIN/jobconverter
+  marfile=$(dirname $0)/RN10.mar                                                 # added by $NAF_BIN/jobconverter
+  echo $marfile                                                                  #
+  if [ -x "$marfile" ]; then                                                     #
+    echo Executing $marfile                                                      #
+    . $marfile                                                                   #
+  fi                                                                             #
+  export cjob_dwoff_1="8100.0,7800.0"
+  export cjob_dwoff_2="8800.0,7800.0"
+  export cjob_dwoff_3="8800.0,8750.0"
+  export cjob_dwoff_4="8100.0,8750.0"
+  export cjob_keystone=on
+  export cjob_dwmap=cjob_pattern
+ 
+  export cjob_origin="5000.0,5000.0"
+
+  cjob_do pattern
+
+  # clear alignment
+  do_clear_dw
+
+  do_clear_dropcirc
+  # setup expose pattern
+  export cjob_pattern="1809-3_2x2_shaping_ref.gpf"
+  export cjob_dose=220.0
+
+  # markers
+  export cjob_dwmark=RN10
+  export cjob_dwmark=find_RN10                                                   # added by $NAF_BIN/jobconverter
+  marfile=$(dirname $0)/RN10.mar                                                 # added by $NAF_BIN/jobconverter
+  echo $marfile                                                                  #
+  if [ -x "$marfile" ]; then                                                     #
+    echo Executing $marfile                                                      #
+    . $marfile                                                                   #
+  fi                                                                             #
+  export cjob_dwoff_1="4000.0,7600.0"
+  export cjob_dwoff_2="5000.0,7600.0"
+  export cjob_dwoff_3="5000.0,8400.0"
+  export cjob_dwoff_4="4000.0,8400.0"
+  export cjob_keystone=on
+  export cjob_dwmap=cjob_pattern
+ 
+  export cjob_origin="5000.0,5000.0"
+
+  cjob_do pattern
+
+fi
+
+do_exit 0
+#############################################
+#############################################
+
+Set up default machine parameters
+cjob_check:
+
+Pattern name         : 1809-3_1x1_shaping.gpf
+File name            : /home/pg/users/schmidt/patterns/1809-3_1x1_shaping.gpf
+
+Format               : GPF: external memory mode
+Shape Type           : TRAPEZIUM
+Number of Blocks     : 1
+Main field placement : FLOATING
+Sub field placement  : LOWERLEFT
+Fracture style       : SUBFIELD
+Number of Main bits  : 20
+Number of Sub bits   : 14
+Maximum MSF          : 8192
+Number freq. factors : 1
+Minimum frequency    : 1.000000
+Maximum frequency    : 1.000000
+Pixel time           : 394426851.000000 (3.94427e+08)
+High Tension         : 100 kV
+Block size           :      1040.00000000 um,     1040.00000000 um
+Pattern size         :     10600.00000000 um,    10600.00000000 um
+Resolution           :         0.00200000 um
+Beamstepsize         :         0.00200000 um
+Main resolution      :         0.00100000 um
+Trap resolution      :         0.00050000 um
+
+
+Pattern name         : 1809-3_1x1_shaping_ref.gpf
+File name            : /home/pg/users/schmidt/patterns/1809-3_1x1_shaping_ref.gpf
+
+Format               : GPF: external memory mode
+Shape Type           : TRAPEZIUM
+Number of Blocks     : 1
+Main field placement : FLOATING
+Sub field placement  : LOWERLEFT
+Fracture style       : SUBFIELD
+Number of Main bits  : 20
+Number of Sub bits   : 14
+Maximum MSF          : 8192
+Number freq. factors : 1
+Minimum frequency    : 1.000000
+Maximum frequency    : 1.000000
+Pixel time           : 394424909.000000 (3.94425e+08)
+High Tension         : 100 kV
+Block size           :      1040.00000000 um,     1040.00000000 um
+Pattern size         :     10600.00000000 um,    10600.00000000 um
+Resolution           :         0.00200000 um
+Beamstepsize         :         0.00200000 um
+Main resolution      :         0.00100000 um
+Trap resolution      :         0.00050000 um
+
+
+Pattern name         : 1809-3_1x2_shaping.gpf
+File name            : /home/pg/users/schmidt/patterns/1809-3_1x2_shaping.gpf
+
+Format               : GPF: external memory mode
+Shape Type           : TRAPEZIUM
+Number of Blocks     : 1
+Main field placement : FLOATING
+Sub field placement  : LOWERLEFT
+Fracture style       : SUBFIELD
+Number of Main bits  : 20
+Number of Sub bits   : 14
+Maximum MSF          : 8192
+Number freq. factors : 1
+Minimum frequency    : 1.000000
+Maximum frequency    : 1.000000
+Pixel time           : 396601777.000000 (3.96602e+08)
+High Tension         : 100 kV
+Block size           :      1040.00000000 um,     1040.00000000 um
+Pattern size         :     10600.00000000 um,    10600.00000000 um
+Resolution           :         0.00200000 um
+Beamstepsize         :         0.00200000 um
+Main resolution      :         0.00100000 um
+Trap resolution      :         0.00050000 um
+
+
+Pattern name         : 1809-3_1x2_shaping_ref.gpf
+File name            : /home/pg/users/schmidt/patterns/1809-3_1x2_shaping_ref.gpf
+
+Format               : GPF: external memory mode
+Shape Type           : TRAPEZIUM
+Number of Blocks     : 1
+Main field placement : FLOATING
+Sub field placement  : LOWERLEFT
+Fracture style       : SUBFIELD
+Number of Main bits  : 20
+Number of Sub bits   : 14
+Maximum MSF          : 8192
+Number freq. factors : 1
+Minimum frequency    : 1.000000
+Maximum frequency    : 1.000000
+Pixel time           : 396600888.000000 (3.96601e+08)
+High Tension         : 100 kV
+Block size           :      1040.00000000 um,     1040.00000000 um
+Pattern size         :     10600.00000000 um,    10600.00000000 um
+Resolution           :         0.00200000 um
+Beamstepsize         :         0.00200000 um
+Main resolution      :         0.00100000 um
+Trap resolution      :         0.00050000 um
+
+
+Pattern name         : 1809-3_2x1_shaping.gpf
+File name            : /home/pg/users/schmidt/patterns/1809-3_2x1_shaping.gpf
+
+Format               : GPF: external memory mode
+Shape Type           : TRAPEZIUM
+Number of Blocks     : 1
+Main field placement : FLOATING
+Sub field placement  : LOWERLEFT
+Fracture style       : SUBFIELD
+Number of Main bits  : 20
+Number of Sub bits   : 14
+Maximum MSF          : 8192
+Number freq. factors : 1
+Minimum frequency    : 1.000000
+Maximum frequency    : 1.000000
+Pixel time           : 507665599.000000 (5.07666e+08)
+High Tension         : 100 kV
+Block size           :      1040.00000000 um,     1040.00000000 um
+Pattern size         :     10600.00000000 um,    10600.00000000 um
+Resolution           :         0.00200000 um
+Beamstepsize         :         0.00200000 um
+Main resolution      :         0.00100000 um
+Trap resolution      :         0.00050000 um
+
+
+Pattern name         : 1809-3_2x1_shaping_ref.gpf
+File name            : /home/pg/users/schmidt/patterns/1809-3_2x1_shaping_ref.gpf
+
+Format               : GPF: external memory mode
+Shape Type           : TRAPEZIUM
+Number of Blocks     : 1
+Main field placement : FLOATING
+Sub field placement  : LOWERLEFT
+Fracture style       : SUBFIELD
+Number of Main bits  : 20
+Number of Sub bits   : 14
+Maximum MSF          : 8192
+Number freq. factors : 1
+Minimum frequency    : 1.000000
+Maximum frequency    : 1.000000
+Pixel time           : 507655141.000000 (5.07655e+08)
+High Tension         : 100 kV
+Block size           :      1040.00000000 um,     1040.00000000 um
+Pattern size         :     10600.00000000 um,    10600.00000000 um
+Resolution           :         0.00200000 um
+Beamstepsize         :         0.00200000 um
+Main resolution      :         0.00100000 um
+Trap resolution      :         0.00050000 um
+
+
+Pattern name         : 1809-3_2x2_shaping.gpf
+File name            : /home/pg/users/schmidt/patterns/1809-3_2x2_shaping.gpf
+
+Format               : GPF: external memory mode
+Shape Type           : TRAPEZIUM
+Number of Blocks     : 1
+Main field placement : FLOATING
+Sub field placement  : LOWERLEFT
+Fracture style       : SUBFIELD
+Number of Main bits  : 20
+Number of Sub bits   : 14
+Maximum MSF          : 8192
+Number freq. factors : 1
+Minimum frequency    : 1.000000
+Maximum frequency    : 1.000000
+Pixel time           : 566169411.000000 (5.66169e+08)
+High Tension         : 100 kV
+Block size           :      1040.00000000 um,     1040.00000000 um
+Pattern size         :     10600.00000000 um,    10600.00000000 um
+Resolution           :         0.00200000 um
+Beamstepsize         :         0.00200000 um
+Main resolution      :         0.00100000 um
+Trap resolution      :         0.00050000 um
+
+
+Pattern name         : 1809-3_2x2_shaping_ref.gpf
+File name            : /home/pg/users/schmidt/patterns/1809-3_2x2_shaping_ref.gpf
+
+Format               : GPF: external memory mode
+Shape Type           : TRAPEZIUM
+Number of Blocks     : 1
+Main field placement : FLOATING
+Sub field placement  : LOWERLEFT
+Fracture style       : SUBFIELD
+Number of Main bits  : 20
+Number of Sub bits   : 14
+Maximum MSF          : 8192
+Number freq. factors : 1
+Minimum frequency    : 1.000000
+Maximum frequency    : 1.000000
+Pixel time           : 566169411.000000 (5.66169e+08)
+High Tension         : 100 kV
+Block size           :      1040.00000000 um,     1040.00000000 um
+Pattern size         :     10600.00000000 um,    10600.00000000 um
+Resolution           :         0.00200000 um
+Beamstepsize         :         0.00200000 um
+Main resolution      :         0.00100000 um
+Trap resolution      :         0.00050000 um
+
+
+Archive: 99NM_260NA_400UM_100KV.beam_100 Date: 02-JUL-2018 
+Version Beam      4.00
+
+High Tension           :      100 kV     Final Aperture      :      400 um
+
+Gun control :
+bias voltage           :  -400.00  V     filament current    :     2.28  A
+Extractor   voltage    :  6175.00  V     current             :   170.96 uA
+tilt  X         22934  :  -41.012 mA     tilt  Y      27225  :  -21.517 mA
+shift X         38352  :   21.683 mA     shift Y      27603  :  -10.874 mA
+AD setpoint dac 100kV  :     4095
+
+Lens control:
+Final lens      41450  :  4.00313  A
+C1 setting      26250  : 5250.000  V     C2 setting   51638  :  1.39500  A
+
+Beam quality:
+Fine Focus dac         :     2232
+Diagonal Stigmator dac :     3140        Axis Stigmator dac  :     1780
+
+measured spotsize      :    0.099 um     beamcurrent         :    260.1 nA
+PMHV setting (dac)     :     3591
+BEAMPAR setting        :      0.0 s
+
+
+***** Marker search results *****
+*
+*    marker specification             marker position       deflection to marker
+*ident  type    lev  xsize ysize        X           Y          X          Y
+*                    [um]  [um]        [mm]        [mm]       [um]       [um]
+
+RN20    Rect    neg  20.0  20.0      55.168856   61.668593   0.009475   0.007400
+
+*
+*--using marker specific marker search parameter table 
+*
+*--test parameter specifications of marker 'ident: RN20 ' ---
+
+* ind   name  val  def ulim llim unit     ind   name  val  def ulim llim unit
+
+    1 contra   97   95   99   10 proc      23   edsx   30   30   90    0 proc   
+    2 mlvtol  200  150  200   40  dac      24   edsy   30   30   90    0 proc   
+    3 blvtol  200  150  200   40  dac      25   eshx   20   20   50    5 proc   
+    4 eplmax 1000 1000 1020  800  dac      26   eshy   20   20   50    5 proc   
+    5 eplmin  300  300  700  200  dac      27 cmerot  120  120  200   20 amin   
+    6 hvalev  650  650  800  500  dac      28 cmevsd   17   17   50    2   nm   
+    7 msxtol   20   20   40    0 proc      29 cmnnlm   10   10   25    1        
+    8 msytol   20   20   40    0 proc      30 cmnmlm   25   25   50    1        
+    9 srcdir   -1   -1    1   -1           31 cmnblm   25   25   50    1        
+   10  fserr   20   20   50   10   nm      32  cmnem   25   25   25    1        
+   11  israd   50   50  999   10   um      33  cmnep   64   64   64    1        
+   12 isxstp   30   30   80   10 proc      34 cmedsx   30   30  150    0 proc   
+   13 isystp   30   30   80   10 proc      35 cmedsy   30   30  150    0 proc   
+   14 csixst   15   15   50    5 proc      36 cmeshx  150  150 1000    0 proc   
+   15 csiyst   15   15   50    5 proc      37 cmeshy  150  150 1000    0 proc   
+   16   nfsm   20   20   25    1           38 cmfunc    1    0    5    0        
+   17  nnlvm    1    1    5    1           39 timmsm    0    0    6    0        
+   18  nmlvm    5    5   25    1           40 detset    0    0    9    0        
+   19  nblvm    5    5   25    1           41 beamon    1    1    1    0        
+   20  nelgm    5    5   25    1           42 edgsim    0    0    1    0        
+   21 mtmacc   10   20  250    1   nm      43  fsstp    8    8   32    1        
+   22 mtmatt   10   10   20    5           44 csfstp    8    8   32    1        
+
+
+***** Marker search results *****
+*
+*    marker specification               marker position       deflection to marker
+*ident    type    lev  xsize ysize        X           Y          X          Y
+*                      [um]  [um]        [mm]        [mm]       [um]       [um]
+
+find_RN20 Joy     ---  ----  ----       *.******    *.******   *.******   *.******
+
+
+***** Joy information *****
+*   executable program 
+    /home/pg/.naf/bin/findmarker RN20
+
+*
+*--using marker specific marker search parameter table 
+*
+*--test parameter specifications of marker 'ident: find_RN20 ' ---
+
+* ind   name  val  def ulim llim unit     ind   name  val  def ulim llim unit
+
+    1 contra   97   95   99   10 proc      23   edsx   30   30   90    0 proc   
+    2 mlvtol  200  150  200   40  dac      24   edsy   30   30   90    0 proc   
+    3 blvtol  200  150  200   40  dac      25   eshx   20   20   50    5 proc   
+    4 eplmax 1000 1000 1020  800  dac      26   eshy   20   20   50    5 proc   
+    5 eplmin  300  300  700  200  dac      27 cmerot  120  120  200   20 amin   
+    6 hvalev  650  650  800  500  dac      28 cmevsd   17   17   50    2   nm   
+    7 msxtol   20   20   40    0 proc      29 cmnnlm   10   10   25    1        
+    8 msytol   20   20   40    0 proc      30 cmnmlm   25   25   50    1        
+    9 srcdir   -1   -1    1   -1           31 cmnblm   25   25   50    1        
+   10  fserr   20   20   50   10   nm      32  cmnem   25   25   25    1        
+   11  israd   50   50  999   10   um      33  cmnep   64   64   64    1        
+   12 isxstp   30   30   80   10 proc      34 cmedsx   30   30  150    0 proc   
+   13 isystp   30   30   80   10 proc      35 cmedsy   30   30  150    0 proc   
+   14 csixst   15   15   50    5 proc      36 cmeshx  150  150 1000    0 proc   
+   15 csiyst   15   15   50    5 proc      37 cmeshy  150  150 1000    0 proc   
+   16   nfsm   20   20   25    1           38 cmfunc    1    0    5    0        
+   17  nnlvm    1    1    5    1           39 timmsm    0    0    6    0        
+   18  nmlvm    5    5   25    1           40 detset    0    0    9    0        
+   19  nblvm    5    5   25    1           41 beamon    1    1    1    0        
+   20  nelgm    5    5   25    1           42 edgsim    0    0    1    0        
+   21 mtmacc   10   20  250    1   nm      43  fsstp    8    8   32    1        
+   22 mtmatt   10   10   20    5           44 csfstp    8    8   32    1        
+
+
+***** Marker search results *****
+*
+*    marker specification             marker position       deflection to marker
+*ident  type    lev  xsize ysize        X           Y          X          Y
+*                    [um]  [um]        [mm]        [mm]       [um]       [um]
+
+RN10    Rect    neg  10.0  10.0      55.668882   62.068552   0.061100  -0.010075
+
+*
+*--using marker specific marker search parameter table 
+*
+*--test parameter specifications of marker 'ident: RN10 ' ---
+
+* ind   name  val  def ulim llim unit     ind   name  val  def ulim llim unit
+
+    1 contra   97   95   99   10 proc      23   edsx   30   30   90    0 proc   
+    2 mlvtol  200  150  200   40  dac      24   edsy   30   30   90    0 proc   
+    3 blvtol  200  150  200   40  dac      25   eshx   20   20   50    5 proc   
+    4 eplmax 1000 1000 1020  800  dac      26   eshy   20   20   50    5 proc   
+    5 eplmin  300  300  700  200  dac      27 cmerot  120  120  200   20 amin   
+    6 hvalev  650  650  800  500  dac      28 cmevsd   17   17   50    2   nm   
+    7 msxtol   20   20   40    0 proc      29 cmnnlm   10   10   25    1        
+    8 msytol   20   20   40    0 proc      30 cmnmlm   25   25   50    1        
+    9 srcdir   -1   -1    1   -1           31 cmnblm   25   25   50    1        
+   10  fserr   20   20   50   10   nm      32  cmnem   25   25   25    1        
+   11  israd   50   50  999   10   um      33  cmnep   64   64   64    1        
+   12 isxstp   30   30   80   10 proc      34 cmedsx   30   30  150    0 proc   
+   13 isystp   30   30   80   10 proc      35 cmedsy   30   30  150    0 proc   
+   14 csixst   15   15   50    5 proc      36 cmeshx  150  150 1000    0 proc   
+   15 csiyst   15   15   50    5 proc      37 cmeshy  150  150 1000    0 proc   
+   16   nfsm   20   20   25    1           38 cmfunc    1    0    5    0        
+   17  nnlvm    1    1    5    1           39 timmsm    0    0    6    0        
+   18  nmlvm    5    5   25    1           40 detset    0    0    9    0        
+   19  nblvm    5    5   25    1           41 beamon    1    1    1    0        
+   20  nelgm    5    5   25    1           42 edgsim    0    0    1    0        
+   21 mtmacc   10   20  250    1   nm      43  fsstp    8    8   32    1        
+   22 mtmatt   10   10   20    5           44 csfstp    8    8   32    1        
+
+
+***** Marker search results *****
+*
+*    marker specification               marker position       deflection to marker
+*ident    type    lev  xsize ysize        X           Y          X          Y
+*                      [um]  [um]        [mm]        [mm]       [um]       [um]
+
+find_RN10 Joy     ---  ----  ----       *.******    *.******   *.******   *.******
+
+
+***** Joy information *****
+*   executable program 
+    /home/pg/.naf/bin/findmarker RN10
+
+*
+*--using marker specific marker search parameter table 
+*
+*--test parameter specifications of marker 'ident: find_RN10 ' ---
+
+* ind   name  val  def ulim llim unit     ind   name  val  def ulim llim unit
+
+    1 contra   97   95   99   10 proc      23   edsx   30   30   90    0 proc   
+    2 mlvtol  200  150  200   40  dac      24   edsy   30   30   90    0 proc   
+    3 blvtol  200  150  200   40  dac      25   eshx   20   20   50    5 proc   
+    4 eplmax 1000 1000 1020  800  dac      26   eshy   20   20   50    5 proc   
+    5 eplmin  300  300  700  200  dac      27 cmerot  120  120  200   20 amin   
+    6 hvalev  650  650  800  500  dac      28 cmevsd   17   17   50    2   nm   
+    7 msxtol   20   20   40    0 proc      29 cmnnlm   10   10   25    1        
+    8 msytol   20   20   40    0 proc      30 cmnmlm   25   25   50    1        
+    9 srcdir   -1   -1    1   -1           31 cmnblm   25   25   50    1        
+   10  fserr   20   20   50   10   nm      32  cmnem   25   25   25    1        
+   11  israd   50   50  999   10   um      33  cmnep   64   64   64    1        
+   12 isxstp   30   30   80   10 proc      34 cmedsx   30   30  150    0 proc   
+   13 isystp   30   30   80   10 proc      35 cmedsy   30   30  150    0 proc   
+   14 csixst   15   15   50    5 proc      36 cmeshx  150  150 1000    0 proc   
+   15 csiyst   15   15   50    5 proc      37 cmeshy  150  150 1000    0 proc   
+   16   nfsm   20   20   25    1           38 cmfunc    1    0    5    0        
+   17  nnlvm    1    1    5    1           39 timmsm    0    0    6    0        
+   18  nmlvm    5    5   25    1           40 detset    0    0    9    0        
+   19  nblvm    5    5   25    1           41 beamon    1    1    1    0        
+   20  nelgm    5    5   25    1           42 edgsim    0    0    1    0        
+   21 mtmacc   10   20  250    1   nm      43  fsstp    8    8   32    1        
+   22 mtmatt   10   10   20    5           44 csfstp    8    8   32    1        
+
+cjob_substrate:
+pg select holder BW0036A
+argv[0] = /home/pg/.naf/bin/preselect_aperture
+argv[1] = 99NM_260NA_400UM_100KV.beam_100
+Executing preselect_aperture( 99NM_260NA_400UM_100KV )
+OPT_SMC = 1, BEAMAPERTINV = 0
+Aperture 400.000000 already has been selected
+/home/pg/users/schmidt/jobs/RN20.mar
+Routine /home/pg/.naf/bin/jobheightcheck called with the following parameter(s):
+arg[1] = "--"
+arg[2] = "BW0036A"
+arg[3] = "45157,44783"
+arg[4] = "--measure_map"
+Read OPT_ZSTAGE = 1
+Read MAXSTAGEZTRAVEL = -497 ... 10850, absZmax = 497, kmax = 7
+Detected option --measure_map
+autoZ = FALSE,zholdercentre = 0.000000
+Read HOLDERDESC = H_PP3_A
+Read HOLDERNAME = BW0036A
+Currently selected holder: 401 "BW0036A" "H_PP3_A"
+                     Size: 76.200 x 76.200 mm
+                      Cup: 1.394, 49.082, 0.000 mm
+                   Marker: 3.085, 52.986, 0.000
+                   Centre: 61.693, 59.299, 0.000
+ Holder BW0036A is the currently selected one
+ cjob_bound_bottomleft=-9000.000000,-9000.000000
+ cjob_bound_topright=9000.000000,9000.000000
+ cjob_preoff=-6500.000000,-8100.000000
+Alternative to be done for: pg meas height arraymap 43557.000000,44783.000000 1620.000000,1620.000000 11,11
+
+First moving to position 43.557,60.983 mm 
+
+Measured/(skipped) heights [um] on the substrate:
+
+          |
+   60.983 M     11.4      11.3      10.2       9.2       8.0       7.0       5.6       4.4       3.2       0.8      -0.4  
+          |
+   59.363 M     12.4      11.6      11.0       9.9       8.8       7.7       6.1       5.1       3.8       1.9      -0.1  
+          |
+   57.743 M     13.1      12.3      11.6      10.7       9.6       8.5       7.1       5.8       4.3       2.6       0.4  
+          |
+   56.123 M     13.9      13.1      12.5      11.2      10.3       9.2       7.7       6.4       5.0       2.9       0.8  
+          |
+   54.503 M     15.0      14.4      13.0      12.2      11.4      10.0       9.0       7.2       5.6       3.7       1.1  
+          |
+   52.883 M     15.2      14.5      13.8      12.8      11.5      10.8       9.0       7.6       6.0       3.9       1.4  
+          |
+   51.263 M     16.2      15.0      14.0      13.4      12.6      11.2      10.0       8.1       6.6       4.8       2.1  
+          |
+   49.643 M     16.5      15.7      15.2      14.0      12.8      11.9      10.2       8.8       7.4       5.4       3.2  
+          |
+   48.023 M     17.2      16.4      15.7      14.6      13.5      12.5      10.9       9.6       8.1       6.4       4.2  
+          |
+   46.403 M     17.8      17.0      16.3      15.0      14.1      13.1      12.0      10.3       9.0       7.0       5.3  
+          |
+   44.783 M     18.4      17.9      16.9      15.8      14.7      13.8      12.2      11.1       9.8       8.2       6.4  
+          |
+  y ^     +--------------------------------------------------------------------------------------------------------------
+    |
+    +---> x    43.557    45.177    46.797    48.417    50.037    51.657    53.277    54.897    56.517    58.137    59.757 
+    [mm]
+
+
+Executing 1st order fit(s):
+ #  points    Sigma       fx         fy         f0
+ 1   121      0.665     -0.786     -0.410    +72.069
+ 2    89      0.373     -0.771     -0.406    +71.231
+ 3    67      0.240     -0.761     -0.411    +71.123
+ 4    59      0.140     -0.758     -0.406    +70.767
+ 5    36      0.070     -0.756     -0.407    +70.759
+
+Executing 2nd order fit(s):
+ #  points    Sigma        fxx          fxy          fyy          fx         fy         f0
+ 1   121      0.271     -0.026073    +0.000331    +0.000606     +1.890     -0.491     +5.761
+ 2    93      0.136     -0.025190    +0.000540    -0.000718     +1.791     -0.362     +4.833
+
+
+Measured/(skipped) and estimated/[not counting] heights [um] on the substrate:
+
+          |
+   60.983 M     11.4      11.3      10.2       9.2       8.0       7.0       5.6       4.4       3.2       0.8      -0.4  
+          E1   [13.0]    [11.8]    [10.5]      9.3       8.1      [6.9]      5.6       4.4       3.2      [2.0]     [0.7] 
+          E2   [11.7]     11.1      10.3       9.3      [8.3]      7.1       5.7       4.3      [2.7]      1.0     [-0.9] 
+          |
+   59.363 M     12.4      11.6      11.0       9.9       8.8       7.7       6.1       5.1       3.8       1.9      -0.1  
+          E1   [13.6]    [12.4]    [11.2]     10.0       8.7      [7.5]     [6.3]      5.1       3.8      [2.6]     [1.4] 
+          E2    12.4      11.8      11.0      10.0       9.0       7.8      [6.4]      5.0      [3.4]      1.7      -0.2  
+          |
+   57.743 M     13.1      12.3      11.6      10.7       9.6       8.5       7.1       5.8       4.3       2.6       0.4  
+          E1   [14.3]    [13.1]    [11.8]     10.6      [9.4]     [8.2]     [6.9]      5.7      [4.5]     [3.3]     [2.0] 
+          E2    13.1      12.4      11.6      10.7       9.6       8.4       7.1       5.6       4.0      [2.3]      0.5  
+          |
+   56.123 M     13.9      13.1      12.5      11.2      10.3       9.2       7.7       6.4       5.0       2.9       0.8  
+          E1   [15.0]    [13.7]     12.5      11.3     [10.1]     [8.8]      7.6       6.4      [5.2]     [3.9]     [2.7] 
+          E2    13.8      13.1      12.3      11.4      10.3       9.1       7.8       6.3      [4.7]      3.0       1.1  
+          |
+   54.503 M     15.0      14.4      13.0      12.2      11.4      10.0       9.0       7.2       5.6       3.7       1.1  
+          E1   [15.6]     14.4     [13.2]    [11.9]    [10.7]     [9.5]     [8.3]     [7.0]     [5.8]     [4.6]     [3.4] 
+          E2   [14.5]    [13.8]     13.0      12.0     [11.0]      9.8      [8.4]      7.0       5.4       3.7      [1.8] 
+          |
+   52.883 M     15.2      14.5      13.8      12.8      11.5      10.8       9.0       7.6       6.0       3.9       1.4  
+          E1   [16.3]    [15.1]     13.8     [12.6]     11.4     [10.2]      8.9       7.7      [6.5]     [5.3]     [4.0] 
+          E2    15.1      14.5      13.7      12.7      11.6     [10.4]      9.1       7.6       6.0      [4.3]     [2.5] 
+          |
+   51.263 M     16.2      15.0      14.0      13.4      12.6      11.2      10.0       8.1       6.6       4.8       2.1  
+          E1   [16.9]    [15.7]    [14.5]    [13.3]    [12.0]    [10.8]     [9.6]     [8.4]     [7.1]     [5.9]     [4.7] 
+          E2   [15.8]     15.1     [14.3]     13.4     [12.3]     11.1       9.8       8.3       6.7       5.0      [3.1] 
+          |
+   49.643 M     16.5      15.7      15.2      14.0      12.8      11.9      10.2       8.8       7.4       5.4       3.2  
+          E1   [17.6]    [16.4]     15.1      13.9      12.7     [11.5]     10.2      [9.0]     [7.8]     [6.6]     [5.3] 
+          E2    16.5      15.8      15.0      14.0      13.0      11.8      10.4       9.0       7.4       5.6      [3.8] 
+          |
+   48.023 M     17.2      16.4      15.7      14.6      13.5      12.5      10.9       9.6       8.1       6.4       4.2  
+          E1   [18.3]    [17.0]     15.8      14.6     [13.4]    [12.1]     10.9       9.7      [8.5]     [7.2]     [6.0] 
+          E2    17.1      16.5      15.6      14.7      13.6      12.4      11.1       9.6       8.0       6.3       4.4  
+          |
+   46.403 M     17.8      17.0      16.3      15.0      14.1      13.1      12.0      10.3       9.0       7.0       5.3  
+          E1   [18.9]    [17.7]    [16.5]    [15.2]     14.0     [12.8]    [11.6]     10.3       9.1      [7.9]     [6.7] 
+          E2    17.8      17.1      16.3     [15.4]     14.3      13.1      11.7      10.3      [8.7]      6.9       5.1  
+          |
+   44.783 M     18.4      17.9      16.9      15.8      14.7      13.8      12.2      11.1       9.8       8.2       6.4  
+          E1   [19.6]    [18.4]    [17.1]     15.9      14.7     [13.5]     12.2      11.0       9.8      [8.6]     [7.3] 
+          E2    18.4      17.8      17.0     [16.0]    [14.9]     13.7      12.4      10.9      [9.3]     [7.6]     [5.7] 
+          |
+  y ^     +--------------------------------------------------------------------------------------------------------------
+    |
+    +---> x    43.557    45.177    46.797    48.417    50.037    51.657    53.277    54.897    56.517    58.137    59.757 
+    [mm]
+
+1st Order fit: Estimated height at centre of substrate is +10.2 um
+               Estimated height range of substrate is [-0.3,+20.6] um
+               Estimated tilt x,y of substrate is -0.76,-0.41 um/mm
+2nd Order fit: Estimated height range of substrate is [-0.9,+18.4] um
+               Estimated tilt at the centre of the substrate is -0.78,-0.41 um/mm
+               Estimated tilt range X,Y of substrate is [-1.24 ... -0.32],[-0.43 ... -0.39] um/mm
+
+
+status1 = 0x0 = HILL_I_NORMAL, status2 = 0x0 = HILL_I_NORMAL
+Storing 2nd order height mapping coefficients
+
+Height mapping hmap:
+
+
+Height mapping hmap: not available
+
+
+Height mapping coefficients:
+
+  Statistics:
+      order           = *
+      sigma           = *.*
+      sigma_criterion = *.*
+      origin          = *.*_mm,*.*_mm
+      min             = *.*_mm,*.*_mm
+      max             = *.*_mm,*.*_mm
+
+  Coefficients:
+      C00           =  4.832774e+00
+      C10         x =  1.791007e+00
+      C01         y = -3.622227e-01
+      C20       x*x = -2.518965e-02
+      C11       x*y =  5.402922e-04
+      C02       y*y = -7.178192e-04
+      C30     x*x*x =  0.000000e+00
+      C21     x*x*y =  0.000000e+00
+      C12     x*y*y =  0.000000e+00
+      C03     y*y*y =  0.000000e+00
+
+cjob_layout:
+remove dot files from $PG_PATTERNS/cjob
+height_option 0
+cjob_clear: pg layout clear
+cjob_clear: pg deselect map substrate
+
+cjob_calibrate:
+pg set resist 220.000000
+pg deselect pattern
+pg archive restore beam 99NM_260NA_400UM_100KV.beam_100
+.
+ Delay with 0_s
+ Type Ctrl-C to abort or change BEAMPAR to alter delay 
+
+PRE_LBA in tltcur/b space, Rmax = 1280  dR = 40 using VIDLEV
+ PMHVstart = 3591
+Height of calibration marker is -6.70 um
+tltcur/b: x0 = 22934; y0 = 27225
+passed beam current maximum at R = 400
+PMHV reset to PMHVstart = 3591
+PMHV maximum found at tltcur/b = 22734,27265
+PRE_LBA in tltcur/b space, Rmax = 80  dR = 10 using VIDLEV
+ PMHVstart = 3591
+Height of calibration marker is -6.70 um
+tltcur/b: x0 = 22734; y0 = 27265
+PMHV reset to PMHVstart = 3591
+PMHV maximum found at tltcur/b = 22734,27255
+PRE_LBA in tltcur/b space, Rmax = 10  dR = 1 using VIDLEV
+ PMHVstart = 3591
+Height of calibration marker is -6.70 um
+tltcur/b: x0 = 22734; y0 = 27255
+PMHV reset to PMHVstart = 3591
+PMHV maximum found at tltcur/b = 22740,27255
+For alignment in our FEG system, $NAF_BIN/align -r (-s) is used
+OPT_SMC = 1, BEAMAPERTINV = 0 ==> do_aap = 1
+ PMHVstart = 3591
+tltcur/b changed from 22740,27255 to 22888,27239 T:+148,-16
+tltcur/b changed from 22888,27239 to 22889,27235 T: +1,-4
+sftcur/b changed from 38352,27603 to 38327,27596 S:-25,-7
+sftcur/b changed from 38327,27596 to 38328,27596 S: +1,+0
+tltcur/b changed from 22889,27235 to 22899,27236 T:+10,+1
+tltcur/b changed from 22899,27236 to 22900,27236 T: +1,+0
+sftcur/b changed from 38328,27596 to 38302,27592 S:-26,-4
+sftcur/b changed from 38302,27592 to 38305,27589 S: +3,-3
+ATAB pre = 6227.009937,8168.780000
+
+
+Automatic aperture changer.
+Errors will be automatically adjusted by using the final lens method.
+This command should finish by itselve or can be canceled with CTRL_C.
+
+           LEFT KNOB                *          RIGHT KNOB               *
+              *                   -0.01               *                   -0.01
+              *                   -0.01               *                   -0.01
+              *                   -0.03               *                   -0.01
+              *                    0.01               *                   -0.03
+              *                    0.01               *                   -0.00
+Restoring final lens value
+ATAB post = 6228.819437,8169.285000, delta = +1.809500,+0.505000
+PMHV reset to PMHVstart = 3591
+pg adjust resolution 0.070000,0.070000 /bss=0.070000,0.070000
+
+resolution          :    70.000000 nm ,    70.000000 nm
+beam step size      :    70.000000 nm ,    70.000000 nm
+main resolution     :     1.000000 nm ,     1.000000 nm  [70,70]
+trap resolution     :     0.500000 nm ,     0.500000 nm  [140,140]
+max. main field size:  1048.576000 um ,  1048.576000 um
+max. trap field size:     4.525000 um ,     4.525000 um
+tdd shift           :            3666 ,            3666
+pg adjust ebpg
+defl = 524.160000,524.160000
+Info: Fine Focus deviation from optimum with -82 DAC steps!
+%ENG_W_MDCLRG      -  main deflection for adjustment (524.160_um,524.160_um) too large 
+%ENG_W_MDCMAX      -  maximum main deflection (508.288_um,508.288_um) is used 
+pg set gpgclearstatistics 1
+pg set bbsclearstatistics 1
+
+cjob_info:
+pg information parameters
+
+ Beams Version  :  v09_11g build: Fri Nov  9 10:04:35 CET 2018
+
+ MBSBASE        :  50.0_us
+ MBSFACTOR      :  1.0_us/um
+ MBSFOCUS       :  1.0_us/um
+
+ SBSBASE        :  500_ns
+ SBSFACTOR      :  500_ns/um
+
+ IMAGEMBSBASE   :  10.0_us
+ IMAGEMBSFACTOR :  100_ns/um
+
+ IMAGESBSBASE   :  50_ns
+ IMAGESBSFACTOR :  500_ns/um
+
+ SEMMBSBASE     :  -1_ns
+ SEMMBSFACTOR   :  -1_ns/um
+
+ SEMSBSBASE     :  200_ns
+ SEMSBSFACTOR   :  300_ns/um
+
+ SEMRATE        :  0
+ SEMMODE        :  1
+
+ MOVPAR         :  100_ms
+
+ MDCOM          :   3.0_nm   MDCOMMAX     :  10.0_nm  
+ TDCOM          :   2.0_nm   TDCOMMAX     :   5.0_nm  
+ PICOM          :   2.0_nm   PICOMMAX     :   5.0_nm  
+
+ PAUSE_EXPOSE   :  0
+ Value:
+   0: No Pause.
+   1: Pause at start of pattern.
+   2: Pause at start of block.
+   3: Pause at start of DO_LOOP.
+
+ BEAMAPERTINV   :  0  
+   0 : archive restore beam: only select and adjust aperture if needed
+   1 : archive restore beam: always adjust aperture 
+
+ BCMINV         :  1    ( 0:Warning, 1:Error )
+ BEAMPARINV     :  1    ( 0:Skip delay, 1:Wait BEAMPAR seconds)
+ BLOCKPRINT     :  OFF
+
+ CALINV         :  1    ( 0:Off, 1:Block, 2:Cell, 3:Marker Field )
+ CALREALIGN     :  ON
+ CALPRINT       :  ON
+ CALDRIFT       :  10_minutes 
+ CALFULL        : 120_minutes 
+
+ FFSHIFTINV     :  OFF  ( experimental! )
+
+ HMAPINV        :  OFF
+ HMAPMODE       :  0    
+ Value:
+   0: Use calculated value.( from coefficients)
+   1: Measure height, use HMAPACCURACY  = 2.0_um
+   2: Measure height, use HMAPCRITERION = 2.0
+   3: Measure height, use HMAPLOWLIM    = 0.0_um
+                      and HMAPHIGHLIM   = 0.0_um
+   4: Use interpolated value.
+
+ HGTINV         :  ON
+ HGTMODE        :  0    
+ Value:
+   0: Message, write cell.
+   1: No message, write cell.
+   2: Message, no write cell.
+   3: No message, no write cell.
+   4: Height measure during stage move, message write cell.
+   5: Height measure during stage move, no message, write cell.
+   6: Height measure during stage move, message, no write cell.
+   7: Height measure during stage move, no message, no write cell.
+
+ HEIGHTOFFSET   :  0.0 um
+ HGTZSTAGE      :  0
+ Value:
+   0: No ZSTAGE height compensation.
+   1: Use ZSTAGE to bring substrate to marker height.
+   2: Use ZSTAGE to bring marker and substrate height to 0.
+
+ MATRIX         :  OFF
+
+ TABRC          :  1
+   0: rotation compensation table disabled.
+   1: rotation compensation table enabled.
+   2: table enabled with interpolation routine activated.
+ TABRCOFFSET    :  0,0
+
+UPG specific:
+ SPIRALMODE     :  OFF
+
+pg information ebpg version
+MACHINE: EBPG 5200 HS
+BEAMS:     v09_11g build: Fri Nov  9 10:04:35 CET 2018
+
+DATA BASE:   0002.0006
+
+UPG:
+  Software : 4.60
+  Board    : crate 15: pev-linux
+  Driver   : 4.60
+
+UPG:
+  Firmware version : 03.08.
+  PG PLD version   : 1.0.1 build 129
+
+  PG-link version  : 9
+  MDAC version     : 6
+  MDAC strike,issue: 0,0
+  MDAC bits        : 20
+  MDAC corr bits   : 16
+
+LSC:
+  X: 30086
+  Y: 30086
+
+ZDRV:
+  BOX      : V.16
+  AXIS 1&2 : V.21
+  AXIS 3&4 : V.21
+
+SMC:
+  Longitudinal: 1VE SMC_CC - Controller-driver version  3. 1. 2
+  Transversal : 2VE SMC_CC - Controller-driver version  3. 1. 2
+
+HT:
+  StandAlone EHT MVME5100, v01_13, Tue Jan 17 10:31:56 CET 2017
+
+Vacuum Controller:
+  SPLC 1.42
+
+
+pg information select holder
+Holder id          : 401
+Holder name        : "BW0036A"
+Holder description : "H_PP3_A"
+Holder type        : " "
+Holder size        : 3.0_inch
+Cup position       : 1.394_mm,49.082_mm,0.000_mm
+Marker position    : 3.085_mm,52.986_mm,0.000_mm
+Holder centre      : 61.693_mm,59.299_mm,0.000_mm
+
+pg information adjust beam
+
+Current column set-up
+Last restored file: /home/pg/archive/99NM_260NA_400UM_100KV.beam_100
+Date: 17:11 14-NOV-2018
+
+High Tension           :      100 kV     Final Aperture      :      400 um
+
+Gun control :
+bias voltage           :  -400.00  V     filament current    :     2.28  A
+Extractor   voltage    :  6175.00  V     current             :   182.10 uA
+tilt  X         22900  :  -41.154 mA     tilt  Y      27236  :  -21.474 mA
+shift X         38305  :   21.501 mA     shift Y      27589  :  -10.903 mA
+AD setpoint dac 100kV  :     4095
+
+Lens control:
+Final lens      41450  :  4.00313  A
+C1 setting      26250  : 5250.000  V     C2 setting   51638  :  1.39500  A
+
+Beam quality:
+Fine Focus dac         :     1889
+Diagonal Stigmator dac :     3130        Axis Stigmator dac  :     1785
+
+measured spotsize      :    0.100 um     beamcurrent         :    271.0 nA
+PMHV setting (dac)     :     3591
+BEAMPAR setting        :      0.0 s
+Spot defocussed with FL 0 bits
+Spot defocussed with FFOFFSET 0 bits
+
+pg information adjust ebpg /sensitivity
+
+Beam diameter       :           98 nm ,          101 nm  current :270.993 nA
+
+resolution          :    70.000000 nm ,    70.000000 nm
+beam step size      :    70.000000 nm ,    70.000000 nm
+main resolution     :     1.000000 nm ,     1.000000 nm  [70,70]
+trap resolution     :     0.500000 nm ,     0.500000 nm  [140,140]
+max. main field size:  1048.576000 um ,  1048.576000 um
+max. trap field size:     4.525000 um ,     4.525000 um
+tdd shift           :            3666 ,            3666
+
+main compensation               x: 1016.576 um    y: 1016.576 um
+
+trap compensation               x:    4.525 um    y:    4.525 um
+
+the deflection compensation settings:
+                               main     rel  trapezium  rel  pull-in
+                             (16bits)         (12bits)      (16bits)
+x gain     [bit]       :      32368       0    2201       0  36615
+y gain     [bit]       :      33800       0    2438       0  37554
+x rotation [bit]       :      31867       0    2895       0  36112
+y rotation [bit]       :      30588       0    3245       0  34636
+x keystone [bit]       :      30953       0
+y keystone [bit]       :      25189       0
+
+table translation settings      x:    0.000 um    y:    0.000 um
+main beam deflection settings   x:    0.000 um    y:    0.000 um
+
+the deflection compensation sensitivities:
+(with respect to centre of the deflection field)
+                              main       trapezium     pull-in
+                             (16bits)     (12bits)    (16bits)
+x gain     [ppm/bit]   :      0.6008       13.234      1.1172
+y gain     [ppm/bit]   :      0.5999       13.122      1.1815
+x rotation [ppm/bit]   :      0.3058        5.816      2.3347
+y rotation [ppm/bit]   :      0.3057        5.696      2.4759
+x keystone [ppm/mm/bit]:      0.1017
+y keystone [ppm/mm/bit]:      0.1015
+
+calculated frequency : 25.139 MHz
+
+the last adjust main comp height @ relative position ***,*** um : 
+-6.7 um
+Spot defocussed with FL 0 bits
+Spot defocussed with FFOFFSET 0 bits
+
+pg information dcd
+Last restored file: /home/pg/archive/perftest.dcd_100
+Date: 03:06 11-NOV-2018
+
+Main:                 Trap:               Stigmator:      SEM:
+mddx2    33156,29132  tddxx    2139,1996  fspascor  2047  dcvmdmzoom    1
+mddy2    25937,31762  tddxy    2116,2015  fspdscor  2047  dcvmdmpan     0,   0
+mddxy2   27939,26805  tddxxy   2072,2037  fspffcor  2047  mdpsem     2495,1919
+mddyx2   38477,28548  tddxx2   2145,2097  fspasfunc    0  dcvmdmstep   32
+mddx3    26938,27829  tddxy2   2137,2101  fspdsfunc    0  dcvmdmrate    1
+mddy3    36631,29099  tddyx    2041,2049  fspfffunc    0
+mddorth  31392,31936  tddyy    1987,1948  dcvdc       31
+mdpgain   1868, 2367  tddyxy   2004,2014
+mdpvout   3325, 1524  tddyx2   2077,2071
+mdpslow      0,    0  tddyy2   1980,2093
+Beam Blanker:                             Pattern Generator:
+bbsmode               PN                  beamondelay         39.00_ns
+bbshvadjust           80.00_%,80.00_%     beamoffdelay        49.00_ns
+bbszeroadjust          0.00_%, 0.00_%     negativecommondelay 64.00_ns
+
+mbsbase               50000_ns            sbsbase               500_ns
+mbsfactor              1000_ns/um         sbsfactor             500_ns/um
+mbsfocus               1000_ns/um
+
+cjob_performance:
+None
+
+Command line marker position specification(s):
+  absolute position marker 0: 45157.000,44783.000
+  absolute position marker 1: #########,#########
+  absolute position marker 2: #########,#########
+  absolute position marker 3: #########,#########
+
+Fixed align:
+pre  align marker    : -6500.000000,-8100.000000,find_RN20
+first alignment
+auto align marker 1 : -6500.000000,8100.000000,find_RN20
+auto align marker 2 : 6500.000000,8100.000000,find_RN20
+auto align marker 3 : 6500.000000,-8100.000000,find_RN20
+second alignment
+
+Locating pre-alignment marker find_RN20 @ position 45157.000000,44783.000000 [um] (absolute)
+Entered USER-DEFINED marker search routine findmarker
+
+Executing /home/pg/.naf/bin/findmarker RN20
+PG_IMAGE_FINE_SIZE not defined
+getstringpar(): status = 1088 = E_NOMAPSEL, set to HILL_I_NORMAL, type = -1, returned ""
+Current position  45157.000, 44783.000 corresponds to absolute position  45157.000, 44783.000 (map "")
+The measured height at expected marker position 45157.000,44783.000 is 18.7 micron, compensating
+Searching marker "RN20" at  45157.000, 44783.000 and found at  45167.510, 44783.300
+Searching marker "RN20" at 45157.000,44783.000 and found at 45167.510,44783.300, tababs /meas 45157.203,44776.097
+  found @ 45.167510,44.783300
+                 found marker @ position 45167.510400,44783.300050 [um] (absolute)
+
+Map      : cjob_shapingARP
+ mapid   : 0
+ order   : 1
+ origin  : 0.000000_mm, 0.000000_mm
+
+map      :     cjob_shapingARP         absolute
+Markers  :     expected                observed
+         X [mm]       Y [mm]       X [mm]       Y [mm]
+1:   -6.5000000,  -8.1000000   45.1675104,  44.7833001
+
+Transform:          to Absolute                     from Absolute       
+                 X               Y                X               Y     
+ offset  :  +5.166751e+01 , +5.288330e+01    -5.166751e+01 , -5.288330e+01
+ scale   :  +0.000000e+00 , +0.000000e+00    +0.000000e+00 , +0.000000e+00
+ rotation:  +0.000000e+00 , +0.000000e+00    +0.000000e+00 , +0.000000e+00
+ keystone:  +0.000000e+00 , +0.000000e+00    +0.000000e+00 , +0.000000e+00
+
+Binary DAC corrections at present position in map cjob_shapingARP :
+-6.500000mm,-8.100000mm (abs: 45.167510mm,44.783300mm)
+
+                 main       trap      pull-in
+ x gain  :          0          0          0
+ y gain  :          0          0          0
+ x rot   :          0          0          0
+ y rot   :          0          0          0
+ x key   :          0
+ y key   :          0
+
+  average rotation angle = 0.000000 (0.000000 degrees) @ 
+  current stage position 45.167510,44.783300 (absolute 45.167510,44.783300)
+
+pg select map substrate cjob_shapingARP
+cjob_align (pre)
+Entered USER-DEFINED marker search routine findmarker
+
+Executing /home/pg/.naf/bin/findmarker RN20
+PG_IMAGE_FINE_SIZE not defined
+getstringpar(): status = 0, type = 10, returned "cjob_shapingARP"
+Current position  -6500.000,  8100.000 corresponds to absolute position  45167.510, 60983.300 (map "cjob_shapingARP")
+The measured height at expected marker position -6500.000,8100.000 is 11.3 micron, compensating
+Searching marker "RN20" at  -6500.000,  8100.000 and found at  -6522.129,  8099.725
+Searching marker "RN20" at -6500.000,8100.000 and found at -6522.129,8099.725, tababs /meas 45135.510,60976.133
+Locating align marker 1 find_RN20 at position -6500.000000,8100.000000  (-6500.000000,8100.000000) (cjob_shapingARP)
+Entered USER-DEFINED marker search routine findmarker
+
+Executing /home/pg/.naf/bin/findmarker RN20
+PG_IMAGE_FINE_SIZE not defined
+getstringpar(): status = 0, type = 10, returned "cjob_shapingARP"
+Current position   6500.000,  8100.000 corresponds to absolute position  58167.510, 60983.300 (map "cjob_shapingARP")
+The measured height at expected marker position 6500.000,8100.000 is 0.7 micron, compensating
+Searching marker "RN20" at   6500.000,  8100.000 and found at   6477.666,  8117.098
+Searching marker "RN20" at 6500.000,8100.000 and found at 6477.666,8117.098, tababs /meas 58135.341,60993.509
+  found
+Locating align marker 2 find_RN20 at position 6500.000000,8100.000000  (6500.000000,8100.000000) (cjob_shapingARP)
+Entered USER-DEFINED marker search routine findmarker
+
+Executing /home/pg/.naf/bin/findmarker RN20
+PG_IMAGE_FINE_SIZE not defined
+getstringpar(): status = 0, type = 10, returned "cjob_shapingARP"
+Current position   6500.000, -8100.000 corresponds to absolute position  58167.510, 44783.300 (map "cjob_shapingARP")
+The measured height at expected marker position 6500.000,-8100.000 is 8.2 micron, compensating
+Searching marker "RN20" at   6500.000, -8100.000 and found at   6499.656, -8083.052
+Searching marker "RN20" at 6500.000,-8100.000 and found at 6499.656,-8083.052, tababs /meas 58156.871,44793.346
+  found
+Locating align marker 3 find_RN20 at position 6500.000000,-8100.000000  (6500.000000,-8100.000000) (cjob_shapingARP)
+  found
+
+Map      : cjob_shapingARP (Selected)
+ mapid   : 0
+ order   : 3
+ origin  : 0.000000_mm, 0.000000_mm
+
+map      :     cjob_shapingARP         cjob_shapingARP         absolute
+Markers  :     expected                observed
+         X [mm]       Y [mm]       X [mm]       Y [mm]      X [mm]       Y [mm]
+1:   -6.5000000,   8.1000000   -6.5221287,   8.0997253   45.1232537,  60.9827211
+2:    6.5000000,   8.1000000    6.4776665,   8.1170980   58.1228205,  61.0174663
+3:    6.5000000,  -8.1000000    6.4996559,  -8.0830517   58.1667991,  44.8171963
+
+Transform:          to Absolute                     from Absolute       
+                 X               Y                X               Y     
+ offset  :  +5.165627e+01 , +5.289164e+01    -5.172879e+01 , -5.282202e+01
+ scale   :  -1.575577e-05 , +9.237654e-06    +1.394205e-05 , -1.105149e-05
+ rotation:  +1.336356e-03 , -1.357369e-03    -1.336362e-03 , +1.357375e-03
+ keystone:  +0.000000e+00 , +0.000000e+00    +0.000000e+00 , +0.000000e+00
+
+Binary DAC corrections at present position in map cjob_shapingARP :
+6.500000mm,-8.100000mm (abs: 58.167166mm,44.800248mm)
+
+cur cjob_shapingARP: 6.499656mm,-8.083052mm:
+                 main       trap      pull-in
+ x gain  :        -26         -1        -14
+ y gain  :         15          1          8
+ x rot   :       4371        230        572
+ y rot   :      -4440       -238       -548
+ x key   :          0
+ y key   :          0
+
+  average rotation angle = -0.001347 (-0.077170 degrees) @ 
+  current stage position 6.499656,-8.083052 (absolute 58.167166,44.800248)
+
+pg select map substrate cjob_shapingARP
+
+Height mapping hmap:
+
+
+Height mapping hmap: not available
+
+
+Height mapping coefficients:
+
+  Statistics:
+      order           = *
+      sigma           = *.*
+      sigma_criterion = *.*
+      origin          = *.*_mm,*.*_mm
+      min             = *.*_mm,*.*_mm
+      max             = *.*_mm,*.*_mm
+
+  Coefficients:
+      C00           =  4.832774e+00
+      C10         x =  1.791007e+00
+      C01         y = -3.622227e-01
+      C20       x*x = -2.518965e-02
+      C11       x*y =  5.402922e-04
+      C02       y*y = -7.178192e-04
+      C30     x*x*x =  0.000000e+00
+      C21     x*x*y =  0.000000e+00
+      C12     x*y*y =  0.000000e+00
+      C03     y*y*y =  0.000000e+00
+
+cjob_do: layout: 2x2
+centre         [um] :  0.000000,0.000000
+origin         [um] :  0.000000,0.000000
+cells               :  2,2
+vector 1       [um] :  10000.000000,0.000000
+vector 2       [um] :  0.000000,10000.000000
+scan mode main      :  serpentine
+current mapping     :  cjob_shapingARP
+mapping             :  
+pg select map substrate cjob_shapingARP
+CALINV  = 1
+
+Layout Cell 1 1 of 2x2
+argv[0] = /home/pg/.naf/bin/preselect_aperture
+argv[1] = 99NM_260NA_400UM_100KV.beam_100
+Executing preselect_aperture( 99NM_260NA_400UM_100KV )
+OPT_SMC = 1, BEAMAPERTINV = 0
+Aperture 400.000000 already has been selected
+cjob_do: expose identifier
+layer identifier       : %j_%e\0x20-\0x20220\0x20\0xB5C/cm\0xB2\0x20-\0x20%d
+id                     : 1809-3_shapingARP - 220 �C/cm� - 2018-11-14
+sym                    :                                            
+font                   : -*-helvetica-medium-r-*--25-*-*-*-*-*-*
+ascent                 : 22
+descent                : 5
+bitmap width           : 506
+bitmap height          : 27
+invert                 : 0
+orientation            : R90
+placement              : CENTER,LINE
+pixelsize              : 3.500000,3.500000 um
+
+sub_msf                : 140,140
+high tension           : 100.000000 kV
+resolution             : 70.000000,70.000000 nm
+beamstepsize           : 70.000000,70.000000 nm
+main resolution        : 1.000000,1.000000 nm
+sub resolution         : 0.500000,0.500000 nm
+main_bits              : 20
+sub_bits               : 14
+main_msf               : 70,70
+sub_msf                : 140,140
+max main field         : 1048.576000 um
+max sub field          : 4.525000 um
+Open record file /home/pg/users/schmidt/patterns/cjob/.identifier for writing!
+%ENG_E_NOMNPA      -  no main pattern has been declared 
+pg select map substrate cjob_shapingARP
+select pattern /home/pg/users/schmidt/patterns/cjob/identifier_1542211998670160.gpf
+Calculated base frequency:   25.1385 MHz
+Expose pattern     :  /home/pg/users/schmidt/patterns/cjob/identifier_1542211998670160.gpf
+       position[um]:  -3300.000000,-3500.000000 (map:absolute)
+       dose[uC/cm2]:  220.000000
+
+Map      : cjob_shapingARP (Selected)
+ mapid   : 0
+ order   : 3
+ origin  : 0.000000_mm, 0.000000_mm
+
+map      :     cjob_shapingARP         cjob_shapingARP         absolute
+Markers  :     expected                observed
+         X [mm]       Y [mm]       X [mm]       Y [mm]      X [mm]       Y [mm]
+1:   -6.5000000,   8.1000000   -6.5221287,   8.0997253   45.1232537,  60.9827211
+2:    6.5000000,   8.1000000    6.4776665,   8.1170980   58.1228205,  61.0174663
+3:    6.5000000,  -8.1000000    6.4996559,  -8.0830517   58.1667991,  44.8171963
+
+Transform:          to Absolute                     from Absolute       
+                 X               Y                X               Y     
+ offset  :  +5.165627e+01 , +5.289164e+01    -5.172879e+01 , -5.282202e+01
+ scale   :  -1.575577e-05 , +9.237654e-06    +1.394205e-05 , -1.105149e-05
+ rotation:  +1.336356e-03 , -1.357369e-03    -1.336362e-03 , +1.357375e-03
+ keystone:  +0.000000e+00 , +0.000000e+00    +0.000000e+00 , +0.000000e+00
+
+Binary DAC corrections at present position in map cjob_shapingARP :
+-3.300000mm,-3.500000mm (abs: 48.361077mm,49.387195mm)
+
+cur cjob_shapingARP: -3.300000mm,-3.500000mm:
+                 main       trap      pull-in
+ x gain  :        -26         -1        -14
+ y gain  :         15          1          8
+ x rot   :       4371        230        572
+ y rot   :      -4440       -238       -548
+ x key   :          0
+ y key   :          0
+
+  average rotation angle = -0.001347 (-0.077170 degrees) @ 
+  current stage position -3.300000,-3.500000 (absolute 48.361077,49.387195)
+
+getstringpar(): status = 0, type = 10, returned "cjob_shapingARP"
+height at pos  -3300, -3500 (map "cjob_shapingARP"), block  1, 0 meas'd  +14.3, used   +8.2
+getstringpar(): status = 0, type = 10, returned "cjob_shapingARP"
+height at pos  -3298, -4745 (map "cjob_shapingARP"), block  2, 0 meas'd  +14.7, used  +14.7
+getstringpar(): status = 0, type = 10, returned "cjob_shapingARP"
+height at pos  -3298, -3696 (map "cjob_shapingARP"), block  3, 0 meas'd  +14.4, used  +14.4
+Elapsed time for pattern 0:0:1.94
+
+Layout Cell 2 1 of 2x2
+argv[0] = /home/pg/.naf/bin/preselect_aperture
+argv[1] = 99NM_260NA_400UM_100KV.beam_100
+Executing preselect_aperture( 99NM_260NA_400UM_100KV )
+OPT_SMC = 1, BEAMAPERTINV = 0
+Aperture 400.000000 already has been selected
+cjob_do: expose identifier
+layer identifier       : %j_%e\0x20-\0x20220\0x20\0xB5C/cm\0xB2\0x20-\0x20%d
+id                     : 1809-3_shapingARP - 220 �C/cm� - 2018-11-14
+sym                    :                                            
+font                   : -*-helvetica-medium-r-*--25-*-*-*-*-*-*
+ascent                 : 22
+descent                : 5
+bitmap width           : 506
+bitmap height          : 27
+invert                 : 0
+orientation            : R90
+placement              : CENTER,LINE
+pixelsize              : 3.500000,3.500000 um
+
+sub_msf                : 140,140
+high tension           : 100.000000 kV
+resolution             : 70.000000,70.000000 nm
+beamstepsize           : 70.000000,70.000000 nm
+main resolution        : 1.000000,1.000000 nm
+sub resolution         : 0.500000,0.500000 nm
+main_bits              : 20
+sub_bits               : 14
+main_msf               : 70,70
+sub_msf                : 140,140
+max main field         : 1048.576000 um
+max sub field          : 4.525000 um
+Open record file /home/pg/users/schmidt/patterns/cjob/.identifier for writing!
+
+Pattern name         : identifier_1542211998670160.gpf
+File name            : /home/pg/users/schmidt/patterns/cjob/identifier_1542211998670160.gpf
+
+Format               : GPF: external memory mode
+Shape Type           : TRAPEZIUM
+Number of Blocks     : 4
+Main field placement : FLOATING
+Sub field placement  : LOWERLEFT
+Fracture style       : SUBFIELD
+Number of Main bits  : 20
+Number of Sub bits   : 14
+Maximum MSF          : 8192
+Number freq. factors : 1
+Minimum frequency    : 1.000000
+Maximum frequency    : 1.000000
+Pixel time           : 6072500.000000 (6.0725e+06)
+High Tension         : 100 kV
+Block size           :      1048.32000000 um,     1048.32000000 um
+Pattern size         :       189.00000000 um,     3542.00000000 um
+Resolution           :         0.07000000 um
+Beamstepsize         :         0.07000000 um
+Main resolution      :         0.00100000 um
+Trap resolution      :         0.00050000 um
+pg select map substrate cjob_shapingARP
+select pattern /home/pg/users/schmidt/patterns/cjob/identifier_1542212000713730.gpf
+Calculated base frequency:   25.1385 MHz
+Expose pattern     :  /home/pg/users/schmidt/patterns/cjob/identifier_1542212000713730.gpf
+       position[um]:  6700.000000,-3500.000000 (map:absolute)
+       dose[uC/cm2]:  220.000000
+
+Map      : cjob_shapingARP (Selected)
+ mapid   : 0
+ order   : 3
+ origin  : 0.000000_mm, 0.000000_mm
+
+map      :     cjob_shapingARP         cjob_shapingARP         absolute
+Markers  :     expected                observed
+         X [mm]       Y [mm]       X [mm]       Y [mm]      X [mm]       Y [mm]
+1:   -6.5000000,   8.1000000   -6.5221287,   8.0997253   45.1232537,  60.9827211
+2:    6.5000000,   8.1000000    6.4776665,   8.1170980   58.1228205,  61.0174663
+3:    6.5000000,  -8.1000000    6.4996559,  -8.0830517   58.1667991,  44.8171963
+
+Transform:          to Absolute                     from Absolute       
+                 X               Y                X               Y     
+ offset  :  +5.165627e+01 , +5.289164e+01    -5.172879e+01 , -5.282202e+01
+ scale   :  -1.575577e-05 , +9.237654e-06    +1.394205e-05 , -1.105149e-05
+ rotation:  +1.336356e-03 , -1.357369e-03    -1.336362e-03 , +1.357375e-03
+ keystone:  +0.000000e+00 , +0.000000e+00    +0.000000e+00 , +0.000000e+00
+
+Binary DAC corrections at present position in map cjob_shapingARP :
+6.700000mm,-3.500000mm (abs: 58.360919mm,49.400558mm)
+
+cur cjob_shapingARP: 6.700000mm,-3.500000mm:
+                 main       trap      pull-in
+ x gain  :        -26         -1        -14
+ y gain  :         15          1          8
+ x rot   :       4371        230        572
+ y rot   :      -4440       -238       -548
+ x key   :          0
+ y key   :          0
+
+  average rotation angle = -0.001347 (-0.077170 degrees) @ 
+  current stage position 6.700000,-3.500000 (absolute 58.360919,49.400558)
+
+getstringpar(): status = 0, type = 10, returned "cjob_shapingARP"
+height at pos   6700, -3500 (map "cjob_shapingARP"), block  1, 0 meas'd   +5.4, used  +14.0
+getstringpar(): status = 0, type = 10, returned "cjob_shapingARP"
+height at pos   6702, -4745 (map "cjob_shapingARP"), block  2, 0 meas'd   +6.0, used   +6.0
+getstringpar(): status = 0, type = 10, returned "cjob_shapingARP"
+height at pos   6702, -3696 (map "cjob_shapingARP"), block  3, 0 meas'd   +5.5, used   +5.5
+Elapsed time for pattern 0:0:1.94
+
+Layout Cell 2 2 of 2x2
+argv[0] = /home/pg/.naf/bin/preselect_aperture
+argv[1] = 99NM_260NA_400UM_100KV.beam_100
+Executing preselect_aperture( 99NM_260NA_400UM_100KV )
+OPT_SMC = 1, BEAMAPERTINV = 0
+Aperture 400.000000 already has been selected
+cjob_do: expose identifier
+layer identifier       : %j_%e\0x20-\0x20220\0x20\0xB5C/cm\0xB2\0x20-\0x20%d
+id                     : 1809-3_shapingARP - 220 �C/cm� - 2018-11-14
+sym                    :                                            
+font                   : -*-helvetica-medium-r-*--25-*-*-*-*-*-*
+ascent                 : 22
+descent                : 5
+bitmap width           : 506
+bitmap height          : 27
+invert                 : 0
+orientation            : R90
+placement              : CENTER,LINE
+pixelsize              : 3.500000,3.500000 um
+
+sub_msf                : 140,140
+high tension           : 100.000000 kV
+resolution             : 70.000000,70.000000 nm
+beamstepsize           : 70.000000,70.000000 nm
+main resolution        : 1.000000,1.000000 nm
+sub resolution         : 0.500000,0.500000 nm
+main_bits              : 20
+sub_bits               : 14
+main_msf               : 70,70
+sub_msf                : 140,140
+max main field         : 1048.576000 um
+max sub field          : 4.525000 um
+Open record file /home/pg/users/schmidt/patterns/cjob/.identifier for writing!
+
+Pattern name         : identifier_1542212000713730.gpf
+File name            : /home/pg/users/schmidt/patterns/cjob/identifier_1542212000713730.gpf
+
+Format               : GPF: external memory mode
+Shape Type           : TRAPEZIUM
+Number of Blocks     : 4
+Main field placement : FLOATING
+Sub field placement  : LOWERLEFT
+Fracture style       : SUBFIELD
+Number of Main bits  : 20
+Number of Sub bits   : 14
+Maximum MSF          : 8192
+Number freq. factors : 1
+Minimum frequency    : 1.000000
+Maximum frequency    : 1.000000
+Pixel time           : 6072500.000000 (6.0725e+06)
+High Tension         : 100 kV
+Block size           :      1048.32000000 um,     1048.32000000 um
+Pattern size         :       189.00000000 um,     3542.00000000 um
+Resolution           :         0.07000000 um
+Beamstepsize         :         0.07000000 um
+Main resolution      :         0.00100000 um
+Trap resolution      :         0.00050000 um
+pg select map substrate cjob_shapingARP
+select pattern /home/pg/users/schmidt/patterns/cjob/identifier_1542212002765584.gpf
+Calculated base frequency:   25.1385 MHz
+Expose pattern     :  /home/pg/users/schmidt/patterns/cjob/identifier_1542212002765584.gpf
+       position[um]:  6700.000000,6500.000000 (map:absolute)
+       dose[uC/cm2]:  220.000000
+
+Map      : cjob_shapingARP (Selected)
+ mapid   : 0
+ order   : 3
+ origin  : 0.000000_mm, 0.000000_mm
+
+map      :     cjob_shapingARP         cjob_shapingARP         absolute
+Markers  :     expected                observed
+         X [mm]       Y [mm]       X [mm]       Y [mm]      X [mm]       Y [mm]
+1:   -6.5000000,   8.1000000   -6.5221287,   8.0997253   45.1232537,  60.9827211
+2:    6.5000000,   8.1000000    6.4776665,   8.1170980   58.1228205,  61.0174663
+3:    6.5000000,  -8.1000000    6.4996559,  -8.0830517   58.1667991,  44.8171963
+
+Transform:          to Absolute                     from Absolute       
+                 X               Y                X               Y     
+ offset  :  +5.165627e+01 , +5.289164e+01    -5.172879e+01 , -5.282202e+01
+ scale   :  -1.575577e-05 , +9.237654e-06    +1.394205e-05 , -1.105149e-05
+ rotation:  +1.336356e-03 , -1.357369e-03    -1.336362e-03 , +1.357375e-03
+ keystone:  +0.000000e+00 , +0.000000e+00    +0.000000e+00 , +0.000000e+00
+
+Binary DAC corrections at present position in map cjob_shapingARP :
+6.700000mm,6.500000mm (abs: 58.347346mm,59.400650mm)
+
+cur cjob_shapingARP: 6.700000mm,6.500000mm:
+                 main       trap      pull-in
+ x gain  :        -26         -1        -14
+ y gain  :         15          1          8
+ x rot   :       4371        230        572
+ y rot   :      -4440       -238       -548
+ x key   :          0
+ y key   :          0
+
+  average rotation angle = -0.001347 (-0.077170 degrees) @ 
+  current stage position 6.700000,6.500000 (absolute 58.347346,59.400650)
+
+getstringpar(): status = 0, type = 10, returned "cjob_shapingARP"
+height at pos   6700,  6500 (map "cjob_shapingARP"), block  1, 0 meas'd   +2.1, used   +5.0
+getstringpar(): status = 0, type = 10, returned "cjob_shapingARP"
+height at pos   6702,  5255 (map "cjob_shapingARP"), block  2, 0 meas'd   +2.2, used   +2.2
+getstringpar(): status = 0, type = 10, returned "cjob_shapingARP"
+height at pos   6702,  6304 (map "cjob_shapingARP"), block  3, 0 meas'd   +2.0, used   +2.0
+Elapsed time for pattern 0:0:2.12
+
+Layout Cell 1 2 of 2x2
+argv[0] = /home/pg/.naf/bin/preselect_aperture
+argv[1] = 99NM_260NA_400UM_100KV.beam_100
+Executing preselect_aperture( 99NM_260NA_400UM_100KV )
+OPT_SMC = 1, BEAMAPERTINV = 0
+Aperture 400.000000 already has been selected
+cjob_do: expose identifier
+layer identifier       : %j_%e\0x20-\0x20220\0x20\0xB5C/cm\0xB2\0x20-\0x20%d
+id                     : 1809-3_shapingARP - 220 �C/cm� - 2018-11-14
+sym                    :                                            
+font                   : -*-helvetica-medium-r-*--25-*-*-*-*-*-*
+ascent                 : 22
+descent                : 5
+bitmap width           : 506
+bitmap height          : 27
+invert                 : 0
+orientation            : R90
+placement              : CENTER,LINE
+pixelsize              : 3.500000,3.500000 um
+
+sub_msf                : 140,140
+high tension           : 100.000000 kV
+resolution             : 70.000000,70.000000 nm
+beamstepsize           : 70.000000,70.000000 nm
+main resolution        : 1.000000,1.000000 nm
+sub resolution         : 0.500000,0.500000 nm
+main_bits              : 20
+sub_bits               : 14
+main_msf               : 70,70
+sub_msf                : 140,140
+max main field         : 1048.576000 um
+max sub field          : 4.525000 um
+Open record file /home/pg/users/schmidt/patterns/cjob/.identifier for writing!
+
+Pattern name         : identifier_1542212002765584.gpf
+File name            : /home/pg/users/schmidt/patterns/cjob/identifier_1542212002765584.gpf
+
+Format               : GPF: external memory mode
+Shape Type           : TRAPEZIUM
+Number of Blocks     : 4
+Main field placement : FLOATING
+Sub field placement  : LOWERLEFT
+Fracture style       : SUBFIELD
+Number of Main bits  : 20
+Number of Sub bits   : 14
+Maximum MSF          : 8192
+Number freq. factors : 1
+Minimum frequency    : 1.000000
+Maximum frequency    : 1.000000
+Pixel time           : 6072500.000000 (6.0725e+06)
+High Tension         : 100 kV
+Block size           :      1048.32000000 um,     1048.32000000 um
+Pattern size         :       189.00000000 um,     3542.00000000 um
+Resolution           :         0.07000000 um
+Beamstepsize         :         0.07000000 um
+Main resolution      :         0.00100000 um
+Trap resolution      :         0.00050000 um
+pg select map substrate cjob_shapingARP
+select pattern /home/pg/users/schmidt/patterns/cjob/identifier_1542212005009269.gpf
+Calculated base frequency:   25.1385 MHz
+Expose pattern     :  /home/pg/users/schmidt/patterns/cjob/identifier_1542212005009269.gpf
+       position[um]:  -3300.000000,6500.000000 (map:absolute)
+       dose[uC/cm2]:  220.000000
+
+Map      : cjob_shapingARP (Selected)
+ mapid   : 0
+ order   : 3
+ origin  : 0.000000_mm, 0.000000_mm
+
+map      :     cjob_shapingARP         cjob_shapingARP         absolute
+Markers  :     expected                observed
+         X [mm]       Y [mm]       X [mm]       Y [mm]      X [mm]       Y [mm]
+1:   -6.5000000,   8.1000000   -6.5221287,   8.0997253   45.1232537,  60.9827211
+2:    6.5000000,   8.1000000    6.4776665,   8.1170980   58.1228205,  61.0174663
+3:    6.5000000,  -8.1000000    6.4996559,  -8.0830517   58.1667991,  44.8171963
+
+Transform:          to Absolute                     from Absolute       
+                 X               Y                X               Y     
+ offset  :  +5.165627e+01 , +5.289164e+01    -5.172879e+01 , -5.282202e+01
+ scale   :  -1.575577e-05 , +9.237654e-06    +1.394205e-05 , -1.105149e-05
+ rotation:  +1.336356e-03 , -1.357369e-03    -1.336362e-03 , +1.357375e-03
+ keystone:  +0.000000e+00 , +0.000000e+00    +0.000000e+00 , +0.000000e+00
+
+Binary DAC corrections at present position in map cjob_shapingARP :
+-3.300000mm,6.500000mm (abs: 48.347503mm,59.387287mm)
+
+cur cjob_shapingARP: -3.300000mm,6.500000mm:
+                 main       trap      pull-in
+ x gain  :        -26         -1        -14
+ y gain  :         15          1          8
+ x rot   :       4371        230        572
+ y rot   :      -4440       -238       -548
+ x key   :          0
+ y key   :          0
+
+  average rotation angle = -0.001347 (-0.077170 degrees) @ 
+  current stage position -3.300000,6.500000 (absolute 48.347503,59.387287)
+
+getstringpar(): status = 0, type = 10, returned "cjob_shapingARP"
+height at pos  -3300,  6500 (map "cjob_shapingARP"), block  1, 0 meas'd  +10.0, used   +1.7
+getstringpar(): status = 0, type = 10, returned "cjob_shapingARP"
+height at pos  -3298,  5255 (map "cjob_shapingARP"), block  2, 0 meas'd  +10.5, used  +10.5
+getstringpar(): status = 0, type = 10, returned "cjob_shapingARP"
+height at pos  -3298,  6304 (map "cjob_shapingARP"), block  3, 0 meas'd  +10.1, used  +10.1
+Elapsed time for pattern 0:0:2.12
+
+Elapsed time for layout 2x2 0:0:8.57
+argv[0] = /home/pg/.naf/bin/preselect_aperture
+argv[1] = 15NM_514PA_400UM_100KV.beam_100
+Executing preselect_aperture( 15NM_514PA_400UM_100KV )
+OPT_SMC = 1, BEAMAPERTINV = 0
+Aperture 400.000000 already has been selected
+cjob_clear: pg layout clear
+cjob_clear: pg deselect map substrate
+
+cjob_calibrate:
+pg set resist 220.000000
+pg deselect pattern
+pg select pattern 1809-3_1x1_shaping.gpf
+pg archive restore beam 15NM_514PA_400UM_100KV.beam_100
+.
+ Delay with 0_s
+ Type Ctrl-C to abort or change BEAMPAR to alter delay 
+
+PRE_LBA in tltcur/b space, Rmax = 1280  dR = 40 using VIDLEV
+ PMHVstart = 1286
+Height of calibration marker is -6.70 um
+tltcur/b: x0 = 26493; y0 = 31387
+PMHV reset to PMHVstart = 1286
+PMHV maximum found at tltcur/b = 26053,30987
+PRE_LBA in tltcur/b space, Rmax = 80  dR = 10 using VIDLEV
+ PMHVstart = 1286
+Height of calibration marker is -6.70 um
+tltcur/b: x0 = 26053; y0 = 30987
+PMHV reset to PMHVstart = 1286
+PMHV maximum found at tltcur/b = 26013,31027
+PRE_LBA in tltcur/b space, Rmax = 10  dR = 1 using VIDLEV
+ PMHVstart = 1286
+Height of calibration marker is -6.70 um
+tltcur/b: x0 = 26013; y0 = 31027
+PMHV reset to PMHVstart = 1286
+PMHV maximum found at tltcur/b = 26009,31024
+For alignment in our FEG system, $NAF_BIN/align -r (-s) is used
+OPT_SMC = 1, BEAMAPERTINV = 0 ==> do_aap = 1
+ PMHVstart = 1286
+tltcur/b changed from 26009,31024 to 26257,31729 T:+248,+705
+tltcur/b changed from 26257,31729 to 26283,31688 T:+26,-41
+sftcur/b unchanged at 41088,39302
+tltcur/b unchanged at 26283,31688
+sftcur/b changed from 41088,39302 to 42456,37831 S:+1368,-1471
+sftcur/b unchanged at 42456,37831
+ATAB pre = 6228.819437,8169.285000
+
+
+Automatic aperture changer.
+Errors will be automatically adjusted by using the final lens method.
+This command should finish by itselve or can be canceled with CTRL_C.
+
+           LEFT KNOB                *          RIGHT KNOB               *
+              I*                   0.06               *                    0.04
+              *                    0.02               *                    0.04
+              I*                   0.06               *                    0.01
+              *                   -0.01               *                    0.04
+              *                   -0.05               *                    0.03
+              *                    0.02               *                    0.02
+              *                    0.04               *                    0.01
+              *                   -0.01               *                    0.02
+              *                   -0.04               *                   -0.01
+              *                    0.02               *                   -0.01
+              *                   -0.01               *                   -0.01
+              *                    0.01               *                   -0.01
+              *                   -0.00               *                   -0.04
+              *                    0.00               *                    0.00
+Restoring final lens value
+ATAB post = 6224.724438,8169.163500, delta = -4.095000,-0.121500
+PMHV reset to PMHVstart = 1286
+pg adjust ebpg
+%ENG_W_MDCLRG      -  main deflection for adjustment (520.000_um,520.000_um) too large 
+%ENG_W_MDCMAX      -  maximum main deflection (508.288_um,508.288_um) is used 
+pg select map substrate cjob_shapingARP
+pg set gpgclearstatistics 1
+pg set bbsclearstatistics 1
+
+cjob_info:
+pg information parameters
+
+ Beams Version  :  v09_11g build: Fri Nov  9 10:04:35 CET 2018
+
+ MBSBASE        :  50.0_us
+ MBSFACTOR      :  1.0_us/um
+ MBSFOCUS       :  1.0_us/um
+
+ SBSBASE        :  500_ns
+ SBSFACTOR      :  500_ns/um
+
+ IMAGEMBSBASE   :  10.0_us
+ IMAGEMBSFACTOR :  100_ns/um
+
+ IMAGESBSBASE   :  50_ns
+ IMAGESBSFACTOR :  500_ns/um
+
+ SEMMBSBASE     :  -1_ns
+ SEMMBSFACTOR   :  -1_ns/um
+
+ SEMSBSBASE     :  200_ns
+ SEMSBSFACTOR   :  300_ns/um
+
+ SEMRATE        :  0
+ SEMMODE        :  1
+
+ MOVPAR         :  100_ms
+
+ MDCOM          :   3.0_nm   MDCOMMAX     :  10.0_nm  
+ TDCOM          :   2.0_nm   TDCOMMAX     :   5.0_nm  
+ PICOM          :   2.0_nm   PICOMMAX     :   5.0_nm  
+
+ PAUSE_EXPOSE   :  0
+ Value:
+   0: No Pause.
+   1: Pause at start of pattern.
+   2: Pause at start of block.
+   3: Pause at start of DO_LOOP.
+
+ BEAMAPERTINV   :  0  
+   0 : archive restore beam: only select and adjust aperture if needed
+   1 : archive restore beam: always adjust aperture 
+
+ BCMINV         :  1    ( 0:Warning, 1:Error )
+ BEAMPARINV     :  1    ( 0:Skip delay, 1:Wait BEAMPAR seconds)
+ BLOCKPRINT     :  OFF
+
+ CALINV         :  1    ( 0:Off, 1:Block, 2:Cell, 3:Marker Field )
+ CALREALIGN     :  ON
+ CALPRINT       :  ON
+ CALDRIFT       :  10_minutes 
+ CALFULL        : 120_minutes 
+
+ FFSHIFTINV     :  OFF  ( experimental! )
+
+ HMAPINV        :  OFF
+ HMAPMODE       :  0    
+ Value:
+   0: Use calculated value.( from coefficients)
+   1: Measure height, use HMAPACCURACY  = 2.0_um
+   2: Measure height, use HMAPCRITERION = 2.0
+   3: Measure height, use HMAPLOWLIM    = 0.0_um
+                      and HMAPHIGHLIM   = 0.0_um
+   4: Use interpolated value.
+
+ HGTINV         :  ON
+ HGTMODE        :  0    
+ Value:
+   0: Message, write cell.
+   1: No message, write cell.
+   2: Message, no write cell.
+   3: No message, no write cell.
+   4: Height measure during stage move, message write cell.
+   5: Height measure during stage move, no message, write cell.
+   6: Height measure during stage move, message, no write cell.
+   7: Height measure during stage move, no message, no write cell.
+
+ HEIGHTOFFSET   :  0.0 um
+ HGTZSTAGE      :  0
+ Value:
+   0: No ZSTAGE height compensation.
+   1: Use ZSTAGE to bring substrate to marker height.
+   2: Use ZSTAGE to bring marker and substrate height to 0.
+
+ MATRIX         :  OFF
+
+ TABRC          :  1
+   0: rotation compensation table disabled.
+   1: rotation compensation table enabled.
+   2: table enabled with interpolation routine activated.
+ TABRCOFFSET    :  0,0
+
+UPG specific:
+ SPIRALMODE     :  OFF
+
+pg information ebpg version
+MACHINE: EBPG 5200 HS
+BEAMS:     v09_11g build: Fri Nov  9 10:04:35 CET 2018
+
+DATA BASE:   0002.0006
+
+UPG:
+  Software : 4.60
+  Board    : crate 15: pev-linux
+  Driver   : 4.60
+
+UPG:
+  Firmware version : 03.08.
+  PG PLD version   : 1.0.1 build 129
+
+  PG-link version  : 9
+  MDAC version     : 6
+  MDAC strike,issue: 0,0
+  MDAC bits        : 20
+  MDAC corr bits   : 16
+
+LSC:
+  X: 30086
+  Y: 30086
+
+ZDRV:
+  BOX      : V.16
+  AXIS 1&2 : V.21
+  AXIS 3&4 : V.21
+
+SMC:
+  Longitudinal: 1VE SMC_CC - Controller-driver version  3. 1. 2
+  Transversal : 2VE SMC_CC - Controller-driver version  3. 1. 2
+
+HT:
+  StandAlone EHT MVME5100, v01_13, Tue Jan 17 10:31:56 CET 2017
+
+Vacuum Controller:
+  SPLC 1.42
+
+
+pg information select holder
+Holder id          : 401
+Holder name        : "BW0036A"
+Holder description : "H_PP3_A"
+Holder type        : " "
+Holder size        : 3.0_inch
+Cup position       : 1.394_mm,49.082_mm,0.000_mm
+Marker position    : 3.085_mm,52.986_mm,0.000_mm
+Holder centre      : 61.693_mm,59.299_mm,0.000_mm
+
+pg information select pattern
+
+Pattern name         : 1809-3_1x1_shaping.gpf
+File name            : /home/pg/users/schmidt/patterns/1809-3_1x1_shaping.gpf
+
+Format               : GPF: external memory mode
+Shape Type           : TRAPEZIUM
+Number of Blocks     : 1
+Main field placement : FLOATING
+Sub field placement  : LOWERLEFT
+Fracture style       : SUBFIELD
+Number of Main bits  : 20
+Number of Sub bits   : 14
+Maximum MSF          : 8192
+Number freq. factors : 1
+Minimum frequency    : 1.000000
+Maximum frequency    : 1.000000
+Pixel time           : 394426851.000000 (3.94427e+08)
+High Tension         : 100 kV
+Block size           :      1040.00000000 um,     1040.00000000 um
+Pattern size         :     10600.00000000 um,    10600.00000000 um
+Resolution           :         0.00200000 um
+Beamstepsize         :         0.00200000 um
+Main resolution      :         0.00100000 um
+Trap resolution      :         0.00050000 um
+
+pg information adjust beam
+
+Current column set-up
+Last restored file: /home/pg/archive/15NM_514PA_400UM_100KV.beam_100
+Date: 17:13 14-NOV-2018
+
+High Tension           :      100 kV     Final Aperture      :      400 um
+
+Gun control :
+bias voltage           :  -400.00  V     filament current    :     2.28  A
+Extractor   voltage    :  6175.00  V     current             :   182.08 uA
+tilt  X         26283  :  -27.044 mA     tilt  Y      31688  :   -4.189 mA
+shift X         42456  :   37.617 mA     shift Y      37831  :   10.663 mA
+AD setpoint dac 100kV  :     4095
+
+Lens control:
+Final lens      41450  :  4.00313  A
+C1 setting      14550  : 2910.000  V     C2 setting   30352  :  0.95846  A
+
+Beam quality:
+Fine Focus dac         :     1979
+Diagonal Stigmator dac :     1905        Axis Stigmator dac  :     2008
+
+measured spotsize      :    0.018 um     beamcurrent         :      545 pA
+PMHV setting (dac)     :     1286
+BEAMPAR setting        :      0.0 s
+Spot defocussed with FL 0 bits
+Spot defocussed with FFOFFSET 0 bits
+
+pg information adjust ebpg /sensitivity
+
+Beam diameter       :           20 nm ,           16 nm  current :  0.545 nA
+
+resolution          :     2.000000 nm ,     2.000000 nm
+beam step size      :     2.000000 nm ,     2.000000 nm
+main resolution     :     1.000000 nm ,     1.000000 nm  [2,2]
+trap resolution     :     0.500000 nm ,     0.500000 nm  [4,4]
+max. main field size:  1048.576000 um ,  1048.576000 um
+max. trap field size:     4.525000 um ,     4.525000 um
+tdd shift           :            3666 ,            3666
+
+main compensation               x: 1016.576 um    y: 1016.576 um
+
+trap compensation               x:    4.525 um    y:    4.525 um
+
+the deflection compensation settings:
+                               main     rel  trapezium  rel  pull-in
+                             (16bits)         (12bits)      (16bits)
+x gain     [bit]       :      32991       0    2454       0  36615
+y gain     [bit]       :      33210       0    2389       0  37554
+x rotation [bit]       :      33913       0    1540       0  36112
+y rotation [bit]       :      31803       0    1877       0  34636
+x keystone [bit]       :      30888       0
+y keystone [bit]       :      25171       0
+
+table translation settings      x:    0.000 um    y:    0.000 um
+main beam deflection settings   x:    0.000 um    y:    0.000 um
+
+the deflection compensation sensitivities:
+(with respect to centre of the deflection field)
+                              main       trapezium     pull-in
+                             (16bits)     (12bits)    (16bits)
+x gain     [ppm/bit]   :      0.6008       13.234      1.1172
+y gain     [ppm/bit]   :      0.5999       13.122      1.1815
+x rotation [ppm/bit]   :      0.3058        5.816      2.3347
+y rotation [ppm/bit]   :      0.3057        5.696      2.4759
+x keystone [ppm/mm/bit]:      0.1017
+y keystone [ppm/mm/bit]:      0.1015
+Calculated frequencies:
+  Base frequency   :   61.9432 MHz
+  Maximum frequency:   61.9432 MHz
+  Minimum frequency:   61.9432 MHz
+
+
+the last adjust main comp height @ relative position ***,*** um : 
+-6.7 um
+Spot defocussed with FL 0 bits
+Spot defocussed with FFOFFSET 0 bits
+
+pg information dcd
+Last restored file: /home/pg/archive/perftest.dcd_100
+Date: 03:06 11-NOV-2018
+
+Main:                 Trap:               Stigmator:      SEM:
+mddx2    33156,29132  tddxx    2139,1996  fspascor  2047  dcvmdmzoom    1
+mddy2    25937,31762  tddxy    2116,2015  fspdscor  2047  dcvmdmpan     0,   0
+mddxy2   27939,26805  tddxxy   2072,2037  fspffcor  2047  mdpsem     2495,1919
+mddyx2   38477,28548  tddxx2   2145,2097  fspasfunc    0  dcvmdmstep   32
+mddx3    26938,27829  tddxy2   2137,2101  fspdsfunc    0  dcvmdmrate    1
+mddy3    36631,29099  tddyx    2041,2049  fspfffunc    0
+mddorth  31392,31936  tddyy    1987,1948  dcvdc       31
+mdpgain   1868, 2367  tddyxy   2004,2014
+mdpvout   3325, 1524  tddyx2   2077,2071
+mdpslow      0,    0  tddyy2   1980,2093
+Beam Blanker:                             Pattern Generator:
+bbsmode               PN                  beamondelay         39.00_ns
+bbshvadjust           80.00_%,80.00_%     beamoffdelay        49.00_ns
+bbszeroadjust          0.00_%, 0.00_%     negativecommondelay 64.00_ns
+
+mbsbase               50000_ns            sbsbase               500_ns
+mbsfactor              1000_ns/um         sbsfactor             500_ns/um
+mbsfocus               1000_ns/um
+
+cjob_performance:
+None
+
+/home/pg/users/schmidt/jobs/RN20.mar
+cjob_do: layout: 1x1
+centre         [um] :  0.000000,0.000000
+origin         [um] :  0.000000,0.000000
+cells               :  1,1
+current mapping     :  cjob_shapingARP
+mapping             :  cjob_1x1
+pg select map substrate cjob_shapingARP
+centre         [um] :  0.000000,0.000000 (cjob_shapingARP)
+cjob_align (do)
+Entered USER-DEFINED marker search routine findmarker
+
+Executing /home/pg/.naf/bin/findmarker RN20
+PG_IMAGE_FINE_SIZE not defined
+getstringpar(): status = 0, type = 10, returned "cjob_shapingARP"
+Current position  -6500.000, -8100.000 corresponds to absolute position  45167.371, 44782.876 (map "cjob_shapingARP")
+The measured height at expected marker position -6500.000,-8100.000 is 18.5 micron, compensating
+Searching marker "RN20" at  -6500.000, -8100.000 and found at  -6499.856, -8099.553
+Searching marker "RN20" at -6500.000,-8100.000 and found at -6499.856,-8099.553, tababs /meas 45165.938,44780.110
+align marker 1: -6500.000000,-8100.000000,find_RN20
+align marker 2: -6500.000000,-1900.000000,find_RN20
+align marker 3: -3500.000000,-1900.000000,find_RN20
+align marker 4: -3500.000000,-8100.000000,find_RN20
+Locating align marker 1 find_RN20: -6500.000,-8100.000  (-6500.000,-8100.000)
+Entered USER-DEFINED marker search routine findmarker
+
+Executing /home/pg/.naf/bin/findmarker RN20
+PG_IMAGE_FINE_SIZE not defined
+getstringpar(): status = 0, type = 10, returned "cjob_shapingARP"
+Current position  -6500.000, -1900.000 corresponds to absolute position  45158.955, 50982.933 (map "cjob_shapingARP")
+The measured height at expected marker position -6500.000,-1900.000 is 16.2 micron, compensating
+Searching marker "RN20" at  -6500.000, -1900.000 and found at  -6499.918, -1899.681
+Searching marker "RN20" at -6500.000,-1900.000 and found at -6499.918,-1899.681, tababs /meas 45157.700,50980.158
+  found @ -6499.856,-8099.553 (absolute: 45167.515,44783.323)
+Locating align marker 2 find_RN20: -6500.000,-1900.000  (-6500.000,-1900.000)
+Entered USER-DEFINED marker search routine findmarker
+
+Executing /home/pg/.naf/bin/findmarker RN20
+PG_IMAGE_FINE_SIZE not defined
+getstringpar(): status = 0, type = 10, returned "cjob_shapingARP"
+Current position  -3500.000, -1900.000 corresponds to absolute position  48158.908, 50986.942 (map "cjob_shapingARP")
+The measured height at expected marker position -3500.000,-1900.000 is 13.8 micron, compensating
+Searching marker "RN20" at  -3500.000, -1900.000 and found at  -3499.941, -1899.714
+Searching marker "RN20" at -3500.000,-1900.000 and found at -3499.941,-1899.714, tababs /meas 48157.674,50984.175
+  found @ -6499.918,-1899.681 (absolute: 45159.037,50983.252)
+Locating align marker 3 find_RN20: -3500.000,-1900.000  (-3500.000,-1900.000)
+Entered USER-DEFINED marker search routine findmarker
+
+Executing /home/pg/.naf/bin/findmarker RN20
+PG_IMAGE_FINE_SIZE not defined
+getstringpar(): status = 0, type = 10, returned "cjob_shapingARP"
+Current position  -3500.000, -8100.000 corresponds to absolute position  48167.324, 44786.885 (map "cjob_shapingARP")
+The measured height at expected marker position -3500.000,-8100.000 is 16.1 micron, compensating
+Searching marker "RN20" at  -3500.000, -8100.000 and found at  -3499.889, -8099.631
+Searching marker "RN20" at -3500.000,-8100.000 and found at -3499.889,-8099.631, tababs /meas 48165.902,44784.120
+  found @ -3499.941,-1899.714 (absolute: 48158.966,50987.229)
+Locating align marker 4 find_RN20: -3500.000,-8100.000  (-3500.000,-8100.000)
+  found @ -3499.889,-8099.631 (absolute: 48167.435,44787.254)
+
+Map      : cjob_1x1
+ mapid   : 1
+ order   : 4
+ origin  : 0.000000_mm, 0.000000_mm
+
+map      :     cjob_1x1                cjob_shapingARP         absolute
+Markers  :     expected                observed
+         X [mm]       Y [mm]       X [mm]       Y [mm]      X [mm]       Y [mm]
+1:   -6.5000000,  -8.1000000   -6.4998555,  -8.0995528   45.1675149,  44.7833231
+2:   -6.5000000,  -1.9000000   -6.4999179,  -1.8996811   45.1590370,  50.9832520
+3:   -3.5000000,  -1.9000000   -3.4999414,  -1.8997136   48.1589664,  50.9872285
+4:   -3.5000000,  -8.1000000   -3.4998887,  -8.0996314   48.1674346,  44.7872536
+
+Transform:          to Absolute                     from Absolute       
+                 X               Y                X               Y     
+ offset  :  +5.165629e+01 , +5.289188e+01    -5.173095e+01 , -5.282960e+01
+ scale   :  -2.255719e-05 , +4.650765e-06    +4.853527e-05 , +1.217443e-04
+ rotation:  +1.330244e-03 , -1.364015e-03    -1.199057e-03 , +1.391194e-03
+ keystone:  +5.221615e-07 , +2.481908e-06    -5.255839e-07 , -2.481321e-06
+
+Binary DAC corrections at present position in map cjob_1x1 :
+-3.500000mm,-8.100000mm (abs: 48.167435mm,44.787254mm)
+
+cur cjob_shapingARP: -3.499889mm,-8.099631mm:
+                 main       trap      pull-in
+ x gain  :        -45         -2        -24
+ y gain  :         -7          0         -3
+ x rot   :       4285        225        561
+ y rot   :      -4468       -240       -552
+ x key   :          5
+ y key   :         24
+
+  average rotation angle = -0.001284 (-0.073577 degrees) @ 
+  current stage position -3.499889,-8.099631 (absolute 48.167435,44.787254)
+
+CALINV  = 1
+
+Layout Cell 1 1 of 1x1
+/home/pg/users/schmidt/jobs/RN10.mar
+lay_dose_update = +,0.000000,0
+cjob_do: expose pattern, started at 17:18:16
+
+pg select map substrate cjob_1x1
+centre         [um] :  0.000000,0.000000 (cjob_1x1)
+cjob_align (do)
+Entered USER-DEFINED marker search routine findmarker
+
+Executing /home/pg/.naf/bin/findmarker RN10
+PG_IMAGE_FINE_SIZE not defined
+getstringpar(): status = 0, type = 10, returned "cjob_1x1"
+Current position  -1900.000, -2200.000 corresponds to absolute position  49759.338, 50689.349 (map "cjob_1x1")
+The measured height at expected marker position -1900.000,-2200.000 is 13.4 micron, compensating
+Searching marker "RN10" at  -1900.000, -2200.000 and found at  -1900.017, -2200.002
+Searching marker "RN10" at -1900.000,-2200.000 and found at -1900.017,-2200.002, tababs /meas 49758.077,50686.574
+align marker 1: -1900.000000,-2200.000000,find_RN10
+align marker 2: -1200.000000,-2200.000000,find_RN10
+align marker 3: -1200.000000,-1250.000000,find_RN10
+align marker 4: -1900.000000,-1250.000000,find_RN10
+Locating align marker 1 find_RN10: -1900.000,-2200.000  (-1900.000,-2200.000)
+Entered USER-DEFINED marker search routine findmarker
+
+Executing /home/pg/.naf/bin/findmarker RN10
+PG_IMAGE_FINE_SIZE not defined
+getstringpar(): status = 0, type = 10, returned "cjob_1x1"
+Current position  -1200.000, -2200.000 corresponds to absolute position  50459.322, 50690.277 (map "cjob_1x1")
+The measured height at expected marker position -1200.000,-2200.000 is 13.0 micron, compensating
+Searching marker "RN10" at  -1200.000, -2200.000 and found at  -1200.016, -2200.023
+Searching marker "RN10" at -1200.000,-2200.000 and found at -1200.016,-2200.023, tababs /meas 50458.060,50687.497
+  found @ -1900.017,-2200.002 (absolute: 49759.321,50689.347)
+Locating align marker 2 find_RN10: -1200.000,-2200.000  (-1200.000,-2200.000)
+Entered USER-DEFINED marker search routine findmarker
+
+Executing /home/pg/.naf/bin/findmarker RN10
+PG_IMAGE_FINE_SIZE not defined
+getstringpar(): status = 0, type = 10, returned "cjob_1x1"
+Current position  -1200.000, -1250.000 corresponds to absolute position  50458.025, 51640.278 (map "cjob_1x1")
+The measured height at expected marker position -1200.000,-1250.000 is 12.6 micron, compensating
+Searching marker "RN10" at  -1200.000, -1250.000 and found at  -1200.006, -1250.035
+Searching marker "RN10" at -1200.000,-1250.000 and found at -1200.006,-1250.035, tababs /meas 50456.797,51637.506
+  found @ -1200.016,-2200.023 (absolute: 50459.305,50690.253)
+Locating align marker 3 find_RN10: -1200.000,-1250.000  (-1200.000,-1250.000)
+Entered USER-DEFINED marker search routine findmarker
+
+Executing /home/pg/.naf/bin/findmarker RN10
+PG_IMAGE_FINE_SIZE not defined
+getstringpar(): status = 0, type = 10, returned "cjob_1x1"
+Current position  -1900.000, -1250.000 corresponds to absolute position  49758.041, 51639.349 (map "cjob_1x1")
+The measured height at expected marker position -1900.000,-1250.000 is 13.0 micron, compensating
+Searching marker "RN10" at  -1900.000, -1250.000 and found at  -1900.006, -1250.009
+Searching marker "RN10" at -1900.000,-1250.000 and found at -1900.006,-1250.009, tababs /meas 49756.803,51636.566
+  found @ -1200.006,-1250.035 (absolute: 50458.020,51640.243)
+Locating align marker 4 find_RN10: -1900.000,-1250.000  (-1900.000,-1250.000)
+  found @ -1900.006,-1250.009 (absolute: 49758.035,51639.341)
+
+Map      : cjob_pattern
+ mapid   : 2
+ order   : 4
+ origin  : 0.000000_mm, 0.000000_mm
+
+map      :     cjob_pattern            cjob_1x1                absolute
+Markers  :     expected                observed
+         X [mm]       Y [mm]       X [mm]       Y [mm]      X [mm]       Y [mm]
+1:   -1.9000000,  -2.2000000   -1.9000175,  -2.2000021   49.7593207,  50.6893473
+2:   -1.2000000,  -2.2000000   -1.2000165,  -2.2000234   50.4593051,  50.6902534
+3:   -1.2000000,  -1.2500000   -1.2000057,  -1.2500353   50.4580195,  51.6402430
+4:   -1.9000000,  -1.2500000   -1.9000061,  -1.2500086   49.7580353,  51.6393407
+
+Transform:          to Absolute                     from Absolute       
+                 X               Y                X               Y     
+ offset  :  +5.165630e+01 , +5.289177e+01    -5.172807e+01 , -5.281088e+01
+ scale   :  -2.293883e-05 , -1.771261e-05    +3.271204e-06 , -2.773051e-04
+ rotation:  +1.281893e-03 , -1.353671e-03    -1.582191e-03 , +1.336207e-03
+ keystone:  -3.313718e-07 , -5.677264e-06    +3.390723e-07 , +5.677064e-06
+
+Binary DAC corrections at present position in map cjob_pattern :
+-1.900000mm,-1.250000mm (abs: 49.758035mm,51.639341mm)
+
+cur cjob_1x1: -1.900006mm,-1.250009mm:
+                 main       trap      pull-in
+ x gain  :        -37         -2        -20
+ y gain  :        -12         -1         -6
+ x rot   :       4216        222        552
+ y rot   :      -4426       -238       -546
+ x key   :         -3
+ y key   :        -56
+
+  average rotation angle = -0.001463 (-0.083828 degrees) @ 
+  current stage position -1.900006,-1.250009 (absolute 49.758035,51.639341)
+
+pg select map substrate cjob_pattern
+select pattern 1809-3_1x1_shaping.gpf
+Calculated base frequency:   61.9432 MHz
+Expose pattern     :  1809-3_1x1_shaping.gpf
+       position[um]:  -5000.000000,-5000.000000 (map:cjob_1x1)
+       dose[uC/cm2]:  220.000000
+
+Map      : cjob_pattern (Selected)
+ mapid   : 2
+ order   : 4
+ origin  : 0.000000_mm, 0.000000_mm
+
+map      :     cjob_pattern            cjob_1x1                absolute
+Markers  :     expected                observed
+         X [mm]       Y [mm]       X [mm]       Y [mm]      X [mm]       Y [mm]
+1:   -1.9000000,  -2.2000000   -1.9000175,  -2.2000021   49.7593207,  50.6893473
+2:   -1.2000000,  -2.2000000   -1.2000165,  -2.2000234   50.4593051,  50.6902534
+3:   -1.2000000,  -1.2500000   -1.2000057,  -1.2500353   50.4580195,  51.6402430
+4:   -1.9000000,  -1.2500000   -1.9000061,  -1.2500086   49.7580353,  51.6393407
+
+Transform:          to Absolute                     from Absolute       
+                 X               Y                X               Y     
+ offset  :  +5.165630e+01 , +5.289177e+01    -5.172807e+01 , -5.281088e+01
+ scale   :  -2.293883e-05 , -1.771261e-05    +3.271204e-06 , -2.773051e-04
+ rotation:  +1.281893e-03 , -1.353671e-03    -1.582191e-03 , +1.336207e-03
+ keystone:  -3.313718e-07 , -5.677264e-06    +3.390723e-07 , +5.677064e-06
+
+Binary DAC corrections at present position in map cjob_pattern :
+-5.000000mm,-5.000000mm (abs: 46.663175mm,47.885305mm)
+
+cur cjob_pattern: -5.000000mm,-5.000000mm:
+                 main       trap      pull-in
+ x gain  :        -35         -2        -19
+ y gain  :         18          1          9
+ x rot   :       4285        225        561
+ y rot   :      -4423       -237       -546
+ x key   :         -3
+ y key   :        -56
+
+  average rotation angle = -0.001474 (-0.084468 degrees) @ 
+  current stage position -5.000000,-5.000000 (absolute 46.663175,47.885305)
+
+getstringpar(): status = 0, type = 10, returned "cjob_pattern"
+height at pos  -5000, -5000 (map "cjob_pattern"), block  1, 0 meas'd  +15.8, used  +13.0
+Elapsed time for pattern 0:0:26.03
+/home/pg/users/schmidt/jobs/RN10.mar
+lay_dose_update = +,0.000000,0
+cjob_do: expose pattern, started at 17:18:42
+
+pg select map substrate cjob_1x1
+centre         [um] :  0.000000,0.000000 (cjob_1x1)
+cjob_align (do)
+Entered USER-DEFINED marker search routine findmarker
+
+Executing /home/pg/.naf/bin/findmarker RN10
+PG_IMAGE_FINE_SIZE not defined
+getstringpar(): status = 0, type = 10, returned "cjob_1x1"
+Current position  -6000.000, -2400.000 corresponds to absolute position  45659.709, 50483.920 (map "cjob_1x1")
+The measured height at expected marker position -6000.000,-2400.000 is 16.2 micron, compensating
+Searching marker "RN10" at  -6000.000, -2400.000 and found at  -6000.000, -2399.986
+Searching marker "RN10" at -6000.000,-2400.000 and found at -6000.000,-2399.986, tababs /meas 45658.452,50481.140
+align marker 1: -6000.000000,-2400.000000,find_RN10
+align marker 2: -5000.000000,-2400.000000,find_RN10
+align marker 3: -5000.000000,-1600.000000,find_RN10
+align marker 4: -6000.000000,-1600.000000,find_RN10
+Locating align marker 1 find_RN10: -6000.000,-2400.000  (-6000.000,-2400.000)
+Entered USER-DEFINED marker search routine findmarker
+
+Executing /home/pg/.naf/bin/findmarker RN10
+PG_IMAGE_FINE_SIZE not defined
+getstringpar(): status = 0, type = 10, returned "cjob_1x1"
+Current position  -5000.000, -2400.000 corresponds to absolute position  46659.685, 50485.244 (map "cjob_1x1")
+The measured height at expected marker position -5000.000,-2400.000 is 15.8 micron, compensating
+Searching marker "RN10" at  -5000.000, -2400.000 and found at  -5000.014, -2399.989
+Searching marker "RN10" at -5000.000,-2400.000 and found at -5000.014,-2399.989, tababs /meas 46658.414,50482.489
+  found @ -6000.000,-2399.986 (absolute: 45659.709,50483.934)
+Locating align marker 2 find_RN10: -5000.000,-2400.000  (-5000.000,-2400.000)
+Entered USER-DEFINED marker search routine findmarker
+
+Executing /home/pg/.naf/bin/findmarker RN10
+PG_IMAGE_FINE_SIZE not defined
+getstringpar(): status = 0, type = 10, returned "cjob_1x1"
+Current position  -5000.000, -1600.000 corresponds to absolute position  46658.592, 51285.238 (map "cjob_1x1")
+The measured height at expected marker position -5000.000,-1600.000 is 15.4 micron, compensating
+Searching marker "RN10" at  -5000.000, -1600.000 and found at  -5000.011, -1599.978
+Searching marker "RN10" at -5000.000,-1600.000 and found at -5000.011,-1599.978, tababs /meas 46657.356,51282.465
+  found @ -5000.014,-2399.989 (absolute: 46659.671,50485.255)
+Locating align marker 3 find_RN10: -5000.000,-1600.000  (-5000.000,-1600.000)
+Entered USER-DEFINED marker search routine findmarker
+
+Executing /home/pg/.naf/bin/findmarker RN10
+PG_IMAGE_FINE_SIZE not defined
+getstringpar(): status = 0, type = 10, returned "cjob_1x1"
+Current position  -6000.000, -1600.000 corresponds to absolute position  45658.615, 51283.912 (map "cjob_1x1")
+The measured height at expected marker position -6000.000,-1600.000 is 15.8 micron, compensating
+Searching marker "RN10" at  -6000.000, -1600.000 and found at  -5999.998, -1599.973
+Searching marker "RN10" at -6000.000,-1600.000 and found at -5999.998,-1599.973, tababs /meas 45657.380,51281.144
+  found @ -5000.011,-1599.978 (absolute: 46658.581,51285.260)
+Locating align marker 4 find_RN10: -6000.000,-1600.000  (-6000.000,-1600.000)
+  found @ -5999.998,-1599.973 (absolute: 45658.617,51283.938)
+
+Map      : cjob_pattern
+ mapid   : 2
+ order   : 4
+ origin  : 0.000000_mm, 0.000000_mm
+
+map      :     cjob_pattern            cjob_1x1                absolute
+Markers  :     expected                observed
+         X [mm]       Y [mm]       X [mm]       Y [mm]      X [mm]       Y [mm]
+1:   -6.0000000,  -2.4000000   -6.0000001,  -2.3999863   45.6597087,  50.4839335
+2:   -5.0000000,  -2.4000000   -5.0000144,  -2.3999888   46.6596706,  50.4852553
+3:   -5.0000000,  -1.6000000   -5.0000111,  -1.5999779   46.6585805,  51.2852600
+4:   -6.0000000,  -1.6000000   -5.9999978,  -1.5999734   45.6586172,  51.2839382
+
+Transform:          to Absolute                     from Absolute       
+                 X               Y                X               Y     
+ offset  :  +5.165623e+01 , +5.289188e+01    -5.173442e+01 , -5.282315e+01
+ scale   :  -3.381898e-05 , +5.799093e-06    +1.275750e-04 , -8.557403e-06
+ rotation:  +1.321786e-03 , -1.353539e-03    -1.322813e-03 , +1.446922e-03
+ keystone:  +1.806798e-06 , -1.637205e-08    -1.806901e-06 , +1.876088e-08
+
+Binary DAC corrections at present position in map cjob_pattern :
+-6.000000mm,-1.600000mm (abs: 45.658617mm,51.283938mm)
+
+cur cjob_1x1: -5.999998mm,-1.599973mm:
+                 main       trap      pull-in
+ x gain  :        -61         -3        -33
+ y gain  :         10          0          5
+ x rot   :       4323        227        566
+ y rot   :      -4463       -240       -551
+ x key   :         18
+ y key   :          0
+
+  average rotation angle = -0.001379 (-0.079037 degrees) @ 
+  current stage position -5.999998,-1.599973 (absolute 45.658617,51.283938)
+
+pg select map substrate cjob_pattern
+select pattern 1809-3_1x1_shaping_ref.gpf
+Calculated base frequency:   61.9432 MHz
+Expose pattern     :  1809-3_1x1_shaping_ref.gpf
+       position[um]:  -5000.000000,-5000.000000 (map:cjob_1x1)
+       dose[uC/cm2]:  220.000000
+
+Map      : cjob_pattern (Selected)
+ mapid   : 2
+ order   : 4
+ origin  : 0.000000_mm, 0.000000_mm
+
+map      :     cjob_pattern            cjob_1x1                absolute
+Markers  :     expected                observed
+         X [mm]       Y [mm]       X [mm]       Y [mm]      X [mm]       Y [mm]
+1:   -6.0000000,  -2.4000000   -6.0000001,  -2.3999863   45.6597087,  50.4839335
+2:   -5.0000000,  -2.4000000   -5.0000144,  -2.3999888   46.6596706,  50.4852553
+3:   -5.0000000,  -1.6000000   -5.0000111,  -1.5999779   46.6585805,  51.2852600
+4:   -6.0000000,  -1.6000000   -5.9999978,  -1.5999734   45.6586172,  51.2839382
+
+Transform:          to Absolute                     from Absolute       
+                 X               Y                X               Y     
+ offset  :  +5.165623e+01 , +5.289188e+01    -5.173442e+01 , -5.282315e+01
+ scale   :  -3.381898e-05 , +5.799093e-06    +1.275750e-04 , -8.557403e-06
+ rotation:  +1.321786e-03 , -1.353539e-03    -1.322813e-03 , +1.446922e-03
+ keystone:  +1.806798e-06 , -1.637205e-08    -1.806901e-06 , +1.876088e-08
+
+Binary DAC corrections at present position in map cjob_pattern :
+-5.000000mm,-5.000000mm (abs: 46.663213mm,47.885240mm)
+
+cur cjob_pattern: -5.000000mm,-5.000000mm:
+                 main       trap      pull-in
+ x gain  :        -71         -3        -38
+ y gain  :         10          0          5
+ x rot   :       4323        227        566
+ y rot   :      -4457       -239       -550
+ x key   :         18
+ y key   :          0
+
+  average rotation angle = -0.001380 (-0.079091 degrees) @ 
+  current stage position -5.000000,-5.000000 (absolute 46.663213,47.885240)
+
+getstringpar(): status = 0, type = 10, returned "cjob_pattern"
+height at pos  -5000, -5000 (map "cjob_pattern"), block  1, 0 meas'd  +15.8, used  +15.8
+Elapsed time for pattern 0:0:24.27
+
+position "cjob_e1" deleted
+position "cjob_o1" deleted
+position "cjob_e2" deleted
+position "cjob_o2" deleted
+position "cjob_e3" deleted
+position "cjob_o3" deleted
+position "cjob_e4" deleted
+position "cjob_o4" deleted
+map "cjob_1x1" deleted
+Elapsed time for layout 1x1 0:2:47.57
+/home/pg/users/schmidt/jobs/RN20.mar
+cjob_do: layout: 1x1_2nd
+centre         [um] :  0.000000,0.000000
+origin         [um] :  0.000000,0.000000
+cells               :  1,1
+current mapping     :  cjob_shapingARP
+mapping             :  cjob_1x1_2nd
+pg select map substrate cjob_shapingARP
+centre         [um] :  0.000000,0.000000 (cjob_shapingARP)
+cjob_align (do)
+Entered USER-DEFINED marker search routine findmarker
+
+Executing /home/pg/.naf/bin/findmarker RN20
+PG_IMAGE_FINE_SIZE not defined
+getstringpar(): status = 0, type = 10, returned "cjob_shapingARP"
+Current position  -6500.000,  8100.000 corresponds to absolute position  45145.382, 60983.025 (map "cjob_shapingARP")
+The measured height at expected marker position -6500.000,8100.000 is 11.8 micron, compensating
+Searching marker "RN20" at  -6500.000,  8100.000 and found at  -6500.001,  8100.022
+Searching marker "RN20" at -6500.000,8100.000 and found at -6500.001,8100.022, tababs /meas 45144.432,60980.239
+align marker 1: -6500.000000,8100.000000,find_RN20
+align marker 2: -6500.000000,1900.000000,find_RN20
+align marker 3: -3500.000000,1900.000000,find_RN20
+align marker 4: -3500.000000,8100.000000,find_RN20
+Locating align marker 1 find_RN20: -6500.000,8100.000  (-6500.000,8100.000)
+Entered USER-DEFINED marker search routine findmarker
+
+Executing /home/pg/.naf/bin/findmarker RN20
+PG_IMAGE_FINE_SIZE not defined
+getstringpar(): status = 0, type = 10, returned "cjob_shapingARP"
+Current position  -6500.000,  1900.000 corresponds to absolute position  45153.797, 54782.968 (map "cjob_shapingARP")
+The measured height at expected marker position -6500.000,1900.000 is 14.7 micron, compensating
+Searching marker "RN20" at  -6500.000,  1900.000 and found at  -6500.030,  1900.188
+Searching marker "RN20" at -6500.000,1900.000 and found at -6500.030,1900.188, tababs /meas 45152.656,54780.202
+  found @ -6500.001,8100.022 (absolute: 45145.380,60983.047)
+Locating align marker 2 find_RN20: -6500.000,1900.000  (-6500.000,1900.000)
+Entered USER-DEFINED marker search routine findmarker
+
+Executing /home/pg/.naf/bin/findmarker RN20
+PG_IMAGE_FINE_SIZE not defined
+getstringpar(): status = 0, type = 10, returned "cjob_shapingARP"
+Current position  -3500.000,  1900.000 corresponds to absolute position  48153.750, 54786.977 (map "cjob_shapingARP")
+The measured height at expected marker position -3500.000,1900.000 is 12.3 micron, compensating
+Searching marker "RN20" at  -3500.000,  1900.000 and found at  -3500.081,  1900.136
+Searching marker "RN20" at -3500.000,1900.000 and found at -3500.081,1900.136, tababs /meas 48152.618,54784.203
+  found @ -6500.030,1900.188 (absolute: 45153.767,54783.156)
+Locating align marker 3 find_RN20: -3500.000,1900.000  (-3500.000,1900.000)
+Entered USER-DEFINED marker search routine findmarker
+
+Executing /home/pg/.naf/bin/findmarker RN20
+PG_IMAGE_FINE_SIZE not defined
+getstringpar(): status = 0, type = 10, returned "cjob_shapingARP"
+Current position  -3500.000,  8100.000 corresponds to absolute position  48145.334, 60987.034 (map "cjob_shapingARP")
+The measured height at expected marker position -3500.000,8100.000 is 9.4 micron, compensating
+Searching marker "RN20" at  -3500.000,  8100.000 and found at  -3500.053,  8100.006
+Searching marker "RN20" at -3500.000,8100.000 and found at -3500.053,8100.006, tababs /meas 48144.374,60984.259
+  found @ -3500.081,1900.136 (absolute: 48153.669,54787.113)
+Locating align marker 4 find_RN20: -3500.000,8100.000  (-3500.000,8100.000)
+  found @ -3500.053,8100.006 (absolute: 48145.281,60987.040)
+
+Map      : cjob_1x1_2nd
+ mapid   : 1
+ order   : 4
+ origin  : 0.000000_mm, 0.000000_mm
+
+map      :     cjob_1x1_2nd            cjob_shapingARP         absolute
+Markers  :     expected                observed
+         X [mm]       Y [mm]       X [mm]       Y [mm]      X [mm]       Y [mm]
+1:   -6.5000000,   8.1000000   -6.5000012,   8.1000216   45.1453804,  60.9830470
+2:   -6.5000000,   1.9000000   -6.5000303,   1.9001875   45.1537668,  54.7831556
+3:   -3.5000000,   1.9000000   -3.5000813,   1.9001357   48.1536687,  54.7871128
+4:   -3.5000000,   8.1000000   -3.5000533,   8.1000057   48.1452811,  60.9870401
+
+Transform:          to Absolute                     from Absolute       
+                 X               Y                X               Y     
+ offset  :  +5.165613e+01 , +5.289174e+01    -5.172911e+01 , -5.282923e+01
+ scale   :  -3.257373e-05 , -4.969114e-06    +2.745371e-05 , +1.028721e-04
+ rotation:  +1.315399e-03 , -1.353063e-03    -1.213377e-03 , +1.349848e-03
+ keystone:  -6.579091e-08 , +1.930041e-06    +6.318513e-08 , -1.930248e-06
+
+Binary DAC corrections at present position in map cjob_1x1_2nd :
+-3.500000mm,8.100000mm (abs: 48.145281mm,60.987040mm)
+
+cur cjob_shapingARP: -3.500053mm,8.100006mm:
+                 main       trap      pull-in
+ x gain  :        -55         -3        -30
+ y gain  :        -20         -1        -10
+ x rot   :       4353        229        570
+ y rot   :      -4425       -237       -546
+ x key   :         -1
+ y key   :         19
+
+  average rotation angle = -0.001290 (-0.073885 degrees) @ 
+  current stage position -3.500053,8.100006 (absolute 48.145281,60.987040)
+
+CALINV  = 1
+
+Layout Cell 1 1 of 1x1_2nd
+/home/pg/users/schmidt/jobs/RN10.mar
+lay_dose_update = +,0.000000,0
+cjob_do: expose pattern, started at 17:20:46
+
+pg select map substrate cjob_1x1_2nd
+centre         [um] :  0.000000,0.000000 (cjob_1x1_2nd)
+cjob_align (do)
+Entered USER-DEFINED marker search routine findmarker
+
+Executing /home/pg/.naf/bin/findmarker RN10
+PG_IMAGE_FINE_SIZE not defined
+getstringpar(): status = 0, type = 10, returned "cjob_1x1_2nd"
+Current position  -1900.000,  7800.000 corresponds to absolute position  49745.634, 60689.172 (map "cjob_1x1_2nd")
+The measured height at expected marker position -1900.000,7800.000 is 8.8 micron, compensating
+Searching marker "RN10" at  -1900.000,  7800.000 and found at  -1899.963,  7800.006
+Searching marker "RN10" at -1900.000,7800.000 and found at -1899.963,7800.006, tababs /meas 49744.666,60686.395
+align marker 1: -1900.000000,7800.000000,find_RN10
+align marker 2: -1200.000000,7800.000000,find_RN10
+align marker 3: -1200.000000,8750.000000,find_RN10
+align marker 4: -1900.000000,8750.000000,find_RN10
+Locating align marker 1 find_RN10: -1900.000,7800.000  (-1900.000,7800.000)
+Entered USER-DEFINED marker search routine findmarker
+
+Executing /home/pg/.naf/bin/findmarker RN10
+PG_IMAGE_FINE_SIZE not defined
+getstringpar(): status = 0, type = 10, returned "cjob_1x1_2nd"
+Current position  -1200.000,  7800.000 corresponds to absolute position  50445.611, 60690.104 (map "cjob_1x1_2nd")
+The measured height at expected marker position -1200.000,7800.000 is 8.5 micron, compensating
+Searching marker "RN10" at  -1200.000,  7800.000 and found at  -1199.951,  7799.990
+Searching marker "RN10" at -1200.000,7800.000 and found at -1199.951,7799.990, tababs /meas 50444.657,60687.329
+  found @ -1899.963,7800.006 (absolute: 49745.671,60689.179)
+Locating align marker 2 find_RN10: -1200.000,7800.000  (-1200.000,7800.000)
+Entered USER-DEFINED marker search routine findmarker
+
+Executing /home/pg/.naf/bin/findmarker RN10
+PG_IMAGE_FINE_SIZE not defined
+getstringpar(): status = 0, type = 10, returned "cjob_1x1_2nd"
+Current position  -1200.000,  8750.000 corresponds to absolute position  50444.326, 61640.097 (map "cjob_1x1_2nd")
+The measured height at expected marker position -1200.000,8750.000 is 8.0 micron, compensating
+Searching marker "RN10" at  -1200.000,  8750.000 and found at  -1199.951,  8749.996
+Searching marker "RN10" at -1200.000,8750.000 and found at -1199.951,8749.996, tababs /meas 50443.404,61637.349
+  found @ -1199.951,7799.990 (absolute: 50445.659,60690.094)
+Locating align marker 3 find_RN10: -1200.000,8750.000  (-1200.000,8750.000)
+Entered USER-DEFINED marker search routine findmarker
+
+Executing /home/pg/.naf/bin/findmarker RN10
+PG_IMAGE_FINE_SIZE not defined
+getstringpar(): status = 0, type = 10, returned "cjob_1x1_2nd"
+Current position  -1900.000,  8750.000 corresponds to absolute position  49744.349, 61639.164 (map "cjob_1x1_2nd")
+The measured height at expected marker position -1900.000,8750.000 is 8.4 micron, compensating
+Searching marker "RN10" at  -1900.000,  8750.000 and found at  -1899.952,  8750.015
+Searching marker "RN10" at -1900.000,8750.000 and found at -1899.952,8750.015, tababs /meas 49743.413,61636.374
+  found @ -1199.951,8749.996 (absolute: 50444.375,61640.092)
+Locating align marker 4 find_RN10: -1900.000,8750.000  (-1900.000,8750.000)
+  found @ -1899.952,8750.015 (absolute: 49744.396,61639.180)
+
+Map      : cjob_pattern
+ mapid   : 2
+ order   : 4
+ origin  : 0.000000_mm, 0.000000_mm
+
+map      :     cjob_pattern            cjob_1x1_2nd            absolute
+Markers  :     expected                observed
+         X [mm]       Y [mm]       X [mm]       Y [mm]      X [mm]       Y [mm]
+1:   -1.9000000,   7.8000000   -1.8999630,   7.8000062   49.7456711,  60.6891786
+2:   -1.2000000,   7.8000000   -1.1999515,   7.7999898   50.4456594,  60.6900935
+3:   -1.2000000,   8.7500000   -1.1999507,   8.7499956   50.4443748,  61.6400924
+4:   -1.9000000,   8.7500000   -1.8999524,   8.7500155   49.7443963,  61.6391797
+
+Transform:          to Absolute                     from Absolute       
+                 X               Y                X               Y     
+ offset  :  +5.165633e+01 , +5.289170e+01    -5.168294e+01 , -5.281391e+01
+ scale   :  +9.936152e-05 , -5.220685e-06    -8.879188e-04 , -1.687254e-04
+ rotation:  +1.333271e-03 , -1.370048e-03    -1.509446e-03 , +6.018435e-04
+ keystone:  -1.487021e-05 , -3.352812e-06    +1.487543e-05 , +3.333477e-06
+
+Binary DAC corrections at present position in map cjob_pattern :
+-1.900000mm,8.750000mm (abs: 49.744396mm,61.639180mm)
+
+cur cjob_1x1_2nd: -1.899952mm,8.750015mm:
+                 main       trap      pull-in
+ x gain  :        -51         -2        -28
+ y gain  :          2          0          1
+ x rot   :       4265        224        559
+ y rot   :      -4389       -236       -542
+ x key   :       -146
+ y key   :        -33
+
+  average rotation angle = -0.001055 (-0.060458 degrees) @ 
+  current stage position -1.899952,8.750015 (absolute 49.744396,61.639180)
+
+pg select map substrate cjob_pattern
+select pattern 1809-3_1x2_shaping.gpf
+Calculated base frequency:   61.9432 MHz
+Expose pattern     :  1809-3_1x2_shaping.gpf
+       position[um]:  -5000.000000,5000.000000 (map:cjob_1x1_2nd)
+       dose[uC/cm2]:  220.000000
+
+Map      : cjob_pattern (Selected)
+ mapid   : 2
+ order   : 4
+ origin  : 0.000000_mm, 0.000000_mm
+
+map      :     cjob_pattern            cjob_1x1_2nd            absolute
+Markers  :     expected                observed
+         X [mm]       Y [mm]       X [mm]       Y [mm]      X [mm]       Y [mm]
+1:   -1.9000000,   7.8000000   -1.8999630,   7.8000062   49.7456711,  60.6891786
+2:   -1.2000000,   7.8000000   -1.1999515,   7.7999898   50.4456594,  60.6900935
+3:   -1.2000000,   8.7500000   -1.1999507,   8.7499956   50.4443748,  61.6400924
+4:   -1.9000000,   8.7500000   -1.8999524,   8.7500155   49.7443963,  61.6391797
+
+Transform:          to Absolute                     from Absolute       
+                 X               Y                X               Y     
+ offset  :  +5.165633e+01 , +5.289170e+01    -5.168294e+01 , -5.281391e+01
+ scale   :  +9.936152e-05 , -5.220685e-06    -8.879188e-04 , -1.687254e-04
+ rotation:  +1.333271e-03 , -1.370048e-03    -1.509446e-03 , +6.018435e-04
+ keystone:  -1.487021e-05 , -3.352812e-06    +1.487543e-05 , +3.333477e-06
+
+Binary DAC corrections at present position in map cjob_pattern :
+-5.000000mm,5.000000mm (abs: 46.649351mm,57.885094mm)
+
+cur cjob_pattern: -5.000000mm,5.000000mm:
+                 main       trap      pull-in
+ x gain  :         42          2         22
+ y gain  :         19          1         10
+ x rot   :       4306        226        564
+ y rot   :      -4238       -227       -523
+ x key   :       -146
+ y key   :        -33
+
+  average rotation angle = -0.001084 (-0.062137 degrees) @ 
+  current stage position -5.000000,5.000000 (absolute 46.649351,57.885094)
+
+getstringpar(): status = 0, type = 10, returned "cjob_pattern"
+height at pos  -5000,  5000 (map "cjob_pattern"), block  1, 0 meas'd  +11.6, used   +8.4
+Elapsed time for pattern 0:0:24.06
+/home/pg/users/schmidt/jobs/RN10.mar
+lay_dose_update = +,0.000000,0
+cjob_do: expose pattern, started at 17:21:10
+
+pg select map substrate cjob_1x1_2nd
+centre         [um] :  0.000000,0.000000 (cjob_1x1_2nd)
+cjob_align (do)
+Entered USER-DEFINED marker search routine findmarker
+
+Executing /home/pg/.naf/bin/findmarker RN10
+PG_IMAGE_FINE_SIZE not defined
+getstringpar(): status = 0, type = 10, returned "cjob_1x1_2nd"
+Current position  -6000.000,  7600.000 corresponds to absolute position  45646.040, 60483.721 (map "cjob_1x1_2nd")
+The measured height at expected marker position -6000.000,7600.000 is 11.6 micron, compensating
+Searching marker "RN10" at  -6000.000,  7600.000 and found at  -5999.991,  7599.992
+Searching marker "RN10" at -6000.000,7600.000 and found at -5999.991,7599.992, tababs /meas 45645.061,60480.934
+align marker 1: -6000.000000,7600.000000,find_RN10
+align marker 2: -5000.000000,7600.000000,find_RN10
+align marker 3: -5000.000000,8400.000000,find_RN10
+align marker 4: -6000.000000,8400.000000,find_RN10
+Locating align marker 1 find_RN10: -6000.000,7600.000  (-6000.000,7600.000)
+Entered USER-DEFINED marker search routine findmarker
+
+Executing /home/pg/.naf/bin/findmarker RN10
+PG_IMAGE_FINE_SIZE not defined
+getstringpar(): status = 0, type = 10, returned "cjob_1x1_2nd"
+Current position  -5000.000,  7600.000 corresponds to absolute position  46646.007, 60485.051 (map "cjob_1x1_2nd")
+The measured height at expected marker position -5000.000,7600.000 is 11.1 micron, compensating
+Searching marker "RN10" at  -5000.000,  7600.000 and found at  -5000.002,  7600.001
+Searching marker "RN10" at -5000.000,7600.000 and found at -5000.002,7600.001, tababs /meas 46645.037,60482.277
+  found @ -5999.991,7599.992 (absolute: 45646.049,60483.713)
+Locating align marker 2 find_RN10: -5000.000,7600.000  (-5000.000,7600.000)
+Entered USER-DEFINED marker search routine findmarker
+
+Executing /home/pg/.naf/bin/findmarker RN10
+PG_IMAGE_FINE_SIZE not defined
+getstringpar(): status = 0, type = 10, returned "cjob_1x1_2nd"
+Current position  -5000.000,  8400.000 corresponds to absolute position  46644.925, 61285.039 (map "cjob_1x1_2nd")
+The measured height at expected marker position -5000.000,8400.000 is 10.7 micron, compensating
+Searching marker "RN10" at  -5000.000,  8400.000 and found at  -5000.003,  8400.026
+Searching marker "RN10" at -5000.000,8400.000 and found at -5000.003,8400.026, tababs /meas 46643.980,61282.278
+  found @ -5000.002,7600.001 (absolute: 46646.005,60485.052)
+Locating align marker 3 find_RN10: -5000.000,8400.000  (-5000.000,8400.000)
+Entered USER-DEFINED marker search routine findmarker
+
+Executing /home/pg/.naf/bin/findmarker RN10
+PG_IMAGE_FINE_SIZE not defined
+getstringpar(): status = 0, type = 10, returned "cjob_1x1_2nd"
+Current position  -6000.000,  8400.000 corresponds to absolute position  45644.958, 61283.708 (map "cjob_1x1_2nd")
+The measured height at expected marker position -6000.000,8400.000 is 11.3 micron, compensating
+Searching marker "RN10" at  -6000.000,  8400.000 and found at  -6000.001,  8400.026
+Searching marker "RN10" at -6000.000,8400.000 and found at -6000.001,8400.026, tababs /meas 45644.005,61280.916
+  found @ -5000.003,8400.026 (absolute: 46644.922,61285.065)
+Locating align marker 4 find_RN10: -6000.000,8400.000  (-6000.000,8400.000)
+  found @ -6000.001,8400.026 (absolute: 45644.957,61283.734)
+
+Map      : cjob_pattern
+ mapid   : 2
+ order   : 4
+ origin  : 0.000000_mm, 0.000000_mm
+
+map      :     cjob_pattern            cjob_1x1_2nd            absolute
+Markers  :     expected                observed
+         X [mm]       Y [mm]       X [mm]       Y [mm]      X [mm]       Y [mm]
+1:   -6.0000000,   7.6000000   -5.9999910,   7.5999923   45.6460492,  60.4837131
+2:   -5.0000000,   7.6000000   -5.0000025,   7.6000009   46.6460047,  60.4850518
+3:   -5.0000000,   8.4000000   -5.0000032,   8.4000259   46.6449218,  61.2850651
+4:   -6.0000000,   8.4000000   -6.0000006,   8.4000264   45.6449575,  61.2837339
+
+Transform:          to Absolute                     from Absolute       
+                 X               Y                X               Y     
+ offset  :  +5.165565e+01 , +5.289198e+01    -5.176100e+01 , -5.279485e+01
+ scale   :  -1.284618e-04 , -3.055185e-05    +7.099093e-04 , -4.589556e-04
+ rotation:  +1.410325e-03 , -1.298437e-03    -1.909941e-03 , +1.868219e-03
+ keystone:  +1.104298e-05 , -9.429951e-06    -1.103081e-05 , +9.444669e-06
+
+Binary DAC corrections at present position in map cjob_pattern :
+-6.000000mm,8.400000mm (abs: 45.644957mm,61.283734mm)
+
+cur cjob_1x1_2nd: -6.000001mm,8.400026mm:
+                 main       trap      pull-in
+ x gain  :        -59         -3        -32
+ y gain  :         43          2         22
+ x rot   :       4353        229        570
+ y rot   :      -4464       -240       -551
+ x key   :        109
+ y key   :        -93
+
+  average rotation angle = -0.001816 (-0.104067 degrees) @ 
+  current stage position -6.000001,8.400026 (absolute 45.644957,61.283734)
+
+pg select map substrate cjob_pattern
+select pattern 1809-3_1x2_shaping_ref.gpf
+Calculated base frequency:   61.9432 MHz
+Expose pattern     :  1809-3_1x2_shaping_ref.gpf
+       position[um]:  -5000.000000,5000.000000 (map:cjob_1x1_2nd)
+       dose[uC/cm2]:  220.000000
+
+Map      : cjob_pattern (Selected)
+ mapid   : 2
+ order   : 4
+ origin  : 0.000000_mm, 0.000000_mm
+
+map      :     cjob_pattern            cjob_1x1_2nd            absolute
+Markers  :     expected                observed
+         X [mm]       Y [mm]       X [mm]       Y [mm]      X [mm]       Y [mm]
+1:   -6.0000000,   7.6000000   -5.9999910,   7.5999923   45.6460492,  60.4837131
+2:   -5.0000000,   7.6000000   -5.0000025,   7.6000009   46.6460047,  60.4850518
+3:   -5.0000000,   8.4000000   -5.0000032,   8.4000259   46.6449218,  61.2850651
+4:   -6.0000000,   8.4000000   -6.0000006,   8.4000264   45.6449575,  61.2837339
+
+Transform:          to Absolute                     from Absolute       
+                 X               Y                X               Y     
+ offset  :  +5.165565e+01 , +5.289198e+01    -5.176100e+01 , -5.279485e+01
+ scale   :  -1.284618e-04 , -3.055185e-05    +7.099093e-04 , -4.589556e-04
+ rotation:  +1.410325e-03 , -1.298437e-03    -1.909941e-03 , +1.868219e-03
+ keystone:  +1.104298e-05 , -9.429951e-06    -1.103081e-05 , +9.444669e-06
+
+Binary DAC corrections at present position in map cjob_pattern :
+-5.000000mm,5.000000mm (abs: 46.649524mm,57.885009mm)
+
+cur cjob_pattern: -5.000000mm,5.000000mm:
+                 main       trap      pull-in
+ x gain  :       -122         -6        -66
+ y gain  :         28          1         14
+ x rot   :       4458        234        584
+ y rot   :      -4428       -238       -547
+ x key   :        109
+ y key   :        -93
+
+  average rotation angle = -0.001838 (-0.105303 degrees) @ 
+  current stage position -5.000000,5.000000 (absolute 46.649524,57.885009)
+
+getstringpar(): status = 0, type = 10, returned "cjob_pattern"
+height at pos  -5000,  5000 (map "cjob_pattern"), block  1, 0 meas'd  +11.6, used  +11.3
+Elapsed time for pattern 0:0:20.17
+
+position "cjob_e1" deleted
+position "cjob_o1" deleted
+position "cjob_e2" deleted
+position "cjob_o2" deleted
+position "cjob_e3" deleted
+position "cjob_o3" deleted
+position "cjob_e4" deleted
+position "cjob_o4" deleted
+map "cjob_1x1_2nd" deleted
+Elapsed time for layout 1x1_2nd 0:2:24.37
+/home/pg/users/schmidt/jobs/RN20.mar
+cjob_do: layout: 1x1_3rd
+centre         [um] :  0.000000,0.000000
+origin         [um] :  0.000000,0.000000
+cells               :  1,1
+current mapping     :  cjob_shapingARP
+mapping             :  cjob_1x1_3rd
+pg select map substrate cjob_shapingARP
+centre         [um] :  0.000000,0.000000 (cjob_shapingARP)
+cjob_align (do)
+Entered USER-DEFINED marker search routine findmarker
+
+Executing /home/pg/.naf/bin/findmarker RN20
+PG_IMAGE_FINE_SIZE not defined
+getstringpar(): status = 0, type = 10, returned "cjob_shapingARP"
+Current position   6500.000, -8100.000 corresponds to absolute position  58167.166, 44800.248 (map "cjob_shapingARP")
+The measured height at expected marker position 6500.000,-8100.000 is 8.2 micron, compensating
+Searching marker "RN20" at   6500.000, -8100.000 and found at   6499.982, -8099.955
+Searching marker "RN20" at 6500.000,-8100.000 and found at 6499.982,-8099.955, tababs /meas 58165.752,44797.361
+align marker 1: 6500.000000,-8100.000000,find_RN20
+align marker 2: 6500.000000,-1900.000000,find_RN20
+align marker 3: 3500.000000,-1900.000000,find_RN20
+align marker 4: 3500.000000,-8100.000000,find_RN20
+Locating align marker 1 find_RN20: 6500.000,-8100.000  (6500.000,-8100.000)
+Entered USER-DEFINED marker search routine findmarker
+
+Executing /home/pg/.naf/bin/findmarker RN20
+PG_IMAGE_FINE_SIZE not defined
+getstringpar(): status = 0, type = 10, returned "cjob_shapingARP"
+Current position   6500.000, -1900.000 corresponds to absolute position  58158.751, 51000.306 (map "cjob_shapingARP")
+The measured height at expected marker position 6500.000,-1900.000 is 4.9 micron, compensating
+Searching marker "RN20" at   6500.000, -1900.000 and found at   6499.881, -1899.935
+Searching marker "RN20" at 6500.000,-1900.000 and found at 6499.881,-1899.935, tababs /meas 58157.496,50997.535
+  found @ 6499.982,-8099.955 (absolute: 58167.148,44800.294)
+Locating align marker 2 find_RN20: 6500.000,-1900.000  (6500.000,-1900.000)
+Entered USER-DEFINED marker search routine findmarker
+
+Executing /home/pg/.naf/bin/findmarker RN20
+PG_IMAGE_FINE_SIZE not defined
+getstringpar(): status = 0, type = 10, returned "cjob_shapingARP"
+Current position   3500.000, -1900.000 corresponds to absolute position  55158.798, 50996.297 (map "cjob_shapingARP")
+The measured height at expected marker position 3500.000,-1900.000 is 8.7 micron, compensating
+Searching marker "RN20" at   3500.000, -1900.000 and found at   3499.929, -1899.914
+Searching marker "RN20" at 3500.000,-1900.000 and found at 3499.929,-1899.914, tababs /meas 55157.563,50993.535
+  found @ 6499.881,-1899.935 (absolute: 58158.632,51000.370)
+Locating align marker 3 find_RN20: 3500.000,-1900.000  (3500.000,-1900.000)
+Entered USER-DEFINED marker search routine findmarker
+
+Executing /home/pg/.naf/bin/findmarker RN20
+PG_IMAGE_FINE_SIZE not defined
+getstringpar(): status = 0, type = 10, returned "cjob_shapingARP"
+Current position   3500.000, -8100.000 corresponds to absolute position  55167.214, 44796.239 (map "cjob_shapingARP")
+The measured height at expected marker position 3500.000,-8100.000 is 11.8 micron, compensating
+Searching marker "RN20" at   3500.000, -8100.000 and found at   3500.010, -8099.839
+Searching marker "RN20" at 3500.000,-8100.000 and found at 3500.010,-8099.839, tababs /meas 55165.785,44793.358
+  found @ 3499.929,-1899.914 (absolute: 55158.727,50996.383)
+Locating align marker 4 find_RN20: 3500.000,-8100.000  (3500.000,-8100.000)
+  found @ 3500.010,-8099.839 (absolute: 55167.224,44796.400)
+
+Map      : cjob_1x1_3rd
+ mapid   : 1
+ order   : 4
+ origin  : 0.000000_mm, 0.000000_mm
+
+map      :     cjob_1x1_3rd            cjob_shapingARP         absolute
+Markers  :     expected                observed
+         X [mm]       Y [mm]       X [mm]       Y [mm]      X [mm]       Y [mm]
+1:    6.5000000,  -8.1000000    6.4999817,  -8.0999547   58.1671478,  44.8002937
+2:    6.5000000,  -1.9000000    6.4998815,  -1.8999351   58.1586320,  51.0003703
+3:    3.5000000,  -1.9000000    3.4999293,  -1.8999138   55.1587270,  50.9963826
+4:    3.5000000,  -8.1000000    3.5000104,  -8.0998392   55.1672237,  44.7964001
+
+Transform:          to Absolute                     from Absolute       
+                 X               Y                X               Y     
+ offset  :  +5.165624e+01 , +5.289169e+01    -5.172737e+01 , -5.283737e+01
+ scale   :  -3.365167e-05 , -2.055016e-05    -2.250275e-05 , +2.804791e-04
+ rotation:  +1.338865e-03 , -1.366811e-03    -1.070919e-03 , +1.313825e-03
+ keystone:  -1.033742e-06 , +5.064535e-06    +1.026847e-06 , -5.065989e-06
+
+Binary DAC corrections at present position in map cjob_1x1_3rd :
+3.500000mm,-8.100000mm (abs: 55.167224mm,44.796400mm)
+
+cur cjob_shapingARP: 3.500010mm,-8.099839mm:
+                 main       trap      pull-in
+ x gain  :        -42         -2        -23
+ y gain  :         -5          0         -2
+ x rot   :       4245        223        556
+ y rot   :      -4483       -241       -554
+ x key   :        -10
+ y key   :         50
+
+  average rotation angle = -0.001170 (-0.067039 degrees) @ 
+  current stage position 3.500010,-8.099839 (absolute 55.167224,44.796400)
+
+CALINV  = 1
+
+Layout Cell 1 1 of 1x1_3rd
+/home/pg/users/schmidt/jobs/RN10.mar
+lay_dose_update = +,0.000000,0
+cjob_do: expose pattern, started at 17:22:00
+
+pg select map substrate cjob_1x1_3rd
+centre         [um] :  0.000000,0.000000 (cjob_1x1_3rd)
+cjob_align (do)
+Entered USER-DEFINED marker search routine findmarker
+
+Executing /home/pg/.naf/bin/findmarker RN10
+PG_IMAGE_FINE_SIZE not defined
+getstringpar(): status = 0, type = 10, returned "cjob_1x1_3rd"
+Current position   8100.000, -2200.000 corresponds to absolute position  59758.994, 50702.491 (map "cjob_1x1_3rd")
+The measured height at expected marker position 8100.000,-2200.000 is 2.8 micron, compensating
+Searching marker "RN10" at   8100.000, -2200.000 and found at   8099.962, -2199.977
+Searching marker "RN10" at 8100.000,-2200.000 and found at 8099.962,-2199.977, tababs /meas 59757.748,50699.719
+align marker 1: 8100.000000,-2200.000000,find_RN10
+align marker 2: 8800.000000,-2200.000000,find_RN10
+align marker 3: 8800.000000,-1250.000000,find_RN10
+align marker 4: 8100.000000,-1250.000000,find_RN10
+Locating align marker 1 find_RN10: 8100.000,-2200.000  (8100.000,-2200.000)
+Entered USER-DEFINED marker search routine findmarker
+
+Executing /home/pg/.naf/bin/findmarker RN10
+PG_IMAGE_FINE_SIZE not defined
+getstringpar(): status = 0, type = 10, returned "cjob_1x1_3rd"
+Current position   8800.000, -2200.000 corresponds to absolute position  60458.972, 50703.420 (map "cjob_1x1_3rd")
+The measured height at expected marker position 8800.000,-2200.000 is 1.8 micron, compensating
+Searching marker "RN10" at   8800.000, -2200.000 and found at   8799.997, -2199.971
+Searching marker "RN10" at 8800.000,-2200.000 and found at 8799.997,-2199.971, tababs /meas 60457.717,50700.640
+  found @ 8099.962,-2199.977 (absolute: 59758.956,50702.514)
+Locating align marker 2 find_RN10: 8800.000,-2200.000  (8800.000,-2200.000)
+Entered USER-DEFINED marker search routine findmarker
+
+Executing /home/pg/.naf/bin/findmarker RN10
+PG_IMAGE_FINE_SIZE not defined
+getstringpar(): status = 0, type = 10, returned "cjob_1x1_3rd"
+Current position   8800.000, -1250.000 corresponds to absolute position  60457.665, 51653.443 (map "cjob_1x1_3rd")
+The measured height at expected marker position 8800.000,-1250.000 is 1.1 micron, compensating
+Searching marker "RN10" at   8800.000, -1250.000 and found at   8800.045, -1249.966
+Searching marker "RN10" at 8800.000,-1250.000 and found at 8800.045,-1249.966, tababs /meas 60456.450,51650.677
+  found @ 8799.997,-2199.971 (absolute: 60458.969,50703.450)
+Locating align marker 3 find_RN10: 8800.000,-1250.000  (8800.000,-1250.000)
+Entered USER-DEFINED marker search routine findmarker
+
+Executing /home/pg/.naf/bin/findmarker RN10
+PG_IMAGE_FINE_SIZE not defined
+getstringpar(): status = 0, type = 10, returned "cjob_1x1_3rd"
+Current position   8100.000, -1250.000 corresponds to absolute position  59757.687, 51652.510 (map "cjob_1x1_3rd")
+The measured height at expected marker position 8100.000,-1250.000 is 2.3 micron, compensating
+Searching marker "RN10" at   8100.000, -1250.000 and found at   8100.002, -1249.975
+Searching marker "RN10" at 8100.000,-1250.000 and found at 8100.002,-1249.975, tababs /meas 59756.454,51649.742
+  found @ 8800.045,-1249.966 (absolute: 60457.710,51653.477)
+Locating align marker 4 find_RN10: 8100.000,-1250.000  (8100.000,-1250.000)
+  found @ 8100.002,-1249.975 (absolute: 59757.689,51652.535)
+
+Map      : cjob_pattern
+ mapid   : 2
+ order   : 4
+ origin  : 0.000000_mm, 0.000000_mm
+
+map      :     cjob_pattern            cjob_1x1_3rd            absolute
+Markers  :     expected                observed
+         X [mm]       Y [mm]       X [mm]       Y [mm]      X [mm]       Y [mm]
+1:    8.1000000,  -2.2000000    8.0999623,  -2.1999771   59.7589561,  50.7025138
+2:    8.8000000,  -2.2000000    8.7999973,  -2.1999710   60.4589691,  50.7034494
+3:    8.8000000,  -1.2500000    8.8000449,  -1.2499659   60.4577096,  51.6534774
+4:    8.1000000,  -1.2500000    8.1000019,  -1.2499754   59.7576892,  51.6525350
+
+Transform:          to Absolute                     from Absolute       
+                 X               Y                X               Y     
+ offset  :  +5.165567e+01 , +5.289156e+01    -5.175879e+01 , -5.285203e+01
+ scale   :  +4.292189e-05 , -5.962897e-05    +5.392828e-04 , +5.796060e-04
+ rotation:  +1.358886e-03 , -1.422864e-03    -8.243243e-04 , +1.993172e-03
+ keystone:  +1.102661e-05 , +1.011831e-05    -1.103925e-05 , -1.010275e-05
+
+Binary DAC corrections at present position in map cjob_pattern :
+8.100000mm,-1.250000mm (abs: 59.757689mm,51.652535mm)
+
+cur cjob_1x1_3rd: 8.100002mm,-1.249975mm:
+                 main       trap      pull-in
+ x gain  :         49          2         26
+ y gain  :         37          2         19
+ x rot   :       4403        231        577
+ y rot   :      -4362       -234       -539
+ x key   :        108
+ y key   :        100
+
+  average rotation angle = -0.001447 (-0.082915 degrees) @ 
+  current stage position 8.100002,-1.249975 (absolute 59.757689,51.652535)
+
+pg select map substrate cjob_pattern
+select pattern 1809-3_2x1_shaping.gpf
+Calculated base frequency:   61.9432 MHz
+Expose pattern     :  1809-3_2x1_shaping.gpf
+       position[um]:  5000.000000,-5000.000000 (map:cjob_1x1_3rd)
+       dose[uC/cm2]:  220.000000
+
+Map      : cjob_pattern (Selected)
+ mapid   : 2
+ order   : 4
+ origin  : 0.000000_mm, 0.000000_mm
+
+map      :     cjob_pattern            cjob_1x1_3rd            absolute
+Markers  :     expected                observed
+         X [mm]       Y [mm]       X [mm]       Y [mm]      X [mm]       Y [mm]
+1:    8.1000000,  -2.2000000    8.0999623,  -2.1999771   59.7589561,  50.7025138
+2:    8.8000000,  -2.2000000    8.7999973,  -2.1999710   60.4589691,  50.7034494
+3:    8.8000000,  -1.2500000    8.8000449,  -1.2499659   60.4577096,  51.6534774
+4:    8.1000000,  -1.2500000    8.1000019,  -1.2499754   59.7576892,  51.6525350
+
+Transform:          to Absolute                     from Absolute       
+                 X               Y                X               Y     
+ offset  :  +5.165567e+01 , +5.289156e+01    -5.175879e+01 , -5.285203e+01
+ scale   :  +4.292189e-05 , -5.962897e-05    +5.392828e-04 , +5.796060e-04
+ rotation:  +1.358886e-03 , -1.422864e-03    -8.243243e-04 , +1.993172e-03
+ keystone:  +1.102661e-05 , +1.011831e-05    -1.103925e-05 , -1.010275e-05
+
+Binary DAC corrections at present position in map cjob_pattern :
+5.000000mm,-5.000000mm (abs: 56.662728mm,47.898396mm)
+
+cur cjob_pattern: 5.000000mm,-5.000000mm:
+                 main       trap      pull-in
+ x gain  :        -20         -1        -11
+ y gain  :        -15         -1         -8
+ x rot   :       4279        225        560
+ y rot   :      -4474       -240       -552
+ x key   :        108
+ y key   :        100
+
+  average rotation angle = -0.001411 (-0.080849 degrees) @ 
+  current stage position 5.000000,-5.000000 (absolute 56.662728,47.898396)
+
+getstringpar(): status = 0, type = 10, returned "cjob_pattern"
+height at pos   5000, -5000 (map "cjob_pattern"), block  1, 0 meas'd   +8.0, used   +2.3
+Elapsed time for pattern 0:0:26.07
+/home/pg/users/schmidt/jobs/RN10.mar
+lay_dose_update = +,0.000000,0
+cjob_do: expose pattern, started at 17:22:26
+
+pg select map substrate cjob_1x1_3rd
+centre         [um] :  0.000000,0.000000 (cjob_1x1_3rd)
+cjob_align (do)
+Entered USER-DEFINED marker search routine findmarker
+
+Executing /home/pg/.naf/bin/findmarker RN10
+PG_IMAGE_FINE_SIZE not defined
+getstringpar(): status = 0, type = 10, returned "cjob_1x1_3rd"
+Current position   4000.000, -2400.000 corresponds to absolute position  55659.397, 50497.047 (map "cjob_1x1_3rd")
+The measured height at expected marker position 4000.000,-2400.000 is 8.4 micron, compensating
+Searching marker "RN10" at   4000.000, -2400.000 and found at   3999.997, -2400.009
+Searching marker "RN10" at 4000.000,-2400.000 and found at 3999.997,-2400.009, tababs /meas 55658.133,50494.223
+align marker 1: 4000.000000,-2400.000000,find_RN10
+align marker 2: 5000.000000,-2400.000000,find_RN10
+align marker 3: 5000.000000,-1600.000000,find_RN10
+align marker 4: 4000.000000,-1600.000000,find_RN10
+Locating align marker 1 find_RN10: 4000.000,-2400.000  (4000.000,-2400.000)
+Entered USER-DEFINED marker search routine findmarker
+
+Executing /home/pg/.naf/bin/findmarker RN10
+PG_IMAGE_FINE_SIZE not defined
+getstringpar(): status = 0, type = 10, returned "cjob_1x1_3rd"
+Current position   5000.000, -2400.000 corresponds to absolute position  56659.365, 50498.374 (map "cjob_1x1_3rd")
+The measured height at expected marker position 5000.000,-2400.000 is 7.3 micron, compensating
+Searching marker "RN10" at   5000.000, -2400.000 and found at   4999.980, -2400.010
+Searching marker "RN10" at 5000.000,-2400.000 and found at 4999.980,-2400.010, tababs /meas 56658.110,50495.624
+  found @ 3999.997,-2400.009 (absolute: 55659.393,50497.038)
+Locating align marker 2 find_RN10: 5000.000,-2400.000  (5000.000,-2400.000)
+Entered USER-DEFINED marker search routine findmarker
+
+Executing /home/pg/.naf/bin/findmarker RN10
+PG_IMAGE_FINE_SIZE not defined
+getstringpar(): status = 0, type = 10, returned "cjob_1x1_3rd"
+Current position   5000.000, -1600.000 corresponds to absolute position  56658.268, 51298.378 (map "cjob_1x1_3rd")
+The measured height at expected marker position 5000.000,-1600.000 is 6.9 micron, compensating
+Searching marker "RN10" at   5000.000, -1600.000 and found at   4999.991, -1599.988
+Searching marker "RN10" at 5000.000,-1600.000 and found at 4999.991,-1599.988, tababs /meas 56657.026,51295.602
+  found @ 4999.980,-2400.010 (absolute: 56659.345,50498.364)
+Locating align marker 3 find_RN10: 5000.000,-1600.000  (5000.000,-1600.000)
+Entered USER-DEFINED marker search routine findmarker
+
+Executing /home/pg/.naf/bin/findmarker RN10
+PG_IMAGE_FINE_SIZE not defined
+getstringpar(): status = 0, type = 10, returned "cjob_1x1_3rd"
+Current position   4000.000, -1600.000 corresponds to absolute position  55658.300, 51297.047 (map "cjob_1x1_3rd")
+The measured height at expected marker position 4000.000,-1600.000 is 8.0 micron, compensating
+Searching marker "RN10" at   4000.000, -1600.000 and found at   4000.001, -1599.984
+Searching marker "RN10" at 4000.000,-1600.000 and found at 4000.001,-1599.984, tababs /meas 55657.056,51294.268
+  found @ 4999.991,-1599.988 (absolute: 56658.259,51298.390)
+Locating align marker 4 find_RN10: 4000.000,-1600.000  (4000.000,-1600.000)
+  found @ 4000.001,-1599.984 (absolute: 55658.301,51297.063)
+
+Map      : cjob_pattern
+ mapid   : 2
+ order   : 4
+ origin  : 0.000000_mm, 0.000000_mm
+
+map      :     cjob_pattern            cjob_1x1_3rd            absolute
+Markers  :     expected                observed
+         X [mm]       Y [mm]       X [mm]       Y [mm]      X [mm]       Y [mm]
+1:    4.0000000,  -2.4000000    3.9999968,  -2.4000095   55.6593935,  50.4970379
+2:    5.0000000,  -2.4000000    4.9999796,  -2.4000104   56.6593450,  50.4983637
+3:    5.0000000,  -1.6000000    4.9999909,  -1.5999879   56.6582588,  51.2983900
+4:    4.0000000,  -1.6000000    4.0000015,  -1.5999842   55.6583013,  51.2970629
+
+Transform:          to Absolute                     from Absolute       
+                 X               Y                X               Y     
+ offset  :  +5.165624e+01 , +5.289179e+01    -5.175149e+01 , -5.282615e+01
+ scale   :  -3.086697e-05 , +2.474588e-05    +4.161145e-04 , +5.753580e-05
+ rotation:  +1.329683e-03 , -1.394420e-03    -1.243531e-03 , +1.772440e-03
+ keystone:  +7.314419e-06 , +1.638309e-06    -7.317081e-06 , -1.628576e-06
+
+Binary DAC corrections at present position in map cjob_pattern :
+4.000000mm,-1.600000mm (abs: 55.658301mm,51.297063mm)
+
+cur cjob_1x1_3rd: 4.000001mm,-1.599984mm:
+                 main       trap      pull-in
+ x gain  :        -71         -3        -38
+ y gain  :         52          2         26
+ x rot   :       4340        228        568
+ y rot   :      -4466       -240       -551
+ x key   :         72
+ y key   :         16
+
+  average rotation angle = -0.001521 (-0.087165 degrees) @ 
+  current stage position 4.000001,-1.599984 (absolute 55.658301,51.297063)
+
+pg select map substrate cjob_pattern
+select pattern 1809-3_2x1_shaping_ref.gpf
+Calculated base frequency:   61.9432 MHz
+Expose pattern     :  1809-3_2x1_shaping_ref.gpf
+       position[um]:  5000.000000,-5000.000000 (map:cjob_1x1_3rd)
+       dose[uC/cm2]:  220.000000
+
+Map      : cjob_pattern (Selected)
+ mapid   : 2
+ order   : 4
+ origin  : 0.000000_mm, 0.000000_mm
+
+map      :     cjob_pattern            cjob_1x1_3rd            absolute
+Markers  :     expected                observed
+         X [mm]       Y [mm]       X [mm]       Y [mm]      X [mm]       Y [mm]
+1:    4.0000000,  -2.4000000    3.9999968,  -2.4000095   55.6593935,  50.4970379
+2:    5.0000000,  -2.4000000    4.9999796,  -2.4000104   56.6593450,  50.4983637
+3:    5.0000000,  -1.6000000    4.9999909,  -1.5999879   56.6582588,  51.2983900
+4:    4.0000000,  -1.6000000    4.0000015,  -1.5999842   55.6583013,  51.2970629
+
+Transform:          to Absolute                     from Absolute       
+                 X               Y                X               Y     
+ offset  :  +5.165624e+01 , +5.289179e+01    -5.175149e+01 , -5.282615e+01
+ scale   :  -3.086697e-05 , +2.474588e-05    +4.161145e-04 , +5.753580e-05
+ rotation:  +1.329683e-03 , -1.394420e-03    -1.243531e-03 , +1.772440e-03
+ keystone:  +7.314419e-06 , +1.638309e-06    -7.317081e-06 , -1.628576e-06
+
+Binary DAC corrections at present position in map cjob_pattern :
+5.000000mm,-5.000000mm (abs: 56.662875mm,47.898278mm)
+
+cur cjob_pattern: 5.000000mm,-5.000000mm:
+                 main       trap      pull-in
+ x gain  :       -112         -5        -60
+ y gain  :         55          3         28
+ x rot   :       4322        227        566
+ y rot   :      -4442       -238       -548
+ x key   :         72
+ y key   :         16
+
+  average rotation angle = -0.001522 (-0.087216 degrees) @ 
+  current stage position 5.000000,-5.000000 (absolute 56.662875,47.898278)
+
+getstringpar(): status = 0, type = 10, returned "cjob_pattern"
+height at pos   5000, -5000 (map "cjob_pattern"), block  1, 0 meas'd   +8.0, used   +8.0
+Elapsed time for pattern 0:0:24.03
+
+position "cjob_e1" deleted
+position "cjob_o1" deleted
+position "cjob_e2" deleted
+position "cjob_o2" deleted
+position "cjob_e3" deleted
+position "cjob_o3" deleted
+position "cjob_e4" deleted
+position "cjob_o4" deleted
+map "cjob_1x1_3rd" deleted
+Elapsed time for layout 1x1_3rd 0:1:19.95
+/home/pg/users/schmidt/jobs/RN20.mar
+cjob_do: layout: 1x1_4th
+centre         [um] :  0.000000,0.000000
+origin         [um] :  0.000000,0.000000
+cells               :  1,1
+current mapping     :  cjob_shapingARP
+mapping             :  cjob_1x1_4th
+pg select map substrate cjob_shapingARP
+centre         [um] :  0.000000,0.000000 (cjob_shapingARP)
+cjob_align (do)
+Entered USER-DEFINED marker search routine findmarker
+
+Executing /home/pg/.naf/bin/findmarker RN20
+PG_IMAGE_FINE_SIZE not defined
+getstringpar(): status = 0, type = 10, returned "cjob_shapingARP"
+Current position   6500.000,  8100.000 corresponds to absolute position  58145.177, 61000.398 (map "cjob_shapingARP")
+The measured height at expected marker position 6500.000,8100.000 is 1.0 micron, compensating
+Searching marker "RN20" at   6500.000,  8100.000, NOT found due to error 0xC:
+Error: ECC_E_CSNOEDGE -  move marker: coarse search: no edge detected 
+Returning from findmarker with status 0xC = 12
+%ENG_W_USDEJY      -  user defined JOY marker search routine error 
+align marker 1: 6500.000000,8100.000000,find_RN20
+align marker 2: 6500.000000,1900.000000,find_RN20
+align marker 3: 3500.000000,1900.000000,find_RN20
+align marker 4: 3500.000000,8100.000000,find_RN20
+Locating align marker 1 find_RN20: 6500.000,8100.000  (6500.000,8100.000)
+  failed
+- Can't locate align marker 1 find_RN20 @ absolute (58145.177,61000.398)
+Entered USER-DEFINED marker search routine findmarker
+
+Executing /home/pg/.naf/bin/findmarker RN20
+PG_IMAGE_FINE_SIZE not defined
+getstringpar(): status = 0, type = 10, returned "cjob_shapingARP"
+Current position   6500.000,  1900.000 corresponds to absolute position  58153.593, 54800.341 (map "cjob_shapingARP")
+The measured height at expected marker position 6500.000,1900.000 is 3.5 micron, compensating
+Searching marker "RN20" at   6500.000,  1900.000 and found at   6499.877,  1900.026
+Searching marker "RN20" at 6500.000,1900.000 and found at 6499.877,1900.026, tababs /meas 58152.449,54797.572
+Locating align marker 2 find_RN20: 6500.000,1900.000  (6500.000,1900.000)
+Entered USER-DEFINED marker search routine findmarker
+
+Executing /home/pg/.naf/bin/findmarker RN20
+PG_IMAGE_FINE_SIZE not defined
+getstringpar(): status = 0, type = 10, returned "cjob_shapingARP"
+Current position   3500.000,  1900.000 corresponds to absolute position  55153.640, 54796.332 (map "cjob_shapingARP")
+The measured height at expected marker position 3500.000,1900.000 is 7.5 micron, compensating
+Searching marker "RN20" at   3500.000,  1900.000 and found at   3499.895,  1900.052
+Searching marker "RN20" at 3500.000,1900.000 and found at 3499.895,1900.052, tababs /meas 55152.517,54793.568
+  found @ 6499.877,1900.026 (absolute: 58153.469,54800.367)
+Locating align marker 3 find_RN20: 3500.000,1900.000  (3500.000,1900.000)
+Entered USER-DEFINED marker search routine findmarker
+
+Executing /home/pg/.naf/bin/findmarker RN20
+PG_IMAGE_FINE_SIZE not defined
+getstringpar(): status = 0, type = 10, returned "cjob_shapingARP"
+Current position   3500.000,  8100.000 corresponds to absolute position  55145.224, 60996.389 (map "cjob_shapingARP")
+The measured height at expected marker position 3500.000,8100.000 is 4.7 micron, compensating
+Searching marker "RN20" at   3500.000,  8100.000 and found at   3500.001,  8099.968
+Searching marker "RN20" at 3500.000,8100.000 and found at 3500.001,8099.968, tababs /meas 55144.284,60993.611
+  found @ 3499.895,1900.052 (absolute: 55153.535,54796.384)
+Locating align marker 4 find_RN20: 3500.000,8100.000  (3500.000,8100.000)
+  found @ 3500.001,8099.968 (absolute: 55145.225,60996.356)
+Can't determine substrate map: use current mapping
+ B: Could not align: use current mapping cjob_shapingARP
+CALINV  = 1
+
+Layout Cell 1 1 of 1x1_4th
+/home/pg/users/schmidt/jobs/RN10.mar
+lay_dose_update = +,0.000000,0
+cjob_do: expose pattern, started at 17:23:16
+
+pg select map substrate cjob_shapingARP
+centre         [um] :  0.000000,0.000000 (cjob_shapingARP)
+cjob_align (do)
+Entered USER-DEFINED marker search routine findmarker
+
+Executing /home/pg/.naf/bin/findmarker RN10
+PG_IMAGE_FINE_SIZE not defined
+getstringpar(): status = 0, type = 10, returned "cjob_shapingARP"
+Current position   8100.000,  7800.000 corresponds to absolute position  59745.559, 60702.533 (map "cjob_shapingARP")
+The measured height at expected marker position 8100.000,7800.000 is -0.1 micron, compensating
+Searching marker "RN10" at   8100.000,  7800.000 and found at   8100.023,  7799.956
+Searching marker "RN10" at 8100.000,7800.000 and found at 8100.023,7799.956, tababs /meas 59744.604,60699.765
+align marker 1: 8100.000000,7800.000000,find_RN10
+align marker 2: 8800.000000,7800.000000,find_RN10
+align marker 3: 8800.000000,8750.000000,find_RN10
+align marker 4: 8100.000000,8750.000000,find_RN10
+Locating align marker 1 find_RN10: 8100.000,7800.000  (8100.000,7800.000)
+Entered USER-DEFINED marker search routine findmarker
+
+Executing /home/pg/.naf/bin/findmarker RN10
+PG_IMAGE_FINE_SIZE not defined
+getstringpar(): status = 0, type = 10, returned "cjob_shapingARP"
+Current position   8800.000,  7800.000 corresponds to absolute position  60445.548, 60703.469 (map "cjob_shapingARP")
+The measured height at expected marker position 8800.000,7800.000 is -0.6 micron, compensating
+Searching marker "RN10" at   8800.000,  7800.000 and found at   8799.983,  7799.948
+Searching marker "RN10" at 8800.000,7800.000 and found at 8799.983,7799.948, tababs /meas 60444.597,60700.701
+  found @ 8100.023,7799.956 (absolute: 59745.582,60702.489)
+Locating align marker 2 find_RN10: 8800.000,7800.000  (8800.000,7800.000)
+Entered USER-DEFINED marker search routine findmarker
+
+Executing /home/pg/.naf/bin/findmarker RN10
+PG_IMAGE_FINE_SIZE not defined
+getstringpar(): status = 0, type = 10, returned "cjob_shapingARP"
+Current position   8800.000,  8750.000 corresponds to absolute position  60444.258, 61653.478 (map "cjob_shapingARP")
+The measured height at expected marker position 8800.000,8750.000 is -0.9 micron, compensating
+Searching marker "RN10" at   8800.000,  8750.000 and found at   8800.002,  8749.937
+Searching marker "RN10" at 8800.000,8750.000 and found at 8800.002,8749.937, tababs /meas 60443.325,61650.716
+  found @ 8799.983,7799.948 (absolute: 60445.531,60703.417)
+Locating align marker 3 find_RN10: 8800.000,8750.000  (8800.000,8750.000)
+Entered USER-DEFINED marker search routine findmarker
+
+Executing /home/pg/.naf/bin/findmarker RN10
+PG_IMAGE_FINE_SIZE not defined
+getstringpar(): status = 0, type = 10, returned "cjob_shapingARP"
+Current position   8100.000,  8750.000 corresponds to absolute position  59744.269, 61652.542 (map "cjob_shapingARP")
+The measured height at expected marker position 8100.000,8750.000 is -0.2 micron, compensating
+Searching marker "RN10" at   8100.000,  8750.000 and found at   8100.057,  8749.955
+Searching marker "RN10" at 8100.000,8750.000 and found at 8100.057,8749.955, tababs /meas 59743.336,61649.759
+  found @ 8800.002,8749.937 (absolute: 60444.260,61653.415)
+Locating align marker 4 find_RN10: 8100.000,8750.000  (8100.000,8750.000)
+  found @ 8100.057,8749.955 (absolute: 59744.326,61652.497)
+
+Map      : cjob_pattern
+ mapid   : 2
+ order   : 4
+ origin  : 0.000000_mm, 0.000000_mm
+
+map      :     cjob_pattern            cjob_shapingARP         absolute
+Markers  :     expected                observed
+         X [mm]       Y [mm]       X [mm]       Y [mm]      X [mm]       Y [mm]
+1:    8.1000000,   7.8000000    8.1000233,   7.7999561   59.7455822,  60.7024895
+2:    8.8000000,   7.8000000    8.7999828,   7.7999482   60.4455307,  60.7034170
+3:    8.8000000,   8.7500000    8.8000016,   8.7499371   60.4442600,  61.6534147
+4:    8.1000000,   8.7500000    8.1000566,   8.7499548   59.7443260,  61.6524971
+
+Transform:          to Absolute                     from Absolute       
+                 X               Y                X               Y     
+ offset  :  +5.165511e+01 , +5.289075e+01    -5.165078e+01 , -5.276859e+01
+ scale   :  +9.693984e-05 , +1.291240e-04    -1.256534e-03 , -9.015237e-04
+ rotation:  +1.441742e-03 , -1.145230e-03    -2.231277e-03 , +1.501201e-05
+ keystone:  -2.185910e-05 , -1.495419e-05    +2.188260e-05 , +1.492655e-05
+
+Binary DAC corrections at present position in map cjob_pattern :
+8.100000mm,8.750000mm (abs: 59.744326mm,61.652497mm)
+
+cur cjob_shapingARP: 8.100057mm,8.749955mm:
+                 main       trap      pull-in
+ x gain  :       -157         -7        -84
+ y gain  :         13          1          7
+ x rot   :       4287        225        561
+ y rot   :      -4325       -232       -534
+ x key   :       -215
+ y key   :       -147
+
+  average rotation angle = -0.000969 (-0.055532 degrees) @ 
+  current stage position 8.100057,8.749955 (absolute 59.744326,61.652497)
+
+pg select map substrate cjob_pattern
+select pattern 1809-3_2x2_shaping.gpf
+Calculated base frequency:   61.9432 MHz
+Expose pattern     :  1809-3_2x2_shaping.gpf
+       position[um]:  5000.000000,5000.000000 (map:cjob_shapingARP)
+       dose[uC/cm2]:  220.000000
+
+Map      : cjob_pattern (Selected)
+ mapid   : 2
+ order   : 4
+ origin  : 0.000000_mm, 0.000000_mm
+
+map      :     cjob_pattern            cjob_shapingARP         absolute
+Markers  :     expected                observed
+         X [mm]       Y [mm]       X [mm]       Y [mm]      X [mm]       Y [mm]
+1:    8.1000000,   7.8000000    8.1000233,   7.7999561   59.7455822,  60.7024895
+2:    8.8000000,   7.8000000    8.7999828,   7.7999482   60.4455307,  60.7034170
+3:    8.8000000,   8.7500000    8.8000016,   8.7499371   60.4442600,  61.6534147
+4:    8.1000000,   8.7500000    8.1000566,   8.7499548   59.7443260,  61.6524971
+
+Transform:          to Absolute                     from Absolute       
+                 X               Y                X               Y     
+ offset  :  +5.165511e+01 , +5.289075e+01    -5.165078e+01 , -5.276859e+01
+ scale   :  +9.693984e-05 , +1.291240e-04    -1.256534e-03 , -9.015237e-04
+ rotation:  +1.441742e-03 , -1.145230e-03    -2.231277e-03 , +1.501201e-05
+ keystone:  -2.185910e-05 , -1.495419e-05    +2.188260e-05 , +1.492655e-05
+
+Binary DAC corrections at present position in map cjob_pattern :
+5.000000mm,5.000000mm (abs: 56.649323mm,57.898229mm)
+
+cur cjob_pattern: 5.000000mm,5.000000mm:
+                 main       trap      pull-in
+ x gain  :        -21         -1        -11
+ y gain  :         91          4         46
+ x rot   :       4471        235        586
+ y rot   :      -4104       -220       -507
+ x key   :       -215
+ y key   :       -147
+
+  average rotation angle = -0.001031 (-0.059079 degrees) @ 
+  current stage position 5.000000,5.000000 (absolute 56.649323,57.898229)
+
+getstringpar(): status = 0, type = 10, returned "cjob_pattern"
+height at pos   5000,  5000 (map "cjob_pattern"), block  1, 0 meas'd   +4.1, used   -0.2
+Elapsed time for pattern 0:0:26.94
+/home/pg/users/schmidt/jobs/RN10.mar
+lay_dose_update = +,0.000000,0
+cjob_do: expose pattern, started at 17:23:43
+
+pg select map substrate cjob_shapingARP
+centre         [um] :  0.000000,0.000000 (cjob_shapingARP)
+cjob_align (do)
+Entered USER-DEFINED marker search routine findmarker
+
+Executing /home/pg/.naf/bin/findmarker RN10
+PG_IMAGE_FINE_SIZE not defined
+getstringpar(): status = 0, type = 10, returned "cjob_shapingARP"
+Current position   4000.000,  7600.000 corresponds to absolute position  55645.895, 60497.052 (map "cjob_shapingARP")
+The measured height at expected marker position 4000.000,7600.000 is 4.5 micron, compensating
+Searching marker "RN10" at   4000.000,  7600.000 and found at   4000.022,  7599.963
+Searching marker "RN10" at 4000.000,7600.000 and found at 4000.022,7599.963, tababs /meas 55644.932,60494.284
+align marker 1: 4000.000000,7600.000000,find_RN10
+align marker 2: 5000.000000,7600.000000,find_RN10
+align marker 3: 5000.000000,8400.000000,find_RN10
+align marker 4: 4000.000000,8400.000000,find_RN10
+Locating align marker 1 find_RN10: 4000.000,7600.000  (4000.000,7600.000)
+Entered USER-DEFINED marker search routine findmarker
+
+Executing /home/pg/.naf/bin/findmarker RN10
+PG_IMAGE_FINE_SIZE not defined
+getstringpar(): status = 0, type = 10, returned "cjob_shapingARP"
+Current position   5000.000,  7600.000 corresponds to absolute position  56645.879, 60498.389 (map "cjob_shapingARP")
+The measured height at expected marker position 5000.000,7600.000 is 3.6 micron, compensating
+Searching marker "RN10" at   5000.000,  7600.000 and found at   5000.010,  7599.973
+Searching marker "RN10" at 5000.000,7600.000 and found at 5000.010,7599.973, tababs /meas 56644.925,60495.626
+  found @ 4000.022,7599.963 (absolute: 55645.917,60497.016)
+Locating align marker 2 find_RN10: 5000.000,7600.000  (5000.000,7600.000)
+Entered USER-DEFINED marker search routine findmarker
+
+Executing /home/pg/.naf/bin/findmarker RN10
+PG_IMAGE_FINE_SIZE not defined
+getstringpar(): status = 0, type = 10, returned "cjob_shapingARP"
+Current position   5000.000,  8400.000 corresponds to absolute position  56644.793, 61298.396 (map "cjob_shapingARP")
+The measured height at expected marker position 5000.000,8400.000 is 3.2 micron, compensating
+Searching marker "RN10" at   5000.000,  8400.000 and found at   5000.019,  8399.993
+Searching marker "RN10" at 5000.000,8400.000 and found at 5000.019,8399.993, tababs /meas 56643.839,61295.640
+  found @ 5000.010,7599.973 (absolute: 56645.889,60498.362)
+Locating align marker 3 find_RN10: 5000.000,8400.000  (5000.000,8400.000)
+Entered USER-DEFINED marker search routine findmarker
+
+Executing /home/pg/.naf/bin/findmarker RN10
+PG_IMAGE_FINE_SIZE not defined
+getstringpar(): status = 0, type = 10, returned "cjob_shapingARP"
+Current position   4000.000,  8400.000 corresponds to absolute position  55644.809, 61297.060 (map "cjob_shapingARP")
+The measured height at expected marker position 4000.000,8400.000 is 4.1 micron, compensating
+Searching marker "RN10" at   4000.000,  8400.000 and found at   4000.032,  8399.985
+Searching marker "RN10" at 4000.000,8400.000 and found at 4000.032,8399.985, tababs /meas 55643.863,61294.270
+  found @ 5000.019,8399.993 (absolute: 56644.813,61298.389)
+Locating align marker 4 find_RN10: 4000.000,8400.000  (4000.000,8400.000)
+  found @ 4000.032,8399.985 (absolute: 55644.841,61297.045)
+
+Map      : cjob_pattern
+ mapid   : 2
+ order   : 4
+ origin  : 0.000000_mm, 0.000000_mm
+
+map      :     cjob_pattern            cjob_shapingARP         absolute
+Markers  :     expected                observed
+         X [mm]       Y [mm]       X [mm]       Y [mm]      X [mm]       Y [mm]
+1:    4.0000000,   7.6000000    4.0000216,   7.5999634   55.6459166,  60.4970159
+2:    5.0000000,   7.6000000    5.0000097,   7.5999732   56.6458890,  60.4983620
+3:    5.0000000,   8.4000000    5.0000194,   8.3999930   56.6448127,  61.2983893
+4:    4.0000000,   8.4000000    4.0000323,   8.3999849   55.6448414,  61.2970448
+
+Transform:          to Absolute                     from Absolute       
+                 X               Y                X               Y     
+ offset  :  +5.165620e+01 , +5.289129e+01    -5.172392e+01 , -5.281287e+01
+ scale   :  -1.695283e-05 , +4.441970e-05    -5.926441e-05 , -1.527331e-04
+ rotation:  +1.361829e-03 , -1.338354e-03    -1.470899e-03 , +1.265704e-03
+ keystone:  -1.403428e-06 , -2.064398e-06    +1.406234e-06 , +2.062423e-06
+
+Binary DAC corrections at present position in map cjob_pattern :
+4.000000mm,8.400000mm (abs: 55.644841mm,61.297045mm)
+
+cur cjob_shapingARP: 4.000032mm,8.399985mm:
+                 main       trap      pull-in
+ x gain  :        -48         -2        -26
+ y gain  :         60          3         31
+ x rot   :       4397        231        576
+ y rot   :      -4396       -236       -543
+ x key   :        -14
+ y key   :        -20
+
+  average rotation angle = -0.001357 (-0.077740 degrees) @ 
+  current stage position 4.000032,8.399985 (absolute 55.644841,61.297045)
+
+pg select map substrate cjob_pattern
+select pattern 1809-3_2x2_shaping_ref.gpf
+Calculated base frequency:   61.9432 MHz
+Expose pattern     :  1809-3_2x2_shaping_ref.gpf
+       position[um]:  5000.000000,5000.000000 (map:cjob_shapingARP)
+       dose[uC/cm2]:  220.000000
+
+Map      : cjob_pattern (Selected)
+ mapid   : 2
+ order   : 4
+ origin  : 0.000000_mm, 0.000000_mm
+
+map      :     cjob_pattern            cjob_shapingARP         absolute
+Markers  :     expected                observed
+         X [mm]       Y [mm]       X [mm]       Y [mm]      X [mm]       Y [mm]
+1:    4.0000000,   7.6000000    4.0000216,   7.5999634   55.6459166,  60.4970159
+2:    5.0000000,   7.6000000    5.0000097,   7.5999732   56.6458890,  60.4983620
+3:    5.0000000,   8.4000000    5.0000194,   8.3999930   56.6448127,  61.2983893
+4:    4.0000000,   8.4000000    4.0000323,   8.3999849   55.6448414,  61.2970448
+
+Transform:          to Absolute                     from Absolute       
+                 X               Y                X               Y     
+ offset  :  +5.165620e+01 , +5.289129e+01    -5.172392e+01 , -5.281287e+01
+ scale   :  -1.695283e-05 , +4.441970e-05    -5.926441e-05 , -1.527331e-04
+ rotation:  +1.361829e-03 , -1.338354e-03    -1.470899e-03 , +1.265704e-03
+ keystone:  -1.403428e-06 , -2.064398e-06    +1.406234e-06 , +2.062423e-06
+
+Binary DAC corrections at present position in map cjob_pattern :
+5.000000mm,5.000000mm (abs: 56.649387mm,57.898273mm)
+
+cur cjob_pattern: 5.000000mm,5.000000mm:
+                 main       trap      pull-in
+ x gain  :        -40         -2        -21
+ y gain  :         57          3         29
+ x rot   :       4420        232        579
+ y rot   :      -4401       -236       -543
+ x key   :        -14
+ y key   :        -20
+
+  average rotation angle = -0.001360 (-0.077901 degrees) @ 
+  current stage position 5.000000,5.000000 (absolute 56.649387,57.898273)
+
+getstringpar(): status = 0, type = 10, returned "cjob_pattern"
+height at pos   5000,  5000 (map "cjob_pattern"), block  1, 0 meas'd   +4.1, used   +4.1
+Elapsed time for pattern 0:0:26.95
+
+Elapsed time for layout 1x1_4th 0:1:19.53
+0,0
+0,0
+0,0
+0,0
+0,0
+restore relative correction DACS
+cjob_finish: pg layout clear
+cjob_finish: pg deselect map substrate
+cjob_finish: pg delete marker cjob_marker_*
+%ENG_W_MAIDOE      -  specified marker ident text does not exist 
+cjob_finish: pg adjust spot
+cjob_finish: pg table_position /delete cjob_*
+cjob_finish: pg map substrate cjob_* delete
+map "cjob_shapingARP" deleted
+map "cjob_pattern" deleted
+remove dot files from $PG_PATTERNS/cjob
+cjob_finish: pg move marker
+position pattern
+
+48361.077,49387.195 /home/pg/users/schmidt/patterns/cjob/identifier_1542211998670160.gpf
+58360.919,49400.558 /home/pg/users/schmidt/patterns/cjob/identifier_1542212000713730.gpf
+58347.346,59400.650 /home/pg/users/schmidt/patterns/cjob/identifier_1542212002765584.gpf
+48347.503,59387.287 /home/pg/users/schmidt/patterns/cjob/identifier_1542212005009269.gpf
+46663.175,47885.305 /home/pg/users/schmidt/patterns/1809-3_1x1_shaping.gpf
+46663.213,47885.240 /home/pg/users/schmidt/patterns/1809-3_1x1_shaping_ref.gpf
+46649.351,57885.094 /home/pg/users/schmidt/patterns/1809-3_1x2_shaping.gpf
+46649.524,57885.009 /home/pg/users/schmidt/patterns/1809-3_1x2_shaping_ref.gpf
+56662.728,47898.396 /home/pg/users/schmidt/patterns/1809-3_2x1_shaping.gpf
+56662.876,47898.278 /home/pg/users/schmidt/patterns/1809-3_2x1_shaping_ref.gpf
+56649.323,57898.230 /home/pg/users/schmidt/patterns/1809-3_2x2_shaping.gpf
+56649.387,57898.273 /home/pg/users/schmidt/patterns/1809-3_2x2_shaping_ref.gpf
+
+Elapsed time for layout shapingARP 0:13:3.07
+exit_handler $?
+Executing exit_handler()
+clamp_set = 41944   clamp_mea = 41950   _loadclamp = 5000,41950   clamped = 41950
+    lolim_ok = 41880      hilim_ok = 42008
+Clamp position read out OK
