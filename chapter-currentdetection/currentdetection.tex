@@ -8,7 +8,7 @@
 	\color{title}
 	A preprint of this chapter is available at arXiv:2001.02521~\cite{schmidtCurrentDetectionUsing2020}.
 	%
-	Data and code to reproduce the calculations and figures presented here can be found on Zenodo~\cite{schmidtDataProcessingCurrent2020}.
+	Data and code to reproduce the calculations and figures presented here can be found on Zenodo~\cite{schmidtDataProcessingCurrent2020b}.
 }
 
 \begin{abstract}
@@ -404,7 +404,7 @@ Instead of a transmission line shorted to ground by a single JJ, we propose to i
 % 
 The optimized design would then be a transmission line directly shorted to ground, with the CPW center conductor made up of a series of identical unit cells, each composed of a combination of linear and Josephson inductance ($L_0,L_\text{J}$) and a capacitance to ground ($C_0$), as depicted in Fig.~\ref{fig:figure5}(a).
 % 
-Following the approach to circuit quantization presented in Ref.~\cite{gelyQuCATQuantumCircuit2019} and methods from Refs.~\cite{noscheseTridiagonalToeplitzMatrices2013,niggBlackBoxSuperconductingCircuit2012,vool_introductionquantum_2017}, we derive the resonance frequency of this CPW as
+Following the approach to circuit quantization presented in Ref.~\cite{gelyQuCATQuantumCircuit2020} and methods from Refs.~\cite{noscheseTridiagonalToeplitzMatrices2013,niggBlackBoxSuperconductingCircuit2012,vool_introductionquantum_2017}, we derive the resonance frequency of this CPW as
 % 
 \begin{align}
 \omega_0(I_\text{b})=\frac{\pi}{N\sqrt{C_0(L_\text{J}(I_\text{b})+L_0)}} \ ,
@@ -476,7 +476,7 @@ We estimate that future devices using increased Josephson participation ratios, 
 
 \section{Methods}
 \subsection{Data availability}
-All raw and processed data as well as supporting code for measurement libraries, data processing and figure generation is available in Zenodo~\cite{schmidtDataProcessingCurrent2020}.
+All raw and processed data as well as supporting code for measurement libraries, data processing and figure generation is available in Zenodo~\cite{schmidtDataProcessingCurrent2020b}.
 
 %\subsection{Acknowledgements}
 %This project has received funding from the European Union Horizon 2020 research and innovation programme under grant agreement Nos.~681476 -- QOMD, 732894 -- HOT and 785219 -- GrapheneCore2.
@@ -549,7 +549,7 @@ S_{\pm 1} = \frac{\sqrt{\kappa_\text{e}}\alpha_0 G_1 I_\text{LF}}{-i\kappa+2(\De
 \label{eq:input-output-first}
 \end{align}
 
-We calculated all $a_{\pm m}$ coefficients up to $m=3$ using \textit{Mathematica} v11.3.0.0 in the notebook \texttt{input-output formalism.nb}, which we subsequently converted to \textit{python3} code using the notebook \texttt{Export to Python.nb} located in Zenodo~\cite{schmidtDataProcessingCurrent2020}.
+We calculated all $a_{\pm m}$ coefficients up to $m=3$ using \textit{Mathematica} v11.3.0.0 in the notebook \texttt{input-output formalism.nb}, which we subsequently converted to \textit{python3} code using the notebook \texttt{Export to Python.nb} located in Zenodo~\cite{schmidtDataProcessingCurrent2020b}.
 
 \subsection{Calculating the steady-state solution}\label{sec:Duffing}
 % 
@@ -594,7 +594,7 @@ Furthermore, taking the resonance frequency as the point where $\partial\alpha_0
 
 \subsection{Higher order terms}\label{app:higher-orders}
 % 
-Already for second order in $\delta I$, the prefactors are too complicated to write down in a short form, which is why we refer to the full analytical solutions in the \textit{Mathematica} notebook \texttt{input-output formalism.nb} located on Zenodo~\cite{schmidtDataProcessingCurrent2020}.
+Already for second order in $\delta I$, the prefactors are too complicated to write down in a short form, which is why we refer to the full analytical solutions in the \textit{Mathematica} notebook \texttt{input-output formalism.nb} located on Zenodo~\cite{schmidtDataProcessingCurrent2020b}.
 % 
 We note that higher order corrections arising for terms in $\delta I^m$, have only negligible effects on the lower order forms.
 % 
@@ -1318,7 +1318,7 @@ Each unit cell has the inductance $L_n = L' l + L_\text{J}=L_0+L_\text{J}$ and t
 
 \subsubsection{Full analytical model}\label{sec:analytical}
 
-In order to derive an analytical model, we follow the approach to circuit quantization presented in Ref.~\cite{gelyQuCATQuantumCircuit2019}.
+In order to derive an analytical model, we follow the approach to circuit quantization presented in Ref.~\cite{gelyQuCATQuantumCircuit2020}.
 %
 The admittance matrix $\mathbf{Y}$ which relates voltages $v_n$ of a node $n$ to the current injected by a hypothetical infinite impedance source $i_n$ following 
 \begin{align}
@@ -1421,7 +1421,7 @@ Since $a_{m'}(\omega_m)\propto \lambda_{m'}(\omega_m) = 0$ if $m'\ne m$, evaluat
 \label{eq:anh-y1p}
 \end{split}
 \end{align}
-The zero-point fluctuations in flux across the first inductive elements for a mode $m$ is then given by \cite{gelyQuCATQuantumCircuit2019,niggBlackBoxSuperconductingCircuit2012}
+The zero-point fluctuations in flux across the first inductive elements for a mode $m$ is then given by \cite{gelyQuCATQuantumCircuit2020,niggBlackBoxSuperconductingCircuit2012}
 \begin{align}
 \phi_{\text{zpf},1,m} = \sqrt{\frac{\hbar}{\omega_m~\text{Im}Y_1'(\omega_m)}}\ .
 \end{align}
