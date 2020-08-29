@@ -2,7 +2,7 @@
 
 ## Instructions
 
-To compile: run `bash compile.sh`. This compiles the file using `pdflatex`. I suppose `xelatex` produces nicer fonts, but it seems to mess a bit with the colors of the title pages. TODO: Investigate this.
+To compile: run `make` (see the file `makefile`). This compiles the file using `pdflatex`. I suppose `xelatex` produces nicer fonts, but it seems to mess a bit with the colors of the title pages. TODO: Investigate this.
 
 ### Layout
 
